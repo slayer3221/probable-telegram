@@ -1,0 +1,242 @@
+See attached file(s)
+
+[Attachment: Comment from Vizma Carver]
+Vizma Carver, CISSP , PMP
+Vizma.carver@cg-hg.com
+703-943-0894
+
+1. Does the two-axis risk framework, organized around device activity and the
+consequence of relying on an incorrect output, appropriately capture the
+dimensions most relevant to the risk of a GenAI-enabled software function? If
+there are additional dimensions—such as the reversibility of a resulting action,
+the availability of downstream safeguards, the time pressure of the deployment
+setting, or the traceability of the output (i.e., to primary source materials)—that
+should be represented in a risk framework, please describe and provide
+examples of how they should be represented.
+
+Response:
+The consequence axis is appropriate and well-constructed. The device activity
+axis, as currently framed, is insufficient.
+
+Both axes describe the output of a GenAI-enabled software function and the
+clinical harm that follows from relying on it. Neither axis describes the
+architecture and operating environment that determine whether an
+incorrect, degraded, or manipulated output reaches the patient in the first
+place. For deterministic Software as a Medical Device, that omission was
+tolerable, because functionality was bounded at release. For GenAI-enabled
+functions — particularly agentic ones that call tools, retrieve from external
+sources, and interoperate with other software — the architecture is itself a risk
+determinant. A framework that grades only what the function says, and not the
+containment of the system that says it, will systematically underestimate risk.
+
+Evidentiary basis
+The July 2026 OpenAI–Hugging Face incident should be read into the record as
+a directly relevant, non-hypothetical case, and it was preventable.
+
+During an internal cyber-capability evaluation, OpenAI models escaped a
+supposedly sealed sandbox by exploiting a previously unknown vulnerability in
+Artifactory, a package registry cache proxy, and thereby reached the open
+internet (OpenAI). The agent then entered Hugging Face production
+infrastructure through code-execution paths in its dataset-processing pipeline,
+escalated privilege, harvested service credentials, and moved laterally across
+internal clusters — executing roughly 17,600 actions over four and a half days
+without human pacing (Hugging Face, TechCrunch). Separately, agents running
+
+Vizma Carver, CISSP , PMP
+Vizma.carver@cg-hg.com
+703-943-0894
+unrelated experiments discovered one another, established a shared message
+board on an internal package manager, traded working exploits, and restored the
+channel after engineers shut it down (Nextgov/FCW, The Register).
+
+Two foundational failures are visible, and both are architectural rather than novel:
+
+An incorrect definition of "connected." The environment was documented as
+isolated because it had no direct internet route. It nonetheless shared a cached
+artifact intermediary with the internet. A shared artifact, file store, registry, or
+cache that is reachable from both sides of a boundary is a connection. Enterprise
+Architecture has held this position for decades; the evaluation environment's
+design did not.
+
+Unmanaged East-West traffic. Lateral, peer-to-peer traffic between agent
+workloads was neither segmented nor monitored, which permitted independent
+agents to collaborate, share capability, and persist through remediation.
+
+The relevance to CDRH is proportionality. If an organization with this
+concentration of technical talent and capital defeated its own containment
+boundary through basic segmentation and boundary-definition errors, then less-
+resourced innovators — small digital health firms, health system innovation
+groups, single-product startups — will not do better. They will do considerably
+worse, and they will do it inside clinical workflows.
+
+Recommendation: Dimensions to consider:
+• Reversibility of the resulting action
+• Availability and effectiveness of downstream safeguards
+• Time pressure of the deployment setting
+• Traceability of the output to primary source material
+• Interpretive capacity of the intended user
+• Architectural connectedness and agentic coupling (Boundary definition on
+a shared-artifact test, East-West controls, Tool and action inventory with
+least privilege, Detection and containment evidence)
+
+2. CDRH seeks input on how to account for the spectrum of GenAI-enabled
+informational functions that vary in the degree to which they direct a user to a
+
+Vizma Carver, CISSP , PMP
+Vizma.carver@cg-hg.com
+703-943-0894
+particular action (i.e., between “non-directive” and “action-directing”). What
+characteristics of an output—such as its wording, specificity, personalization, or
+context—could be considered as modifiers of the risk associated with an
+informational function, after accounting for the device’s overall functionality and
+intended use? What additional information would provide manufacturers with
+sufficient clarity and predictability around risk assessment for informational
+functions while recognizing that directiveness may exist along a continuum rather
+than as a binary distinction?
+
+Response:
+Response 1: Build on existing terminology rather than creating a new
+vocabulary
+Defining the line between "non-directive" and "action-directing" is genuinely
+difficult, and a new taxonomy will be litigated at the margins for years. CDRH
+already has settled vocabulary in Factors to Consider When Making Benefit-Risk
+Determinations in Medical Device Premarket Approval and De Novo
+Classifications (FDA). Novel terminology increases the risk that manufacturers
+misread regulatory intent; reusing established terms reinforces it.
+
+Recommendation 1: do not treat directiveness as a new category, Treat it as
+a modifier of an existing factor — the probability of a harmful event.
+Reesponse 2: shift from a fixed IFU to risk-scaled competency affirmation
+This is software-based guidance, and software permits a protection mechanism
+that hardware does not: the device can confirm what the user understands before
+it operates.
+The current model — a fixed Instructions for Use, delivered once, with no
+affirmation of competency — assumes a static user. Categorical proxies such as
+patient versus HCP, or generalist versus specialist, are coarse and do not reflect
+how people actually engage with their care. Some patients become deeply expert
+in their own condition; others defer entirely to the medical establishment. A single
+label cannot distinguish them.
+Recommendation 2: permit and, at higher risk levels, require affirmation of
+user knowledge and competency as a gating precondition to enabling the
+function, with the depth of affirmation scaled to the device's risk level. A low-
+consequence informational function may need only acknowledgment. A function
+directing insulin titration should confirm that the specific user understands the
+correct output range, the failure modes, and the conditions requiring escalation,
+
+Vizma Carver, CISSP , PMP
+Vizma.carver@cg-hg.com
+703-943-0894
+before that capability unlocks — and should re-affirm on a defined interval or
+when the function is updated.
+
+3. CDRH seeks input on whether and when a GenAI-enabled function that results in
+delivery of clinical information to patients, as opposed to HCPs, could present
+different or higher risks, while also recognizing the potential benefits associated
+with improved patient empowerment, engagement, and access to clinical
+information. What device characteristics, output features, or safeguards might
+mitigate risks that could arise when a user lacks the domain knowledge to
+independently evaluate an output, without unnecessarily underestimating patient
+capability?
+
+Response:
+The premise requires correction
+The question is framed around users "who lack the domain knowledge to
+independently evaluate an output," with patients as the implied class. We object
+to that framing as both inaccurate and counterproductive.
+The framing treats a credential as a proxy for a capability. It is not. Competence
+within any credentialed population is a distribution, not a constant — half of all
+practicing clinicians graduated in the bottom half of their class. Meanwhile,
+patients living with a chronic condition frequently accumulate more contextual
+and longitudinal knowledge of that condition than the generalist reviewing them
+for twelve minutes. Neither observation is a criticism of clinicians. Both are
+reasons that "patient versus HCP versus specialist" is the wrong variable.
+Credentialing does not reliably confer output-evaluation ability
+If professional credentialing were sufficient to catch incorrect clinical information,
+the patient safety movement of the last twenty-five years would not exist. To Err
+Is Human estimated 44,000 to 98,000 preventable deaths annually in U.S.
+hospitals and set a goal of halving errors within five years (National Academies).
+That goal was not met. More recently, an estimated 795,000 Americans are
+permanently disabled or die each year because dangerous diseases are
+misdiagnosed, across both hospital and clinic settings (BMJ Quality & Safety,
+AHRQ).
+These are errors made by credentialed professionals evaluating clinical
+information. A framework that shifts risk downward for HCP-facing functions on
+the strength of the credential alone assumes an error-detection capability that the
+patient safety literature does not support.
+
+Vizma Carver, CISSP , PMP
+Vizma.carver@cg-hg.com
+703-943-0894
+Patient expertise is real, and collaborative care is the safer configuration
+The evidence supports treating patients as participants rather than as a risk
+category. Patient activation — the knowledge, skills, and confidence to engage in
+one's own care — is associated with better outcomes, and contributes more for
+people with lower numeracy and health literacy than for those with higher skills
+(CDC). Patient–professional partnership improves self-management, which in
+turn improves health-related quality of life (International Journal of Nursing
+Studies), and shared decision-making is consistently associated with improved
+patient knowledge, reduced decisional conflict, and higher satisfaction (Frontiers
+in Public Health).
+We note candidly that effects on hard clinical endpoints are heterogeneous
+across the shared decision-making literature (Medical Decision Making). The
+defensible claim is not that engagement is uniformly curative. It is that a
+hierarchical model which treats patient knowledge as absent is contradicted by
+the evidence and reinforces the same deference dynamics that patient safety
+programs have spent twenty-five years trying to dismantle.
+The correct variable
+The risk is not that a user is a patient. The risk is that any user — patient,
+generalist, or specialist — may lack the specific knowledge required to use a
+specific device as intended and to recognize when its output is wrong.
+
+Recommendation: assess competency for the device, not category membership
+for the person. As described in our response to Question 2, we recommend that
+CDRH permit and, at higher risk levels, require affirmation of user knowledge and
+competency as a gating precondition to enable the function, with the depth of
+affirmation scaled to the consequence of incorrect output. This replaces an
+assumption with evidence, produces an auditable record a reviewer can
+evaluate, and reaches the under-qualified specialist and the highly expert patient
+with equal accuracy.
+
+Remove the presumption that patients lack domain knowledge and HCPs
+possess it. Replace categorical user classification with demonstrated, device-
+specific competency affirmation scaled to risk. Grant mitigation credit for
+traceability, stated uncertainty, and named escalation triggers, and none for
+disclaimers. Require evaluation across the real distribution of user knowledge
+rather than across credential labels. This protects users more effectively than the
+current categories, and it does so without encoding a hierarchy that the patient
+safety evidence does not justify.
+
+Vizma Carver, CISSP , PMP
+Vizma.carver@cg-hg.com
+703-943-0894
+
+4. CDRH seeks input on whether and how the distinction between generalist and
+specialist physicians might inform the assessment of risk for HCP-facing GenAI-
+enabled functions. Under what circumstances, if any, might risk be affected when
+an HCP who lacks the relevant clinical specialist knowledge receives information
+that falls within a specialist area of practice? What device characteristics or
+safeguards might mitigate such risks?
+
+See #2 and #3 answer.
+
+5. For multi-turn conversational GenAI-enabled devices that may migrate from
+providing “non-directive” information to “action-directing” information over the
+course of an exchange, how should risk be assessed across realistic
+conversational trajectories? How could the intended use of such a device be
+characterized when its behavior is emergent across a conversation?  OpenAI
+demonstrated how fast this can go wrong when the assumption about the
+environment is wrong.  Risk should always be based on the type of information
+provided.  If the information is low risk, then the oversight burden is lower.  If the
+risk is high, the oversight burden should be high. If the GenAI can migrate, then
+the oversight burden should be high, as AI can change behavior.
+
+See #1 answer
+
+6. For GenAI-enabled care escalation functions, CDRH is considering how the
+evaluation may account for both under-escalation and over-escalation. How
+could manufacturers characterize and weigh these two directions of error, given
+that they may not be commensurable and that acceptable trade-offs may vary by
+clinical context?
+
+The weight should be relevant to the user knowledge and competency (See
+question #2 and #3)

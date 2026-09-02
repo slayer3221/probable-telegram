@@ -1,0 +1,258 @@
+See attached file(s)
+
+[Attachment: Comment from Renee Dua]
+© 2026 Cara AI, Inc.
+Comment of Cara AI, Inc.
+Docket No. FDA-2026-N-7874: Considerations for the Regulation of Generative AI-Enabled
+Medical Devices: Discussion Paper and Request for Feedback
+Submitted via Regulations.gov
+Submitted by Renee Dua, MD, Founder and Chief Executive Officer, Cara AI, Inc.
+Date: October ___, 2026
+About this commenter
+Cara AI, Inc. builds a multimodal assessment platform used in the homes of Medicaid long-term
+services and supports members, Medicare Advantage members, and patients recently discharged
+from the hospital. The platform structures and codes information gathered during an in-home
+assessment. A care coordinator, community health worker, or licensed clinician reviews every output
+and makes every determination. The platform does not diagnose, prescribe, or direct care.
+I am the founder of Cara AI. Much of my career has been spent in technology and as a practicing
+nephrologist, caring for patients with advanced kidney disease who depend on home and community
+based services. I have been building and operating AI-supported assessment systems inside
+patients' homes for fifteen years. The comments below come from running a generative AI system in
+real homes, with real caregivers, in an unstructured setting differing meaningfully from the hospital
+and clinic environments this discussion paper largely contemplates.
+We respond to seven of the discussion questions.
+Question 1. Dimensions missing from the two-axis risk framework
+The two-axis framework is a reasonable organizing heuristic. We suggest three additional
+dimensions.
+Reversibility and time to consequence: a generative output feeding a decision made minutes later
+carries different risk from one feeding a decision made weeks later after human review. In long-term
+services and supports, an incorrect activity of daily living score flows into a service authorization a
+plan reviewer examines, a state may audit, and the member may appeal. The path from output to
+consequence is slow, documented, and reversible at several points. A framework blind to this
+dimension treats a home safety observation the same way it treats an emergency department triage
+output.
+Depth of downstream human review: the activity axis distinguishes healthcare professional
+supervision from full autonomy. We suggest a finer distinction within supervision. Oversight ranges
+from a clinician glancing at a generated summary to a clinician independently reaching a
+determination and then comparing it against the output. The second is a substantially stronger
+control and should reduce assessed risk more than the first.
+Traceability to source evidence: where an output is anchored to a specific artifact the reviewer sees,
+such as a photograph, a document image, or a recorded statement, the reviewer holds the
+
+© 2026 Cara AI, Inc.
+underlying evidence and evaluates the output directly against it. Traceability of this kind lowers the
+risk of an undetected incorrect output and belongs in the framework as its own dimension.
+Questions 3 and 4. The user category the framework omits
+The paper divides users into patients and healthcare professionals, and then divides healthcare
+professionals into generalists and specialists. A large and growing share of AI-supported health
+interactions in the United States involves neither group.
+Care coordinators, case managers, community health workers, home care aides, and state
+assessors conduct the majority of in-home health assessments for Medicaid long-term services and
+supports members. These workers are trained, accountable, supervised, and operating in a defined
+professional role. They are not licensed clinicians. Under the framework as drafted they fall by
+default into the patient category, which understates their capability, or into the healthcare
+professional category, which overstates their clinical training.
+We suggest a third user tier for trained non-clinical health workers operating under organizational
+supervision, with three consequences.
+First, risk assessment should account for the supervisory structure around the user rather than
+treating an individual license as the only variable. A community health worker whose assessment is
+reviewed by a supervising nurse before it affects care presents a different risk profile from an
+unsupervised consumer.
+Second, benchmarking element E.4, communication quality and user comprehension, should test
+comprehension at this tier specifically. Output written for a physician will be misread by a
+coordinator, and output written for a consumer will be insufficient for one.
+Third, this workforce is the primary point of contact for the members least represented in clinical AI
+evaluation, including non-English speakers, members with low literacy, and members who are
+homebound. Omitting the tier from the framework risks omitting those members from evaluation as
+well.
+Question 6. Escalation error in both directions, and a third routing option
+We agree both under-escalation and over-escalation matter. We suggest the framework also
+recognize a third response beyond escalate and do not escalate.
+In our setting, a concerning finding is routed to the member's health plan care team, which holds the
+member's clinical history, the treating physician's contact information, and the authority to arrange
+follow-up. The output is not a direction to the member to seek emergency care, and it is not silence.
+It is a handoff to an accountable clinical channel carrying a defined response obligation.
+This third path changes the error profile substantially. The cost of a false positive is a care team
+review rather than an emergency department visit. The cost of a false negative remains serious and
+is the error we weight most heavily. We suggest CDRH consider routing to an accountable channel
+as a distinct activity category, because collapsing it into patient-facing escalation overstates the risk
+of an architecture designed specifically to reduce that risk.
+
+© 2026 Cara AI, Inc.
+On weighting the two directions of error, we do not think a single ratio generalizes across clinical
+contexts. What generalizes is the requirement for a sponsor to state the ratio it optimized for, justify it
+against the clinical context and the receiving system's response capacity, and report both error rates
+separately rather than inside a combined accuracy figure.
+Question 11. Selecting a clinical confirmation approach, and a note on
+blinded review
+The range of approaches described in Section V.C.1 is sound, and we support the position a
+prospective clinical study is not required in every case.
+We want to comment specifically on the blinded variant of clinician adjudication of real cases,
+because we are running it now. In our design, a qualified independent reviewer examines the raw
+inputs collected in the member's home, independently determines the correct finding, and records
+that determination before seeing any system output. The two are then compared.
+We suggest CDRH define adjudicator qualification by the task rather than defaulting to physician
+review. For functional assessment, home safety, and activity of daily living scoring, the appropriate
+expert is often a certified nurse assessor or a trained assessment coordinator rather than a
+physician. These are the people who hold the applicable scoring standard and who perform the task
+in practice. Defaulting to physician adjudication would raise the cost of clinical confirmation without
+improving the reference standard, and in several domains it would make the reference standard less
+accurate.
+Sequencing matters as much as credential. Once a reviewer has seen a generated output, the
+reviewer cannot unsee it, and agreement measured afterward is inflated by anchoring in a way
+invisible in the resulting statistic.
+We suggest CDRH make sequencing explicit in any future description of the method. A submission
+should state whether the reference determination was recorded before or after the reviewer saw the
+output, and unblinded review should not be treated as equivalent evidence to blinded review.
+We also note this method is achievable for a small company. It requires no research infrastructure
+beyond disciplined sequencing and a record of when each determination was made. If CDRH wants
+a form of clinical confirmation small sponsors are able to produce without dedicated trial funding,
+blinded paired adjudication is a strong candidate for further definition, possibly through the Medical
+Device Development Tool program.
+Question 14. Comparators for open-ended outputs
+Comparing a system against a panel of qualified clinicians assumes a stable human reference
+standard exists. In Medicaid functional assessment, it largely does not.
+
+© 2026 Cara AI, Inc.
+The instrument itself is not standardized. The federal government does not require states to use a
+particular functional assessment tool, and a national inventory identified at least 124 tools currently
+in use.1
+The variation is not cosmetic. The District of Columbia bathing assessment collects the frequency
+and duration of assistance required, while the Kentucky assessment does not.2 Individual health
+plans then apply their own scoring conventions and thresholds within their state's requirements. A
+reference panel drawn from more than one program may disagree not because clinical judgment
+differs but because the reviewers are applying different instruments.
+Agreement among assessors under real field conditions is also largely unmeasured. Published inter-
+rater reliability studies for activity of daily living instruments are generally conducted in controlled
+research settings, with trained raters applying a single instrument to a small sample, and several
+report high agreement. Those results do not establish that assessors agree during Medicaid home
+visits, across different instruments, under time pressure, in the member's own environment. We are
+not aware of a body of evidence establishing a reliable human reference standard for this task in the
+deployment setting, and we suggest CDRH treat the existence of that standard as something a
+sponsor demonstrates rather than assumes.
+Two suggestions follow. Where the reference standard is expert judgment rather than an objective
+result such as a biopsy, sponsors should report inter-rater agreement within the human reference
+panel alongside system-to-panel agreement, and should state which instrument each reviewer
+applied. A system matching a panel agreeing with itself 70 percent of the time is a different finding
+from a system matching a panel agreeing with itself 95 percent of the time, and a raw agreement
+figure hides the difference.
+Where the purpose of a function is to reduce variance rather than to outperform a median clinician,
+consistency should be measurable as a performance endpoint in its own right. In authorization-
+driven programs, two assessors reaching the same score for the same member is itself the clinical
+and equity objective.
+Question 15. Comparison against the alternative existing today
+We support this framing strongly and believe it deserves more weight than the paper currently gives
+it.
+In the home assessment setting, the realistic alternative to a generative AI-supported assessment is
+not a careful expert evaluation. It is a paper form completed under time pressure, sometimes partly
+from recall after the visit ended, frequently incomplete, and drawn from an instrument varying by
+state and by plan. The prevailing alternative is not only lower quality than an expert evaluation. It is
+also unstandardized, which means it produces different results for similar members. Federal
+improper payment reporting attributes the large majority of Medicaid improper payments to
+1
+1 Medicaid and CHIP Payment and Access Commission, “Functional Assessments for Long-Term Services and Supports,” Chapter
+4, Report to Congress on Medicaid and CHIP, June 2016.
+2 Ibid., Box 4-2.
+
+© 2026 Cara AI, Inc.
+insufficient documentation and missing administrative steps rather than to fraud.3 That is the
+operative baseline in this setting.
+The downstream effect is visible in service delivery. Because no reliable shared record exists of
+what a member was already assessed for and already received, duplication and gaps occur side by
+side. One member accumulates several pieces of the same durable medical equipment while
+another with the same documented need receives none. This is a consequence of unstandardized
+and incomplete assessment rather than of clinical disagreement, and it is the kind of outcome an
+evaluation anchored to an idealized standard of care will not surface.
+Evaluating a system against an idealized standard of care while the real alternative is an incomplete
+form produces a systematically misleading benefit-risk assessment, and it does so in a direction
+disadvantaging the populations with the least access to care. We suggest CDRH permit sponsors to
+characterize the actual prevailing practice in the deployment setting, supported by evidence, and to
+evaluate against it in addition to any clinical reference standard.
+Question 21. Health plans as a postmarket monitoring participant
+The paper lists payers among ecosystem stakeholders without describing a role for them. We
+suggest a specific one.
+Medicaid and Medicare Advantage plans already audit completed assessments, already run inter-
+rater reliability checks across their assessor workforces, and already hold the downstream utilization
+and outcome data needed to determine whether an assessment output was correct. They have
+contractual access to the deployment environment, regulatory obligations of their own, and a direct
+financial interest in accuracy. Much of the monitoring capability CDRH is asking manufacturers to
+build already exists inside health plans.
+A workable structure preserves manufacturer accountability while using this capacity. The
+manufacturer defines the monitoring specification, the sampling frame, and the degradation
+thresholds, and remains responsible for detecting and reporting degradation. The plan supplies the
+sample and the outcome linkage under contract. This avoids duplicating an audit infrastructure
+already funded and already operating, and it produces monitoring data drawn from the actual
+deployment environment rather than from a manufacturer-selected sample.
+1
+3 Centers for Medicare and Medicaid Services, Payment Error Rate Measurement program, fiscal year 2025 results. The Medicaid
+improper payment rate was 6.12 percent, or $37.39 billion, and 77.2 percent of improper payments resulted from insufficient
+documentation or missing administrative steps.
+
+© 2026 Cara AI, Inc.
+Closing
+We appreciate the opportunity to comment and would welcome the chance to discuss the in-home
+and long-term services and supports setting with CDRH staff in more detail.
+Renee Dua, MD
+Founder and Chief Executive Officer, Cara AI, Inc.
+8349 Reseda Boulevard, Suite G, Northridge, California 91324
+renee@askcara.ai
+trycara.com
+
+[Attachment: Comment from Renee Dua]
+Comment of Cara AI, Inc.
+Docket No. FDA-2026-N-7874: Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and Request for Feedback
+Submitted via Regulations.gov
+Submitted by Renee Dua, MD, Founder and Chief Executive Officer, Cara AI, Inc.
+Date: October ___, 2026
+
+About this commenter
+Cara AI, Inc. builds a multimodal assessment platform used in the homes of Medicaid long-term services and supports members, Medicare Advantage members, and patients recently discharged from the hospital. The platform structures and codes information gathered during an in-home assessment. A care coordinator, community health worker, or licensed clinician reviews every output and makes every determination. The platform does not diagnose, prescribe, or direct care.
+I am the founder of Cara AI. Much of my career has been spent in technology and as a practicing nephrologist, caring for patients with advanced kidney disease who depend on home and community based services. I have been building and operating AI-supported assessment systems inside patients' homes for fifteen years. The comments below come from running a generative AI system in real homes, with real caregivers, in an unstructured setting differing meaningfully from the hospital and clinic environments this discussion paper largely contemplates.
+We respond to seven of the discussion questions.
+Question 1. Dimensions missing from the two-axis risk framework
+The two-axis framework is a reasonable organizing heuristic. We suggest three additional dimensions.
+Reversibility and time to consequence: a generative output feeding a decision made minutes later carries different risk from one feeding a decision made weeks later after human review. In long-term services and supports, an incorrect activity of daily living score flows into a service authorization a plan reviewer examines, a state may audit, and the member may appeal. The path from output to consequence is slow, documented, and reversible at several points. A framework blind to this dimension treats a home safety observation the same way it treats an emergency department triage output.
+Depth of downstream human review: the activity axis distinguishes healthcare professional supervision from full autonomy. We suggest a finer distinction within supervision. Oversight ranges from a clinician glancing at a generated summary to a clinician independently reaching a determination and then comparing it against the output. The second is a substantially stronger control and should reduce assessed risk more than the first.
+Traceability to source evidence: where an output is anchored to a specific artifact the reviewer sees, such as a photograph, a document image, or a recorded statement, the reviewer holds the underlying evidence and evaluates the output directly against it. Traceability of this kind lowers the risk of an undetected incorrect output and belongs in the framework as its own dimension.
+Questions 3 and 4. The user category the framework omits
+The paper divides users into patients and healthcare professionals, and then divides healthcare professionals into generalists and specialists. A large and growing share of AI-supported health interactions in the United States involves neither group.
+Care coordinators, case managers, community health workers, home care aides, and state assessors conduct the majority of in-home health assessments for Medicaid long-term services and supports members. These workers are trained, accountable, supervised, and operating in a defined professional role. They are not licensed clinicians. Under the framework as drafted they fall by default into the patient category, which understates their capability, or into the healthcare professional category, which overstates their clinical training.
+We suggest a third user tier for trained non-clinical health workers operating under organizational supervision, with three consequences.
+First, risk assessment should account for the supervisory structure around the user rather than treating an individual license as the only variable. A community health worker whose assessment is reviewed by a supervising nurse before it affects care presents a different risk profile from an unsupervised consumer.
+Second, benchmarking element E.4, communication quality and user comprehension, should test comprehension at this tier specifically. Output written for a physician will be misread by a coordinator, and output written for a consumer will be insufficient for one.
+Third, this workforce is the primary point of contact for the members least represented in clinical AI evaluation, including non-English speakers, members with low literacy, and members who are homebound. Omitting the tier from the framework risks omitting those members from evaluation as well.
+Question 6. Escalation error in both directions, and a third routing option
+We agree both under-escalation and over-escalation matter. We suggest the framework also recognize a third response beyond escalate and do not escalate.
+In our setting, a concerning finding is routed to the member's health plan care team, which holds the member's clinical history, the treating physician's contact information, and the authority to arrange follow-up. The output is not a direction to the member to seek emergency care, and it is not silence. It is a handoff to an accountable clinical channel carrying a defined response obligation.
+This third path changes the error profile substantially. The cost of a false positive is a care team review rather than an emergency department visit. The cost of a false negative remains serious and is the error we weight most heavily. We suggest CDRH consider routing to an accountable channel as a distinct activity category, because collapsing it into patient-facing escalation overstates the risk of an architecture designed specifically to reduce that risk.
+On weighting the two directions of error, we do not think a single ratio generalizes across clinical contexts. What generalizes is the requirement for a sponsor to state the ratio it optimized for, justify it against the clinical context and the receiving system's response capacity, and report both error rates separately rather than inside a combined accuracy figure.
+Question 11. Selecting a clinical confirmation approach, and a note on blinded review
+The range of approaches described in Section V.C.1 is sound, and we support the position a prospective clinical study is not required in every case.
+We want to comment specifically on the blinded variant of clinician adjudication of real cases, because we are running it now. In our design, a qualified independent reviewer examines the raw inputs collected in the member's home, independently determines the correct finding, and records that determination before seeing any system output. The two are then compared.
+We suggest CDRH define adjudicator qualification by the task rather than defaulting to physician review. For functional assessment, home safety, and activity of daily living scoring, the appropriate expert is often a certified nurse assessor or a trained assessment coordinator rather than a physician. These are the people who hold the applicable scoring standard and who perform the task in practice. Defaulting to physician adjudication would raise the cost of clinical confirmation without improving the reference standard, and in several domains it would make the reference standard less accurate.
+Sequencing matters as much as credential. Once a reviewer has seen a generated output, the reviewer cannot unsee it, and agreement measured afterward is inflated by anchoring in a way invisible in the resulting statistic.
+We suggest CDRH make sequencing explicit in any future description of the method. A submission should state whether the reference determination was recorded before or after the reviewer saw the output, and unblinded review should not be treated as equivalent evidence to blinded review.
+We also note this method is achievable for a small company. It requires no research infrastructure beyond disciplined sequencing and a record of when each determination was made. If CDRH wants a form of clinical confirmation small sponsors are able to produce without dedicated trial funding, blinded paired adjudication is a strong candidate for further definition, possibly through the Medical Device Development Tool program.
+Question 14. Comparators for open-ended outputs
+Comparing a system against a panel of qualified clinicians assumes a stable human reference standard exists. In Medicaid functional assessment, it largely does not.
+The instrument itself is not standardized. The federal government does not require states to use a particular functional assessment tool, and a national inventory identified at least 124 tools currently in use.
+The variation is not cosmetic. The District of Columbia bathing assessment collects the frequency and duration of assistance required, while the Kentucky assessment does not. Individual health plans then apply their own scoring conventions and thresholds within their state's requirements. A reference panel drawn from more than one program may disagree not because clinical judgment differs but because the reviewers are applying different instruments.
+Agreement among assessors under real field conditions is also largely unmeasured. Published inter-rater reliability studies for activity of daily living instruments are generally conducted in controlled research settings, with trained raters applying a single instrument to a small sample, and several report high agreement. Those results do not establish that assessors agree during Medicaid home visits, across different instruments, under time pressure, in the member's own environment. We are not aware of a body of evidence establishing a reliable human reference standard for this task in the deployment setting, and we suggest CDRH treat the existence of that standard as something a sponsor demonstrates rather than assumes.
+Two suggestions follow. Where the reference standard is expert judgment rather than an objective result such as a biopsy, sponsors should report inter-rater agreement within the human reference panel alongside system-to-panel agreement, and should state which instrument each reviewer applied. A system matching a panel agreeing with itself 70 percent of the time is a different finding from a system matching a panel agreeing with itself 95 percent of the time, and a raw agreement figure hides the difference.
+Where the purpose of a function is to reduce variance rather than to outperform a median clinician, consistency should be measurable as a performance endpoint in its own right. In authorization-driven programs, two assessors reaching the same score for the same member is itself the clinical and equity objective.
+Question 15. Comparison against the alternative existing today
+We support this framing strongly and believe it deserves more weight than the paper currently gives it.
+In the home assessment setting, the realistic alternative to a generative AI-supported assessment is not a careful expert evaluation. It is a paper form completed under time pressure, sometimes partly from recall after the visit ended, frequently incomplete, and drawn from an instrument varying by state and by plan. The prevailing alternative is not only lower quality than an expert evaluation. It is also unstandardized, which means it produces different results for similar members. Federal improper payment reporting attributes the large majority of Medicaid improper payments to insufficient documentation and missing administrative steps rather than to fraud. That is the operative baseline in this setting.
+The downstream effect is visible in service delivery. Because no reliable shared record exists of what a member was already assessed for and already received, duplication and gaps occur side by side. One member accumulates several pieces of the same durable medical equipment while another with the same documented need receives none. This is a consequence of unstandardized and incomplete assessment rather than of clinical disagreement, and it is the kind of outcome an evaluation anchored to an idealized standard of care will not surface.
+Evaluating a system against an idealized standard of care while the real alternative is an incomplete form produces a systematically misleading benefit-risk assessment, and it does so in a direction disadvantaging the populations with the least access to care. We suggest CDRH permit sponsors to characterize the actual prevailing practice in the deployment setting, supported by evidence, and to evaluate against it in addition to any clinical reference standard.
+Question 21. Health plans as a postmarket monitoring participant
+The paper lists payers among ecosystem stakeholders without describing a role for them. We suggest a specific one.
+Medicaid and Medicare Advantage plans already audit completed assessments, already run inter-rater reliability checks across their assessor workforces, and already hold the downstream utilization and outcome data needed to determine whether an assessment output was correct. They have contractual access to the deployment environment, regulatory obligations of their own, and a direct financial interest in accuracy. Much of the monitoring capability CDRH is asking manufacturers to build already exists inside health plans.
+A workable structure preserves manufacturer accountability while using this capacity. The manufacturer defines the monitoring specification, the sampling frame, and the degradation thresholds, and remains responsible for detecting and reporting degradation. The plan supplies the sample and the outcome linkage under contract. This avoids duplicating an audit infrastructure already funded and already operating, and it produces monitoring data drawn from the actual deployment environment rather than from a manufacturer-selected sample.
+Closing
+We appreciate the opportunity to comment and would welcome the chance to discuss the in-home and long-term services and supports setting with CDRH staff in more detail.
+Renee Dua, MD
+Founder and Chief Executive Officer, Cara AI, Inc.
+8349 Reseda Boulevard, Suite G, Northridge, California 91324
+renee@askcara.ai
+trycara.com

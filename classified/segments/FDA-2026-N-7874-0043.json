@@ -1,0 +1,139 @@
+{
+  "comment_id": "FDA-2026-N-7874-0043",
+  "input_hash": "55de3d38985a90c0",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:07:26Z",
+  "model": "claude-opus-5",
+  "chunks": 1,
+  "positions": [
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "The bi-axial framework can function properly for this application, similarly with the typical risk calculus of R = Pf x Mc (where Pf is the probability of failure, and Mc is the magnitude of consequence). However, that classic equation has also lent itself to uncountable issues in the industry with ‘how’ to measure each properly (qualitatively, subjectively, combined with objective data), including via ICH Q9 and ISO 14971. Layering an ability to detect, such as with an FMEA (Detectability) can help, but traceability is hard (read: impossible) to implement, since the GenAI models are opaque. Humans in- or on- the loop need to be included in the framework for decision-making.",
+      "position_gist": "The two-axis framework is workable but should add an FMEA-style detectability dimension and explicit human in/on the loop decision-making, while traceability is considered impractical because GenAI models are opaque.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q2"
+      ],
+      "source_passage": "GenAI-enabled functions that are directive are giving medical advice, so all outputs (if not standardized and approved by FDA) need to be ‘for information only’ and have linguistic modifiers required to clarify this.",
+      "position_gist": "Directive GenAI outputs constitute medical advice, so unless standardized and FDA-approved, outputs should be labeled 'for information only' with required linguistic modifiers.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "Yes, unequivocally. Patients are not trained in healthcare, usability of devices, or translating and inferring context from generative AI outputs. Patient empowerment is a terrible goal, because it implies that the patient would have the ability to differentially-apply the therapy based on their idiosyncratic opinions, which is 100% unregulatable.",
+      "position_gist": "Patient-facing GenAI clinical information presents higher risk because patients lack training to interpret outputs, and 'patient empowerment' is an inappropriate goal because idiosyncratic patient application of therapy is unregulatable.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q4"
+      ],
+      "source_passage": "The GenAI output needs to include modifiers (as mentioned in #2 above) that explain to generalists that the output is designed for specialists. Otherwise generalists will take the output, impute their opinion and overall (general) license to practice medicine, and go forward with the results.",
+      "position_gist": "Outputs intended for specialists should carry explicit modifiers alerting generalist clinicians that the content is specialist-directed.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q5"
+      ],
+      "source_passage": "The GenAI needs a model framework that recognizes and self-identifies then it is emergently creating advice and direction, and it is prevented from providing that to the patient with a warning that the conversation has entered that territory.",
+      "position_gist": "Multi-turn devices should self-detect when a conversation drifts into action-directing advice and be blocked from delivering it, issuing a warning instead.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "The correct answer here is that Type I errors can be more dangerous than Type II errors. Over-escalating can lead to unnecessary treatment harms and diagnostic use. These are errors of commission, rather than under-escalation which would lead to potential errors of omission.",
+      "position_gist": "Over-escalation (errors of commission) can be more dangerous than under-escalation and should be weighted accordingly in evaluating care escalation functions.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q7"
+      ],
+      "source_passage": "7. Is the competency-based approach described above, i.e., device benchmarking followed by clinical confirmation, a useful and appropriate framework for evaluating GenAI-enabled devices? Yes. There will always be edge cases and corner cases, but this will cover the bolus of submissions.",
+      "position_gist": "Supports the competency-based approach of benchmarking followed by clinical confirmation as appropriate for the majority of submissions despite edge cases.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "The guidelines available in the wild are insufficient to use here. But the final element of the benchmarking on A.1. Agentic AI Capabilities is woefully inadequate. The previous elements are sufficiently robust, but having a single slice on the agentic AI itself doesn’t interrogate ‘what’ it’s doing or ‘how’ it’s doing it deeply enough to prevent risks.",
+      "position_gist": "Existing external standards are insufficient and, while most benchmarking elements are robust, the single Agentic AI Capabilities element is inadequate to interrogate what agentic systems do and how.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q10"
+      ],
+      "source_passage": "Giving sponsors a naïve data framework to start with, instead of having them build it internally in a bespoke manner will guide them on how to prevent issues like contamination, saturation, overfitting, etc.",
+      "position_gist": "FDA should supply sponsors a standard naive data framework rather than letting each build bespoke internal benchmarks, to prevent contamination, saturation, and overfitting.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q11"
+      ],
+      "source_passage": "A risk framework that takes into account therapeutic area/use, patient exposure, and real-world use cases must be implemented.",
+      "position_gist": "Selection of a clinical confirmation approach should be governed by a risk framework accounting for therapeutic area/use, patient exposure, and real-world use cases.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q12"
+      ],
+      "source_passage": "The synthetic distributions would be the control data, and need to be compared with the real-world distributions, where clinical significance and practical significance are shown to be meaningfully different from each other to be considered for clearance or approval.",
+      "position_gist": "Synthetic distributions should serve as control data compared against real-world distributions, with clinical and practical significance assessed as part of clearance or approval.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q13"
+      ],
+      "source_passage": "You could argue that you could create synthetic subpopulations for any non-rare and non-ultra rare condition. But the synthetic data should come from literature metaanalyses, not single studies, to account for large-scale variance.",
+      "position_gist": "Synthetic subpopulations are feasible for non-rare conditions, but synthetic data should be derived from literature meta-analyses rather than single studies to capture large-scale variance.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q14"
+      ],
+      "source_passage": "Comparators should be available metaanalytic data for the reasons described above. For performance standards, a mixture of generalists and specialists should be used, because they WILL be used in the real world later on. Treat it like a Gage R&R study, to catch inter-clinician variance.",
+      "position_gist": "Comparators should be meta-analytic data, performance standards should mix generalists and specialists reflecting real-world use, and evaluation should be structured like a Gage R&R study to capture inter-clinician variance.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q15"
+      ],
+      "source_passage": "The only reliable comparator is the ‘no intervention’ condition. The others are too unpredictable and variable.",
+      "position_gist": "'No intervention' is the only reliable counterfactual comparator; unaided clinical judgment and delayed specialist review are too variable.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q16"
+      ],
+      "source_passage": "Bringing a third-party requirement also opens the door to third-party organizations gaming the system and creating a profit center on drawing out these tests. Inadvisable.",
+      "position_gist": "Opposes requiring independent third-party involvement, warning it invites gaming and profiteering by prolonging testing.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q17"
+      ],
+      "source_passage": "Certainly in every case, an assessment of what the architecture includes, such as MMVL models, etc. Those would then be categorized as higher risk, based on A.1 in the framework of your model.",
+      "position_gist": "Every submission should include an assessment of the underlying architecture, with multimodal vision-language and similar models categorized as higher risk.",
+      "segment_id": "seg-016"
+    }
+  ]
+}

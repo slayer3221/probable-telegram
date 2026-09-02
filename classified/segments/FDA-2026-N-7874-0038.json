@@ -1,0 +1,87 @@
+{
+  "comment_id": "FDA-2026-N-7874-0038",
+  "input_hash": "fef8748742497e9b",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:07:26Z",
+  "model": "claude-opus-5",
+  "chunks": 1,
+  "positions": [
+    {
+      "question_ids": [
+        "q21",
+        "q9"
+      ],
+      "source_passage": "Learning from international counterparts: FDA also learn lessons in developing standards from to international regulatory counterparts, including the European Medicines Agency, Japan, China, Canada, South Korea, and others to promote harmonized approaches to GenAI regulation where feasible. Consistency across jurisdictions will reduce developer burden, improve patient safety, and support global interoperability.",
+      "position_gist": "FDA should draw on and harmonize with international regulatory counterparts when developing GenAI standards, to reduce developer burden and support interoperability.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "Emphasize patient-engagement and patient-centered design: FDA should encourage developers of GenAI‑enabled devices to incorporate patients directly into AI development, governance, monitoring, and evaluation. Patient engagement is essential for ensuring that GenAI systems reflect real‑world needs, support autonomy, and avoid assumptions about patient capabilities and likely responses to information.",
+      "position_gist": "FDA should encourage developers to involve patients directly in GenAI development, governance, monitoring, and evaluation.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "Governance: Given the evolving and uncertain nature of GenAI risks, FDA should emphasize the importance of strong governance structures within developing organizations. Developers should be encouraged to seek legal, ethical, and clinical consultation when appropriate, particularly for high‑risk or patient‑facing functions. In addition, FDA should incorporate ethics expertise within its own review processes when appropriate, including staff trained in bioethics, digital ethics, and responsible AI.",
+      "position_gist": "FDA should emphasize strong developer-side governance (including legal, ethical, and clinical consultation for high-risk or patient-facing functions) and should build bioethics/responsible-AI expertise into its own review processes.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q25"
+      ],
+      "source_passage": "A useful analogy is food safety: FDA does not regulate how lettuce is grown, but FDA and the US Department of Agriculture and others regulate safety across the entire farm‑to‑fork supply chain because upstream conditions affect downstream risk. Similarly, if GenAI systems and components will be used or adapted for FDA‑regulated software and devices, FDA will need to work directly and collaboratively with other federal agencies, academia, and the private sector to foster governance, safety, and effectiveness across the GenAI lifecycle. FDA should adopt a developer-to-user perspective for GenAI that parallels the farm-to-fork approach for foods.",
+      "position_gist": "Because a device-only framework does not reach upstream GenAI component risks, FDA should adopt a 'developer-to-user' lifecycle perspective and work collaboratively with other federal agencies, academia, and industry to address safety of underlying GenAI systems/components (relevance to the foundation-model information question is inferential).",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "Pages 4–6 and Discussion Question 1: Limitations of the Two‑Axis Model: The two-axis model discussed by FDA is a good starting point for discussion but does not capture such upstream risks as hallucinations, algorithmic bias and incorrect data. While these axes capture autonomy and harm severity, they do not account for upstream risks such as hallucinations, algorithmic bias, incorrect or contaminated training data, or opaque model provenance. The model is also primarily utilitarian, emphasizing consequences but not reflecting governance priorities, ethical guardrails, or healthcare duties such as privacy, confidentiality, and transparency. In addition, GenAI risks are not static. They may change as models are updated or not updated, as models drift, as data degrades, or as context and use‑cases shift. A static two‑axis model cannot capture these dynamic, lifecycle‑dependent risks, underscoring the need for a more expansive and adaptive regulatory framework.\n\nInstead of a two-axis model, I would suggest a three-layer model:\nLayer 1, Functional: Consequences (same as current graph/model) and Activity (same as current graph/model).\nLayer 2, Model Risks: addresses hallucinations, biases, data contamination, poor or incorrect training data, susceptibility to adversarial prompts; and vulnerability to hacking, model manipulation, or other security threats.\nLayer 3, Lifecycle Risks: model drift, degradation, need for updates, stability.",
+      "position_gist": "The two-axis risk framework is a useful start but omits upstream model risks, ethical/governance duties, and dynamic lifecycle risks; FDA should instead adopt a three-layer model adding a model-risk layer (hallucination, bias, contamination, adversarial/security vulnerability) and a lifecycle-risk layer (drift, degradation, updates, stability).",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q2",
+        "q3"
+      ],
+      "source_passage": "Action-taking and Action-directing functions: The paper states that “CDRH is also considering whether a patient facing informational function may not become any less directive because it includes a ‘talk to your doctor’ or an ‘I am not a medical professional’ statement in addition to the ‘action-directing’ information.” The assumption that patients will reliably seek clinician input is unrealistic. The more likely outcome is that patients will simply consult another AI model or tool to cross‑reference the first output. FDA should treat action‑directing outputs as higher‑risk regardless of disclaimers.",
+      "position_gist": "Disclaimers such as 'talk to your doctor' should not reduce assessed risk because patients are more likely to consult another AI tool than a clinician; FDA should treat action-directing outputs as higher risk regardless of disclaimers.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "source_passage": "Patient‑Facing Informational Functions: Patient‑facing functions should provide clear, accessible, bottom‑line information that supports autonomy and shared decision‑making. Interfaces may be simplified, graphical, or user‑friendly, but patients should have full optional access to underlying data, uncertainty indicators, and model limitations.\nHealth Provider‑Facing Informational Functions\nProvider functions may be more complex, detailed, and data‑rich. Clinicians may need intermediate outputs, confidence scores, model rationales, and contextual factors that would not benefit many patients. These functions support clinical judgment, diagnostic reasoning, and safe integration of GenAI outputs into care (page 8). Outputs can be more directive because they are interpreted within the clinician’s professional judgment and scope of practice.\nFDA can consider the following factors when assessing patient‑facing versus provider‑facing informational functions and the potential risks associated with each.\n• Wording and tone: For patients, wording should be plain-language and non-directive. For providers, wording should be technical and precise.\n• Specificity: For patients, the output should be general with options and ranges. For providers, outputs should be clinically-based with detailed parameters.\n• Personalization: For patents, output should be tailored but non-directive. For providers, output should support clinical judgment for specific cases.\n• Transparency and data access: For patients: A simplified interface, but with full optional access to underlying data, uncertainty indicators, and model limitations to support autonomy and shared decision-making. For providers: Full access to all data\n• Context and framing: For patients, Emphasis on choices, risks, benefits, alternatives, and shared decision‑making. For providers, the focus can be on clinical factors, next steps/workflows and potential comorbidities.",
+      "position_gist": "FDA should assess informational-function risk using output modifiers—wording/tone, specificity, personalization, transparency and data access, and context/framing—calibrated differently for patient-facing outputs (plain-language, non-directive, general, with optional full access to data and limitations) versus provider-facing outputs (technical, detailed, more directive because filtered through professional judgment).",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "Safeguards to Mitigate Risk Without Underestimating Patient Capability\nFDA could encourage safeguards that protect patients while preserving autonomy and access:\n• Uncertainty indicators: Clear statements such as “These results may be uncertain” or presentation of broad ranges.\n• Shared decision‑making prompts. For example: “Discuss these findings with your healthcare provider.”\n• Reminders about rechecking results: Prompts indicating when information should be rechecked or updated.\n• Clarification that information presented is not a diagnosis: Reinforcing that outputs are informational and do not replace clinical evaluation.\n• Model update notifications: Indicators when a model has been changed, retrained, or updated, so patients and providers understand when performance may differ.",
+      "position_gist": "FDA should encourage patient-facing safeguards—uncertainty indicators, shared decision-making prompts, recheck reminders, explicit 'not a diagnosis' statements, and model-update notifications—that mitigate risk while preserving patient autonomy.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q11"
+      ],
+      "source_passage": "Question 11: Additional Clinical Confirmatory Approaches FDA Should Add:\nFDA’s list is strong but incomplete. Additional approaches for GenAI include:\n• Hallucination & Adversarial Stress Testing: Inputs designed to provoke hallucinations, misleading outputs, or unsafe reasoning.\n• Bias, Fairness, and Representativeness Evaluation: Testing across demographic groups, comorbidities, and underrepresented clinical conditions.\n• Drift and update impact analysis: Pre‑ and post‑update testing, stability testing, and drift detection.\n• Testing in different clinical contexts and environments: Emergency departments, inpatient, outpatient, specialty settings, and varied workflows.\n• Human factors testing: Provider and patient comprehension, over‑reliance, safeguard functioning, and clarity of uncertainty indicators.",
+      "position_gist": "FDA's clinical confirmation options should be expanded to include hallucination/adversarial stress testing, bias and representativeness evaluation, drift and update impact analysis, testing across varied clinical settings, and human factors testing.",
+      "segment_id": "seg-009"
+    }
+  ]
+}

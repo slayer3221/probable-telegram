@@ -1,0 +1,134 @@
+{
+  "comment_id": "FDA-2026-N-7874-0012",
+  "input_hash": "c229411c28b2eb68",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter endorses pairing standardized benchmarking with risk-tiered clinical confirmation, but wants the resulting review process to be clear and streamlined, particularly for high-impact use cases.",
+      "requested_fda_action": "Adopt the competency-based evaluation model as described, and additionally establish clear, streamlined regulatory pathways for high-impact GenAI use cases.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Strongly supports CDRH's competency-based model combining standardized benchmarking with risk-tiered clinical confirmation, while urging FDA to additionally provide clear, streamlined review pathways for high-impact use cases. Supporting detail appears truncated in the passage.",
+      "summary_cut": false,
+      "source_passage": "We strongly support CDRH&rsquo;s competency-based evaluation model (integrating standardized benchmarking with risk-tiered clinical confirmation) and urge the Agency to ensure clear, streamlined pathways for high-impact use cases:"
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "The commenter is concerned that risk stratification under the two-axis framework could subject supervised, lower-consequence functions such as ambient documentation, EHR screening, and HCP-reviewed imaging second-reads to disproportionate premarket scrutiny.",
+      "requested_fda_action": "Explicitly place ambient scribing, EHR screening, and HCP-supervised imaging second-reads in lower-risk categories, and reserve the most intensive premarket evidence expectations for unmonitored autonomous execution.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The requested calibration treats the presence of HCP supervision or review as the basis for lower risk, which depends on how the human-plus-device system actually performs rather than the device alone.",
+        "delegated_authority": "The comment draws the key regulatory line at whether the function executes autonomously without monitoring, making the degree of authority delegated to the device the central risk determinant."
+      },
+      "public_summary": "Accepts the two-axis risk framework but asks FDA to calibrate it so ambient scribing, EHR screening, and HCP-supervised imaging second-reads are firmly classified as lower risk, with the most intensive premarket scrutiny reserved for unmonitored autonomous execution.",
+      "summary_cut": false,
+      "source_passage": "Two-Axis Risk Calibration (Questions 1&ndash;6): Anchor ambient scribing, EHR screening, and HCP-supervised imaging second-reads firmly in lower-risk categories, reserving high-intensity premarket scrutiny for unmonitored autonomous execution."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter is concerned that GenAI outputs involving numerical laboratory data may be imprecise or confabulated, and that safety-escalation behavior may be inadequately tested under the proposed benchmarking structure.",
+      "requested_fda_action": "Retain the competency benchmarking framework but give priority weight to the Safety Escalation (S.1) and Quantitative Analysis (E.3) competencies to ensure numerical precision and prevent confabulation in blood lab analysis.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts the competency benchmarking approach but asks FDA to prioritize the Safety Escalation and Quantitative Analysis competencies, citing the need for numerical precision and prevention of confabulated outputs in blood laboratory analysis.",
+      "summary_cut": false,
+      "source_passage": "Competency Benchmarking (Questions 7&ndash;10): Prioritize Safety Escalation (S.1) and Quantitative Analysis (E.3) to guarantee numerical precision and prevent confabulations in blood lab analysis."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Downstream device developers need access to safety-relevant information about upstream foundation models, while model developers need to protect proprietary information such as model weights.",
+      "requested_fda_action": "Fully operationalize the voluntary Foundation Model Device Master File mechanism so downstream developers can reference upstream model cards without requiring disclosure of proprietary model weights.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses how device manufacturers obtain assurance about an upstream foundation model supplier through referenceable model documentation rather than direct access to the model itself."
+      },
+      "public_summary": "Supports FDA's voluntary Foundation Model Master File concept and asks that it be fully operationalized, so downstream device developers can reference upstream model cards without foundation model developers disclosing proprietary model weights. No further conditions stated.",
+      "summary_cut": false,
+      "source_passage": "Voluntary Master Files (Question 25): Fully operationalize Foundation Model Device Master Files (MAFs) so downstream developers can leverage upstream model cards without exposing proprietary weights."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q20",
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "pccp",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter is concerned that governing model drift through repeated supplemental clearances would be burdensome, and that postmarket tools such as machine-based supervisory agents and adaptable change-control plans should be permitted instead.",
+      "requested_fda_action": "Allow machine-based supervisory agents in postmarket monitoring and authorize flexible Predetermined Change Control Plans under FD&C Act § 515C so that model drift can be managed without additional supplemental clearance submissions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment would place ongoing drift oversight in the hands of machine-based supervisory agents, delegating monitoring functions to automated systems.",
+        "evidence_burden_commercial_viability": "The comment frames repeated supplemental clearances for drift-related changes as a burden to be avoided through flexible change control."
+      },
+      "public_summary": "Endorses FDA's postmarket direction but asks it to go further: permit machine-based supervisory agents and flexible Predetermined Change Control Plans under FD&C Act § 515C so model drift can be managed without repeated supplemental clearance submissions.",
+      "summary_cut": false,
+      "source_passage": "Postmarket Monitoring (Questions 18&ndash;24): Enable machine-based supervisory agents and flexible Predetermined Change Control Plans (PCCPs) under FD&amp;C Act &sect; 515C to govern model drift without requiring burdensome supplemental clearances."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "regulatory_scope",
+      "stakeholder_concern": "The commenter wants the concepts in the discussion paper, particularly the Foundation Model Master File concept, to move from discussion to actionable policy, and wants clearance pathways for AI tools used under HCP supervision to be streamlined so that beneficial healthcare innovation is not delayed.",
+      "requested_fda_action": "Issue the discussion paper's concepts as formal Draft Guidance, establish streamlined clearance pathways for HCP-supervised AI tools, and operationalize the voluntary Foundation Model MAF program.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment asks FDA to actually operationalize the Foundation Model MAF program as a working mechanism for obtaining information about underlying third-party models, rather than leaving it as a conceptual proposal."
+      },
+      "public_summary": "Supports the discussion paper's direction and urges FDA to convert it into formal Draft Guidance, to create streamlined clearance pathways for AI tools used under healthcare professional supervision, and to operationalize the voluntary Foundation Model Master File program. No specific objections stated.",
+      "summary_cut": false,
+      "source_passage": "FDA should advance this discussion paper into formal Draft Guidance, establishing streamlined clearance pathways for HCP-supervised AI tools while operationalizing the Foundation Model MAF program to accelerate safe, life-saving healthcare innovation."
+    }
+  ]
+}

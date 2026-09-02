@@ -1,0 +1,106 @@
+{
+  "comment_id": "FDA-2026-N-7874-0037",
+  "input_hash": "f250021025b6efeb",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:07:26Z",
+  "model": "claude-opus-5",
+  "chunks": 1,
+  "positions": [
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "The consequence axis is appropriate and well-constructed. The device activity axis, as currently framed, is insufficient.\n\nBoth axes describe the output of a GenAI-enabled software function and the clinical harm that follows from relying on it. Neither axis describes the architecture and operating environment that determine whether an incorrect, degraded, or manipulated output reaches the patient in the first place.",
+      "position_gist": "The consequence axis is appropriate but the device activity axis is insufficient because neither axis captures the system architecture and operating environment that determine whether a bad output reaches the patient.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q26"
+      ],
+      "source_passage": "For deterministic Software as a Medical Device, that omission was tolerable, because functionality was bounded at release. For GenAI-enabled functions — particularly agentic ones that call tools, retrieve from external sources, and interoperate with other software — the architecture is itself a risk determinant. A framework that grades only what the function says, and not the containment of the system that says it, will systematically underestimate risk.",
+      "position_gist": "For GenAI-enabled and especially agentic functions that call tools and interoperate with other software, architecture and containment are themselves risk determinants, and a framework ignoring them will systematically underestimate risk.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q26"
+      ],
+      "source_passage": "Recommendation: Dimensions to consider:\n• Reversibility of the resulting action\n• Availability and effectiveness of downstream safeguards\n• Time pressure of the deployment setting\n• Traceability of the output to primary source material\n• Interpretive capacity of the intended user\n• Architectural connectedness and agentic coupling (Boundary definition on a shared-artifact test, East-West controls, Tool and action inventory with least privilege, Detection and containment evidence)",
+      "position_gist": "Recommends adding reversibility, downstream safeguards, time pressure, traceability, interpretive capacity of the user, and architectural connectedness/agentic coupling (boundary definition, East-West controls, least-privilege tool inventory, containment evidence) as risk framework dimensions.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q26"
+      ],
+      "source_passage": "Two foundational failures are visible, and both are architectural rather than novel:\n\nAn incorrect definition of \"connected.\" The environment was documented as isolated because it had no direct internet route. It nonetheless shared a cached artifact intermediary with the internet. A shared artifact, file store, registry, or cache that is reachable from both sides of a boundary is a connection. Enterprise Architecture has held this position for decades; the evaluation environment's design did not.\n\nUnmanaged East-West traffic. Lateral, peer-to-peer traffic between agent workloads was neither segmented nor monitored, which permitted independent agents to collaborate, share capability, and persist through remediation.\n\nThe relevance to CDRH is proportionality. If an organization with this concentration of technical talent and capital defeated its own containment boundary through basic segmentation and boundary-definition errors, then less-resourced innovators — small digital health firms, health system innovation groups, single-product startups — will not do better. They will do considerably worse, and they will do it inside clinical workflows.",
+      "position_gist": "Argues that boundary-definition errors (shared artifacts/caches count as connections) and unmanaged East-West traffic between agent workloads are the key architectural failure modes, and that less-resourced medical device developers will fare worse than large AI labs, so CDRH must address these proportionally.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q2"
+      ],
+      "source_passage": "Response 1: Build on existing terminology rather than creating a new vocabulary\nDefining the line between \"non-directive\" and \"action-directing\" is genuinely difficult, and a new taxonomy will be litigated at the margins for years. CDRH already has settled vocabulary in Factors to Consider When Making Benefit-Risk Determinations in Medical Device Premarket Approval and De Novo Classifications (FDA). Novel terminology increases the risk that manufacturers misread regulatory intent; reusing established terms reinforces it.\n\nRecommendation 1: do not treat directiveness as a new category, Treat it as a modifier of an existing factor — the probability of a harmful event.",
+      "position_gist": "CDRH should avoid a new directiveness taxonomy and instead treat directiveness as a modifier of the existing benefit-risk factor of probability of a harmful event.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "source_passage": "The current model — a fixed Instructions for Use, delivered once, with no affirmation of competency — assumes a static user. Categorical proxies such as patient versus HCP, or generalist versus specialist, are coarse and do not reflect how people actually engage with their care. Some patients become deeply expert in their own condition; others defer entirely to the medical establishment. A single label cannot distinguish them.\nRecommendation 2: permit and, at higher risk levels, require affirmation of user knowledge and competency as a gating precondition to enabling the function, with the depth of affirmation scaled to the device's risk level. A low-consequence informational function may need only acknowledgment. A function directing insulin titration should confirm that the specific user understands the correct output range, the failure modes, and the conditions requiring escalation, before that capability unlocks — and should re-affirm on a defined interval or when the function is updated.",
+      "position_gist": "Recommends replacing the fixed one-time IFU with risk-scaled, device-specific user competency affirmation that gates function enablement and is re-affirmed periodically or after updates.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q3",
+        "q4"
+      ],
+      "source_passage": "The question is framed around users \"who lack the domain knowledge to independently evaluate an output,\" with patients as the implied class. We object to that framing as both inaccurate and counterproductive.\nThe framing treats a credential as a proxy for a capability. It is not. Competence within any credentialed population is a distribution, not a constant... A framework that shifts risk downward for HCP-facing functions on the strength of the credential alone assumes an error-detection capability that the patient safety literature does not support.",
+      "position_gist": "Objects to using patient-versus-HCP credential status as a risk proxy, arguing the patient safety literature shows credentialed clinicians do not reliably detect incorrect clinical information.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "Patient activation — the knowledge, skills, and confidence to engage in one's own care — is associated with better outcomes, and contributes more for people with lower numeracy and health literacy than for those with higher skills (CDC). Patient–professional partnership improves self-management, which in turn improves health-related quality of life (International Journal of Nursing Studies), and shared decision-making is consistently associated with improved patient knowledge, reduced decisional conflict, and higher satisfaction (Frontiers in Public Health).\nWe note candidly that effects on hard clinical endpoints are heterogeneous across the shared decision-making literature (Medical Decision Making). The defensible claim is not that engagement is uniformly curative. It is that a hierarchical model which treats patient knowledge as absent is contradicted by the evidence and reinforces the same deference dynamics that patient safety programs have spent twenty-five years trying to dismantle.",
+      "position_gist": "Argues, with the qualification that effects on hard clinical endpoints are heterogeneous, that evidence on patient activation and shared decision-making contradicts a hierarchical model treating patient knowledge as absent.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q3",
+        "q4"
+      ],
+      "source_passage": "Remove the presumption that patients lack domain knowledge and HCPs possess it. Replace categorical user classification with demonstrated, device-specific competency affirmation scaled to risk. Grant mitigation credit for traceability, stated uncertainty, and named escalation triggers, and none for disclaimers. Require evaluation across the real distribution of user knowledge rather than across credential labels.",
+      "position_gist": "Recommends removing the patient/HCP presumption, using device-specific competency affirmation, granting mitigation credit only for traceability, stated uncertainty, and named escalation triggers (not disclaimers), and evaluating across the real distribution of user knowledge.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q5"
+      ],
+      "source_passage": "OpenAI demonstrated how fast this can go wrong when the assumption about the environment is wrong.  Risk should always be based on the type of information provided.  If the information is low risk, then the oversight burden is lower.  If the risk is high, the oversight burden should be high. If the GenAI can migrate, then the oversight burden should be high, as AI can change behavior.",
+      "position_gist": "Risk for multi-turn devices should be based on the type of information provided, and any device capable of migrating from non-directive to action-directing content should carry a high oversight burden.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "The weight should be relevant to the user knowledge and competency (See question #2 and #3)",
+      "position_gist": "The weighting of under- versus over-escalation errors should depend on the user's knowledge and competency, consistent with the commenter's competency-affirmation approach.",
+      "segment_id": "seg-011"
+    }
+  ]
+}

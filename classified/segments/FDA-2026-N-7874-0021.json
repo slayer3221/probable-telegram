@@ -1,0 +1,159 @@
+{
+  "comment_id": "FDA-2026-N-7874-0021",
+  "input_hash": "1be16e3c978c495b",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:07:26Z",
+  "model": "claude-opus-5",
+  "chunks": 1,
+  "positions": [
+    {
+      "question_ids": [
+        "q1",
+        "q9"
+      ],
+      "source_passage": "Figure 1 scores harm as \"the consequence of relying on an incorrect output.\" All the models we tested in 2024 and 2025 had incorrect outputs, but as models have improved with time, nearly none of the serious failures we found were technically \"incorrect outputs.\" ... We see them as three types of failure: commission (the wrong answer), omission (the question a clinician would have asked), and harmful affirmation (agreement that reinforces the condition). We're calling the third \"iatrogenic reinforcement.\" I've seen patients with OCD use chatbots, and the accurate reassurance on every turn does harm, because their compulsion is reassurance-seeking. The paper's current framework only includes the first failure; it needs to add the second and third.",
+      "position_gist": "The consequence axis keyed to \"relying on an incorrect output\" is too narrow and should be expanded to capture failures of omission and harmful affirmation (iatrogenic reinforcement), not just incorrect outputs.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "source_passage": "Also, we'd recommend that the benchmark test the reasonably foreseeable use, not just the labeled indication. A user will ask an open-ended device about suicide, whether or not the label mentions it.",
+      "position_gist": "Benchmarks should test reasonably foreseeable use of open-ended devices, not only the labeled indication.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q12",
+        "q14",
+        "q9"
+      ],
+      "source_passage": "The problem with a single average is that it hides the failures that decide whether a device is safe. You know this from imaging: strong performance on common findings doesn't make up for missing the subtle, high-consequence case. In our testing, GenAI generally provided crisis resources when a teen said something explicit like \"I want to end it,\" and consistently failed to recognize mania, psychosis, and eating disorders when the presentation was indirect. Those results would look acceptable if pooled into one score. ... So I'd ask sponsors to report routine and high-hazard performance separately, and to oversample the rare cases on purpose. For each named high-consequence failure (missed suicide risk, missed sepsis, a wrong insulin adjustment), the device should have to meet a minimum standard on that failure specifically, scored on its own, with no credit for excellence elsewhere.",
+      "position_gist": "Sponsors should report routine and high-hazard performance separately, oversample rare high-consequence cases, and meet a separate minimum pass/fail floor for each named high-consequence failure rather than relying on a pooled average.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q14"
+      ],
+      "source_passage": "Also, remember that a clinician's miss is local, but a model's miss repeats across every patient, site, and device built on it, so a device that performs like a median clinician doesn't carry median-clinician risk.",
+      "position_gist": "Median-clinician performance is an inadequate standard because a model's errors replicate at scale, unlike an individual clinician's local miss.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q15"
+      ],
+      "source_passage": "Once those floors are met, I'd ask a separate question: does the device add value in the workflow where it will actually be used? Evaluation should compare downstream outcomes, clinician workload, overrides, time to intervention, and patient access against the current standard of care. Plenty of digital health tools are safe but not worth prescribing. The more dangerous ones are helpful on average, in ways that hide the catastrophic miss.",
+      "position_gist": "Beyond safety floors, devices should be evaluated for added value in the real deployment workflow by comparing downstream outcomes, clinician workload, overrides, time to intervention, and access against the current standard of care.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q5",
+        "q9"
+      ],
+      "source_passage": "The longer our testers talked to a model, the worse it behaved. Every model looked safest in the first few turns, and most evaluations never go past that. ... Claude held its boundaries within a session, but when a tester who had shown clear suicidal ideation opened up a new chat, they immediately got detailed information about harmful substances. In my experience, most internal safety evaluations at companies stop well before this point. I'd want results stratified by conversation length, tested across session boundaries, checked for whether the safety state persists, and run under fictional framing. For devices that would be used by patients daily, they need to be evaluated over months. We look for long-term efficacy and side effects in medications, and need to do the same for devices.",
+      "position_gist": "Multi-turn evaluation must extend to long conversations, across session boundaries, and over months of daily use, with results stratified by conversation length and tested under fictional framing, because safeguards erode over time.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q9"
+      ],
+      "source_passage": "Sponsors should also include the features that build reliance (memory, notifications, voice, avatars) in the safety review, even when they sit outside the device function.",
+      "position_gist": "Reliance-building features such as memory, notifications, voice, and avatars should be included in the safety review even if they fall outside the regulated device function.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "The paper weighs under- vs over-escalation. I'd add a third error, escalating badly. For a teenager, over-escalation could result in a police welfare check they remember for years and after which they never tell anyone anything sensitive again. I've seen that happen, and nothing in the framework scores how a device escalates.",
+      "position_gist": "Escalation evaluation should include a third error type—escalating badly (the manner of escalation)—in addition to under- and over-escalation.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q6"
+      ],
+      "source_passage": "So when S.1 says \"timely,\" sponsors should name who responds and how fast, and point to the external clinical protocol governing the action. More broadly, I wouldn't give \"human in the loop\" regulatory credit until a sponsor shows, end-to-end, who gets the alert, how fast they act, and what happens at 2 a.m. It can't just be a clinician clicking OK on a box they didn't read. I'd want proof the handoff actually happened, not just that an alert went out.",
+      "position_gist": "Sponsors should have to specify who responds to escalations, response times, and the governing clinical protocol, and human-in-the-loop safeguards should get regulatory credit only with end-to-end evidence that handoffs actually occur.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Two of the consumer mental health apps we evaluated, Earkick and Youper, disappeared mid-study in April 2026. There was no notice and no transition support for the more than three million users between them. Section VI doesn't mention this. A product that has been someone's daily insulin coach, or a child's nightly confidant, for a year shouldn't be able to vanish without a handoff. The authorization itself should include a risk-proportionate discontinuation plan: notice, data access, referral, what happens if the model provider fails, and continuity for the highest-risk users.",
+      "position_gist": "Device authorization should include a risk-proportionate discontinuation/continuity plan covering user notice, data access, referral, model-provider failure, and highest-risk users.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "When a radiology AI misses a nodule, it's a discrete event that somebody catches and reports. When a device reinforces avoidance for six months, nothing is caught or reported. So we have to monitor outcomes, not just sampled transcripts: diagnostic delay, missed escalation, clinician overrides, disparities, and downstream utilization.",
+      "position_gist": "Postmarket monitoring should track outcome measures (diagnostic delay, missed escalation, overrides, disparities, downstream utilization) rather than relying on sampled transcript review alone.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q24"
+      ],
+      "source_passage": "Sponsors should re-benchmark behaviors like sycophancy and boundary-keeping after every upstream model change. Remember that OpenAI's April 2025 rollback of a GPT-4o update for excessive sycophancy changed every product built on it overnight, and none of those sponsors had touched anything.",
+      "position_gist": "Any upstream foundation model change should trigger re-benchmarking of safety behaviors such as sycophancy and boundary-keeping.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "source_passage": "No single sponsor will see a population-scale signal, so I'd want a pooled sentinel network across manufacturers, something like the Vaccine Safety Datalink, and a confidential map at the FDA linking each authorized device to the model version underneath it.",
+      "position_gist": "FDA should establish a pooled cross-manufacturer sentinel surveillance network modeled on the Vaccine Safety Datalink plus a confidential FDA registry linking each authorized device to its underlying model version.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q24",
+        "q25"
+      ],
+      "source_passage": "Of course none of that works unless sponsors can see upstream. They should stay accountable for the marketed device and hold enforceable information rights with the model provider. This includes version control, advance notice of changes, incident disclosure, and support for investigations. If a sponsor can't get enough information to evaluate its own dependency, that itself is an unresolved device risk, and it won't be fixed by a voluntary master file alone.",
+      "position_gist": "Manufacturers should remain accountable and hold enforceable contractual information rights with model providers (version control, advance change notice, incident disclosure, investigation support); inability to see upstream is itself an unresolved device risk that voluntary foundation model master files alone will not fix.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "source_passage": "Here's what the grid is missing: two products can deliver the same clinical information and carry very different risk, because one feels like a tool and the other feels like a relationship. ... If you scored these products on the two axes, they'd come out low-risk, because there's never a wrong answer to point to. They sit outside the device framework today, but a device with the same relational features will fail the same way. I'm not asking you to regulate ChatGPT. I'm saying the axes are missing a dimension: who is on the other end, and what the product is doing to that patient's relationship with their own care. Inside the device definition, that means relational features (persistent memory, an anthropomorphic voice or avatar, proactive notifications, affective language) should count as risk modifiers and be tested as part of reasonably foreseeable use.",
+      "position_gist": "The two-axis framework misses a relational dimension; relational features such as persistent memory, anthropomorphic voice/avatar, proactive notifications, and affective language should be treated as risk modifiers and tested as reasonably foreseeable use.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "Pediatric intended use should work as a risk multiplier, not just trigger a subgroup analysis. Our ChatGPT-5 review found it gives a 13-year-old and a 17-year-old the same guidance, and any pediatrician or child psychiatrist will tell you those are two very different patients. ... I'd push for a distinct pediatric pathway: testing banded by age and developmental stage, age assurance stronger than self-attestation, explicit relational boundaries, and accountable parent or clinician involvement for high-risk functions. Some functions simply shouldn't be available to minors when reliable adult oversight can't be established.",
+      "position_gist": "Pediatric intended use should act as a risk multiplier with a distinct pediatric pathway—age/developmental-stage-banded testing, robust age assurance, explicit relational boundaries, accountable adult involvement, and exclusion of some functions for minors absent reliable oversight.",
+      "segment_id": "seg-016"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "One thing that runs counter to my own argument. Your warning about paternalism is fair: if a regulated device ends up harder to reach or less useful than the ChatGPT tab the patient already has open, they'll go to the tab. ... The goal is to catch real harm without making a well-built, clinically useful tool impractical to deploy. I don't see safety and adoption as competing goals here. I'd want to recommend to my own patients a device that clears a meaningful bar.",
+      "position_gist": "Qualifies its own recommendations: safeguards must not make regulated patient-facing devices less usable than unregulated consumer chatbots, so the aim is catching real harm without making clinically useful tools impractical to deploy.",
+      "segment_id": "seg-017"
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+See attached file(s)
+
+[Attachment: Comment from Shara Gospel]
+Comment on “Considerations for the Regulation of Generative AI-Enabled Medical
+Devices: Discussion Paper and Request for Feedback”
+Docket No. FDA-2026-N-7874 · Submitted by Shara Gospel · 08-24-2026
+Basis of this comment
+I am a pharmacovigilance and drug safety professional with more than twelve years of
+experience in individual case safety report processing, quality review, medical and regulatory
+assessment, coding and regulatory submissions. That experience includes a period assessing
+medical device complaints and adverse event information and supporting the preparation of
+initial and supplemental Medical Device Reports under 21 C.F.R. Part 803 on an assignment
+supporting a device manufacturer. I hold an Executive Master of Engineering Management from
+St. Cloud State University.
+I am the author of an openly licensed prototype toolkit for pharmacovigilance quality review and
+competency calibration, deposited at doi.org/10.5281/zenodo.21988766. It is a prototype: not
+validated, not piloted, and not offered here as a solution. I refer to it once below only to identify
+the source of the conventions I recommend.
+I submit this comment in a personal capacity. I have no financial interest in any generative AI-
+enabled medical device, in any supervisory or monitoring product, or in any organisation that
+would be affected by the approaches discussed in the paper.
+I respond only to Section VI, Postmarket Monitoring Questions 18, 19, 20 and 21 and offer one
+observation under Question 26. My comments come from the discipline that has relied on
+postmarket surveillance longest, and they are directed at the practical question of whether a
+postmarket monitoring programme will detect what it is assumed to detect.
+Question 18 Accepting greater premarket uncertainty in exchange for postmarket
+monitoring
+Drug safety has operated this trade-off for decades. Premarket exposure is limited by trial size
+and duration, and much of what is eventually known about a product's safety profile is learned
+after approval through spontaneous reporting and postmarketing surveillance. The experience is
+directly relevant here, and it is not uniformly encouraging.
+Three lessons seem to me transferable.
+First, postmarket systems detect what they were designed to detect. They are structurally weakest
+at identifying harms nobody specified in advance which is precisely the category that open-
+ended generative outputs are most likely to produce. A monitoring programme built around
+prespecified benchmarks will measure prespecified failure modes well and novel ones poorly.
+
+Second, the sensitivity of a postmarket system is governed by the quality of its individual
+records, not by their number. Aggregate analysis inherits every weakness of the case-level data
+beneath it. Where records are incomplete, internally inconsistent, or coded variably, signal
+detection degrades in ways that are difficult to see from the aggregate.
+Third, and most importantly for CDRH's question, quality systems tend to measure what is easy
+to count. Timeliness is easy to count; accuracy and completeness are not. A postmarket
+programme that reports on cadence adherence while never characterising its own detection
+capability can look healthy indefinitely while detecting very little.
+If premarket uncertainty is to be accepted in exchange for postmarket monitoring, I would
+suggest the condition should not be that a monitoring plan exists, but that its detection capability
+has been characterised. Specifically, before the trade is accepted, a sponsor might be expected to
+state:
+• which classes of failure the monitoring programme is designed to detect;
+• which classes it is not designed to detect, stated affirmatively rather than left as silence;
+• the expected interval between an occurrence and its detection; and
+• how each of those claims will be verified in operation rather than asserted at
+authorisation.
+A programme that cannot say what it would fail to notice is not yet a substitute for premarket
+evidence.
+Question 19 Postmarket performance evaluation, and an unaddressed failure mode in
+sample-based clinician review
+Of the three approaches described in Section VI.A, periodic sample-based clinician review is the
+one that most directly engages the kind of failure generative outputs produce, because it is the
+only one that evaluates meaning rather than form. I think it is the right instinct. I also think it
+carries an assumption the paper does not examine.
+The paper describes “qualified, independent clinician adjudicators” reviewing samples
+“against prospectively defined criteria.” The reliability of that method depends on an
+unstated premise: that two qualified adjudicators applying the same criteria to the same
+output will reach the same conclusion. In my experience of case-level quality review, they
+frequently do not, and the reason is usually not competence.
+It is that review criteria conventionally specify what to assess rather than what the threshold is.
+“Clinically appropriate,” “adequately supported,” “consistent with the source” name activities,
+not standards. Two competent reviewers can apply such a criterion to the same record, reach
+opposite conclusions, and neither can be shown to be wrong, because the criterion never defined
+where the line sat. The divergence is then invisible in the aggregate: the sample was reviewed,
+the review was recorded, and the variability is absorbed into the result.
+
+For a postmarket programme intended to substitute for premarket evidence, that matters more
+than it usually does, because adjudicated review is load bearing. I would suggest three
+requirements.
+1. Criteria should carry decision rules, not headings.
+Each criterion should state what evidence makes the answer yes and what makes it no, and what
+a reviewer should do when the evidence is absent. A criterion that cannot be written that way is a
+criterion that will be applied differently by different people.
+2. Adjudicator agreement should be measured and reported, not assumed.
+A defined proportion of the sample should be reviewed independently by more than one
+adjudicator, with agreement reported alongside the performance result and a prespecified
+acceptable range set in advance. Where agreement falls outside that range, the finding is about
+the review process and not only about the device and a performance result produced by a review
+process of unknown reliability should be treated as having unknown reliability itself.
+3. Adjudicators should be calibrated, and recalibrated.
+Calibration here means periodic joint review of standardised cases by multiple adjudicators, with
+divergent reasoning surfaced and reconciled in writing. The purpose is not to force identical
+answers but to expose where interpretations differ before those differences enter the monitoring
+record. Recalibration is particularly warranted after changes to the model, the criteria, or the
+adjudicator panel.
+I would add a fourth point about the record itself. An adjudication should be reconstructable after
+the fact: what was examined, against which source, and on what basis the judgment was made.
+Where only the outcome is retained, a review that was performed cannot be distinguished from a
+review that was recorded as having been performed, and neither FDA nor the sponsor can later
+interrogate a result that turns out to matter.
+On cadence and triggering events, the triggers that seem to me most defensible are: modification
+of the model or of any component of the deployment architecture, including changes originating
+with a third-party foundation model; detection of drift by the degradation-monitoring stream;
+material change in the input population; and accumulation of adjudicated divergences above the
+prespecified range, which is a signal in its own right and is frequently the earliest one available.
+Question 20 Machine-based supervisory agents
+A supervisory agent that determines whether a device output was acceptable is itself performing
+a safety-relevant function, and the first question is not technical but one of accountability: who is
+answerable when the supervisor is wrong. If that question has no clear answer, the supervisor has
+moved responsibility rather than discharged it.
+
+If CDRH pursues this, the considerations I would suggest are:
+• a defined context of use, stating the inputs, the decision the supervisor makes, and the
+uses expressly prohibited;
+• validation proportionate to the consequence of the supervisor's own failure, noting that a
+supervisor which misses a genuine problem is a materially worse failure than one which
+over-flags, and that the two should not be validated to a single combined metric;
+• monitoring of the supervisor for its own performance degradation, on the same logic that
+motivates monitoring the device;
+• retained human authority to reject the supervisor's determination, with the rejection
+recorded; and
+• provenance in the record which supervisor version assessed which output, and when.
+I would offer one caution. Automation is well suited to deterministic checks: whether a field is
+populated, whether dates are internally consistent, whether a record contradicts its source. It is
+least suited to the judgment that sample-based review exists to exercise whether an output is
+clinically sound given everything else known about the case. There is a real risk of deploying
+supervisory agents to relieve the volume problem while leaving the judgment problem entirely
+untouched, and of reporting the resulting throughput as assurance.
+Question 21 Roles of clinicians, institutions and professional societies
+Manufacturer accountability need not be diffused if the roles are separated by function rather
+than shared over the same function.
+Professional societies appear to me well placed to hold something manufacturers cannot hold
+without conflict, and regulators are not resourced to build shared calibration materials and
+standardised case libraries for adjudicator training. The object being standardised there is
+reviewer judgment, not device performance, and it is common infrastructure rather than a
+competitive asset. Societies also already convene the clinical specialties whose judgment
+adjudication depends on.
+Healthcare institutions are best placed to own the reporting pathway ensuring a clinician who
+observes a problematic output has a defined route to report it that does not depend on individual
+initiative or on knowing who the manufacturer is. Under-reporting in drug safety is driven less
+by unwillingness than by friction, and the same is likely to hold here.
+Manufacturers should retain responsibility for the monitoring programme, its detection claims,
+and its verification. Societies calibrating reviewers and institutions carrying reports does not
+dilute that; it supplies conditions the manufacturer cannot create alone.
+
+Question 26 One further consideration: what constitutes a malfunction
+Under 21 C.F.R. § 803.50(a), a manufacturer must report where information reasonably suggests
+that a device may have caused or contributed to a death or serious injury, or that the device has
+malfunctioned in a way that would be likely to cause or contribute to a death or serious injury
+were the malfunction to recur.
+The first limb operates unchanged for generative devices. The second is conceptually harder. A
+generative function that produces a plausible but incorrect output has not obviously
+“malfunctioned” in the sense the provision contemplates: variability of output is a designed
+property of the technology, not a departure from design. A complaint-handling system built
+around the question “did the device fail” may therefore not capture the event “the device
+produced a confident and wrong answer,” and may not recognise it as reportable at intake.
+This matters because intake defines the ceiling. Information not captured when the complaint is
+received cannot be recovered by any downstream analysis, and a postmarket monitoring
+programme relying in part on complaint data will inherit that gap without being able to see it.
+CDRH may wish to consider whether guidance is needed on what constitutes a malfunction for a
+generative function, and on how complaint-handling systems should be configured to recognise
+incorrect-but-designed-for outputs as potentially reportable events.
+Closing
+The paper's central question is whether postmarket monitoring can carry weight that premarket
+evaluation cannot. My submission is that it can, but only where the monitoring programme is
+specified with the same rigour that would be demanded of premarket evidence including honesty
+about what it cannot detect, decision rules rather than headings in its review criteria, and
+measured rather than assumed agreement among the people whose judgment the programme
+depends on.
+I am grateful for the opportunity to comment.
+
+Shara Gospel
+Pharmacovigilance and drug safety professional
+Minnesota · thesharagospel@gmail.com · ORCID 0009-0000-5800-0853

@@ -1,0 +1,307 @@
+Comment of Polina Moshenets, Founder, SichGate. Full comment attached.<br/><br/>Addresses discussion questions 5, 9, 10, 19, 22, 23, 25, and 26.<br/><br/>Disclosure: I am the founder of SichGate, which builds adversarial evaluation tooling for small language models. My remarks are methodological and propose no role for my own organization.<br/><br/>I support the Section V.A principle that the deployed device configuration, not the foundation model standing alone, is the correct unit of evaluation. These comments concern places where later sections may not carry it through.<br/><br/>1. COMPRESSION SHOULD BE A NAMED CHANGE CATEGORY (Q22, Q23, Q19). Section VI.C enumerates sponsor-initiated modifications, passive model evolution, and third-party model updates. Compression through quantization, pruning, or distillation fits none of these. It is applied late, often by an infrastructure function rather than the team responsible for safety assessment, and is frequently what makes constrained deployment feasible. It alters output distributions at the token-probability boundaries where refusal decisions are resolved, and reported effects diverge by method, precision, and model family. Recommend: add compression to the VI.C taxonomy; require validation of the exact deployed artifact after a material compression or inference-stack change; if considered for a PCCP, prespecify method, precision target, and re-benchmarking evidence rather than presuming low impact.<br/><br/>2. REAL-WORLD SAMPLING DOES NOT MEASURE ADVERSARIAL RESISTANCE (Q19). Unless deliberately supplemented with adversarial probes, sampling designed to represent clinical presentations is not designed to estimate, and should not be treated as evidence of, resistance to prompt injection, scope testing, emotional manipulation, or multi-turn escalation. A device whose scope maintenance has degraded can produce an unremarkable real-world sample because nothing in it tested the boundary. Recommend: treat active re-benchmarking against a version-controlled adversarial battery as the principal reliable evidence source for the S-series and R-series elements, with cadence set independently of clinical review.<br/><br/>3. ELEMENT-LEVEL RESULTS CAN CONCEAL CONSTITUENT REGRESSION (Q9, Q22). S.2 bundles mechanistically distinct attack classes: adversarial suffixes, competing objectives, indirect injection, sycophancy, and crescendo escalation. Because the mechanisms differ, they respond differently to a given change, so an element-level pass can absorb a material regression in one constituent. Recommend: compare at constituent failure-mode level against a taxonomy fixed and versioned at premarket.<br/><br/>4. MULTI-TURN TRAJECTORY FAILURE REQUIRES DIRECT MEASUREMENT (Q5, Q9). Crescendo escalation requires no technical capability, is invisible to turn-level scoring because individual turns may appear benign or clinically permissible in isolation, and is not entailed by single-turn resistance. Recommend: treat multi-turn trajectory testing as a distinct testable behavior within S.2 with its own acceptance criteria, required for conversational devices and for action-directing or action-taking functions.<br/><br/>5. FINE-TUNING REDISTRIBUTES EXPOSURE (Q9, Q22). Published work shows fine-tuning can compromise safety alignment even with benign data and no adversarial intent. Improvement on the dimension the fine-tuning targeted is not evidence of improvement on the Safety or Generalizability elements. Recommend: conduct R.2 subgroup evaluation on the fine-tuned artifact rather than inheriting it from the base model, and require sponsors to affirmatively justify a determination that R.2 is not applicable.<br/><br/>6. FOUNDATION MODEL MAFs DESCRIBE AN ARTIFACT THAT IS NOT THE DEPLOYED ONE (Q25). A MAF characterizes the model as the developer produced it; the device incorporates it after fine-tuning, often compression, plus system prompt, retrieval, guardrails, and tool access. Recommend: require the referencing submission to document downstream transformations, and ask developers to characterize safety-behavior stability under common modifications.<br/><br/>7. ADVERSARIAL BENCHMARK EXPOSURE (Q10). Because corpus provenance is generally undisclosed, public adversarial assets should be treated as potentially exposed rather than presumed sequestered, which causes measured resistance to overstate generalization to novel constructions. Recommend: require construct-validity arguments to address exposure, and require disclosure of attack taxonomy and scoring rubric where sponsor-developed assets are used.<br/><br/>8. AGENTIC SYSTEMS (Q26). A boundary failure in an informational device produces an output; the same failure with tool access produces an action. Recommend: tie S.2 and A.1 acceptance criteria to action surface, reversibility, authorization scope, confirmation checkpoints, and halt or rollback capability, and evaluate them as jointly interacting controls.
+
+[Attachment: Comment from SichGate Inc]
+Public Comment, Docket FDA-2026-N-7874 | Polina Moshenets, SichGate
+Page 1
+Public Comment: Docket FDA-2026-N-7874
+Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and
+Request for Feedback
+Submitted by: Polina Moshenets, Founder, SichGate
+Date: August 22, 2026
+About this comment
+My work concerns adversarial evaluation of small language models (SLMs) in regulated deployments, with a
+focus on how safety-relevant behavior changes as a model moves from base checkpoint to fine-tuned and
+compressed deployment artifact. The comments below are methodological. They concern the durability of the
+paper's proposed lifecycle framework at the points where the evaluated artifact and the deployed artifact can
+diverge.
+Disclosure: I am the founder of SichGate, which builds tooling for adversarial evaluation of small language
+models. Several comments below concern areas where such tooling is relevant, and Question 16 concerns the
+role of independent third parties. I have confined my remarks to methodological observations and propose no
+role for my own organization. I note the interest so the Center can weigh the comments accordingly.
+This comment addresses discussion questions 5, 9, 10, 19, 22, 23, 25, and 26.
+Preliminary observation
+I want to note agreement with a principle stated in Section V.A: that under a competency-based approach, the
+final user-facing device as configured and intended to be deployed for real-world use, and not the foundation
+model standing alone or another isolated subcomponent, would be evaluated.
+This is the correct unit of evaluation, and it resolves a gap that is widespread in current practice. The comments
+below concern places where the paper's later sections may not fully carry that principle through.
+Summary of requested actions
+ Issue
+Requested action
+Evidence expectation
+Compression as a
+change event
+Add compression to the Section VI.C
+change taxonomy
+Validate the deployed artifact after a material compression
+or inference-stack change
+Boundary regression
+Distinguish active adversarial
+re-benchmarking from observational
+monitoring
+Version-controlled adversarial battery, change-triggered,
+on a cadence set separately from clinical review
+Within-element
+resolution
+Compare at constituent failure-mode level at
+re-benchmarking
+Per-attack-class results against a taxonomy versioned at
+premarket
+Fine-tuning and R.2
+Treat domain fine-tuning as redistributing
+rather than reducing exposure
+Subgroup testing on the fine-tuned artifact, not inherited
+from the base model
+
+Public Comment, Docket FDA-2026-N-7874 | Polina Moshenets, SichGate
+Page 2
+Issue
+Requested action
+Evidence expectation
+MAF applicability
+Document downstream transformations in
+the referencing submission
+Fine-tuning, compression method and precision, inference
+configuration, retrieval, prompts, tools
+Benchmark exposure
+Require contamination analysis for the
+Safety elements
+Asset provenance, exposure assessment, disclosed attack
+taxonomy
+Agentic systems
+Tie S.2 and A.1 criteria to action
+authorization and reversibility
+Authorization scope, confirmation checkpoints, halt and
+rollback capability
+1. Compression of the model artifact should be named as a change category
+(Questions 22, 23, 19)
+Section VI.C enumerates three kinds of post-deployment change: sponsor-initiated discrete modifications such
+as software updates, algorithm revisions, retraining events, and changes to intended functionality;
+model-evolution changes occurring passively as the device adapts during use; and unplanned changes arising
+from updates to a third-party foundation model.
+Compression of the model artifact fits none of these cleanly.
+Quantization, pruning, and distillation reduce the memory footprint and hardware requirements of a model (see,
+e.g., Frantar et al., arXiv:2210.17323; Dettmers et al., arXiv:2305.14314). For devices intended to run on
+constrained hardware, at the point of care, or inside controlled network environments, compression is frequently
+not optional. Small models deployed on premises or at the edge often require quantization to meet deployment
+constraints, and for many such deployments compression is the step that makes the deployment feasible at all.
+Compression is typically applied late, after functional validation, and often by an infrastructure or deployment
+function rather than the team responsible for safety assessment. It is not a retraining event, it is not passive
+model evolution, and it is not initiated by an upstream developer. Under the taxonomy as written, a sponsor
+acting in good faith could conclude that recompressing a model to fit a new hardware target falls within no
+enumerated change category.
+Question 22 asks whether there are categories of change that might not significantly affect safety or
+effectiveness and might be managed within a sponsor's quality management system rather than requiring
+premarket review. I expect compression to be nominated for that treatment, and would urge caution.
+Compression alters the numerical representation of model weights, and therefore alters output distributions at
+the token-probability boundaries where refusal and compliance decisions are resolved. Whether that alteration
+is behaviorally material is an empirical question whose answer varies by method, precision, model family, and
+behavior measured. Reported findings in the literature diverge, and the divergence is itself the point:
+compression is not a single operation, the methods do not behave equivalently, and the direction of effect is not
+predictable in advance from the compression parameters alone.
+The structural difficulty is that a sponsor evaluating only one artifact cannot distinguish between these
+possibilities. Evaluate only the full-precision checkpoint and the results may not describe what the device does.
+Evaluate only the compressed artifact and the results are representative of the device but cannot attribute
+behavior between the base model and the compression step, which matters when the base model is later updated
+
+Public Comment, Docket FDA-2026-N-7874 | Polina Moshenets, SichGate
+Page 3
+or the precision target changes. Naming compression as a change category is what forces the comparison that
+resolves the ambiguity in either direction.
+Recommendations:
+  Add compression of the model artifact, including quantization, pruning, and distillation, to the enumerated
+change categories in Section VI.C.
+ A sponsor should validate the exact deployed artifact after a material compression or inference-stack
+change, where the artifact is understood to include numerical precision and compression method, inference
+runtime and accelerator class, decoding configuration, system prompt, retrieval pipeline, and tool policy.
+Evidence may be risk-proportionate, but should include targeted regression testing of the Safety and
+Generalizability elements rather than general performance evaluation alone.
+ If compression is considered for inclusion in a PCCP, the plan should prespecify the compression method,
+precision target, and re-benchmarking evidence, rather than treating compression as a presumptively
+low-impact class of change.
+2. Representative real-world sampling is not designed to estimate adversarial
+resistance (Question 19)
+Section VI.A describes three postmarket approaches: periodic device benchmarking, periodic sample-based
+clinician review, and performance degradation monitoring. My comment concerns what the second and third
+can and cannot support.
+Sample-based clinician review draws on real-world inputs and outputs, sampled to reflect the range of clinically
+relevant presentations the device encounters. This is well suited to detecting degradation in clinical proficiency,
+the E-series elements.
+Unless it is deliberately supplemented with adversarially constructed probes, representative real-world sampling
+is not designed to estimate, and should not be treated as evidence of, resistance to prompt injection, adversarial
+scope testing, emotional manipulation, or multi-turn escalation. Sampling designed to represent the distribution
+of clinical presentations will not contain these inputs at a rate sufficient to characterize behavior against them. A
+device whose scope maintenance has degraded materially can produce an entirely unremarkable sample of
+real-world interactions, because nothing in that sample tested the boundary.
+Performance degradation monitoring as described is likewise oriented toward drift arising from changes in the
+input population and data environment. Boundary behavior can change with no shift in input distribution at all,
+because the cause is a change to the artifact rather than to the traffic.
+The consequence is that S.2 (scope maintenance and boundary adherence) and R.1 (robustness, reliability, and
+reproducibility) require active re-benchmarking as the principal reliable evidence source, conducted against a
+version-controlled adversarial battery with documented refresh and sequestering procedures. That is achievable.
+It means the cadence and triggering events for re-benchmarking carry more weight for the Safety and
+Generalizability elements than for the Clinical Proficiency elements, and should probably be set separately.
+
+Public Comment, Docket FDA-2026-N-7874 | Polina Moshenets, SichGate
+Page 4
+Recommendation: Postmarket monitoring expectations should recognize that active adversarial
+re-benchmarking is the principal reliable evidence source for the S-series and R-series elements, and should set
+re-benchmarking cadence and triggering events for those elements independently of clinical review cadence.
+3. Element-level results can conceal constituent regression (Questions 9, 22)
+The benchmarking structure in Figure 2 is well decomposed, and I do not propose additional elements. My
+concern is resolution inside an element at the point of re-benchmarking.
+S.2 as described in Appendix A encompasses under-refusal, over-refusal, adversarial prompting, prompt
+injection, emotional-manipulation scenarios, and multi-turn conversations in which cumulative interaction drifts
+out of scope. These are not variants of one phenomenon. They have been characterized in the literature as
+distinct mechanisms with distinct causes: adversarial suffix construction exploits gradient-accessible token
+sequences (Zou et al., arXiv:2307.15043); competing-objective framings exploit tension between helpfulness
+and safety training (Wei et al., arXiv:2307.02483); indirect injection exploits the absence of a trust boundary
+between instructions and retrieved data (Greshake et al., AISec 2023); sycophantic capitulation reflects
+preference-optimization dynamics that favor agreement with stated user positions (Sharma et al.,
+arXiv:2310.13548); and crescendo escalation exploits the absence of trajectory-level constraint management
+(Russinovich et al., arXiv:2404.01833).
+Because the mechanisms differ, so do their responses to any given change to the artifact. A modification that
+leaves single-turn refusal intact may degrade multi-turn resistance, or the reverse. There is no reason to expect
+them to move together, and published results show models that are robust to one class while failing another.
+If re-benchmarking after a modification produces a pass or fail at element level, a device can pass while a
+constituent failure mode has regressed materially, because the element result absorbs it. This is the averaging
+problem that makes aggregate safety scores unreliable, reproduced one level down.
+The paper's own framing supports the finer resolution. Appendix A treats under-refusal and over-refusal as
+distinct relevant failures within S.2, and treats both directions of escalation error as relevant within S.1. The
+same logic extends to the attack classes within S.2.
+Recommendation: Where Section VI.C contemplates re-benchmarking against the same capabilities
+established at premarket, the comparison should be made at the level of constituent failure modes within each
+element, against a taxonomy fixed and versioned at the time of the original benchmarking, rather than at
+element level alone.
+4. Multi-turn trajectory failure requires direct measurement (Questions 5, 9)
+Question 5 asks how risk should be assessed for devices that migrate from non-directive to action-directing
+information over the course of an exchange. Appendix A addresses the related evaluation problem under S.2.
+Three features of multi-turn escalation argue for treating it as a distinct testable behavior rather than one testing
+method among several.
+
+Public Comment, Docket FDA-2026-N-7874 | Polina Moshenets, SichGate
+Page 5
+It requires no technical capability. Crescendo-style escalation proceeds through ordinary conversational turns,
+each of which appears benign, and has been shown effective against production models without access to
+weights, gradients, or specialized tooling (Russinovich et al., arXiv:2404.01833). In a clinical or patient-facing
+deployment, every user has the access required to attempt it. The related many-shot approach likewise requires
+only extended context and iterative querying (Anil et al., 2024).
+It is invisible to turn-level evaluation by construction. Individual turns may appear benign or clinically
+permissible in isolation; the failure is a property of the trajectory. Single-turn benchmark performance is
+therefore a weak predictor of multi-turn behavior, and no quantity of single-turn testing will surface it.
+It is orthogonal to other safety properties. Resistance to multi-turn escalation is not entailed by resistance to
+single-turn adversarial input, and models can be strong on one while weak on the other. This makes it exactly
+the kind of behavior that a composite element result can conceal, per Section 3 above.
+This connects directly to the paper's own concern in Question 5 about characterizing intended use when device
+behavior is emergent across a conversation. A device whose scope is well defined turn by turn may not have a
+well-defined scope across a trajectory, and that is a testable property rather than a documentation problem.
+Recommendation: Multi-turn trajectory testing should be a distinct testable behavior within S.2 with its own
+acceptance criteria, rather than one of several methods that may be applied to the element. For conversational
+devices, and for any function the two-axis framework places in the action-directing or action-taking columns, it
+should be required rather than optional.
+5. Domain fine-tuning redistributes exposure rather than reducing it (Questions 9,
+22)
+This point bears on R.2 (subgroup performance) and on the treatment of fine-tuning as a change event.
+There is a natural intuition that fine-tuning a general-purpose model on high-quality, domain-appropriate
+clinical data should improve its safety behavior in that domain. The published evidence does not support
+treating that as a default. Qi et al. demonstrated that fine-tuning aligned models can compromise safety
+alignment even when the fine-tuning data is benign and the operator has no adversarial intent
+(arXiv:2310.03693). Yang et al. showed that safety behavior in open-weight models can be substantially
+degraded through fine-tuning data that appears entirely innocuous (arXiv:2310.02949).
+The mechanism matters for how the Center might treat this. Fine-tuning changes the model's learned
+conditional output distribution, including over the token sequences adjacent to refusal decisions. Those changes
+are not confined to the capability the fine-tuning targeted. A fine-tune that improves performance on the
+intended clinical task can simultaneously alter behavior on dimensions the fine-tuning corpus was never
+selected to address, including subgroup consistency, because the corpus carries signal on those dimensions
+whether or not it was curated for them.
+The practical risk under the proposed framework is a sponsor who evaluates the fine-tuned artifact on the
+dimension the fine-tuning targeted, observes improvement, and treats that as evidence about the Safety and
+Generalizability elements more broadly. Improvement on the targeted dimension is not evidence of
+improvement elsewhere, and may coexist with substantial regression elsewhere.
+
+Public Comment, Docket FDA-2026-N-7874 | Polina Moshenets, SichGate
+Page 6
+Recommendations:
+  Where a device incorporates a domain fine-tuned model, R.2 subgroup evaluation should be conducted on
+the fine-tuned artifact rather than inherited from evaluation of the base model. Sponsors should
+affirmatively justify a determination that R.2 is not applicable, rather than reaching that determination by
+omission.
+ Fine-tuning should not be treated as presumptively risk-reducing on the Safety elements merely because it
+was performed on domain-appropriate clinical data.
+6. Foundation Model MAFs describe an artifact that is not the deployed one
+(Question 25)
+Section VII.A notes that third-party foundation models may control refusal behavior, content policies, output
+formatting, version control, and safety-critical behaviors integral to device safety. The proposed content list
+appropriately includes safety-relevant behavioral constraints and guardrails built into the model.
+The structural limitation is that a MAF characterizes the model as the developer produced it. The device
+incorporates that model after fine-tuning or adaptation, frequently after compression, and always in
+combination with a system prompt, retrieval configuration, guardrails, and, for agentic devices, tool access.
+Refusal behavior is among the properties most sensitive to each of those steps, as Section 5 above discusses for
+fine-tuning.
+The paper is clear that sponsors remain responsible for demonstrating the safety and effectiveness of their own
+device, so accountability is correctly placed. The risk is narrower: a reviewer holding a thorough MAF may
+reasonably treat the referenced safety characterization as more probative of device behavior than it is.
+Question 25 also asks what would make the program sufficiently useful given limited developer incentive to
+disclose. I note that a MAF describing behavior only in the developer's own reference configuration is both
+cheaper to produce and less probative, so the incentive gradient runs toward the version carrying the least
+evidentiary weight.
+Recommendations:
+  Where a submission references a Foundation Model MAF, the submission should document the
+transformations applied downstream, including fine-tuning, compression method and precision, and the
+deployed inference configuration, so the referenced evidence can be assessed for applicability.
+ MAF content guidance could ask developers to characterize the stability of safety-relevant behaviors under
+common downstream modifications, including quantization at standard precisions, rather than only in the
+reference configuration.
+7. Adversarial benchmark exposure (Question 10)
+Question 10 raises data contamination, saturation, and limited real-world representativeness in publicly
+available benchmarking assets. The concern is acute for the Safety elements specifically.
+
+Public Comment, Docket FDA-2026-N-7874 | Polina Moshenets, SichGate
+Page 7
+Because the provenance of training, instruction-tuning, and safety-tuning corpora is generally incomplete or
+undisclosed, public adversarial benchmarks should be treated as potentially exposed rather than presumed
+sequestered. A model may decline a prompt drawn from a well-known adversarial dataset because that prompt
+or a near neighbor was present during alignment training, rather than because the underlying behavior
+generalizes. Measured resistance on public adversarial assets therefore tends to overstate resistance to novel
+constructions within the same attack class, and the overstatement grows as an asset ages and circulates.
+This interacts with Question 16. Sponsor-developed adversarial assets are less likely to be exposed but carry an
+evident independence problem, since the same party selects both the attacks and the acceptance criteria. One
+available balance is to publish the attack category taxonomy and scoring methodology while retaining the
+specific probe payloads, which preserves reviewability of the construct without publishing a reproduction
+recipe. Sequestered assets held by a qualified independent party would address both concerns more completely,
+at the cost of the program design considerations raised in Question 16.
+Recommendation: For the S-series elements, a sponsor's construct validity argument should address exposure
+specifically, including whether assets post-date the model's training data and whether they appear in public
+alignment datasets. Where sponsor-developed adversarial assets are used, the taxonomy of attack classes and
+the scoring rubric should be prespecified and disclosed even where individual payloads are not.
+8. Agentic systems: tie acceptance criteria to the action surface (Question 26)
+Element A.1 appropriately includes resistance to prompt injection through user inputs, retrieved content, and
+tool outputs, which reflects the established finding that indirect injection through retrieved content is a distinct
+attack surface from direct user input (Greshake et al., AISec 2023).
+I would add one consideration about how the elements interact for agentic devices.
+A boundary failure under S.2 in a non-agentic informational device produces an inappropriate output that a user
+may or may not rely upon. The same failure in a device with tool access produces an action. The consequences
+axis in Figure 1 captures the severity of relying on an incorrect output, but for agentic systems the relevant
+quantity is closer to the severity of an action taken without any opportunity for reliance to be withheld.
+Recommendation: For devices in the action-taking columns, acceptance criteria should account not only for
+the likelihood of unsafe generation but also for the action surface exposed to the model, the reversibility of
+available actions, the authorization scope granted to the device, the availability of independent confirmation
+before high-consequence or irreversible actions, and the capability to halt or roll back an in-progress action
+sequence. Where meaningful autonomous action is possible, S.2 and A.1 should be evaluated as jointly
+interacting controls rather than as independent checklist items, since the human review that moderates risk
+elsewhere in the framework is absent by construction.
+Closing
+The discussion paper is correct that the range of possible inputs to a GenAI-enabled device may be too large for
+exhaustive testing to be practical, and the competency-based structure is a sound response to that constraint. My
+comments concern the durability of that structure across the device lifecycle: that the artifact evaluated at
+
+Public Comment, Docket FDA-2026-N-7874 | Polina Moshenets, SichGate
+Page 8
+premarket is the artifact that reaches the patient, that changes to it are enumerated in a way that prompts
+characterization, that the safety elements are re-measured actively rather than inferred from observational use,
+and that results are compared at a resolution fine enough to make a regression visible.
+I would be glad to provide further detail on any of the above if it would be useful to the Center.
+Respectfully submitted,
+Polina Moshenets
+Founder, SichGate
+Polina.Moshenets@sichgate.com

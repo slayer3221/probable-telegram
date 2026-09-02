@@ -1,0 +1,232 @@
+See attached file(s)I am attaching an analysis with pediatric emphasis and use a rated atyle to show it measure from different perspectives as a pediatrician in general practice who has taught pediatric informatics and AI to other pediatricians.
+
+[Attachment: Comment from Mark Simonian MD FAAP]
+1
+
+Regulating Gen AI Enabled Devices
+I read this as a request to critically appraise the FDA/CDRH discussion paper itself—not as a
+scientific efficacy study. The most useful metric is regulatory/scientific framework
+quality, rather than a conventional risk-of-bias score for an RCT.
+The paper proposes three major ideas: a risk framework based principally on device
+activity/autonomy and consequences of an incorrect output; a competency-based premarket
+evaluation combining benchmarking with clinical confirmation; and a total-product-lifecycle
+approach in which post market monitoring and re-evaluation become unusually important. FDA
+explicitly says this is a discussion paper, not draft/final guidance or a statement of regulatory
+requirements.
+Overall assessment
+My rating: 7.5/10 as a conceptual regulatory framework, but ~5/10 for evidentiary
+maturity.
+The paper identifies the right problems unusually well. Its weakness is that many of the proposed
+solutions are still conceptually appealing rather than empirically validated. The
+“competency” testing risks becoming the medical-device equivalent of an examination that
+predicts test-taking performance better than actual clinical benefit.
+Domain Rating Assessment
+Recognition of GenAI-specific
+risks 9/10 Excellent
+Risk-stratification framework 7/10 Strong starting point, oversimplified
+Premarket evaluation concept 7/10 Innovative but incompletely validated
+Clinical-outcome emphasis 6/10 Clinical confirmation helps, but surrogate performance
+remains prominent
+Statistical framework 5/10 Important questions remain unresolved
+Post market surveillance 8/10 Major strength
+Pediatric considerations 5/10 Recognized, but insufficiently developed
+Equity/generalizability 8/10 Thoughtfully incorporated
+Third-party model/change risk 8/10 Correctly identify a difficult problem
+
+2
+
+Domain Rating Assessment
+Operational/regulatory
+feasibility 6/10 Many details remain unanswered
+Overall 7.5/10 Strong discussion framework; not yet a validation
+framework
+Major pros
+1. It correctly rejects the assumption that conventional static software validation is enough.
+GenAI can accept open-ended inputs, generate variable outputs to similar inputs, operate over
+multi-turn conversations, and change through modifications to models, prompts, retrieval,
+guardrails, orchestration, or interfaces. FDA therefore recognizes that exhaustive input-output
+validation may simply be impossible. That is a major conceptual strength.
+2. The two-axis risk model is clinically intuitive. The framework on page 6 places device
+activity/autonomy on one axis and consequences of an incorrect output on the other. Thus, an
+informational system giving low-consequence advice is fundamentally different from an
+autonomous system initiating a high-consequence intervention. That is much more sensible than
+regulating something simply because it contains an LLM.
+3. FDA recognizes that apparently “informational” AI can actually direct behavior. This is
+particularly important. The paper distinguishes statements ranging from general information
+through personalized suggestions to explicit instructions—for example, progressing from
+information about lisinopril dosing to “increase the lisinopril from 10 mg to 20 mg daily.” It
+appropriately argues that directiveness depends on substance and context, rather than magic
+words such as “recommend.” Disclaimers such as “talk to your doctor” do not necessarily
+neutralize otherwise directive advice.
+4. Multi-turn behavior is treated as a unit of risk. This is excellent. A system can begin with
+harmless education and gradually migrate toward diagnosis or treatment recommendations.
+Evaluating isolated prompts would miss that phenomenon. FDA explicitly proposes evaluating
+realistic conversational trajectories.
+5. The competency framework is substantially broader than simple accuracy testing. The
+proposed benchmarking domains include safety-critical recognition/escalation, scope adherence,
+calibration/uncertainty, clinical knowledge, information gathering/reasoning, quantitative
+performance, communication, robustness/reproducibility, subgroup performance, and separate
+agentic competencies. That is a sophisticated conception of clinical AI performance.
+6. The paper recognizes both sides of asymmetric errors. For triage, for example, under-
+escalation can delay lifesaving care, while over-escalation can generate anxiety, unnecessary
+
+3
+
+investigations, ED utilization, cost, and ultimately distrust. This is a much more clinically mature
+approach than reporting a single “accuracy” statistic.
+7. It does not assume benchmark performance equals clinical effectiveness. FDA explicitly
+states that even thorough benchmarking may fail to establish performance in actual clinical use
+and therefore proposes a hierarchy of clinical confirmation—from retrospective patient data
+through shadow deployment and standardized patients to prospective trials/RCTs. This is one of
+the strongest parts of the paper.
+8. Post market surveillance is treated as fundamental rather than an afterthought. Periodic
+re-benchmarking, clinician review of real-world samples, drift monitoring, and reassessment
+after modifications make sense for technologies whose behavior can change after authorization.
+Major cons and unresolved methodological problems
+1. The two-axis risk framework probably has too few dimensions
+Concern severity: 8/10.
+Autonomy × consequence is useful, but it does not completely determine clinical risk. FDA itself
+essentially acknowledges this by asking whether reversibility, downstream safeguards, time
+pressure, and traceability should be incorporated.
+I would add at least detectability of error as a major dimension.
+An AI error that is immediately obvious to a pediatrician is quite different from a plausible but
+incorrect statement that appears authoritative and cannot readily be independently verified.
+Similarly, frequency of exposure matters: a tiny per-interaction risk multiplied across millions of
+encounters can become an important population-level harm.
+2. “Competency” may become a surrogate endpoint
+Concern severity: 9/10.
+This is the central methodological concern.
+Passing a sophisticated clinical benchmark establishes that the system performs well on that
+assessment. It does not necessarily establish that using the system improves patient outcomes.
+The distinction is analogous to:
+benchmark performance → clinician/device behavior → clinical decisions → patient
+outcomes.
+Every arrow introduces uncertainty.
+
+4
+
+A model could perform impressively on diagnostic reasoning tests yet worsen outcomes through
+automation bias, inappropriate reliance, workflow disruption, differential performance in unusual
+cases, or incorrect use by patients.
+For high-risk applications, clinical competency should therefore not automatically substitute for
+evidence of clinical utility.
+3. The human-clinician analogy has limits
+Concern severity: 7/10.
+The medical licensure analogy is clever but potentially misleading. Physicians operate within an
+extensive accountability ecosystem—training, supervision, credentialing, malpractice liability,
+professional discipline, continuing education, institutional governance, and an ethical duty to
+individual patients.
+An AI system has none of these intrinsically.
+FDA acknowledges this accountability problem, but the analogy could nevertheless encourage
+the inference:
+“If we don't test every scenario encountered by physicians, we shouldn't expect exhaustive
+testing of AI.”
+That does not necessarily follow. Machines can be tested repeatedly on an enormous scale, and
+their correlated failure modes can simultaneously affect thousands or millions of patients.
+4. Comparator selection remains unresolved
+Concern severity: 8/10.
+The paper considers comparing systems with a clinician panel, median clinician, generalist,
+specialist, or human-AI team.
+Those choices can produce dramatically different conclusions.
+A device that equals a median clinician may look excellent against usual care but inadequate
+against specialist care. Conversely, demanding specialist-level performance could prevent useful
+tools designed specifically to improve access where specialists are unavailable.
+The comparator therefore needs to reflect the counterfactual: what would happen to these
+patients without the device? FDA asks exactly this question but does not yet solve it.
+
+5
+
+5. Statistical standards are notably underdeveloped
+Concern severity: 8/10.
+The document recognizes the issue, stating that some clinical-confirmation approaches may not
+be powered around traditional effectiveness endpoints and explicitly asks stakeholders how
+endpoints and sample sizes should be determined.
+That is appropriate for a discussion paper, but it exposes a major unresolved problem.
+For regulatory evaluation I would want prespecified requirements around confidence intervals,
+repeated stochastic outputs, hierarchical errors, multiplicity, subgroup precision, noninferiority
+margins where applicable, calibration, clinically weighted error severity, and testing of worst-
+case rather than merely average performance.
+A system that is “97% correct” tells us surprisingly little if the remaining 3% disproportionately
+includes catastrophic mistakes.
+6. Synthetic data are simultaneously promising and dangerous
+Concern severity: 8/10.
+FDA appropriately considers synthetic cases for uncommon populations and scenarios but also
+recognizes a circularity problem: a synthetic-data generator from the same model family may
+reproduce the same blind spots as the system being tested.
+This is particularly relevant for rare pediatric presentations, where synthetic cases may look
+clinically plausible without accurately representing real disease distributions or atypical
+presentations.
+Synthetic data should generally augment—not replace—independent real-patient validation
+when consequences are substantial.
+7. Greater post market surveillance should not become permission for weak premarket
+evidence
+Concern severity: 9/10 for high-risk applications.
+The paper explicitly asks whether FDA should sometimes tolerate greater premarket uncertainty
+in exchange for stronger post market monitoring.
+That could be reasonable for reversible, low-consequence functions.
+It becomes much harder to defend for autonomous diagnosis, drug dosing, treatment initiation,
+emergency triage, or other functions where the first evidence of failure may be patient harm.
+
+6
+
+The acceptable balance should therefore be strongly risk dependent. Post market monitoring
+cannot ethically rescue inadequate premarket evidence when errors are irreversible or
+catastrophic.
+Pediatric perspective
+This is one area where I would encourage FDA to go substantially further.
+The benchmarking appendix specifically recognizes pediatric patients as a population requiring
+population-specific clinical knowledge, and subgroup performance is explicitly included in the
+proposed framework. That is good—but pediatrics creates problems beyond simply being
+another subgroup.
+Children have age-dependent physiology and normal ranges, weight-based dosing, rapidly
+changing disease prevalence and presentation across developmental stages, proxy decision-
+makers, different communication requirements, and rare but high-consequence diseases. A model
+that performs adequately in “pediatric patients” overall could conceal serious deficiencies in
+neonates, infants, adolescents, children with medical complexity, or particular developmental
+stages.
+I would therefore make age/development-stratified validation a distinct requirement
+whenever pediatric use is within the intended population rather than treating “pediatric” as a
+single subgroup.
+What I would add to FDA's framework
+I would evolve the two-dimensional model into something closer to:
+Clinical risk ≈ consequence × autonomy × error detectability × exposure × irreversibility,
+modified by human oversight, time-to-intervention, population vulnerability, and
+recoverability.
+And I would make evidence requirements escalate accordingly:
+Low risk: benchmarking may sometimes be sufficient → moderate risk: benchmarking +
+independent clinical confirmation → high risk: real-world clinical validation → high-risk
+autonomous action: prospective comparative evidence, potentially randomized where feasible,
+plus intensive post market surveillance.
+That would more clearly connect risk classification to required strength of evidence.
+Bottom line
+The paper's diagnosis of the regulatory problem is stronger than its proposed solution. FDA
+correctly recognizes that GenAI medical devices cannot simply be treated as deterministic
+software, that average accuracy is inadequate, that multi-turn and autonomous behavior matter,
+and that performance must be assessed throughout the product lifecycle.
+
+7
+
+The proposed competency-based model is promising, but its key vulnerability is surrogate
+validation: demonstrating that an AI possesses clinical competencies is not equivalent to
+demonstrating that deploying it produces net clinical benefit.
+For low-risk informational applications, the proposed framework could be highly workable. For
+systems making or executing consequential clinical decisions, I would require substantially
+stronger evidence linking benchmark competency to actual clinical performance, human-AI
+interaction, and ultimately patient outcomes.
+Evidence scorecard
+Metric Rating
+Overall Methodological/Framework Quality 8/10
+Risk of conceptual bias/oversimplification Moderate
+Clinical Relevance 9/10
+Confidence that proposed framework will reliably predict real-
+world safety/effectiveness Moderate–Low
+Likelihood core principles will remain valid High
+Likelihood specific proposed mechanisms will require substantial
+revision High
+Practice/Regulatory-Changing Potential High
+Overall Recommendation Promising but
+preliminary
+Most important issue for stakeholder feedback: FDA should resist allowing “competency” to
+become the GenAI equivalent of a surrogate biomarker. For consequential medical decisions, the
+evidentiary endpoint should ultimately remain safe and effective care for real patients, not
+simply excellent performance on increasingly sophisticated examinations.

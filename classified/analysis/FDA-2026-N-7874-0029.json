@@ -1,0 +1,186 @@
+{
+  "comment_id": "FDA-2026-N-7874-0029",
+  "input_hash": "75f7ea77b7301e05",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q18",
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter is concerned that authorization based on evidence at a single point in time may no longer hold once the model, deployment environment, data distribution, intended workflow, third-party dependency, or observed performance materially changes.",
+      "requested_fda_action": "FDA should clearly separate initial authorization from continued reliance, conditioning continued reliance on evidence that the original authorizing assumptions remain valid, and adopt a lifecycle structure of representation, evidence, dependency, reliance, decision gate, and revalidation.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment treats changes in intended workflow and device behavior after authorization as triggers requiring revalidation, rather than a fixed intended use fixed at review.",
+        "ai_supplier_quality": "It identifies third-party dependency change as a distinct condition that can invalidate the assumptions underlying authorization.",
+        "deployment_assurance_scalability": "It ties continued reliance to shifts in deployment environment and data distribution, implying assurance must be maintained at the level of actual use settings."
+      },
+      "public_summary": "Accepts lifecycle-oriented oversight but asks FDA to formally separate initial authorization from continued reliance, making continued reliance conditional on evidence that original assumptions still hold after changes to the model, deployment setting, data, workflow, third-party dependencies, or observed performance, via defined decision gates and revalidation.",
+      "summary_cut": false,
+      "source_passage": "PAG recommends that FDA distinguish clearly between initial authorization and continued reliance.\n\nA device that satisfies an evidentiary threshold at authorization may later experience a material change in its model, deployment environment, data distribution, intended workflow, third-party dependency, or observed performance. Continued reliance should therefore depend on evidence that the assumptions supporting the original authorization remain valid.\n\nPAG suggests a simple lifecycle structure:\n\nRepresentation > Evidence > Dependency > Reliance > Decision Gate > Revalidation"
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q19",
+        "q22",
+        "q23",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "For higher-risk GenAI-enabled devices, the assumptions and third-party dependencies underlying safe and effective use may not be explicitly documented, leaving no predefined thresholds, monitoring ownership, or triggers for reassessment when conditions change.",
+      "requested_fda_action": "Require sponsors of higher-risk GenAI-enabled devices to specify in advance the material assumptions and supporting evidence, critical third-party dependencies, performance and safety thresholds, who monitors each dependency, material-change triggers, and the actions required when a trigger is reached.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The proposal calls for advance identification of critical third-party dependencies with defined thresholds and monitoring assignments, addressing assurance over externally supplied model components.",
+        "distributed_accountability": "It asks that responsibility for monitoring each dependency be explicitly assigned, addressing who is accountable across parties when a trigger is reached."
+      },
+      "public_summary": "Proposes that FDA require sponsors of higher-risk GenAI-enabled devices to pre-specify material assumptions and supporting evidence, critical third-party dependencies, performance and safety thresholds, assigned monitoring responsibility for each dependency, material-change triggers, and required actions when triggers occur.",
+      "summary_cut": false,
+      "source_passage": "For higher-risk GenAI-enabled devices, FDA could require sponsors to identify in advance:\n\n1. material assumptions supporting safe and effective use;\n2. evidence supporting those assumptions;\n3. critical third-party dependencies;\n4. defined performance and safety thresholds;\n5. responsibility for monitoring each dependency;\n6. material-change triggers requiring reassessment; and\n7. required action if a trigger is reached."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter agrees with FDA that changes to an underlying third-party foundation model may occur outside the device manufacturer's control and may affect safety or effectiveness, leaving manufacturers without a clear basis for judging whether continued use of that model is still justified.",
+      "requested_fda_action": "Establish a defined evidentiary standard that manufacturers can apply to determine whether continued reliance on a third-party foundation model remains justified after model changes.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment focuses on the manufacturer's dependence on an upstream foundation model supplier whose changes it cannot control, and asks for an evidentiary basis for judging continued reliance on that supplier's model."
+      },
+      "public_summary": "Agrees with FDA that third-party foundation model changes fall outside manufacturer control and may affect safety or effectiveness, but asks FDA to go further by defining an evidentiary standard for determining whether continued reliance on such a model remains justified.",
+      "summary_cut": false,
+      "source_passage": "This is especially important for devices incorporating third-party foundation models. FDA notes that changes to an underlying model may occur outside the manufacturer's direct control and may affect safety or effectiveness. A manufacturer therefore needs a defined evidentiary standard for determining whether continued reliance remains justified."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q10",
+        "q16"
+      ],
+      "position": "support",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "PAG is concerned about the independence of evaluation when sponsors develop or select their own benchmarks, when the underlying foundation model comes from a separate company, and when postmarket evidence alone determines whether a device continues operating without further review.",
+      "requested_fda_action": "Involve qualified independent third parties in benchmarking, clinical confirmation, adjudication, and standards development, with particular emphasis on situations involving sponsor-developed benchmarks, third-party foundation models, and postmarket evidence used to justify continued operation.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment identifies reliance on a foundation model supplied by another company as a specific circumstance warranting independent third-party evaluation."
+      },
+      "public_summary": "PAG supports FDA's consideration of independent third parties in benchmarking, clinical confirmation, adjudication, and standards development, and identifies sponsor-developed or sponsor-selected benchmarks, externally supplied foundation models, and postmarket evidence governing continued operation as situations where independence would be particularly valuable.",
+      "summary_cut": false,
+      "source_passage": "PAG also supports FDA's consideration of independent third parties in benchmarking, clinical confirmation, adjudication, and standards development.\n\nIndependence could be particularly valuable where the sponsor develops or selects its own benchmarks, where the underlying foundation model is supplied by another company, or where postmarket evidence determines whether a device may continue operating without additional review."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that evaluation of agentic devices may focus only on whether the system functioned technically as designed, without asking whether the device was actually authorized to take a specific consequential action in the circumstances present. It stresses that identity, authentication, and authority are distinct, and that holding authority does not make reliance on the action safe.",
+      "requested_fda_action": "Adopt an additional distinction for agentic AI-enabled devices so that evaluation assesses whether an autonomously initiated clinical action, order, prescription, or escalation was authorized within the device's intended scope under the conditions present, not merely whether the system performed as designed.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment centers on whether an agentic device had authority to take a specific consequential clinical action, separating identity and authentication from authorization and safe reliance.",
+        "dynamic_intended_use": "It asks whether the autonomous action fell within the device's intended scope under the conditions present at the time, framing scope as condition-dependent rather than static."
+      },
+      "public_summary": "Supports evaluating agentic devices but asks FDA to add an explicit authorization dimension: for autonomously initiated clinical actions, assessment should address whether the device was authorized to take that specific action within its intended scope under prevailing conditions, not only whether it performed as designed.",
+      "summary_cut": false,
+      "source_passage": "For agentic AI-enabled devices, PAG recommends an additional distinction:\n\nIdentity is not authentication. Authentication is not authority. Authority is not necessarily safe reliance.\n\nWhere an AI-enabled device can autonomously initiate a clinical action, order, prescription, escalation, or other consequential step, evaluation should ask not only whether the system performed technically as designed but whether it was authorized to take that specific action, within its intended scope, under the conditions then present."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q1",
+        "q8"
+      ],
+      "position": "support",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that the level of evidence supporting continued reliance on a device should track both how independently the device acts and how serious the consequences of an incorrect output would be.",
+      "requested_fda_action": "Retain the two-axis risk framework based on device activity and consequence of an incorrect output, and scale required evidence for action-taking systems upward along both axes.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter endorses FDA's two-axis risk framework, agreeing it captures both device independence and the consequences of incorrect outputs, and states that for action-taking systems the evidence required to justify continued reliance should increase along both dimensions.",
+      "summary_cut": false,
+      "source_passage": "FDA's proposed risk framework appropriately considers both the independence of device activity and the consequences of relying on an incorrect output. For action-taking systems, the strength of evidence required for continued reliance should increase with both dimensions."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter is concerned that GenAI-enabled device performance be tracked after deployment. No specific problem or objection is stated in the passage.",
+      "requested_fda_action": "Adopt the postmarket approaches described, including periodic re-benchmarking, performance-degradation monitoring, and defined reassessment triggers.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter expresses support for FDA's proposed postmarket approaches, including periodic re-benchmarking, performance-degradation monitoring, defined reassessment triggers, and ongoing postmarket monitoring. The passage offers no further detail, conditions, or suggested modifications.",
+      "summary_cut": false,
+      "source_passage": "PAG also supports periodic re-benchmarking, performance-degradation monitoring, defined reassessment triggers, and postmarket monitoring."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q18",
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter is concerned that premarket authorization could be treated as conferring permanent reliance even after a GenAI-enabled device's underlying assumptions, dependencies, or behavior materially change.",
+      "requested_fda_action": "Formalize the principle that premarket authorization sets only an initial reliance boundary, and articulate in the framework what evidence permits continued reliance and what categories of change require evidence to be re-tested.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment frames continued reliance as contingent on the device's assumptions, dependencies, and behavior remaining within the envelope evaluated at authorization, rather than on the initial review alone."
+      },
+      "public_summary": "A patient advocacy group supports continued-reliance concepts but asks FDA to formalize a principle that premarket authorization is only an initial reliance boundary, and to specify what evidence sustains reliance and which changes in assumptions, dependencies, or behavior require re-testing.",
+      "summary_cut": false,
+      "source_passage": "PAG recommends that FDA formalize the underlying principle:\n\nPremarket authorization establishes an initial reliance boundary. It should not establish permanent reliance where the assumptions, dependencies, or behavior of the system materially change.\n\nA durable regulatory framework should answer not only whether a GenAI-enabled device is safe and effective when first reviewed, but also:\n\nWhat evidence permits continued reliance, and what change requires the evidence to be tested again?"
+    }
+  ]
+}

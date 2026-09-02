@@ -1,0 +1,505 @@
+{
+  "comment_id": "FDA-2026-N-7874-0035",
+  "input_hash": "f7a47eebcbdc04a4",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:07:26Z",
+  "model": "claude-opus-5",
+  "chunks": 3,
+  "positions": [
+    {
+      "question_ids": [
+        "q1",
+        "q22",
+        "q24",
+        "q7"
+      ],
+      "source_passage": "FDA should treat the authorized AI-enabled medical-device system—not the model alone—as the\nunit of assurance. The objective is to enable beneficial AI that improves people's lives while\npreventing avoidable injury or death caused by unintended behavior, unsafe integration, unclear\nauthority, or silent system change. Competency evaluation should therefore be paired with an\nauditable lifecycle assurance case that binds the complete system configuration, authority\nboundaries, privacy-preserving operational evidence, inter-system exchanges, postmarket signals,\nand change decisions.",
+      "position_gist": "FDA should make the authorized deployed system configuration, not the underlying model, the unit of assurance, and pair competency evaluation with a versioned auditable lifecycle assurance case binding configuration, authority boundaries, evidence, monitoring, and change decisions.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "1.  Add control effectiveness and operational context as explicit risk modifiers to the activity–\nconsequence framework.",
+      "position_gist": "Control effectiveness and operational context should be added as explicit risk modifiers to the two-axis activity–consequence framework.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "Question 1. The two-axis framework is useful, but its output should be modified by\noperational context and demonstrated control effectiveness.\nDevice activity and consequence of incorrect output are appropriate primary axes. They should\nestablish inherent risk. Residual risk, however, cannot be understood without modifiers that\ndetermine whether harm can be prevented, detected, interrupted, reversed, or reconstructed.\nModifier Regulatory significance\nReversibility Whether the resulting action can be reliably undone\nbefore harm occurs.\nTime to harm Whether there is sufficient time for detection,\nhuman review, or safe interruption.\nIndependent oversight Whether a qualified human or separately evaluated\ncontrol can prevent or stop the action.\nTraceability\nWhether outputs and actions can be attributed to\nsources, components, policies, and decision\npathways.\nState persistence Whether one output changes future permissions,\nmemory, treatment state, or downstream behavior.\nExposure and scale How broadly an error can propagate across patients,\nsites, or connected devices.\nUncertainty visibility Whether uncertainty is measured, calibrated,\ncommunicated, and used to trigger deferral.\nFDA can preserve the simplicity of the two-axis figure by treating these factors as a structured\nmodifier profile rather than adding many graphical axes. Sponsors should state inherent risk,\ncontrols relied upon, evidence of control effectiveness, and resulting residual risk.",
+      "position_gist": "The two axes appropriately establish inherent risk, but FDA should add a structured modifier profile (reversibility, time to harm, independent oversight, traceability, state persistence, exposure/scale, uncertainty visibility) rather than more graphical axes, with sponsors reporting inherent risk, controls, control-effectiveness evidence, and residual risk.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q2",
+        "q5"
+      ],
+      "source_passage": "2.  Evaluate realistic trajectories and state transitions, not isolated prompts and outputs.",
+      "position_gist": "Risk and behavior should be evaluated over realistic conversational trajectories and state transitions rather than isolated prompts and outputs.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q2",
+        "q5"
+      ],
+      "source_passage": "Questions 2–6. Directiveness and conversational risk should be evaluated as properties of\ntrajectories, not individual sentences.\nAn informational function may become action-directing through personalization, repetition,\nomission of alternatives, urgency, authority cues, or accumulation across turns. Intended use\n\nVIVASECURIS  |  FDA-2026-N-7874\nPublic Comment — Generative AI-Enabled Medical Devices\nshould therefore describe permitted trajectory classes, prohibited transitions, escalation\nconditions, and the point at which human review becomes mandatory.\n  Test longitudinal conversations that cross scope boundaries gradually, including adversarial,\nemotionally manipulative, ambiguous, and incomplete inputs.",
+      "position_gist": "Directiveness modifiers include personalization, repetition, omission of alternatives, urgency, authority cues, and accumulation across turns; intended use should be characterized by permitted trajectory classes, prohibited transitions, escalation conditions, and mandatory human-review points, with testing of gradual scope-crossing longitudinal conversations.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "Measure both under-escalation and over-escalation using separate clinically justified thresholds;\ndo not collapse them into a single accuracy score.",
+      "position_gist": "Under-escalation and over-escalation should be measured against separate clinically justified thresholds rather than collapsed into a single accuracy metric.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "Evaluate whether the system preserves user agency through calibrated uncertainty, alternatives,\nsource traceability, and clinically useful handoff—not merely disclaimers.\n  Treat patient-facing status as a context modifier, not an automatic presumption of unacceptable\nrisk. Controls should reflect the user, task, consequences, and available safeguards.",
+      "position_gist": "Patient-facing delivery should be treated as a context modifier rather than presumptively unacceptable risk, with mitigations based on calibrated uncertainty, alternatives, source traceability, and clinically useful handoff instead of mere disclaimers.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q12",
+        "q7",
+        "q9"
+      ],
+      "source_passage": "Questions 7–9. Competency-based evaluation is appropriate when paired with\nconfiguration identity, lifecycle evidence, and clinical confirmation.\nVivaSecuris supports benchmarking followed by clinical confirmation. Each reported result\nshould bind to a uniquely identified system configuration: model and version, prompts,\nretrieval configuration, tools, guardrails, orchestration logic, user interface, policies, and\nrelevant infrastructure. A benchmark score without this binding is not reproducible evidence\nfor a system that may change independently at several layers.",
+      "position_gist": "The commenter supports the benchmarking-plus-clinical-confirmation approach but requires every reported result to be bound to a uniquely identified full system configuration to be reproducible evidence.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q12",
+        "q9"
+      ],
+      "source_passage": "For nondeterministic systems, reliability should be established as a bounded distribution of\noutcomes rather than an expectation of identical responses. Sponsors should repeat clinically\nimportant tests across controlled randomness, semantically equivalent inputs, realistic context\nvariation, patient subgroups, deployment conditions, and multi-step trajectories. Evaluation\nshould report observed error frequencies with uncertainty or confidence bounds where\nstatistically estimable, error severity, uncertainty calibration, abstention behavior, and control\nintervention. For rare catastrophic hazards whose probability cannot be credibly estimated\nfrom available samples, sponsors should provide scenario-based hazard coverage, adversarial\nand stress evidence, and structural evidence that high-severity actions cannot bypass\nindependent controls. Average accuracy alone is insufficient when a low-frequency failure can\ncause serious harm.",
+      "position_gist": "Performance for nondeterministic systems should be measured as a bounded outcome distribution via repeated testing across randomness, paraphrases, contexts, subgroups and trajectories, with confidence bounds where estimable and scenario/adversarial plus structural evidence for rare catastrophic hazards instead of average accuracy.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q26",
+        "q9"
+      ],
+      "source_passage": "Statistical evidence should be paired with architectural invariants enforced outside the\ngenerative model wherever practicable. Examples include prohibitions on acting outside the\ndeclared clinical scope, authenticated approval for specified high-consequence actions, hard\nclinical parameter limits, safe failure when a critical dependency is unavailable, and mandatory\nattribution of consequential actions. Prompt instructions alone should not be treated as\ndeterministic safety controls.",
+      "position_gist": "Statistical performance evidence should be paired with deterministic safety invariants enforced outside the generative model (scope prohibitions, authenticated approval for high-consequence actions, hard parameter limits, safe failure, mandatory attribution), and prompt instructions should not count as deterministic safety controls.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "The competency structure should add a cross-cutting element: assurance integrity. This should\nassess whether the device can maintain identity, provenance, authorization, auditability, and\ncontrol effectiveness during normal operation, failure, attack, and change.\n  Configuration integrity: the evaluated configuration matches the deployed configuration.\n\nVIVASECURIS  |  FDA-2026-N-7874\nPublic Comment — Generative AI-Enabled Medical Devices\n  Evidence integrity: test assets, methods, rubrics, results, and adjudication remain attributable\nand tamper-evident.\n  Runtime integrity: policy enforcement cannot be silently bypassed by model output, tool content,\nretrieval data, or orchestration changes.\n  Change integrity: every material component change is detected, classified, evaluated, approved,\nand linked to the resulting deployment.",
+      "position_gist": "A cross-cutting 'assurance integrity' competency (configuration, evidence, runtime, and change integrity) is a missing element that should be added to the benchmarking competency structure.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q10"
+      ],
+      "source_passage": "Question 10. Benchmark validity should be demonstrated through an evidence package,\nnot inferred from popularity or score stability.\nA sponsor should document the benchmark’s intended construct, clinical relevance, coverage,\nknown gaps, contamination analysis, subgroup representation, scoring reliability, adjudicator\nagreement, and relationship to real-world outcomes. Sponsor-developed benchmarks can be\nvaluable for narrow intended uses, but high-consequence claims should include sequestered or\nindependently governed assets to reduce test optimization and leakage.",
+      "position_gist": "Benchmark construct validity should be shown through a documented evidence package (construct, coverage, contamination, subgroups, scoring reliability, real-world relationship), with sponsor-developed benchmarks acceptable for narrow uses but high-consequence claims requiring sequestered or independently governed assets.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q11",
+        "q14",
+        "q15",
+        "q17"
+      ],
+      "source_passage": "Questions 11–15 and 17. Clinical confirmation and comparators should be tailored to the\nactual decision pathway.\nThe confirmation method should reflect whether the device supports a human, directs an\naction, or acts autonomously. Human–AI team performance is the relevant comparator when\nthat team is the intended use; autonomous performance is necessary when human review is not\nan effective control.",
+      "position_gist": "Clinical confirmation methods and comparators should be tailored to the actual decision pathway, using human–AI team performance when the team is the intended use and standalone autonomous performance when human review is not an effective control.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q12",
+        "q13"
+      ],
+      "source_passage": "Synthetic data should supplement—not erase—evidence from clinically and\noperationally representative distributions, particularly for rare events and underrepresented\ngroups.",
+      "position_gist": "Synthetic data should only supplement, never replace, clinically and operationally representative real-world evidence, especially for rare events and underrepresented groups.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q16"
+      ],
+      "source_passage": "Question 16. Independent third parties can strengthen evaluation, provided independence\nis transparent and access remains competitive.\nThird parties are particularly useful for sequestered test assets, adversarial evaluation, expert\nadjudication, cybersecurity assessment, and verification of configuration/evidence integrity.\nFDA should avoid exclusive certification structures. Qualifications, conflicts, methods, error\nrates, and financial relationships should be disclosed; sponsors should retain the ability to use\nmultiple qualified pathways.",
+      "position_gist": "Independent third parties should be used for sequestered test assets, adversarial evaluation, adjudication, cybersecurity and integrity verification, with disclosed qualifications/conflicts, no exclusive certification structures, and multiple qualified pathways available to sponsors.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "Question 18. Greater postmarket reliance is appropriate only when monitoring is timely,\nactionable, and enforceably connected to risk controls.\nReduced premarket certainty should not be justified by passive dashboards. The sponsor should\nprespecify signals, thresholds, review cadence, escalation paths, authority to pause or restrict\nfunctionality, corrective-action timelines, and evidence that monitoring coverage is adequate.\nHigh-consequence autonomous actions, rapid time-to-harm, weak reversibility, or inadequate\ninterruption mechanisms may make reduced premarket evidence inappropriate.",
+      "position_gist": "Greater reliance on postmarket monitoring is acceptable only with prespecified signals, thresholds, cadence, escalation, pause authority, corrective-action timelines, and coverage evidence, and is inappropriate for high-consequence autonomous actions, rapid time-to-harm, weak reversibility, or inadequate interruption.",
+      "segment_id": "seg-016"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "source_passage": "8.  Scale postmarket evidence to risk and triggering events, while preserving manufacturer\naccountability even when third parties provide models or monitoring services.",
+      "position_gist": "Postmarket evidence should be scaled to risk and triggering events while manufacturer accountability is preserved even when third parties supply models or monitoring services.",
+      "segment_id": "seg-017"
+    },
+    {
+      "question_ids": [
+        "q20",
+        "q26"
+      ],
+      "source_passage": "9.  For agentic and distributed systems, require enforceable scope, least privilege, bounded\nautonomy, safe information exchange, independent or diversely implemented supervision\nwhere risk warrants and practicable, safe interruption, and risk-proportionate reconstruction of\nsafety-relevant causal chains.",
+      "position_gist": "Agentic and distributed systems should be required to have enforceable scope, least privilege, bounded autonomy, safe information exchange, independent or diversely implemented supervision where risk warrants, safe interruption, and reconstructable safety-relevant causal chains.",
+      "segment_id": "seg-018"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q24"
+      ],
+      "source_passage": "6.  Add a risk-proportionate AI System Bill of Materials (AI-SBOM) as a supplemental record linked\nto existing design, supplier, product-BOM, and cybersecurity-SBOM records where applicable,\nidentifying the behavior-shaping AI configuration that was evaluated, authorized, deployed, and\nchanged without duplicating established component records.",
+      "position_gist": "FDA should adopt a risk-proportionate AI-SBOM linked to existing design, supplier, product-BOM and cybersecurity-SBOM records to identify the behavior-shaping AI configuration evaluated, authorized, deployed, and changed.",
+      "segment_id": "seg-019"
+    },
+    {
+      "question_ids": [
+        "q24",
+        "q25"
+      ],
+      "source_passage": "5.  Treat identity and provenance as safety controls for models, agents, tools, data sources, policies,\nusers, and approving humans.",
+      "position_gist": "Identity and provenance for models, agents, tools, data sources, policies, users, and approving humans should be treated as safety controls.",
+      "segment_id": "seg-020"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "source_passage": "7.  Require explicit governance for collected and derived data—including prompts, conversations,\ninferences, embeddings, memory, tool results, and safety evidence—covering purpose, access,\nretention, correction, deletion, reuse, and transfer.",
+      "position_gist": "FDA should require explicit governance of collected and derived data (prompts, conversations, inferences, embeddings, memory, tool results, safety evidence) addressing purpose, access, retention, correction, deletion, reuse, and transfer.",
+      "segment_id": "seg-021"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q2"
+      ],
+      "source_passage": "FDA should characterize the function using intended purpose, output recipient, degree of\npersonalization, directiveness, effective opportunity for qualified review, authority to act, time\nto harm, reversibility, integration with clinical systems or devices, persistence of memory or\nstate, and ability to change after deployment. These properties determine whether an AI system\nmerely communicates, supports a device function, directs care, or participates in an action with\nclinical consequences.",
+      "position_gist": "FDA should define the regulated function using a multi-property characterization (intended purpose, recipient, personalization, directiveness, opportunity for review, authority to act, time to harm, reversibility, integration, state persistence, changeability) rather than location of the software.",
+      "segment_id": "seg-022"
+    },
+    {
+      "question_ids": [
+        "q21",
+        "q22",
+        "q24"
+      ],
+      "source_passage": "Shared-responsibility question exposed by service delivery\nWhen a manufacturer supplies an evaluated AI capability but a healthcare institution configures\nits data, prompts, workflows, identities, tools, and connected-device access, FDA should clarify\nwhich changes remain deployment configuration, which create a modification to a medical-device\nfunction, who must validate the integrated function, and how the parties exchange the evidence\nneeded to maintain accountability.\nVivaSecuris recommends that FDA explicitly address the following scope questions:\n  What facts cause a hospital-deployed assistant to become, contain, or materially modify a\nmedical-device function?\n  How should the responsible manufacturer and regulated system boundary be identified when\nseveral organizations control behavior-shaping components?\n\nVIVASECURIS  |  FDA-2026-N-7874\nPublic Comment — Generative AI-Enabled Medical Devices\n  When does local configuration—including prompts, retrieval, workflow logic, role permissions,\ntools, and device access—require manufacturer review, supplemental validation, or a new\nregulatory submission?\n  What minimum evidence must manufacturers, model providers, healthcare institutions, and\nconnected-device vendors exchange to validate and monitor the integrated function?\n  How should FDA preserve beneficial local innovation while preventing unassessed changes from\nsilently altering intended use, authority, or clinical risk?",
+      "position_gist": "FDA should clarify shared responsibility in multi-party deployments—when local configuration becomes a device modification requiring review or submission, how the regulated boundary and responsible manufacturer are identified, and what minimum evidence parties must exchange to validate and monitor the integrated function.",
+      "segment_id": "seg-023"
+    },
+    {
+      "question_ids": [
+        "q2",
+        "q5"
+      ],
+      "source_passage": "Sponsors should define this boundary through\nintended use, labeling, system controls, and validation rather than allow functionality to expand\nsilently at runtime.",
+      "position_gist": "Sponsors should bound emergent/expanding functionality through intended use, labeling, system controls, and validation rather than allowing runtime expansion of function.",
+      "segment_id": "seg-024"
+    },
+    {
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "source_passage": "Postmarket observability should be proportionate and privacy preserving. Routine evidence can\nemphasize configuration identifiers, policy results, uncertainty ranges, safety-control",
+      "position_gist": "Postmarket observability should be risk-proportionate and privacy-preserving, with routine evidence emphasizing configuration identifiers, policy results, and uncertainty ranges.",
+      "segment_id": "seg-025"
+    },
+    {
+      "question_ids": [
+        "q18",
+        "q21"
+      ],
+      "source_passage": "Additional consideration related to Questions 18 and 21. Data collected or created by GenAI requires an explicit lifecycle, not a generic privacy statement.\nGenAI systems can create new sensitive information even when the source record is already governed. Conversations, inferred symptoms or diagnoses, risk classifications, summaries, embeddings, retrieved context, agent memory, tool results, feedback, safety interventions, and audit records may reveal or amplify clinically significant facts. For data practices materially affecting device safety or effectiveness and within FDA's authority, FDA should ask sponsors to identify each data class, why it is necessary, where it is stored, who can access it, which downstream systems receive it, how long it persists, and how it is corrected, retained, archived, or deleted.",
+      "position_gist": "FDA should require sponsors to document an explicit data lifecycle for GenAI-created data classes (purpose, storage, access, downstream recipients, persistence, correction and deletion) where those practices materially affect device safety or effectiveness.",
+      "segment_id": "seg-026"
+    },
+    {
+      "question_ids": [
+        "q18",
+        "q21"
+      ],
+      "source_passage": "Purpose limitation and minimization: collect and derive only the information necessary for the authorized function, safety monitoring, and legally required records.\n  Separation: distinguish patient content, operational state, model context, long-term memory, quality evidence, cybersecurity evidence, and de-identified aggregate metrics so each can receive appropriate access and retention controls.\n  Identity and authorization: bind every read, write, inference, retrieval, export, and deletion to an authenticated human or machine identity, permitted purpose, patient scope, and time-bounded authority.\n  Retention and deletion: define limits for prompts, outputs, caches, embeddings, memory, backups, replicas, and supplier-held copies; verify deletion or justified archival rather than relying on user-interface disappearance, subject to applicable record-retention, investigation, litigation-hold, and data-integrity obligations.\n  Correction and provenance: preserve the source and transformation history of derived information and propagate corrections so an erroneous inference does not become durable clinical truth across systems.\n  Secondary use: do not silently use patient interactions, clinical content, or safety investigations for model training, product improvement, or unrelated analytics. Any authorized reuse should be separately governed, transparent, and technically enforceable.\n  Supplier boundaries: contracts and technical controls should address model-provider retention, human review, abuse monitoring, support access, regional storage, subprocessors, incident response, and termination or migration.",
+      "position_gist": "Recommends specific data-governance controls for GenAI device data—minimization, separation of data classes, identity-bound authorization, verified retention/deletion, correction propagation, no silent secondary use for training, and supplier contractual/technical boundaries.",
+      "segment_id": "seg-027"
+    },
+    {
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "source_passage": "Privacy and safety should not be framed as opposites. A system can preserve enough attributable evidence to investigate a serious failure without retaining every raw conversation indefinitely. Sponsors should justify the minimum evidence needed for causal reconstruction, protect content separately from metadata, and support controlled re-identification only when authorized for patient care, safety investigation, or regulatory obligations.",
+      "position_gist": "Sponsors should justify the minimum evidence needed for causal reconstruction of failures, separate content from metadata, and permit controlled re-identification only for authorized care, safety investigation, or regulatory purposes.",
+      "segment_id": "seg-028"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Question 19. Reassessment should be both periodic and event-triggered.\nRelevant triggers include model or model-provider changes; prompt, retrieval, orchestration, guardrail, tool, interface, or infrastructure changes; new user populations or sites; distribution shift; novel failure modes; cybersecurity events; control degradation; complaint or adverse-event patterns; and changes in clinical practice. Cadence should be justified by inherent risk, exposure, rate of change, and time to detect harm.",
+      "position_gist": "Postmarket reassessment should be both periodic and event-triggered, with an enumerated list of triggers and cadence justified by inherent risk, exposure, rate of change, and time to detect harm.",
+      "segment_id": "seg-029"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "Question 20. Machine-based supervisory agents can assist monitoring but must not create circular assurance.\nA supervisor should have a defined, narrower role; failure modes that are independent or diversely implemented relative to the monitored component where risk warrants and practicable; restricted privileges; validated detection and interruption performance; protected inputs; and a safe failure state. A model should not be considered independently supervised merely because another instance of the same model family reviews its output. Supervisory actions, failures, overrides, and missed detections should be audited and periodically re-evaluated.",
+      "position_gist": "Machine-based supervisory agents may assist monitoring only with narrower defined roles, independent or diverse failure modes, restricted privileges, validated detection/interruption and audited actions; review by another instance of the same model family should not count as independent supervision.",
+      "segment_id": "seg-030"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "Question 21. Shared ecosystem participation should enrich evidence without diffusing manufacturer accountability.\nClinicians, healthcare institutions, professional societies, model providers, and standards bodies can contribute signals, adjudication, benchmarks, and deployment context. The manufacturer should remain responsible for aggregation, triage, risk decisions, corrective action, and regulatory reporting. Data-sharing agreements should specify provenance, timeliness, minimum fields, privacy protections, and feedback closure.",
+      "position_gist": "Ecosystem stakeholders should contribute signals, adjudication, benchmarks and deployment context while the manufacturer retains responsibility for aggregation, triage, risk decisions, corrective action and reporting, governed by data-sharing agreements specifying provenance, timeliness, minimum fields, privacy and feedback closure.",
+      "segment_id": "seg-031"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "FDA should recognize that safety-relevant information may cross hospital, cloud, model-provider, manufacturer, and device boundaries. Each consequential exchange should preserve sender and recipient identity, permitted purpose, patient or device scope, schema and clinical meaning, source and transformation provenance, applicable AI-SBOM configuration, integrity and freshness, privacy classification, retention, and onward-use restrictions. Transport encryption is necessary but does not establish that the sender was authorized, the information was semantically valid, or the recipient may use it for the proposed purpose.",
+      "position_gist": "Cross-boundary exchanges of safety-relevant information should preserve identity, permitted purpose, scope, clinical meaning, provenance, configuration, integrity, privacy classification and onward-use restrictions, since transport encryption alone does not establish authorization, semantic validity, or permitted use.",
+      "segment_id": "seg-032"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "FDA should specify the required evidence properties rather than prescribe one privacy technology. Depending on the use case, sponsors may use local or federated evaluation, aggregation, pseudonymization, confidential computing, secure multiparty computation, homomorphic encryption, differential privacy, selective disclosure, or protected case-level access. Advanced cryptography should be treated as an optional implementation mechanism, not a prerequisite for compliance.",
+      "position_gist": "FDA should specify required evidence properties in a technology-neutral way and treat specific privacy-enhancing or cryptographic technologies as optional implementation choices rather than compliance prerequisites.",
+      "segment_id": "seg-033"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "source_passage": "Questions 22–24. Change control should be based on impact pathways and verified configuration lineage.\nA change can be low-level yet clinically material because it alters tool selection, retrieved evidence, interaction state, or guardrail behavior. Sponsors should classify changes by affected competency, hazard, control, population, and workflow—not solely by component type. The premarket competency baseline should identify the minimum re-evaluation set for each plausible impact pathway.\n  PCCPs may define change envelopes, trigger categories, affected evidence modules, acceptance thresholds, rollout constraints, and rollback criteria even when exact future model weights cannot be specified.",
+      "position_gist": "Changes should be classified by affected competency, hazard, control, population and workflow rather than component type, with the premarket competency baseline defining a minimum re-evaluation set per impact pathway, and PCCPs defining change envelopes, triggers, evidence modules, thresholds, rollout constraints and rollback criteria even when future model weights cannot be prespecified.",
+      "segment_id": "seg-034"
+    },
+    {
+      "question_ids": [
+        "q24"
+      ],
+      "source_passage": "Third-party model contracts should require advance notice where feasible, version pinning or controlled rollout, change documentation, continued access to the prior version for investigation/rollback, incident cooperation, and safety-relevant audit information.\n  Technical controls should detect unannounced changes through signed artifacts, version attestation, behavioral canaries, reproducible test suites, and deployment manifests.\n  A manufacturer should maintain an exit strategy when a foundation-model provider cannot support required transparency, stability, or rollback.",
+      "position_gist": "Manufacturers should manage third-party model changes through contractual terms (advance notice, version pinning, prior-version access, incident cooperation, audit information), technical detection mechanisms (signed artifacts, version attestation, behavioral canaries, reproducible tests, deployment manifests), and an exit strategy when providers cannot support transparency, stability, or rollback.",
+      "segment_id": "seg-035"
+    },
+    {
+      "question_ids": [
+        "q25"
+      ],
+      "source_passage": "Question 25. A voluntary Foundation Model Master File can be useful if its contents are versioned, updateable, and contractually referenced.\nA Foundation Model MAF should include model identity and lineage; intended supported uses; architecture summary; training-data provenance at an appropriate level; healthcare-relevant evaluations; subgroup results; known limitations and failure modes; safety constraints; cybersecurity practices; update policy and notification commitments; deprecation and rollback terms; and available audit signals. FDA should permit tiered disclosure so proprietary details can remain protected while sponsors receive the safety information necessary to manage risk.",
+      "position_gist": "A voluntary Foundation Model MAF can be useful if versioned, updateable and contractually referenced, and should contain specified content (identity/lineage, supported uses, training-data provenance, healthcare evaluations, subgroup results, limitations, safety and cybersecurity practices, update/deprecation terms, audit signals) with tiered disclosure protecting proprietary details.",
+      "segment_id": "seg-036"
+    },
+    {
+      "question_ids": [
+        "q25"
+      ],
+      "source_passage": "The MAF should feed, but not replace, a sponsor-maintained AI-SBOM for the complete medical-device function. The AI-SBOM should supplement applicable existing design, product-BOM, hardware, software, supplier, and section 524B cybersecurity-SBOM records. It should identify the model and fine-tunes; prompts and configuration; retrieval sources and embedding components; tools, sensors, actuators, and external services; agents, memory, and orchestration; runtime and infrastructure dependencies; safety policies; identity and authority relationships; competency evidence; and applicable change lineage. Existing component records should be referenced by stable identifiers rather than copied. Protected supplier records may be referenced rather than publicly disclosed, provided the sponsor can obtain timely safety-relevant information.",
+      "position_gist": "The Foundation Model MAF should supplement rather than replace a sponsor-maintained AI-SBOM covering the full device function, which references existing design, product-BOM and cybersecurity-SBOM records by stable identifiers and documents model, configuration, retrieval, tools, agents, safety policies, authority relationships, competency evidence and change lineage.",
+      "segment_id": "seg-037"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Question 26. Agentic devices require evaluation of authority, sequences, state, and consequences—not only output quality.\nFor an agentic device, FDA should require a declared authority envelope identifying permitted tools, data, targets, actions, clinical contexts, and autonomy levels. Acceptance criteria should include correct planning and tool use, but also refusal, interruption, recovery, authorization, state integrity, and resistance to indirect prompt injection through retrieved content and tool outputs.",
+      "position_gist": "Agentic devices should be evaluated on authority, action sequences, state and consequences, with a declared authority envelope and acceptance criteria covering planning, tool use, refusal, interruption, recovery, authorization, state integrity and resistance to indirect prompt injection.",
+      "segment_id": "seg-038"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Every agent, model, tool, service, dataset, policy, user, and approving human should have a verifiable identity and defined authority.\n  High-consequence or irreversible actions should require an explicit, authenticated checkpoint unless a justified autonomous pathway has been evaluated.\n  Tools should enforce least privilege, parameter constraints, rate limits, and transaction boundaries independently of the model.\n  The system should support immediate containment: revoke authority, isolate components, pause actions, preserve evidence, and revert to a safe state.\n  Testing should cover multi-step compounding errors, confused-deputy behavior, stale or poisoned memory, tool substitution, partial failure, race conditions, and repeated retry behavior.",
+      "position_gist": "Agentic oversight should require verifiable identity and defined authority for all actors, authenticated human checkpoints for high-consequence or irreversible actions absent an evaluated autonomous pathway, model-independent tool constraints, immediate containment capability, and testing of multi-step and agent-specific failure modes.",
+      "segment_id": "seg-039"
+    },
+    {
+      "question_ids": [
+        "q7"
+      ],
+      "source_passage": "Appendix A - Auditable Lifecycle Assurance Case\nThe proposed auditable lifecycle assurance framework is a technology-neutral evidence architecture for GenAI-enabled medical devices. Its purpose is to make safety claims continuously attributable to the system that was actually evaluated and deployed.\nA.1 Core assurance object\nThe assurance case\nA structured, versioned argument linking an intended-use claim to hazards, risk controls, competency requirements, test assets, results, clinical confirmation, authorized configuration, deployment evidence, postmarket signals, and change decisions.",
+      "position_gist": "Proposes a technology-neutral 'auditable lifecycle assurance case'—a versioned argument linking intended use, hazards, controls, competency evidence, clinical confirmation, configuration, deployment, postmarket signals and change decisions—to supplement the competency-based approach.",
+      "segment_id": "seg-040"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q7"
+      ],
+      "source_passage": "A.2 Minimum identity and provenance graph\nObject Minimum evidence relationship\nDevice/function Intended use, user, environment, activity class, consequence class, authorization status.\nConfiguration Exact model, prompts, retrieval, tools, orchestration, guardrails, UI, policies, infrastructure.\nCompetency Claim, hazard/control linkage, method, asset version, rubric, threshold, result, adjudicator.\nActor Human or machine identity, role, authority, delegation, authentication, revocation state.\nRuntime event Causal chain, component versions, policy decision, action, result, escalation/override.\nSignal Complaint, incident, drift, subgroup performance, control failure, cybersecurity event.\nChange Initiator, affected objects, impact analysis, approval, test delta, rollout, rollback.",
+      "position_gist": "Recommends a minimum identity and provenance graph specifying the evidence relationships required for device/function, configuration, competency, actors, runtime events, signals and changes.",
+      "segment_id": "seg-041"
+    },
+    {
+      "question_ids": [
+        "q25"
+      ],
+      "source_passage": "A.3 AI System Bill of Materials (AI-SBOM)\nThe AI-SBOM is a supplemental, versioned description of the behavior-shaping AI system configuration. It should be linked to applicable existing design, product-BOM, supplier, and cybersecurity-SBOM records. It must not replace those records or become a second, conflicting inventory. Instead, it should reference existing hardware, software, firmware, service, and supplier components by stable identifiers and add the AI-specific relationships needed to connect build-time evaluation, each deployed instance, consequential runtime evidence, and change decisions.",
+      "position_gist": "The AI-SBOM should be a supplemental, versioned description of behavior-shaping AI configuration that links to and references existing BOM/cybersecurity records rather than creating a duplicative inventory.",
+      "segment_id": "seg-042"
+    },
+    {
+      "question_ids": [
+        "q25"
+      ],
+      "source_passage": "Model layer: foundation model, weights or service version, fine-tunes, adapters, quantization, safety models, and integrity identifiers.\n  Data and knowledge layer: training/evaluation provenance at an appropriate level, retrieval indexes, clinical sources, embedding models, freshness, population coverage, and known limitations.\n  Configuration layer: system prompts, templates, sampling parameters, context limits, policies, guardrails, and user-interface behavior.\n  Tool and agent layer: tools, external APIs, sensors, actuators, agents, memory, orchestration, roles, permissions, delegation, and approval checkpoints.\n  Evidence and change layer: intended-use claims, competency tests, thresholds, results, monitoring requirements, supplier notices, impact analyses, deployment manifests, and rollback state.\n  Data-governance layer: data classes; collection and inference purposes; storage locations; access policy; retention and deletion rules; correction propagation; training or secondary-use status; transfer restrictions; and accountable data owners or custodians.",
+      "position_gist": "Specifies the recommended AI-SBOM layers (model, data/knowledge, configuration, tool/agent, evidence and change, and data governance) and their contents.",
+      "segment_id": "seg-043"
+    },
+    {
+      "question_ids": [
+        "q25"
+      ],
+      "source_passage": "Least-burdensome implementation should use linked manifests where applicable: the product BOM or equivalent design and manufacturing records answer what physical and supplied components constitute the device; the cybersecurity SBOM answers what software components and dependencies are present for covered cyber devices; and the AI-SBOM answers which behavior-shaping AI configuration, evidence, authority relationships, and change lineage apply. A single component should be recorded once and referenced wherever its role matters.",
+      "position_gist": "Implementation should use linked manifests with clear division of labor among product BOM, cybersecurity SBOM and AI-SBOM, recording each component once and referencing it elsewhere to minimize burden.",
+      "segment_id": "seg-044"
+    },
+    {
+      "question_ids": [
+        "q21",
+        "q26"
+      ],
+      "source_passage": "A.4 Assurance Exchange Layer\nFor distributed medical-device functions, the assurance case should define how clinical, operational, control, and safety information crosses system and organizational boundaries. A technology-neutral exchange envelope should identify:\n  the authenticated sender, recipient, and relevant human or machine authority;\n  the permitted purpose, patient/device scope, expiration, retention, and onward-use restrictions;\n  the schema, units, terminology version, timestamps, clock quality, uncertainty, and missing-data indicators needed to preserve clinical meaning;\n  the source, transformations, AI-SBOM configuration, integrity proof, and causal relationship to earlier and downstream events; and\n  the acknowledgment, policy decision, resulting action or device state, and exception or escalation outcome.\nControl commands should receive stronger treatment than observations: patient-context binding, freshness and replay protection, least privilege, independent parameter constraints, valid device-state checks, required human approval, acknowledgment, and safe timeout or rollback.",
+      "position_gist": "Distributed GenAI device functions should use a technology-neutral assurance exchange envelope documenting authenticated parties, permitted purpose, clinical meaning, provenance and outcomes, with stronger controls (patient-context binding, replay protection, least privilege, human approval, safe timeout/rollback) applied to control commands than to observations.",
+      "segment_id": "seg-045"
+    },
+    {
+      "question_ids": [
+        "q18",
+        "q22",
+        "q7"
+      ],
+      "source_passage": "A.5 Lifecycle gates\n1. Scope gate: Define intended use, users, environments, authority envelope, prohibited transitions, and risk profile.\n2. Configuration gate: Freeze and attest the complete evaluated system configuration and supplier dependencies.\n3. Competency gate: Prespecify tests and thresholds; execute benchmarking, adversarial testing, and clinical confirmation.\n4. Deployment gate: Verify the deployed configuration, policies, monitoring, interruption, rollback, and operator readiness.\n5. Runtime gate: Continuously enforce authorization and safety policies; capture proportionate causal evidence.\n6. Signal gate: Triage drift, failures, complaints, incidents, subgroup changes, and cybersecurity findings.\n7. Change gate: Classify impact, select evidence delta, approve, stage rollout, verify, and preserve rollback.\n8. Retirement gate: Revoke identities and authority, preserve required records, migrate safely, and communicate residual risk.",
+      "position_gist": "Proposes eight lifecycle gates (scope, configuration, competency, deployment, runtime, signal, change, retirement) to structure premarket and postmarket assurance for GenAI-enabled devices.",
+      "segment_id": "seg-046"
+    },
+    {
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "source_passage": "A.6 Risk-proportionate audit event\nAuditability should not require indiscriminate retention of protected health information or complete prompts. The evidence record can separate safety-relevant metadata from encrypted or access-controlled content. A consequential event should support reconstruction of:\n  who or what acted, under which authenticated identity and delegated authority;\n  which device configuration, model, policy, tool, and data-source versions were active;\n  what safety claim, hazard, control, and intended-use boundary applied;\n  what action was proposed, authorized, denied, modified, executed, or reversed;\n  what human checkpoint, override, escalation, or supervisory action occurred;\n  what outcome and monitoring signal followed; and\n  how the event relates causally to preceding and downstream events.",
+      "position_gist": "Consequential events should be auditable to a specified reconstruction standard (actor authority, active versions, applicable safety claim, action disposition, human checkpoints, outcomes, causal relations) while separating safety metadata from protected content rather than retaining all PHI or prompts.",
+      "segment_id": "seg-047"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "The audit record should also identify the applicable data-handling decision: what content was collected or derived; the authorized purpose; where it was stored or transferred; which retention policy applied; whether it entered memory, an embedding index, a quality dataset, or model-improvement workflow; and whether correction or deletion obligations were completed. The AI-SBOM should reference these policies and storage classes, but should never contain patient data itself.",
+      "position_gist": "Audit records should document data-handling decisions (content derived, purpose, storage/transfer, retention, entry into memory/embeddings/training workflows, correction or deletion completion), and the AI-SBOM should reference such policies but never contain patient data.",
+      "segment_id": "seg-048"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q8"
+      ],
+      "source_passage": "A.7 Illustrative evidence depth\nEvidence depth Illustrative application Expected assurance\nBaseline Non-directive, low consequence\nConfiguration identity, basic competency evidence, periodic monitoring.\nEnhanced Personalized/action-directing\nTrajectory tests, calibrated uncertainty, escalation and source traceability.\nHeightened Action-taking with effective oversight\nLeast privilege, authenticated checkpoints, event-triggered re-evaluation.\nHighest Autonomous or high consequence\nIndependent or diversely implemented supervision where risk warrants and practicable; safe interruption; sequestered testing; continuous signals; safety-relevant causal evidence.\nThese descriptions are illustrative evidence-depth examples, not a proposed classification or certification scheme. FDA could align evidence depth with its existing risk-based authorities.",
+      "position_gist": "Offers an illustrative (non-classificatory) mapping of evidence depth to device activity and consequence—from baseline for non-directive low-consequence functions to highest for autonomous or high-consequence functions—which FDA could align with existing risk-based authorities.",
+      "segment_id": "seg-049"
+    },
+    {
+      "question_ids": [
+        "q6",
+        "q9"
+      ],
+      "source_passage": "A.8 Suggested outcome metrics\n  Safety-critical recognition and time-to-escalation, with separate under- and over-escalation measures.\n  Boundary adherence across multi-turn trajectories, including under-refusal and over-refusal.\n  Calibration, uncertainty communication, and clinically appropriate deferral.\n  Tool-selection accuracy, parameter validity, authorization violations, and safe handling of tool failure.\n  Human-checkpoint compliance, override quality, interruption latency, and recovery success.\n  Subgroup and deployment-site performance, distribution shift, and control degradation.\n  Mean time to detect, contain, evaluate, correct, and verify safety-relevant changes or failures.",
+      "position_gist": "Proposes specific outcome metrics for evaluation, including separately measured under- and over-escalation, multi-turn boundary adherence with under/over-refusal, calibration and deferral, tool-use and authorization metrics, human-checkpoint performance, subgroup/site performance, and time-to-detect/correct measures.",
+      "segment_id": "seg-050"
+    },
+    {
+      "question_ids": [
+        "q22"
+      ],
+      "source_passage": "Appendix B — Least-Burdensome Implementation\nThe auditable lifecycle assurance framework can be implemented incrementally and should reuse evidence already produced under design controls, risk management, cybersecurity, software lifecycle, clinical evaluation, postmarket surveillance, CAPA, supplier management, and PCCP processes. FDA should specify required relationships and outcomes, not a proprietary data model or platform.\n  Permit modular evidence updates so an unchanged clinical component does not require full resubmission when an unrelated infrastructure component changes.\n  Allow cryptographic hashes, signed manifests, and protected references where retaining raw clinical content would create privacy or security risk.\n  Encourage machine-readable evidence packages while retaining human-readable summaries and regulator access to underlying evidence.\n  Use common event and provenance concepts to reduce duplicative logs across quality, cybersecurity, and AI governance systems.",
+      "position_gist": "Implementation should reuse existing regulatory evidence, permit modular evidence updates so unrelated component changes do not require full resubmission, allow hashes/signed manifests/protected references, and encourage machine-readable packages, with FDA specifying relationships and outcomes rather than a proprietary data model.",
+      "segment_id": "seg-051"
+    },
+    {
+      "question_ids": [
+        "q7"
+      ],
+      "source_passage": "CDRH’s discussion paper correctly recognizes that GenAI-enabled devices challenge static, output-centric evaluation. Competency assessment is a strong foundation. To remain reliable across deployment, modification, third-party model changes, and autonomous action, that foundation should be connected to a continuously auditable assurance case.\nVivaSecuris recommends that FDA explore an auditable lifecycle assurance framework through public workshops and a voluntary pilot. The pilot should include supplemental AI-SBOM concepts linked to applicable existing design, product-BOM, supplier, and cybersecurity-SBOM records; deterministic governance of probabilistic behavior; privacy-preserving postmarket observability; and safe assurance exchange across manufacturers, healthcare institutions, model providers, and connected devices.",
+      "position_gist": "Endorses the competency-based approach as a strong foundation but recommends FDA connect it to a continuously auditable lifecycle assurance case, explored through public workshops and a voluntary pilot covering AI-SBOM, deterministic governance, privacy-preserving observability, and assurance exchange.",
+      "segment_id": "seg-052"
+    },
+    {
+      "question_ids": [
+        "q16"
+      ],
+      "source_passage": "Pilot the framework with manufacturers, healthcare institutions, independent evaluators, patient representatives, and foundation-model providers across several risk profiles.",
+      "position_gist": "Recommends piloting the assurance framework with a range of participants including independent evaluators, patient representatives and foundation-model providers across several risk profiles.",
+      "segment_id": "seg-053"
+    },
+    {
+      "question_ids": [
+        "q24",
+        "q26"
+      ],
+      "source_passage": "d-party model changes, and autonomous action, that foundation should be connected to a continuously auditable assurance case.",
+      "position_gist": "Concerns such as third-party model changes and autonomous action should be tied to a continuously auditable assurance case (passage is a truncated fragment, so the full scope of the position is unclear).",
+      "segment_id": "seg-054"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q21",
+        "q24"
+      ],
+      "source_passage": "VivaSecuris recommends that FDA explore an auditable lifecycle assurance framework through public workshops and a voluntary pilot. The pilot should include supplemental AI-SBOM concepts linked to applicable existing design, product-BOM, supplier, and cybersecurity-SBOM records; deterministic governance of probabilistic behavior; privacy-preserving postmarket observability; and safe assurance exchange across manufacturers, healthcare institutions, model providers, and connected devices.",
+      "position_gist": "FDA should explore, via public workshops and a voluntary pilot, an auditable lifecycle assurance framework featuring AI-SBOM concepts linked to existing design/supplier/cybersecurity records, deterministic governance of probabilistic behavior, privacy-preserving postmarket observability, and assurance exchange among manufacturers, healthcare institutions, model providers, and connected devices.",
+      "segment_id": "seg-055"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "source_passage": "It is to help beneficial AI reach people safely, make evidence reusable and change evaluation more precise, and ensure that manufacturers, healthcare institutions, and FDA can detect risk, preserve accountability, and act before an unintended system behavior causes avoidable injury or death.",
+      "position_gist": "The proposed assurance framework is intended to make premarket/postmarket evidence reusable and evaluation of changes more precise while preserving accountability and enabling early risk detection.",
+      "segment_id": "seg-056"
+    },
+    {
+      "question_ids": [
+        "q16"
+      ],
+      "source_passage": "The purpose is not to prescribe a platform or create a new compliance market.",
+      "position_gist": "Any such assurance framework should avoid mandating a particular platform or creating a new compliance market (i.e., should not become a barrier or new intermediary industry).",
+      "segment_id": "seg-057"
+    }
+  ]
+}

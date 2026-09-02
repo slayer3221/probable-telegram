@@ -1,0 +1,276 @@
+{
+  "comment_id": "FDA-2026-N-7874-0032",
+  "input_hash": "b2e70e892ed5acfa",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:07:26Z",
+  "model": "claude-opus-5",
+  "chunks": 2,
+  "positions": [
+    {
+      "question_ids": [
+        "q1",
+        "q9"
+      ],
+      "source_passage": "Core regulatory request\n Add S.4 - Cybersecurity and Dependency Integrity.\n Add R.3 - Operational Resilience and Continuity.\n Add R.4 - Maintainability, Serviceability, and Lifecycle Support.\n Treat connectivity dependence, time-to-harm during unavailability, fallback capability, and common-\nmode exposure as risk modifiers.",
+      "position_gist": "CDRH should add three new benchmarking elements (cybersecurity/dependency integrity, operational resilience and continuity, and maintainability/serviceability/lifecycle support) and treat connectivity dependence, time-to-harm during unavailability, fallback capability, and common-mode exposure as explicit risk modifiers.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q9"
+      ],
+      "source_passage": "The discussion paper appropriately identifies a Total Product Life Cycle approach as important for GenAI-\nenabled devices. It also acknowledges that a GenAI-enabled software function may be integrated into a\nbroader device containing other hardware and software, while stating that the paper primarily addresses\nthe GenAI-enabled component rather than the complete device. [1, pp. 1 and 5] That division creates a risk\nthat system-level safety issues, including downtime behavior, service access, calibration, ownership, and\nend-of-life support, are treated as outside the GenAI discussion even though they directly determine real-\nworld safety and availability.\nA complete framework should evaluate not only whether a GenAI function produces acceptable outputs\nunder normal conditions, but also whether the deploying healthcare organization can safely own, operate,\nsecure, maintain, repair, calibrate, recover, update, support, and retire the complete product throughout\nits expected service life.",
+      "position_gist": "The framework's focus on the GenAI component rather than the complete device omits system-level safety determinants, and evaluation should cover whether a healthcare organization can safely operate, secure, maintain, repair, calibrate, recover, update, support, and retire the whole product over its service life.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q9"
+      ],
+      "source_passage": "Recommended CDRH action: Require sponsors to define and validate device behavior during the loss,\ndegradation, compromise, or unexpected modification of every external dependency required for clinical\noperation.\nThe final user-facing device should be evaluated in the configuration intended for real-world deployment,\nand the discussion paper states that benchmarking should reflect the environments in which the device is\nexpected to be used. [1, pp. 11-14] Network failures, cloud outages, identity failures, and third-party\nservice interruptions are foreseeable deployment conditions and should be included in that evaluation.",
+      "position_gist": "Sponsors should be required to test and validate device behavior in the real-world deployment configuration during loss, degradation, or compromise of every external dependency (network, cloud, model API, identity, EHR, retrieval services, latency, mid-transaction failures), since such failures are foreseeable deployment conditions.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "Evaluation should include safe degraded modes, clear user notification, manual or non-AI fallback\nworkflows, stale-data controls, handling of incomplete actions, recovery procedures, rollback, and\nreconciliation after service is restored. The device should not silently continue with partial context, present\ncached information as current, duplicate a clinical action after retry, or leave the user unable to determine\nwhether an action was completed.",
+      "position_gist": "Evaluation should confirm safe degraded modes, user notification, non-AI fallback workflows, stale-data controls, recovery/rollback and reconciliation, and that the device never silently continues with partial or cached context or leaves action completion ambiguous.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q8"
+      ],
+      "source_passage": "Full offline functionality may not be necessary for every device. The requirement should be proportionate\nto intended use, autonomy, severity of harm, and time-to-harm during unavailability. A low-risk\ndocumentation assistant may be permitted to become unavailable if the failure is obvious and does not\ncorrupt the record. A device that directs treatment, initiates clinical actions, controls another device, or\nsupports time-critical care may require local functionality, redundancy, a validated conventional mode, or\nan immediately available manual alternative.",
+      "position_gist": "Continuity/offline requirements should scale with intended use, autonomy, severity of harm, and time-to-harm, with higher-risk or time-critical action-taking devices requiring local functionality, redundancy, or validated manual alternatives.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "Connectivity dependency, dependency criticality, detectability of degradation, availability of downstream\nsafeguards, and time-to-harm during unavailability should be explicit modifiers within the proposed risk\nframework. The paper already asks whether time pressure and downstream safeguards should\nsupplement the activity-and-consequence framework. [1, p. 9]",
+      "position_gist": "The two-axis risk framework should be supplemented with explicit modifiers for connectivity dependency, dependency criticality, detectability of degradation, downstream safeguards, and time-to-harm during unavailability.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "Recommended CDRH action: Add a cybersecurity benchmarking element tailored to the complete\narchitecture and supply chain of GenAI-enabled devices, not only to adversarial user prompts.\nThe discussion paper recognizes adversarial prompting, prompt injection, and attacks delivered through\nuser input, retrieved content, and tool output. [1, pp. 24-26] Those are important, but they are only part of\nthe attack surface. A GenAI-enabled medical device may depend on multiple interconnected systems\nwhose compromise can alter clinical behavior even when the physical device itself has not been\ncompromised.",
+      "position_gist": "A cybersecurity benchmarking element should be added that covers the full architecture and supply chain (model compromise, RAG poisoning, compromised tools/agents, guardrail changes, API/identity compromise, update supply chain, tenancy isolation, DoS, service-interface and logging weaknesses), not just adversarial prompting.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "Sponsors should provide a system threat model identifying trust boundaries, data flows, privileged\nfunctions, third-party services, external interfaces, update paths, service access methods, and the clinical\nconsequences of compromise. Testing should evaluate integrity and availability of clinical functionality in\naddition to confidentiality. FDA's February 2026 premarket cybersecurity guidance already emphasizes\nresilient design, quality-system integration, and section 524B considerations; the GenAI framework should\nexplicitly cross-reference and extend those expectations to model and service dependencies. [2]",
+      "position_gist": "Sponsors should submit a system threat model and test integrity and availability (not just confidentiality), and the GenAI framework should cross-reference and extend FDA's existing premarket cybersecurity guidance to model and service dependencies.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q24"
+      ],
+      "source_passage": "Manufacturers should remain accountable for the marketed device even when a vulnerability, outage, or\nunauthorized change originates with a third-party model, cloud provider, retrieval source, or external tool\nselected by the manufacturer. Contracts, technical controls, model version pinning, staged deployment,\nrollback, and notification obligations should be evaluated as part of the safety case, not left solely to\ncommercial arrangements.",
+      "position_gist": "Manufacturers should remain accountable for third-party-originated changes, outages, or vulnerabilities, and contractual and technical controls (version pinning, staged deployment, rollback, notification obligations) should be reviewed as part of the device's safety case rather than left to commercial arrangements.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q21",
+        "q9"
+      ],
+      "source_passage": "Recommended CDRH action: Require a serviceability and lifecycle-support plan that gives qualified\nhealthcare and independent service personnel the information and controlled access reasonably\nnecessary to maintain the device safely.\nHealthcare Technology Management departments, biomedical equipment technicians, clinical engineers,\nand qualified independent service organizations routinely perform preventive maintenance, corrective\nmaintenance, calibration, operational verification, electrical-safety testing, parts replacement, software\nrestoration, network review, cybersecurity coordination, and return-to-service decisions. GenAI-enabled\nequipment should not assign these organizations responsibility for device availability while withholding\nthe tools needed to fulfill that responsibility.",
+      "position_gist": "CDRH should require a serviceability and lifecycle-support plan (service manuals, diagnostics and logs, PM and calibration procedures, post-repair verification, parts and pairing information, service software/credentials, break-glass local service pathway, backup/restore, and identification of OEM-only functions) so qualified in-house and independent servicers can maintain devices they are accountable for.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q21",
+        "q9"
+      ],
+      "source_passage": "Service access can and should be secured through qualification, authentication, role-based authorization,\naudit logging, and appropriate cybersecurity controls. Cybersecurity should not become a blanket\njustification for excluding qualified in-house or independent personnel from necessary maintenance,\ncalibration, diagnosis, and verification.",
+      "position_gist": "Service access should be secured via authentication, role-based authorization, and audit logging, but cybersecurity should not be used as a blanket justification for excluding qualified in-house or independent service personnel.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q24"
+      ],
+      "source_passage": "This is dependency-driven functional obsolescence. It differs from traditional equipment failure because\nthe healthcare organization may be forced to retire otherwise functional capital equipment solely because\nan external service is withdrawn. The discussion paper addresses third-party model changes and asks how\na manufacturer should detect, evaluate, and respond to them. [1, pp. 20-22] The framework should also\nask what happens when the provider stops offering the model or service altogether.",
+      "position_gist": "Beyond third-party model changes, the framework should address the case where a foundation-model, cloud, or licensing provider discontinues the service entirely, causing dependency-driven functional obsolescence of otherwise working equipment.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q24"
+      ],
+      "source_passage": "Sponsors should disclose and commit to:\n Expected device service life\n Minimum hardware, software, cybersecurity, model, cloud, and service-support periods\n Replacement-part availability periods\n Advance notice for end-of-support, model retirement, API deprecation, and licensing changes\n A migration, transition, or validated downgrade path\n Data export, configuration portability, and preservation of maintenance and service records\n Safe operation during the transition period\n Contingency plans for manufacturer, cloud-provider, or foundation-model-provider failure\n A validated retirement and decommissioning process\n Whether essential functions can continue locally, through an alternate provider, or in a non-AI mode after\nthe original service is withdrawn",
+      "position_gist": "Sponsors should be required to disclose and commit to enforceable lifecycle-support terms, including support periods, advance notice of model retirement or API deprecation, migration/downgrade paths, data portability, provider-failure contingencies, and whether essential functions can continue locally or in a non-AI mode.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q18",
+        "q24"
+      ],
+      "source_passage": "For high-risk or widely deployed devices, CDRH should consider whether additional continuity\nmechanisms are appropriate, such as contractual transition rights, access to validated replacement\ncomponents, escrow of critical software artifacts, or other arrangements that reduce the risk that provider\nfailure will abruptly strand a device fleet. The precise mechanism may vary, but the absence of a credible\nprovider-exit plan should be treated as a lifecycle risk.",
+      "position_gist": "For high-risk or widely deployed devices, CDRH should consider continuity mechanisms such as contractual transition rights, replacement-component access, or software escrow, and should treat absence of a credible provider-exit plan as a lifecycle risk.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q24"
+      ],
+      "source_passage": "Foreseeable end-of-support events should be addressed in risk management, labeling, acquisition\ndisclosures, and postmarket monitoring rather than treated only as commercial matters. Essential clinical\nfunctionality should not be remotely withdrawn without adequate notice, a safe transition, and clear\ncommunication to the device owner and users.",
+      "position_gist": "Foreseeable end-of-support events should be handled through risk management, labeling, and postmarket monitoring, and essential clinical functionality should not be remotely withdrawn without adequate notice, a safe transition, and communication to owners and users.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q9"
+      ],
+      "source_passage": "CDRH should also consider fleet-level common-mode risk. A health system may deploy hundreds of<br/>devices relying on the same model, cloud, identity, licensing, or update infrastructure. Failure or<br/>compromise of one dependency could simultaneously affect an entire device class.",
+      "position_gist": "CDRH should account for fleet-level, common-mode, and third-party concentration risk, since one shared model, cloud, identity, licensing, or update dependency can simultaneously affect an entire deployed device class.",
+      "segment_id": "seg-016"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q9"
+      ],
+      "source_passage": "For physical devices, CDRH should distinguish AI &ldquo;calibration&rdquo; from conventional biomedical<br/>calibration. Safety may depend on the entire chain from sensor and signal processing through<br/>software, GenAI interpretation, and clinical output. AI benchmarking should not replace<br/>conventional calibration, and conventional calibration alone may not establish that a changed model<br/>interprets measurements safely.",
+      "position_gist": "CDRH should define end-to-end calibration and return-to-service verification that distinguishes AI model verification from conventional biomedical calibration, since neither substitutes for the other when a model changes.",
+      "segment_id": "seg-017"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "GenAI-enabled devices may depend on foundation-model providers, cloud APIs, retrieval sources,<br/>identity services, licensing systems, external tools, and other third parties. Sponsors should identify<br/>which functions operate on-device, on the local network, or through internet services and define<br/>behavior when each dependency fails or degrades.",
+      "position_gist": "Sponsors should transparently disclose device architecture and dependencies—identifying which functions are on-device, LAN-dependent, or internet/cloud-dependent—and define behavior when each dependency fails.",
+      "segment_id": "seg-018"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "Finally, CDRH should explicitly include HTM professionals, BMETs, clinical engineers, healthcare<br/>cybersecurity personnel, and qualified independent service organizations in this discussion. These<br/>stakeholders keep medical equipment safe, available, calibrated, secure, and functional throughout<br/>its useful life.",
+      "position_gist": "CDRH should formally include HTM professionals, BMETs, clinical engineers, healthcare cybersecurity personnel, and qualified independent service organizations as stakeholders in framework development and ongoing monitoring.",
+      "segment_id": "seg-019"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "Recommended CDRH action: Require a standardized connectivity and dependency profile that is available before acquisition and included in labeling and technical documentation.\nFor each clinically relevant function, the profile should distinguish among:\n1. Functions performed entirely on the device\n2. Functions requiring the healthcare organization's local network\n3. Functions requiring internet access\n4. Functions requiring manufacturer-operated cloud services\n5. Functions requiring a third-party foundation model or platform\n6. Functions requiring external clinical-data, retrieval, terminology, or decision-support sources\n7. Functions requiring identity, licensing, telemetry, monitoring, or update services",
+      "position_gist": "FDA should require a standardized, pre-acquisition connectivity and dependency profile in labeling that classifies each clinically relevant function by where it executes and what external services it depends on, with per-dependency disclosures on essentiality, data flow, failure detection, fallback, and responsibility.",
+      "segment_id": "seg-020"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "A device that performs its essential function locally and uses the cloud only for optional enhancement should not be treated as operationally equivalent to a device that requires a remote model, cloud identity provider, retrieval service, licensing server, and EHR interface for every clinical output.",
+      "position_gist": "Degree and criticality of external dependency should differentiate devices in regulatory/risk treatment rather than being treated as operationally equivalent.",
+      "segment_id": "seg-021"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q9"
+      ],
+      "source_passage": "Recommended CDRH action: Distinguish AI calibration from physical-device calibration and require a practical method to verify the complete measurement-to-output chain after service or change.... Sponsors should define verification requirements after preventive maintenance, corrective maintenance, sensor replacement, compute-module replacement, software or model updates, prompt or guardrail changes, retrieval-source changes, configuration changes, and network or cloud migration.\nPassing an AI benchmark should not substitute for metrological calibration, electrical-safety testing, or conventional functional verification. Conversely, calibrating a sensor does not demonstrate that a changed model continues to interpret the measurement safely. Qualified service personnel need a practical, risk-based process for verifying the portions of the system necessary to return the equipment to clinical use, along with clear criteria for when manufacturer involvement or more extensive revalidation is required.",
+      "position_gist": "FDA should distinguish AI 'calibration' from metrological calibration and require sponsors to define end-to-end return-to-service verification after maintenance, model/prompt/retrieval changes, and cloud migration, since AI benchmarking cannot substitute for physical verification and vice versa.",
+      "segment_id": "seg-022"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "Recommended CDRH action: Require clear disclosure of the difference between legal ownership of hardware and continuing vendor control over clinically essential functionality.... CDRH may not regulate every commercial term directly. However, when a licensing or ownership arrangement can terminate essential clinical functionality, prevent necessary servicing, or create an unsafe condition, it becomes relevant to safety, effectiveness, labeling, and continuity.",
+      "position_gist": "Licensing and ownership arrangements that can terminate essential clinical functionality or block servicing should be treated as safety, effectiveness, and labeling matters requiring pre-acquisition disclosure, not purely commercial terms.",
+      "segment_id": "seg-023"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q19",
+        "q24"
+      ],
+      "source_passage": "Recommended CDRH action: Require sponsors to assess failures that can simultaneously affect large fleets, multiple facilities, or multiple manufacturers sharing the same dependency.... For higher-risk or widely deployed products, CDRH should consider requiring evidence of a scalable common-mode failure response plan and postmarket reporting of material service outages, not only unit-level adverse events.",
+      "position_gist": "Sponsors should be required to assess fleet-level and cross-manufacturer common-mode/concentration risk from shared foundation models, cloud, identity, and licensing dependencies, and higher-risk or widely deployed products should require a scalable common-mode failure response plan plus postmarket reporting of material service outages.",
+      "segment_id": "seg-024"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q9"
+      ],
+      "source_passage": "The paper's proposed benchmarking structure includes safety, clinical proficiency, generalizability, and agentic AI capabilities. [1, p. 12] Those categories do not adequately capture cybersecurity, external-service dependence, maintainability, or lifecycle continuity. CDRH should consider the following additional elements:\n... S.4 Cybersecurity and Dependency Integrity ... R.3 Operational Resilience and Continuity ... R.4 Maintainability, Serviceability, and Lifecycle Support ...\nThe risk framework should also consider connectivity dependence, number and criticality of external dependencies, time-to-harm during unavailability, fallback capability, detectability of degradation, reversibility of incomplete actions, ability to restore a prior validated configuration, fleet size, common-mode exposure, availability of qualified service, and expected remaining support life.",
+      "position_gist": "The proposed benchmarking structure is missing cybersecurity/dependency integrity, operational resilience and continuity, and maintainability/serviceability elements (with specified minimum evidence), and the risk framework should add dimensions such as connectivity dependence, time-to-harm, fallback capability, reversibility, fleet size, and remaining support life.",
+      "segment_id": "seg-025"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Postmarket monitoring should extend beyond clinical-output quality and include:\n Network, cloud, model, licensing, and identity-service interruptions\n Cybersecurity incidents and third-party provider incidents\n Frequency and duration of degraded-mode operation\n Failed updates, rollbacks, configuration drift, and recovery failures\n Repair delays, service lockouts, parts shortages, and repeated manufacturer escalations\n Calibration or return-to-service failures\n Loss or retirement of external services and model versions\n Mean time to detect, contain, restore, and reconcile clinical functionality\n Fleet-level events and common-mode failures",
+      "position_gist": "Postmarket performance evaluation should extend beyond clinical-output quality to track service interruptions, cybersecurity and third-party incidents, degraded-mode operation, update/rollback failures, service and parts delays, calibration failures, external-service retirement, restoration times, and fleet-level common-mode events.",
+      "segment_id": "seg-026"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "The paper recognizes broader ecosystem roles but states that manufacturers remain responsible for postmarket monitoring. [1, p. 20] Responsibilities should not be structured in a way that diffuses manufacturer accountability for dependencies selected by the manufacturer.",
+      "position_gist": "Postmarket roles should be structured so that manufacturer accountability is not diffused for dependencies the manufacturer itself selected.",
+      "segment_id": "seg-027"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "Machine-based supervisory agents may supplement monitoring, but they should not be the sole safeguard when the monitor shares the same model, cloud, network, identity, or data dependencies as the device being monitored.",
+      "position_gist": "Supervisory agents may supplement postmarket monitoring but should not be the sole safeguard where the monitor shares model, cloud, network, identity, or data dependencies with the monitored device.",
+      "segment_id": "seg-028"
+    },
+    {
+      "question_ids": [
+        "q25"
+      ],
+      "source_passage": "Foundation Model Device Master Files could also include support and deprecation policies, version-pinning options, update and incident-notification commitments, audit-log availability, service-continuity expectations, data-portability provisions, and provider-exit arrangements in addition to model-performance information. The device sponsor should remain responsible for demonstrating how those commitments support the marketed device.",
+      "position_gist": "Foundation Model MAFs should include support/deprecation policies, version pinning, update and incident notification commitments, audit-log availability, continuity, data portability, and provider-exit arrangements, while the device sponsor remains responsible for showing those commitments support the marketed device.",
+      "segment_id": "seg-029"
+    },
+    {
+      "question_ids": [
+        "q16",
+        "q21"
+      ],
+      "source_passage": "Recommended CDRH action: Explicitly include the personnel responsible for maintaining, securing, calibrating, troubleshooting, and returning medical equipment to clinical use.\nThe discussion paper identifies manufacturers, clinicians, patients, healthcare institutions, payers, professional societies, standards-setting bodies, and government authorities as potential participants in the postmarket ecosystem. [1, p. 20] It does not specifically identify the people who will be expected to keep the equipment safe, patched, calibrated, serviceable, and available.\nCDRH should explicitly solicit and incorporate input from:\n Healthcare Technology Management departments\n Biomedical equipment technicians\n Clinical engineers\n Healthcare cybersecurity and medical-device security personnel\n... Qualified independent service organizations\n Third-party calibration and testing laboratories\n Healthcare supply-chain and capital-equipment planning personnel\nThese stakeholders can provide practical evidence that may not emerge from laboratory benchmarking or clinical-performance studies... Their participation is also important to defining shared responsibilities without weakening manufacturer accountability.",
+      "position_gist": "CDRH should explicitly include HTM, biomedical/clinical engineering, device-security, independent service organizations, and third-party calibration labs as postmarket ecosystem stakeholders because they supply practical serviceability, downtime, and security evidence not captured by benchmarking or clinical studies, while shared responsibilities are defined without weakening manufacturer accountability.",
+      "segment_id": "seg-030"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q7"
+      ],
+      "source_passage": "A comprehensive Total Product Life Cycle framework for GenAI-enabled medical devices should evaluate more than whether a device generates acceptable outputs under normal operating conditions. It should determine whether the healthcare organization can safely own or lease the device, understand its dependencies, operate it during normal and degraded conditions, preserve essential functions during outages, secure it against compromise, maintain and repair it, calibrate and verify it, restore it after failure, update it without unacceptable risk, obtain necessary parts and service access, respond to provider withdrawal, manage common-mode events, and retire it through an orderly process.... Requested outcome\n A system-level GenAI framework that evaluates the complete deployed product, not only the model-enabled function in isolation.\n Validated safe behavior during dependency failure, compromise, service withdrawal, maintenance, update, and end-of-support.\n Reasonable, secure access for qualified personnel to diagnose, maintain, calibrate, verify, and restore medical equipment.\n Clear manufacturer accountability for third-party dependencies throughout the expected service life.",
+      "position_gist": "The regulatory framework should be system-level and lifecycle-based—evaluating the complete deployed product including dependency failure, security, serviceability, and end-of-support—rather than evaluating only the model-enabled function's outputs under normal conditions.",
+      "segment_id": "seg-031"
+    }
+  ]
+}

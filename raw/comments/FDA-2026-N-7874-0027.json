@@ -1,0 +1,41 @@
+{
+  "regulations_gov_comment_id": "FDA-2026-N-7874-0027",
+  "document_id": "FDA-2026-N-7874-0001",
+  "docket_id": "FDA-2026-N-7874",
+  "source_url": "https://www.regulations.gov/comment/FDA-2026-N-7874-0027",
+  "last_modified_date": "2026-08-27T23:44:46Z",
+  "attributes": {
+    "title": "Comment from SichGate Inc.",
+    "comment": "Comment of Polina Moshenets, Founder, SichGate. Full comment attached.<br/><br/>Addresses discussion questions 5, 9, 10, 19, 22, 23, 25, and 26.<br/><br/>Disclosure: I am the founder of SichGate, which builds adversarial evaluation tooling for small language models. My remarks are methodological and propose no role for my own organization.<br/><br/>I support the Section V.A principle that the deployed device configuration, not the foundation model standing alone, is the correct unit of evaluation. These comments concern places where later sections may not carry it through.<br/><br/>1. COMPRESSION SHOULD BE A NAMED CHANGE CATEGORY (Q22, Q23, Q19). Section VI.C enumerates sponsor-initiated modifications, passive model evolution, and third-party model updates. Compression through quantization, pruning, or distillation fits none of these. It is applied late, often by an infrastructure function rather than the team responsible for safety assessment, and is frequently what makes constrained deployment feasible. It alters output distributions at the token-probability boundaries where refusal decisions are resolved, and reported effects diverge by method, precision, and model family. Recommend: add compression to the VI.C taxonomy; require validation of the exact deployed artifact after a material compression or inference-stack change; if considered for a PCCP, prespecify method, precision target, and re-benchmarking evidence rather than presuming low impact.<br/><br/>2. REAL-WORLD SAMPLING DOES NOT MEASURE ADVERSARIAL RESISTANCE (Q19). Unless deliberately supplemented with adversarial probes, sampling designed to represent clinical presentations is not designed to estimate, and should not be treated as evidence of, resistance to prompt injection, scope testing, emotional manipulation, or multi-turn escalation. A device whose scope maintenance has degraded can produce an unremarkable real-world sample because nothing in it tested the boundary. Recommend: treat active re-benchmarking against a version-controlled adversarial battery as the principal reliable evidence source for the S-series and R-series elements, with cadence set independently of clinical review.<br/><br/>3. ELEMENT-LEVEL RESULTS CAN CONCEAL CONSTITUENT REGRESSION (Q9, Q22). S.2 bundles mechanistically distinct attack classes: adversarial suffixes, competing objectives, indirect injection, sycophancy, and crescendo escalation. Because the mechanisms differ, they respond differently to a given change, so an element-level pass can absorb a material regression in one constituent. Recommend: compare at constituent failure-mode level against a taxonomy fixed and versioned at premarket.<br/><br/>4. MULTI-TURN TRAJECTORY FAILURE REQUIRES DIRECT MEASUREMENT (Q5, Q9). Crescendo escalation requires no technical capability, is invisible to turn-level scoring because individual turns may appear benign or clinically permissible in isolation, and is not entailed by single-turn resistance. Recommend: treat multi-turn trajectory testing as a distinct testable behavior within S.2 with its own acceptance criteria, required for conversational devices and for action-directing or action-taking functions.<br/><br/>5. FINE-TUNING REDISTRIBUTES EXPOSURE (Q9, Q22). Published work shows fine-tuning can compromise safety alignment even with benign data and no adversarial intent. Improvement on the dimension the fine-tuning targeted is not evidence of improvement on the Safety or Generalizability elements. Recommend: conduct R.2 subgroup evaluation on the fine-tuned artifact rather than inheriting it from the base model, and require sponsors to affirmatively justify a determination that R.2 is not applicable.<br/><br/>6. FOUNDATION MODEL MAFs DESCRIBE AN ARTIFACT THAT IS NOT THE DEPLOYED ONE (Q25). A MAF characterizes the model as the developer produced it; the device incorporates it after fine-tuning, often compression, plus system prompt, retrieval, guardrails, and tool access. Recommend: require the referencing submission to document downstream transformations, and ask developers to characterize safety-behavior stability under common modifications.<br/><br/>7. ADVERSARIAL BENCHMARK EXPOSURE (Q10). Because corpus provenance is generally undisclosed, public adversarial assets should be treated as potentially exposed rather than presumed sequestered, which causes measured resistance to overstate generalization to novel constructions. Recommend: require construct-validity arguments to address exposure, and require disclosure of attack taxonomy and scoring rubric where sponsor-developed assets are used.<br/><br/>8. AGENTIC SYSTEMS (Q26). A boundary failure in an informational device produces an output; the same failure with tool access produces an action. Recommend: tie S.2 and A.1 acceptance criteria to action surface, reversibility, authorization scope, confirmation checkpoints, and halt or rollback capability, and evaluate them as jointly interacting controls.",
+    "organization": null,
+    "category": "Device Industry - C0012",
+    "postedDate": "2026-08-27T04:00:00Z",
+    "receiveDate": "2026-08-22T04:00:00Z",
+    "docketId": "FDA-2026-N-7874",
+    "commentOnDocumentId": "FDA-2026-N-7874-0001",
+    "submitterRep": null,
+    "govAgency": null,
+    "govAgencyType": null,
+    "stateProvinceRegion": null,
+    "country": null,
+    "duplicateComments": 1,
+    "withdrawn": false,
+    "openForComment": false,
+    "pageCount": 0,
+    "trackingNbr": "mt4-oxuo-vgs5",
+    "modifyDate": "2026-08-27T23:44:46Z"
+  },
+  "attachments": [
+    {
+      "id": "09000064b94813b4",
+      "title": "Comment from SichGate Inc",
+      "format": "pdf",
+      "size": 23114,
+      "file_url": "https://downloads.regulations.gov/FDA-2026-N-7874-0027/attachment_1.pdf",
+      "local_path": "raw/attachments/FDA-2026-N-7874-0027/09000064b94813b4.pdf",
+      "downloaded": true,
+      "error": null
+    }
+  ],
+  "fetched_at": "2026-09-02T19:47:15Z"
+}

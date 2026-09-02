@@ -1,0 +1,206 @@
+{
+  "comment_id": "FDA-2026-N-7874-0028",
+  "input_hash": "bb6359b11b92a74b",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:07:26Z",
+  "model": "claude-opus-5",
+  "chunks": 2,
+  "positions": [
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "I support the two-axis framework (device activity vs. consequence of an incorrect output) as a useful heuristic, but recommend it be treated as a starting point rather than a determinative scoring tool. Four additional dimensions should be incorporated, either as risk modifiers or explicit framework axes:\nReversibility. An incorrect output that leads to an irreversible action (e.g., initiating thrombolytic therapy) warrants materially different oversight than one that leads to a reversible action (e.g., a delayed but correctable dosing adjustment). I recommend CDRH explicitly incorporate reversibility as a modifier that shifts a function's position on the consequences axis, rather than leaving it as an implicit consideration.",
+      "position_gist": "Supports the two-axis framework as a starting heuristic rather than a determinative scoring tool, and recommends adding reversibility as an explicit modifier shifting a function's position on the consequences axis.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "Availability of downstream safeguards. Risk should be assessed net of credible downstream checks (e.g., pharmacist verification, mandatory HCP co-signature, hard-coded dose-range limits). Where such safeguards are validated, documented, and enforced by design (not merely assumed), presumptive risk should be reduced accordingly. CDRH should clarify what evidence would be sufficient to credit a downstream safeguard in a risk determination, since claimed safeguards that rely on human vigilance alone are less reliable than engineered constraints.",
+      "position_gist": "Risk should be assessed net of validated, design-enforced downstream safeguards, and CDRH should clarify what evidence suffices to credit a safeguard, recognizing engineered constraints are more reliable than human vigilance.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "Time pressure of the deployment setting. A function operating in an emergency department or ICU, where users have limited time to scrutinize outputs, should be treated differently than the same function deployed in a non-urgent outpatient or administrative setting. Time pressure amplifies automation bias and reduces the opportunity for independent verification, and should be reflected explicitly.",
+      "position_gist": "Time pressure of the deployment setting (e.g., ED/ICU) should be explicitly reflected in the risk framework because it amplifies automation bias and limits verification.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "Traceability to source material. Functions that can cite verifiable primary sources (e.g., specific guideline sections, lab values, retrieved documents) allow users to independently verify outputs and are inherently less risky than opaque, non-traceable outputs. I recommend CDRH treat traceability as a mitigating factor that can lower a function's effective risk tier, incentivizing manufacturers to build in citation and provenance features.\nI recommend these four dimensions be added as explicit modifiers layered onto the two base axes, producing a more granular risk profile without abandoning the simplicity of the original framework.",
+      "position_gist": "Traceability to verifiable primary sources should be treated as a mitigating factor lowering effective risk tier, with all four dimensions added as modifiers layered onto the two base axes.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q2"
+      ],
+      "source_passage": "I agree that directiveness exists on a continuum and support CDRH's proposal that \"talk to your doctor\" disclaimers should not automatically reduce a function's directiveness classification. I recommend CDRH provide a small set of illustrative worked examples (as in the paper) formalized into a decision-tree or checklist within eventual guidance, using factors such as specificity (general vs. numeric instruction), personalization (population-level vs. patient-specific), and context (isolated statement vs. embedded in a clinical workflow that expects action). This would give manufacturers predictability while preserving the continuum concept.",
+      "position_gist": "Agrees directiveness is a continuum and that disclaimers should not automatically reduce classification; recommends CDRH formalize worked examples into a decision tree or checklist keyed to specificity, personalization, and context.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "On patient-facing versus HCP-facing functions, I support differentiated risk treatment but caution against a rigid rule that automatically elevates all patient-facing functions. I recommend a middle path: patient-facing informational functions should be evaluated for (a) health-literacy-adjusted comprehensibility, (b) built-in calibration/uncertainty signaling, and (c) appropriate escalation triggers. Where these safeguards are demonstrated through the benchmarking elements described in Section V (particularly E.4 and S.3), the \"patient-facing\" designation alone should not mandate the highest risk tier.",
+      "position_gist": "Patient-facing functions should not automatically receive the highest risk tier; instead they should be assessed for health-literacy-adjusted comprehensibility, uncertainty signaling, and escalation triggers demonstrated through benchmarking.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q4"
+      ],
+      "source_passage": "Similarly, for generalist- versus specialist-facing HCP functions, I recommend risk be tied to the objectively verifiable gap between the function's knowledge domain and the stated intended user population, rather than a blanket assumption that generalist use is inherently riskier. A function designed and benchmarked explicitly to support generalists in a specialty context (with appropriate scope boundaries per S.2) can be loIr risk than one that assumes specialist context but is used inconsistently.",
+      "position_gist": "Risk for HCP-facing functions should be tied to the verifiable gap between the function's knowledge domain and intended user population rather than a blanket assumption that generalist use is riskier.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q5"
+      ],
+      "source_passage": "On multi-turn conversations, I support CDRH's proposal to assess risk across realistic conversational trajectories rather than isolated turns. I recommend that intended use statements for conversational devices explicitly define the conversational scope and the maximum directiveness the system is designed to reach, with benchmarking (per R.1) validating that the system does not drift beyond that bound across extended exchanges.",
+      "position_gist": "Multi-turn risk should be assessed across realistic conversational trajectories, with intended use defining conversational scope and maximum directiveness, validated by adherence/drift benchmarking.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "On care escalation, I agree both under- and over-escalation are relevant harms and recommend manufacturers be permitted to define and justify an acceptable operating point (analogous to a sensitivity/specificity trade-off) calibrated to clinical context, subject to CDRH review of the justification rather than a fixed universal threshold.",
+      "position_gist": "Manufacturers should define and justify a context-calibrated operating point balancing under- and over-escalation, subject to CDRH review rather than a universal threshold.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q7"
+      ],
+      "source_passage": "I support the overall two-stage architecture of device benchmarking followed by clinical confirmation as a pragmatic, scalable alternative to exhaustive input-output testing, and believe it appropriately reflects the open-ended nature of GenAI outputs. I offer the following refinements.",
+      "position_gist": "Supports the two-stage competency-based approach of benchmarking followed by clinical confirmation as pragmatic and appropriate for open-ended GenAI outputs.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "The Safety (S.1–S.3), Clinical Proficiency (E.1–E.4), Generalizability (R.1–R.2), and Agentic (A.1) taxonomy is comprehensive and Ill-organized. I recommend one addition: an explicit \"Interoperability and Context-Integrity\" element evaluating whether a device correctly incorporates structured data (e.g., EHR fields, prior results) without misattribution or context-loss errors — a failure mode distinct from the quantitative-analysis failures captured in E.3. I also recommend CDRH clarify how S.1–S.3 interact with R.1–R.2; specifically, whether subgroup-stratified safety performance should be reported as a standalone R.2 analysis or embedded within each safety element's acceptance criteria. Embedding is preferable, since it prevents subgroup disparities in safety-critical behaviors from being averaged away in an aggregate metric.",
+      "position_gist": "The benchmarking taxonomy should add an 'Interoperability and Context-Integrity' element and should embed subgroup-stratified safety performance within each safety element's acceptance criteria rather than reporting it separately.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q10"
+      ],
+      "source_passage": "Benchmark validity and sponsor-developed assets. I agree publicly available benchmarks are vulnerable to contamination and saturation. I recommend a construct-validity requirement analogous to analytical validation for diagnostics: sponsors should demonstrate correlation between benchmark performance and an independent, clinically-grounded reference standard (e.g., through a calibration study) before relying on a benchmark to gate authorization. Sponsor-developed benchmarks should be permitted but should be accompanied by documentation of independence safeguards (e.g., held-out test sets never used in model development, adjudication by clinicians unaffiliated with the sponsor's development team) to mitigate \"teaching to the test\" concerns. I would welcome CDRH-recognized, consensus-standard benchmark development through a public-private process, potentially leveraging the MDDT pathway, to reduce duplicative sponsor effort and increase comparability across submissions.",
+      "position_gist": "Sponsors should demonstrate construct validity by correlating benchmark performance with an independent clinically grounded reference standard; sponsor-developed benchmarks should be allowed with independence safeguards, and CDRH should support consensus benchmarks via a public-private process potentially using MDDT.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q11",
+        "q8"
+      ],
+      "source_passage": "Clinical confirmation approach selection. I support the risk-proportionate menu of confirmation approaches (retrospective evaluation, shadow deployment, standardized patient interactions, clinician adjudication, prospective study) and agree a prospective trial should not be mandatory in every case. I recommend CDRH provide decision-support criteria — for example, a matrix crossing the two-axis risk position against confirmation rigor — to help sponsors select and justify an appropriate approach and to help review teams evaluate consistency across submissions.",
+      "position_gist": "Supports a risk-proportionate menu of clinical confirmation approaches without mandatory prospective trials, and recommends CDRH publish decision-support criteria such as a matrix crossing risk position against confirmation rigor.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q8"
+      ],
+      "source_passage": "I recommend CDRH provide decision-support criteria — for example, a matrix crossing the two-axis risk position against confirmation rigor — to help sponsors select and justify an appropriate approach and to help review teams evaluate consistency across submissions.",
+      "position_gist": "The two-axis risk framework should be operationalized within the competency-based approach as a matrix crossing risk position against required confirmation rigor.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q11",
+        "q12"
+      ],
+      "source_passage": "I also recommend explicit acknowledgment that combinations of approaches (e.g., retrospective evaluation supplemented by shadow deployment) may together satisfy confirmation expectations even where no single method would be sufficient alone.",
+      "position_gist": "CDRH should explicitly acknowledge that combinations of confirmation approaches may together satisfy expectations even when no single method suffices.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q12",
+        "q13"
+      ],
+      "source_passage": "Synthetic data. I support permitting synthetic data to supplement real-world evidence, particularly for rare presentations and underrepresented subgroups where real data is scarce. However, I caution that synthetic data generated by models similar in class to the device under evaluation risks circularity — reproducing rather than detecting the performance gaps the evaluation seeks to identify. I recommend CDRH require sponsors to (a) validate synthetic data generators against real-world distributions using independent statistical tests, (b) disclose the generation methodology and its relationship (if any) to the device's underlying model, and (c) apply distributional-shift analyses when combining synthetic and real benchmarking results into a single performance estimate. Domains with high symptom variability and subtle presentation (e.g., pediatric triage, mental health) warrant particular caution given the difficulty of validating synthetic realism.",
+      "position_gist": "Synthetic data should be permitted to supplement real-world evidence for rare/underrepresented cases but requires validation against real-world distributions, disclosure of generation methods and model relationships, and distributional-shift analysis, with particular caution in domains like pediatric triage and mental health.",
+      "segment_id": "seg-016"
+    },
+    {
+      "question_ids": [
+        "q14"
+      ],
+      "source_passage": "Performance standards and comparators. I support comparing GenAI device performance to a panel of qualified clinicians or an appropriate ground truth, with the choice depending on whether an objective reference standard exists. I recommend flexibility for sponsors to justify either a \"standard of care\" (consensus/best-practice) or a \"median practicing clinician\" comparator depending on intended use, provided the rationale is transparent and prespecified. For functions intended to operate within a human-AI team, I recommend evaluation of combined team performance (not device-alone performance) as the primary evidence base, since this reflects real-world deployment; device-alone performance should be reported as supportive evidence to characterize the AI's independent contribution and support root-cause analysis when team performance is deficient.",
+      "position_gist": "Sponsors should have flexibility to justify either a standard-of-care or median-clinician comparator with transparent prespecified rationale, and for human-AI team functions combined team performance should be the primary evidence with device-alone performance reported as supportive.",
+      "segment_id": "seg-017"
+    },
+    {
+      "question_ids": [
+        "q16"
+      ],
+      "source_passage": "Third-party involvement. I support an expanded role for independent third parties, particularly as adjudicators and stewards of sequestered benchmark datasets, which would meaningfully increase confidence in review objectivity and could reduce sponsor burden. I recommend CDRH pilot this concept through the existing ASCA and MDDT frameworks before broader rollout and address potential competitive/market-access concerns (e.g., ensuring accredited bodies do not become bottlenecks for smaller sponsors) through clear accreditation criteria and capacity planning.",
+      "position_gist": "Supports expanded independent third-party roles as adjudicators and stewards of sequestered benchmark datasets, piloted through ASCA and MDDT with accreditation criteria and capacity planning to avoid bottlenecks for smaller sponsors.",
+      "segment_id": "seg-018"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "I support increased reliance on postmarket monitoring to offset premarket uncertainty, provided such reliance is contingent on a credible, Ill-specified, and independently auditable monitoring plan submitted and agreed upon at the time of premarket review — not a generic commitment to \"monitor performance.\" Appropriate conditions include: the function operates with a human-in-the-loop safeguard for high-consequence actions; degradation is detectable through defined, sensitive metrics; and remediation (e.g., rollback, retraining halt) can be executed promptly. This approach would be inappropriate for fully autonomous, high-consequence, action-taking functions where postmarket detection may occur too late to prevent harm.",
+      "position_gist": "Greater reliance on postmarket monitoring is appropriate only with a specific, independently auditable monitoring plan agreed at premarket review, human-in-the-loop safeguards, sensitive degradation metrics, and prompt remediation; it is inappropriate for fully autonomous high-consequence action-taking functions.",
+      "segment_id": "seg-019"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Of the three postmarket approaches described, I view periodic re-benchmarking against the premarket baseline as the most operationally scalable and recommend it be the default expectation, supplemented by performance-degradation monitoring (drift detection) for continuously updating models. Sample-based clinician review is resource-intensive and should be reserved for higher-risk devices or triggered by drift signals rather than applied uniformly.",
+      "position_gist": "Periodic re-benchmarking against the premarket baseline should be the default postmarket approach, supplemented by drift detection for continuously updating models, with sample-based clinician review reserved for higher-risk devices or triggered by drift signals.",
+      "segment_id": "seg-020"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "I support exploring machine-based supervisory agents to scale monitoring but emphasize that the supervisory agent itself would need independent validation, version control",
+      "position_gist": "Machine-based supervisory agents may help scale postmarket monitoring but must themselves undergo independent validation and version control.",
+      "segment_id": "seg-021"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "checks (e.g., pharmacist verification, mandatory HCP co-signature, hard-coded dose-range limits). Where such safeguards are validated, documented, and enforced by design (not merely assumed), presumptive risk should be reduced accordingly. CDRH should clarify what evidence would be sufficient to credit a downstream safeguard in a risk determination, since claimed safeguards that rely on human vigilance alone are less reliable than engineered constraints.",
+      "position_gist": "Validated, design-enforced downstream safeguards should reduce presumptive risk, and CDRH should clarify what evidence suffices to credit a safeguard, recognizing that safeguards relying on human vigilance alone are weaker than engineered constraints.",
+      "segment_id": "seg-022"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "I recommend these four dimensions be added as explicit modifiers layered onto the two base axes, producing a more granular risk profile without abandoning the simplicity of the original framework.",
+      "position_gist": "The four additional dimensions should be added as explicit modifiers layered onto the two-axis framework rather than replacing it.",
+      "segment_id": "seg-023"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "Benchmarking element structure. The Safety (S.1–S.3), Clinical Proficiency (E.1–E.4), Generalizability (R.1–R.2), and Agentic (A.1) taxonomy is comprehensive and Ill-organized. I recommend one addition: an explicit \"Interoperability and Context-Integrity\" element evaluating whether a device correctly incorporates structured data (e.g., EHR fields, prior results) without misattribution or context-loss errors — a failure mode distinct from the quantitative-analysis failures captured in E.3. I also recommend CDRH clarify how S.1–S.3 interact with R.1–R.2; specifically, whether subgroup-stratified safety performance should be reported as a standalone R.2 analysis or embedded within each safety element's acceptance criteria. Embedding is preferable, since it prevents subgroup disparities in safety-critical behaviors from being averaged away in an aggregate metric.",
+      "position_gist": "Endorses the benchmarking taxonomy but recommends adding an 'Interoperability and Context-Integrity' element and clarifying that subgroup-stratified safety performance be embedded within each safety element's acceptance criteria rather than reported as a standalone generalizability analysis.",
+      "segment_id": "seg-024"
+    }
+  ]
+}

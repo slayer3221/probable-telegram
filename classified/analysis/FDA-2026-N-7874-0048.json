@@ -1,0 +1,297 @@
+{
+  "comment_id": "FDA-2026-N-7874-0048",
+  "input_hash": "1461bd64b2e5f714",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "The commenter finds the activity/consequence axes useful but notes that systems falling in the same cell of the matrix can still present materially different risks.",
+      "requested_fda_action": "Expand the risk framework to also account for reversibility, time to correction, error detectability, traceability to data and system versions, safeguard independence, exposure before containment, and stability of the population and workflow.",
+      "confidence": "high",
+      "gap_tags": [
+        "operational_harm",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment emphasizes error detectability, time to correction, and exposure before containment—how much harm accrues operationally before an error is caught and contained—rather than only the consequence of a single incorrect output.",
+        "deployment_assurance_scalability": "It asks FDA to weigh stability of the deployed population and workflow and traceability to data and system versions, which are deployment-context factors beyond the two-axis framing."
+      },
+      "public_summary": "Considers FDA's activity and consequence axes useful but insufficient, since devices in the same risk cell can differ materially. Asks FDA to add dimensions including reversibility, time to correction, error detectability, version and data traceability, safeguard independence, exposure before containment, and population and workflow stability.",
+      "summary_cut": false,
+      "source_passage": "The proposed activity and consequence axes are useful, but systems in the same cell can present different risks. FDA should also consider reversibility, time to correction, error detectability, traceability to data and system versions, safeguard independence, exposure before containment, and stability of the population and workflow."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q2"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "An output labeled as informational may function as action-directing in practice; features such as personalization, urgency, repeated recommendations, confidence presentation, defaults, omission of alternatives, and automated tool use can shift a function along the directiveness continuum regardless of how the interface describes it.",
+      "requested_fda_action": "Assess directiveness based on the device's observed behavior rather than interface labeling or sponsor characterization, and treat the listed output and interaction features as modifiers that can move an ostensibly informational function toward action direction.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment argues that a function's effective role can drift from its labeled informational intended use based on how outputs actually behave, implying intended use must be characterized by the behavioral envelope rather than declared labels.",
+        "human_ai_system_performance": "The cited modifiers—confidence presentation, defaults, omitted alternatives, repeated recommendations—concern how the output shapes user action, which is a property of the human-AI interaction rather than the model alone."
+      },
+      "public_summary": "Comment addresses assessing directiveness, arguing it should be determined by a device's observed behavior rather than interface labels. It identifies personalization, urgency, repeated recommendations, confidence presentation, defaults, omitted alternatives, and automated tool use as features that can shift apparently informational outputs toward action direction.",
+      "summary_cut": false,
+      "source_passage": "Directiveness should be judged by observed behavior, not interface labels. Personalization, urgency, repeated recommendations, confidence presentation, defaults, omitted alternatives, and automated tool use can move an apparently informational function toward action direction."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q5"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "The commenter indicates that evaluation of multi-turn conversational GenAI devices must address behaviors that emerge over the course of an exchange, not just single-output performance.",
+      "requested_fda_action": "Specify that multi-turn evaluation covers context accumulation or loss, escalation, refusal, interruption, and safe stop behaviors.",
+      "confidence": "low",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The recommended test dimensions (context loss, refusal, interruption, safe stop) describe a conversational behavioral envelope rather than a fixed intended use, which FDA's question frames only as trajectory risk assessment."
+      },
+      "public_summary": "Comment addresses multi-turn conversational evaluation, recommending that testing specifically cover context accumulation or loss, escalation, refusal, interruption, and safe-stop behaviors. It does not state a broader view on FDA's proposed approach to characterizing emergent conversational intended use.",
+      "summary_cut": false,
+      "source_passage": "Multi-turn evaluation should cover context accumulation or loss, escalation, refusal, interruption, and safe stop."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q7",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that a single benchmark score cannot substantiate competency, and that claims lack meaning without specified population, setting, user, workflow, input distribution, reference standard, acceptance criteria, failure rules, denominators, uncertainty, version, and exclusions. Robustness to degraded or unusual inputs and run-to-run consistency are also treated as unaddressed.",
+      "requested_fda_action": "Require competency to be demonstrated through structured, fully specified evidence for each claim rather than one benchmark score, and require testing with missing, contradictory, shifted, adversarial, and low-quality inputs plus repeated-run and equivalent-input testing.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts a competency-based evaluation framework but argues a single benchmark score is insufficient. Asks FDA to require per-claim specification of population, setting, user, workflow, inputs, reference standard, acceptance criteria, uncertainty, and version, plus testing of degraded, adversarial, and repeated inputs.",
+      "summary_cut": false,
+      "source_passage": "Competency should be supported by structured evidence rather than one benchmark score. Each claim should identify the population, setting, user, workflow, input distribution, reference standard, acceptance criteria, failure rules, denominators, uncertainty, version, and exclusions. Testing should include missing, contradictory, shifted, adversarial, and low-quality inputs, plus repeated-run and equivalent-input testing."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Performance on public benchmarks may not correspond to performance in the actual clinical operating environment, so treating benchmark results as predictive of real-world safety and effectiveness is not warranted.",
+      "requested_fda_action": "Require sponsors to affirmatively justify why a chosen benchmark represents the device's intended use and to characterize how the benchmark's data distribution differs from the intended operating environment, rather than presuming predictive validity.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter agrees benchmark results should not be presumed to predict clinical performance and asks FDA to require sponsors to justify a benchmark's relevance to the intended use and to document differences between benchmark data and the real operating environment.",
+      "summary_cut": false,
+      "source_passage": "Public benchmark performance should not be presumed to predict clinical performance. Sponsors should explain why a benchmark represents the intended use and where its distribution differs from the operating environment."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q10",
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned about the lack of independence when a sponsor controls benchmark test construction, tuning, scoring, and interpretation, which can undermine the credibility of benchmark-based evidence.",
+      "requested_fda_action": "Where sponsors control the benchmarking process, FDA should consider requiring or accepting independence safeguards such as external adjudication, preregistration, blinded evaluation, locked test sets, or qualified reproduction of results.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Comment accepts benchmark-based evaluation but notes that sponsor control over test construction, tuning, scoring, and interpretation warrants safeguards, suggesting external adjudication, preregistration, blinded evaluation, locked test sets, or qualified reproduction may be appropriate in such cases.",
+      "summary_cut": false,
+      "source_passage": "When a sponsor controls test construction, tuning, scoring, and interpretation, external adjudication, preregistration, blinded evaluation, locked tests, or qualified reproduction may be appropriate."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q13"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Synthetic data has legitimate but bounded utility; relying on it alone risks unsupported conclusions about real-world prevalence, subgroup performance, workflow effects, clinical performance, and benefit-risk.",
+      "requested_fda_action": "Recognize synthetic data as appropriate for schema testing, fault injection, specified rare cases, and reproducibility, while requiring that it not by itself establish prevalence, workflow effects, subgroup or clinical performance, or benefit-risk.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts synthetic data for limited purposes—schema testing, fault injection, specified rare cases, and reproducibility—but states it should not on its own establish real-world prevalence, workflow effects, subgroup or clinical performance, or benefit-risk conclusions.",
+      "summary_cut": false,
+      "source_passage": "Synthetic data can support schema testing, fault injection, specified rare cases, and reproducibility. It should not, by itself, establish real-world prevalence, workflow effects, subgroup performance, clinical performance, or benefit-risk."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q12"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "synthetic_data",
+      "stakeholder_concern": "Pooling synthetic-input and real-patient performance results could produce misleading single performance estimates when the two datasets do not measure the same quantity under comparable conditions.",
+      "requested_fda_action": "Require that synthetic and real-data performance results be reported separately, permitting combination only when they estimate the same quantity under compatible conditions.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "On combining evidence, the commenter states that synthetic-data and real-data performance results should be reported separately unless both estimate the same quantity under compatible conditions, setting a narrower condition for pooling than FDA's open-ended question implies.",
+      "summary_cut": false,
+      "source_passage": "Synthetic and real-data results should remain separate unless they estimate the same quantity under compatible conditions."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that reliance on postmarket monitoring could displace evidence that should be generated before patients are exposed to a device.",
+      "requested_fda_action": "Permit greater premarket uncertainty only under explicit conditions: failures are promptly detectable, consequences are limited or reversible, exposure is bounded, and containment measures are feasible; otherwise require the premarket evidence.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The conditions proposed—prompt detectability of failures, bounded exposure, and feasible containment—concern assurance capabilities in the deployment environment rather than premarket evidence alone."
+      },
+      "public_summary": "Accepts that greater premarket uncertainty may sometimes be tolerated, but only where failures are promptly detectable, consequences limited or reversible, exposure bounded, and containment feasible. Emphasizes that postmarket monitoring should not replace evidence required before a device is used.",
+      "summary_cut": false,
+      "source_passage": "Postmarket monitoring should not substitute for evidence needed before use. Greater residual uncertainty may be acceptable only when failures are promptly detectable, consequences are limited or reversible, exposure is bounded, and containment is feasible."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter appears concerned that postmarket approaches such as re-benchmarking or clinician review are insufficient unless embedded in a structured lifecycle program with defined baselines, denominators, indicators, thresholds, ownership, and response actions.",
+      "requested_fda_action": "Specify that credible lifecycle monitoring programs include a versioned baseline; denominator and deployment-context data; performance, safety, data-quality, and process indicators; investigation thresholds; incident linkage; assigned review ownership; and rules for rollback, suspension, or reassessment.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The commenter ties monitoring credibility to denominator and deployment-context data plus rollback or suspension rules, implying assurance must be tracked per deployment setting rather than only at the device level."
+      },
+      "public_summary": "Endorses lifecycle postmarket evaluation but specifies required components beyond FDA's listed approaches: a versioned baseline; denominator and deployment-context data; performance, safety, data-quality, and process indicators; investigation thresholds; incident linkage; defined review ownership; and rollback, suspension, or reassessment rules.",
+      "summary_cut": false,
+      "source_passage": "A credible lifecycle program should include a versioned baseline; denominator and deployment-context data; performance, safety, data-quality, and process indicators; investigation thresholds; incident linkage; review ownership; and rollback, suspension, or reassessment rules."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q19",
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter is concerned that reassessment triggers must cover the full range of components and contextual factors that can alter a GenAI device's behavior, not only changes to the model itself, and that operational failure signals be recognized as prompts for review.",
+      "requested_fda_action": "FDA should define reassessment as triggered by material changes across the model, prompts, retrieval corpus, orchestration, tools, guardrails, interface, intended use, users, population, workflow, source data, or clinical practice, and additionally by new safety signals, subgroup degradation, unexplained output shifts, repeated tool failures, and loss of traceability.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The commenter treats changes in intended use, users, population, workflow, and clinical practice as reassessment triggers, implying the device's behavioral envelope shifts with deployment context rather than remaining fixed at authorization.",
+        "operational_harm": "Repeated tool failures and lost traceability are proposed as review triggers, reflecting operational and system-level failure modes beyond incorrect clinical outputs."
+      },
+      "public_summary": "Comment endorses periodic reassessment but proposes broader triggers than FDA describes: material changes to model, prompts, retrieval corpus, orchestration, tools, guardrails, interface, intended use, users, population, workflow, source data, or clinical practice, plus safety signals, subgroup degradation, unexplained output shifts, tool failures, and lost traceability.",
+      "summary_cut": false,
+      "source_passage": "Reassessment should follow material changes in the model, prompts, retrieval corpus, orchestration, tools, guardrails, interface, intended use, users, population, workflow, source data, or clinical practice. New safety signals, subgroup degradation, unexplained output shifts, repeated tool failures, and lost traceability should also trigger review."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Third-party foundation model changes may go undetected if manufacturers rely on model names or release labels rather than verifiable version tracking, leaving device behavior to shift without assessment.",
+      "requested_fda_action": "Expect manufacturers to maintain versioned dependency inventories with contractual and technical controls covering change and incident notification, version identification, impact assessment, and rollback or version pinning, supported by detection methods such as regression and canary testing, runtime fingerprints, shadow evaluation, and output-distribution monitoring; where a dependency cannot be detected, assessed, or controlled, permitted use should be narrowed and safeguards strengthened.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment focuses on supplier-level controls—dependency inventories, change and incident notification, and rollback rights—for foundation models supplied by parties outside the manufacturer's quality system.",
+        "dynamic_intended_use": "It proposes that uncontrollable or undetectable upstream model change should narrow the device's permitted use, tying the scope of authorized use to ongoing controllability of model behavior."
+      },
+      "public_summary": "Commenter supports controls for third-party foundation model changes but urges specifics: versioned dependency inventories instead of model names or release labels; change, incident, and rollback provisions; and detection via regression, canary, shadow testing and output monitoring. Uncontrollable dependencies should narrow permitted use.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers using third-party foundation models should maintain a versioned dependency inventory rather than rely on a model name or release label. Controls should support change notice, version identification, incident notification, impact assessment, and rollback or pinning where feasible. Regression tests, canary testing, runtime fingerprints, shadow evaluation, and output-distribution monitoring can help detect change. If a dependency cannot be adequately detected, assessed, or controlled, that uncertainty should narrow permitted use and strengthen safeguards."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "cybersecurity",
+      "stakeholder_concern": "Evaluating only the quality of agentic outputs is insufficient; the safety of multi-step action sequences, authorization limits, failure recovery, and the integrity of human checkpoints must also be assessed, including exposure to prompt injection and stale or adversarial tool results.",
+      "requested_fda_action": "Adopt acceptance criteria for agentic devices that cover tool selection and parameters, authorization boundaries and least privilege, approval before irreversible actions, interruption, timeout, rollback and recovery, logging, partial failure handling, prompt injection resistance, and refusal when authority or confirmation is absent; require that human oversight occur before consequential actions, with sufficient information for the reviewer and no ability for the system to bypass or pressure the checkpoint.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm",
+        "cybersecurity_as_safety"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment focuses on authorization boundaries, least privilege, and refusal to act when authority or confirmation is missing, i.e., the scope of authority delegated to an agentic device.",
+        "operational_harm": "It raises harms arising from action execution and failure modes—irreversible actions, partial failure, timeout, rollback and recovery—rather than from incorrect clinical output alone.",
+        "cybersecurity_as_safety": "Prompt injection and stale or adversarial tool results are framed as safety criteria for agentic action sequences."
+      },
+      "public_summary": "Agrees agentic devices need additional evaluation, but asks FDA to specify criteria beyond output quality: action-sequence safety, tool selection, authorization limits and least privilege, approval before irreversible actions, rollback, logging, prompt-injection resistance, and human checkpoints that occur before action and cannot be bypassed.",
+      "summary_cut": false,
+      "source_passage": "Agentic systems require evaluation of output quality and action-sequence safety. Criteria should address tool selection, parameters, authorization boundaries, least privilege, stale or adversarial results, approval before irreversible actions, interruption, timeout, rollback, recovery, prompt injection, logging, partial failure, and refusal when authority or confirmation is missing. Oversight is meaningful only when it occurs before the consequential action, the reviewer has the information needed to decide, and the system cannot bypass or pressure the checkpoint."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q1",
+        "q19",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter is concerned that aggregate calibration, benchmark capability, and monitoring metrics can mask failures in intended-use relevance, discrimination, threshold behavior, and performance in clinically important strata, and that negative or missing evidence may be lost over the product life cycle.",
+      "requested_fda_action": "Strengthen the framework with structured risk modifiers, traceable competency evidence, explicit reporting of uncertainty, and versioned lifecycle decision records, and require that null, adverse, conflicting, blocked, and unavailable evidence remain visible throughout the product life cycle.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts FDA's general direction but asks for structured risk modifiers, traceable competency evidence, explicit uncertainty, and versioned lifecycle decision records, warning that calibration, benchmarks, and monitoring can hide failures in intended-use relevance, discrimination, thresholds, and important subgroups; negative or missing evidence should stay visible.",
+      "summary_cut": false,
+      "source_passage": "FDA&#39;s framework would be strengthened by structured risk modifiers, traceable competency evidence, explicit uncertainty, and versioned lifecycle decision records. Calibration, benchmark capability, and monitoring should not conceal failures in intended-use relevance, discrimination, threshold behavior, or clinically important strata. Null, adverse, conflicting, blocked, and unavailable evidence should remain visible throughout the product life cycle."
+    }
+  ]
+}

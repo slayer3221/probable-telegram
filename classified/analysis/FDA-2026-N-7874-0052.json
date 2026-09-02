@@ -1,0 +1,1412 @@
+{
+  "comment_id": "FDA-2026-N-7874-0052",
+  "input_hash": "ff94e279aea33522",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter views the two-axis framework (device activity and consequence of relying on an incorrect output) as a useful, pragmatic starting point for high-level regulatory decision-making, but finds the framework insufficiently clear about what kind of risk assessment it is meant to support and for what purpose.",
+      "requested_fda_action": "Clarify and more explicitly define the type and purpose of the \"risk assessment\" performed under the two-axis framework.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter endorses FDA's goal of risk-proportionate regulation and considers the two-axis framework a pragmatic starting point for high-level decisions, but asks FDA to define more clearly the type and purpose of the risk assessment the framework is intended to support.",
+      "summary_cut": false,
+      "source_passage": "I support FDA's objective of establishing a risk-proportionate framework for the regulation of GenAI-enabled medical devices. The proposed two-axis framework based on device activity and the consequences of relying on an incorrect output may provide a useful and pragmatic starting point for high-level regulatory decision-making. However, I believe that the framework would benefit from a clearer definition of the type and purpose of the “risk assessment” being performed."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter finds the Discussion Paper's use of the term \"risk\" ambiguous because it operates at two different levels without distinguishing them, which could create confusion relative to established risk management terminology.",
+      "requested_fda_action": "Clarify and explicitly separate the levels at which \"risk\" is used, using distinct terms — e.g., \"criticality\" for the product level and \"risk\" consistent with ISO 14971 for the other level — and clearly delineate the two phases.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts the framework but asks FDA to clarify terminology, noting \"risk\" is used at two undifferentiated levels. Suggests calling the product-level concept \"criticality\" and reserving \"risk\" for its ISO 14971 meaning, and separating the two phases explicitly.",
+      "summary_cut": false,
+      "source_passage": "From my perspective, the Discussion Paper should clarify more explicitly the context in which the term risk is used. It should always be clear at which level the term operates. The two levels should be clearly separated and the terminology should indicate the respective context. I suggest using different terms to avoid confusion: the first level could be described as “criticality” of the product, whereas the second could remain “risk” in accordance with ISO 14971.\nFurthermore, I suggest separating the two phases and clearly delineating them."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter accepts the two proposed axes but considers them insufficient on their own, arguing that only factors that are already defined and reliably supportable at the initial classification stage should anchor risk assessment, and that several additional contextual factors materially affect risk.",
+      "requested_fda_action": "Expand or supplement the two-axis framework with additional, reliably determinable factors—severity of harm, degree of autonomy, directness of clinical effect, scope restrictions, intended user and required expertise, reversibility, clinical setting, time criticality, binding workflow safeguards, availability of independent review, and output traceability—either as contributors to the axes or as distinct modifiers.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter treats the user's qualification and expertise, the availability of independent information or review, and time available for correction as risk-determining factors, framing risk as a property of the combined human-device workflow rather than the device output alone.",
+        "delegated_authority": "It proposes an autonomy axis ranging from non-directive information to autonomous action-taking, coupled with reversibility and binding workflow safeguards, addressing how much decision authority is handed to the device."
+      },
+      "public_summary": "Accepts FDA's two axes as a starting point, but urges that risk classification, at this early anchoring stage, rest only on reliably definable factors and add dimensions: autonomy, directness of clinical effect, scope limits, user expertise, clinical setting, time criticality, reversibility, independent review availability, and",
+      "summary_cut": true,
+      "source_passage": "This initial phase sets the anchor for subsequent regulatory and development steps. Accordingly, only factors that are defined and can be reliably supported at this stage should be used. These may include the following factors where the first two entries primarily correspond to the two axes already suggested in the Discussion Paper. The other entries may contribute to these axes (e.g., by affecting the consequences of outcomes) but could also be considered as distinct modifiers or dimensions.\n• Potential severity of harm that may result from relevant erroneous outputs;\n• Activity and degree of autonomy, ranging from non-directive information to autonomous action-taking;\n• Directness of the clinical effect, including whether an output indirectly supports clinical reasoning or directly determines or initiates a clinical action;\n• Scope restrictions, such as excluded indications, populations, actions, or clinical contexts;\n• Intended user, including patient-facing versus healthcare-professional-facing applications;\n• Reversibility of actions or consequences;\n• Qualification, expertise, and experience of the intended user, including whether specialist-level knowledge is required to independently evaluate an output;\n• Clinical setting, such as home use, outpatient care, inpatient care, intensive care, or emergency care;\n• Time criticality, including the time available for independent review, additional diagnostic investigation, or correction before harm may occur;\n• Fundamental workflow safeguards or safety boundaries that are already binding characteristics of the defined device and intended workflow;\n• Availability of independent information or review that enables an output to be assessed before reliance upon it; and\n• Traceability of an output to relevant source information."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Concern that anticipated or future risk controls could be credited to lower a device's initial regulatory criticality, understating risk; only safeguards that are already inherent and binding in the defined device or workflow (e.g., technically enforced independent clinician confirmation before an irreversible high-consequence action) should count.",
+      "requested_fda_action": "Allow safeguards to be credited in the initial criticality stratification only when they are already an inherent or binding part of the device or intended workflow, and require that any credited safeguard be defined, enforceable, verifiable, clinically realistic, and maintained across the total product lifecycle.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment treats human review steps such as enforced independent clinician confirmation as risk-relevant safeguards that must be technically enforced rather than assumed, which goes beyond the device-alone framing.",
+        "deployment_assurance_scalability": "It requires credited safeguards to be verifiable, clinically realistic, and maintained throughout the total product lifecycle, raising the question of assuring safeguards persist in real deployment."
+      },
+      "public_summary": "Supports including downstream safeguards in the risk framework, but only where they are already inherent or binding elements of the device or workflow. Anticipated future risk controls should not lower initial criticality; credited safeguards must be defined, enforceable, verifiable, clinically realistic, and lifecycle-maintained.",
+      "summary_cut": false,
+      "source_passage": "A safeguard should be included in the initial Criticality Stratification only where it is already an inherent or binding part of the defined device or intended workflow. For example, a technically enforced requirement for independent clinician confirmation before an irreversible high-consequence action may legitimately be considered as part of the initial device and use profile. In contrast, anticipated risk controls that may be developed later should not be used to reduce the initial regulatory criticality merely because the manufacturer expects them to be implemented during development. ... Where safeguards are credited at the stratification level, they should be defined, enforceable, verifiable, clinically realistic, and maintained throughout the total product lifecycle."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter suggests the two-axis risk framework may not capture probability-related information or the degree of certainty/uncertainty in the available evidence, and that risk assessment should reflect the technical and clinical maturity of a given device or technology.",
+      "requested_fda_action": "Add consideration of probability information and evidentiary certainty/uncertainty as additional dimensions in the risk framework, where such information is already sufficiently supported, so requirements can be tailored to device maturity, including well-established technologies with substantial existing evidence.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts the risk framework's general direction but asks FDA to also consider probability information and the certainty of available evidence, where sufficiently supported, so requirements are tailored to a technology's technical and clinical maturity, including well-established technologies.",
+      "summary_cut": false,
+      "source_passage": "Other factors, such as probability-related information or the degree of certainty/uncertainty of the available evidence, could also be considered where such information is already sufficiently supported at this stage. This could allow regulatory requirements to be better tailored to the technical and clinical maturity of a given device or technology. For example, this may provide an appropriate way to account for well-established technologies for which substantial relevant evidence is already available."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "Risk (criticality) stratification could understate risk if it rests on unsupported assumptions about how a device will behave; where a range of possible behaviors or conditions exists, the assessment may not capture the worst reasonably foreseeable case.",
+      "requested_fda_action": "Require that criticality stratification rest on reliably supportable assumptions for the defined device and use context, defaulting to the highest criticality that can reasonably occur unless excluded by defined and enforceable constraints, and permit probability-based assumptions only when adequately supported or conservatively bounded.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment ties risk classification to the range of possible device behaviors and to whether constraints on that behavioral envelope are defined and enforceable, rather than to a static intended use statement."
+      },
+      "public_summary": "Comment addresses risk stratification methodology, asking that criticality be based on reliably supportable assumptions and conservatively reflect the highest criticality reasonably possible unless excluded by defined, enforceable constraints, with probability-based assumptions used only where supported or conservatively bounded.",
+      "summary_cut": false,
+      "source_passage": "The Criticality Stratification should be based on assumptions that can be reliably supported for the defined device and use context. Where a range of possible device behaviors or conditions exists, the stratification should conservatively reflect the highest level of criticality that can reasonably occur and cannot be reliably excluded by defined and enforceable constraints. Accordingly, probability-related assumptions should only be used where they can be sufficiently supported or conservatively bounded."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter is concerned that an initial risk/criticality stratification could be treated as fixed even when evidence emerging during development, validation, clinical evaluation, or postmarket use contradicts the assumptions on which it was based.",
+      "requested_fda_action": "Build a feedback mechanism into the risk framework so that criticality classification and the associated regulatory requirements are reassessed when new information materially challenges the initial assumptions, integrating stratification into the total product lifecycle while keeping it conceptually distinct from product-specific risk management.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts a risk-stratification framework but asks that the initial criticality classification not be static: FDA should require reassessment of classification and associated requirements when development, validation, clinical, or postmarket information contradicts underlying assumptions, while keeping it distinct from product-specific risk management.",
+      "summary_cut": false,
+      "source_passage": "At the same time, the initial Criticality Stratification need not be considered static. If information generated during development, validation, clinical evaluation, or postmarket use materially challenges the assumptions underlying the initial stratification, the criticality classification and associated regulatory requirements would need to be reassessed. This feedback mechanism would integrate the initial stratification into the total product lifecycle while maintaining the conceptual distinction from Product-Specific Risk Management."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "The commenter is concerned that risk stratification could be driven by output characteristics or safeguards whose real effectiveness cannot be verified at the classification stage, rather than by clearly defined, reliably assured device properties.",
+      "requested_fda_action": "Limit factors influencing initial criticality stratification to clearly defined and reliably assured properties such as intended use, intended user, and use environment, and address other characteristics (whose effectiveness emerges in development, validation, clinical evaluation, or real-world use) through product-specific risk management.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Applies a single principle across FDA's risk questions: initial risk stratification should rest only on clearly defined, reliably assured device properties (intended use, user, environment), while characteristics whose effectiveness is established through development, validation, or real-world use belong in product-specific risk management.",
+      "summary_cut": false,
+      "source_passage": "Across Questions 2–6, the following principle is applied, consistent with the rationale presented above:\nA factor or characteristic should influence the initial Criticality Stratification only to the extent that it is a clearly defined and reliably assured property of the device, including intended use, intended user, or use environment. Characteristics whose actual effectiveness can only be addressed during product development, validation, clinical evaluation, or real-world use should instead be addressed primarily through Product-Specific Risk Management."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q2"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter agrees that directiveness lies on a continuum but considers FDA's framing incomplete, listing additional output characteristics (specificity, strength of recommendation and alternatives, enforceability of safeguards, availability of independent review, time criticality, clinical significance, and degree of personalization) as potentially relevant risk modifiers. It also raises the question of which factors belong in general criticality stratification versus product-specific risk management.",
+      "requested_fda_action": "Treat directiveness as a continuum and incorporate the listed output characteristics as modifiers of risk for informational functions, while clarifying for each factor whether it should inform criticality stratification or instead be handled through product-specific risk management.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The commenter proposes 'enforceability of safeguards' as a risk modifier, i.e., whether safeguards can be reliably ensured in the actual intended deployment setting rather than merely specified.",
+        "human_ai_system_performance": "The comment treats the availability of and requirements for independent human review before action as a factor shaping the risk of a directive output, tying risk to the surrounding human review process rather than the output alone."
+      },
+      "public_summary": "Agrees with FDA that directiveness is a continuum, and proposes additional risk modifiers: specificity, strength of recommendation and alternatives, enforceability of safeguards, independent review requirements, time criticality, clinical significance, and personalization. Asks FDA to clarify which factors inform criticality stratification versus product-specific risk management.",
+      "summary_cut": false,
+      "source_passage": "I agree that directiveness should be considered a continuum rather than a binary distinction. The following aspects may be relevant. For each factor or characteristic, it should be considered whether it can contribute to Criticality Stratification or can only be addressed during Product-Specific Risk Management.\n• Specificity of the proposed action, e.g., general information versus a concrete instruction;\n• Strength of recommendation and availability of alternatives, e.g., whether the user is presented with several reasonable options or effectively directed toward one;\n• Enforceability of safeguards – the extent to which the application of relevant safeguards can be reliably ensured in the intended setting;\n• Availability and, where applicable, requirements for independent review before action is taken;\n• Time criticality/immediacy – whether the output suggests action at some future point or requires immediate action;\n• Clinical significance of the action, e.g., minor self-care versus major diagnostic or therapeutic intervention;\n• Degree of personalization – generic information versus a recommendation based on the individual patient's data."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q1",
+        "q3"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Safeguards credited in risk stratification may not be reliably enforceable outside controlled clinical workflows; in home care settings, instructions such as 'consult your physician' offer weaker assurance than an enforced review step, so a simple patient-versus-HCP label may misstate actual risk.",
+      "requested_fda_action": "Base criticality stratification less on the patient/HCP user label and more on the intended use environment's actual degree of guaranteed independent review, user competence, workflow control, and prevention of inappropriate reliance; allow safeguards to lower criticality only when they are sufficiently defined, enforceable, verifiable, and realistic for that environment.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment treats risk as depending on whether human independent review and prevention of inappropriate reliance are actually assured, not on the device output alone.",
+        "deployment_assurance_scalability": "It argues safeguard credit must depend on whether safeguards can be enforced and verified in the real deployment setting, contrasting controlled institutional workflows with home care."
+      },
+      "public_summary": "Agrees patient-facing versus HCP-facing use matters for risk stratification, but argues the decisive factor is whether safeguards, independent review, and workflow controls are enforceable and verifiable in the intended environment—citing home care—rather than the user label itself.",
+      "summary_cut": false,
+      "source_passage": "I agree that the distinction between patient-facing and HCP-facing functions is important and should be considered in Criticality Stratification. However, the key consideration is the extent to which the intended use environment allows relevant safeguards, independent review, and workflow constraints to be reliably implemented and enforced. This distinction may be particularly important when comparing home care settings with use in a healthcare institution. ... In a home care environment, comparable safeguards may often be considerably more difficult to guarantee. Instructions such as “consult your physician before taking action” may not provide the same level of assurance as an enforced review step within a controlled clinical workflow.\nAccordingly, safeguards should reduce criticality only where they are sufficiently defined, enforceable, verifiable, and realistic for the intended environment. The distinction should therefore be based less on the label “patient” versus “HCP” and more on the actual degree of guaranteed independent review, user competence, workflow control, and ability to prevent inappropriate reliance."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q4"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Professional designation alone is an unreliable proxy for risk: specialists have deeper domain expertise but generalists may better grasp the patient's overall situation, comorbidities, and cross-domain effects. Clinical environment also differs, since specialist departments can implement narrow protocols more consistently than general practice.",
+      "requested_fda_action": "Base any criticality-modifying effect on whether the intended user actually possesses the competence and information needed to independently assess the specific output, and on the workflow conditions that can be assured for that user group, rather than on generalist/specialist designation.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter frames risk as depending on whether the intended user can independently evaluate the output, i.e., on the user-device combination rather than the device alone.",
+        "deployment_assurance_scalability": "The comment ties risk modification to workflow conditions and protocols that can actually be assured in the deployment setting, noting general practice cannot consistently implement case-specific protocols."
+      },
+      "public_summary": "Agrees the generalist/specialist distinction may be relevant to criticality stratification, but argues professional designation alone is insufficient. Recommends basing any risk-modifying effect on whether the intended user's competence, available information, and assurable workflow conditions permit independent assessment of the particular output.",
+      "summary_cut": false,
+      "source_passage": "I agree that the distinction between generalist and specialist physicians may be relevant for Criticality Stratification. However, several caveats should be considered.\nA specialist may have substantially greater expertise regarding a specific disease, intervention, or diagnostic question. However, a generalist may in some circumstances have a broader understanding of the patient's overall clinical situation, including comorbidities, concurrent treatments, and effects outside one specialty domain. The relevant consideration should therefore be whether the intended user possesses the competence and information necessary to independently assess the particular output, rather than professional designation alone.\nThe intended clinical environment may also be relevant. In specialist departments, narrowly defined workflows and condition-specific protocols can often be implemented more consistently. General practice may involve a much broader spectrum of clinical situations, making comprehensive case-specific protocols more difficult to establish.\nAccordingly, any criticality-modifying effect should be based on the competence, information, and workflow conditions that can actually be assured for the intended user group rather than on professional designation alone."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q5"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "For multi-turn conversational devices whose behavior emerges over an exchange, risk could be understated if assessed on typical rather than worst reasonably foreseeable trajectories. The commenter holds that criticality should be anchored to the highest level that remains reasonably foreseeable within the defined use and cannot be reliably excluded by enforceable safeguards.",
+      "requested_fda_action": "Adopt a conservative criticality stratification for conversational GenAI devices based on the highest reasonably foreseeable criticality across conversational trajectories, and allow a lower classification only where safeguards are reliably enforceable and their effectiveness reasonably assured (e.g., technical scope restrictions, conversational protocols, refusal/deferral, mandatory HCP transition, recommendation-category restrictions, human-oversight checkpoints before higher-criticality outputs are acted upon).",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment addresses how a device's effective behavioral envelope can drift beyond its defined use across conversational turns and proposes anchoring classification to the worst reasonably foreseeable trajectory unless technically constrained.",
+        "human_ai_system_performance": "It treats human-oversight checkpoints and mandatory transition to an HCP as safeguards whose reliability and effectiveness must be assured before they can lower assessed criticality."
+      },
+      "public_summary": "Accepts risk-based classification for multi-turn conversational devices, but urges a conservative rule: classify by the highest criticality reasonably foreseeable across conversational trajectories, allowing lower classification only where safeguards—technical scope limits, refusal mechanisms, mandatory HCP transition, or oversight checkpoints—are enforceable and demonstrably effective.",
+      "summary_cut": false,
+      "source_passage": "As discussed in the answer to Question 1, a conservative approach should be applied for Criticality Stratification. The highest criticality that can reasonably occur within the defined use and cannot be reliably excluded by enforceable safeguards should be used as the basic reference. The relevant criterion should therefore be the highest criticality that remains reasonably foreseeable across such conversational trajectories.\nIt may be possible to use appropriate safeguards to maintain a defined level of criticality. Again, the safeguards should be reliably enforceable and their effectiveness reasonably assured. Examples of such safeguards may include:\n• technically enforced scope restrictions;\n• enforceable conversational protocols that constrain the conversation to the defined scope;\n• refusal or deferral mechanisms;\n• mandatory transition to an HCP;\n• restrictions on certain categories of recommendations; or\n• reliable human-oversight checkpoints before higher-criticality outputs can be acted upon or higher-criticality actions can take effect."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter agrees that under- and over-escalation errors both carry harm potential and are not directly commensurable, but holds that detailed weighting of these risks depends on product-specific probabilities and the effectiveness of implemented risk controls, which are not knowable at the classification stage.",
+      "requested_fda_action": "Limit criticality stratification to factors that can be reliably established or bounded at that stage—such as severity of potential harms and safeguards like defined escalation procedures built into the device—and defer detailed weighting of error directions to product-specific risk management.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Agrees under- and over-escalation errors are both harmful and not directly commensurable, and that harm severity can inform criticality stratification. Argues detailed weighting requires product-specific risk management; classification should use only factors reliably bounded at that stage, including built-in escalation safeguards.",
+      "summary_cut": false,
+      "source_passage": "I agree that both under-escalation and over-escalation may result in harm and that the two types of error may not be directly commensurable. The potential severity of harms resulting from these different error modes may therefore influence Criticality Stratification. However, detailed weighting of the associated risks will often only be possible at the level of Product-Specific Risk Management, where product-specific probabilities and the effectiveness of implemented risk controls can be considered. For Criticality Stratification, only factors that can already be reliably established or bounded at this stage should be taken into account. This may include safeguards, such as defined escalation procedures integrated into the GenAI-enabled device, that can reliably constrain the consequences of over-escalation or under-escalation."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "directiveness",
+      "stakeholder_concern": "Treating care escalation as a binary escalate/do-not-escalate decision misses the graded nature of real recommendations, which range from self-management through routine review to emergency care. Errors can involve the wrong escalation level, wrong timing, or wrong destination of care, not just false positives and negatives.",
+      "requested_fda_action": "Extend the escalation error analysis beyond binary under- and over-escalation so that the Criticality Stratification reflects graded escalation outcomes, including incorrect escalation level, inappropriate timing, and inappropriate destination of care, and the clinical consequences of movement in either direction along the escalation spectrum.",
+      "confidence": "high",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The commenter identifies harms arising from wrong timing and wrong destination of care—care-pathway and system routing consequences—rather than only incorrect clinical content."
+      },
+      "public_summary": "Accepts evaluating both directions of escalation error but argues FDA's framing is too binary. Recommends that risk stratification capture graded escalation recommendations, including incorrect escalation level, inappropriate timing, and inappropriate destination of care, and their clinical consequences in either direction.",
+      "summary_cut": false,
+      "source_passage": "I would also be cautious about treating escalation primarily as a binary problem of “escalate” versus “do not escalate.” GenAI-enabled devices may provide a spectrum of recommendations, for example:\n• continue self-management;\n• arrange routine medical review;\n• contact a healthcare professional within a defined period;\n• seek urgent care;\n• seek immediate emergency care.\nErrors may therefore involve not only false-positive or false-negative escalation, but also incorrect escalation level, inappropriate timing, or inappropriate destination of care. The Criticality Stratification should reflect these graded outcomes and the clinical consequences of moving a patient in either direction along this escalation spectrum."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter notes that while the severity of under- and over-escalation errors can inform criticality stratification, detailed weighting of these risks generally requires product-specific information such as probabilities and the effectiveness of implemented risk controls, which is not available at the classification stage.",
+      "requested_fda_action": "Limit criticality stratification to factors that can already be reliably established or bounded at that stage, including safeguards such as defined escalation procedures built into the device that reliably constrain the consequences of over- or under-escalation, and defer detailed risk weighting to product-specific risk management.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Agrees that severity of under- and over-escalation errors can inform risk stratification, but argues detailed weighting belongs in product-specific risk management. Recommends stratification rely only on factors reliably established at that stage, including built-in escalation safeguards that bound consequences.",
+      "summary_cut": false,
+      "source_passage": "The potential severity of harms resulting from these different error modes may therefore influence Criticality Stratification. However, detailed weighting of the associated risks will often only be possible at the level of Product-Specific Risk Management, where product-specific probabilities and the effectiveness of implemented risk controls can be considered. For Criticality Stratification, only factors that can already be reliably established or bounded at this stage should be taken into account. This may include safeguards, such as defined escalation procedures integrated into the GenAI-enabled device, that can reliably constrain the consequences of over-escalation or under-escalation."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter notes that GenAI devices have open-ended input and output spaces, so exhaustive testing is neither feasible nor an appropriate regulatory goal.",
+      "requested_fda_action": "Adopt the competency-based framework pairing device benchmarking with clinical confirmation, with the nature and rigor of evidence scaled to the device's intended use and criticality.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter generally supports FDA's competency-based approach, endorsing the pairing of device benchmarking with clinical confirmation and the scaling of evidence rigor to intended use and criticality, noting that exhaustive testing of open-ended GenAI inputs and outputs is infeasible.",
+      "summary_cut": false,
+      "source_passage": "I generally support the competency-based approach proposed in the Discussion Paper, in particular the combination of device benchmarking and clinical confirmation and the concept of tailoring the nature and rigor of evidence to the device's intended use and criticality. Given the open-ended input and output space of GenAI-enabled devices, exhaustive testing is neither feasible nor an appropriate regulatory objective."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q7",
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter is concerned that criticality stratification could be set at a lower level based on unverified assumptions — such as the presence of a human review step — thereby reducing the evidence burden without proof that the safeguard actually works under real conditions of use.",
+      "requested_fda_action": "FDA should more clearly separate criticality stratification from product-specific risk management, and require that any assumption or safeguard used to lower assigned criticality or evidence burden be itself evidenced — including validation that intended users can realistically detect and correct safety-relevant errors — with findings feeding back to revise the initial criticality assessment.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues that reliance on a human reviewer to reduce risk classification must be validated by evidence that intended users can actually identify and correct errors in context, not merely that a review step exists."
+      },
+      "public_summary": "Accepts the competency-based and risk-tiering direction but asks FDA to separate criticality stratification from product-specific risk management and to require evidence for any assumption that lowers criticality — notably validating that human reviewers can actually catch errors, with findings revising the initial assessment.",
+      "summary_cut": false,
+      "source_passage": "However, I again suggest distinguishing these aspects more clearly. In particular, this applies to the already introduced delineation between Criticality Stratification and Product-Specific Risk Management. On the one hand, it should be demonstrated that the boundaries defined during Criticality Stratification are robustly established. Assumptions or safeguards that materially reduce the assigned criticality or evidence burden should themselves be supported by evidence. Thus, appropriate evaluation should be included for this. For example, where lower criticality is assumed because a qualified healthcare professional independently reviews an output, evaluation should establish not merely that a human approval step exists. It should validate that the intended users can realistically identify and correct safety-relevant errors under the intended conditions of use. Findings from evaluation should be capable of feeding back into the initial criticality assessment if such assumptions prove unreliable."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter agrees that criticality stratification aligned with the two-axis framework can set the extent of premarket evaluation, but considers the two axes incomplete and criticality too static if fixed at a single point in time.",
+      "requested_fda_action": "Incorporate the additional risk dimensions the commenter proposed in responses to Questions 1-6, scale evaluation requirements proportionately to criticality level with emphasis on product-specific risk management during development, and allow a staged approach in which criticality is reassessed as evidence accumulates.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts aligning premarket evidence requirements with the two-axis criticality framework, but asks FDA to add further risk dimensions raised in Questions 1-6 and to allow staged, proportionate evaluation in which criticality is reassessed as evidence develops rather than fixed.",
+      "summary_cut": false,
+      "source_passage": "Conversely, Criticality Stratification can serve as a basis for defining the required extent of premarket evaluation. In principle, this can be aligned with the two-axis framework described in the Discussion Paper. However, I would include additional aspects as discussed in the responses to Questions 1–6 in Section IV. Based on this, most evaluation activities will then be directed toward product development and, in particular, Product-Specific Risk Management... In this regard, different levels of criticality could be used to shape the evaluation requirements in a proportionate manner. This may support a staged evaluation approach in which criticality is not treated as completely static but can be reassessed step by step as evidence develops"
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter cautions against assuming equivalence between clinician competency and GenAI competency, noting clinicians operate within education, accountability, and professional-practice frameworks that differ materially from the mechanisms underlying GenAI systems, and that extensive GenAI use may alter user capabilities, including deskilling.",
+      "requested_fda_action": "Avoid overemphasizing the clinician-competency analogy in the competency-based approach, and treat human oversight as a risk control whose effectiveness is verified through initial and periodic evaluation rather than presumed reliable.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues human oversight should be evaluated as a risk control with measurable, re-verified effectiveness rather than assumed to be a reliable safeguard for the human-AI combination.",
+        "operational_harm": "It raises clinician deskilling from extensive GenAI use as an additional risk not captured by device-output-focused evaluation."
+      },
+      "public_summary": "Accepts the competency-based framing but cautions against equating clinician and GenAI competency, given differing education, accountability, and practice structures. Flags deskilling from extensive GenAI use and urges that human oversight be treated as a risk control requiring initial and periodic effectiveness evaluation.",
+      "summary_cut": false,
+      "source_passage": "However, I would be cautious to overemphasize the analogy to an assumption of equivalence between clinician and GenAI competency. Clinical professionals operate within an education, accountability, and professional-practice framework that differs materially from the mechanisms underlying GenAI systems. In addition, increasing reliance on AI may alter the capabilities and behavior of the human users themselves. For example, deskilling is an additional risk that should be considered with extensive use of GenAI in clinical settings. Human oversight should therefore be treated as a risk control whose effectiveness may require both initial and periodic evaluation, rather than as an inherently reliable safeguard."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q11",
+        "q7",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "The commenter sees a lack of clarity in how the competency-based approach separates errors in the GenAI system's output from the clinical consequences of those errors, noting that benchmarking mainly detects output errors (possibly weighted by generic clinical impact) while clinical confirmation addresses outcomes in a concrete clinical setting.",
+      "requested_fda_action": "Clarify the relationship between the benchmarking and clinical confirmation phases and specify which parameters are best assessed in each, while retaining clinical confirmation as a separately established step.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Agrees that clinical confirmation should be a separate, distinct step, but asks FDA to more clearly distinguish errors in GenAI output from their clinical consequences and to specify which parameters belong to benchmarking versus clinical confirmation.",
+      "summary_cut": false,
+      "source_passage": "Additionally, I suggest more clearly distinguishing between errors in the output of the GenAI system and the consequences of the errors in clinical practice... On the one hand, benchmark tests often focus more on detecting errors in the output of the GenAI device. They may be weighted according to clinical impact where that impact can be assessed in a sufficiently generic way... On the other hand, clinical confirmation is more directly oriented toward the outcome in a concrete clinical setting... I agree that clinical confirmation is an important step that should be established separately... I suggest clarifying these relationships. From my perspective, it is crucial to clearly identify which parameters are best addressed in each phase."
+    },
+    {
+      "segment_id": "seg-021",
+      "question_ids": [
+        "q11",
+        "q23",
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "pccp",
+      "stakeholder_concern": "The commenter sees the competency-based analogy to supervised clinical training as useful but insufficiently operationalized, since devices may be granted scope or independence without staged, evidence-gated progression or a defined mechanism to pull back if performance deteriorates.",
+      "requested_fda_action": "Operationalize 'supervised practice with progressively greater independence' by allowing devices to launch within a narrow, controlled operating envelope (limited indications, specialist users, mandatory independent review, limits on action-taking) and expand only upon meeting prespecified performance and safety gates, with restriction or rollback criteria, potentially prespecified through PCCP-like mechanisms where legally and practically appropriate.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The proposal treats the device's indications, user population, and permitted actions as a controlled operating envelope that changes over time rather than a fixed intended use fixed at authorization.",
+        "delegated_authority": "It frames regulatory approval as a graduated grant of independence and action-taking latitude, conditioned on evidence gates and reversible if performance deteriorates."
+      },
+      "public_summary": "Supports the competency-based, training-analogy framework but urges FDA to operationalize it: devices should start in a narrow, controlled envelope (limited indications, specialist users, mandatory review, action limits) and expand scope or independence only after meeting prespecified evidence gates, with rollback criteria and possible PCCP-like prespecification.",
+      "summary_cut": false,
+      "source_passage": "The concept of \"supervised practice with progressively greater independence\" could be extended and operationalized more directly for GenAI-enabled devices. A device could initially operate within a narrowly defined and highly controlled operating envelope – for example, limited indications, specialist users, mandatory independent review, or restrictions on action-taking – and subsequently expand its scope or independence only when prespecified evidence thresholds have been met... Such an approach could use predetermined evidence gates, including prespecified performance and safety criteria, together with criteria for restriction or rollback if performance deteriorates. Where legally and practically appropriate, Predetermined Change Control Plan (PCCP)-like mechanisms may provide a useful model for prespecifying some such transitions."
+    },
+    {
+      "segment_id": "seg-022",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Evaluating a GenAI device against a single representative dataset, or judging it on average performance, could mask poor performance in rare but clinically consequential situations, subgroups, out-of-scope inputs, or multi-turn interactions.",
+      "requested_fda_action": "FDA should expect a broader evaluation suite combining distribution-representative test sets, risk-enriched challenge sets, prespecified subgroup/scenario test sets, boundary and out-of-scope cases, and dynamic multi-turn scenarios, with prespecified performance floors or separate acceptance criteria for safety-critical failure modes.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports benchmarking but urges FDA to require a multi-asset evaluation suite rather than a single representative dataset, including risk-enriched, subgroup, out-of-scope, and multi-turn test sets, with prespecified performance floors or separate acceptance criteria for safety-critical failure modes instead of average performance.",
+      "summary_cut": false,
+      "source_passage": "Usually, testing should not only be performed against a single representative dataset. For GenAI systems, a broader evaluation suite may be more appropriate, combining different evaluation assets for different purposes. For example, this could include distribution-representative test sets to estimate expected performance, risk-enriched challenge sets for rare but clinically consequential failures, prespecified subgroup or scenario-specific test sets, boundary and out-of-scope cases, and dynamic multi-turn scenarios. Average performance alone should not permit strong performance in common or low-risk situations to compensate for poor performance in a clinically critical subset. For safety-critical failure modes, prespecified performance floors or separate acceptance criteria may therefore be appropriate."
+    },
+    {
+      "segment_id": "seg-023",
+      "question_ids": [
+        "q11",
+        "q5",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "Static benchmarks may not capture how GenAI performance shifts across dynamic conversational trajectories and varying conditions such as incomplete information, presentation order, user behavior, health literacy, clinical expertise, time pressure, and evolving clinical states. Where claimed risk reduction depends on human behavior or workflow, simulation alone is insufficient.",
+      "requested_fda_action": "Develop the paper's references to simulation tools and virtual patient avatars into an explicit intermediate evaluation layer between static benchmarking and clinical confirmation, including simulated patients, users, and clinical environments and benchmarks covering dynamic conversational trajectories. Retain validation with real users where assumed risk reduction depends on human behavior or workflow.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment states simulation cannot fully substitute for real-user validation when the assumed risk reduction depends on human behavior or workflow.",
+        "dynamic_intended_use": "It calls for evaluation across dynamic conversational trajectories and evolving clinical states rather than static, fixed-input benchmarking."
+      },
+      "public_summary": "Supports the competency-based direction but asks FDA to formalize simulation (simulated patients, users, environments; dynamic conversational trajectories) as an explicit intermediate layer between static benchmarking and clinical confirmation, while retaining real-user validation where claimed risk reduction depends on human behavior or workflow.",
+      "summary_cut": false,
+      "source_passage": "Particular attention should be given to dynamic conversational trajectories that could also be included in corresponding benchmarks... simulated patients, users, or clinical environments could allow scalable assessment of how performance changes with incomplete information, different orders of presentation, user behavior, health literacy, clinical expertise, time pressure, or evolving clinical states... The Discussion Paper already anticipates the possible use of simulation tools and virtual patient avatars. This concept could be developed into a more explicit intermediate layer between static benchmarking and clinical confirmation. However, simulation cannot fully substitute for validation with real users where the assumed risk reduction depends on human behavior or workflow."
+    },
+    {
+      "segment_id": "seg-024",
+      "question_ids": [
+        "q20",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "Benchmarking may test model competencies without verifying that the device-specific safeguards and consistency mechanisms identified in risk management actually function, and AI components used to supervise other AI may share failure modes with the supervised component.",
+      "requested_fda_action": "Require benchmarking to explicitly evaluate device-specific safeguards and consistency mechanisms (scope restrictions, deferral and escalation rules, human-approval checkpoints, cross-checks, assumption-challenging prompts), and, where one AI supervises another, require assessment of the supervisor's independence and the potential for correlated or common-mode failure.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment raises that an AI component assigned to supervise another AI may lack independence and fail in correlated or common-mode ways, which FDA's supervisory-agent question does not fully frame.",
+        "human_ai_system_performance": "It treats human-approval checkpoints, deferral/escalation rules, and prompts that challenge assumptions as testable parts of the device's performance rather than assumed external mitigations."
+      },
+      "public_summary": "Accepts the benchmarking framework but asks that it explicitly test device-specific safeguards and consistency mechanisms—scope limits, deferral and escalation rules, human-approval checkpoints, cross-checks—and, where one AI supervises another, assess the supervisor's independence and risk of correlated or common-mode failure.",
+      "summary_cut": false,
+      "source_passage": "Benchmarking should also explicitly evaluate device-specific safeguards and consistency mechanisms identified through Product-Specific Risk Management or defined within the Criticality Stratification phase. Such mechanisms may include scope restrictions, deferral and escalation rules, human-approval checkpoints, cross-checks, or mechanisms that prompt either the user or the device to challenge important assumptions. Where one AI component is used to supervise another, the degree of independence and the possibility of correlated or common-mode failure should be considered."
+    },
+    {
+      "segment_id": "seg-025",
+      "question_ids": [
+        "q22",
+        "q24",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "Changes to an underlying foundation model may alter device behavior, and some device competencies are more foundation-model dependent than others; regulatory evidence should still reflect the configuration actually deployed.",
+      "requested_fda_action": "Recognize benchmarking as a tool for lifecycle regression testing, including testing alternative foundation models during development to identify model-dependent behaviors, while keeping regulatory evidence focused on the deployed configuration and using prespecified regression suites covering safety-critical competencies and risk controls to evaluate subsequent model changes.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses how device manufacturers can systematically detect and evaluate the impact of changes originating in a third-party underlying foundation model."
+      },
+      "public_summary": "Supports using benchmarking for lifecycle regression testing of foundation model changes. Recommends testing alternative models during development to identify model-dependent behaviors, keeping regulatory evidence tied to the deployed configuration, and applying prespecified regression suites covering safety-critical competencies and risk controls when underlying models change.",
+      "summary_cut": false,
+      "source_passage": "Finally, benchmarking may support lifecycle regression testing. In particular, this may address the topic of updates to foundation models. Testing different suitable foundation models during development may help characterize which device behaviors are robust to model substitution and which are highly foundation-model dependent. Regulatory evidence should nevertheless remain focused on the deployed configuration. Where an underlying model subsequently changes, a prespecified regression suite, particularly for safety-critical competencies and risk controls, could provide systematic evidence of the impact of the change."
+    },
+    {
+      "segment_id": "seg-026",
+      "question_ids": [
+        "q11"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "clinical_validation",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that clinical confirmation rigor keyed only to device criticality would miss the actual residual evidentiary uncertainty remaining after benchmarking and simulation, particularly where safety depends on human-AI interaction, local workflow, real-time information availability, or where the device changes downstream diagnostic or therapeutic decisions.",
+      "requested_fda_action": "FDA should let sponsors select and justify the confirmation approach based on remaining evidentiary uncertainty after benchmarking/simulation as well as risk, expecting prospective evidence where interaction- or workflow-dependent safety or changed downstream decisions are at issue, while allowing enriched challenge testing and simulation to characterize rare safety-critical failure modes.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment states prospective evidence is especially important where safety depends materially on human-AI interaction rather than model output alone.",
+        "deployment_assurance_scalability": "It identifies local workflow and real-time information availability as site-specific factors that determine whether pre-deployment evidence is sufficient."
+      },
+      "public_summary": "Supports a proportionate range of clinical confirmation approaches but asks FDA to key the required level to residual evidentiary uncertainty after benchmarking, not criticality alone: prospective evidence where safety depends on human-AI interaction, local workflow, or changed downstream decisions; enriched simulation for rare failure modes.",
+      "summary_cut": false,
+      "source_passage": "The level of clinical confirmation should be determined not only by criticality but also by the remaining evidentiary uncertainty after benchmarking and simulation. Prospective evidence becomes particularly important where safety depends materially on human-AI interaction, local workflow, real-time information availability, or where use of the device changes subsequent diagnostic or therapeutic decisions. In contrast, rare safety-critical failure modes may sometimes be characterized more efficiently through enriched challenge testing and simulation than through very large prospective studies."
+    },
+    {
+      "segment_id": "seg-027",
+      "question_ids": [
+        "q11"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "clinical_validation",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Retrospective evaluation may substantially overestimate device performance if the information supplied during testing is not restricted to what would actually have been available at the intended clinical decision point; a related concern is training data containing proxy variables or information unavailable at that decision point.",
+      "requested_fda_action": "Add temporal fidelity as an explicit consideration for retrospective clinical confirmation, requiring that test inputs reconstruct the real information state at the intended decision point and that development data avoid proxy or future-leaking variables.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts retrospective evaluation as a confirmation approach but asks FDA to add temporal fidelity requirements: test inputs should reflect only information available at the intended clinical decision point, and training data should avoid proxy variables, since leakage can overestimate performance.",
+      "summary_cut": false,
+      "source_passage": "For retrospective evaluation in particular, temporal fidelity should be included as another important topic. The information provided to the device during testing should reconstruct the information state that would actually have been available at the intended clinical decision point... Without this separation, retrospective testing may substantially overestimate performance. A related issue can arise during model development when training data contain proxy variables or information that would not be available at the intended decision point."
+    },
+    {
+      "segment_id": "seg-028",
+      "question_ids": [
+        "q10",
+        "q12"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "Prevalence-representative datasets may contain too few rare but high-consequence cases to establish safety with adequate precision, while deliberately risk-enriched challenge sets are by design not prevalence-representative, so a single notion of representativeness cannot serve both purposes.",
+      "requested_fda_action": "Treat representativeness as multidimensional and explicitly distinguish the evidence needed to estimate expected real-world performance from the evidence needed to demonstrate coverage of clinically and risk-relevant situations.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts benchmarking-based evaluation but asks FDA to treat representativeness as multidimensional, separating evidence that estimates expected real-world performance from evidence demonstrating coverage of rare, high-consequence situations, noting risk-enriched challenge sets are intentionally not prevalence-representative.",
+      "summary_cut": false,
+      "source_passage": "Representativeness should also be treated as a multidimensional concept. A dataset that accurately reflects real-world prevalence may contain too few rare but high-consequence cases to establish safety with adequate precision. Conversely, a risk-enriched challenge set is intentionally not prevalence-representative. I therefore suggest distinguishing the evidence needed to estimate expected real-world performance from the evidence needed to establish coverage of clinically and risk-relevant situations."
+    },
+    {
+      "segment_id": "seg-029",
+      "question_ids": [
+        "q12"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that aggregate performance estimates alone may miss safety-relevant variation across subgroups, scenarios, and failure modes, and that fixed minimum test-case counts would not match the precision actually needed for a device's performance claims.",
+      "requested_fda_action": "FDA should expect statistical evaluation to report overall performance alongside prespecified subgroup, scenario, and failure-mode-specific analyses where safety-relevant, and should tie sample-size expectations to the precision required for risk-based performance claims rather than to a uniform minimum number of test cases.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Recommends that statistical evaluation combine overall performance with prespecified subgroup, scenario, and failure-mode analyses where safety-relevant, and that sample sizes be set by the precision needed for risk-based performance claims rather than by a uniform minimum number of test cases.",
+      "summary_cut": false,
+      "source_passage": "Statistical evaluation should correspondingly include overall performance together with prespecified subgroup, scenario, and failure-mode-specific analyses where these are relevant to safety. Sample-size requirements should be driven by the precision required for the relevant risk-based performance claims rather than by a uniform minimum number of test cases."
+    },
+    {
+      "segment_id": "seg-030",
+      "question_ids": [
+        "q12",
+        "q13"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "Synthetic data are useful for rare conditions, counterfactual and stress testing, and generating difficult conversational trajectories, but using them to estimate real-world performance requires much stronger representativeness evidence, and generator independence and bias replication remain concerns.",
+      "requested_fda_action": "FDA should require sponsors to declare the explicit regulatory purpose of synthetic data, apply stronger representativeness evidence when synthetic data support real-world performance estimates, generally prohibit pooling results across different purposes, and consider generator independence, clinical plausibility, and shared-bias risk.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports synthetic data as an augment to, not replacement for, real data—valuable for rare conditions, counterfactual and stress testing.",
+      "summary_cut": true,
+      "source_passage": "Synthetic data can be particularly valuable for rare conditions, counterfactual testing (what-if-scenarios), controlled variation of patient or environmental characteristics, and generation of difficult conversational trajectories. They should generally augment rather than replace real data, particularly where clinical data are limited. Additionally, their regulatory role should be explicit. Synthetic data used for stress testing or coverage expansion need not reproduce actual prevalences or risk profiles exactly. Instead, synthetic data used to estimate real-world performance require substantially stronger evidence of such types of representativeness. Results from these different purposes should generally not be pooled into a single overall performance estimate. Independence of the generator, clinical plausibility, and the risk that synthetic data reproduce the same biases as the device under evaluation should also be considered."
+    },
+    {
+      "segment_id": "seg-031",
+      "question_ids": [
+        "q11"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "health_system_implementation",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Where a device's safety depends materially on deployment-specific conditions such as user expertise, local clinical pathways, downstream safeguards, or technical integration, regulatory conclusions may rest on assumptions about local conditions that are not verified in practice.",
+      "requested_fda_action": "Provide for a proportionate form of local deployment qualification—short of full revalidation at every institution—and scale the required evidence that assumed local conditions exist and function as intended in proportion to how much the regulatory assessment relies on them.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment argues that assurance must extend to verifying deployment-specific conditions at individual sites, while seeking a proportionate mechanism that avoids full revalidation at every institution.",
+        "human_ai_system_performance": "It identifies user expertise and downstream safeguards as conditions on which device safety materially depends, implying evaluation must account for the surrounding human and workflow context rather than the device alone."
+      },
+      "public_summary": "Accepts flexible, risk-proportionate clinical confirmation but urges FDA to add a proportionate local deployment qualification step—not full site-by-site revalidation—where safety depends on user expertise, local pathways, downstream safeguards, or integration, with evidence scaled to the reliance placed on those local conditions.",
+      "summary_cut": false,
+      "source_passage": "For devices whose safety materially depends on deployment-specific conditions, e.g., user expertise, local clinical pathways, availability of downstream safeguards, or technical integration, a proportionate form of local deployment qualification could be appropriate. This need not imply full revalidation at every institution. But the greater the regulatory reliance on local conditions, the stronger the evidence should be that those conditions actually exist and function as assumed."
+    },
+    {
+      "segment_id": "seg-032",
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "The commenter is concerned that FDA's discussion conflates the reference standard (what is clinically correct for a test case) with the clinical comparator (the care that would realistically occur without the device), which could distort how device performance is judged.",
+      "requested_fda_action": "Clearly distinguish the two roles: use high-quality expert or specialist adjudication to establish the reference standard, while selecting comparators representative of the actual intended users (e.g., generalist physicians, or patients/lay users for home-use devices).",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts a comparator-based evaluation approach but asks FDA to separate the reference standard from the clinical comparator: specialist adjudication may define what is correct, while representative intended users, such as generalist physicians or lay patients, provide the comparator.",
+      "summary_cut": false,
+      "source_passage": "Regarding performance comparators, I suggest more clearly separating the role of the reference standard from the role of the clinical comparator... The reference standard itself should establish, as reliably and accurately as possible, what diagnosis, assessment, or course of action is correct or clinically appropriate for the particular test case. Instead, the comparator, i.e. standard-of-care, should represent the care that would realistically occur in the absence of the device... Accordingly, the experts establishing the reference standard need not be the clinicians against whom the device is compared. For a device intended to support generalist physicians, for example, specialist adjudication may establish the reference standard while representative generalist physicians provide the clinically relevant comparator. Similarly, for patient-facing home-use devices, representative patients or lay users may be the relevant user comparator, while the reference standard may still rely on specialist adjudication or another high-quality clinical reference."
+    },
+    {
+      "segment_id": "seg-033",
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Comparing a stand-alone GenAI device against an expert panel may not reflect the intended user group and can lead to arbitrary absolute performance thresholds. The commenter argues evaluation should capture how the combined human-AI system performs relative to current practice.",
+      "requested_fda_action": "Frame clinical comparison as intended user plus standard of care with the device versus without it, both judged against the same independent reference standard, and accept relative non-inferiority or superiority criteria while retaining absolute risk-based acceptance criteria for critical safety outcomes.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter states evaluation should generally focus on the combined human-AI system rather than the stand-alone device compared to a clinician."
+      },
+      "public_summary": "Accepts comparator-based evaluation but urges FDA to assess the combined intended-user-plus-device system against usual care using a shared independent reference standard, favoring relative non-inferiority or superiority criteria over arbitrary absolute thresholds, while keeping absolute risk-based criteria for critical safety outcomes.",
+      "summary_cut": false,
+      "source_passage": "This approach shifts the focus from an absolute comparison of GenAI with an expert, who may not represent the intended user, toward a relative assessment in which the GenAI-enabled device and the intended user group are compared by reference to the same reference standard. Based on this, the demonstration of non-inferiority to the comparator as a relative criterion gets the main objective instead of determining an absolute level of deviation between the GenAI and the reference standard. The evaluation should also generally focus on the combined human-AI system rather than comparing the stand-alone GenAI-enabled device with the intended user. More generally, the following clinical comparison may be appropriate: • intended user + standard of care + GenAI device versus • intended user + standard of care without the GenAI device, with both evaluated against the same independent reference standard... Relative non-inferiority or superiority approaches may help avoid arbitrary absolute performance thresholds, although critical safety outcomes should still be subject to absolute risk-based acceptance criteria."
+    },
+    {
+      "segment_id": "seg-034",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "The commenter is concerned that evaluations may blur the line between information used to construct the reference standard and information actually available to the device or comparator clinicians at the time of the decision, which could distort measured performance.",
+      "requested_fda_action": "FDA should expect study designs in which the reference standard may draw on later diagnostic findings or follow-up, while the investigational device and comparator conditions are limited to information realistically available at the relevant decision point.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Endorses an evaluation design that separates reference-standard information from information available to the device and comparator. Recommends that reference standards may use later findings or follow-up, but device and comparator clinicians should only access information realistically available at the decision point.",
+      "summary_cut": false,
+      "source_passage": "This approach also creates a clearer distinction between the information used to establish the reference standard and the information available to the evaluated users or device. While subsequent diagnostic findings or follow-up may strengthen the reference standard, the investigational and comparator conditions should only have access to information that would realistically have been available at the relevant decision point."
+    },
+    {
+      "segment_id": "seg-035",
+      "question_ids": [
+        "q11",
+        "q14",
+        "q7",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter accepts benchmarking plus clinical confirmation but views the framework as insufficiently discriminating between output errors and their downstream consequences, insufficiently dynamic in its benchmarking, and insufficiently clear about whether intrinsic device performance or performance within the human and clinical system is being evaluated.",
+      "requested_fda_action": "Strengthen the competency-based framework by tying evidence intensity to criticality via product-specific risk management, moving from static datasets to dynamic risk-based evaluation suites, using an independent reference standard permitting relative comparison to standard of care, separating intrinsic from human-system performance, and treating evaluation as a lifecycle process with a periodically reassessed authorized operating envelope.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter asks FDA to explicitly distinguish intrinsic device performance from performance of the device operating within the intended human and clinical system.",
+        "dynamic_intended_use": "The commenter frames evaluation as a lifecycle process in which the authorized operating envelope and critical assumptions are progressively confirmed, expanded, and periodically reassessed."
+      },
+      "public_summary": "Supports pairing competency-based benchmarking with clinical confirmation, but asks FDA to separate output errors from consequences, scale evidence to criticality via product-specific risk management, adopt dynamic risk-based evaluation suites, add an independent reference standard, distinguish device-alone from human-system performance, and manage an evolving operating envelope.",
+      "summary_cut": false,
+      "source_passage": "In summary, I support the proposed combination of competency-based benchmarking and clinical confirmation, but suggest strengthening the framework, in particular, in the following areas. • better discriminate between evaluating errors in the output of the GenAI device and consequences that result from these errors; • more explicitly link evidence intensity to criticality while using Product-Specific Risk Management to determine the specific content of evaluation; • expand benchmarking from predominantly dataset-based assessment toward dynamic, risk-based evaluation suites; • establish the use of an independent reference standard where the GenAI device can be compared to the established standard of care in a relative way; • distinguish intrinsic device performance from performance of the device within the intended human and clinical system; • treat evaluation as a lifecycle process in which critical assumptions, safeguards, and the authorized operating envelope can be progressively confirmed, expanded, and periodically reassessed."
+    },
+    {
+      "segment_id": "seg-036",
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "position": "support",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter is concerned that premarket evaluation alone cannot durably characterize the safety and effectiveness of GenAI-enabled devices because of open-ended outputs, non-determinism, dependence on evolving foundation models and deployment environments, and post-deployment modification.",
+      "requested_fda_action": "Continue to emphasize robust postmarket monitoring for GenAI-enabled devices, including the described approaches of periodic re-benchmarking, sample-based clinician review, and performance degradation monitoring.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The commenter cites variation in deployment environments and evolving underlying models as reasons premarket testing cannot fully characterize device behavior, implying assurance must extend into deployment settings."
+      },
+      "public_summary": "The commenter generally supports FDA's emphasis on robust postmarket monitoring for GenAI-enabled devices, agreeing that open-ended outputs, non-determinism, evolving foundation models, deployment environments, and post-deployment changes limit premarket evaluation, and endorsing re-benchmarking, clinician review, and degradation monitoring.",
+      "summary_cut": false,
+      "source_passage": "I generally support the Discussion Paper's view that robust postmarket monitoring will be particularly important for GenAI-enabled devices. Their open-ended outputs, potential non-determinism, dependence on evolving foundation models and deployment environments, and capacity for post-deployment modification make it difficult for premarket evaluation alone to provide a complete and durable characterization of safety and effectiveness. The Discussion Paper appropriately recognizes both the limitations of premarket testing and the potential role of periodic re-benchmarking, clinician review, and performance degradation monitoring."
+    },
+    {
+      "segment_id": "seg-037",
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Postmarket monitoring focused only on technical performance thresholds would not detect whether the assumptions and safeguards that justified the device's risk stratification—such as effective human oversight, restricted scope of use, or escalation mechanisms—continue to hold in real-world use.",
+      "requested_fda_action": "Structure postmarket monitoring to serve two purposes: continuous assessment of product-specific safety, performance, and benefit-risk, and verification that the safeguards and assumptions underlying the device's risk (criticality) stratification remain valid and effective in practice.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter asks that monitoring evaluate whether human oversight and escalation safeguards remain effective in practice, not just whether the model meets technical performance thresholds.",
+        "deployment_assurance_scalability": "The position centers on verifying in real-world deployment that restricted scope of use and downstream safeguards assumed at classification are actually maintained."
+      },
+      "public_summary": "Supports the described postmarket monitoring approaches but urges a broader scope: beyond tracking product performance and benefit-risk, monitoring should verify that assumptions and safeguards underlying the device's risk stratification—human oversight, restricted use scope, escalation mechanisms—remain effective in real-world practice.",
+      "summary_cut": false,
+      "source_passage": "From my perspective, postmarket monitoring should serve two complementary purposes. First, it should continuously assess the product-specific safety, performance, and benefit-risk profile. Second, it should verify that the assumptions and safeguards underlying the device's Criticality Stratification remain valid in real-world use... where the acceptability of a device depends on effective human oversight, restricted scope of use, escalation mechanisms, or other downstream safeguards, postmarket monitoring should assess whether these safeguards remain effective in practice rather than merely whether the GenAI-enabled device continues to meet technical performance thresholds."
+    },
+    {
+      "segment_id": "seg-038",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter states that postmarket evaluation limited to isolated model performance, such as static benchmarking, may detect output errors but not capture user interaction, workflow effects, automation bias, human-AI team performance, or downstream clinical consequences.",
+      "requested_fda_action": "Extend postmarket performance evaluation beyond isolated model output testing to include assessment of user interaction, workflow effects, automation bias, human-AI team performance, and downstream clinical outcomes.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment states that model-only postmarket benchmarking misses automation bias and human-AI team performance, which are properties of the clinician-device system rather than the model.",
+        "operational_harm": "The comment points to workflow effects and downstream clinical consequences as unmeasured by static output-level benchmarking."
+      },
+      "public_summary": "Comment accepts postmarket evaluation but argues FDA's described approaches are too narrow: static benchmarking of model outputs may miss user interaction, workflow effects, automation bias, human-AI team performance, and downstream clinical consequences, which should also be monitored after deployment.",
+      "summary_cut": false,
+      "source_passage": "Postmarket evaluation should also extend beyond isolated model performance. Static benchmarking may identify errors in outputs but often does not capture user interaction, workflow effects, automation bias, human-AI team performance, or downstream clinical consequences."
+    },
+    {
+      "segment_id": "seg-039",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter notes that both the device and its clinical environment may change over time, producing co-evolution that can invalidate the assumptions underlying the original premarket evaluation. Monitoring focused only on device output performance would miss this drift.",
+      "requested_fda_action": "Structure postmarket monitoring so that it periodically reassesses not just device performance but also the continued validity of the benchmarks, reference standards, clinical assumptions, and deployment conditions on which the original evaluation was based.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment stresses that deployment conditions and clinical assumptions can shift after authorization, so assurance must be re-established in the evolving use environment rather than fixed at premarket review.",
+        "dynamic_intended_use": "It frames the device and its environment as co-evolving, implying the originally evaluated behavioral and contextual envelope may no longer describe actual use over time."
+      },
+      "public_summary": "Supports periodic postmarket reassessment but argues it should go beyond device performance: because the device and its clinical environment co-evolve, monitoring should also re-verify that the original benchmarks, reference standards, clinical assumptions, and deployment conditions remain valid.",
+      "summary_cut": false,
+      "source_passage": "An additional challenge is that both the device and its environment may evolve. ... This creates a form of co-evolution between the device and its clinical environment. Consequently, postmarket monitoring should periodically reassess not only the device, but also whether the benchmarks, reference standards, clinical assumptions, and deployment conditions underlying the original evaluation remain valid."
+    },
+    {
+      "segment_id": "seg-040",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Monitoring that detects performance issues is insufficient unless it is tied to predefined responses; the commenter also notes the difficulty of ensuring governance and monitoring feedback loops operate quickly enough to keep pace with how fast the system itself changes.",
+      "requested_fda_action": "Expect monitoring strategies to specify defined metrics, thresholds, triggers, escalation pathways, and predefined responses such as rollback, restriction of use, increased human supervision, or renewed clinical confirmation, with feedback loops operating on a timescale commensurate with system change.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The commenter raises the challenge of governance and monitoring feedback loops keeping pace with the rate at which the deployed system changes, which FDA's question on cadence and triggers does not fully capture."
+      },
+      "public_summary": "Supports the described postmarket evaluation approaches but urges that monitoring be tied to predefined actions, specifying metrics, thresholds, triggers, escalation pathways, and responses such as rollback, use restriction, added human supervision, or renewed clinical confirmation, operating on timescales matching system change.",
+      "summary_cut": false,
+      "source_passage": "Finally, postmarket monitoring should be linked to predefined actions. ... A monitoring strategy should therefore include defined metrics, thresholds, triggers, escalation pathways, and, where appropriate, rollback, restriction of use, increased human supervision, or renewed clinical confirmation. One challenge is ensuring that governance and monitoring feedback loops operate on a timescale commensurate with system change."
+    },
+    {
+      "segment_id": "seg-041",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter accepts that greater premarket uncertainty may sometimes be offset by postmarket monitoring, but warns against a general or automatic trade-off in which stronger monitoring substitutes for premarket evidence, particularly where emerging failures may not be detected before clinically significant harm.",
+      "requested_fda_action": "Tie the acceptable degree of premarket uncertainty to device criticality and to whether residual uncertainty is observable, reversible, and controllable, using factors such as harm severity/reversibility, failure detectability and latency, autonomy and safeguards, patient exposure volume, ability to suspend or roll back, and stability of the model and deployment environment; require higher-criticality devices to have both greater premarket assurance and more intensive postmarket monitoring.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The commenter conditions any premarket-postmarket trade-off on operational controllability factors—patient exposure rate, ability to restrict use, suspend operation, or roll back changes, and stability of the deployment environment—that go beyond FDA's framing of monitoring program characteristics."
+      },
+      "public_summary": "Accepts reliance on postmarket monitoring in principle but rejects an automatic trade-off against premarket evidence. Proposes that acceptable premarket uncertainty depend on device criticality and on whether residual risk is observable, reversible, and controllable, with higher-criticality devices requiring both stronger premarket assurance and intensive monitoring.",
+      "summary_cut": false,
+      "source_passage": "In principle, increased reliance on postmarket monitoring can be appropriate, but it should not create a general trade-off whereby stronger postmarket monitoring automatically permits less premarket evidence. ... The acceptable degree of premarket uncertainty should primarily depend on the device's criticality (as introduced in the feedback to Sections IV and V) and on whether emerging risks can be detected and controlled before clinically significant harm occurs. Relevant considerations include: • severity and reversibility of potential harm; • detectability and latency of emerging failures; • degree of autonomy and effectiveness of human or technical safeguards; • number and rate of patients exposed; • ability to restrict use, suspend operation, or rapidly roll back changes; and • stability of the underlying model and deployment environment. Higher-criticality devices should generally require greater premarket assurance and more intensive postmarket monitoring. Increased postmarket monitoring should be able to compensate for premarket uncertainty only where the residual uncertainty is sufficiently observable, reversible, and controllable."
+    },
+    {
+      "segment_id": "seg-042",
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Risk stratification relies on assumptions—such as effective human oversight, scope limitations, and escalation procedures—that may not hold once a device is deployed, so monitoring limited to model performance would not detect breakdowns in these safeguards.",
+      "requested_fda_action": "Expand postmarket monitoring expectations so they verify continued compliance with the assumptions underlying the criticality/risk stratification, including whether human oversight, scope limits, escalation procedures, and other safeguards are actually working in practice.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment asks that monitoring confirm the actual effectiveness of human oversight rather than assuming clinicians reliably catch errors.",
+        "deployment_assurance_scalability": "It focuses on verifying in real deployment that scope limitations, escalation procedures, and other safeguards assumed at classification remain in force."
+      },
+      "public_summary": "Supports postmarket monitoring but asks FDA to extend it beyond model performance: monitoring should verify that assumptions behind risk stratification still hold in deployment, including whether human oversight, scope limitations, escalation procedures, and other safeguards are actually effective.",
+      "summary_cut": false,
+      "source_passage": "Postmarket monitoring should additionally verify continued compliance with the assumptions used in the Criticality Stratification, including the actual effectiveness of human oversight, scope limitations, escalation procedures, and other safeguards."
+    },
+    {
+      "segment_id": "seg-043",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter is concerned that periodic re-benchmarking could be treated as a substitute for genuine postmarket clinical performance evaluation, and that monitoring focused on model outputs alone would miss how the device performs in real clinical workflows.",
+      "requested_fda_action": "FDA should treat re-benchmarking, sample-based clinician review, and degradation monitoring as complementary rather than interchangeable, and, depending on criticality, expect postmarket monitoring to also assess human-AI team performance, workflow effects, near misses, overrides, escalation behavior, and downstream clinical outcomes.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment asks that postmarket evaluation measure human-AI team performance and clinician overrides rather than device output performance alone.",
+        "operational_harm": "It calls for monitoring workflow effects, near misses, and escalation behavior, which are operational rather than purely output-accuracy harms."
+      },
+      "public_summary": "Supports the three proposed postmarket approaches but argues they are complementary, not interchangeable, and that re-benchmarking alone is not clinical performance evaluation. Asks FDA to also expect monitoring of human-AI team performance, workflow effects, near misses, overrides, escalation, and clinical outcomes, scaled to criticality.",
+      "summary_cut": false,
+      "source_passage": "I support periodic re-benchmarking, clinician review, and degradation monitoring, but consider them complementary rather than interchangeable approaches. Re-benchmarking alone should not be equated with postmarket clinical performance evaluation. ... Depending on criticality, postmarket monitoring should therefore also evaluate aspects such as human-AI team performance, workflow effects, near misses, overrides, escalation behavior, and downstream clinical outcomes."
+    },
+    {
+      "segment_id": "seg-044",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter indicates that static or point-in-time evaluation methods may not adequately capture GenAI device behavior, which unfolds across multi-turn interactions, evolving clinical information, and varying deployment conditions.",
+      "requested_fda_action": "Add dynamic evaluation approaches—multi-turn scenarios, evolving clinical information, simulated or real user interactions, and assessment under changing deployment conditions—to the set of postmarket performance evaluation methods CDRH considers.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment calls for assessment under changing deployment conditions, implying that performance assurance must account for variation across real-world deployment settings over time."
+      },
+      "public_summary": "Suggests CDRH broaden postmarket performance evaluation beyond the listed approaches to include dynamic methods—multi-turn scenarios, evolving clinical information, simulated or real user interactions, and assessment under changing deployment conditions—as particularly useful for GenAI-enabled devices.",
+      "summary_cut": false,
+      "source_passage": "Dynamic evaluation approaches may be particularly useful for GenAI-enabled devices. These could include multi-turn scenarios, evolving clinical information, simulated or real user interactions, and assessment under changing deployment conditions."
+    },
+    {
+      "segment_id": "seg-045",
+      "question_ids": [
+        "q19",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "Periodic reassessment alone may not detect emerging performance problems; the commenter is concerned that changes in deployment context, input distributions, underlying models, or the validity of original risk assumptions can invalidate prior evaluations between scheduled reviews.",
+      "requested_fda_action": "Adopt a postmarket reassessment model that is both periodic and trigger-based, with triggers including adverse events and near misses, drift in inputs, interaction patterns or subgroup performance, invalidated risk-stratification assumptions, changes in workflows, users, guidelines or standards of care, changes to foundation models or components, and unexpected device-clinician-supervisory disagreement.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The commenter treats changes in clinical workflows, user populations, guidelines, and other deployment-environment parameters as reassessment triggers, extending monitoring beyond the device itself to its local deployment context.",
+        "ai_supplier_quality": "Changes to foundation models or other supplied components are listed as explicit triggers for reassessment, implying ongoing surveillance of upstream component providers."
+      },
+      "public_summary": "Recommends that postmarket reassessment be both periodic and trigger-based, listing triggers such as adverse events and near misses, drift in inputs or subgroup performance, invalidated risk-stratification assumptions, changes in workflows, users or guidelines, foundation model or component changes, and device-clinician disagreement patterns.",
+      "summary_cut": false,
+      "source_passage": "Reassessment should be both periodic and trigger-based. Relevant triggers may include: • predefined time intervals; • adverse events, complaints, near misses, or deterioration of risk- or performance-related metrics; • changes in input distributions, interaction patterns, subgroup performance, or other logging-based signals; • indications that assumptions or safeguards underlying the Criticality Stratification are no longer valid; • changes in clinical workflows, user populations, guidelines, standards of care, or other deployment-environment parameters; • changes to foundation models or other components; and • major technological advances or unexpected disagreement patterns between the device, clinicians, and supervisory systems."
+    },
+    {
+      "segment_id": "seg-046",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter is concerned that postmarket monitoring focused on a fixed benchmark would miss multiple forms of drift—data, model/component, concept or clinical, workflow/use, and oversight drift—and that an unchanged benchmark may itself become unrepresentative or clinically invalid over time.",
+      "requested_fda_action": "Expand postmarket performance evaluation to explicitly cover the several enumerated drift types, and require that periodic reassessment evaluate whether the benchmark remains representative and clinically valid, not only whether the device continues to pass it.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment identifies workflow/use drift as a monitored dimension, pointing to changes in real deployment conditions rather than model performance alone.",
+        "human_ai_system_performance": "By naming 'oversight drift' as a form of drift to monitor, the comment treats degradation of human supervision as part of ongoing system performance."
+      },
+      "public_summary": "Supports postmarket performance evaluation but urges broader scope: monitoring should cover data, model/component, clinical, workflow/use, and oversight drift, and periodic reassessment should test whether the benchmark itself remains representative and clinically valid, not just whether the device still passes it.",
+      "summary_cut": false,
+      "source_passage": "Postmarket monitoring should address multiple forms of drift, including data drift, model/component drift, concept or clinical drift, workflow/use drift, and oversight drift. Importantly, reassessment should also determine whether the benchmark itself remains representative and clinically valid rather than merely whether the device continues to pass an unchanged benchmark."
+    },
+    {
+      "segment_id": "seg-047",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "Machine-based supervisory agents could make postmarket monitoring more scalable and responsive, but an unvalidated supervisor performing a safety-relevant function could itself fail, especially if it shares foundation models, training sources, or architectures with the monitored device and therefore shares blind spots.",
+      "requested_fda_action": "Require that supervisory agents undergo fit-for-purpose validation and ongoing surveillance, with evaluation criteria including sensitivity to relevant failure modes, robustness, and reproducibility, and apply particular caution when device and supervisor are technically correlated.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment frames automated supervision as a way to scale continuous postmarket evaluation while noting the assurance burden this shifts onto the monitoring layer itself.",
+        "delegated_authority": "It addresses delegating a safety-relevant oversight function to a machine agent and argues that agent must itself be validated and surveilled, especially where it is not independent of the device it supervises."
+      },
+      "public_summary": "Supports machine-based supervisory agents as potentially improving scalability and responsiveness of postmarket monitoring, but conditions this on the supervisor itself receiving fit-for-purpose validation and ongoing surveillance, with added caution when supervisor and device share foundation models, training sources, or architectures.",
+      "summary_cut": false,
+      "source_passage": "Machine-based supervisory agents could improve the scalability and responsiveness of postmarket monitoring and may be particularly useful for continuous or dynamic evaluation. However, any supervisory agent performing a safety-relevant monitoring function should itself be subject to fit-for-purpose validation and ongoing surveillance. ... Relevant considerations for the use of machine-based supervisory agents may include sensitivity to relevant failure modes, robustness, reproducibility, and susceptibility to specific failure modes. ... Particular caution may be warranted where the device and supervisor rely on the same or closely related foundation models, training sources, or technical architectures."
+    },
+    {
+      "segment_id": "seg-048",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Automated supervisory agents may miss novel or unanticipated failure modes they were not designed to detect, so relying on them as a closed automated control loop could leave gaps in postmarket oversight, especially for higher-criticality devices.",
+      "requested_fda_action": "Treat machine-based supervision as one layer within a broader monitoring architecture and expect periodic qualified human review to be retained, particularly for higher-criticality devices and for detecting unanticipated failure modes.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses how much monitoring authority can be delegated to an automated supervisory agent and argues against a fully closed automated control loop without human review."
+      },
+      "public_summary": "Accepts machine-based supervisory agents but only as one layer of postmarket monitoring, not a fully closed automated control loop. Urges FDA to expect continued periodic qualified human review, especially for higher-criticality devices and for failure modes automated supervisors were not designed to detect.",
+      "summary_cut": false,
+      "source_passage": "Machine-based supervision should generally form one layer of a broader monitoring system rather than becoming a fully closed automated control loop. Periodic qualified human review should remain part of the monitoring architecture, particularly for higher-criticality devices and for detecting novel or unanticipated failure modes that an automated supervisor was not designed to identify."
+    },
+    {
+      "segment_id": "seg-049",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter agrees that clinicians, institutions, professional societies, and standards bodies can supply valuable postmarket information, but is concerned that distributing data collection across the ecosystem could dilute responsibility for acting on it.",
+      "requested_fda_action": "Structure stakeholder participation in postmarket monitoring so that the manufacturer remains responsible for defining the monitoring strategy, integrating ecosystem-derived information, and implementing corrective and preventive actions.",
+      "confidence": "high",
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The commenter draws an explicit line between distributed data collection and distributed accountability, specifying which duties (monitoring strategy, information integration, CAPA) must remain with the manufacturer."
+      },
+      "public_summary": "Agrees that clinicians, institutions, professional societies, and standards bodies can contribute postmarket monitoring information, but states that distributed data collection must not dilute accountability. Asks FDA to keep manufacturers responsible for monitoring strategy, integrating ecosystem information, and corrective and preventive actions.",
+      "summary_cut": false,
+      "source_passage": "I agree that clinicians, healthcare institutions, professional societies, standards organizations, and other stakeholders may provide important information for postmarket monitoring ... However, distributed data collection should not result in distributed accountability. The manufacturer should remain responsible for defining the monitoring strategy, integrating relevant information from the ecosystem, and implementing necessary corrective or preventive actions."
+    },
+    {
+      "segment_id": "seg-050",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "Changes in the local deployment environment—workflow, local protocols, user qualifications, and the extent or effectiveness of human oversight—may go undetected unless deploying institutions are explicitly engaged, and professional societies are positioned to flag shifts in clinical standards and reference standards.",
+      "requested_fda_action": "Clearly define the interfaces and responsibilities among manufacturers, deploying healthcare institutions, and professional societies, including through appropriate agreements, and provide for structured manufacturer-institution information exchange mechanisms for higher-criticality applications.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "distributed_accountability",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment centers on detecting post-deployment changes in local workflow, protocols, and user qualifications that fall outside the manufacturer's direct visibility.",
+        "distributed_accountability": "It calls for clearly defined interfaces, responsibilities, and agreements across manufacturers, institutions, and professional societies rather than a single accountable party.",
+        "human_ai_system_performance": "It identifies changes in the extent and effectiveness of human oversight as a monitored variable affecting device performance in use."
+      },
+      "public_summary": "Endorses shared postmarket roles but asks FDA to specify them: institutions should track changes in workflow, local protocols, user qualifications, and human oversight; societies should flag shifts in clinical standards. Requests clearly defined responsibilities, agreements, and structured manufacturer-institution information exchange for higher-criticality uses.",
+      "summary_cut": false,
+      "source_passage": "Healthcare institutions may have an especially important role in identifying changes in the deployment environment, including workflow modifications, local protocols, user qualifications, and changes in the extent or effectiveness of human oversight. The associated interfaces and responsibilities should be clearly defined, including through appropriate agreements where applicable. Professional societies may contribute to identifying changes in clinical standards, guidelines, and appropriate reference standards. For higher-criticality applications, structured mechanisms for information exchange between manufacturers and deploying institutions may therefore be appropriate."
+    },
+    {
+      "segment_id": "seg-051",
+      "question_ids": [
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "Scaling reassessment to the technical magnitude of a change may miss modifications that are technically small but affect safety-critical competencies, human-oversight mechanisms, boundary behavior, or clinical decision pathways, and may overlook the combined effect of multiple minor changes.",
+      "requested_fda_action": "Accept the premarket competency assessment as a baseline, but scale re-benchmarking according to a change's potential impact on competencies, criticality, safeguards, clinical performance, and the validity of original evaluation assumptions, and require consideration of cumulative change; allow well-characterized, bounded changes to remain within the quality management system.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment notes that multiple individually minor modifications can cumulatively produce a substantially different device or deployment configuration, a drift in the device's behavioral envelope not addressed by change-by-change review.",
+        "human_ai_system_performance": "It identifies changes affecting human-oversight mechanisms and clinical decision pathways as triggers for substantial reassessment, framing the human-device system rather than the model alone as the object of evaluation."
+      },
+      "public_summary": "Accepts the premarket competency assessment as a baseline for evaluating modifications, but argues reassessment scope should track potential impact on competencies, criticality, safeguards, oversight mechanisms, and original evaluation assumptions rather than technical magnitude, and should account for cumulative minor changes.",
+      "summary_cut": false,
+      "source_passage": "In principle, the premarket competency-based assessment can serve as a baseline for evaluating post-deployment modifications, as proposed by the Discussion Paper. However, the scope of reassessment should depend not merely on the technical magnitude of a change, but on its potential impact on competencies, criticality, safeguards, clinical performance, and the validity of the original evaluation assumptions. A seemingly small technical modification may warrant substantial reassessment if it affects a safety-critical competency, human-oversight mechanism, boundary behavior, or clinical decision pathway. Conversely, some changes may reasonably remain within the quality management system if their potential impact is well characterized and bounded. Reassessment should also consider cumulative change. Multiple individually minor modifications may collectively produce a substantially different device or deployment configuration."
+    },
+    {
+      "segment_id": "seg-052",
+      "question_ids": [
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "Post-modification evaluation could overstate performance if clinical cases are assessed with information that would not have been available to the device at the actual decision point.",
+      "requested_fda_action": "FDA should expect post-change evaluations to preserve temporal fidelity by restricting device inputs to information available at the relevant decision point, while permitting later-acquired information to be used for establishing the reference standard.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Comment addresses methodology for re-evaluating devices after modifications, asking FDA to require temporal fidelity: cases should be assessed using only information available at the decision point, with later-acquired information used only to establish the reference standard.",
+      "summary_cut": false,
+      "source_passage": "Where relevant, post-change evaluation should preserve temporal fidelity: clinical cases should be evaluated using only information that would have been available at the relevant decision point, while later information may appropriately contribute to establishing the reference standard."
+    },
+    {
+      "segment_id": "seg-053",
+      "question_ids": [
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "pccp",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter accepts PCCPs as a suitable mechanism for GenAI-enabled devices but notes that the exact nature of future modifications may not be fully predictable, limiting the feasibility of exhaustive technical prespecification.",
+      "requested_fda_action": "Adapt PCCP concepts for GenAI so they rely more on procedural and boundary-based prespecification (defining permissible limits and processes for change) rather than requiring detailed technical specification of every anticipated modification.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The suggestion to prespecify boundaries rather than specific modifications implies governing an evolving behavioral envelope rather than a fixed, fully enumerated change list."
+      },
+      "public_summary": "Supports extending PCCPs to GenAI-enabled devices, but argues future modifications cannot be fully predicted. Recommends that GenAI PCCPs rely more on procedural and boundary-based prespecification than on exhaustive technical prespecification of each anticipated change.",
+      "summary_cut": false,
+      "source_passage": "PCCPs are an important approach for AI-enabled devices and it is reasonable to extend this concept to GenAI-enabled systems. However, it should be recognized that the exact nature of all future modifications may not be fully predictable. For GenAI, PCCPs may therefore need to rely more heavily on procedural and boundary-based prespecification rather than exhaustive technical prespecification of every future modification."
+    },
+    {
+      "segment_id": "seg-054",
+      "question_ids": [
+        "q23",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "pccp",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "The commenter views the competency-based approach as a useful basis for change control but considers current PCCP approaches too narrow to govern devices that may move toward greater operational independence over time.",
+      "requested_fda_action": "Extend PCCP concepts so that they define staged progression from restricted or closely supervised use toward greater operational independence, permitting advancement only when predefined competency and real-world performance criteria are met, and allowing downgrading of scope, autonomy, or supervision requirements when postmarket signals emerge.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment proposes that a device's level of operational independence and required human supervision be granted, and withdrawn, based on demonstrated competency and real-world performance rather than fixed at authorization.",
+        "dynamic_intended_use": "It contemplates a device's authorized scope and autonomy shifting up or down over the deployment lifecycle in response to performance signals, which the PCCP question does not fully frame."
+      },
+      "public_summary": "Supports using the competency-based approach for PCCPs but asks FDA to extend it into staged authorization: advancement from supervised use toward greater operational independence only after predefined competency and real-world performance criteria are met, with downgrading of scope, autonomy, or supervision if postmarket signals emerge.",
+      "summary_cut": false,
+      "source_passage": "The competency-based approach could provide a useful but extended structure for such PCCPs. In comparison to currently pursued PCCP approaches, the stages from restricted or closely supervised use toward greater operational independence may be integrated into this approach. Progression between these stages should occur only when predefined competency and real-world performance criteria have been met. Conversely, emerging postmarket signals may lead to a downgrading, such as reducing scope or autonomy or increasing required human supervision."
+    },
+    {
+      "segment_id": "seg-055",
+      "question_ids": [
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "pccp",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "A device can remain technically unchanged while external conditions—new clinical guidelines, workflows, or user competencies—invalidate the assumptions underlying its original evaluation, leaving change-control approaches focused only on model modifications incomplete.",
+      "requested_fda_action": "Extend PCCP and change-control concepts to address environmental change, including periodic reassessment of whether the original evaluation framework and its underlying assumptions remain valid.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment notes that the validity of a device's prior assessment can lapse without any change to the device, as evolving guidelines and use contexts shift the assumptions defining its evaluated envelope.",
+        "deployment_assurance_scalability": "It points to deployment-side factors such as workflows and user competencies as determinants of continued assurance, which manufacturer-centered change control does not track."
+      },
+      "public_summary": "Supports PCCP-based change control but argues it should extend beyond device modifications: because new clinical guidelines, workflows, or user competencies can invalidate assumptions behind a prior assessment even when the device is unchanged, PCCPs should address environmental change and continued evaluation-framework validity.",
+      "summary_cut": false,
+      "source_passage": "PCCPs should also account for changes in the environment and the continued validity of the evaluation framework. A device may remain technically unchanged while new clinical guidelines, workflows, user competencies, or other environmental factors invalidate assumptions underlying its prior assessment."
+    },
+    {
+      "segment_id": "seg-056",
+      "question_ids": [
+        "q19",
+        "q22",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "Changes to an underlying foundation model may alter clinical performance, user interaction, and behavior in the deployment environment, and may invalidate the competency level assumed at authorization.",
+      "requested_fda_action": "Require that postmarket monitoring strategies explicitly assess foundation model changes, including targeted benchmarking of clinical performance and effects on user interaction and deployment environment, and provide that major changes trigger a downgrade in assumed competency, a return to greater supervision, and a requalification period until defined evidence gates are passed.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "human_ai_system_performance",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment treats upstream foundation model changes as a supplier-driven risk that must be continuously monitored and re-evaluated rather than assumed stable.",
+        "human_ai_system_performance": "It asks that reassessment after model changes cover effects on the interaction between the device and its users, not only standalone model output.",
+        "deployment_assurance_scalability": "It proposes returning the device to a more controlled, supervised deployment stage with staged evidence gates before independent use is restored."
+      },
+      "public_summary": "Supports postmarket attention to third-party model changes but asks FDA to go further: require explicit assessment of foundation model changes, including benchmarking of clinical performance, user interaction, and deployment environment, with major changes triggering competency downgrade, renewed supervision, and requalification via defined evidence gates.",
+      "summary_cut": false,
+      "source_passage": "An assessment of changes in the underlying foundation models should be included explicitly in the postmarket monitoring strategy. This may include specific benchmarking tests to assess the impact of changes in the foundation model on resulting clinical performance. Additionally, these steps should address effects on the interaction between the GenAI-enabled device and users as well as the deployment environment. ... Major changes in foundation models or other components may necessitate a downgrading of the currently assumed competency level. The GenAI-enabled device may need to return to a stage with greater supervision. This would amount to a requalification period in a more controlled environment. A more independent use of the GenAI system can be re-established when defined evidence gates are successfully passed."
+    },
+    {
+      "segment_id": "seg-057",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "Without the ability to reconstruct the configuration in effect at the time of a given use, manufacturers cannot meaningfully investigate complaints, adverse events, or performance signals for devices whose behavior depends on shifting foundation-model versions, prompts, retrieval sources, tools, and runtime settings.",
+      "requested_fda_action": "Add a case-level reconstructability requirement: manufacturers should retain sufficient traceability of historical system configuration (foundation-model version, prompts, guardrails, retrieval/knowledge-base version, tools, orchestration logic, runtime parameters, clinical-environment information) to permit reliable investigation and reassessment of safety-critical behavior, acknowledging that exact reproduction of stochastic outputs may not be feasible.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment ties investigability to versioned traceability of third-party supplied components such as foundation-model versions, retrieval sources, and tools.",
+        "deployment_assurance_scalability": "It focuses on capturing the as-deployed configuration and clinical-environment context at the time of each use rather than a single premarket configuration."
+      },
+      "public_summary": "Supports FDA's direction on third-party model change control but asks that it add a case-level reconstructability requirement: manufacturers should retain traceable records of model version, prompts, guardrails, retrieval sources, tools, and runtime settings at time of use, acknowledging stochastic outputs may not be exactly reproducible.",
+      "summary_cut": false,
+      "source_passage": "An additional requirement should be case-level reconstructability. For meaningful investigation of complaints, adverse events, or performance signals, the manufacturer should be able to reconstruct, to the extent technically feasible, the relevant device configuration at the time of use. This may include the foundation-model version, prompts, guardrails, retrieval sources or knowledge-base version, tools, orchestration logic, relevant runtime parameters, and applicable clinical-environment information. Exact reproduction of every stochastic output may not always be feasible. Nevertheless, the historical system configuration should remain sufficiently traceable to permit reliable investigation and reassessment of safety-critical behavior."
+    },
+    {
+      "segment_id": "seg-058",
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter is concerned that treating postmarket surveillance as periodic performance checks is inadequate for GenAI devices, and that the pace of technological and operational change could outstrip the capacity of monitoring and regulatory systems to detect, understand, and control its consequences.",
+      "requested_fda_action": "Frame postmarket monitoring as an active, continuous lifecycle control system rather than periodic reassessment, and constrain the permitted rate of technological and operational change so it remains within the detection and control capability of the monitoring and regulatory system.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment ties allowable change to the practical capacity of monitoring and regulatory systems to detect and control consequences, raising a scalability limit on assurance not addressed by FDA's questions.",
+        "dynamic_intended_use": "It treats ongoing technological and operational change as something that must be bounded over the device lifecycle, implying a need to constrain the evolving behavioral envelope rather than only re-evaluate discrete modifications."
+      },
+      "public_summary": "Supports greater postmarket emphasis but urges FDA to treat monitoring as an active lifecycle control system rather than periodic performance checks, and to limit the permitted rate of technological and operational change to what monitoring and regulatory systems can detect, understand, and control.",
+      "summary_cut": false,
+      "source_passage": "Overall, postmarket monitoring for GenAI-enabled devices should be understood as an active lifecycle control system rather than a periodic performance check. ... Importantly, the rate of permitted technological and operational change should remain compatible with the ability of the monitoring and regulatory system to detect, understand, and control its consequences."
+    },
+    {
+      "segment_id": "seg-059",
+      "question_ids": [
+        "q21",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "In agentic architectures, the technical cause of failure, operational control, and regulatory responsibility can become separated across device manufacturers, foundation model providers, agent/orchestration providers, and healthcare institutions, whereas existing frameworks assume a single identifiable responsible manufacturer.",
+      "requested_fda_action": "FDA should ensure accountability is not diffused across the ecosystem by requiring a clearly defined party responsible for the safety and effectiveness of the end-to-end system, underpinned by contractual, technical, and quality-management arrangements among the participating parties.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The passage argues that fault, control, and regulatory responsibility can separate across multiple parties in agentic systems, requiring an explicit assignment of end-to-end responsibility rather than diffusion.",
+        "ai_supplier_quality": "It calls for contractual, technical, and quality-management arrangements among device manufacturers, foundation model providers, and orchestration providers to underpin accountability."
+      },
+      "public_summary": "Notes that in agentic architectures, failure causes, operational control, and regulatory responsibility may be split among device manufacturers, foundation model and orchestration providers, and health systems. Urges FDA to require clearly assigned end-to-end responsibility, supported by contractual, technical, and quality-management arrangements, rather than diffused accountability.",
+      "summary_cut": false,
+      "source_passage": "Existing medical device regulatory frameworks rely on an identifiable manufacturer or sponsor being responsible for the safety and effectiveness of the device. In agentic architectures, however, the technical cause of a failure, operational control over the relevant component, and regulatory responsibility may become separated across the device manufacturers, foundation model providers, agent or orchestration providers, and healthcare institutions. Nevertheless, accountability should not simply be diffused across the ecosystem. Rather, there should be a clearly defined responsibility for the safety and effectiveness of the end-to-end system, supported by appropriate contractual, technical, and quality-management arrangements among the parties involved."
+    },
+    {
+      "segment_id": "seg-060",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "Agentic devices that autonomously plan and execute multi-step tasks, use external tools, and act across multiple system components create system-level risks that make attribution and control of safety-critical failures substantially harder than for individual GenAI functions.",
+      "requested_fda_action": "Require that risk contributions arising across components and interfaces be assessed and managed at the level of the overall system, including through product-specific risk management and criticality stratification.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment states that autonomous action across multiple components and interfaces makes attribution of safety-critical failures substantially more difficult, implying responsibility is spread across system elements.",
+        "delegated_authority": "It emphasizes that devices autonomously planning and executing multi-step tasks and invoking external tools raise control problems beyond those of individual GenAI functions."
+      },
+      "public_summary": "Agrees that agentic GenAI devices raise considerations beyond non-agentic ones, noting autonomous multi-step action and tool use complicate attribution and control of safety-critical failures. Asks FDA to require system-level risk assessment across components and interfaces, using product-specific risk management and criticality stratification.",
+      "summary_cut": false,
+      "source_passage": "Agentic GenAI-enabled devices introduce additional system-level risks that go beyond those associated with individual GenAI-enabled functions. In particular, their ability to autonomously plan and execute multi-step tasks, interact with external tools, and take actions across multiple system components can make both the attribution and control of safety-critical failures substantially more difficult. ... Risk contributions may arise across components and interfaces and therefore need to be assessed and managed at the level of the overall system, including through Product-Specific Risk Management and Criticality Stratification."
+    },
+    {
+      "segment_id": "seg-061",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "In multi-step agentic workflows, an erroneous output can become an input to later steps, trigger further tool calls, and amplify the original error, so evaluating components in isolation may miss compounding failures, especially for irreversible or high-consequence actions.",
+      "requested_fda_action": "Require premarket evaluation to extend beyond individual agents, models, or tools to representative end-to-end workflows, including safety-critical interaction pathways, foreseeable failure combinations, recovery behavior, and escalation to human oversight, with particular attention to irreversible or high-consequence actions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment focuses on harm arising from error propagation and amplification across chained workflow steps and tool calls rather than from a single incorrect output.",
+        "human_ai_system_performance": "It asks that evaluation cover recovery behavior and escalation to human oversight as part of the workflow, not just standalone model performance."
+      },
+      "public_summary": "Addressing agentic devices, the commenter urges FDA to go beyond evaluating individual agents, models, or tools and require premarket assessment of representative end-to-end workflows—covering error propagation across steps, safety-critical pathways, foreseeable failure combinations, recovery behavior, and human escalation—especially for irreversible or high-consequence actions.",
+      "summary_cut": false,
+      "source_passage": "A second consideration is failure propagation within multi-step workflows. An erroneous output in one step may become the input to subsequent steps, trigger additional tool calls, or result in actions that further amplify the original error. Premarket evaluation should therefore not only assess individual agents, models, or tools, but also representative end-to-end workflows, including safety-critical interaction pathways, foreseeable failure combinations, recovery behavior, and escalation to human oversight. This is particularly important for irreversible or high-consequence actions."
+    },
+    {
+      "segment_id": "seg-062",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "Agentic systems dynamically select tools and alter task sequences across a very large state space, so component-level or exhaustive combinatorial testing cannot demonstrate end-to-end safety. Responsibility for integration-level evidence may be ambiguous when components come from multiple providers.",
+      "requested_fda_action": "Require system-level evaluation based on risk-based coverage of safety-relevant configurations and representative interaction trajectories, paired with postmarket monitoring able to detect previously unobserved failure patterns. Clearly allocate integration-testing responsibility, with the party responsible for the final user-facing device ensuring sufficient end-to-end evidence.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment addresses how evidence responsibilities should be divided between component providers and the party fielding the final user-facing device, with the latter accountable for end-to-end evidence.",
+        "dynamic_intended_use": "It highlights that agentic behavior emerges from dynamic tool selection and altered task sequences across many possible states, making a fixed, fully pre-specified testable behavioral envelope infeasible."
+      },
+      "public_summary": "Comment on agentic devices: supports evaluation but urges system-level rather than component-focused testing, arguing exhaustive combination testing is infeasible. Recommends risk-based coverage of safety-relevant configurations and representative interaction trajectories plus postmarket detection of new failure patterns, with the final device party ensuring end-to-end evidence.",
+      "summary_cut": false,
+      "source_passage": "Accordingly, testing should address system-level behavior rather than primarily focusing on individual components. Such testing will, however, be particularly challenging because agentic systems may dynamically select tools, alter task sequences, and operate across a large number of possible system states. Comprehensive testing of all combinations is unlikely to be feasible. Evaluation should therefore focus on risk-based coverage of safety-relevant configurations and representative interaction trajectories, complemented by postmarket monitoring capable of identifying previously unobserved failure patterns. ... Responsibilities for integration testing should be clearly allocated. Component providers may supply evidence for their components, but the party responsible for the final user-facing device should ensure that end-to-end evidence is sufficient."
+    },
+    {
+      "segment_id": "seg-063",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter states that agentic GenAI systems depend on interoperability at multiple levels—technical exchange of data and commands, consistent semantic interpretation of clinical concepts, units, timestamps, uncertainty, patient context, and workflow states, and governance alignment. Without these, responsibilities for risk management, change control, validation, monitoring, and corrective action across organizational boundaries remain undefined.",
+      "requested_fda_action": "Recognize interoperability as an additional consideration for agentic devices, addressing technical and semantic interoperability among participating agents and tools, and establish governance and regulatory alignment that assigns risk management, change control, validation, monitoring, and corrective action responsibilities across organizations.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment emphasizes that responsibilities for risk management, change control, validation, monitoring, and corrective actions must be defined across organizational boundaries in agentic systems.",
+        "deployment_assurance_scalability": "It identifies semantic consistency across interacting agents, tools, and workflow states as a prerequisite for reliable operation in real deployment environments, beyond the device-level framing of Q26."
+      },
+      "public_summary": "Responding on agentic systems, the commenter adds interoperability as an additional consideration: technical data and command exchange, semantic consistency in interpreting clinical concepts, units, timestamps, uncertainty, context, and workflow state, plus governance defining risk management, change control, validation, monitoring, and corrective-action responsibilities across organizations.",
+      "summary_cut": false,
+      "source_passage": "In addition, agentic systems require interoperability at several levels. Technical interoperability is necessary to ensure reliable exchange of data and commands, but is not sufficient. Semantic interoperability is also critical: participating agents and tools need to interpret clinical concepts, units, timestamps, uncertainty, patient context, and workflow states consistently. Finally, appropriate governance and regulatory alignment are required to define responsibilities for risk management, change control, validation, monitoring, and corrective actions across organizational boundaries."
+    },
+    {
+      "segment_id": "seg-064",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "As agentic devices take autonomous multi-step actions with less direct human review, acceptance criteria and oversight must account for tool failures, containment of errors, and the ability to return control to humans. Monitoring only individual components would miss changes in how the overall agentic system behaves in interaction.",
+      "requested_fda_action": "Apply progressively stricter acceptance criteria as autonomy and potential harm severity increase, including predefined human-oversight checkpoints for high-consequence actions, handling of erroneous or unavailable tools, traceability, failure containment, and demonstrated safe-state reversion or deferral to human control. Extend postmarket oversight to system-level interaction behavior, not just component performance.",
+      "confidence": "high",
+      "gap_tags": [
+        "operational_harm",
+        "delegated_authority",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment focuses on failure modes such as erroneous or unavailable tools, failure containment, and safe-state reversion, which are operational system failures beyond clinical output accuracy.",
+        "delegated_authority": "It calls for predefined human-oversight checkpoints for high-consequence actions and demonstrated ability to defer to human control, addressing how much action authority is delegated to the device.",
+        "dynamic_intended_use": "It asks that postmarket oversight track changes in interaction behavior across the overall agentic system, not just fixed component performance."
+      },
+      "public_summary": "Supports FDA's attention to agentic devices but urges acceptance criteria that tighten progressively with autonomy and harm severity, specifying human-oversight checkpoints, tool-failure handling, traceability, failure containment, and safe-state reversion, plus postmarket monitoring of system-level interaction behavior, not only individual components.",
+      "summary_cut": false,
+      "source_passage": "Finally, the reduced opportunity for direct human review should be reflected in progressively stricter acceptance criteria as autonomy and potential severity of harm increase. Such criteria could include predefined human-oversight checkpoints for high-consequence actions, reliable detection and handling of erroneous or unavailable tools, traceability of relevant decisions and actions, effective containment of failures, and demonstrated ability to revert to a safe state or defer to human control. Postmarket oversight should similarly address not only performance of individual components, but also changes in interaction behavior across the overall agentic system."
+    },
+    {
+      "segment_id": "seg-065",
+      "question_ids": [
+        "q1",
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that initial regulatory stratification by criticality may be conflated with product-specific risk management, and that a framework could treat technological novelty as a proxy for risk rather than assessing the final user-facing device in its intended use environment.",
+      "requested_fda_action": "Adopt a risk-proportionate, lifecycle-based framework that clearly separates initial regulatory stratification (setting oversight and evidence levels) from product-specific risk management and evaluation, and keep the framework adaptive to open-ended behavior, evolving foundation models, human-AI interaction, and agentic functions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment asks the framework to remain adaptive to open-ended behavior, evolving foundation models, and agentic functions, which the two-axis risk framing does not fully capture.",
+        "human_ai_system_performance": "It states that evaluation should establish assurance for the final user-facing device in its intended use environment, including human-AI interaction, rather than the model alone."
+      },
+      "public_summary": "Supports a risk-proportionate, lifecycle-based approach but asks FDA to clearly separate initial regulatory stratification by criticality from product-specific risk management, which should assess the user-facing device in its intended use environment, and to remain adaptive without equating novelty with risk.",
+      "summary_cut": false,
+      "source_passage": "Taken together, these comments support a risk-proportionate and lifecycle-based regulatory approach that clearly distinguishes the initial regulatory stratification of a device from Product-Specific Risk Management. Criticality should help determine the level of oversight and evidence, while Product-Specific Risk Management and evaluation should establish whether the final user-facing device, in its intended use environment, provides reasonable assurance of safety and effectiveness. At the same time, the framework should remain sufficiently adaptive to address open-ended behavior, evolving foundation models, human-AI interaction, and agentic functions without treating technological novelty itself as a proxy for risk."
+    }
+  ]
+}

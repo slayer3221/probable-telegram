@@ -1,0 +1,248 @@
+{
+  "comment_id": "FDA-2026-N-7874-0017",
+  "input_hash": "f0e65025ccf5d292",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:07:26Z",
+  "model": "claude-opus-5",
+  "chunks": 2,
+  "positions": [
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "Device activity and the consequence of relying on an incorrect output are necessary but insufficient. CDRH\nshould also account explicitly for:\n• Irreversibility: Can the clinical act be stopped or undone without added harm?\n• Time to harm: How quickly can an incorrect output cause injury?\n• Opportunity for detection and rescue: Is there a realistic, validated safeguard before harm occurs,\nand can the local team rescue the patient?\n• System authority: Does the function observe, recommend, direct, coordinate, or execute an action?\n• Human review quality: Is review contemporaneous and meaningful, or merely nominal because of\nworkload, speed, interface design, or automation bias?\n• Environmental dependence: Does performance depend on image quality, connectivity, latency,\ninstruments, local workflow, staffing, or patient anatomy?",
+      "position_gist": "The two-axis risk framework should be expanded to explicitly include irreversibility, time to harm, opportunity for detection and rescue, system authority, quality of human review, and environmental dependence.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q2"
+      ],
+      "source_passage": "A useful procedural continuum is: (1) observe or summarize; (2) recommend; (3) direct an action; (4)\nconditionally execute a bounded task; and (5) autonomously sequence or perform actions. Evidence and\nsafeguards should escalate with both authority and consequence.",
+      "position_gist": "Risk and evidence expectations should scale along a five-level continuum of system authority (observe, recommend, direct, conditionally execute, autonomously perform) together with consequence.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "A system should not be classified as low\nrisk merely because a clinician is nominally \"in the loop\" when the design leaves that clinician little time or\ninformation to detect and correct an error.",
+      "position_gist": "Nominal human-in-the-loop review should not lower a device's risk classification when design, workload, or speed prevents meaningful error detection.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q26",
+        "q5"
+      ],
+      "source_passage": "For multi-turn or agentic systems, risk can emerge across a sequence even when no single output appears\ndangerous. Evaluation should include realistic conversational and action trajectories, cumulative\nanchoring, repeated overconfidence, premature closure, tool selection, and migration beyond the\nintended use.",
+      "position_gist": "Risk for multi-turn and agentic systems should be assessed over realistic conversational and action trajectories, including cumulative anchoring, overconfidence, premature closure, tool selection, and drift beyond intended use.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "Under- and over-escalation should be evaluated separately because their harms are not\ninterchangeable.",
+      "position_gist": "Under-escalation and over-escalation should be characterized and evaluated as separate, non-interchangeable error directions.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q17",
+        "q7",
+        "q9"
+      ],
+      "source_passage": "The proposed competency-based model is useful if \"competency\" refers to the complete device in its\nintended environment, not a foundation model standing alone. Device benchmarking should evaluate at\nleast:\n• clinical and procedural knowledge;\n• perception and spatial or temporal reasoning;\n• uncertainty calibration, abstention, and escalation;\n• robustness to incomplete, corrupted, unfamiliar, or adversarial inputs;\n• rare but foreseeable anatomy, complications, equipment faults, and workflow interruptions;\n• subgroup and site generalizability;\n• communication with the surgeon and operating-room team;\n• recovery from error and safe degradation when a component or network fails; and\n• for agentic systems, adherence to explicit authority, tool, and stop boundaries.",
+      "position_gist": "Supports the competency-based approach provided competency is assessed for the complete device in its intended environment, and proposes an expanded benchmarking domain list including perception/spatial-temporal reasoning, calibration and abstention, robustness, rare events, subgroup and site generalizability, team communication, safe degradation, and agentic boundary adherence.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q16"
+      ],
+      "source_passage": "Public benchmarks alone are inadequate where training-data contamination, saturation, or weak construct\nvalidity is plausible. Sponsors should demonstrate that benchmarks measure the competencies required\nby the intended use and predict performance in representative workflows. Protected test sets and\nindependent assessment can reduce optimization to the test.",
+      "position_gist": "Sponsors should demonstrate construct validity and real-world predictiveness of benchmarks rather than relying on public benchmarks alone, using protected test sets and independent assessment to limit optimization to the test.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q11"
+      ],
+      "source_passage": "Retrospective evaluation or silent deployment may be appropriate for bounded observational functions.\nSystems that direct or execute invasive actions should require prospective evaluation under clinically\nrealistic conditions before routine use. Testing should include both ordinary cases and deliberately\nconstructed stress conditions: degraded visualization, blood or smoke in the field, uncommon anatomy,\nunexpected motion, device conflict, missing data, delayed communication, and urgent conversion or\nbailout.\nHigh-risk surgical confirmation should include simulation and cadaveric or preclinical evaluation where\nappropriate, followed by staged clinical introduction and prospective study. The IDEAL framework for\nsurgical innovation and the IDEAL Robotics recommendations provide useful models for progressive\nevaluation, human factors, learning curves, and long-term monitoring.",
+      "position_gist": "Clinical confirmation rigor should scale with procedural consequence—retrospective or silent deployment for bounded observational functions but prospective, stress-tested, staged evaluation (with simulation/preclinical steps and the IDEAL/IDEAL-Robotics models) for systems that direct or execute invasive actions.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q14"
+      ],
+      "source_passage": "If the product is intended to support a clinician, safety and effectiveness should be evaluated for the\nhuman-AI team as well as for the device alone. Team evaluation should measure:\n• whether users recognize erroneous, uncertain, or out-of-scope outputs;\n• automation bias, complacency, and overreliance;\n• cognitive workload and distraction;\n• time and information available for takeover;\n• skill retention during prolonged use;\n• communication and task allocation across the operating-room team; and\n• outcomes when users have different experience levels.",
+      "position_gist": "When the device is intended to support a clinician, evaluation should cover the human-AI team as well as the device alone, measuring error recognition, automation bias, workload, takeover time, skill retention, team communication, and user experience level.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "source_passage": "The comparator should reflect the care likely without the device, but a device should not be permitted to\ninstitutionalize substandard care merely because the local baseline is poor. For high-risk functions, the\nevidentiary question should include both comparative benefit and an absolute safety floor.",
+      "position_gist": "Comparators should reflect care likely in the device's absence, but high-risk functions should also be held to an absolute safety floor so a poor local baseline cannot justify substandard performance.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q12",
+        "q13"
+      ],
+      "source_passage": "Synthetic data can supplement testing for rare events and controlled perturbations, but they should not\nsubstitute for representative clinical data in high-consequence procedural applications. A generator\ntrained on similar data may reproduce the same omissions and biases that an evaluation is intended to\ndetect. Sponsors should separately report performance on real and synthetic datasets, describe how each\nwas generated or selected, and demonstrate representativeness across relevant patient, clinician,\ninstitution, equipment, and resource settings.",
+      "position_gist": "Synthetic data may supplement testing of rare events but must not replace representative real clinical data in high-consequence procedural uses, and performance on real versus synthetic datasets should be reported separately with documented provenance and representativeness.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q16"
+      ],
+      "source_passage": "Independent third parties should have a role in high-risk benchmarking, clinical confirmation,\ncybersecurity review, and postmarket audit. Independence criteria should address financial relationships,\naccess to necessary technical information, conflicts of interest, and freedom to publish or report safety\nfindings.",
+      "position_gist": "Independent third parties should participate in high-risk benchmarking, clinical confirmation, cybersecurity review, and postmarket audit, with independence criteria covering financial ties, technical access, conflicts of interest, and freedom to publish safety findings.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "Greater reliance on postmarket monitoring may be reasonable for low-consequence functions when\noutputs are readily reviewable, errors are reversible, and robust detection and correction mechanisms\nexist. It is not an adequate substitute for premarket evidence when a function can direct or execute an\ninvasive action, when harm can occur before meaningful review, or when rescue is uncertain.",
+      "position_gist": "Trading reduced premarket evidence for postmarket monitoring may be acceptable only for low-consequence, reviewable, reversible functions and is inappropriate where a function directs or executes invasive actions or harm can occur before meaningful review.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Postmarket monitoring should capture more than adverse outcomes. It should include:\n• model and device version, configuration, and update history;\n• intended-use and out-of-scope use;\n• subgroup and site-level performance;\n• overrides, ignored recommendations, abstentions, and disagreements;\n• near misses, failed takeovers, delayed recognition, and rescue events;\n• data-quality, instrument, connectivity, latency, and interface failures;\n• evidence of automation bias, workflow disruption, or skill degradation; and\n• shifts in case mix, inputs, and clinical practice that may affect performance.\nCadence should be tied to risk and triggered by meaningful model, workflow, hardware, dataset, or\nfoundation-model changes; new clinical settings or populations; unexpected performance signals; and\nchanges in intended user or level of autonomy.",
+      "position_gist": "Postmarket surveillance should be version-, subgroup-, and setting-specific and capture near misses, overrides, failed takeovers, infrastructure failures, automation bias and drift, with cadence tied to risk and triggered by model, workflow, dataset, setting, or autonomy changes.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "Clinicians, institutions, registries, and professional\nsocieties can contribute data and domain expertise, but participation must not diffuse manufacturer\naccountability.",
+      "position_gist": "Clinicians, institutions, registries, and professional societies should contribute data and expertise to postmarket monitoring without diffusing manufacturer accountability.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "Machine-based supervisory agents may assist monitoring, but should not become an unvalidated AI\nsystem policing another AI system. Their sensitivity, specificity, independence, failure modes, and\nsusceptibility to correlated error should be evaluated.",
+      "position_gist": "Machine-based supervisory agents may assist postmarket monitoring only if their own sensitivity, specificity, independence, failure modes, and susceptibility to correlated error are validated.",
+      "segment_id": "seg-016"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q23",
+        "q24"
+      ],
+      "source_passage": "A manufacturer must remain responsible for detecting and managing changes in any third-party foundation\nmodel on which its device depends. Contracts should require advance notice, version access, change\ndocumentation, safety-relevant incident sharing, and the ability to suspend an update. Technical controls\nshould prevent unreviewed model substitution. Predetermined change control plans should define\nbounded change categories, validation methods, acceptance criteria, rollback procedures, and user\nnotification. Changes that alter authority, clinical scope, refusal behavior, tool use, or performance in\nvulnerable subgroups should presumptively require FDA review.",
+      "position_gist": "Third-party foundation-model changes should be managed as safety-relevant supply-chain events through contractual notice/suspension rights, technical controls against unreviewed substitution, and PCCPs with bounded change categories and rollback, while changes to authority, scope, refusal behavior, tool use, or vulnerable-subgroup performance should presumptively require FDA review.",
+      "segment_id": "seg-017"
+    },
+    {
+      "question_ids": [
+        "q25"
+      ],
+      "source_passage": "A Foundation Model Master File could improve review efficiency if it is current, technically meaningful, and\navailable for regulatory reliance. Relevant content includes version history, training and evaluation data\nprovenance, known limitations, cybersecurity, update practices, refusal and content-control behavior,\ntool-use architecture, subgroup performance, incident reporting, and the contractual allocation of change-\nmanagement duties. Because developers may have weak incentives to disclose safety-relevant\ninformation voluntarily, CDRH should consider whether access to an adequate Master File or equivalent\ndocumentation should be expected when a sponsor relies materially on a third-party model.",
+      "position_gist": "Foundation Model Master Files would aid review if current and technically meaningful, should contain specified content, and—because voluntary disclosure incentives are weak—CDRH should consider expecting an adequate Master File or equivalent documentation whenever a sponsor relies materially on a third-party model.",
+      "segment_id": "seg-018"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "For agentic devices, CDRH should require:\n• a machine-readable and human-understandable definition of permitted actions and tools;\n• confirmation requirements for consequential actions;\n• validated stop conditions, abstention, and fail-safe states;\n• immutable, time-synchronized audit logs of inputs, outputs, tool calls, actions, and overrides;\n• detection of unauthorized delegation or emergent sub-agents;\n• safe behavior during loss of data, instruments, power, or connectivity;\n• realistic takeover testing, including the time and information needed for recovery; and\n• clear labeling of what the system can do, may do, and is prohibited from doing.\nThe presence of a human supervisor should reduce risk only when the supervisor has the training,\nattention, authority, information, and time required to intervene effectively.",
+      "position_gist": "Agentic devices should be required to have explicit action/tool boundaries, confirmation requirements, validated stop and fail-safe states, immutable audit logs, detection of unauthorized delegation, safe degradation, realistic takeover testing, and clear labeling, with human supervision credited only when the supervisor can actually intervene.",
+      "segment_id": "seg-019"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "Responsibility should not default to the surgeon standing closest to the patient. The manufacturer should\nremain responsible for design, validation, labeling, updates, monitoring, and known or knowable defects. A\ndeploying institution should be responsible for local validation, credentialing, workflow integration,\nmaintenance, staffing, data governance, and response to safety signals. Clinicians should remain\nresponsible for reasonable use within their competence and for acting on information that can realistically\nbe evaluated. Foundation-model and infrastructure providers should have duties proportionate to their\ncontrol over safety-relevant behavior and changes.",
+      "position_gist": "Accountability should be allocated according to control, knowledge, preventability, and benefit—with defined manufacturer, institution, clinician, and foundation-model provider responsibilities—rather than defaulting to the treating clinician.",
+      "segment_id": "seg-020"
+    },
+    {
+      "question_ids": [
+        "q11",
+        "q9"
+      ],
+      "source_passage": "CDRH should expect evidence across relevant\ndemographic groups, anatomy and disease severity, community and rural settings, resource levels,\nworkflows, and user experience. Performance aggregation should not conceal clinically meaningful\nsubgroup failures.",
+      "position_gist": "Evidence should demonstrate generalizability across demographic groups, anatomy and severity, rural/community and lower-resource settings, workflows, and user experience, with disaggregated reporting so subgroup failures are not masked.",
+      "segment_id": "seg-021"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "Practicing clinicians, operating-room professionals, patients, patient advocates, and representatives of\nrural and lower-resource settings should participate in defining intended use, acceptable tradeoffs,\nevaluation endpoints, transparency, and postmarket monitoring. Their participation should be\ndocumented, compensated where appropriate, and occur early enough to affect design rather than merely\nvalidate a completed product.",
+      "position_gist": "Clinicians, OR professionals, patients, and representatives of lower-resource settings should participate early and documented in defining intended use, endpoints, transparency, and postmarket monitoring.",
+      "segment_id": "seg-022"
+    },
+    {
+      "question_ids": [
+        "q21",
+        "q24",
+        "q25"
+      ],
+      "source_passage": "Foundation-model and infrastructure providers should have duties proportionate to their control over safety-relevant behavior and changes.",
+      "position_gist": "Regulatory duties should be allocated to foundation-model and infrastructure providers in proportion to their actual control over safety-relevant model behavior and changes.",
+      "segment_id": "seg-023"
+    },
+    {
+      "question_ids": [
+        "q24",
+        "q25"
+      ],
+      "source_passage": "FDA cannot resolve every question of privacy, employment, intellectual property, reimbursement, or malpractice. It can, however, require device documentation and labeling that make the distribution of control visible rather than allowing contractual opacity to shift risk downstream.",
+      "position_gist": "FDA should require device documentation and labeling that disclose how control over the model is distributed among device manufacturer and third-party model providers, so contractual opacity cannot shift risk downstream.",
+      "segment_id": "seg-024"
+    },
+    {
+      "question_ids": [
+        "q11",
+        "q13",
+        "q9"
+      ],
+      "source_passage": "The promise of GenAI-enabled surgery includes expanding access to expertise. That promise will not be realized if systems are developed and validated primarily in wealthy academic hospitals, on a narrow range of patients, devices, procedures, and clinical teams. CDRH should expect evidence across relevant demographic groups, anatomy and disease severity, community and rural settings, resource levels, workflows, and user experience. Performance aggregation should not conceal clinically meaningful subgroup failures.",
+      "position_gist": "CDRH should require evidence spanning demographic groups, disease severity, community/rural and lower-resource settings, workflows, and user experience, with subgroup-level reporting so aggregate performance does not mask clinically meaningful subgroup failures.",
+      "segment_id": "seg-025"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q2",
+        "q26"
+      ],
+      "source_passage": "The strongest framework will combine risk-proportionate innovation with firm safeguards at the points where software begins to direct or perform physical action.",
+      "position_gist": "Regulation should be risk-proportionate but impose firm safeguards precisely where software begins to direct or physically perform action.",
+      "segment_id": "seg-026"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q11",
+        "q14",
+        "q21",
+        "q22"
+      ],
+      "source_passage": "For procedural and surgical applications, CDRH should evaluate the deployed human-AI system; explicitly account for authority, irreversibility, time to harm, and rescue; require realistic clinical confirmation; preserve manufacturer accountability; and demand versioned, representative, and auditable evidence throughout the product life cycle.",
+      "position_gist": "For procedural/surgical GenAI devices, CDRH should evaluate the deployed human-AI system as a whole, add risk dimensions of authority, irreversibility, time to harm, and rescue potential, require realistic clinical confirmation, preserve manufacturer accountability, and require versioned, representative, auditable lifecycle evidence.",
+      "segment_id": "seg-027"
+    }
+  ]
+}

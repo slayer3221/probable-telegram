@@ -1,0 +1,52 @@
+{
+  "comment_id": "FDA-2026-N-7874-0015",
+  "input_hash": "54492dec54550b8c",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter views the two-axis framework (device activity and consequence of an incorrect output) as a sound but incomplete basis for GenAI risk assessment, because it can assign identical risk positions to functions whose real-world risk differs substantially depending on oversight and deployment context.",
+      "requested_fda_action": "Expand the risk framework to incorporate three additional dimensions: traceability of the output to source data, the availability and effectiveness of downstream human oversight, and the temporal context of deployment (real-time clinical decision versus asynchronous review).",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues risk depends on whether a clinician intermediary is present and whether that oversight is effective, so risk must be assessed for the human-AI configuration rather than the model output alone."
+      },
+      "public_summary": "Calls the two-axis risk framework a sound starting point but insufficient for GenAI. Asks FDA to add three dimensions: output traceability to source data, availability and effectiveness of downstream human oversight, and temporal deployment context (real-time versus asynchronous review).",
+      "summary_cut": false,
+      "source_passage": "To start, the two-axis framework is a sound starting point but is insufficient for GenAI. It omits three dimensions that are critical for real-world assessment: (a) traceability of the output to source data, (b) the availability and effectiveness of downstream human oversight, and (c) the temporal context of deployment (real-time clinical decision vs. asynchronous review). A GenAI function that generates a patient-facing summary with no clinician intermediary poses fundamentally different risk than one that produces a draft note for clinician review, even if both occupy the same position on the two-axis grid."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter considers the two-axis framework (device activity and consequence of incorrect output) insufficient to describe the actual risk surface of GenAI-enabled devices, because it omits how much human oversight exists at the point of output delivery and whether outputs can be traced to verifiable source data.",
+      "requested_fda_action": "Expand the framework to four axes by adding (3) degree of human oversight available at output delivery, from fully autonomous to mandatory clinician review, and (4) traceability of output to verifiable source data, from fully traceable to opaque; align with IMDRF's lifecycle management framework treating human oversight as a distinct governance dimension.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues that the degree of human oversight at the point of output delivery is a distinct risk dimension, implying risk depends on the combined human-device configuration rather than the device function alone."
+      },
+      "public_summary": "Accepts FDA's two-axis risk framework but asks that it be expanded to four axes, adding degree of human oversight at output delivery (autonomous to mandatory clinician review) and traceability of outputs to verifiable source data, citing alignment with IMDRF lifecycle management concepts.",
+      "summary_cut": false,
+      "source_passage": "Recommendation to FDA: Expand the framework to a four-axis model: (1) device activity (current Axis 1), (2) consequence of incorrect output (current Axis 2), (3) degree of human oversight available at the point of output delivery (ranging from fully autonomous to mandatory clinician review), and (4) traceability of output to verifiable source data (ranging from fully traceable to opaque/generative). This four-axis model would better capture the actual risk surface of GenAI-enabled devices and align with IMDRF&#39;s lifecycle management framework, which emphasizes human oversight as distinct a governance dimension"
+    }
+  ]
+}

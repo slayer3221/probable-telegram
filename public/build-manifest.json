@@ -1,18 +1,45 @@
 {
-  "generated_at": "2026-09-02T17:30:47Z",
+  "generated_at": "2026-09-02T20:59:49Z",
   "processing_version": "2026.09.1",
-  "prompt_version": "1.0.0",
+  "prompt_versions": {
+    "segment": "1.0.0",
+    "classify_commenter": "1.0.0",
+    "analyze": "2.0.0"
+  },
   "model": "claude-opus-5",
   "counts": {
-    "comments_analyzed": 5,
-    "commenters_represented": 5,
-    "positions_identified": 177,
+    "comments_analyzed": 50,
+    "commenters_represented": 46,
+    "positions_identified": 1037,
     "questions_tracked": 26,
     "comment_deadline": "2026-10-19",
     "last_updated": "2026-09-02"
   },
   "exclusions": {
-    "unclear_low_confidence_positions": 22
+    "unclear_low_confidence_positions": 63,
+    "no_usable_text": 1,
+    "submissions_without_published_positions": 4
   },
-  "excluded_submissions": []
+  "excluded_submissions": [
+    {
+      "id": "FDA-2026-N-7874-0014",
+      "reason": "no usable text"
+    },
+    {
+      "id": "FDA-2026-N-7874-0036",
+      "reason": "analyzed, but no substantive position survived classification"
+    },
+    {
+      "id": "FDA-2026-N-7874-0040",
+      "reason": "analyzed, but no substantive position survived classification"
+    },
+    {
+      "id": "FDA-2026-N-7874-0041",
+      "reason": "analyzed, but no substantive position survived classification"
+    },
+    {
+      "id": "FDA-2026-N-7874-0044",
+      "reason": "analyzed, but no substantive position survived classification"
+    }
+  ]
 }

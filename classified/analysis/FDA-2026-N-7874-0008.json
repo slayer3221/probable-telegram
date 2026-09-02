@@ -1,0 +1,148 @@
+{
+  "comment_id": "FDA-2026-N-7874-0008",
+  "input_hash": "ad1655bcb10eeb93",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q18",
+        "q25"
+      ],
+      "position": "oppose",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter argues that both greater reliance on postmarket monitoring and voluntary Foundation Model MAFs rest on an unestablished assumption that the monitored parties can reliably detect and disclose their own systems' failures. They cite this year's pattern of AI safety incidents across multiple major AI developers as reason to doubt that assumption.",
+      "requested_fda_action": "Scrutinize and validate the assumption of reliable self-detection and self-reporting before making it a load-bearing element of the regulatory framework for GenAI-enabled devices.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment questions whether foundation model developers' voluntary self-reported safety information can be relied upon as an input to device review.",
+        "distributed_accountability": "It highlights that the framework depends on entities monitoring and reporting on their own failures, without an independent check on that self-assessment."
+      },
+      "public_summary": "Commenter challenges FDA's proposed reliance on postmarket monitoring and voluntary foundation model disclosures, arguing both assume monitored parties can reliably detect and report their own system failures. Citing recent AI safety incidents, the commenter urges FDA to test this assumption before depending on it.",
+      "summary_cut": false,
+      "source_passage": "the paper's proposed reliance on postmarket monitoring, and its proposed reliance on voluntary self reported information from foundation model developers, both depend on an assumption that has not been established, namely that the parties being monitored can reliably detect and report their own systems' failures. Evidence from this year's pattern of AI safety incidents across multiple major AI developers suggests this assumption deserves close scrutiny before it becomes load bearing for a regulatory framework."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "oppose",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter argues that voluntary, developer-filed model or system cards are structurally limited because they can disclose only what the filer already knows, and cites this year's incidents in which sophisticated AI developers failed to detect anomalous or unsafe model behavior in their own systems for weeks or months, with discovery occurring through external review or by accident.",
+      "requested_fda_action": "The passage urges FDA not to treat voluntary self-reported Foundation Model MAFs as reliable evidence about underlying model behavior, on the grounds that developers' own knowledge of their models' behavior has proven unreliable; it does not specify an alternative mechanism in this passage.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment questions whether upstream foundation model suppliers can characterize their own models' safety-relevant behavior, undermining reliance on supplier-provided documentation.",
+        "delegated_authority": "It challenges FDA effectively depending on model developers' self-attestation as an input to premarket review, given demonstrated detection failures by those same parties."
+      },
+      "public_summary": "Questions the usefulness of voluntary Foundation Model MAFs, arguing self-filed model or system cards can only disclose what developers already know. Cites recent incidents where sophisticated AI developers failed to detect unsafe model behavior for weeks or months, discovered externally or accidentally.",
+      "summary_cut": false,
+      "source_passage": "Organizations with strong internal incentives to understand their own systems' behavior, including several leading AI developers, have this year experienced real world incidents in which anomalous or unsafe model behavior went undetected for extended periods, in some cases weeks or months, and was ultimately discovered through external review or by accident rather than through the organizations' own monitoring processes. These were not organizations lacking sophistication or motivation to monitor their systems. If developers with the strongest possible incentive to know what their own models are doing have repeatedly failed to detect meaningful deviations in their own systems, a voluntary model card or system card filed by that same party carries the same structural limitation: it can only disclose what the filer already knows, and this year's pattern indicates that what a developer believes it knows about its own system's behavior is not reliable."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Claims in a Foundation Model MAF about model behaviors and failure modes cannot be assessed by reviewers without knowing how the filer detected and monitored those behaviors; the reliability of the process behind the claim matters as much as the claim itself.",
+      "requested_fda_action": "Condition the use of a Foundation Model MAF in a premarket submission on the MAF filer disclosing its internal detection and monitoring methodology for the behaviors and failure modes described in the card.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment asks FDA to evaluate the quality and reliability of the foundation model supplier's own testing and monitoring processes, not just the supplier's asserted model characteristics."
+      },
+      "public_summary": "Supports Foundation Model MAFs but recommends that, as a condition of referencing an MAF in a premarket submission, the filer disclose its internal methodology for detecting and monitoring the described behaviors and failure modes, so reviewers can assess claim reliability.",
+      "summary_cut": false,
+      "source_passage": "I recommend CDRH consider requiring, as a condition of a Foundation Model MAF being referenced in a premarket submission, that the filer disclose its own internal detection and monitoring methodology for the behaviors and failure modes described in the card, so that reviewers can evaluate not just the claimed behavior of the model but the reliability of the process that produced the claim."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that an absence of adverse event reports cannot distinguish safe device performance from monitoring that failed to observe the relevant behavior, which undermines a framework that trades premarket evidence for postmarket monitoring.",
+      "requested_fda_action": "Require that any monitoring program relied upon to justify reduced premarket evidence demonstrate affirmative evidence of its own coverage, including documentation of the proportion of real-world interactions captured and the categories of device behavior outside its observable scope, alongside adverse event reporting.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment raises the question of whether postmarket surveillance actually observes real-world device behavior at scale, arguing that monitoring coverage itself must be evidenced rather than assumed."
+      },
+      "public_summary": "Accepts greater reliance on postmarket monitoring in principle, but asks FDA to require sponsors to prove monitoring coverage, not merely a process—documenting what share of real-world interactions is captured and which device behaviors fall outside observable scope, since zero reports may reflect unobserved behavior.",
+      "summary_cut": false,
+      "source_passage": "Question 18 asks what characteristics of a monitoring program would need to be in place to justify reduced premarket evidence. I recommend that any postmarket monitoring program accepted as a basis for reduced premarket evidence be required to demonstrate the completeness of its own coverage, not merely the presence of a monitoring process.\nA monitoring program that reports zero adverse events could mean the device performed safely, or it could mean the monitoring failed to observe the relevant behavior. These two states are not distinguishable from the absence of a report alone, yet a regulatory framework built around greater reliance on postmarket monitoring needs to distinguish between them. I recommend that sponsors be required to provide affirmative evidence of monitoring coverage, for example documentation of what proportion of real world interactions were captured by the monitoring system and what categories of device behavior fall outside its observable scope, alongside any adverse event reporting."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q19",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "A degrading GenAI device may not reliably signal its own decline, because a single failure mode can affect both the clinical output and the device's self-assessment of that output; the same dependency problem arises when a third-party foundation model developer initiates changes the manufacturer must detect.",
+      "requested_fda_action": "Require that degradation detection mechanisms operate independently of the deployed device's own output or reporting pathway, with at least one independent mechanism such as periodic re-benchmarking against an independent reference set or sampled clinician review.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment argues that post-deployment assurance cannot rely on self-reported performance signals and needs structurally independent detection mechanisms.",
+        "ai_supplier_quality": "It links detection failure to changes initiated by third-party foundation model developers, where the manufacturer's visibility depends on the same system that may be failing."
+      },
+      "public_summary": "Supports postmarket degradation monitoring but asks FDA to require at least one detection mechanism independent of the device's own outputs or reporting, such as re-benchmarking against an independent reference set or sampled clinician review, noting the same dependency affects detecting third-party model changes.",
+      "summary_cut": false,
+      "source_passage": "The paper names performance degradation over time as one of the core risks of GenAI enabled devices, and proposes performance degradation monitoring as a postmarket approach. I recommend that CDRH require degradation detection mechanisms to operate independently of the deployed device's own output or reporting pathway.\nA device that is degrading, whether due to a change in the underlying foundation model, drift in the input population, or another cause, may not reliably signal its own decline through the same channel used to generate its outputs, particularly for GenAI enabled devices where a single failure mode can affect both the device's clinical output and its own self assessment of that output. This concern is closely related to Question 24, regarding changes initiated by a third party foundation model developer rather than the device manufacturer. In both cases, the manufacturer's ability to detect a problem depends on a signal that is generated or mediated by the same system that may be experiencing the problem. I recommend that degradation monitoring specifications require at least one detection mechanism, such as periodic re benchmarking against an independent reference set or sampled clinician review as described in Section VI.A, that does not depend on the device's own reporting of its performance."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q18",
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter accepts that postmarket monitoring is likely necessary given the limits of premarket testing for open-ended systems, but is concerned that the mere existence of a monitoring program or a voluntary disclosure mechanism could be credited without evidence that it actually works.",
+      "requested_fda_action": "CDRH should require monitoring and disclosure mechanisms to demonstrate their own reliability and completeness as a precondition for crediting them toward reduced premarket evidence.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment asks that postmarket monitoring programs themselves be validated for reliability and completeness before they can substitute for premarket evidence, an assurance question FDA's question does not directly pose.",
+        "ai_supplier_quality": "It treats voluntary foundation model disclosure mechanisms as needing demonstrated completeness rather than being accepted at face value as a source of safety-relevant supplier information."
+      },
+      "public_summary": "Supports the competency-based framework and reliance on postmarket monitoring in principle, but asks CDRH to condition any reduction in premarket evidence on monitoring programs and voluntary disclosure mechanisms first demonstrating their own reliability and completeness, rather than presuming sufficiency.",
+      "summary_cut": false,
+      "source_passage": "The concerns raised above are not arguments against the competency based framework or against reliance on postmarket monitoring generally. Postmarket monitoring, done well, is likely necessary given the practical limits of premarket testing for open ended systems described elsewhere in this paper. My recommendation is narrower: that CDRH require monitoring and disclosure mechanisms to demonstrate their own reliability and completeness as a condition of being credited toward reduced premarket evidence, rather than treating the existence of a monitoring program or a voluntary disclosure mechanism as sufficient on its own."
+    }
+  ]
+}

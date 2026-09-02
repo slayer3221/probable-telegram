@@ -1,0 +1,115 @@
+{
+  "comment_id": "FDA-2026-N-7874-0026",
+  "input_hash": "49268b1a47432d80",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that treating under-escalation and over-escalation as equivalent errors could understate the harm of missing a serious condition in triage contexts.",
+      "requested_fda_action": "FDA should not weight the two error directions equally, and should allow manufacturers of Class II triage devices to prioritize high sensitivity so that under-escalation is minimized.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Addressing care escalation errors, the commenter urges FDA to reject equal weighting of under- and over-escalation, recommending that manufacturers of Class II triage devices be permitted to prioritize high sensitivity because missed serious conditions could cause significant patient harm.",
+      "summary_cut": false,
+      "source_passage": "I recommend that FDA not treat under-escalation and over-escalation as equal risks. For Class II triage devices, manufacturers should be permitted to prioritize high sensitivity and minimize under-escalation, as failure to identify a serious condition could result in significant patient harm."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "The acceptability of under- versus over-escalation errors is not fixed; a higher rate of over-escalation may be tolerable when the device routes patients to an intermediate pathway (e.g., a qualified telehealth nurse or other healthcare professional) rather than directly to an emergency department.",
+      "requested_fda_action": "Allow manufacturers to justify the balance between under- and over-escalation based on intended use, patient population, clinical risks, and the design of the available escalation pathway, including intermediate assessment options.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment ties acceptable over-escalation rates to where patients are routed, implicitly recognizing that escalation errors impose downstream care-system consequences beyond individual clinical harm.",
+        "human_ai_system_performance": "It treats a downstream human assessor, such as a telehealth nurse, as part of the escalation pathway that modifies the tolerable error profile of the device output."
+      },
+      "public_summary": "Comment responds to FDA's escalation-error question by arguing tolerance for over-escalation should depend on the escalation pathway: higher over-escalation may be acceptable when an intermediate route, such as telehealth clinician assessment, exists. Asks FDA to let manufacturers justify this balance contextually.",
+      "summary_cut": false,
+      "source_passage": "A higher rate of over-escalation may be acceptable when the device provides an appropriate intermediate escalation pathway. For example, instead of directing the patient immediately to an emergency department, the device could connect the patient with a &quot;qualified telehealth nurse or other healthcare professional&quot; for further assessment. Manufacturers should justify the balance between under- and over-escalation based on the device&#39;s intended use, patient population, clinical risks, and escalation pathway."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "Existing or sponsor-developed benchmarks may not consistently test whether a device recognizes inputs falling outside its intended use or validated knowledge boundaries.",
+      "requested_fda_action": "Establish a standardized out-of-domain testing dataset for GenAI-enabled devices to provide a consistent method for evaluating whether a device appropriately recognizes situations beyond its intended use or validated scope.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment focuses on testing whether a device can recognize inputs that fall outside its validated knowledge boundaries or intended use, which concerns policing the behavioral envelope rather than benchmark construct validity alone."
+      },
+      "public_summary": "The commenter suggests adding a standardized, FDA-established out-of-domain testing dataset to the benchmarking approach, providing a consistent way to evaluate whether a GenAI-enabled device recognizes inputs outside its intended use or validated knowledge boundaries.",
+      "summary_cut": false,
+      "source_passage": "I recommend that FDA consider establishing a standardized out-of-domain testing dataset for GenAI-enabled medical devices. This would provide a consistent method for evaluating whether a device appropriately recognizes situations outside its intended use or validated knowledge boundaries."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q14",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that GenAI-enabled devices may generate outputs for adversarial or out-of-scope queries rather than declining or deferring to clinicians, and that premarket benchmarking should explicitly test this safety behavior.",
+      "requested_fda_action": "Require manufacturers to demonstrate a predefined quantitative threshold for appropriate clinical deferral on adversarial or out-of-domain scenarios in premarket evaluation, for example at least 95% appropriate deferral, with the threshold scaled to the device's intended use and risk profile.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The proposed deferral benchmark treats the device's ability to recognize and decline inputs outside its intended scope as a measurable safety property, addressing boundary-setting of the behavioral envelope rather than task accuracy alone."
+      },
+      "public_summary": "Supports benchmarking but asks FDA to add a specific acceptance criterion: manufacturers should demonstrate a predefined rate of appropriate clinical deferral on adversarial or out-of-domain scenarios, suggesting at least 95%, adjusted for the device's intended use and risk profile.",
+      "summary_cut": false,
+      "source_passage": "For premarket evaluation, manufacturers could be required to demonstrate a predefined threshold for appropriate clinical deferral when presented with adversarial or out-of-domain scenarios as applicable. For example, FDA could consider a benchmark of at least 95% appropriate clinical deferral for predefined scenarios outside the device&#39;s intended scope, with the threshold adjusted based on the device&#39;s intended use and risk profile."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "Evaluation of safety behavior that focuses only on failure to defer may overlook the opposite error: excessive deferral or referral to a clinician for questions already within the device's validated scope, which the commenter says could reduce clinical utility.",
+      "requested_fda_action": "Include over-deferral as an evaluated dimension and require manufacturers to demonstrate that the device can appropriately distinguish situations requiring clinical intervention from those within its validated capabilities.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment identifies excessive referral of in-scope questions to clinicians as a distinct performance failure affecting clinical utility, a harm mode beyond incorrect output accuracy."
+      },
+      "public_summary": "Comment accepts benchmarking of safety behavior but asks FDA to also evaluate over-deferral, noting that excessive referral to clinicians for questions within the device's validated scope reduces clinical utility, and to require demonstration that devices distinguish these situations appropriately.",
+      "summary_cut": false,
+      "source_passage": "The evaluation should also consider over-deferral, since excessive referral to a clinician for questions within the device&#39;s validated scope could reduce clinical utility. Manufacturers should therefore demonstrate that the device can appropriately distinguish between situations requiring clinical intervention and those within its validated capabilities."
+    }
+  ]
+}

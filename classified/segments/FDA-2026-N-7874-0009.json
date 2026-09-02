@@ -1,0 +1,189 @@
+{
+  "comment_id": "FDA-2026-N-7874-0009",
+  "input_hash": "a984d0a29bae698a",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:07:26Z",
+  "model": "claude-opus-5",
+  "chunks": 2,
+  "positions": [
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "The two-axis framework is a reasonable organizing heuristic. We suggest three additional dimensions.\n\nReversibility and time to consequence: a generative output feeding a decision made minutes later carries different risk from one feeding a decision made weeks later after human review. In long-term services and supports, an incorrect activity of daily living score flows into a service authorization a plan reviewer examines, a state may audit, and the member may appeal. The path from output to consequence is slow, documented, and reversible at several points. A framework blind to this dimension treats a home safety observation the same way it treats an emergency department triage output.",
+      "position_gist": "The two-axis framework should add a reversibility/time-to-consequence dimension, since slow, documented, appealable pathways from output to consequence carry lower risk than immediate ones.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "Depth of downstream human review: the activity axis distinguishes healthcare professional supervision from full autonomy. We suggest a finer distinction within supervision. Oversight ranges from a clinician glancing at a generated summary to a clinician independently reaching a determination and then comparing it against the output. The second is a substantially stronger control and should reduce assessed risk more than the first.",
+      "position_gist": "The framework should distinguish gradations of human oversight depth within 'HCP supervision,' with independent determination-then-comparison treated as a stronger risk-reducing control.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "Traceability to source evidence: where an output is anchored to a specific artifact the reviewer sees, such as a photograph, a document image, or a recorded statement, the reviewer holds the underlying evidence and evaluates the output directly against it. Traceability of this kind lowers the risk of an undetected incorrect output and belongs in the framework as its own dimension.",
+      "position_gist": "Traceability of outputs to reviewable source artifacts should be its own risk dimension because it lowers the chance of undetected incorrect outputs.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q3",
+        "q4"
+      ],
+      "source_passage": "The paper divides users into patients and healthcare professionals, and then divides healthcare professionals into generalists and specialists. A large and growing share of AI-supported health interactions in the United States involves neither group.\n\nCare coordinators, case managers, community health workers, home care aides, and state assessors conduct the majority of in-home health assessments for Medicaid long-term services and supports members. These workers are trained, accountable, supervised, and operating in a defined professional role. They are not licensed clinicians. Under the framework as drafted they fall by default into the patient category, which understates their capability, or into the healthcare professional category, which overstates their clinical training.\n\nWe suggest a third user tier for trained non-clinical health workers operating under organizational supervision",
+      "position_gist": "The user taxonomy should add a third tier for trained non-clinical health workers under organizational supervision, who fit neither the patient nor the HCP category.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q3",
+        "q4"
+      ],
+      "source_passage": "First, risk assessment should account for the supervisory structure around the user rather than treating an individual license as the only variable. A community health worker whose assessment is reviewed by a supervising nurse before it affects care presents a different risk profile from an unsupervised consumer.",
+      "position_gist": "Risk assessment should be based on the organizational supervisory structure around the user, not solely on individual licensure.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q3",
+        "q9"
+      ],
+      "source_passage": "Second, benchmarking element E.4, communication quality and user comprehension, should test comprehension at this tier specifically. Output written for a physician will be misread by a coordinator, and output written for a consumer will be insufficient for one.",
+      "position_gist": "Benchmarking element E.4 (communication quality and user comprehension) should specifically test comprehension for the trained non-clinical health worker tier.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q13",
+        "q3",
+        "q4"
+      ],
+      "source_passage": "Third, this workforce is the primary point of contact for the members least represented in clinical AI evaluation, including non-English speakers, members with low literacy, and members who are homebound. Omitting the tier from the framework risks omitting those members from evaluation as well.",
+      "position_gist": "Omitting the non-clinical health worker tier risks excluding underrepresented populations (non-English speakers, low-literacy, homebound members) from AI evaluation.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q6"
+      ],
+      "source_passage": "We agree both under-escalation and over-escalation matter. We suggest the framework also recognize a third response beyond escalate and do not escalate.\n\nIn our setting, a concerning finding is routed to the member's health plan care team, which holds the member's clinical history, the treating physician's contact information, and the authority to arrange follow-up. The output is not a direction to the member to seek emergency care, and it is not silence. It is a handoff to an accountable clinical channel carrying a defined response obligation.\n\nThis third path changes the error profile substantially. The cost of a false positive is a care team review rather than an emergency department visit. The cost of a false negative remains serious and is the error we weight most heavily. We suggest CDRH consider routing to an accountable channel as a distinct activity category, because collapsing it into patient-facing escalation overstates the risk of an architecture designed specifically to reduce that risk.",
+      "position_gist": "CDRH should recognize routing to an accountable clinical channel as a distinct third escalation option and activity category, since it materially lowers false-positive cost compared with patient-facing escalation.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "On weighting the two directions of error, we do not think a single ratio generalizes across clinical contexts. What generalizes is the requirement for a sponsor to state the ratio it optimized for, justify it against the clinical context and the receiving system's response capacity, and report both error rates separately rather than inside a combined accuracy figure.",
+      "position_gist": "Rather than a universal under/over-escalation weighting ratio, sponsors should be required to state and justify the ratio they optimized for and report both error rates separately.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q11"
+      ],
+      "source_passage": "The range of approaches described in Section V.C.1 is sound, and we support the position a prospective clinical study is not required in every case.",
+      "position_gist": "Supports the described range of clinical confirmation approaches and the position that a prospective clinical study is not required in every case.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q11",
+        "q14"
+      ],
+      "source_passage": "We suggest CDRH define adjudicator qualification by the task rather than defaulting to physician review. For functional assessment, home safety, and activity of daily living scoring, the appropriate expert is often a certified nurse assessor or a trained assessment coordinator rather than a physician. These are the people who hold the applicable scoring standard and who perform the task in practice. Defaulting to physician adjudication would raise the cost of clinical confirmation without improving the reference standard, and in several domains it would make the reference standard less accurate.",
+      "position_gist": "Adjudicator/comparator qualification should be defined by the task rather than defaulting to physician review, since non-physician assessors are often the appropriate experts for functional assessment domains.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q11",
+        "q14"
+      ],
+      "source_passage": "Sequencing matters as much as credential. Once a reviewer has seen a generated output, the reviewer cannot unsee it, and agreement measured afterward is inflated by anchoring in a way invisible in the resulting statistic.\n\nWe suggest CDRH make sequencing explicit in any future description of the method. A submission should state whether the reference determination was recorded before or after the reviewer saw the output, and unblinded review should not be treated as equivalent evidence to blinded review.",
+      "position_gist": "CDRH should require submissions to disclose whether the reference determination was recorded before or after the reviewer saw the output, and should not treat unblinded review as equivalent to blinded review.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q11"
+      ],
+      "source_passage": "We also note this method is achievable for a small company. It requires no research infrastructure beyond disciplined sequencing and a record of when each determination was made. If CDRH wants a form of clinical confirmation small sponsors are able to produce without dedicated trial funding, blinded paired adjudication is a strong candidate for further definition, possibly through the Medical Device Development Tool program.",
+      "position_gist": "Blinded paired adjudication is feasible for small sponsors and should be further defined by CDRH, possibly via the Medical Device Development Tool program.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q14"
+      ],
+      "source_passage": "Agreement among assessors under real field conditions is also largely unmeasured. Published inter-rater reliability studies for activity of daily living instruments are generally conducted in controlled research settings, with trained raters applying a single instrument to a small sample, and several report high agreement. Those results do not establish that assessors agree during Medicaid home visits, across different instruments, under time pressure, in the member's own environment. We are not aware of a body of evidence establishing a reliable human reference standard for this task in the deployment setting, and we suggest CDRH treat the existence of that standard as something a sponsor demonstrates rather than assumes.",
+      "position_gist": "CDRH should require sponsors to demonstrate, rather than assume, that a reliable human reference standard exists in the deployment setting.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q12",
+        "q14"
+      ],
+      "source_passage": "Where the reference standard is expert judgment rather than an objective result such as a biopsy, sponsors should report inter-rater agreement within the human reference panel alongside system-to-panel agreement, and should state which instrument each reviewer applied. A system matching a panel agreeing with itself 70 percent of the time is a different finding from a system matching a panel agreeing with itself 95 percent of the time, and a raw agreement figure hides the difference.",
+      "position_gist": "When the comparator is expert judgment, sponsors should report intra-panel inter-rater agreement alongside system-to-panel agreement and identify which instrument each reviewer applied.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q14"
+      ],
+      "source_passage": "Where the purpose of a function is to reduce variance rather than to outperform a median clinician, consistency should be measurable as a performance endpoint in its own right. In authorization-driven programs, two assessors reaching the same score for the same member is itself the clinical and equity objective.",
+      "position_gist": "Consistency/variance reduction should be an acceptable performance endpoint in its own right when that is the function's purpose, rather than outperforming a median clinician.",
+      "segment_id": "seg-016"
+    },
+    {
+      "question_ids": [
+        "q15"
+      ],
+      "source_passage": "We support this framing strongly and believe it deserves more weight than the paper currently gives it.\n\nIn the home assessment setting, the realistic alternative to a generative AI-supported assessment is not a careful expert evaluation. It is a paper form completed under time pressure, sometimes partly from recall after the visit ended, frequently incomplete, and drawn from an instrument varying by state and by plan. ... Evaluating a system against an idealized standard of care while the real alternative is an incomplete form produces a systematically misleading benefit-risk assessment, and it does so in a direction disadvantaging the populations with the least access to care. We suggest CDRH permit sponsors to characterize the actual prevailing practice in the deployment setting, supported by evidence, and to evaluate against it in addition to any clinical reference standard.",
+      "position_gist": "CDRH should give greater weight to comparison against actual prevailing practice and permit sponsors to characterize and evaluate against the real-world baseline, supported by evidence, in addition to a clinical reference standard.",
+      "segment_id": "seg-017"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "The paper lists payers among ecosystem stakeholders without describing a role for them. We suggest a specific one.\n\nMedicaid and Medicare Advantage plans already audit completed assessments, already run inter-rater reliability checks across their assessor workforces, and already hold the downstream utilization and outcome data needed to determine whether an assessment output was correct. They have contractual access to the deployment environment, regulatory obligations of their own, and a direct financial interest in accuracy. Much of the monitoring capability CDRH is asking manufacturers to build already exists inside health plans.",
+      "position_gist": "Health plans should be given a defined postmarket monitoring role because they already possess audit infrastructure, inter-rater reliability processes, and downstream outcome data.",
+      "segment_id": "seg-018"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "source_passage": "A workable structure preserves manufacturer accountability while using this capacity. The manufacturer defines the monitoring specification, the sampling frame, and the degradation thresholds, and remains responsible for detecting and reporting degradation. The plan supplies the sample and the outcome linkage under contract. This avoids duplicating an audit infrastructure already funded and already operating, and it produces monitoring data drawn from the actual deployment environment rather than from a manufacturer-selected sample.",
+      "position_gist": "Proposes a division of labor in which the manufacturer defines the monitoring specification, sampling frame, and degradation thresholds and retains accountability, while the health plan contractually supplies samples and outcome linkage.",
+      "segment_id": "seg-019"
+    },
+    {
+      "question_ids": [
+        "q14"
+      ],
+      "source_passage": "Comparing a system against a panel of qualified clinicians assumes a stable human reference standard exists. In Medicaid functional assessment, it largely does not.\nThe instrument itself is not standardized. The federal government does not require states to use a particular functional assessment tool, and a national inventory identified at least 124 tools currently in use.\nThe variation is not cosmetic. The District of Columbia bathing assessment collects the frequency and duration of assistance required, while the Kentucky assessment does not. Individual health plans then apply their own scoring conventions and thresholds within their state's requirements. A reference panel drawn from more than one program may disagree not because clinical judgment differs but because the reviewers are applying different instruments.",
+      "position_gist": "Panel-of-clinicians comparators presuppose a stable human reference standard that does not exist in Medicaid functional assessment, where instruments and scoring conventions vary widely across states and plans.",
+      "segment_id": "seg-020"
+    },
+    {
+      "question_ids": [
+        "q15"
+      ],
+      "source_passage": "Evaluating a system against an idealized standard of care while the real alternative is an incomplete form produces a systematically misleading benefit-risk assessment, and it does so in a direction disadvantaging the populations with the least access to care. We suggest CDRH permit sponsors to characterize the actual prevailing practice in the deployment setting, supported by evidence, and to evaluate against it in addition to any clinical reference standard.",
+      "position_gist": "CDRH should permit sponsors to characterize and evaluate against evidence-supported actual prevailing practice in the deployment setting, in addition to any clinical reference standard.",
+      "segment_id": "seg-021"
+    }
+  ]
+}

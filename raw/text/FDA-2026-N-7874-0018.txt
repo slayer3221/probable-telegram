@@ -1,0 +1,222 @@
+I reviewed the FDA discussion paper Discussion Paper Considerations for the Regulation of Generative AI-Enabled Medical Devices. Overall, I think this is one of the most thoughtful FDA discussion papers published to date on GenAI regulation and it aligns well with a Total Product Lifecycle (TPLC) approach. It appropriately recognizes that traditional software validation approaches are insufficient for open-ended GenAI systems and introduces a risk-based + competency-based framework. However, As someone working on cloud-based medical software platforms, there are the areas where I believe additional inputs you can consider before making any final paper/draft guideline/Recommendations. Pl find the enclosed document for Suggestions.
+
+[Attachment: Comment from JAGADEESHA PAMPAPATHI]
+Review comments By Jagadeesha:
+1. Missing Explicit Multiple Function Device Product (MFDP) Considerations
+Although FDA briefly references multiple-function products, the discussion does not
+sufficiently address:
+•Medical + non-medical GenAI functions in the same platform
+•Shared foundation models servicing both regulated and non-regulated functions
+•Contamination or influence between regulated and non-regulated outputs
+•Segregation requirements
+•Architecture Recommendations inclusion Medical + non-medical GenAI functions
+This is particularly important for platforms like where some functions could be medical-
+device functions while others remain non-device administrative functions.
+Recommendation
+FDA should provide:
+•Explicit MFDP examples
+•Boundary control expectations
+•Evidence requirements demonstrating independence between regulated and non-
+regulated functions
+2. Cybersecurity is Underrepresented
+The paper references guardrails and prompt injection but cybersecurity requirements are not
+sufficiently integrated into the framework.
+Particularly absent:
+•Model poisoning
+•Retrieval database attacks
+•Prompt injection impact on clinical outputs
+•Adversarial attacks
+•Agentic tool abuse
+•LLM supply chain security
+Recommendation
+Add a dedicated cybersecurity competency area or explicitly align with:
+•FDA Cybersecurity Guidance
+•SBOM expectations
+•IEC 81001-5-1
+•NIST AI RMF
+
+3. Human Factors / Usability Not Prominent Enough
+The paper discusses communication quality and automation bias. However, it does not
+explicitly connect them to traditional human factors engineering requirements.
+For GenAI systems FDA should evaluate:
+•User trust calibration
+•Overreliance
+•Alert fatigue
+•Automation bias
+•Explainability effectiveness
+Recommendation
+Human factors validation should become a standalone evaluation pillar.
+4. Lack of Clear Treatment for Retrieval-Augmented Generation (RAG)
+Most healthcare GenAI systems will not rely solely on foundation models.
+Instead, they will rely upon:
+•RAG architectures
+•Clinical knowledge repositories
+•Guideline retrieval systems
+•Enterprise databases
+The discussion focuses heavily on foundation models but insufficiently addresses:
+•Retrieval quality
+•Source governance
+•Knowledge base drift
+•Citation accuracy
+Recommendation
+FDA should define validation expectations separately for:
+•Foundation model
+•Retrieval layer
+•Orchestrator layer
+•Final clinical output
+5. Statistics and Acceptance Criteria Remain Vague
+
+One major weakness is that the document does not provide practical approaches for:
+•Sample size determination
+•Confidence intervals
+•Performance thresholds
+•Statistical significance for open-ended outputs
+FDA raises the question but does not suggest a path forward.
+Recommendation
+Consider:
+•Non-inferiority approaches
+•Bayesian approaches
+•Risk-adjusted performance thresholds
+•Human-AI team effectiveness measures
+6. Agentic AI Requires Stronger Controls
+Agentic AI is discussed but I think the risk is greater than portrayed.
+Agentic systems can:
+•Execute actions
+•Trigger workflows
+•Modify records
+•Interact with connected systems
+Single-step validation is insufficient.
+Recommendation
+Require:
+•Action approval checkpoints
+•Tool-use verification
+•Audit trails
+•Rollback capabilities
+•Runtime supervision
+before high-risk autonomous deployment.
+7. Third-Party Foundation Model Change Management
+This is probably the biggest practical regulatory challenge.
+
+The paper recognises that foundation model providers may change their models without
+sponsors initiating updates.
+For medical device manufacturers, this creates a major regulatory problem because:
+•Behaviour may change overnight
+•Performance may drift
+•Safety profiles may change
+•FDA-cleared evidence may no longer reflect deployed behaviour
+Recommendation
+FDA should strongly consider:
+•Locked model versions
+•Mandatory model version traceability
+•Supplier quality agreements
+•Triggered revalidation criteria
+•PCCP-specific provisions for foundation-model updates
+
+[Attachment: Comment from JAGADEESHA PAMPAPATHI]
+Review comments By Jagadeesha:
+1. Missing Explicit Multiple Function Device Product (MFDP) Considerations
+Although FDA briefly references multiple-function products, the discussion does not sufficiently address:
+Medical + non-medical GenAI functions in the same platform
+Shared foundation models servicing both regulated and non-regulated functions
+Contamination or influence between regulated and non-regulated outputs
+Segregation requirements
+Architecture Recommendations inclusion Medical + non-medical GenAI functions
+This is particularly important for platforms like where some functions could be medical-device functions while others remain non-device administrative functions.
+Recommendation
+FDA should provide:
+Explicit MFDP examples
+Boundary control expectations
+Evidence requirements demonstrating independence between regulated and non-regulated functions
+
+2. Cybersecurity is Underrepresented
+The paper references guardrails and prompt injection but cybersecurity requirements are not sufficiently integrated into the framework.
+Particularly absent:
+Model poisoning
+Retrieval database attacks
+Prompt injection impact on clinical outputs
+Adversarial attacks
+Agentic tool abuse
+LLM supply chain security
+Recommendation
+Add a dedicated cybersecurity competency area or explicitly align with:
+FDA Cybersecurity Guidance
+SBOM expectations
+IEC 81001-5-1
+NIST AI RMF
+
+3. Human Factors / Usability Not Prominent Enough
+The paper discusses communication quality and automation bias. However, it does not explicitly connect them to traditional human factors engineering requirements.
+For GenAI systems FDA should evaluate:
+User trust calibration
+Overreliance
+Alert fatigue
+Automation bias
+Explainability effectiveness
+Recommendation
+Human factors validation should become a standalone evaluation pillar.
+
+4. Lack of Clear Treatment for Retrieval-Augmented Generation (RAG)
+Most healthcare GenAI systems will not rely solely on foundation models.
+Instead, they will rely upon:
+RAG architectures
+Clinical knowledge repositories
+Guideline retrieval systems
+Enterprise databases
+The discussion focuses heavily on foundation models but insufficiently addresses:
+Retrieval quality
+Source governance
+Knowledge base drift
+Citation accuracy
+Recommendation
+FDA should define validation expectations separately for:
+Foundation model
+Retrieval layer
+Orchestrator layer
+Final clinical output
+
+5. Statistics and Acceptance Criteria Remain Vague
+One major weakness is that the document does not provide practical approaches for:
+Sample size determination
+Confidence intervals
+Performance thresholds
+Statistical significance for open-ended outputs
+FDA raises the question but does not suggest a path forward.
+Recommendation
+Consider:
+Non-inferiority approaches
+Bayesian approaches
+Risk-adjusted performance thresholds
+Human-AI team effectiveness measures
+
+6. Agentic AI Requires Stronger Controls
+Agentic AI is discussed but I think the risk is greater than portrayed.
+Agentic systems can:
+Execute actions
+Trigger workflows
+Modify records
+Interact with connected systems
+Single-step validation is insufficient.
+Recommendation
+Require:
+Action approval checkpoints
+Tool-use verification
+Audit trails
+Rollback capabilities
+Runtime supervision
+before high-risk autonomous deployment.
+
+7. Third-Party Foundation Model Change Management
+This is probably the biggest practical regulatory challenge.
+The paper recognises that foundation model providers may change their models without sponsors initiating updates.
+For medical device manufacturers, this creates a major regulatory problem because:
+Behaviour may change overnight
+Performance may drift
+Safety profiles may change
+FDA-cleared evidence may no longer reflect deployed behaviour
+Recommendation
+FDA should strongly consider:
+Locked model versions
+Mandatory model version traceability
+Supplier quality agreements
+Triggered revalidation criteria
+PCCP-specific provisions for foundation-model updates

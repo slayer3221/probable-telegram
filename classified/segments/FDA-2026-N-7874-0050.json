@@ -1,0 +1,137 @@
+{
+  "comment_id": "FDA-2026-N-7874-0050",
+  "input_hash": "59caa986f5f1e10e",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:07:26Z",
+  "model": "claude-opus-5",
+  "chunks": 4,
+  "positions": [
+    {
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "source_passage": "Software-based devices commonly enter through other procurement channels instead, and seldom appear in the item master at all. The practical consequence is that many institutions cannot produc e a list of the AI -enabled device software functions running in their environment, who is using the m, or in which workflows especially if there is no existing AI governance structure in place. An institution that cannot enumerate its deployed devices cannot monitor them, and any investigation would have to be ad -hoc, manual, and therefore time-consuming.",
+      "position_gist": "Because software-based devices bypass supply chain item-master processes, most health systems cannot even enumerate deployed AI-enabled device functions, so any post-market framework relying on institutional observation is built on a capability that does not exist.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "source_passage": "For GenAI -enabled devices, the analogous requirement is harder; post -market monitoring, sample-based clinician review, and performance degradation analysis all require knowing which model version, prompt configuration, and guardrail set produced a given output at a given time. Most institutions have no mechanism to record this and may not even have the contractual right to obtain it from the manufacturer. Where that information is unavailable, these monitoring approaches are not viable in practice.",
+      "position_gist": "CDRH's proposed postmarket approaches (sample-based clinician review, performance degradation monitoring) are not practically viable unless the model version, prompt configuration, and guardrail set behind each output can be recorded, which most institutions cannot do and may lack contractual rights to obtain.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q21",
+        "q24"
+      ],
+      "source_passage": "Section VI.C correctly identifies that changes to a third -party foundation model may be initiated by the model developer rather than the device manufacturer. Today, a deploying health system would t ypically have no way to learn that such a change occurred, no way to determine whether device behavior shifted as a result, and no basis for deciding whether clinical use should continue in the interim, or whether there should be change in clinical use or clinical practice. Any framework that assigns institutions a monitoring role should also specify what information they are entitled to receive, in what format, through which channel(s), and when.",
+      "position_gist": "There is currently no notification pathway informing deploying institutions of third-party foundation model changes, and any framework assigning institutions a monitoring role must specify the information they are entitled to receive, its format, channel, and timing.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "source_passage": "Large academic medical centers may build the logging, analytic, and governance infrastructure that institution-side monitoring requires. Safety -net, public, rural, and smaller systems generally may not, and these are the ones serving populations with the f ewest alternatives. If post -market assurance depends materially on institutional capability, patients will receive different levels of protection depending on where they are treated. I would encourage CDRH to weigh whether post-market obligations that presume institutional sophistication are appropriate, or whether the monitoring burden should rest more heavily on manufacturers precisely because in stitutional capability cannot be assumed.",
+      "position_gist": "Because institutional monitoring capability is unevenly distributed and would produce unequal patient protection, CDRH should weigh placing the postmarket monitoring burden more heavily on manufacturers rather than presuming institutional sophistication.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q25"
+      ],
+      "source_passage": "Section VII.A contemplates Foundation Model Master Files held confidentially. Confidential submission may be necessary for some content, but a confidential -only approach forecloses the independent scrutiny that has proven valuable elsewhere in device post -market surveillance. A tiered structure, in which some informa tion is confidential and a defined subset is public, would help preserve manufacturer interests while at the same time enabling researchers, practitioners, and professional societies to contribute to monitoring and resolution rather than depending entirely on self -reporting.",
+      "position_gist": "Foundation Model Master Files should use a tiered structure with a defined public subset alongside confidential content, so independent researchers and societies can contribute to monitoring rather than relying solely on self-reporting.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q25"
+      ],
+      "source_passage": "I recognize the trade -off. Foundation model developers would participate voluntarily, and publishing any portion of what they submit may reduce their willingness to submit at all, leaving the FDA with less information. That risk is real and argues for a narrow public-tier (example: authorized versions, dates of material change, and reported safety events, rather than architecture or training data) and for evaluating participation rates before expanding what is disclosed. A confidential file that no one submits is not more useful than a partially public one that developers are willing to complete.",
+      "position_gist": "Acknowledging that public disclosure may deter voluntary participation, the public tier of a Foundation Model MAF should be narrow (authorized versions, dates of material change, reported safety events, not architecture or training data), with participation rates evaluated before expanding disclosure.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "Healthcare institutions can realistically contribute to post -market monitoring in three ways: maintaining an inventory of deployed AI -enabled device functions, retaining interaction and version logs where the manufacturer supplies them, and reliably report ing observed failures through existing safety channels. Each of these depends on manufacturers providing information institutions cannot generate themselves. Structuring the institutional role around receiving and reporting, rather than around independent evaluation would keep accountability with the manufacturer while making the institutional contribution achievable across the full range of U.S. health systems rather than only the best-resourced ones.",
+      "position_gist": "The institutional role in postmarket monitoring should be limited to inventorying deployed functions, retaining manufacturer-supplied logs, and reporting failures — i.e., receiving and reporting rather than independent evaluation — keeping accountability with the manufacturer.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q21",
+        "q24"
+      ],
+      "source_passage": "2. Where a monitoring framework assigns responsibilities to deploying institutions, specify what information manufacturers must supply to them since institutions cannot generate this information themselves. Examples include device version identifiers, interaction logs, and real-time notification of material model changes and their downstream effects.",
+      "position_gist": "FDA should specify the information manufacturers must supply to deploying institutions, including device version identifiers, interaction logs, and real-time notification of material model changes and their downstream effects.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q25"
+      ],
+      "source_passage": "FDA’s existing device data – the Global Unique Device Identification Database (GUDID) , recall and enforcement records, and post -approval change histories – has allowed me and other researchers to conduct independent post -market risk analysis with no access to proprietary manufacturer data. In a retrospective validation of my risk -scoring framework, it was found that the highest-risk 20 percent of a scored hospital product portfolio contained three of every four Class I recalls that subsequently occurred. The point is not the method but the prerequisite; analysis of publicly available regulatory data – although imperfect – made independent analysis possible.",
+      "position_gist": "Cites the author's own validated recall risk-scoring work built solely on public FDA data as evidence that public availability of regulatory data is a prerequisite for independent postmarket analysis, supporting a partly public Foundation Model MAF tier.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "The literature also suggests that conventional safeguards are often too weak to prevent high-risk products from being manufactured and distributed. In the See et al. [8] cardiovascular study, only 30 of the 157 recalled devices (19.1%) had documented premarket clinical testing, including just 7 of 112 devices cleared through the 510(K) pathway. ... The implication for the proposed framework is that any risk model must embed potential recall severity as an independent scoring factor rather than inheriting it from regulatory status alone.",
+      "position_gist": "A risk model should score potential severity of harm as an independent, explicitly computed factor rather than inferring it from a device's regulatory classification or clearance status.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Critically, the manufacturer and the FDA were aware of these defects 19 months before the recall was issued. During this period the FDA received 22 further failure reports, 11 of which described serious adverse events, and the recall notification ultimately omitted the wire-connection defect entirely. Precursors existed but were not transformed into timely action, the failure mode a proactive framework is designed to prevent.",
+      "position_gist": "Postmarket signals (adverse event precursors) already in hand should be systematically converted into timely proactive action rather than waiting for reactive recall processes, which is the failure mode the proposed framework targets.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "source_passage": "The operational bottleneck is rooted in identifier infrastructure – although the FDA’s 2013 UDI rule was intended to facilitate recall resolution, Mooghali et al. [6] note that the availability of UDI information remains inconsistent in recall notices, and See et al. [8] note that UDIs are not required to be incorporated into Electronic Health Records or claims data, rendering the system operationally inadequate. ... Recall intelligence must therefore be connected to supply chain and clinical system architectures to make detectability operational rather than aspirational.",
+      "position_gist": "Postmarket safety/recall intelligence must be integrated into provider supply chain and clinical (EHR/ERP) system architectures, since identifier infrastructure gaps make detection and response operationally inadequate.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "The framework adapts Failure Mode and Effects Analysis (FMEA), an established risk-assessment method in quality and reliability engineering, for data-driven recall risk assessment in healthcare supply chains. Its formulation generally decomposes risk into three dimensions – Severity (S), Occurrence (O), and Detectability (D) – and combines them into a Risk Priority Number (RPN). This paper adapts it into a dynamic tool with two modifications and an extension. First, component scores are computed from public regulatory and clinical data rather than workshop judgment. ... Second, the composite score “R”, similar to RPN in traditional FMEA, is additive rather than multiplicative because the dimensions are correlated. ... Finally, the framework extends FMEA with a supply chain specific Exposure (E) dimension to account for the magnitude of local exposure",
+      "position_gist": "Proposes a multi-dimensional, data-driven FMEA-derived risk framework in which risk is decomposed into Severity, Occurrence, Detectability, and an added Exposure dimension, computed from public regulatory data and combined additively rather than multiplicatively.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "Detectability measures how ready a health system is to identify and react to a recall – can the organization rapidly and efficiently determine which units are affected, which patients have been exposed, and where the affected units are located. Higher D reduces the composite risk whereas a lower D amplifies it. ... Exposure (E) measures the magnitude of a health system’s local stake in a given product, including patient-population exposure, ensuring that this framework provides visibility into how many patients would be at risk were the given product recalled.",
+      "position_gist": "Argues that a risk framework should include detectability/traceability readiness and local exposure magnitude as explicit risk dimensions, with poor traceability increasing and greater local exposure increasing composite risk.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Third, scores are decomposable, enabling users and decision-makers to see which factors drove a given score. Lastly, in operational use, scores are ideally recomputed regularly as new data becomes available.",
+      "position_gist": "Risk scores should be decomposable so users can see which factors drove them and should be recomputed on an ongoing basis as new data becomes available.",
+      "segment_id": "seg-015"
+    }
+  ]
+}

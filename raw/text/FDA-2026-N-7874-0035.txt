@@ -1,0 +1,683 @@
+VivaSecuris respectfully submits the attached public comment in response to FDA&rsquo;s discussion paper, &ldquo;Considerations for the Regulation of Generative AI-Enabled Medical Devices.&rdquo; The attached 17-page comment responds to all 26 questions and recommends that FDA treat the authorized GenAI-enabled medical-device system&mdash;not the underlying model alone&mdash;as the unit of assurance. It proposes risk-proportionate evaluation of nondeterministic behavior, deterministic enforcement of safety constraints, auditable lifecycle assurance cases, AI-SBOMs linked to existing product and cybersecurity records, identity and provenance controls, privacy-preserving observability, governance of collected and derived data, secure inter-system exchange, bounded autonomy, and postmarket monitoring. The recommendations are intended to support beneficial innovation while reducing avoidable patient harm caused by unintended behavior, unsafe integration, unclear authority, data misuse, or silent system change. Please include the attached PDF in the docket record.
+
+[Attachment: Comment from VivaSecuris]
+VIVASECURIS  |  FDA-2026-N-7874
+Public Comment — Generative AI-Enabled Medical Devices
+VIVASECURIS
+PUBLIC COMMENT
+Considerations for the Regulation of
+Generative AI-Enabled Medical
+Devices
+An Auditable Lifecycle Assurance Framework for Competency, Change,
+and Agentic Action
+Docket: FDA-2026-N-7874
+Submitted by: VivaSecuris
+Responsible contact: Joshua Hill, Founder
+Date: August 24, 2026
+Subject: CDRH discussion paper issued August 18, 2026
+Central recommendation
+FDA should treat the authorized AI-enabled medical-device system—not the model alone—as the
+unit of assurance. The objective is to enable beneficial AI that improves people's lives while
+preventing avoidable injury or death caused by unintended behavior, unsafe integration, unclear
+authority, or silent system change. Competency evaluation should therefore be paired with an
+auditable lifecycle assurance case that binds the complete system configuration, authority
+boundaries, privacy-preserving operational evidence, inter-system exchanges, postmarket signals,
+and change decisions.
+VivaSecuris appreciates CDRH's early, open engagement. This comment supports a risk-
+proportionate, least-burdensome approach and responds to all 26 questions, with particular
+emphasis on Questions 1, 5, 7-10, 16, and 18-26, where identity, cybersecurity, agentic control, change
+lineage, and auditability are central.
+
+VIVASECURIS  |  FDA-2026-N-7874
+Public Comment — Generative AI-Enabled Medical Devices
+Executive Summary
+VivaSecuris supports CDRH's exploration of a possible two-axis risk heuristic and competency-
+based approach. We also agree with the discussion paper's focus on evaluating the final user-
+facing device as configured and deployed, rather than the underlying model in isolation. We
+recommend extending that focus across the lifecycle because a GenAI-enabled device is a
+changing system of models, prompts, retrieval sources, guardrails, orchestration logic, tools,
+user interfaces, deployment environments, and human decision points. The regulatory unit of
+assurance should therefore be the authorized system configuration and its behavior across time.
+We recommend nine policy principles:
+1.  Add control effectiveness and operational context as explicit risk modifiers to the activity–
+consequence framework.
+2.  Evaluate realistic trajectories and state transitions, not isolated prompts and outputs.
+3.  Evaluate nondeterministic systems through repeated, distributional testing while requiring
+deterministic enforcement of safety invariants, authority limits, escalation, abstention,
+interruption, and recovery.
+4.  Require a versioned assurance case that links claims, hazards, controls, tests, results,
+deployment configuration, monitoring, and corrective actions.
+5.  Treat identity and provenance as safety controls for models, agents, tools, data sources, policies,
+users, and approving humans.
+6.  Add a risk-proportionate AI System Bill of Materials (AI-SBOM) as a supplemental record linked
+to existing design, supplier, product-BOM, and cybersecurity-SBOM records where applicable,
+identifying the behavior-shaping AI configuration that was evaluated, authorized, deployed, and
+changed without duplicating established component records.
+7.  Require explicit governance for collected and derived data—including prompts, conversations,
+inferences, embeddings, memory, tool results, and safety evidence—covering purpose, access,
+retention, correction, deletion, reuse, and transfer.
+8.  Scale postmarket evidence to risk and triggering events, while preserving manufacturer
+accountability even when third parties provide models or monitoring services.
+9.  For agentic and distributed systems, require enforceable scope, least privilege, bounded
+autonomy, safe information exchange, independent or diversely implemented supervision
+where risk warrants and practicable, safe interruption, and risk-proportionate reconstruction of
+safety-relevant causal chains.
+Proposed framework: Auditable lifecycle assurance case
+The proposed auditable lifecycle assurance framework is a technology-neutral structure for
+producing submission-ready and postmarket evidence. It does not mandate a particular vendor,
+model architecture, or logging platform. It specifies the minimum relationships that should
+remain provable throughout the total product lifecycle.
+
+VIVASECURIS  |  FDA-2026-N-7874
+Public Comment — Generative AI-Enabled Medical Devices
+Public-Safety Perspective
+This comment is offered to help FDA establish a practical safety framework before preventable
+failures become normalized across healthcare. It does not advocate a particular commercial
+product, vendor, model, or technical implementation. The goal is to support useful innovation
+that improves quality of life while ensuring that no patient is exposed to serious harm merely
+because responsibility was divided across a model provider, software service, healthcare
+institution, device manufacturer, and human operator.
+Our perspective is that trustworthy AI behavior cannot be established from model performance
+alone. It depends on whether the complete system can prove what component acted, under
+whose authority, using which inputs and tools, within what policy boundary, with what result,
+and how the responsible organizations responded when risk changed. Where a failure could
+injure or kill a person, uncertainty about system boundaries or accountability is itself a safety
+defect.
+This comment uses the phrase probabilistic intelligence with deterministic governance. The
+objective is not to force a generative system to produce identical wording on every execution. It
+is to characterize the distribution of clinically relevant behavior and make the safety envelope
+predictable: the same identity, authorization, clinical limits, approval requirements, abstention
+rules, interruption mechanisms, and evidence obligations apply regardless of which acceptable
+output is produced.
+The recommendations below are intended to be compatible with quality-system practices,
+predetermined change control plans (PCCPs), software lifecycle controls, cybersecurity
+documentation, and risk management. They aim to reduce duplicated evidence rather than
+create a parallel compliance system.
+These recommendations concern data and system practices that materially affect device safety
+or effectiveness and are intended to operate within FDA's statutory authority. Where another
+agency has primary authority - for example, over privacy, health-information exchange, or
+consumer protection - FDA should coordinate with HHS's Office for Civil Rights, the Office of the
+National Coordinator for Health Information Technology, the Federal Trade Commission, and
+other applicable authorities to avoid conflicting requirements.
+Regulatory Scope: Define the Medical-Device Function Before Evaluating
+the Model
+An initial challenge for FDA is determining where the medical-device function begins and ends
+when behavior emerges from a distributed combination of models, hospital systems, data, tools,
+people, and connected devices. The same foundation model may support a function that is not
+itself a device software function, or that falls within an applicable FDA policy, in one
+configuration and form part of a regulated device function in another. Location alone - inside a
+physical device, in a manufacturer cloud, or in a hospital - is therefore an unreliable boundary.
+
+VIVASECURIS  |  FDA-2026-N-7874
+Public Comment — Generative AI-Enabled Medical Devices
+FDA should characterize the function using intended purpose, output recipient, degree of
+personalization, directiveness, effective opportunity for qualified review, authority to act, time
+to harm, reversibility, integration with clinical systems or devices, persistence of memory or
+state, and ability to change after deployment. These properties determine whether an AI system
+merely communicates, supports a device function, directs care, or participates in an action with
+clinical consequences.
+Illustrative class Boundary-defining
+characteristic Primary assurance focus
+1. Device-contained assistance
+Explains operation, status, or
+instructions without changing
+clinical function.
+Accuracy, usability, source control,
+privacy, and escalation.
+2. Device-function support
+Summarizes or interprets device
+data for a qualified user who
+retains effective review.
+Data provenance, competency,
+uncertainty, workflow, and human–
+AI team performance.
+3. Action-directing function
+Personalized output materially
+influences diagnosis, treatment, or
+device use.
+Trajectory risk, clinical
+confirmation, review effectiveness,
+and deterministic safety limits.
+4. Agentic or autonomous function Selects tools, changes state, or
+initiates consequential actions.
+Identity, least privilege,
+authenticated checkpoints,
+interruption, recovery, and causal
+audit.
+5. Distributed clinical AI system
+The clinical function emerges across
+hospital systems, cloud services,
+models, people, and connected
+devices.
+System boundary, shared
+responsibility, interface assurance,
+configuration lineage, and
+postmarket evidence exchange.
+Illustrative boundary cases for GenAI services
+A service is not automatically outside the device definition. A cloud-hosted, subscription, API-
+delivered, or hospital-operated software service may contain a device software function when
+its intended use is medical. Conversely, use in a hospital, access to health information, or
+communication with a device does not by itself make every service function a device. FDA's
+existing function-specific, platform-independent approach should remain the starting point, but
+GenAI makes the function boundary more dynamic and difficult to observe.
+Scenario 1 — Patient-facing check-in service.
+A conversational service asks how a person feels, offers user-controlled reminders, and helps
+arrange an appointment without making a clinical inference. That function may remain general
+wellness or administrative assistance. If the same service uses patient-specific history,
+symptoms, sensor data, or longitudinal changes to detect deterioration, classify risk,
+recommend triage, support diagnosis, or guide treatment, that defined function may be a
+medical-device function. Accumulated conversation and personalization may reveal that the
+service is performing, or has been configured to perform, a patient-specific device function even
+
+VIVASECURIS  |  FDA-2026-N-7874
+Public Comment — Generative AI-Enabled Medical Devices
+when no single message appears diagnostic. Sponsors should define this boundary through
+intended use, labeling, system controls, and validation rather than allow functionality to expand
+silently at runtime.
+Scenario 2 — Hospital clinical copilot.
+A hospital integrates an LLM with the EHR to summarize records, draft notes, retrieve policies,
+and answer clinician questions. Some functions may be administrative or may qualify as non-
+device clinical decision support. The boundary changes if the service analyzes signals or
+patterns, produces patient-specific diagnostic or treatment recommendations that cannot be
+independently reviewed on an effective basis, prioritizes urgent cases, or directs time-sensitive
+action. Local prompts, retrieval sources, terminology mappings, workflow rules, and model
+updates may materially change the deployed function.
+Scenario 3 — Connected-device orchestration service.
+A remote service explains manufacturer-approved instructions and reports device status. The
+assurance focus may initially center on source integrity, presentation, and interface correctness.
+If it changes a monitoring threshold, adjusts therapy, transmits a control command, schedules
+an automated procedure, or coordinates agents and devices, it becomes action-taking or control
+software. The assurance boundary then expands to every identity, permission, data
+transformation, interface, approval checkpoint, and resulting device state involved in the
+trajectory.
+These scenarios show why the object of evaluation cannot be the conversational model—or the
+service as one undifferentiated product—alone. FDA should permit sponsors to define and
+validate bounded functions within a broader service while preventing nominally non-device
+features from becoming de facto diagnostic or action-directing functions through
+personalization, accumulated interaction, workflow integration, or tool access. The safety claim
+depends on what the function is intended to do, who relies on it, what it may infer or change,
+which organization controls each behavior-shaping component, and whether consequential
+exchanges and actions can be reconstructed without unnecessary exposure of protected health
+information.
+Shared-responsibility question exposed by service delivery
+When a manufacturer supplies an evaluated AI capability but a healthcare institution configures
+its data, prompts, workflows, identities, tools, and connected-device access, FDA should clarify
+which changes remain deployment configuration, which create a modification to a medical-device
+function, who must validate the integrated function, and how the parties exchange the evidence
+needed to maintain accountability.
+VivaSecuris recommends that FDA explicitly address the following scope questions:
+  What facts cause a hospital-deployed assistant to become, contain, or materially modify a
+medical-device function?
+  How should the responsible manufacturer and regulated system boundary be identified when
+several organizations control behavior-shaping components?
+
+VIVASECURIS  |  FDA-2026-N-7874
+Public Comment — Generative AI-Enabled Medical Devices
+  When does local configuration—including prompts, retrieval, workflow logic, role permissions,
+tools, and device access—require manufacturer review, supplemental validation, or a new
+regulatory submission?
+  What minimum evidence must manufacturers, model providers, healthcare institutions, and
+connected-device vendors exchange to validate and monitor the integrated function?
+  How should FDA preserve beneficial local innovation while preventing unassessed changes from
+silently altering intended use, authority, or clinical risk?
+I. Risk Assessment
+Question 1. The two-axis framework is useful, but its output should be modified by
+operational context and demonstrated control effectiveness.
+Device activity and consequence of incorrect output are appropriate primary axes. They should
+establish inherent risk. Residual risk, however, cannot be understood without modifiers that
+determine whether harm can be prevented, detected, interrupted, reversed, or reconstructed.
+Modifier Regulatory significance
+Reversibility Whether the resulting action can be reliably undone
+before harm occurs.
+Time to harm Whether there is sufficient time for detection,
+human review, or safe interruption.
+Independent oversight Whether a qualified human or separately evaluated
+control can prevent or stop the action.
+Traceability
+Whether outputs and actions can be attributed to
+sources, components, policies, and decision
+pathways.
+State persistence Whether one output changes future permissions,
+memory, treatment state, or downstream behavior.
+Exposure and scale How broadly an error can propagate across patients,
+sites, or connected devices.
+Uncertainty visibility Whether uncertainty is measured, calibrated,
+communicated, and used to trigger deferral.
+FDA can preserve the simplicity of the two-axis figure by treating these factors as a structured
+modifier profile rather than adding many graphical axes. Sponsors should state inherent risk,
+controls relied upon, evidence of control effectiveness, and resulting residual risk.
+Questions 2–6. Directiveness and conversational risk should be evaluated as properties of
+trajectories, not individual sentences.
+An informational function may become action-directing through personalization, repetition,
+omission of alternatives, urgency, authority cues, or accumulation across turns. Intended use
+
+VIVASECURIS  |  FDA-2026-N-7874
+Public Comment — Generative AI-Enabled Medical Devices
+should therefore describe permitted trajectory classes, prohibited transitions, escalation
+conditions, and the point at which human review becomes mandatory.
+  Test longitudinal conversations that cross scope boundaries gradually, including adversarial,
+emotionally manipulative, ambiguous, and incomplete inputs.
+  Measure both under-escalation and over-escalation using separate clinically justified thresholds;
+do not collapse them into a single accuracy score.
+  Evaluate whether the system preserves user agency through calibrated uncertainty, alternatives,
+source traceability, and clinically useful handoff—not merely disclaimers.
+  Treat patient-facing status as a context modifier, not an automatic presumption of unacceptable
+risk. Controls should reflect the user, task, consequences, and available safeguards.
+II. Competency-Based Premarket Evaluation
+Questions 7–9. Competency-based evaluation is appropriate when paired with
+configuration identity, lifecycle evidence, and clinical confirmation.
+VivaSecuris supports benchmarking followed by clinical confirmation. Each reported result
+should bind to a uniquely identified system configuration: model and version, prompts,
+retrieval configuration, tools, guardrails, orchestration logic, user interface, policies, and
+relevant infrastructure. A benchmark score without this binding is not reproducible evidence
+for a system that may change independently at several layers.
+For nondeterministic systems, reliability should be established as a bounded distribution of
+outcomes rather than an expectation of identical responses. Sponsors should repeat clinically
+important tests across controlled randomness, semantically equivalent inputs, realistic context
+variation, patient subgroups, deployment conditions, and multi-step trajectories. Evaluation
+should report observed error frequencies with uncertainty or confidence bounds where
+statistically estimable, error severity, uncertainty calibration, abstention behavior, and control
+intervention. For rare catastrophic hazards whose probability cannot be credibly estimated
+from available samples, sponsors should provide scenario-based hazard coverage, adversarial
+and stress evidence, and structural evidence that high-severity actions cannot bypass
+independent controls. Average accuracy alone is insufficient when a low-frequency failure can
+cause serious harm.
+Statistical evidence should be paired with architectural invariants enforced outside the
+generative model wherever practicable. Examples include prohibitions on acting outside the
+declared clinical scope, authenticated approval for specified high-consequence actions, hard
+clinical parameter limits, safe failure when a critical dependency is unavailable, and mandatory
+attribution of consequential actions. Prompt instructions alone should not be treated as
+deterministic safety controls.
+The competency structure should add a cross-cutting element: assurance integrity. This should
+assess whether the device can maintain identity, provenance, authorization, auditability, and
+control effectiveness during normal operation, failure, attack, and change.
+  Configuration integrity: the evaluated configuration matches the deployed configuration.
+
+VIVASECURIS  |  FDA-2026-N-7874
+Public Comment — Generative AI-Enabled Medical Devices
+  Evidence integrity: test assets, methods, rubrics, results, and adjudication remain attributable
+and tamper-evident.
+  Runtime integrity: policy enforcement cannot be silently bypassed by model output, tool content,
+retrieval data, or orchestration changes.
+  Change integrity: every material component change is detected, classified, evaluated, approved,
+and linked to the resulting deployment.
+Question 10. Benchmark validity should be demonstrated through an evidence package,
+not inferred from popularity or score stability.
+A sponsor should document the benchmark’s intended construct, clinical relevance, coverage,
+known gaps, contamination analysis, subgroup representation, scoring reliability, adjudicator
+agreement, and relationship to real-world outcomes. Sponsor-developed benchmarks can be
+valuable for narrow intended uses, but high-consequence claims should include sequestered or
+independently governed assets to reduce test optimization and leakage.
+Questions 11–15 and 17. Clinical confirmation and comparators should be tailored to the
+actual decision pathway.
+The confirmation method should reflect whether the device supports a human, directs an
+action, or acts autonomously. Human–AI team performance is the relevant comparator when
+that team is the intended use; autonomous performance is necessary when human review is not
+an effective control. Synthetic data should supplement—not erase—evidence from clinically and
+operationally representative distributions, particularly for rare events and underrepresented
+groups.
+Question 16. Independent third parties can strengthen evaluation, provided independence
+is transparent and access remains competitive.
+Third parties are particularly useful for sequestered test assets, adversarial evaluation, expert
+adjudication, cybersecurity assessment, and verification of configuration/evidence integrity.
+FDA should avoid exclusive certification structures. Qualifications, conflicts, methods, error
+rates, and financial relationships should be disclosed; sponsors should retain the ability to use
+multiple qualified pathways.
+III. Postmarket Monitoring and Change
+Question 18. Greater postmarket reliance is appropriate only when monitoring is timely,
+actionable, and enforceably connected to risk controls.
+Reduced premarket certainty should not be justified by passive dashboards. The sponsor should
+prespecify signals, thresholds, review cadence, escalation paths, authority to pause or restrict
+functionality, corrective-action timelines, and evidence that monitoring coverage is adequate.
+High-consequence autonomous actions, rapid time-to-harm, weak reversibility, or inadequate
+interruption mechanisms may make reduced premarket evidence inappropriate.
+Postmarket observability should be proportionate and privacy preserving. Routine evidence can
+emphasize configuration identifiers, policy results, uncertainty ranges, safety-control
+
+VIVASECURIS  |  FDA-2026-N-7874
+Public Comment — Generative AI-Enabled Medical Devices
+interventions, device state, clinician response, and aggregate performance rather than
+indiscriminate retention of complete prompts or identifiable clinical records. A graduated
+model can support minimal operational metadata during normal use, controlled correlation
+when a risk signal emerges, and narrowly authorized access to case-level evidence for
+investigation.
+Additional consideration related to Questions 18 and 21. Data collected or created by
+GenAI requires an explicit lifecycle, not a generic privacy statement.
+GenAI systems can create new sensitive information even when the source record is already
+governed. Conversations, inferred symptoms or diagnoses, risk classifications, summaries,
+embeddings, retrieved context, agent memory, tool results, feedback, safety interventions, and
+audit records may reveal or amplify clinically significant facts. For data practices materially
+affecting device safety or effectiveness and within FDA's authority, FDA should ask sponsors to
+identify each data class, why it is necessary, where it is stored, who can access it, which
+downstream systems receive it, how long it persists, and how it is corrected, retained, archived,
+or deleted.
+  Purpose limitation and minimization: collect and derive only the information necessary for the
+authorized function, safety monitoring, and legally required records.
+  Separation: distinguish patient content, operational state, model context, long-term memory,
+quality evidence, cybersecurity evidence, and de-identified aggregate metrics so each can receive
+appropriate access and retention controls.
+  Identity and authorization: bind every read, write, inference, retrieval, export, and deletion to an
+authenticated human or machine identity, permitted purpose, patient scope, and time-bounded
+authority.
+  Retention and deletion: define limits for prompts, outputs, caches, embeddings, memory,
+backups, replicas, and supplier-held copies; verify deletion or justified archival rather than
+relying on user-interface disappearance, subject to applicable record-retention, investigation,
+litigation-hold, and data-integrity obligations.
+  Correction and provenance: preserve the source and transformation history of derived
+information and propagate corrections so an erroneous inference does not become durable
+clinical truth across systems.
+  Secondary use: do not silently use patient interactions, clinical content, or safety investigations
+for model training, product improvement, or unrelated analytics. Any authorized reuse should
+be separately governed, transparent, and technically enforceable.
+  Supplier boundaries: contracts and technical controls should address model-provider retention,
+human review, abuse monitoring, support access, regional storage, subprocessors, incident
+response, and termination or migration.
+Privacy and safety should not be framed as opposites. A system can preserve enough
+attributable evidence to investigate a serious failure without retaining every raw conversation
+indefinitely. Sponsors should justify the minimum evidence needed for causal reconstruction,
+protect content separately from metadata, and support controlled re-identification only when
+authorized for patient care, safety investigation, or regulatory obligations.
+
+VIVASECURIS  |  FDA-2026-N-7874
+Public Comment — Generative AI-Enabled Medical Devices
+Question 19. Reassessment should be both periodic and event-triggered.
+Relevant triggers include model or model-provider changes; prompt, retrieval, orchestration,
+guardrail, tool, interface, or infrastructure changes; new user populations or sites; distribution
+shift; novel failure modes; cybersecurity events; control degradation; complaint or adverse-
+event patterns; and changes in clinical practice. Cadence should be justified by inherent risk,
+exposure, rate of change, and time to detect harm.
+Question 20. Machine-based supervisory agents can assist monitoring but must not create
+circular assurance.
+A supervisor should have a defined, narrower role; failure modes that are independent or
+diversely implemented relative to the monitored component where risk warrants and
+practicable; restricted privileges; validated detection and interruption performance; protected
+inputs; and a safe failure state. A model should not be considered independently supervised
+merely because another instance of the same model family reviews its output. Supervisory
+actions, failures, overrides, and missed detections should be audited and periodically re-
+evaluated.
+Question 21. Shared ecosystem participation should enrich evidence without diffusing
+manufacturer accountability.
+Clinicians, healthcare institutions, professional societies, model providers, and standards bodies
+can contribute signals, adjudication, benchmarks, and deployment context. The manufacturer
+should remain responsible for aggregation, triage, risk decisions, corrective action, and
+regulatory reporting. Data-sharing agreements should specify provenance, timeliness, minimum
+fields, privacy protections, and feedback closure.
+FDA should recognize that safety-relevant information may cross hospital, cloud, model-
+provider, manufacturer, and device boundaries. Each consequential exchange should preserve
+sender and recipient identity, permitted purpose, patient or device scope, schema and clinical
+meaning, source and transformation provenance, applicable AI-SBOM configuration, integrity
+and freshness, privacy classification, retention, and onward-use restrictions. Transport
+encryption is necessary but does not establish that the sender was authorized, the information
+was semantically valid, or the recipient may use it for the proposed purpose.
+FDA should specify the required evidence properties rather than prescribe one privacy
+technology. Depending on the use case, sponsors may use local or federated evaluation,
+aggregation, pseudonymization, confidential computing, secure multiparty computation,
+homomorphic encryption, differential privacy, selective disclosure, or protected case-level
+access. Advanced cryptography should be treated as an optional implementation mechanism,
+not a prerequisite for compliance.
+Questions 22–24. Change control should be based on impact pathways and verified
+configuration lineage.
+A change can be low-level yet clinically material because it alters tool selection, retrieved
+evidence, interaction state, or guardrail behavior. Sponsors should classify changes by affected
+
+VIVASECURIS  |  FDA-2026-N-7874
+Public Comment — Generative AI-Enabled Medical Devices
+competency, hazard, control, population, and workflow—not solely by component type. The
+premarket competency baseline should identify the minimum re-evaluation set for each
+plausible impact pathway.
+  PCCPs may define change envelopes, trigger categories, affected evidence modules, acceptance
+thresholds, rollout constraints, and rollback criteria even when exact future model weights
+cannot be specified.
+  Third-party model contracts should require advance notice where feasible, version pinning or
+controlled rollout, change documentation, continued access to the prior version for
+investigation/rollback, incident cooperation, and safety-relevant audit information.
+  Technical controls should detect unannounced changes through signed artifacts, version
+attestation, behavioral canaries, reproducible test suites, and deployment manifests.
+  A manufacturer should maintain an exit strategy when a foundation-model provider cannot
+support required transparency, stability, or rollback.
+IV. Foundation Models and Agentic AI
+Question 25. A voluntary Foundation Model Master File can be useful if its contents are
+versioned, updateable, and contractually referenced.
+A Foundation Model MAF should include model identity and lineage; intended supported uses;
+architecture summary; training-data provenance at an appropriate level; healthcare-relevant
+evaluations; subgroup results; known limitations and failure modes; safety constraints;
+cybersecurity practices; update policy and notification commitments; deprecation and rollback
+terms; and available audit signals. FDA should permit tiered disclosure so proprietary details
+can remain protected while sponsors receive the safety information necessary to manage risk.
+The MAF should feed, but not replace, a sponsor-maintained AI-SBOM for the complete medical-
+device function. The AI-SBOM should supplement applicable existing design, product-BOM,
+hardware, software, supplier, and section 524B cybersecurity-SBOM records. It should identify
+the model and fine-tunes; prompts and configuration; retrieval sources and embedding
+components; tools, sensors, actuators, and external services; agents, memory, and orchestration;
+runtime and infrastructure dependencies; safety policies; identity and authority relationships;
+competency evidence; and applicable change lineage. Existing component records should be
+referenced by stable identifiers rather than copied. Protected supplier records may be
+referenced rather than publicly disclosed, provided the sponsor can obtain timely safety-
+relevant information.
+Question 26. Agentic devices require evaluation of authority, sequences, state, and
+consequences—not only output quality.
+For an agentic device, FDA should require a declared authority envelope identifying permitted
+tools, data, targets, actions, clinical contexts, and autonomy levels. Acceptance criteria should
+include correct planning and tool use, but also refusal, interruption, recovery, authorization,
+state integrity, and resistance to indirect prompt injection through retrieved content and tool
+outputs.
+
+VIVASECURIS  |  FDA-2026-N-7874
+Public Comment — Generative AI-Enabled Medical Devices
+  Every agent, model, tool, service, dataset, policy, user, and approving human should have a
+verifiable identity and defined authority.
+  High-consequence or irreversible actions should require an explicit, authenticated checkpoint
+unless a justified autonomous pathway has been evaluated.
+  Tools should enforce least privilege, parameter constraints, rate limits, and transaction
+boundaries independently of the model.
+  The system should support immediate containment: revoke authority, isolate components, pause
+actions, preserve evidence, and revert to a safe state.
+  Testing should cover multi-step compounding errors, confused-deputy behavior, stale or
+poisoned memory, tool substitution, partial failure, race conditions, and repeated retry behavior.
+Appendix A - Auditable Lifecycle Assurance Case
+The proposed auditable lifecycle assurance framework is a technology-neutral evidence
+architecture for GenAI-enabled medical devices. Its purpose is to make safety claims
+continuously attributable to the system that was actually evaluated and deployed.
+A.1 Core assurance object
+The assurance case
+A structured, versioned argument linking an intended-use claim to hazards, risk controls,
+competency requirements, test assets, results, clinical confirmation, authorized configuration,
+deployment evidence, postmarket signals, and change decisions.
+A.2 Minimum identity and provenance graph
+Object Minimum evidence relationship
+Device/function Intended use, user, environment, activity class,
+consequence class, authorization status.
+Configuration Exact model, prompts, retrieval, tools, orchestration,
+guardrails, UI, policies, infrastructure.
+Competency Claim, hazard/control linkage, method, asset version,
+rubric, threshold, result, adjudicator.
+Actor Human or machine identity, role, authority,
+delegation, authentication, revocation state.
+Runtime event Causal chain, component versions, policy decision,
+action, result, escalation/override.
+Signal Complaint, incident, drift, subgroup performance,
+control failure, cybersecurity event.
+Change Initiator, affected objects, impact analysis, approval,
+test delta, rollout, rollback.
+
+VIVASECURIS  |  FDA-2026-N-7874
+Public Comment — Generative AI-Enabled Medical Devices
+A.3 AI System Bill of Materials (AI-SBOM)
+The AI-SBOM is a supplemental, versioned description of the behavior-shaping AI system
+configuration. It should be linked to applicable existing design, product-BOM, supplier, and
+cybersecurity-SBOM records. It must not replace those records or become a second, conflicting
+inventory. Instead, it should reference existing hardware, software, firmware, service, and
+supplier components by stable identifiers and add the AI-specific relationships needed to
+connect build-time evaluation, each deployed instance, consequential runtime evidence, and
+change decisions.
+  Model layer: foundation model, weights or service version, fine-tunes, adapters, quantization,
+safety models, and integrity identifiers.
+  Data and knowledge layer: training/evaluation provenance at an appropriate level, retrieval
+indexes, clinical sources, embedding models, freshness, population coverage, and known
+limitations.
+  Configuration layer: system prompts, templates, sampling parameters, context limits, policies,
+guardrails, and user-interface behavior.
+  Tool and agent layer: tools, external APIs, sensors, actuators, agents, memory, orchestration,
+roles, permissions, delegation, and approval checkpoints.
+  Evidence and change layer: intended-use claims, competency tests, thresholds, results,
+monitoring requirements, supplier notices, impact analyses, deployment manifests, and rollback
+state.
+  Data-governance layer: data classes; collection and inference purposes; storage locations; access
+policy; retention and deletion rules; correction propagation; training or secondary-use status;
+transfer restrictions; and accountable data owners or custodians.
+Least-burdensome implementation should use linked manifests where applicable: the product
+BOM or equivalent design and manufacturing records answer what physical and supplied
+components constitute the device; the cybersecurity SBOM answers what software components
+and dependencies are present for covered cyber devices; and the AI-SBOM answers which
+behavior-shaping AI configuration, evidence, authority relationships, and change lineage apply.
+A single component should be recorded once and referenced wherever its role matters.
+A.4 Assurance Exchange Layer
+For distributed medical-device functions, the assurance case should define how clinical,
+operational, control, and safety information crosses system and organizational boundaries. A
+technology-neutral exchange envelope should identify:
+  the authenticated sender, recipient, and relevant human or machine authority;
+  the permitted purpose, patient/device scope, expiration, retention, and onward-use restrictions;
+  the schema, units, terminology version, timestamps, clock quality, uncertainty, and missing-data
+indicators needed to preserve clinical meaning;
+  the source, transformations, AI-SBOM configuration, integrity proof, and causal relationship to
+earlier and downstream events; and
+  the acknowledgment, policy decision, resulting action or device state, and exception or
+escalation outcome.
+
+VIVASECURIS  |  FDA-2026-N-7874
+Public Comment — Generative AI-Enabled Medical Devices
+Control commands should receive stronger treatment than observations: patient-context
+binding, freshness and replay protection, least privilege, independent parameter constraints,
+valid device-state checks, required human approval, acknowledgment, and safe timeout or
+rollback.
+A.5 Lifecycle gates
+1. Scope gate: Define intended use, users, environments, authority envelope, prohibited transitions,
+and risk profile.
+2. Configuration gate: Freeze and attest the complete evaluated system configuration and supplier
+dependencies.
+3. Competency gate: Prespecify tests and thresholds; execute benchmarking, adversarial testing, and
+clinical confirmation.
+4. Deployment gate: Verify the deployed configuration, policies, monitoring, interruption, rollback,
+and operator readiness.
+5. Runtime gate: Continuously enforce authorization and safety policies; capture proportionate
+causal evidence.
+6. Signal gate: Triage drift, failures, complaints, incidents, subgroup changes, and cybersecurity
+findings.
+7. Change gate: Classify impact, select evidence delta, approve, stage rollout, verify, and preserve
+rollback.
+8. Retirement gate: Revoke identities and authority, preserve required records, migrate safely, and
+communicate residual risk.
+A.6 Risk-proportionate audit event
+Auditability should not require indiscriminate retention of protected health information or
+complete prompts. The evidence record can separate safety-relevant metadata from encrypted
+or access-controlled content. A consequential event should support reconstruction of:
+  who or what acted, under which authenticated identity and delegated authority;
+  which device configuration, model, policy, tool, and data-source versions were active;
+  what safety claim, hazard, control, and intended-use boundary applied;
+  what action was proposed, authorized, denied, modified, executed, or reversed;
+  what human checkpoint, override, escalation, or supervisory action occurred;
+  what outcome and monitoring signal followed; and
+  how the event relates causally to preceding and downstream events.
+The audit record should also identify the applicable data-handling decision: what content was
+collected or derived; the authorized purpose; where it was stored or transferred; which
+retention policy applied; whether it entered memory, an embedding index, a quality dataset, or
+model-improvement workflow; and whether correction or deletion obligations were completed.
+The AI-SBOM should reference these policies and storage classes, but should never contain
+patient data itself.
+
+VIVASECURIS  |  FDA-2026-N-7874
+Public Comment — Generative AI-Enabled Medical Devices
+A.7 Illustrative evidence depth
+Evidence depth Illustrative application Expected assurance
+Baseline Non-directive, low consequence
+Configuration identity, basic
+competency evidence, periodic
+monitoring.
+Enhanced Personalized/action-directing
+Trajectory tests, calibrated
+uncertainty, escalation and source
+traceability.
+Heightened Action-taking with effective
+oversight
+Least privilege, authenticated
+checkpoints, event-triggered re-
+evaluation.
+Highest Autonomous or high consequence
+Independent or diversely
+implemented supervision
+where risk warrants and
+practicable; safe
+interruption; sequestered
+testing; continuous signals;
+safety-relevant causal
+evidence.
+These descriptions are illustrative evidence-depth examples, not a proposed classification or certification scheme. FDA
+could align evidence depth with its existing risk-based authorities.
+A.8 Suggested outcome metrics
+  Safety-critical recognition and time-to-escalation, with separate under- and over-escalation
+measures.
+  Boundary adherence across multi-turn trajectories, including under-refusal and over-refusal.
+  Calibration, uncertainty communication, and clinically appropriate deferral.
+  Tool-selection accuracy, parameter validity, authorization violations, and safe handling of tool
+failure.
+  Human-checkpoint compliance, override quality, interruption latency, and recovery success.
+  Subgroup and deployment-site performance, distribution shift, and control degradation.
+  Mean time to detect, contain, evaluate, correct, and verify safety-relevant changes or failures.
+Appendix B — Least-Burdensome Implementation
+The auditable lifecycle assurance framework can be implemented incrementally and should
+reuse evidence already produced under design controls, risk management, cybersecurity,
+software lifecycle, clinical evaluation, postmarket surveillance, CAPA, supplier management,
+and PCCP processes. FDA should specify required relationships and outcomes, not a proprietary
+data model or platform.
+
+VIVASECURIS  |  FDA-2026-N-7874
+Public Comment — Generative AI-Enabled Medical Devices
+  Permit modular evidence updates so an unchanged clinical component does not require full
+resubmission when an unrelated infrastructure component changes.
+  Allow cryptographic hashes, signed manifests, and protected references where retaining raw
+clinical content would create privacy or security risk.
+  Encourage machine-readable evidence packages while retaining human-readable summaries
+and regulator access to underlying evidence.
+  Use common event and provenance concepts to reduce duplicative logs across quality,
+cybersecurity, and AI governance systems.
+  Pilot the framework with manufacturers, healthcare institutions, independent evaluators,
+patient representatives, and foundation-model providers across several risk profiles.
+Conclusion
+CDRH’s discussion paper correctly recognizes that GenAI-enabled devices challenge static,
+output-centric evaluation. Competency assessment is a strong foundation. To remain reliable
+across deployment, modification, third-party model changes, and autonomous action, that
+foundation should be connected to a continuously auditable assurance case.
+VivaSecuris recommends that FDA explore an auditable lifecycle assurance framework through
+public workshops and a voluntary pilot. The pilot should include supplemental AI-SBOM
+concepts linked to applicable existing design, product-BOM, supplier, and cybersecurity-SBOM
+records; deterministic governance of probabilistic behavior; privacy-preserving postmarket
+observability; and safe assurance exchange across manufacturers, healthcare institutions,
+model providers, and connected devices. The purpose is not to prescribe a platform or create a
+new compliance market. It is to help beneficial AI reach people safely, make evidence reusable
+and change evaluation more precise, and ensure that manufacturers, healthcare institutions,
+and FDA can detect risk, preserve accountability, and act before an unintended system behavior
+causes avoidable injury or death.
+References
+1. U.S. Food and Drug Administration, Considerations for the Regulation of Generative AI-Enabled Medical Devices:
+Discussion Paper and Request for Feedback (August 18, 2026), https://www.fda.gov/media/194242/download
+2. U.S. Food and Drug Administration, discussion-paper landing page and submission instructions, docket FDA-2026-
+N-7874, https://www.fda.gov/medical-devices/digital-health-center-excellence/considerations-regulation-generative-ai-
+enabled-medical-devices-discussion-paper-and-request
+
+VIVASECURIS  |  FDA-2026-N-7874
+Public Comment — Generative AI-Enabled Medical Devices
+3. U.S. Food and Drug Administration, Marketing Submission Recommendations for a Predetermined Change Control
+Plan for Artificial Intelligence-Enabled Device Software Functions (August 18, 2025), https://www.fda.gov/regulatory-
+information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-
+plan-artificial-intelligence
+4. U.S. Food and Drug Administration, Cybersecurity in Medical Devices: Quality Management System Considerations
+and Content of Premarket Submissions (February 3, 2026), https://www.fda.gov/regulatory-information/search-fda-
+guidance-documents/cybersecurity-medical-devices-quality-management-system-considerations-and-content-
+premarket
+5. U.S. Food and Drug Administration, Clinical Decision Support Software (January 29, 2026),
+https://www.fda.gov/regulatory-information/search-fda-guidance-documents/clinical-decision-support-software
+6. U.S. Food and Drug Administration, General Wellness: Policy for Low Risk Devices (January 6, 2026),
+https://www.fda.gov/regulatory-information/search-fda-guidance-documents/general-wellness-policy-low-risk-devices
+7. U.S. Food and Drug Administration, Multiple Function Device Products: Policy and Considerations (July 2020),
+https://www.fda.gov/regulatory-information/search-fda-guidance-documents/multiple-function-device-products-policy-
+and-considerations

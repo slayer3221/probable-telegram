@@ -1,0 +1,108 @@
+<br/>Thank you for issuing this discussion paper and inviting early input. I am a physician who has spent 20+ years at the boundary between clinicians and health technology, and I now build and operate software through which licensed physicians review and attest to AI-generated clinical outputs. The through-line of these comments is one distinction the paper is already reaching for: the question is not only how accurate a generative model is, but who is accountable for the consequences of acting on its output. Accuracy is a property of a model; accountability is a property of a person.<br/><br/>1. Endorse the two-axis risk framework - and make a named human-in-the-loop and reversibility first-class, risk-LOWERING variables, not only a way to sort risk upward. Inserting a qualified human who reviews the basis for an output and signs or declines it before it becomes consequential moves a device DOWN the effective-risk surface, the mirror image of autonomy moving it up. Two devices with identical capability should not carry identical risk if one routes every consequential output through an accountable licensed reviewer and the other acts alone.<br/><br/>2. Make the clinical-decision-support boundary explicit. Connect the lower risk of HCP-facing use to the independent-review criterion at section 520(o)(1)(E): when a qualified professional can independently review the BASIS for a recommendation before acting, the device occupies a distinct, lower-risk class. Naming that &quot;name-the-human&quot; pattern gives developers a clear, safety-promoting target.<br/><br/>3. In competency-based evaluation, score the human-AI TEAM as deployed - and be precise that the human&#39;s role is accountability, not higher accuracy. Adding a human to an already-strong model does not reliably raise task accuracy and can lower it on some decision tasks (Vaccaro et al., Nature Human Behaviour, 2024). The inference is not &quot;remove the human&quot; but that the human&#39;s function in a regulated device is ownership of and answerability for the consequence, which no benchmark confers. Benchmark the model honestly on its own; let clinical confirmation measure the team as deployed. The paper&#39;s escalation and clinical-deferral competencies are exactly right.<br/><br/>4. Postmarket &quot;shared-ecosystem responsibility&quot; works only with a portable, tamper-evident record of who reviewed what and what they decided. Periodic re-benchmarking, sample-based clinician review, and drift monitoring function only if a durable, privacy-preserving record of the human decision travels with the determination. One workable pattern: each reviewed output becomes a signed, timestamped, PHI-free attestation whose fingerprint is anchored to an external tamper-evident ledger, so the determination and its sign-off can be verified after the fact without exposing patient data.<br/><br/>5. For agentic systems, anchor oversight to whether a named, licensed human signs the consequential action - not to autonomy in the abstract. At each point where the system takes a consequential or hard-to-reverse action, is there a qualified human who reviews the basis and is accountable for it? That checkpoint scales across architectures and is more robust to prompt injection than autonomy labels. The paper&#39;s principle - that a foundation-model master file is not a device approval, and the sponsor deploying the device remains responsible - is exactly right and should stay central.<br/><br/>A great deal of what a generative model does (retrieval, drafting, summarization, triage) is well suited to automation, and the framework should keep that path light. The narrow, load-bearing exception is the consequential clinical or coverage decision, where the durable requirement is not a better score but an accountable, licensed human who reviews the basis, signs, and answers for the outcome. I would be glad to provide further detail, including the attestation-and-ledger pattern in point 4.<br/><br/>Respectfully submitted,<br/>Blaine Warkentine
+
+[Attachment: Comment from Blaine Warkentine]
+Comment on Docket FDA-2026-N-7874
+Considerations for the Regulation of Generative AI-Enabled Medical Devices — Discussion
+Paper and Request for Feedback
+To: Digital Health Center of Excellence, Center for Devices and Radiological Health, U.S. Food
+and Drug Administration
+Submitted via: Regulations.gov, Docket No. FDA-2026-N-7874
+From: Blaine Warkentine, MD, MBA
+Date: August 27, 2026
+Thank you for issuing this discussion paper and for inviting early input. I am a physician
+(MD, Medical College of Wisconsin; MBA, University of Utah) who has spent more than
+twenty years at the boundary between clinicians and health technology — including
+building the orthopedic vertical of an image-guided surgical-navigation company
+(BrainLAB) to roughly $250M, and named inventor on patents in image-guided
+navigation. I now build and operate production software through which licensed
+physicians review and attest to AI-generated clinical outputs. I write in support of the
+paper's central instincts, and to offer five refinements grounded in systems I actually
+run.
+The through-line of these comments is a single distinction the paper is already reaching
+for: the question is not only how accurate a generative model is, but who is
+accountable for the consequence of acting on its output. Accuracy is a property
+of a model; accountability is a property of a person. The framework will be strongest
+where it keeps those two separate and builds around the second.
+1. Endorse the two-axis risk framework — and make a named human-in-
+the-loop and reversibility first-class, risk-lowering variables, not only
+a way to sort risk upward. The Activity axis rightly treats fully-autonomous
+action as higher-risk than an informational, non-directive output. We encourage
+the framework to state explicitly the mirror image: inserting a qualified human
+who reviews the basis for an output and signs — or declines — it before it
+becomes consequential is a mitigation that moves a device down the effective-risk
+surface, just as autonomy moves it up. Two devices with identical raw capability
+should not carry identical regulatory risk if one routes every consequential output
+
+through an accountable licensed reviewer and the other acts on its own. The
+reversibility of the action deserves the same first-class treatment. Making these
+explicit gives developers a concrete, safety-promoting design target rather than a
+penalty to be discovered late.
+2. Make the clinical-decision-support boundary explicit in the
+framework. The paper notes that HCP-facing use lowers risk because a clinician
+can catch an incorrect output. We encourage CDRH to connect this directly to the
+statutory independent-review criterion at section 520(o)(1)(E): when a device is
+designed so that a qualified professional can independently review the basis for
+its recommendation, and does so before acting, it occupies a distinct, lower-risk
+class. Naming that "name-the-human" design pattern in the framework would let
+developers build toward a clear line, rather than discovering it case by case, and
+would reward exactly the architecture the paper's safety logic favors.
+3. In competency-based evaluation, score the human–AI team as it will
+be deployed — and be precise that the human's role is accountability,
+not a guarantee of higher accuracy. The analogy to how clinicians are
+trained and credentialed is apt. We add one caution from the evidence: adding a
+human reviewer to an already-strong model does not reliably raise task accuracy,
+and on some decision tasks can lower it (Vaccaro et al., Nature Human
+Behaviour, 2024). The right inference is not "remove the human" — it is that the
+human's function in a regulated device is ownership of and answerability for the
+consequence, which no benchmark score confers. So benchmark the model
+honestly on its own, but let clinical confirmation measure the team as actually
+deployed. The paper's safety competencies for recognizing safety-critical
+situations and escalating, and for calibration, uncertainty, and clinical deferral,
+are exactly right: a device that reliably knows when to hand off to a human is
+demonstrating the safety-critical behavior, not failing to be autonomous.
+4. Postmarket "shared-ecosystem responsibility" works only with a
+portable, tamper-evident record of who reviewed what and what they
+decided. The paper's call for periodic re-benchmarking, sample-based clinician
+review, and drift / performance-degradation monitoring is well-placed, and
+distributing responsibility across manufacturers, clinicians, and institutions is
+realistic. In practice it functions only if a durable, privacy-preserving record of the
+human decision travels with the determination. We build and operate one such
+pattern: each reviewed output becomes a signed, timestamped, PHI-free
+attestation whose fingerprint is anchored to an external, tamper-evident ledger,
+
+so a determination and its human sign-off can be independently verified after the
+fact without exposing patient data. We offer the pattern, not a product, as one
+concrete way to make shared postmarket responsibility auditable, and would
+welcome the opportunity to share the design with the Center in detail.
+5. For agentic systems, anchor oversight to whether a named, licensed
+human signs the consequential action — not to autonomy in the
+abstract. The paper is right to give agentic AI elevated scrutiny for its "reduced
+opportunity for human review." We suggest the operative test be functional and
+local: at each point where the system takes an action that is consequential or
+difficult to reverse, is there a qualified human who reviews the basis and is
+accountable for it? Oversight tied to that checkpoint scales across architectures
+and is more robust to prompt injection than autonomy-level labels alone. The
+paper's own principle — that a foundation-model master file is not a device
+approval, and that the sponsor deploying the device remains responsible for it —
+is exactly right, and we encourage CDRH to keep it central: the party who deploys
+the AI, and the licensed human who signs the consequential output, are where
+accountability must sit.
+These five points are one argument seen from five sides. A great deal of what a
+generative model does — retrieval, drafting, summarization, triage — is genuinely well
+suited to automation, and the framework should keep that path light. The narrow, load-
+bearing exception is the consequential clinical or coverage decision, where the durable
+requirement is not a better score but an accountable, licensed human who reviews the
+basis, signs, and answers for the outcome. A framework that names that human
+explicitly — as a risk-lowering design element, as a distinct regulatory class, as the unit of
+clinical confirmation, as the postmarket record, and as the agentic checkpoint — will age
+well as the models keep improving.
+I appreciate the Center's leadership in seeking input this early, and I would be glad to
+provide further detail on any of the above, including the attestation-and-ledger pattern
+described in point four.
+Respectfully submitted,
+Blaine Warkentine, MD, MBA
+
+Reference cited: Vaccaro, Almaatouq & Malone, "When combinations of humans and AI are useful: A
+systematic review and meta-analysis," Nature Human Behaviour, 2024. These comments reflect the
+author's own views and describe design patterns in general terms; they are not legal advice and do not
+disclose patient information.

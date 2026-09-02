@@ -1,0 +1,426 @@
+{
+  "comment_id": "FDA-2026-N-7874-0033",
+  "input_hash": "718b3354f51d6879",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "position": "oppose",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter argues that postmarket surveillance only detects failure modes that were specified in advance, and is structurally weakest at identifying unanticipated harms — the category most likely to arise from open-ended generative outputs. A monitoring program built on prespecified benchmarks will therefore measure known failure modes well and novel ones poorly.",
+      "requested_fda_action": "The passage urges FDA not to treat prespecified-benchmark-based postmarket monitoring as a reliable substitute for premarket evidence, given its inability to surface novel, unspecified harms from open-ended generative outputs.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment focuses on harms that were never specified in advance and thus fall outside prespecified benchmark and monitoring categories, a class of unanticipated real-world failure not addressed by the questions as framed."
+      },
+      "public_summary": "Cautions that postmarket monitoring detects only prespecified failure modes and is structurally weak at surfacing novel, unanticipated harms from open-ended generative outputs, so benchmark-based surveillance should not be relied on to offset reduced premarket evidence.",
+      "summary_cut": false,
+      "source_passage": "First, postmarket systems detect what they were designed to detect. They are structurally weakest at identifying harms nobody specified in advance which is precisely the category that open-ended generative outputs are most likely to produce. A monitoring programme built around prespecified benchmarks will measure prespecified failure modes well and novel ones poorly."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "position": "unclear",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter warns that the sensitivity of postmarket surveillance depends on the quality of individual case records rather than their volume, and that aggregate analysis inherits weaknesses in the underlying data. Incomplete, internally inconsistent, or variably coded records degrade signal detection in ways not visible at the aggregate level.",
+      "requested_fda_action": "The passage does not state an explicit request; it implies that postmarket performance evaluation should account for case-level record quality (completeness, internal consistency, coding consistency) rather than relying on aggregate volume as evidence of monitoring sensitivity.",
+      "confidence": "low",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment raises whether postmarket monitoring can actually detect performance degradation in real deployment when the underlying case records are incomplete or inconsistently coded, a data-quality precondition not addressed in FDA's monitoring questions."
+      },
+      "public_summary": "Commenter notes that postmarket signal detection depends on the quality of individual case records, not their number, since aggregate analysis inherits weaknesses in underlying data; incomplete, inconsistent, or variably coded records degrade detection invisibly. No explicit position on FDA's proposals is stated.",
+      "summary_cut": false,
+      "source_passage": "Second, the sensitivity of a postmarket system is governed by the quality of its individual records, not by their number. Aggregate analysis inherits every weakness of the case-level data beneath it. Where records are incomplete, internally inconsistent, or coded variably, signal detection degrades in ways that are difficult to see from the aggregate."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Quality systems tend to measure what is easily counted, such as timeliness and cadence adherence, rather than harder-to-measure detection accuracy and completeness. A postmarket programme that never characterises its own detection capability may appear compliant indefinitely while actually detecting very little.",
+      "requested_fda_action": "If greater premarket uncertainty is to be offset by postmarket monitoring, FDA should require that a monitoring programme characterise and report its own detection capability, not merely process metrics like cadence adherence.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment questions whether postmarket assurance mechanisms actually detect problems in deployment, arguing that process-level compliance metrics do not demonstrate real detection capability."
+      },
+      "public_summary": "Cautions that postmarket monitoring can only justify reduced premarket evidence if the programme characterises its own detection capability; quality systems typically count timeliness and cadence adherence rather than accuracy or completeness, so a programme may appear compliant while detecting little.",
+      "summary_cut": false,
+      "source_passage": "Third, and most importantly for CDRH's question, quality systems tend to measure what is easy to count. Timeliness is easy to count; accuracy and completeness are not. A postmarket programme that reports on cadence adherence while never characterising its own detection capability can look healthy indefinitely while detecting very little."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that accepting greater premarket uncertainty in exchange for postmarket monitoring could rest on the mere existence of a monitoring plan rather than demonstrated detection capability, leaving unknown blind spots and undetected failure classes.",
+      "requested_fda_action": "Condition any premarket-for-postmarket trade on sponsors characterizing their monitoring program's detection capability: specifying detectable and explicitly non-detectable failure classes, expected time from occurrence to detection, and how these claims will be verified in operation rather than asserted at authorization.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment focuses on whether monitoring claims made at authorization are actually verified and sustained during real-world operation, including detection latency and acknowledged blind spots."
+      },
+      "public_summary": "Accepts trading premarket uncertainty for postmarket monitoring only if the monitoring program's detection capability is characterized rather than merely present: sponsors should state detectable and explicitly undetectable failure classes, expected detection latency, and how these claims are verified in operation.",
+      "summary_cut": false,
+      "source_passage": "If premarket uncertainty is to be accepted in exchange for postmarket monitoring, I would suggest the condition should not be that a monitoring plan exists, but that its detection capability has been characterised. Specifically, before the trade is accepted, a sponsor might be expected to state:\n• which classes of failure the monitoring programme is designed to detect;\n• which classes it is not designed to detect, stated affirmatively rather than left as silence;\n• the expected interval between an occurrence and its detection; and\n• how each of those claims will be verified in operation rather than asserted at authorisation.\nA programme that cannot say what it would fail to notice is not yet a substitute for premarket evidence."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter views periodic sample-based clinician review as the postmarket approach best matched to how generative outputs fail, because it assesses the meaning of outputs rather than only their form, but states that this approach rests on an assumption the discussion paper does not examine.",
+      "requested_fda_action": "Retain and prioritize sample-based clinician review among the postmarket performance evaluation approaches, while examining the unstated assumption on which the commenter says it depends.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter agrees that, among FDA's three postmarket approaches, periodic sample-based clinician review best addresses generative failure modes because it evaluates output meaning rather than form, but notes the approach rests on an assumption the discussion paper does not examine.",
+      "summary_cut": false,
+      "source_passage": "Of the three approaches described in Section VI.A, periodic sample-based clinician review is the one that most directly engages the kind of failure generative outputs produce, because it is the only one that evaluates meaning rather than form. I think it is the right instinct. I also think it carries an assumption the paper does not examine."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Sample-based clinician adjudication rests on an unstated premise that two qualified reviewers applying the same criteria to the same output will agree; the commenter reports that in case-level quality review they frequently do not, because criteria such as 'clinically appropriate' or 'adequately supported' name what to assess rather than where the threshold lies. The resulting reviewer divergence is invisible in aggregate results, as variability is absorbed into the recorded outcome.",
+      "requested_fda_action": "The passage implies that adjudication criteria used in postmarket sample review should define explicit decision thresholds rather than only naming assessment activities, so that reviewer disagreement is detectable rather than absorbed into aggregate findings.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment questions whether sample-based clinician adjudication functions as a reliable assurance mechanism at all, since unvalidated inter-reviewer agreement means aggregated review results may conceal rather than reveal performance problems."
+      },
+      "public_summary": "Commenter accepts sample-based clinician review as a postmarket approach but questions its reliability, noting that criteria like 'clinically appropriate' specify what to assess rather than a threshold, so competent adjudicators can disagree and that variability disappears into aggregate results.",
+      "summary_cut": false,
+      "source_passage": "The paper describes “qualified, independent clinician adjudicators” reviewing samples “against prospectively defined criteria.” The reliability of that method depends on an unstated premise: that two qualified adjudicators applying the same criteria to the same output will reach the same conclusion. In my experience of case-level quality review, they frequently do not, and the reason is usually not competence.\nIt is that review criteria conventionally specify what to assess rather than what the threshold is. “Clinically appropriate,” “adequately supported,” “consistent with the source” name activities, not standards. Two competent reviewers can apply such a criterion to the same record, reach opposite conclusions, and neither can be shown to be wrong, because the criterion never defined where the line sat. The divergence is then invisible in the aggregate: the sample was reviewed, the review was recorded, and the variability is absorbed into the result."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter is concerned that evaluation criteria stated only as headings or topic labels will be interpreted inconsistently by different reviewers. They argue a criterion that cannot be expressed as an explicit decision rule will produce variable application.",
+      "requested_fda_action": "Write each criterion with explicit decision rules specifying what evidence supports a 'yes' answer, what supports a 'no,' and what a reviewer should do when evidence is absent; drop criteria that cannot be written this way.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter urges that each evaluation criterion be stated as an explicit decision rule—defining what evidence yields a yes, a no, and what reviewers do absent evidence—rather than as a heading, to avoid inconsistent application. The passage does not identify which criteria set it addresses.",
+      "summary_cut": false,
+      "source_passage": "1. Criteria should carry decision rules, not headings.\nEach criterion should state what evidence makes the answer yes and what makes it no, and what a reviewer should do when the evidence is absent. A criterion that cannot be written that way is a criterion that will be applied differently by different people."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "Sample-based clinician review can yield performance findings whose reliability is unknown if reviewer agreement is never measured; apparent device performance may instead reflect variability in the adjudication process.",
+      "requested_fda_action": "Require that a defined proportion of reviewed cases be independently double-adjudicated, with inter-adjudicator agreement reported alongside performance results against a prespecified acceptable range, and treat results from review processes outside that range as of unknown reliability.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts sample-based clinician review for postmarket evaluation but asks FDA to require measured, reported adjudicator agreement on a defined subsample against a prespecified acceptable range, treating performance results from unvalidated review processes as having unknown reliability.",
+      "summary_cut": false,
+      "source_passage": "2. Adjudicator agreement should be measured and reported, not assumed.\nA defined proportion of the sample should be reviewed independently by more than one adjudicator, with agreement reported alongside the performance result and a prespecified acceptable range set in advance. Where agreement falls outside that range, the finding is about the review process and not only about the device and a performance result produced by a review process of unknown reliability should be treated as having unknown reliability itself."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Sample-based clinician review can embed inconsistent interpretations into the postmarket monitoring record if the clinicians adjudicating device outputs are not aligned in how they apply review criteria.",
+      "requested_fda_action": "Require that adjudicators used in postmarket review be calibrated through periodic joint review of standardised cases, with divergent reasoning documented and reconciled in writing, and recalibrated after changes to the model, the review criteria, or the adjudicator panel.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts sample-based clinician review as a postmarket approach but asks FDA to require adjudicator calibration: periodic joint review of standardised cases with divergent reasoning documented and reconciled in writing, and recalibration after changes to the model, criteria, or panel.",
+      "summary_cut": false,
+      "source_passage": "3. Adjudicators should be calibrated, and recalibrated.\nCalibration here means periodic joint review of standardised cases by multiple adjudicators, with divergent reasoning surfaced and reconciled in writing. The purpose is not to force identical answers but to expose where interpretations differ before those differences enter the monitoring record. Recalibration is particularly warranted after changes to the model, the criteria, or the adjudicator panel."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "If only the outcome of a postmarket adjudication or clinician review is retained, a review that was actually performed cannot be distinguished from one merely recorded as performed, leaving neither FDA nor the sponsor able to re-examine a result that later proves consequential.",
+      "requested_fda_action": "Add a fourth requirement that postmarket adjudications be reconstructable after the fact, documenting what was examined, against which source, and the basis for the judgment, rather than retaining outcomes alone.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts the described postmarket review approach but asks FDA to add a record-keeping requirement: adjudications should be reconstructable after the fact, capturing what was reviewed, the reference source, and the basis for judgment, since outcome-only records cannot be later interrogated or verified.",
+      "summary_cut": false,
+      "source_passage": "I would add a fourth point about the record itself. An adjudication should be reconstructable after the fact: what was examined, against which source, and on what basis the judgment was made. Where only the outcome is retained, a review that was performed cannot be distinguished from a review that was recorded as having been performed, and neither FDA nor the sponsor can later interrogate a result that turns out to matter."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q19",
+        "q22",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter is concerned that reassessment cadence should be event-driven rather than purely periodic, and that triggers must capture changes arising outside the manufacturer's own model, including third-party foundation model updates and shifts in the input population.",
+      "requested_fda_action": "Adopt a defined set of triggering events for postmarket reassessment: any modification to the model or deployment architecture (including third-party foundation model changes), drift detected by degradation monitoring, material change in the input population, and accumulation of adjudicated divergences beyond a prespecified range.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The commenter treats changes originating with a third-party foundation model as a distinct trigger requiring reassessment, implicating upstream supplier-initiated change beyond the manufacturer's control.",
+        "deployment_assurance_scalability": "Triggers extend beyond the model itself to any component of the deployment architecture and to material change in the input population, addressing assurance at the site of deployment rather than only at authorization."
+      },
+      "public_summary": "Commenter endorses trigger-based postmarket reassessment and proposes specific triggers: changes to the model or any deployment-architecture component (including third-party foundation model changes), drift detected by degradation monitoring, material change in the input population, and adjudicated divergences exceeding a prespecified range.",
+      "summary_cut": false,
+      "source_passage": "On cadence and triggering events, the triggers that seem to me most defensible are: modification of the model or of any component of the deployment architecture, including changes originating with a third-party foundation model; detection of drift by the degradation-monitoring stream; material change in the input population; and accumulation of adjudicated divergences above the prespecified range, which is a signal in its own right and is frequently the earliest one available."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "A machine-based supervisory agent that judges whether device outputs are acceptable is itself performing a safety-relevant function, so the threshold issue is who is answerable when the supervisor errs. Without a clear answer, the supervisory layer relocates responsibility instead of satisfying it.",
+      "requested_fda_action": "Treat accountability, not technical capability, as the first question for supervisory agents, and require a clear identification of who is answerable for supervisory agent errors before such agents are relied on in postmarket monitoring.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment warns that inserting a supervisory agent can shift responsibility among parties without resolving who is answerable for its errors.",
+        "delegated_authority": "It frames delegation of output-acceptability judgments to an automated supervisor as itself a safety-relevant function requiring a clear locus of answerability."
+      },
+      "public_summary": "Comment addresses machine supervisory agents for postmarket monitoring, arguing that such an agent performs a safety-relevant function itself. It urges FDA to treat accountability for supervisor errors as the threshold question, warning that otherwise the supervisory layer only relocates responsibility.",
+      "summary_cut": false,
+      "source_passage": "A supervisory agent that determines whether a device output was acceptable is itself performing a safety-relevant function, and the first question is not technical but one of accountability: who is answerable when the supervisor is wrong. If that question has no clear answer, the supervisor has moved responsibility rather than discharged it."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that a machine-based supervisory agent used for postmarket monitoring could itself fail or degrade, and that its two error directions (missing a genuine problem versus over-flagging) are not equivalent in consequence. There is also concern about traceability and preservation of human decision authority over the supervisor's determinations.",
+      "requested_fda_action": "If CDRH pursues supervisory agents, it should require a defined context of use with prohibited uses stated, validation proportionate to the consequence of the supervisor's own failure with under-flagging and over-flagging assessed separately rather than as one combined metric, ongoing monitoring of the supervisor for performance degradation, retained and recorded human authority to reject its determinations, and record-level provenance of which supervisor version assessed which output and when.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment asks that humans retain recorded authority to reject a supervisory agent's determination, addressing how much oversight judgment may be delegated to an automated supervisor.",
+        "deployment_assurance_scalability": "The request for record-level provenance of which supervisor version assessed which output, plus continuous degradation monitoring of the supervisor, concerns assurance of the monitoring infrastructure in ongoing operation rather than at a single review point."
+      },
+      "public_summary": "Conditionally accepts machine-based supervisory agents for postmarket monitoring if CDRH adds safeguards: a defined context of use with prohibited uses, validation scaled to the supervisor's own failure consequences with missed problems and over-flagging assessed separately, degradation monitoring, recorded human authority to override, and supervisor-version provenance.",
+      "summary_cut": false,
+      "source_passage": "If CDRH pursues this, the considerations I would suggest are:\n• a defined context of use, stating the inputs, the decision the supervisor makes, and the uses expressly prohibited;\n• validation proportionate to the consequence of the supervisor's own failure, noting that a supervisor which misses a genuine problem is a materially worse failure than one which over-flags, and that the two should not be validated to a single combined metric;\n• monitoring of the supervisor for its own performance degradation, on the same logic that motivates monitoring the device;\n• retained human authority to reject the supervisor's determination, with the rejection recorded; and\n• provenance in the record which supervisor version assessed which output, and when."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Automated supervisory agents handle deterministic checks (field completeness, internal date consistency, contradictions with source records) well but are poorly suited to the clinical judgment that sample-based review is meant to exercise. The commenter warns that agents may solve the volume problem while leaving the judgment problem untouched, with throughput then reported as assurance.",
+      "requested_fda_action": "Distinguish deterministic checks that machine supervisors can perform from judgment-based review that they cannot, and avoid accepting automated review volume or throughput as evidence of postmarket assurance.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment identifies automation as a response to monitoring volume that may scale coverage without scaling the substantive assurance that review is intended to provide.",
+        "delegated_authority": "It questions delegating clinically judgment-laden oversight review to machine supervisory agents that can only perform deterministic checks."
+      },
+      "public_summary": "Accepts machine supervisory agents for deterministic checks such as field completeness and internal consistency, but cautions they cannot exercise the clinical judgment sample-based review requires. Warns FDA against treating automated review throughput as evidence of postmarket assurance.",
+      "summary_cut": false,
+      "source_passage": "I would offer one caution. Automation is well suited to deterministic checks: whether a field is populated, whether dates are internally consistent, whether a record contradicts its source. It is least suited to the judgment that sample-based review exists to exercise whether an output is clinically sound given everything else known about the case. There is a real risk of deploying supervisory agents to relieve the volume problem while leaving the judgment problem entirely untouched, and of reporting the resulting throughput as assurance."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter is concerned that involving clinicians, institutions, and other stakeholders in postmarket monitoring could dilute manufacturer accountability if multiple parties hold responsibility for the same function.",
+      "requested_fda_action": "Structure postmarket monitoring roles so that responsibilities are allocated by distinct function to separate parties, rather than having multiple stakeholders share responsibility for the same function.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment directly addresses how responsibility should be allocated across multiple postmarket actors so that manufacturer accountability remains identifiable."
+      },
+      "public_summary": "Responding to FDA's question on stakeholder roles in postmarket monitoring, the commenter states that manufacturer accountability need not be diffused provided roles are allocated by distinct function rather than shared among parties for the same function.",
+      "summary_cut": false,
+      "source_passage": "Manufacturer accountability need not be diffused if the roles are separated by function rather than shared over the same function."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter argues that standardizing reviewer judgment for postmarket adjudication is common infrastructure that manufacturers cannot hold without conflict and that regulators lack resources to build.",
+      "requested_fda_action": "Assign professional societies a defined role in postmarket monitoring by having them develop and maintain shared calibration materials and standardized case libraries for training adjudicators, drawing on the clinical specialties they convene.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment allocates a specific oversight function to professional societies precisely because manufacturers face conflict and regulators lack capacity, raising questions about how responsibility is divided among parties.",
+        "deployment_assurance_scalability": "It frames adjudicator calibration materials and case libraries as shared, non-competitive infrastructure needed to make sample-based clinician review workable across many deployments."
+      },
+      "public_summary": "Endorses a defined postmarket role for professional societies, proposing they build shared calibration materials and standardized case libraries to train adjudicators. Argues this standardizes reviewer judgment rather than device performance, is common infrastructure, and cannot be held by manufacturers without conflict or by under-resourced regulators.",
+      "summary_cut": false,
+      "source_passage": "Professional societies appear to me well placed to hold something manufacturers cannot hold without conflict, and regulators are not resourced to build shared calibration materials and standardised case libraries for adjudicator training. The object being standardised there is reviewer judgment, not device performance, and it is common infrastructure rather than a competitive asset. Societies also already convene the clinical specialties whose judgment adjudication depends on."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "Signals about problematic GenAI outputs will be under-reported if reporting depends on individual clinician initiative or on the clinician identifying the responsible manufacturer; the commenter draws an analogy to drug safety, where under-reporting is driven by friction rather than unwillingness.",
+      "requested_fda_action": "Structure postmarket monitoring so that healthcare institutions own a defined, low-friction reporting pathway giving clinicians a clear route to report problematic outputs, rather than relying on individual initiative or clinician knowledge of the manufacturer.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment allocates ownership of the reporting pathway to healthcare institutions rather than the manufacturer, raising how responsibilities are divided across deployment actors.",
+        "deployment_assurance_scalability": "It frames reliable postmarket signal capture as requiring institution-level reporting infrastructure rather than case-by-case clinician reporting."
+      },
+      "public_summary": "Supports a stakeholder role in postmarket monitoring but specifies that healthcare institutions should own a defined reporting pathway for problematic outputs, so reporting does not depend on individual clinician initiative or knowing the manufacturer, citing friction-driven under-reporting in drug safety.",
+      "summary_cut": false,
+      "source_passage": "Healthcare institutions are best placed to own the reporting pathway ensuring a clinician who observes a problematic output has a defined route to report it that does not depend on individual initiative or on knowing who the manufacturer is. Under-reporting in drug safety is driven less by unwillingness than by friction, and the same is likely to hold here."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "That shared postmarket roles could be misread as shifting responsibility away from the manufacturer, when in fact professional societies and institutions supply inputs (reviewer calibration, report channels) the manufacturer cannot generate on its own.",
+      "requested_fda_action": "Structure postmarket monitoring so the manufacturer remains accountable for the monitoring program, its detection claims, and their verification, while recognizing complementary contributions from professional societies (reviewer calibration) and healthcare institutions (report collection).",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment addresses how monitoring responsibilities spread across societies and institutions can coexist with undiluted manufacturer accountability."
+      },
+      "public_summary": "Agrees with FDA that external stakeholders can participate in postmarket monitoring without diffusing manufacturer accountability: the manufacturer should retain responsibility for the monitoring program, its detection claims, and verification, while societies calibrating reviewers and institutions carrying reports provide conditions manufacturers cannot create alone.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers should retain responsibility for the monitoring programme, its detection claims, and its verification. Societies calibrating reviewers and institutions carrying reports does not dilute that; it supplies conditions the manufacturer cannot create alone."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "regulatory_scope",
+      "stakeholder_concern": "Under 21 C.F.R. § 803.50(a), the malfunction limb fits poorly with generative functions because output variability is a designed property, so a plausible-but-incorrect output may not be recognized as a malfunction or flagged as reportable at complaint intake; because intake sets the ceiling on what can later be analyzed, postmarket monitoring that relies partly on complaint data inherits an invisible gap.",
+      "requested_fda_action": "CDRH should consider issuing guidance on what constitutes a malfunction for a generative function and on how complaint-handling systems should be configured to recognize confident-but-incorrect outputs as potentially reportable events.",
+      "confidence": "high",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment identifies harm arising from confident, plausible-but-wrong outputs that existing failure-oriented complaint intake and malfunction reporting concepts do not register as device problems."
+      },
+      "public_summary": "Comment accepts postmarket monitoring but warns that MDR malfunction reporting and complaint intake may not capture plausible-but-incorrect generative outputs, since output variability is a design property. Asks CDRH to clarify what constitutes a malfunction and how complaint systems should be configured.",
+      "summary_cut": false,
+      "source_passage": "Under 21 C.F.R. § 803.50(a), a manufacturer must report where information reasonably suggests that a device may have caused or contributed to a death or serious injury, or that the device has malfunctioned in a way that would be likely to cause or contribute to a death or serious injury were the malfunction to recur.\nThe first limb operates unchanged for generative devices. The second is conceptually harder. A generative function that produces a plausible but incorrect output has not obviously “malfunctioned” in the sense the provision contemplates: variability of output is a designed property of the technology, not a departure from design. A complaint-handling system built around the question “did the device fail” may therefore not capture the event “the device produced a confident and wrong answer,” and may not recognise it as reportable at intake.\nThis matters because intake defines the ceiling. Information not captured when the complaint is received cannot be recovered by any downstream analysis, and a postmarket monitoring programme relying in part on complaint data will inherit that gap without being able to see it.\nCDRH may wish to consider whether guidance is needed on what constitutes a malfunction for a generative function, and on how complaint-handling systems should be configured to recognise incorrect-but-designed-for outputs as potentially reportable events."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter agrees postmarket monitoring can substitute for some premarket evidence, but only if the monitoring program is specified as rigorously as premarket evidence would be, including explicit acknowledgment of what monitoring cannot detect and demonstrated (not assumed) agreement among the reviewers the program relies on.",
+      "requested_fda_action": "Condition any acceptance of greater premarket uncertainty on monitoring programs that state detection limitations explicitly, contain concrete decision rules rather than general review headings, and provide measured inter-reviewer agreement for the human judgments underpinning the program.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment argues that shifting assurance to the postmarket phase only works if the monitoring program itself is specified with prespecified decision rules and validated reviewer reliability, raising the question of whether such assurance can be reliably operationalized."
+      },
+      "public_summary": "Accepts that postmarket monitoring can offset premarket uncertainty, but only conditionally: monitoring programs should be specified as rigorously as premarket evidence, state explicitly what they cannot detect, use concrete decision rules rather than general review criteria, and demonstrate measured reviewer agreement.",
+      "summary_cut": false,
+      "source_passage": "The paper's central question is whether postmarket monitoring can carry weight that premarket evaluation cannot. My submission is that it can, but only where the monitoring programme is specified with the same rigour that would be demanded of premarket evidence including honesty about what it cannot detect, decision rules rather than headings in its review criteria, and measured rather than assumed agreement among the people whose judgment the programme depends on."
+    }
+  ]
+}

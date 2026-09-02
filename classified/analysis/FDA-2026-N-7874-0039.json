@@ -1,0 +1,124 @@
+{
+  "comment_id": "FDA-2026-N-7874-0039",
+  "input_hash": "d2f45532ffdf28c6",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q12",
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "The commenter is concerned that performance evaluation of GenAI-enabled devices lacks clearly specified, clinically meaningful metrics, acceptance thresholds, critical-error definitions, and subgroup-level performance expectations.",
+      "requested_fda_action": "Require or articulate clear, clinically meaningful performance metrics, acceptance thresholds, critical-error criteria, and subgroup performance requirements as part of device performance evaluation.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "In a brief recommendation, the commenter asks that performance evaluation include clearly defined, clinically meaningful metrics, acceptance thresholds, critical-error criteria, and subgroup performance requirements. The passage does not otherwise state agreement or disagreement with FDA's proposed evaluation approach.",
+      "summary_cut": false,
+      "source_passage": "1.Performance evaluation: Define clear, clinically meaningful performance metrics, acceptance thresholds, critical-error criteria, and subgroup performance requirements."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "The commenter indicates that the two-axis framework, based on device activity and consequence of an incorrect output, does not capture other dimensions relevant to risk.",
+      "requested_fda_action": "Expand the two-axis risk framework to also account for autonomy, detectability, reversibility, human oversight, patient vulnerability, and potential severity of harm.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts the two-axis risk framework in principle but recommends adding further dimensions—autonomy, detectability, reversibility, human oversight, patient vulnerability, and potential severity of harm—to the risk assessment. No further detail or examples are provided in the passage.",
+      "summary_cut": false,
+      "source_passage": "2. Risk assessment: Consider expanding the two-axis risk framework to include autonomy, detectability, reversibility, human oversight, patient vulnerability, and potential severity of harm."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "position": "unclear",
+      "primary_issue": "change_control",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that model retraining could alter device behavior without adequate documentation or verification, including undetected bias or performance degradation after a retraining event.",
+      "requested_fda_action": "Establish clear requirements governing model retraining, specifically documentation of training-data changes, version control, bias assessment, and before-and-after performance comparison.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter asks FDA to set clear retraining requirements for GenAI-enabled devices, including documentation of training-data changes, version control, bias assessment, and pre- and post-retraining performance comparison. The passage does not state a position on FDA's proposed change-control approach.",
+      "summary_cut": false,
+      "source_passage": "3. Training &amp; retraining: Establish clear requirements for model retraining, including documentation of training-data changes, version control, bias assessment, and performance comparison before and after retraining."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter appears concerned that postmarket monitoring capture a broader set of real-world signals than periodic re-benchmarking alone, including drift, clinically significant errors, near misses, clinician overrides, subgroup-level performance, and shifts in real-world data.",
+      "requested_fda_action": "Require or expect proactive postmarket monitoring programs that track performance drift, clinically significant errors, near misses, clinician override behavior, subgroup performance, and changes in real-world data distributions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment treats clinician overrides as a monitoring signal, implying performance should be assessed for the clinician-device combination rather than the model alone.",
+        "operational_harm": "Monitoring of near misses and clinically significant errors points to harm signals arising in real-world operation that are not captured by benchmark performance metrics."
+      },
+      "public_summary": "The commenter accepts postmarket monitoring but asks that it be proactive and broader in scope, covering performance drift, clinically significant errors, near misses, clinician overrides, subgroup performance, and changes in real-world data, rather than periodic re-benchmarking alone.",
+      "summary_cut": false,
+      "source_passage": "4. Postmarket monitoring: Include proactive monitoring of performance drift, clinically significant errors, near misses, clinician overrides, subgroup performance, and changes in real-world data."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q22",
+        "q23",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter is concerned that post-deployment changes—software updates, algorithm revisions, retraining, and changes initiated by third-party foundation-model developers—need clearly defined, risk-proportionate criteria for when revalidation is required.",
+      "requested_fda_action": "Define risk-based triggers for reassessment tied to the type of modification, and allow re-benchmarking against the original premarket baseline as a practical revalidation approach.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter supports using the premarket benchmark baseline for re-evaluating post-deployment changes and asks FDA to define risk-based triggers for reassessment covering software updates, algorithm revisions, retraining, and third-party foundation-model changes. Brief passage; limited detail on thresholds.",
+      "summary_cut": false,
+      "source_passage": "5. Modification &amp; revalidation: Define risk-based triggers for reassessment following software updates, algorithm revisions, retraining, or third-party foundation-model changes. Re-benchmarking against the original premarket baseline could provide a practical approach."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q18",
+        "q19",
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter is concerned that safety and effectiveness must be maintained as GenAI-enabled devices continue to evolve after authorization, which requires linkage between premarket evidence and ongoing postmarket oversight rather than a one-time evaluation.",
+      "requested_fda_action": "Adopt a continuous, risk-adaptive total product lifecycle framework that explicitly connects premarket evaluation, deployment, postmarket monitoring, retraining/modification, and revalidation.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Recommends FDA adopt a continuous, risk-adaptive total product lifecycle framework that explicitly links premarket evaluation, deployment, postmarket monitoring, retraining or modification, and revalidation, so that safety and effectiveness are maintained as generative AI devices evolve.",
+      "summary_cut": false,
+      "source_passage": "Overall recommendation: Adopt a continuous, risk-adaptive TPLC framework linking premarket evaluation &rarr; deployment &rarr; postmarket monitoring &rarr; retraining/modification &rarr; revalidation. This would help maintain safety and effectiveness as GenAI devices evolve."
+    }
+  ]
+}

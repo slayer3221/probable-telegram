@@ -1,0 +1,944 @@
+This comment addresses Discussion Questions 19 and 21 and Section VI.B on shared ecosystem responsibility. I submit it in a personal capacity as a healthcare supply chain professional and independent researcher whose work applies FDA&#39;s public device data to post-market risk prioritization.<br/><br/>CDRH&#39;s post-market monitoring approach assumes health systems can serve as a locus of observation for deployed devices. Most cannot do this reliably today - not for conventional devices, and less so for software-based ones. Software devices frequently enter through IT procurement, and many institutions cannot enumerate the AI-enabled device functions running in their supply chain environment. Institutional traceability is already a binding constraint for conventional devices, and monitoring a GenAI-enabled device additionally requires knowing which model version and configuration produced a given output - which most institutions have no mechanism to record.<br/><br/>The attached comment develops these points, addresses the uneven distribution of institutional capability, and recommends that the institutional role be structured around receiving and reporting rather than independent evaluation. It also recommends a tiered rather than confidential-only structure for Foundation Model Master Files, and addresses the trade-off that approach involves. Full comment and supporting research is attached.
+
+[Attachment: Attachment1_Kanitkar_Comment_FDA-2026-N-7874]
+Comment Re: Considerations for the Regulation of Generative AI-Enabled Medical Devices
+– Docket No. FDA-2026-N-7874
+I submit this comment in a personal capacity. I work in supply chain, analytics, and process
+improvement at a large U.S. health system and am also an independent scholar. My most recent
+research applies FDA’s public device data to post-market risk prioritization. My comments address
+Discussion Questions 19 and 21, and Section VI.B on shared ecosystem responsibility. I do not
+comment on premarket evaluation, which falls outside my expertise.
+Summary
+CDRH’s post-market monitoring approach assumes that healthcare institutions can serve as a locus
+of observation for deployed devices. In my experience and in my research, most health systems
+cannot do this reliably today; not for conventional devices, and even less so for software -based
+devices. If post -market monitoring for GenAI -enabled devices depends on institutional
+participation, that dependency should be designed around what institutions can actually do rather
+than what they would need to build.
+Health systems frequently cannot inventory the software-based devices they have deployed
+Physical devices enter a health system through supply chain systems and mechanisms that involve
+creation of an item master record, capture of purchase/invoice history, and with varying
+completeness, recording a Unique Device Identifier (UDI). Software -based devices commonly
+enter through other procurement channels instead, and seldom appear in the item master at all. The
+practical consequence is that many institutions cannot produc e a list of the AI -enabled device
+software functions running in their environment, who is using the m, or in which workflows
+especially if there is no existing AI governance structure in place. An institution that cannot
+enumerate its deployed devices cannot monitor them, and any investigation would have to be ad -
+hoc, manual, and therefore time-consuming.
+Traceability is already a binding constraint for conventional devices, and more severe for
+GenAI-enabled ones
+In the research I recently conducted on medical device recall risk using public FDA data,
+institutional traceability of medical devices down to the serial number, lot number, or only the
+model, was scored as an explicit risk dimension because it varies so widely and constrains what
+an institution can do once a problem is identified. Electronic capture of UDI at the point of care is
+still not widely adopted across U.S. hospitals. For GenAI -enabled devices, the analogous
+requirement is harder; post -market monitoring, sample-based clinician review, and performance
+degradation analysis all require knowing which model version, prompt configuration, and
+guardrail set produced a given output at a given time. Most institutions have no mechanism to
+record this and may not even have the contractual right to obtain it from the manufacturer. Where
+that information is unavailable, these monitoring approaches are not viable in practice.
+
+There is no established notification pathway to the deploying institution for model -level
+change
+When a conventional device is recalled, imperfect but real channels exist to notify purchasing
+institutions. Section VI.C correctly identifies that changes to a third -party foundation model may
+be initiated by the model developer rather than the device manufacturer. Today, a deploying health
+system would t ypically have no way to learn that such a change occurred, no way to determine
+whether device behavior shifted as a result, and no basis for deciding whether clinical use should
+continue in the interim, or whether there should be change in clinical use or clinical practice. Any
+framework that assigns institutions a monitoring role should also specify what information they
+are entitled to receive, in what format, through which channel(s), and when.
+Capability is unevenly distributed, and a framework that assumes otherwise will produce
+uneven protection
+Large academic medical centers may build the logging, analytic, and governance infrastructure
+that institution-side monitoring requires. Safety -net, public, rural, and smaller systems generally
+may not, and these are the ones serving populations with the f ewest alternatives. If post -market
+assurance depends materially on institutional capability, patients will receive different levels of
+protection depending on where they are treated. I would encourage CDRH to weigh whether post-
+market obligations that presume institutional sophistication are appropriate, or whether the
+monitoring burden should rest more heavily on manufacturers precisely because in stitutional
+capability cannot be assumed.
+Public data transparency enables independent monitoring in a way that confidential
+submission does not
+FDA’s existing device data – the Global Unique Device Identification Database (GUDID) , recall
+and enforcement records, and post -approval change histories – has allowed me and other
+researchers to conduct independent post -market risk analysis with no access to proprietary
+manufacturer data. In a retrospective validation of my risk -scoring framework, it was found that
+the highest-risk 20 percent of a scored hospital product portfolio contained three of every four
+Class I recalls that subsequently occurred. The point is not the method but the prerequisite; analysis
+of publicly available regulatory data – although imperfect – made independent analysis possible.
+Section VII.A contemplates Foundation Model Master Files held confidentially. Confidential
+submission may be necessary for some content, but a confidential -only approach forecloses the
+independent scrutiny that has proven valuable elsewhere in device post -market surveillance. A
+tiered structure, in which some informa tion is confidential and a defined subset is public, would
+help preserve manufacturer interests while at the same time enabling researchers, practitioners,
+and professional societies to contribute to monitoring and resolution rather than depending entirely
+on self -reporting. I recognize the trade -off. Foundation model developers would participate
+voluntarily, and publishing any portion of what they submit may reduce their willingness to submit
+
+at all, leaving the FDA with less information. That risk is real and argues for a narrow public-tier
+(example: authorized versions, dates of material change, and reported safety events, rather than
+architecture or training data) and for evaluating participation rates before expanding what is
+disclosed. A confidential file that no one submits is not more useful than a partially public one that
+developers are willing to complete.
+Question 21
+Healthcare institutions can realistically contribute to post -market monitoring in three ways:
+maintaining an inventory of deployed AI -enabled device functions, retaining interaction and
+version logs where the manufacturer supplies them, and reliably report ing observed failures
+through existing safety channels. Each of these depends on manufacturers providing information
+institutions cannot generate themselves. Structuring the institutional role around receiving and
+reporting, rather than around independent evaluation would keep accountability with the
+manufacturer while making the institutional contribution achievable across the full range of U.S.
+health systems rather than only the best-resourced ones.
+Summary of recommendations
+1. Structure the institutional role in post -market monitoring around receiving and reporting
+rather than independent evaluation  so that adoption is achievable across the full range of
+U.S. health systems.
+2. Where a monitoring framework assigns responsibilities to deploying institutions, specify
+what information manufacturers must supply to them since institutions cannot generate this
+information themselves. Examples include device version identifiers, interaction logs, and
+real-time notification of material model changes and their downstream effects.
+3. Consider a tiered structure for Foundation Model Master Files, in which a defined subset
+of information is public while competitively sensitive content remains confidential, to
+enable independent scrutiny alongside FDA review
+CDRH’s post-market approach presumes an observational capability at the institutional level that
+does not presently exist in most U.S. health systems. Designing around that reality , rather than
+around the capability a well -resourced academic medical center might build , will produc e a
+framework that functions where most patients actually continue to receive the best possible care
+in a safe, timely, and efficient manner.
+Thank you for the opportunity to comment.
+Chirag Kanitkar, MS, CSSGB
+Research reference: https://dx.doi.org/10.2139/ssrn.7278738
+
+[Attachment: Attachment2_Kanitkar_Recall_Risk_Framework_Preprint]
+Strengthening Supply Chain Resilience through Data-Driven Recall Risk Management
+Chirag Kanitkar, MS
+[Note: This study received no specific grant from any funding agency in the public, commercial, or not-
+for-profit sectors, and did not involve human participants, human tissue, or personally identifiable
+information. It was conducted independently by the author and was not sponsored, funded, or supported
+by the author's employer or any other organization. The author declares no competing interests and takes
+full responsibility for the integrity of the data and the accuracy of the data analysis.]
+Abstract
+Medical device recalls often pose significant risks to patient safety, operational continuity, and financial
+sustainability. Managing these events at the intersection of Cost, Quality, and Outcomes (CQO) requires
+rapid reactive response and structured proactive risk assessment. Although alerts/recalls platforms are
+widely adopted, recall management remains largely fragmented, causing administrative latency, delayed
+item tracing, inconsistent patient impact assessment, and prolonged exposure to affected products.
+This paper introduces a scalable, data-driven framework transitioning healthcare operations from
+unstructured crisis response to a hybrid resilience model that balances effective reactive protocols with
+proactive risk-mitigation pathways. The framework is designed to integrate structural recall intake with
+Enterprise Resource Planning (ERP) and Electronic Medical Record (EMR) data using the Unique Device
+Identifier (UDI) to enable rapid item- and lot-level tracing, and patient-level visibility. Concurrently, it
+introduces a quantitative risk-scoring methodology – incorporating clinical severity, historical recall
+patterns and traceability – to identify high-risk products proactively, prioritize active recalls, and drive
+supply chain strategy. Furthermore, we explore the role of Artificial Intelligence (AI) in automating recall
+data extraction, normalizing product identifiers, strengthening data governance, and enhancing
+dashboarding capabilities.
+Recall events are known to cause patient harm, but their downstream clinical and financial consequences,
+and the effect of response efficiency on them, remain largely unquantified – an explicit direction for
+future work. By enhancing response efficiency and enabling proactive mitigation, this framework
+provides a scalable blueprint for strengthening compliance with evolving federal quality mandates while
+reducing the national burden associated with recalled medical products and supply chain disruptions.
+Keywords: Medical recalls, risk management, CQO, data-driven framework, supply chain resilience
+1. Introduction
+Medical device recalls have become one of the clearest points at which patient safety, operational
+resilience, and supply chain strategy intersect in modern healthcare. Recall events reached a four-year
+high in 2024, and Class I recalls – the FDA ’s more severe designation reserved for products with a
+reasonable probability of serious adverse health consequences or death – recorded a 15-year high. Such
+events affect thousands to millions of units year over year and take anywhere from several months to a
+few years to terminate. During this interval, affected products remain in hospital inventories and directly
+affect patient care. Yet recall management within health systems remains almost entirely reactive. Action
+begins when a health system receives a recall notice from a manufacturer, the FDA, or third-party
+sources, by which time exposure has most likely already occurred. Monitoring effort is spread
+undifferentiated across every purchased product, and recall risk assessment plays no systematic role in
+supply chain strategy. Recall risk therefore remains disconnected from the operational measures by which
+health systems are run, such as supply cost, product quality, and patient outcomes. No established method
+currently allows a health system to predict in advance the products that are most likely to be recalled,
+proactively measure the potential severity of such an event, and put in place contingency plans to mitigate
+or respond effectively to such a risk.
+
+The federal regulatory environment both enables and encourages a more anticipatory posture. In 2013, the
+FDA’s Unique Device Identification (UDI) rule and the Global Unique Device Identification Database
+(GUDID) standardized how every marketed device is identified and described. Furthermore, the
+openFDA initiative made the agency’s recall, enforcement, classification, and premarket data publicly
+accessible. Additionally, the Center for Devices and Radiological Health piloted in November 2024 and
+expanded to all medical devices in September 2025 the Early Alert communications designed to minimize
+the time between the agency’s first awareness of a potentially high-risk device issue and public
+notification. These mandates supply the data foundation and the policy momentum for proactive recall
+risk management. The missing piece is a method that converts them into product-level, institution-specific
+risk scores, a gap that this study aims to address. Therefore, the overall objective is to develop and
+retrospectively evaluate a data-driven risk-scoring framework using public regulatory and institutional
+data that assigns a composite risk score to every product actively being procured by the health system,
+thereby indicating the products and vendors that merit closer scrutiny, allowing for the formulation of
+risk-mitigation strategies, and driving a value-based enterprise-wide procurement strategy.
+2. Literature Survey
+Recent literature establishes that medical device recalls are neither rare nor random. Class I recalls are
+concentrated in cardiovascular and implantable technologies, and are shaped by device design, regulatory
+lineage, and cumulative post-approval modifications. However, the management and resolution of these
+events remains largely retrospective and reactive [7]. Most of the literature documents epidemiology,
+clinical harm, and operational burden in detail, but does not yet provide an integrated model that converts
+these signals into dynamic, risk-mitigation strategies usable for supply chain action and patient safety.
+This review assembles the empirical and methodological case for such a framework – one that treats
+recall likelihood as predictable, ties it to patient-safety consequences, and uses the resulting risk score to
+shift recall management from crisis response to proactive mitigation.
+The scale of the problem establishes why proactive mitigation is now necessary. Mooghali et al. [6]
+identified 189 Class I medical device recall events between January 2018 and June 2022 with a median of
+4,620 units per event (IQR 578-42,591), 11 recalls (5.8%) affecting more than 1 million units, and 30
+recalls (15.8%) associated with at least 1 patient death. Recurrence is as striking as volume; 125 of the
+189 recalled devices (66.1%) had been recalled multiple times, with a median of 4 recalls per device (IQR
+3-11), and the median time from initiation to termination was 24 months (IQR 17.3-30.8). A
+cardiovascular-specific 2024 analysis [8] in Annals of Internal Medicine reinforces the same point,
+identifying 137 Class I recalls affecting 157 unique cardiovascular devices between 2013 and 2022, out of
+which 42 devices (26.8%) were subject to multiple Class I recalls. 61 of these recalls (44.5%) were still
+open as of September 1, 2023. Recalls management is therefore enterprise risk that can remain active for
+years and repeatedly enter operations after the initial notice. ECRI [3] processed 1,923 device alerts in
+2022, of which 5% were classified “critical” and 77% “high” severity.
+Literature also shows that recalls are rooted in structural and lifecycle factors, some of which are
+predictable from public regulatory data. In the Mooghali et al. [6] sample, device design accounted for
+103 recalls (54.5%), followed by manufacturing errors in 25 recalls (13.2%). The median time from
+distribution to recall initiation was 30.0 months (IQR 10.0-62.5), meaning failures typically surface well
+after market entry rather than at launch. See et al. [8] found device design the most common cause of
+Class I cardiovascular recalls in 43 recalls (31.4%). Upstream regulatory studies further sharpen the
+picture. Everhart et al. [4], analyzing 35,176 devices cleared through the 510(K) pathway between 2003
+and 2018, found that having predicate devices with 2 or more ongoing recalls was associated with a 9.31
+percentage point increase in recall probability (95% CI; 2.84-15.77). Software-related predicate recalls
+alone were associated with a 5.92 percentage point increase. 4,007 (11.4%) of the analyzed devices were
+ultimately recalled by the end of 2020. This automated extraction workflow for predicate relationships
+achieved 95% sensitivity and 96% specificity, demonstrating that regulatory features are computationally
+
+tractable. Dubin et al. [2], in analyzing 373 PMA devices and 10,776 supplements found a median of 2.5
+supplements per device per year (IQR 1.2-5). 97 devices (26.0%) were recalled, 20 devices (5.4%)
+experienced a Class I recall, and each additional supplement per year was associated with a 28% increase
+in overall recall risk (HR 1.28, 95% CI, 1.15-1.44) and 32% increase in Class I recall risk (HR 1.32, 95%
+CI, 1.06-1.64). Furthermore, cardiovascular classification was associated with 3.5 times the Class I recall
+risk of other categories (HR 3.51, 95% CI, 1.15-10.72). In a different study, [11] identified the failure-
+mode concentrations that reinforce device-category risk in cardiac implants – battery problems (33%) and
+incorrect therapy delivery (31.1%) dominated, followed by software issues (15.5%). These findings are
+paramount for a proactive risk mitigation model as they model risk as empirically observable occurrence
+signals.
+The literature also suggests that conventional safeguards are often too weak to prevent high-risk products
+from being manufactured and distributed. In the See et al. [8] cardiovascular study, only 30 of the 157
+recalled devices (19.1%) had documented premarket clinical testing, including just 7 of 112 devices
+cleared through the 510(K) pathway. Among PMA devices, 22 of 45 (48.9%) had required post-approval
+studies, yet 14 of the 28 studies with available status reported at least one delay. In a scoping review of
+the HeartMate II left ventricular assist device, whose Pocket System Controller was subject to a 2014
+Health Canada Type I recall (the Canadian equivalent of the FDA’s Class I designation), [5] found that
+63.8% of 80 randomly sampled pre-recall studies reported positive outcomes, yet the evidence base was
+judged low quality due to bias-prone designs, small samples, and conflicts of interest, leading the author
+to conclude that it would have been difficult for a physician to anticipate the device’s true safety and
+effectiveness from the published literature. The implication for the proposed framework is that any risk
+model must embed potential recall severity as an independent scoring factor rather than inheriting it from
+regulatory status alone.
+Post-market records also show that adverse event patterns and recall causes are tightly linked at the device
+level, and case evidence shows those signals can be in hand long before formal action. Yen et al. [10]
+drew on FDA data covering 166,986 devices with 510(k) notifications, 34,063 recall events and
+13,239,502 adverse event records, and applied association rule mining to the 5,384 devices with both
+adverse events and recalls, identifying 21 association rules that met the study’s thresholds of 0.3%
+support, 50% confidence and lift above 1, each linking an adverse event product problem to a recall root
+cause. When four software-related adverse events co-occurred on a single device, the probability of a
+corresponding software design recall reached 80% confidence with a lift of 6.62. Clinical case literature
+such as Sengupta et al. [9] in JAMA Internal Medicine show why these signals matter. This pacemaker
+study found that 5 of 90 patients implanted with a defective Medtronic cardiac resynchronization
+pacemaker at the Minneapolis Heart Institute experienced syncope before the November 2015 recall
+owing to battery or wire-connection defects. MAUDE analysis of 205 returned devices showed that
+77.1% failed due to high internal battery impedance and 17.1% due to lifted bond wires, producing 58
+adverse events including 1 death, 2 cardiac arrests, 19 syncopal episodes, and 24 heart failure events.
+Critically, the manufacturer and the FDA were aware of these defects 19 months before the recall was
+issued. During this period the FDA received 22 further failure reports, 11 of which described serious
+adverse events, and the recall notification ultimately omitted the wire-connection defect entirely.
+Precursors existed but were not transformed into timely action, the failure mode a proactive framework is
+designed to prevent.
+At the provider level, recalls pose an operational problem. Morgenthaler et al. [7] documented Mayo
+Clinic’s response to the June 2021 Philips Respironics Class I recall, which the manufacturer estimated
+affected over 16 million patients worldwide. Mayo Clinic alone identified approximately 9,000 patients,
+around 60 of them pediatric, and under a centralized, pre-existing recall response, incoming patient
+contacts fell from about 200 per day in early July to about 100 per day by the week of 19 July, a level of
+organized response that is not yet the standard. Some institutions still lack the ability to track products
+beyond distribution centers, forcing manual searches [1]. The operational bottleneck is rooted in identifier
+
+infrastructure – although the FDA’s 2013 UDI rule was intended to facilitate recall resolution, Mooghali
+et al. [6] note that the availability of UDI information remains inconsistent in recall notices, and See et al.
+[8] note that UDIs are not required to be incorporated into Electronic Health Records or claims data,
+rendering the system operationally inadequate. The consequence is the continued reliance on
+disconnected ERP, EMR and inventory management applications, and on manual processes including
+hard-copy letters and phone calls which are prevalent even today. Recall intelligence must therefore be
+connected to supply chain and clinical system architectures to make detectability operational rather than
+aspirational.
+The reviewed literature showcases the epidemiology of severe recalls, identifies structural risk drivers,
+documents evidentiary weakness, and shows operational burden. This is the point at which risk-
+assessment methodologies, such as a prospective Failure Mode and Effects Analysis (FMEA) inspired
+framework described in this study, become central to alleviating problems associated with medical recalls
+before they occur. Such a framework offers a scalable path forward from reactive crisis response to a
+hybrid model balancing effective response with proactive mitigation. The studies reviewed here supply
+the empirical foundation – the framework that operationalizes what the literature has been converging on
+for the past decade.
+3. Methodology
+3.1 Concept
+The framework adapts Failure Mode and Effects Analysis (FMEA), an established risk-assessment
+method in quality and reliability engineering, for data-driven recall risk assessment in healthcare supply
+chains. Its formulation generally decomposes risk into three dimensions – Severity (S), Occurrence (O),
+and Detectability (D) – and combines them into a Risk Priority Number (RPN). This paper adapts it into a
+dynamic tool with two modifications and an extension. First, component scores are computed from public
+regulatory and clinical data rather than workshop judgment. Severity (S) is anchored to FDA device
+classification and GUDID attributes. Occurrence (O) is updated from recall history, supplement
+frequency, and category patterns. Detectability (D) is measured from device-level traceability potential
+and institutional traceability maturity. Second, the composite score “R”, similar to RPN in traditional
+FMEA, is additive rather than multiplicative because the dimensions are correlated. For instance,
+cardiovascular classification independently elevates both Occurrence [2] and Severity through associated
+GUDID attributes [6, 8], resulting in this correlation getting compounded. Additive combination
+preserves the ability to interpret the contributions of its individual components. Finally, the framework
+extends FMEA with a supply chain specific Exposure (E) dimension to account for the magnitude of local
+exposure, i.e., patients who have received the affected product, inventory on hand, financial value at
+stake, and patient flow velocity. Component scores are scaled 0-100 to preserve the resolution of the
+underlying signals.
+Therefore, R = WS * S + WO * O + WD * (100 – D) + WE * E, where, R → Composite Recall Risk Score,
+0-100 (higher = greater risk), S → Severity Score, 0-100, O → Occurrence Score, 0-100, D →
+Detectability Score, 0-100 (higher = better traceability), E → Exposure Score, 0-100, WS, WO, WD, WE →
+Dimension Weights, summing to 1.0
+The (100 – D) transformation inverts Detectability (D) so that poor traceability increases composite risk,
+aligning its direction with the other dimensions. Default dimension weights derived from supported
+literature are set to WS = 0.35, WO = 0.35, WD = 0.15, and WE = 0.15. Severity and Occurrence carry the
+highest weights because they are the FMEA-native dimensions most directly supported by published
+effect sizes. Detectability and Exposure are extensions and therefore weighted lower. Healthcare systems
+must tune these weights, as explained in section 3.5.
+3.2 Scope
+
+The framework applies to medical devices regulated under the Food and Drug Administration’s (FDA ’s)
+Center for Devices and Radiological Health (CDRH), which includes high-risk implantables (ICDs,
+stents, valves, etc.), durable medical equipment (infusion pumps, ventilators, etc.), and Class I/II
+commodities (surgical supplies, etc.). It does not apply to drugs, biologics, or food and dietary
+supplements, which use different recall systems, identifiers, and risk factors.
+3.3 Design Principles
+The framework is governed by a list of principles and guidelines as detailed below. First, each factor is
+assigned to exactly one dimension based on the dimension its published effect size most directly
+measures. For instance, cardiovascular category is assigned to O and not S, since the latter is already
+captured by GUDID attributes for devices in this category. Second, S and O are fully computable from
+openFDA and GUDID, with no internal data integration. D and E require institutional context and
+therefore a staged adoption approach. Third, scores are decomposable, enabling users and decision-
+makers to see which factors drove a given score. Lastly, in operational use, scores are ideally recomputed
+regularly as new data becomes available. To validate the framework, a retrospective comparative study is
+performed, as presented in Section 4. The author used Claude (Anthropic) for editorial assistance with
+manuscript organization, editing, and exploratory discussion of FDA data structures. All analysis, results,
+and conclusions are the author's own.
+3.4 Dimensions and Factors
+3.4.1 Severity (S)
+Severity (S) measures the clinical consequence to one patient if a recalled product remains in use or has
+been used on them. It is measured per-exposure rather than as an aggregate which is captured separately
+in Exposure (E). This separation prevents Severity from being inflated by high-volume, low-consequence
+products and vice versa. Table 1 below shows the list of factors contributing to the Severity dimension,
+along with their corresponding weights. Device class refers to FDA’s pre-market device classification
+(Class I = lowest risk, Class III = highest risk), distinct from FDA recall classification (Recall Class I =
+most severe, Class III = least severe). The two scales are independent and run in opposite directions.
+Three factors have been assigned to S, as outlined in the table below. Factor justifications are explained in
+Appendix A.
+Factor Data Source Computation Default
+Weight
+Default Weight
+Rationale
+Life-
+sustaining /
+life-
+supporting
+GUDID:
+“lifeSustainSupport”
+flag
+If flagged: 100
+Else: 0
+0.40 Failure produces
+immediate, often
+fatal consequences
+Implantable GUDID:
+“isImplantableDevice”
+flag
+If flagged: 100
+Else: 0
+0.30 Exposure persists
+post-recall; removal
+is invasive
+FDA Device
+Class
+FDA Product
+Classification database
+Class III: 100
+Class II: 50
+Class I: 25
+0.30 Regulatory proxy
+for inherent risk
+Table 1 Severity dimension factors, weights, and scoring criteria
+Severity, S = Σ (Fi * Wi), where Fi → score of factor i, 0-100, Wi → weight of factor i (factor weights sum
+to 1.00)
+3.4.2 Occurrence (O)
+
+Occurrence (O) measures the probability that a product will be subject to a future recall. Four factors are
+combined, as outlined below in Table 2. Each multiplier saturates the factor at approximately the 90th
+percentile of its empirical distribution so as to reflect the upper-tail risk rather than absolute counts. The
+three-tier category mapping for device category risk is research-derived from recall epidemiology [2, 6, 8,
+11] and not an official FDA designation. The FDA publishes specialty assignments for every product code
+while this framework groups specialties into high/medium/low recall-risk tiers and publishes the mapping
+as part of this paper in Appendix B, which can be used by adopting institutions as a lookup. Where a
+product code carries no FDA medical-specialty assignment, a device-name keyword inference step
+recovers the specialty (e.g., a device named “defibrillator” is inferred to cardiovascular) before the tier
+lookup is applied. For products with less than 24 months of market presence, history-dependent factors do
+not apply. The remaining two factors are reweighted as outlined in Table 3. This cold-start scoring applies
+to the Occurrence (O) dimension only. Severity, Detectability, and Exposure do not depend on
+accumulated history.
+Factor Data Source Computation Default
+Weight
+Default Weight
+Rationale
+Product
+recall history
+openFDA
+Device Recall
+database
+Min (100, d * 10), where d is
+the count of prior recalls for
+the product code in the past
+5 years
+0.30 Strongest single
+predictor in the
+literature
+Vendor
+recall history
+openFDA
+Device Recall
+database
+Min (100, v * 5), where v is
+the count of recalls for the
+vendor across its full product
+line in the past 5 years
+0.30 Vendor patterns less
+specific than product
+patterns
+Modification
+frequency
+(PMA
+supplements)
+openFDA PMA
+database
+Min (100, s * 20), where s is
+the mean number of PMA
+supplements per year since
+approval
+0.20 Applies to PMA
+devices only
+Device
+category risk
+Category
+Mapping
+(Appendix B)
+High: 100
+Medium: 50
+Low: 20
+0.20 Category baseline
+consistent with Dubin’s
+[2] effect size
+Table 2 Occurrence dimension factors, weights, and scoring criteria
+Factor Default Weight
+Vendor recall history 0.50
+Device category risk 0.50
+Table 3 Occurrence dimension factors and weights for products with less than 24 months of market
+presence
+Occurrence, O = Σ (Fi * Wi), where Fi → score of factor i, 0-100, Wi → weight of factor i (factor weights
+sum to 1.00)
+3.4.3 Detectability (D)
+Detectability measures how ready a health system is to identify and react to a recall – can the organization
+rapidly and efficiently determine which units are affected, which patients have been exposed, and where
+the affected units are located. Higher D reduces the composite risk whereas a lower D amplifies it. This is
+achieved via the (100 – D) transformation in the computation of R. D has two components measured
+separately. Device-level traceability (Dd) is whether the device, by its Unique Device Identifier (UDI)
+
+structure, Global Unique Device Identification Database (GUDID) attributes, and registry coverage,
+supports rapid traceability. Institutional traceability maturity (Di) determines whether the health system
+captures and uses UDI data at the point of clinical use with sufficient consistency to identify the affected
+units and patients. UDI is the label on a device that comprises a Device Identifier (DI) identifying the
+model, and Production Identifier (PI) identifying lot or serial. GUDID is the FDA ’s database of all DIs
+and their attributes. Every device in the dataset has a DI. The framework does not treat “has a DI” as a
+discriminating signal; traceability granularity is distinguished by the serial vs lot identifier layered on top
+of the universally present DI. Medical device registries, on the other hand, are independent organizations
+that systematically collect data on implanted devices across participating institutions. Examples include
+the ACC-NCDR for Cardiovascular Implants, AJRR for Joint Replacements, and STS-ACSD for
+Cardiothoracic Surgical Devices. For recall traceability, registry coverage means a manufacturer recall
+can identify implants of the affected lot across all participating institutions independent of any single
+hospital’s EMR. Higher coverage means lower operational risk.
+Device-level traceability potential (Dd) is assigned the following factors.
+Factor Data Source Computation Default
+Weight
+Default Weight
+Rationale
+Traceability
+granularity
+GUDID record Serialized: 100
+Lot/batch tracked: 50
+DI only present, no PI: 25
+Not in UDI system (no DI): 0
+0.50 UDI is foundational and
+without it, no
+traceability factor
+operates
+Registry
+coverage
+(category-
+based)
+Category-to-
+registry mapping
+(Appendix C)
+Implantable Cardiovascular:
+100
+Implantable Orthopedic: 75
+Implantable Other: 50
+Non-implantable: 0
+0.50 Reflects cross-
+institutional device-level
+traceability
+Table 4 Device level traceability (Dd) factors, weights, and scoring criteria
+Institutional Traceability Maturity, scored based on the tier-assignment outlined in Table 5, is assigned per
+device class within a health system based on the institution’s UDI capture and recall response capability
+for that category. Tier-assignment must ideally be performed by supply chain and clinical informatics
+leadership. Institutions unwilling or unable to self-assign default to low (25).
+Tier Score Typical Profile Operational Definition
+High 100 Academic Medical Centers with
+mature registry participation and
+established UDI workflows
+Routine Point-Of-Use (POU) UDI capture with
+capture rates >= 90%; UDI present in
+structured EMR fields; exposed patient list
+usually available within 24 hours of receipt of
+recall notice
+Medium 50 Mid-sized community hospitals
+with EMR but partial UDI
+integration
+Inconsistent capture with capture rates
+typically between 50-90%; mixed structured
+and free-text data; exposed patient list takes
+days to generate
+Low 25 Smaller community hospitals,
+rural facilities, or multi-site
+systems with EMR fragmentation
+Rare or absent capture with capture rates under
+50%; unstructured EMR data; patient
+identification by manual chart review takes
+weeks
+Table 5 Institutional traceability maturity (Di) factors, weights, and scoring criteria
+
+Detectability, D = Dd * (Di/100), where Dd → device-level traceability potential, 0-100, Di → institutional
+traceability maturity tier score, 0-100
+3.4.4 Exposure (E)
+Exposure (E) measures the magnitude of a health system’s local stake in a given product, including
+patient-population exposure, ensuring that this framework provides visibility into how many patients
+would be at risk were the given product recalled. Although small and rural hospitals can typically produce
+a count of patients who received a given product type from EMR records, the granularity and effort to do
+so varies. For this dimension to correctly reflect that smaller hospitals have less aggregate exposure to any
+given product, a tier-based scoring is applied for a given product. For institutions where patient-exposure
+data is unavailable, the patient-exposed factor defaults to a category-level estimate based on national
+utilization benchmarks for the institution’s bed size and case mix. Inventory units, cost, and utilization are
+framed as distinct measures. Inventory units captures current stock (snapshot in time), utilization captures
+monthly throughput (flow), and patients exposed captures cumulative patients. Although the three factors
+are correlated – for instance, JIT institutions are likely to correctly show lower inventory levels with
+potentially higher utilization – they help address distinct operational questions, namely, how many
+patients would need outreach, how much stock is likely to be at risk, and how fast exposure could
+accumulate. Exposure (E) is assigned the following factors.
+Factor Data Source Computation Default
+Weight
+Default Weight
+Rationale
+Patients
+Exposed
+EMR / surgical
+records
+>= 100: 100
+25 – 99: 75
+5 – 24: 50
+1 – 4: 25
+0: 0
+0.35 Patient outreach is the
+primary recall action
+and aligns with the
+framework’s patient-
+care centric mission
+Inventory
+units on
+hand
+ERP system >= 100: 100
+50 – 99: 75
+10 – 49: 50
+1 – 9: 25
+0: 0
+0.25 Most immediate
+operational risk
+Inventory
+carrying cost
+ERP system >= $500K: 100
+$100K – $500K: 75
+$25K – $100K: 50
+$5K – $25K: 25
+< $5K: 10
+0.20 Financial dimension
+secondary to patient and
+operational concerns
+Average
+monthly
+utilization
+rate
+Health system
+utilization data
+>= 50 units: 100
+20 – 49 units: 75
+5 – 19 units: 50
+1 – 4 units: 25
+0: 0
+0.20 Equal to inventory cost,
+independent of current
+inventory
+Table 6 Exposure dimension factors, weights, and scoring criteria
+Exposure, E = Σ (Fi * Wi), where Fi → score of factor i, Wi → weight of factor i (factor weights sum to
+1.00). For a factor value v and corresponding tier thresholds t1 > t2 > t3 > t4 and corresponding scores s1 >
+s2 > s3 > s4, factor score F = s1 if v > t1; s2 if v > t2; s3 if v > t3; s4 if v > t4.
+3.5 Weight Tuning
+All dimension-level and within-dimension factor-level weights stated above are literature-informed
+starting points. Health systems may adopt the published defaults and monitor, refine, and adjust them
+
+periodically based on size, scale, specialty, and other local priorities, as well as evolving literature. For
+example, a pediatric institution may assign higher weightage to the “life-sustaining” factor for the
+Severity (S) dimension much higher than the default chosen in this paper. Institutions sourcing from only
+a few vendors for a given product or service line may weigh the vendor history factor higher. In addition,
+for empirical re-derivation, institutions capable of generating and analyzing historical recall outcome data
+may fit a logistic regression of recall occurrence on the component factor scores where the resulting
+normalized regression coefficients become the empirically derived weights. The sensitivity of the
+composite score to these dimension weights is examined empirically in Section 4.
+3.6 Mapping dimensions to Cost, Quality and Outcomes
+The literature review identifies and acknowledges the absence of explicit linkage between recall
+management and Cost, Quality, and Outcomes (CQO) metrics as a central gap. Each dimension
+contributing to the Composite Risk Score, R, maps to specific enterprise outcomes. Quality and clinical
+outcomes (length of stay, complications, revisions) are primarily driven by Severity (S), modified by
+patients exposed in Exposure (E). Cost outcomes (uncompensated procedural costs, recoverable asset
+value, inventory write-offs) are driven by Exposure (E), modified by Occurrence (O). Operational
+outcomes (recall response time, traceability, time to resolution) are driven by Detectability (D). R is
+therefore a decomposable signal whose components map to distinct clinical and operational outcomes.
+3.7 Illustrative Worked Example
+All values used in this example are illustrative for the purposes of demonstrating how this framework
+works. Real application computes values from the data sources referenced in the sections above. Consider
+a hypothetical implantable cardioverter-defibrillator (ICD) at a mid-sized academic medical center.
+Severity (S): Life-sustaining → 100, implantable → 100, Class III → 100. Therefore, S = (0.40 * 100) +
+(0.30 * 100) + (0.30 * 100) = 100. Occurrence (O): 3 prior product-code recalls → 30, 8 prior vendor
+recalls → 40, 2.5 supplements per year → 50, cardiovascular category → 100. Therefore, O = (0.30 * 30)
++ (0.30 * 40) + (0.20 * 50) + (0.20 * 100) = 51. Detectability (D): Dd: Serialized → 100, implantable
+cardiovascular registry → 100; Di: higher tier for cardiac implants at AMC → 100. Therefore, Dd = 100;
+Di = 100; D = 100 * (100/100) = 100; (100 – D) = 100 – 100 = 0. Exposure (E): 80 patients exposed →
+75, 40 units on hand → 50, $200K inventory carrying cost → 75, 8 units/month → 50. Therefore, E =
+(0.35 * 75) + (0.25 * 50) + (0.20 * 75) + (0.20 * 50) = 63.75. Composite Risk Score, R = (0.35 * 100) +
+(0.35 * 51) + (0.15 * 0) + (0.15 * 63.75) = 62.41.
+Severity (S) is the primary driver (35 of 62.41), Occurrence (O) is moderate, Detectability (D) is excellent
+(no risk contribution), and Exposure (E) is moderate but elevated by patient count. The composite score,
+R, correctly flags this product for clinical monitoring without urgent vendor scrutiny. In contrast – the
+same ICD at a smaller community hospital with lower UDI maturity would drive Di → 25, resulting in D
+= 25, (100 – D) = 75, and R = 35 + 17.85 + (0.15 * 75) + 9.56 = 73.66 – indicating that the same product
+is meaningfully higher-risk driven by traceability gap.
+4. Results
+The framework was assessed retrospectively. Fixing a historical cutoff date, the score of each product in
+the preceding 12-month Purchase Order History was computed using only data available before that date.
+Then, it was observed which products were recalled in the period after the cutoff. This exercise was
+designed to test the framework’s central premise that a device’s recall risk can be scored from public FDA
+and institutional data before a recall occurs. Fixing the time-dependent inputs in the pre-cutoff window
+and drawing the outcomes entirely from the post-cutoff window ensured that no information about a
+recall could enter the score used to anticipate it. Static device attributes that do not change over time were
+not windowed. A cutoff of January 1, 2022 was used for the primary retrospective validation as it afforded
+an adequate post-cutoff observation window. A secondary retrospective validation was repeated for a
+
+January 1, 2023 cutoff as a robustness check. The two validations produced consistent results, indicating
+that the findings are not sensitive to the cutoff chosen. Discrimination was summarized using the area
+under the receiver operating characteristic curve (AUC), which is the probability that a product later
+recalled received a higher score than one that was not, where a value of 0.5 indicates no better chance and
+1.0 indicates perfect separation. Ninety-five percent confidence intervals for the AUC were computed
+using the DeLong method. Additionally, serious recalls (Class I) were distinguished in order to test
+whether the score identifies not just any recall but the recalls that pose the greatest risk to patients and the
+health system. The purchase order data for calendar years 2021 and 2022 were matched with the federal
+regulatory and device databases for the two validations respectively and results formulated.
+The validation panel comprised 23,444 distinct products. At the January 2022 cutoff, 3,710 of these
+(15.8%) were subject to at least one recall in the post-cutoff observation window and 376 (1.60%) to at
+least one Class I recall. At the January 2023 cutoff, which carried a shorter post-cutoff observation
+window, the corresponding counts were 2,787 (11.9%) and 358 (1.53%). The composite R score separated
+recalled from non-recalled products well, and it identified the most serious recalls (Class I) more strongly
+than recalls in general. At the January 2022 cutoff, the composite R score achieved an AUC of 0.75 (95%
+CI 0.74–0.76) for any recall and 0.80 (95% CI 0.78–0.82) for Class I recalls. The Occurrence dimension,
+which captures recall likelihood, reached 0.78 (95% CI 0.78–0.79) and 0.86 (95% CI 0.84–0.88)
+respectively. Results at the January 2023 cutoff were consistent (composite R score AUC 0.77, 95% CI
+0.76–0.78 for any recall and 0.84, 95% CI 0.82–0.86 for Class I recalls), confirming that the findings do
+not depend on the particular cutoff chosen. (Fig 1)
+The score concentrated recall risk as intended. Grouping products into risk-score deciles, the percentage
+of products recalled after the cutoff rose steeply with the composite R score. Products scoring in the
+lowest decile were recalled about 1% of the time, while those in the highest deciles were recalled at many
+times that rate. The highest-scoring tenth of products were recalled roughly 3 times as often as the
+average product, and the lowest-scoring products were almost never recalled (Fig 2).
+
+Fig 1 Discrimination (AUC) of the Composite R score and the Occurrence dimension, by recall type (Jan
+2022 cutoff)
+
+Fig 2 Percentage of products recalled after cutoff, by risk-score decile (Jan 2022 cutoff)
+The most consequential result concerns Class I recalls. Products were sorted in decreasing order of the
+composite R score, i.e., highest to lowest risk. The top 20% of the products accounted for roughly 75% of
+all Class I recalls that subsequently occurred, while the bottom 50% accounted for under 10%. Reviewing
+the highest-scoring 20% of the catalogue – 4,689 products – would have covered 281 of the 376 Class I
+recalls that subsequently occurred, a sensitivity of 74.7% at a precision of 6.0%. This represents a 3.7-fold
+enrichment over the 1.60% base rate. Precision is necessarily constrained by the rarity of Class I events;
+at this review depth the maximum achievable precision, given 376 events among 4,689 reviewed
+products, is 8.0%. The operational value of the score therefore lies in concentrating a fixed monitoring
+effort where risk is most dense rather than in identifying individual recalls with certainty (Fig 3).
+Prior recall experience was strongly predictive of future recalls. Products whose manufacturer had
+recalled that device type before the cutoff were several times more likely to be recalled subsequently than
+products with no such history. A similar pattern was observed at the manufacturer level. This pattern
+justifies incorporating recall history into the Occurrence dimension. Examining the recalls by category
+and severity further shows where the serious events were concentrated. A small number of device types –
+tracheal tubes and implantable pacemakers prominent among them – accounted for a disproportionate
+share of the most serious recalls while the bulk of recalls across most categories were of moderate
+severity (Fig 4).
+
+Fig 3 Cumulative share of recalls captured as products are reviewed, ranked by risk-score (Jan 2022
+cutoff)
+
+Fig 4 Device categories ranked by number of recalls post-cutoff, by recall class [Product codes: BTR =
+tracheal tube; LWP = implantable pacemaker (non-CRT); OZD = temporary left heart support pump;
+DQY = percutaneous catheter; BSY = tracheobronchial suction catheter; ETN = nerve stimulator; HAW =
+neurological stereotaxic instrument; KDI = high-permeability dialyzer; NKE = pacemaker with cardiac
+resynchronization (CRT-P); GEI = electrosurgical cutting & coagulation]
+The Detectability and Exposure dimensions showed little association with whether a recall occurred in
+general, and only moderate association with Class I recalls specifically. Their contribution towards the
+composite risk score is tied to the consequences to the patient and the health system when the recall
+
+occurs – for example, how difficult it would be to trace affected units and how many patients are exposed
+– rather than the likelihood of a recall itself. In the present dataset, these two dimensions vary little
+because nearly every device carries a unique identifier and the institutional inputs were available only in
+part. This is a feature of the validation rather than the framework.
+To assess whether the findings depend on the particular dimension weights chosen, the composite was
+recomputed under five alternative weighting schemes, holding within-dimension factor weights constant.
+Discrimination for Class I recalls ranged from 0.784 to 0.817, against 0.802 under the published weights.
+Several alternatives achieved marginally higher discrimination, which is expected since the composite is
+not constructed to maximize predictive performance alone, but to retain consequence and institutional
+exposure in the ranking alongside recall likelihood. The reported findings are therefore not an artefact of
+the particular weights selected.
+5. Discussion
+Beyond proactively indicating the risk associated with a given product being recalled, the framework also
+aids in formulating supply chain strategy and making critical decisions. The most direct application is in
+moving from a cost-based to a value-based sourcing model. When analyzing the Cost, Quality, and
+Outcomes (CQO) metrics, health systems can use the composite R score generated by this framework to
+determine within a given product line or category the manufacturer(s) carrying a lower risk profile and
+offering potentially higher quality products at a lower average unit price. For instance, among implantable
+cardioverter-defibrillators, it was observed that the incumbent manufacturers spanned a wide range of
+scores, among which the lowest-risk option was also among the least expensive, thus uncovering a great
+standardization opportunity. The same pattern was observed for knee prostheses. See Fig 5 and Fig 6.
+
+Fig 5 Sourcing alternatives for Cardioverter Defibrillators
+
+Fig 6 Sourcing alternatives for Knee Prostheses
+
+Aggregating scores by medical specialty (Fig 7) shows that recall risk is unevenly distributed.
+Cardiovascular devices carry the highest average risk, followed by general and plastic surgery,
+orthopedics, general hospital supplies, and anesthesiology, while ophthalmic, ENT, and pathology devices
+carry the lowest risk. A summary profiling each service line on size, average risk, and the proportion of
+products under an active recall gives supply chain and clinical engineering leaders a holistic view of
+where proactive monitoring and mitigation is most warranted.
+Fig 7 Average recall risk score by medical specialty
+
+At the supplier level, the composite R scores form the basis of a supplier scorecard. Profiling major
+suppliers by volume, average risk and active recall rates reveals that suppliers differ markedly on these
+measures. Some high-volume suppliers carry low average risk and no active recalls, while others sit
+considerably higher on both. This makes supplier recall risk an explicit, measurable input to performance
+reviews and contract negotiations proactively rather than an impression formed after the fact.
+The applications of the framework described above are best viewed as decision support rather than
+guaranteed savings. A real sourcing change involves further considerations – such as contractual terms,
+clinical equivalence, compliance, and procedural costs – which should be weighted appropriately
+alongside the framework outputs. The framework is also designed for staged adoption. Severity and
+Occurrence are computable immediately from public regulatory data and can inform sourcing decisions
+from the outset. The device-level component of Detectability is likewise public, while the institutional
+component requires a one-time maturity assessment. Exposure draws on the health system’s usage, cost,
+procedural, and inventory data, which may take time to analyze. A health system can therefore begin with
+the public data core, tune weights appropriately, and progressively expand the framework as its data
+infrastructure matures. Finally, the framework applies across the full range of items that a health system
+uses, from high-risk implantables to everyday commodities. What varies is the resolution of the score,
+which depends on the richness of the underlying data. For example, many factors carry a strong signal in
+data-rich areas such as cardiovascular implants, whereas in data-sparse areas such as disposable
+commodities, where registry coverage is uniformly absent and other identifiers are rare, two products may
+receive similar scores even when their true risks differ. This reflects the maturity of the underlying data
+rather than a limitation of the method. As such, a health system should direct focus to the highest-risk
+products first, where its signal is the strongest and the consequences of the recall the greatest.
+6. Limitations and Future Work
+The validation demonstrates that the framework anticipates recall occurrence and identifies categories and
+products posing high risk to the health system, but it is worth separating the limitations of the validation
+from those of the framework itself. Testing against observed recalls directly assesses the Occurrence and
+Severity dimensions and only partially speaks to the Detectability and Exposure dimensions. This gap is
+largely because both dimensions depend on institution specific inputs, such as traceability maturity for
+Detectability and patient level utilization for Exposure, that were only partially available in this
+validation. The framework is built to incorporate these institutional inputs wherever they are available.
+The framework relies on the completeness and structure of FDA data. Recall history is only as
+informative as the FDA recall and enforcement records, whose manufacturer fields are occasionally
+inconsistent and whose coverage of recent events can lag. Device attributes depend on the FDA's GUDID
+database, so products without a resolvable identifier cannot be automatically scored on the same basis and
+may need to be flagged for manual review. Since the usage measure available for this study reflected
+ordered quantities rather than actual consumption at the procedure level, the Exposure dimension was
+populated from only a subset of its intended factors, with weights of the available factors adjusted to
+reflect the health system's typical operating patterns. The predicate device relationship, which the
+literature associates with inherited recall risk, was excluded because it is not derivable from structured
+public data. Adverse event signals from the FDA reporting system were likewise excluded owing to that
+system's well documented inconsistent reporting.
+The framework also creates the conditions for the use of machine learning models. Since every scored
+product carries a set of recorded inputs and an observed outcome, the resulting dataset functions as a
+labeled training dataset. Supervised classification models could learn the factor weights directly from
+recall history rather than adopting literature derived defaults, and survival models could estimate the time
+to a recall rather than its likelihood alone. Large language models and other natural language processing
+techniques offer a route to the two sources excluded above, structuring adverse event narratives and
+extracting predicate lineage from clearance filings. Record linkage models could match purchase records
+
+to clinical documentation, supplying the patient exposure input that was unavailable here, and anomaly
+detection could flag unusual complaint activity between recalls. Each of these remains a hypothesis to be
+tested. The transparent composite score should remain the benchmark, and a model should be adopted
+only where it measurably outperforms that score under expert review.
+The most consequential extension is empirical testing of the CQO linkage: whether recall events, and the
+risk scores that anticipate them, relate measurably to clinical and financial outcomes such as length of
+stay, readmissions, revision rates, and recoverable asset value. Other extensions follow from the
+framework's structure. Traceability capture should be monitored over time since it fluctuates with
+workflow changes and system migrations. The vendor level factors lend themselves to a formal supplier
+performance program, and the overall approach is portable to other regulatory environments with
+comparable post market recall, adverse event, and registry data collected once devices are in use. Finally,
+a health system with sufficient historical data should calibrate the tier thresholds to its own case mix.
+7. Conclusion
+The paper presented a data-driven adaptation of the Failure Mode and Effects Analysis (FMEA) for
+proactive medical device recall risk computed from public regulatory and clinical data and extended with
+institutional supply chain measures. Applying the framework retrospectively across 23,444 products and
+two independent cutoff dates demonstrated that the composite R score reliably identified products
+carrying the highest risk, anticipating which devices had a high likelihood of being recalled and which of
+those recalls could potentially be the most hazardous to patient care. Because the score decomposes into
+interpretable dimensions, it functions not only as a ranking but as a guide to action. It highlights where
+the lower risk source of the same device exists, where the recall risk concentrates across service lines, and
+which suppliers warrant closer scrutiny. Its staged design allows a health system to begin immediately
+with publicly available data and successively deepen the framework as institutional data and technology
+mature. In connecting recall risk explicitly to patient safety and supply chain decision-making, the
+framework offers a practical means of shifting recalls management from a reactive posture to a proactive
+one.
+Reference
+1. Burbano Collazos A, Durán Gutiérrez LF, García Pretelt JA, Ojeda Navia DM (2017) Barriers and
+opportunities in recalls management at the health care provider level. Rev Ing Biomed 11(22):29–36.
+https://doi.org/10.24050/19099762.n22.2017.1180
+2. Dubin JR, Enriquez JR, Cheng AL, Campbell H, Cil A (2023) Risk of recall associated with
+modifications to high-risk medical devices approved through US Food and Drug Administration
+supplements. JAMA Network Open 6(4):e237699. https://doi.org/10.1001/jamanetworkopen.2023.7699
+3. ECRI (2022) The burden of medical device alerts and recalls – key takeaways. ECRI.
+https://home.ecri.org/blogs/ecri-blog/the-burden-of-medical-device-alerts-and-recalls-key-takeaways.
+Accessed [date]
+4. Everhart AO, Sen S, Stern AD, Zhu Y , Karaca-Mandic P (2023) Association between regulatory
+submission characteristics and recalls of medical devices receiving 510(k) clearance. JAMA 329(2):144–
+156. https://doi.org/10.1001/jama.2022.22974
+5. Kamen CL (2025) Quality of evidence of recalled medical devices associated with serious health risks:
+a scoping review. Master's thesis, University of Toronto
+6. Mooghali M, Ross JS, Kadakia KT, Dhruva SS (2023) Characterization of US Food and Drug
+Administration Class I recalls from 2018 to 2022 for moderate- and high-risk medical devices: a cross-
+sectional study. Med Devices (Auckl) 16:111–122. https://doi.org/10.2147/MDER.S412802
+
+7. Morgenthaler TI, Linginfelter EA, Gay PC, Anderson SE, Herold D, Brown V , Nienow JM (2022)
+Rapid response to medical device recalls: an organized patient-centered team effort. J Clin Sleep Med
+18(2):663–667. https://doi.org/10.5664/jcsm.9748
+8. See C, Mooghali M, Dhruva SS, Ross JS, Krumholz HM, Kadakia KT (2024) Class I recalls of
+cardiovascular devices between 2013 and 2022: a cross-sectional analysis. Ann Intern Med 177(11):1499–
+1508. https://doi.org/10.7326/ANNALS-24-00724
+9. Sengupta J, Storey K, Casey S, Trager L, Buescher M, Horning M, Gornick C, Abdelhadi R, Tang C,
+Brill S, Ashbach L, Hauser RG (2020) Outcomes before and after the recall of a heart failure pacemaker.
+JAMA Intern Med 180(2):198–205. https://doi.org/10.1001/jamainternmed.2019.5171
+10. Yen YJ, Yang HY , Chen WB, Chen PT, Kuo CB, Teng WG (2024) A data-driven approach to discover
+association between adverse events and recalls of 510(k) medical devices. In: Proceedings of the 2024
+2nd International Conference on Machine Learning and Pattern Recognition. Association for Computing
+Machinery, pp 8–14. https://doi.org/10.1145/3698263.3698265
+11. Zhang S, Kriza C, Schaller S, Kolominsky-Rabas PL (2015) Recalls of cardiac implants in the last
+decade: what lessons can we learn? PLoS ONE 10(5):e0125987.
+https://doi.org/10.1371/journal.pone.0125987
+
+Appendix A: Rationale for factor selection and weighting
+Severity: The life-sustaining flag carries the highest weight because failure of life-sustaining devices
+results in immediate and often fatal consequences. Furthermore, these devices account for a
+disproportionate share of the most serious recalls, as informed by literature and observed in the validation
+performed in this study. The implantable flag is weighted next because exposure persists after a recall is
+issued, and removal often requires readmission and additional procedure(s). The FDA device class carries
+the lowest weight because it is partially redundant with two GUDID flags. Most Class III devices are
+implantable, life-sustaining, or both. However, it is needed because it is the regulator’s own indicator for
+inherent risk.
+Occurrence: Product recall history carries the highest weight because it is the single strongest predictor in
+the literature for future recall occurrences. Vendor recall history is next because manufacturer-level
+patterns recur across product lines but are less specific than product-level history. Next, modification
+frequency reflects the finding that each additional premarket approval supplement per year is associated
+with an increase in recall risk. It is only applied to devices on the PMA pathway and is hence weighted
+lower than product and vendor recall history. Lastly, device category risk provides a category baseline
+consistent with past studies concluding that certain categories (example, cardiovascular) pose
+significantly more risk than others. The category mapping can be found in Appendix B.
+Detectability: Both traceability granularity and registry coverage carry equal weight. Device identifiers
+determine how precisely a recalled product can be tracked and isolated. Serialized devices support unit-
+level and patient identification, lot-tracked devices enable batch quarantining, and devices with minimal
+identification capabilities force manual and delayed responses. Clinical registries are a resource for recall
+response, allowing affected implants to be located across health systems independent of any single
+hospital’s records. The mapping is given in Appendix C. The institutional maturity component is
+multiplicative as it gauges the potential of a health system to quickly and efficiently track and isolate
+serialized and lot-tracked devices. Device identifiers are useless if a health system is unable to capture
+them in their ERP system and link them to the EMR system.
+Exposure: Patients exposed carries the highest weight as patient outreach and follow-up are the primary
+recall actions, especially for recalls that are life-threatening. Inventory on hand is weighted next as the
+most immediate operational exposure. Next, inventory cost captures the financial dimension, weighted
+slightly lower than the aforementioned patient and operational factor. Utilization rate measures exposure
+independently of the current inventory or ordering patterns and is weighed equivalent to inventory cost in
+this dimension.
+Appendix B: Device category tiers (Table 7)
+Note: The FDA defines 16 classification panels under 21 CFR 862-892. Three of these panels each span
+two specialties – Chemistry/Toxicology, Hematology/Pathology, Immunology/Microbiology – which the
+FDA classification database reports as separate specialties. As a result, the framework scores them
+individually.
+FDA Medical Specialty Tier Score
+Cardiovascular High 100
+Anesthesiology High 100
+General Hospital High 100
+General and Plastic Surgery High 100
+Gastroenterology and Urology Medium 50
+Orthopedic Medium 50
+Neurology Medium 50
+Radiology Medium 50
+
+Hematology Medium 50
+Microbiology Medium 50
+Clinical Chemistry Medium 50
+Obstetrics and Gynecology Low 20
+Ophthalmic Low 20
+Dental Low 20
+Ear, Nose, Throat Low 20
+Pathology Low 20
+Toxicology Low 20
+Immunology Low 20
+Physical Medicine Low 20
+Specialty not listed Low (default) 20
+Table 7 Device category tiers and scoring criteria
+Appendix C: Registry coverage (Table 8)
+Device Category Score Major Registries
+Implantable, cardiovascular
+specialty (ICDs, pacemakers,
+stents, heart valves, LVADs,
+vascular grafts)
+100 ACC-NCDR (National Cardiovascular Data Registry: ICD
+Registry, CathPCI Registry); STS-ACSD (Adult Cardiac
+Surgery Database); STS-INTERMACS (mechanical
+circulatory support); SVS-VQI (Vascular Quality
+Initiative)
+Implantable, orthopedic
+specialty (hip, knee, shoulder
+replacements and spinal
+hardware)
+75 AJRR (American Joint Replacement Registry); MARCQI
+(Michigan Arthroplasty Registry Collaborative Quality
+Initiative); some manufacturer-specific registries
+Implantable, all other specialties
+(neurological, breast,
+gynecologic, urologic, dental,
+ophthalmic, ENT)
+50 Variable coverage: condition-specific and manufacturer-
+maintained registries; FDA-mandated National Breast
+Implant Registry (NBIR) for breast implants; limited
+national coverage for neurostimulators and cochlear
+implants
+Non-implantable (durable
+equipment, disposable supplies,
+diagnostic equipment)
+0 No device-level registry coverage
+Table 8 Registry coverage scoring criteria

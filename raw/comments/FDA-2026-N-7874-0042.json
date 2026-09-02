@@ -1,0 +1,41 @@
+{
+  "regulations_gov_comment_id": "FDA-2026-N-7874-0042",
+  "document_id": "FDA-2026-N-7874-0001",
+  "docket_id": "FDA-2026-N-7874",
+  "source_url": "https://www.regulations.gov/comment/FDA-2026-N-7874-0042",
+  "last_modified_date": "2026-08-27T23:44:51Z",
+  "attributes": {
+    "title": "Comment from Tanmaya Kumar",
+    "comment": "This comment responds to discussion questions 1, 19, 20, 21, and 26. A fuller comment is attached.<br/><br/>INTEREST AND DISCLOSURE<br/><br/>I maintain an open source healthcare audit standard and its reference implementations, published under Apache 2.0 at github.com/bh-healthcare. The work concerns how clinical systems record actions taken by AI agents, and how such records name the human accountable for an agent&#39;s action. I am not a device manufacturer and have no product before the Agency. I have no commercial interest in this proceeding, and the artifacts referenced are published openly at no cost. I am an individual member of HL7 International with an open technical contribution before the HL7 Security and Privacy Work Group on the matter described below.<br/><br/>SUMMARY<br/><br/>The activity axis in Figure 1 distinguishes an action-taking function operating under healthcare professional supervision from one operating fully autonomously. That distinction is central to the proposed risk framework. It is also, at present, not verifiable from the records a clinical system produces.<br/><br/>Healthcare audit standards, including HL7 FHIR R5 AuditEvent, model a single actor per event. That model was correct for as long as the identity that authenticated, the entity that acted, and the person whose intent was carried out were the same human. An AI agent separates those three, and a single actor field collapses them. A device authorized on the basis that it acts under continuous professional supervision, which then operates without it, produces records indistinguishable from the supervised case. The drift is not merely difficult to detect. It is not represented in the record at all.<br/><br/>QUESTION 1: TRACEABILITY OF ATTRIBUTION AS A FRAMEWORK DIMENSION<br/><br/>Traceability of an output to its source materials and traceability of an action to an accountable person are distinct concerns. The second is load-bearing for the activity axis, because a function&#39;s position on that axis is a claim about whose clinical intent an action represents. Three identities separate when an agent acts: the authenticating identity, whose credentials were presented; the acting identity, which entity performed the action; and the authorizing identity, whose intent the action represents. A framework dimension for attribution traceability would ask whether a device&#39;s records preserve that distinction, and would place a device that cannot at higher risk than one that can, holding activity and consequence constant.<br/><br/>The attached comment discusses a public reference implementation that treats traceability thoroughly and still cannot produce a record from which the supervision relationship is recoverable, because its trace lives in platform telemetry rather than in the audit record.<br/><br/>QUESTION 20: ATTRIBUTION AS A PRECONDITION FOR SUPERVISORY AGENTS<br/><br/>A supervisory agent monitoring a subject agent is one automated system acting with respect to another. HL7 publishes an extension, auditevent-OnBehalfOf, whose description names the agent-acting-for-agent case, but whose value binding permits only Organization, Patient, Practitioner, PractitionerRole, RelatedPerson, and CareTeam. Device is excluded, while AuditEvent.agent.who permits Device, so the case the description names is not expressible. The extension carries no child elements, so the requestor flag remains on the agent, and a requestor=true access review returns the machine rather than the accountable clinician. It is marked Draft, maturity level 1, and used by no profile in the specification. I raise this to identify a specific and remediable gap, not as a criticism of HL7&#39;s process.<br/><br/>QUESTIONS 26 AND 19: TESTABLE ACCEPTANCE CRITERIA<br/><br/>Appendix A element A.1 names compliance with human-oversight checkpoints before irreversible or high-consequence actions. I suggest that compliance also needs to be recorded in a form that survives to postmarket review, and that three properties are testable candidates: that attribution is emitted rather than inferred by a later reviewer; that an agent action without a resolvable authorizing human is positively representable and distinguishable from an omitted field; and that the strength of an attribution is stated, so that an identity derived from an issued token does not serialize identically to one asserted by the agent itself. These are properties of the emitted record rather than of the model, so they can be evaluated without access to model internals or to a third-party foundation model&#39;s architecture.<br/><br/>QUESTION 21: STANDARDS BODIES<br/><br/>The gap above has an identified owner and an open technical process. Agency interest expressed as an expectation about what records should preserve would likely move it faster than new regulatory requirements would.<br/><br/>AVAILABILITY<br/><br/>The specification, the FHIR R5 profile, and the reference implementations are at github.com/bh-healthcare, with a technical report at doi 10.5281/zenodo.21682867.<br/><br/>Tanmaya Kumar",
+    "organization": null,
+    "category": "Other Organizations - E0003",
+    "postedDate": "2026-08-27T04:00:00Z",
+    "receiveDate": "2026-08-26T04:00:00Z",
+    "docketId": "FDA-2026-N-7874",
+    "commentOnDocumentId": "FDA-2026-N-7874-0001",
+    "submitterRep": null,
+    "govAgency": null,
+    "govAgencyType": null,
+    "stateProvinceRegion": "MA",
+    "country": "United States",
+    "duplicateComments": 1,
+    "withdrawn": false,
+    "openForComment": false,
+    "pageCount": 0,
+    "trackingNbr": "mta-231v-wyip",
+    "modifyDate": "2026-08-27T23:44:51Z"
+  },
+  "attachments": [
+    {
+      "id": "09000064b949aa2b",
+      "title": "Comment from Tanmaya Kumar",
+      "format": "docx",
+      "size": 20559,
+      "file_url": "https://downloads.regulations.gov/FDA-2026-N-7874-0042/attachment_1.docx",
+      "local_path": "raw/attachments/FDA-2026-N-7874-0042/09000064b949aa2b.docx",
+      "downloaded": true,
+      "error": null
+    }
+  ],
+  "fetched_at": "2026-09-02T19:47:21Z"
+}

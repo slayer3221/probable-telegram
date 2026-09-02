@@ -1,0 +1,30 @@
+{
+  "regulations_gov_comment_id": "FDA-2026-N-7874-0016",
+  "document_id": "FDA-2026-N-7874-0001",
+  "docket_id": "FDA-2026-N-7874",
+  "source_url": "https://www.regulations.gov/comment/FDA-2026-N-7874-0016",
+  "last_modified_date": "2026-08-27T23:44:43Z",
+  "attributes": {
+    "title": "Comment from Nathan Sabich",
+    "comment": "FDA Question 23: How might PCCP concepts or other change-control approaches be adapted for GenAI-enabled devices when the nature or scope of future modifications cannot be fully prespecified?<br/><br/>Opinion: The PCCP Framework requires pre-specification of modifications, but GenAI foundation models evolve in ways that cannot be fully predicted. The solution is not to abandon pre-specification but to pre-specify at a higher-level of abstraction. Rather than specifying &ldquo;the model will be retrained with X additional images,&rdquo; the PCCP for a GenAI-enabled device should specify that the foundation model may be updated provided the updated model meets the following competency benchmarks, passes the following safety evaluations, and does not exceed the following performance deviation bounds from the authorized baseline.<br/><br/>Architecture to Address This: I have already created for an architecture&#39;s governance framework that operates at exactly this level of abstraction. The AI lifecycle management controls apply across all the steps I created in my architecture in order to provide continuous QMS oversight (design controls, CAPA, change management, documentation), risk management (ISO 14971 aligned), human oversight (HITL throughout with escalation paths), cybersecurity (secure by design, threat monitoring, incident response), and transparency and labeling (intended use, limitations, performance, updates). This governance layer is change-agnostic and it applies regardless of whether the modification is a retraining event, a foundation model version update, or a prompt engineering adjustment. The key is that the governance controls remain constant even as the specific modifications vary.<br/><br/>Recommendation to FDA: Create a new PCCP category called &quot;Performance-Bounded PCCP&quot; for GenAI-enabled devices. Unlike a traditional PCCP that pre-specifies the exact modifications, a &quot;Performance-Bounded PCCP&quot; would pre-specify: (1) the competency benchmarks the device must continue to meet after any modification, (2) the maximum acceptable performance deviation from the authorized baseline across each benchmark dimension, (3) the monitoring methodology for detecting deviations, (4) the rollback protocol if deviations are detected, and (5) the cumulative impact tracking methodology. Any modification that keeps the device within the performance bounds may be implemented without a new submission. Any modification that causes the device to fall outside the bounds triggers either a rollback or a new submission. This approach accommodates the unpredictability of GenAI evolution while maintaining the principle that FDA authorizes the safety and effectiveness envelope, not the specific technical implementation.<br/><br/>",
+    "organization": null,
+    "category": "Device Industry - C0012",
+    "postedDate": "2026-08-27T04:00:00Z",
+    "receiveDate": "2026-08-18T04:00:00Z",
+    "docketId": "FDA-2026-N-7874",
+    "commentOnDocumentId": "FDA-2026-N-7874-0001",
+    "submitterRep": null,
+    "govAgency": null,
+    "govAgencyType": null,
+    "stateProvinceRegion": "WI",
+    "country": "United States",
+    "duplicateComments": 1,
+    "withdrawn": false,
+    "openForComment": false,
+    "pageCount": 0,
+    "trackingNbr": "msz-83kl-qogl",
+    "modifyDate": "2026-08-27T23:44:43Z"
+  },
+  "attachments": [],
+  "fetched_at": "2026-09-02T19:47:11Z"
+}

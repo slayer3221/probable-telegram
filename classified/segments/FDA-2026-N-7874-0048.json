@@ -1,0 +1,128 @@
+{
+  "comment_id": "FDA-2026-N-7874-0048",
+  "input_hash": "877f2f3223954514",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:07:26Z",
+  "model": "claude-opus-5",
+  "chunks": 1,
+  "positions": [
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "The proposed activity and consequence axes are useful, but systems in the same cell can present different risks. FDA should also consider reversibility, time to correction, error detectability, traceability to data and system versions, safeguard independence, exposure before containment, and stability of the population and workflow.",
+      "position_gist": "The two-axis framework is useful but should be supplemented with additional risk modifiers such as reversibility, time to correction, error detectability, traceability, safeguard independence, exposure before containment, and population/workflow stability.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q2"
+      ],
+      "source_passage": "Directiveness should be judged by observed behavior, not interface labels. Personalization, urgency, repeated recommendations, confidence presentation, defaults, omitted alternatives, and automated tool use can move an apparently informational function toward action direction.",
+      "position_gist": "Directiveness should be assessed from observed device behavior rather than interface labeling, with modifiers such as personalization, urgency, repetition, confidence presentation, defaults, omitted alternatives, and automated tool use pushing informational functions toward action-direction.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q5"
+      ],
+      "source_passage": "Multi-turn evaluation should cover context accumulation or loss, escalation, refusal, interruption, and safe stop.",
+      "position_gist": "Multi-turn conversational devices should be evaluated for context accumulation or loss, escalation, refusal, interruption, and safe-stop behavior.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q7",
+        "q9"
+      ],
+      "source_passage": "Competency should be supported by structured evidence rather than one benchmark score. Each claim should identify the population, setting, user, workflow, input distribution, reference standard, acceptance criteria, failure rules, denominators, uncertainty, version, and exclusions. Testing should include missing, contradictory, shifted, adversarial, and low-quality inputs, plus repeated-run and equivalent-input testing.",
+      "position_gist": "Competency evidence should be claim-specific and traceable—specifying population, setting, user, workflow, input distribution, reference standard, acceptance criteria, denominators, uncertainty, and version—and should include stress testing with degraded, contradictory, shifted, and adversarial inputs as well as repeatability testing, rather than resting on a single benchmark score.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q10"
+      ],
+      "source_passage": "Public benchmark performance should not be presumed to predict clinical performance. Sponsors should explain why a benchmark represents the intended use and where its distribution differs from the operating environment.",
+      "position_gist": "Benchmark performance should not be presumed predictive of clinical performance; sponsors should justify a benchmark's representativeness of the intended use and document distributional differences from the operating environment.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q16"
+      ],
+      "source_passage": "When a sponsor controls test construction, tuning, scoring, and interpretation, external adjudication, preregistration, blinded evaluation, locked tests, or qualified reproduction may be appropriate.",
+      "position_gist": "Where sponsors control test construction, tuning, scoring, and interpretation, safeguards such as external adjudication, preregistration, blinded evaluation, locked tests, or qualified independent reproduction may be appropriate.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q13"
+      ],
+      "source_passage": "Synthetic data can support schema testing, fault injection, specified rare cases, and reproducibility. It should not, by itself, establish real-world prevalence, workflow effects, subgroup performance, clinical performance, or benefit-risk.",
+      "position_gist": "Synthetic data is well-suited to schema testing, fault injection, specified rare cases, and reproducibility but should not alone establish real-world prevalence, workflow effects, subgroup performance, clinical performance, or benefit-risk.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q12"
+      ],
+      "source_passage": "Synthetic and real-data results should remain separate unless they estimate the same quantity under compatible conditions.",
+      "position_gist": "Synthetic and real-data performance results should be reported separately and only combined when they estimate the same quantity under compatible conditions.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "Postmarket monitoring should not substitute for evidence needed before use. Greater residual uncertainty may be acceptable only when failures are promptly detectable, consequences are limited or reversible, exposure is bounded, and containment is feasible.",
+      "position_gist": "Postmarket monitoring should not replace necessary premarket evidence; greater premarket uncertainty is acceptable only when failures are promptly detectable, consequences limited or reversible, exposure bounded, and containment feasible.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "A credible lifecycle program should include a versioned baseline; denominator and deployment-context data; performance, safety, data-quality, and process indicators; investigation thresholds; incident linkage; review ownership; and rollback, suspension, or reassessment rules.",
+      "position_gist": "A credible postmarket program should include a versioned baseline, denominator and deployment-context data, performance/safety/data-quality/process indicators, investigation thresholds, incident linkage, defined review ownership, and rollback or suspension rules.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q22"
+      ],
+      "source_passage": "Reassessment should follow material changes in the model, prompts, retrieval corpus, orchestration, tools, guardrails, interface, intended use, users, population, workflow, source data, or clinical practice. New safety signals, subgroup degradation, unexplained output shifts, repeated tool failures, and lost traceability should also trigger review.",
+      "position_gist": "Reassessment against the baseline should be triggered by material changes to the model, prompts, retrieval corpus, orchestration, tools, guardrails, interface, intended use, users, population, workflow, source data, or practice, as well as by new safety signals, subgroup degradation, unexplained output shifts, repeated tool failures, or lost traceability.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q24"
+      ],
+      "source_passage": "Manufacturers using third-party foundation models should maintain a versioned dependency inventory rather than rely on a model name or release label. Controls should support change notice, version identification, incident notification, impact assessment, and rollback or pinning where feasible. Regression tests, canary testing, runtime fingerprints, shadow evaluation, and output-distribution monitoring can help detect change. If a dependency cannot be adequately detected, assessed, or controlled, that uncertainty should narrow permitted use and strengthen safeguards.",
+      "position_gist": "Manufacturers should maintain versioned third-party model dependency inventories with contractual and technical controls (change and incident notice, version identification, impact assessment, rollback/pinning) plus detection methods like regression, canary, fingerprint, shadow, and output-distribution monitoring, and should narrow permitted use when a dependency cannot be adequately controlled.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Agentic systems require evaluation of output quality and action-sequence safety. Criteria should address tool selection, parameters, authorization boundaries, least privilege, stale or adversarial results, approval before irreversible actions, interruption, timeout, rollback, recovery, prompt injection, logging, partial failure, and refusal when authority or confirmation is missing. Oversight is meaningful only when it occurs before the consequential action, the reviewer has the information needed to decide, and the system cannot bypass or pressure the checkpoint.",
+      "position_gist": "Agentic devices should be evaluated for action-sequence safety (tool selection, authorization boundaries, least privilege, approval before irreversible actions, interruption/rollback, prompt injection, logging, refusal) and human oversight counts only if it precedes the consequential action, is adequately informed, and cannot be bypassed.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q19",
+        "q9"
+      ],
+      "source_passage": "FDA&#39;s framework would be strengthened by structured risk modifiers, traceable competency evidence, explicit uncertainty, and versioned lifecycle decision records. Calibration, benchmark capability, and monitoring should not conceal failures in intended-use relevance, discrimination, threshold behavior, or clinically important strata. Null, adverse, conflicting, blocked, and unavailable evidence should remain visible throughout the product life cycle.",
+      "position_gist": "Overall, FDA should require structured risk modifiers, traceable competency evidence, explicit uncertainty, and versioned lifecycle decision records, and ensure that calibration, benchmark scores, and monitoring do not mask failures in intended-use relevance, discrimination, thresholds, or important strata, with null and adverse evidence remaining visible.",
+      "segment_id": "seg-014"
+    }
+  ]
+}

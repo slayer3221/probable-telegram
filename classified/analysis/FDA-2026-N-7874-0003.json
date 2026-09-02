@@ -1,0 +1,1226 @@
+{
+  "comment_id": "FDA-2026-N-7874-0003",
+  "input_hash": "986b477b6868ca51",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "regulatory_scope",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The discussion paper sets out regulatory concepts but does not indicate which generative AI device types fall into which regulatory pathway, leaving manufacturers without a predictable basis for development investment decisions.",
+      "requested_fda_action": "Publish a decision matrix that links device risk tier derived from the two-axis framework to the applicable premarket pathway (510(k), De Novo, or PMA) and to the corresponding premarket evidence requirements.",
+      "confidence": "medium",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The commenter ties the absence of a risk-tier-to-pathway and evidence mapping directly to manufacturers' inability to make rational development investment decisions."
+      },
+      "public_summary": "Commenter accepts the paper's regulatory concepts but says they lack a clear mapping of device types to pathways. Asks FDA to publish a decision matrix linking risk tier under the two-axis framework to 510(k), De Novo, or PMA and associated evidence requirements.",
+      "summary_cut": false,
+      "source_passage": "The Discussion Paper describes regulatory concepts without providing a clear map of which generative AI device type belongs in which regulatory pathway. Before manufacturers can make rational development investments, FDA must publish a decision matrix that links device risk tier (derived from the two-axis framework) to the applicable regulatory pathway — 510(k), De Novo, or PMA — and to the corresponding premarket evidence requirements."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "directiveness",
+      "stakeholder_concern": "The commenter regards the two-axis structure — device activity spanning non-directive, action-directing, and action-taking, crossed with the consequence of an incorrect output — as the correct organizing principle for stratifying generative AI risk, while indicating that refinements are needed.",
+      "requested_fda_action": "Retain the two-axis risk framework as the basis for GenAI risk stratification, incorporating the refinements the commenter goes on to propose (not specified in this passage).",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter strongly endorses FDA's two-axis risk framework — device activity from non-directive to action-directing to action-taking, crossed with consequences of incorrect output — as the right organizing principle for generative AI risk stratification, while stating that refinements follow.",
+      "summary_cut": false,
+      "source_passage": "The two-axis framework — characterizing device activity on a spectrum from non- directive to action-directing to action-taking, crossed with an assessment of the consequences of incorrect output — is the right organizing principle for generative AI risk stratification. WHM supports it strongly and offers the following refinements."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q1",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter argues the two-axis risk framework omits third-party model dependency, noting that a device built on an opaque, externally controlled foundation model—where the manufacturer lacks visibility, contractual governance rights, and change notification—has a materially different risk profile than one built on a manufacturer-controlled, auditable model.",
+      "requested_fda_action": "Add third-party model dependency as an explicit risk dimension in the risk framework, and assign higher baseline risk classification to devices heavily dependent on non-disclosed, externally controlled foundation models.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment centers on the manufacturer's lack of visibility, contractual governance rights, and change notification regarding upstream foundation model suppliers as a risk-relevant deficiency.",
+        "distributed_accountability": "It highlights that control over model behavior and changes rests with an external developer rather than the device manufacturer, complicating who is answerable for device safety."
+      },
+      "public_summary": "Accepts the risk framework's direction but says it omits third-party model dependency. Recommends FDA add this as an explicit risk dimension, assigning higher baseline risk classification where manufacturers lack visibility, contractual governance rights, or change notification for externally controlled foundation models.",
+      "summary_cut": false,
+      "source_passage": "First, third-party model dependency is a material risk factor not reflected in the current framework. A generative AI device built entirely on a proprietary, auditable, manufacturer- controlled model presents a fundamentally different risk profile than a device built on an opaque third-party foundation model over which the manufacturer has no visibility, no contractual governance rights, and no notification of changes. ... FDA should add third-party model dependency as an explicit risk dimension, with devices heavily dependent on non-disclosed, externally controlled foundation models receiving higher baseline risk classification."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "The commenter argues the consequence axis captures severity of harm but not whether a resulting action can be undone, so recommendations reviewed by a clinician over hours are treated similarly to commands that trigger immediate, irreversible actions such as a drug infusion, neurostimulation parameter change, or surgical robot maneuver.",
+      "requested_fda_action": "Add reversibility as a separate, first-order dimension in the risk framework, distinct from the existing consequence axis, to better reflect clinical realities.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The passage distinguishes outputs a clinician reviews before acting from AI-generated commands that directly trigger immediate physical interventions, highlighting risk arising from action authority exercised without intervening human review."
+      },
+      "public_summary": "Accepts the two-axis framework but asks FDA to add reversibility as a separate, first-order risk dimension, arguing the consequence axis captures severity but not irreversibility—distinguishing clinician-reviewed recommendations from AI commands triggering immediate actions like infusions or robotic maneuvers.",
+      "summary_cut": false,
+      "source_passage": "Second, reversibility must be treated as a first-order risk factor. An AI- generated recommendation that a clinician reviews and acts upon over the course of hours is materially different from an AI-generated command that triggers an immediate, irreversible action — a drug infusion, a neurostimulation parameter change, a surgical robot maneuver. The current framework's consequence axis captures severity but does not fully capture irreversibility. A separate reversibility dimension would strengthen the framework's clinical fidelity."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter states that the two-axis framework does not distinguish real-time from asynchronous deployment, and that time pressure combined with the presence or absence of clinician review before action creates meaningfully different risk profiles.",
+      "requested_fda_action": "Add temporal urgency (real-time versus asynchronous workflow) as an explicit dimension in the risk framework, applying higher scrutiny to real-time autonomous action such as AI-guided emergency drug dosing than to asynchronous recommendations reviewed by a clinician.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter's risk distinction turns on whether a clinician has a realistic opportunity to review the output before action, making the human-plus-device workflow, not the model alone, the unit of risk assessment."
+      },
+      "public_summary": "Accepts the two-axis risk framework but asks FDA to add temporal urgency as a distinct dimension, arguing real-time autonomous action under time pressure (e.g., emergency drug dosing) warrants higher scrutiny than asynchronous outputs a clinician reviews before acting.",
+      "summary_cut": false,
+      "source_passage": "Third, temporal urgency — whether the device operates in real-time versus asynchronous clinical workflows — creates meaningfully different risk profiles that the current framework does not distinguish. Real-time autonomous action under time pressure (e.g., AI-guided emergency drug dosing) warrants higher scrutiny than asynchronous AI-generated care plan recommendations reviewed by a clinician before acting."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q2"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter accepts that directiveness exists on a continuum but says manufacturers need a predictable bright line to plan development programs.",
+      "requested_fda_action": "Establish a rebuttable presumption that any generative AI output containing specific numeric parameters (drug doses, device therapy thresholds, surgical dimensions) is action-directing regardless of framing, with manufacturers able to rebut through pre-submission consultation.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Agrees directiveness is a spectrum, but asks FDA to add a predictable bright line: outputs containing specific numeric parameters such as drug doses, therapy thresholds, or surgical dimensions would be presumed action-directing, rebuttable through pre-submission consultation.",
+      "summary_cut": false,
+      "source_passage": "WHM supports characterizing directiveness as a spectrum rather than a binary, but manufacturers require a safe harbor bright line to plan development programs. ... We recommend that FDA establish a rebuttable presumption: any generative AI output that includes specific numeric parameters — drug doses, device therapy thresholds, surgical dimensions — is presumptively action-directing, regardless of framing language. Manufacturers who believe their device should be characterized differently can rebut the presumption through pre-submission consultation."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q2",
+        "q3"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "regulatory_scope",
+      "stakeholder_concern": "Commenter agrees patients generally lack clinical training to contextualize, assess limitations of, or override AI outputs, so patient-facing functions warrant differential treatment, but is concerned FDA could overreach by treating ordinary patient-facing informational tools (symptom checkers, medication reminders, wellness education) as action-directing simply because a patient may act on what they read.",
+      "requested_fda_action": "Maintain differential regulatory treatment for patient-facing versus HCP-facing functions, but define clear boundaries based on clinical specificity: outputs containing specific clinical recommendations (e.g., go to the emergency room) warrant closer scrutiny, while general information without clinical specificity generally should not.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports FDA treating patient-facing functions differently, citing patients' limited ability to contextualize or override outputs, but asks FDA to draw clear boundaries so general informational tools are not deemed action-directing; only outputs with specific clinical recommendations should face closer scrutiny.",
+      "summary_cut": false,
+      "source_passage": "FDA is right to treat patient-facing and HCP-facing applications differently. Patients generally lack the clinical training to contextualize AI-generated outputs, assess limitations, or override recommendations that conflict with their broader clinical picture. WHM supports differential regulatory treatment.\n\nHowever, FDA must be careful not to overreach. Patient-facing informational tools — symptom checkers, post-discharge medication reminders, general wellness education — should not be regulated as action-directing devices merely because a patient reads and acts upon them. ... FDA should define clear boundaries: patient-facing tools that include specific clinical recommendations (e.g., \"your symptoms indicate you should go to the emergency room\") are meaningfully different from those that provide general information without clinical specificity (e.g., \"these are common side effects of your medication\"). The former warrants closer scrutiny; the latter generally should not."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q4"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "intended_use",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter states that the same generative AI tool carries different risk implications depending on whether the user is a relevant specialist or a generalist without specialty training in interpreting its outputs.",
+      "requested_fda_action": "FDA should explicitly address the generalist/specialist distinction in labeling and intended use requirements, requiring manufacturers to specify the intended clinical user's competency level and to validate device performance within that specific user population.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment ties device performance validation to the competency of the specific clinician user population rather than to the model alone, framing safety as a property of the clinician-device pairing."
+      },
+      "public_summary": "Agrees the generalist/specialist distinction is clinically significant, noting the same tool poses different risks for a specialist versus an untrained generalist. Asks FDA to go further by requiring labeling and intended use to state user competency level and validation within that user population.",
+      "summary_cut": false,
+      "source_passage": "The distinction between generalist and specialist HCP-facing applications is clinically significant. A generative AI tool designed for use by a board- certified interventional cardiologist carries different risk implications than the same tool used by a primary care physician without specialty training in interpreting its outputs. FDA should address this distinction explicitly in its labeling and intended use requirements, requiring manufacturers to specify the intended clinical user's competency level and to validate performance within that specific user population."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q5"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "intended_use",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "Turn-by-turn risk assessment is inadequate for multi-turn conversational GenAI devices because behavior emerges across an exchange and can drift toward higher-risk, action-directing outputs.",
+      "requested_fda_action": "Define an 'interaction envelope' concept covering the full manufacturer-defined intended-use clinical interaction, require risk assessment at the interaction level with classification set by the highest-risk plausible turn, and require manufacturers to technically constrain the envelope with defined response behaviors (disclaimer, refusal, escalation) when conversations migrate outside it.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment proposes a manufacturer-defined and technically enforced 'interaction envelope' to bound emergent conversational behavior, treating intended use as a dynamic behavioral scope rather than a static statement."
+      },
+      "public_summary": "Supports assessing multi-turn conversational risk but asks FDA to go further: define an \"interaction envelope\" of the intended clinical interaction, classify risk by the highest-risk plausible turn, and require manufacturers to technically constrain scope with defined responses (disclaimer, refusal, escalation) when conversations drift outside it.",
+      "summary_cut": false,
+      "source_passage": "Risk in multi-turn conversational AI cannot be assessed at the level of individual turns. ... FDA should define the concept of an \"interaction envelope\" — the full scope of an intended-use clinical interaction as defined by the manufacturer — and require that risk be assessed at the interaction level, with the device's highest-risk plausible turn defining the interaction's risk classification. Manufacturers must define and technically constrain the intended interaction scope; any conversation that migrates outside the intended envelope should trigger a defined response behavior (e.g., disclaimer, refusal, escalation)."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter holds that under-escalation is generally the more severe error, with potential for direct patient injury or death, while over-escalation mainly produces system burden, anxiety, and cost — yet over-escalation still matters in resource-constrained settings where unnecessary escalations may divert care from other patients.",
+      "requested_fda_action": "Establish asymmetric harm standards for care escalation functions, weighting under-escalation threshold failures more heavily in risk classification and performance evaluation, while still accounting for over-escalation harms rather than dismissing them.",
+      "confidence": "high",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment identifies over-escalation harms that operate at the system level — capacity burden, cost, and deprivation of timely care for other patients — rather than as direct injury to the individual patient."
+      },
+      "public_summary": "Supports FDA's dual consideration of escalation errors but asks for explicitly asymmetric standards: under-escalation failures weighted more heavily in risk classification and performance evaluation, while over-escalation is still counted, especially in resource-constrained settings where unnecessary escalations divert care from other patients.",
+      "summary_cut": false,
+      "source_passage": "Under-escalation — failure to recognize that a patient's condition warrants urgent intervention — represents the more severe harm in most clinical contexts, with potential for direct patient injury or death. Over-escalation ... creates system burden, patient anxiety, and economic costs, but is rarely life-threatening. FDA should establish asymmetric harm standards for escalation decisions: under-escalation threshold failures should be weighted more heavily in risk classification and performance evaluation. However, over-escalation cannot be dismissed entirely, particularly in resource-constrained environments where unnecessary escalations may deprive other patients of timely care."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter views generative AI systems as operating more like clinical judgment than traditional deterministic software, and considers a competency-based evaluation structure the appropriate way to assess them.",
+      "requested_fda_action": "Adopt and retain the competency-based approach (device benchmarking followed by clinical confirmation) as the foundation of FDA's regulatory framework for generative AI-enabled devices.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter endorses FDA's competency-based approach of benchmarking followed by clinical confirmation, describing it as analogous to how human clinical expertise is validated through board certification and simulation assessment, and appropriate for AI that resembles clinical judgment rather than deterministic software.",
+      "summary_cut": false,
+      "source_passage": "Yes. The competency-based approach is the appropriate framework for evaluating generative AI devices, and FDA deserves credit for developing it. It mirrors the structure by which human clinical expertise is validated — board certification, specialty credentialing, simulation-based assessment — and creates a principled basis for evaluating AI systems that operate similarly to clinical judgment rather than to traditional deterministic software. WHM strongly supports this framework as the foundation for FDA's regulatory approach."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter argues the two-axis risk framework cannot function unless risk tiers are explicitly linked to regulatory pathways and corresponding premarket evidence expectations, which the discussion paper does not currently do.",
+      "requested_fda_action": "Publish a clear, public decision matrix connecting risk tier to regulatory pathway and premarket evidence requirements before finalizing the approach, and include that matrix as an appendix to any final guidance with worked examples for representative device categories.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts the two-axis risk framework but treats pathway mapping as a prerequisite: FDA should publish, before finalizing, a public decision matrix linking risk tier to regulatory pathway and premarket evidence requirements, appended to final guidance with examples for representative device categories.",
+      "summary_cut": false,
+      "source_passage": "Mapping the two-axis risk framework to specific regulatory pathways is not merely useful — it is a prerequisite for the framework to function. ... FDA must publish a decision matrix — a clear, public reference linking risk tier (derived from the two-axis framework) to regulatory pathway and corresponding premarket evidence requirements — before finalizing this regulatory approach. ... We recommend that the decision matrix be included as an appendix to any final guidance document, with explicit examples for representative device categories."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter considers the proposed benchmarking architecture (Safety, Clinical Proficiency, Generalizability, Agentic AI) sound in general, but argues it is domain-neutral and does not reflect the specialty-specific clinical environments in which generative AI devices operate.",
+      "requested_fda_action": "FDA should require specialty domain modules as additions to the core benchmarking structure for devices with defined clinical specialty applications, developed with input from relevant professional societies (e.g., ACC, AAN, ACR) and updated periodically as clinical standards evolve.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment proposes that professional societies help develop and periodically update required benchmark modules, giving external bodies a role in defining regulatory evidence content."
+      },
+      "public_summary": "Calls the proposed benchmarking structure a sound general architecture but says it is domain-neutral; asks FDA to require specialty domain modules for devices with defined specialty applications, developed with professional society input and updated periodically as clinical standards evolve.",
+      "summary_cut": false,
+      "source_passage": "The benchmarking structure described in the Discussion Paper — organized across Safety (S.1– S.3), Clinical Proficiency (E.1–E.4), Generalizability (R.1–R.2), and Agentic AI (A.1) — is a sound general architecture. However, medical device generative AI does not exist in a domain-neutral clinical environment. ... FDA should establish specialty domain modules as required additions to the core benchmarking structure for devices with defined clinical specialty applications. These modules should be developed with input from relevant professional societies — the American College of Cardiology, the American Academy of Neurology, the American College of Radiology, and their counterparts — and should be updated periodically as clinical standards evolve."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q10",
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Publicly available or sponsor-developed benchmarks are vulnerable to contamination and optimization to the test, so benchmark results may not credibly predict real-world performance unless evaluation data are sequestered and scoring is independent.",
+      "requested_fda_action": "Establish a sequestered national medical AI benchmark repository with NIST, maintained by an independent steward with tightly controlled access and blinded third-party submission and scoring; require third-party validation of construct validity before accepting sponsor-developed benchmarks as primary evidence.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment would place benchmark custody, blinded scoring, and construct-validity validation in the hands of an independent steward and third parties rather than FDA or sponsors, raising questions about how that delegated evaluation role is governed."
+      },
+      "public_summary": "Supports benchmarking but urges independent infrastructure: a sequestered national medical AI benchmark repository developed with NIST, maintained by an independent steward with controlled access and blinded third-party scoring, and third-party validation of construct validity before FDA accepts sponsor-developed benchmarks as primary evidence.",
+      "summary_cut": false,
+      "source_passage": "FDA should establish a sequestered national benchmark repository for medical AI, developed in collaboration with NIST and maintained by an independent steward, analogous to NIST's existing machine learning benchmarking challenges. Access to the sequestered evaluation set should be tightly controlled, with submission and scoring handled through a blinded third-party process. Sponsor-developed benchmarks should require third-party validation of construct validity before FDA will accept them as primary evidence."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q11"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "clinical_validation",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter is concerned that a broadly applied prospective randomized study requirement would be disproportionate to actual risk and would make the competency-based framework economically unworkable for most Class II generative AI device categories.",
+      "requested_fda_action": "Calibrate clinical confirmation to risk: accept shadow deployment plus retrospective clinical outcome evaluation for Class II devices used under HCP supervision, and reserve prospective randomized studies for autonomous, patient-facing Class III devices whose outputs drive clinical action without contemporaneous HCP oversight.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The commenter argues that broad prospective RCT requirements would make the competency-based framework economically unworkable for most Class II generative AI devices.",
+        "human_ai_system_performance": "The proposed evidence tiering rests on whether contemporaneous HCP oversight is present in the deployed human-AI configuration, rather than on the device evaluated alone."
+      },
+      "public_summary": "Supports the tiered clinical confirmation concept but asks FDA to calibrate it to risk: shadow deployment plus retrospective outcome evaluation for HCP-supervised Class II devices, with prospective randomized studies reserved for autonomous, patient-facing Class III devices lacking contemporaneous oversight.",
+      "summary_cut": false,
+      "source_passage": "The threshold for requiring a prospective clinical study should be calibrated to actual risk, not applied uniformly across device categories. For Class II devices operating in HCP-supervised environments, shadow deployment combined with retrospective clinical outcome evaluation should generally satisfy the clinical confirmation requirement. ... Prospective randomized clinical study design should be reserved for autonomous, patient- facing, Class III devices where AI-generated outputs will directly drive clinical actions without contemporaneous HCP oversight. Applying prospective RCT requirements broadly would render the competency-based framework economically unworkable for the vast majority of Class II generative AI device categories"
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q12",
+        "q13"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Synthetic data generated by model families similar to the device under evaluation creates circular validation, and synthetic data is seen as especially unreliable for assessing performance in underrepresented racial, ethnic, and demographic subgroups.",
+      "requested_fda_action": "Require out-of-distribution validation for any device using synthetic data in performance evaluation, and require that subpopulation performance validation rest on real-world data augmented by documented synthetic sources rather than synthetic data as a primary evidentiary substitute.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter agrees synthetic data can aid training and augment evaluation for underrepresented populations, but calls its validation limitations substantial. Asks FDA to mandate out-of-distribution validation whenever synthetic data is used, and to require real-world data—augmented, not replaced, by documented synthetic sources—for subgroup performance validation.",
+      "summary_cut": false,
+      "source_passage": "Synthetic data has genuine utility in training and in augmenting performance evaluation for underrepresented populations, but its limitations for validation are substantial and must be explicitly addressed. Most critically: synthetic data generated by model families similar to the device under evaluation creates circular validation. ... FDA should require out-of-distribution (OOD) validation for any device that uses synthetic data in its performance evaluation. ... Additionally, synthetic data is particularly problematic for assessing performance across underrepresented racial, ethnic, and demographic subgroups ... For subpopulation performance validation, FDA should require real-world data augmented with carefully documented synthetic sources, not synthetic data as a primary evidentiary substitute."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Using the 'median clinician in practice' as the primary comparator would normalize prevailing rather than appropriate care levels for specialty AI devices; comparators should reflect specialist-level performance and the realistic clinical alternative in the intended-use setting.",
+      "requested_fda_action": "Adopt board-certified specialist performance within the device's clinical domain (under intended-use conditions) as the comparator for specialty devices, allow delayed specialist review as the comparator for access-expanding devices in underserved settings, and codify these options in the decision matrix and guidance.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts FDA's comparator framework but opposes 'median clinician in practice' as the primary standard for specialty devices, urging board-certified specialist performance under intended-use conditions, and delayed specialist review where devices expand access in underserved settings, codified in guidance.",
+      "summary_cut": false,
+      "source_passage": "WHM recommends against using \"median clinician in practice\" as the primary performance comparator for specialty AI devices. This standard, while operationally measurable, normalizes the level of care that happens to prevail in clinical practice ... For specialty devices, the appropriate comparator is board-certified specialist performance within the device's intended clinical domain and under conditions that reflect intended-use clinical environments. For devices intended to expand access to specialist-level care in underserved settings, comparison against delayed specialist review — reflecting the realistic clinical alternative — is appropriate and clinically meaningful. FDA should codify these comparator options in its decision matrix and guidance documents."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q13"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that generalizability gaps are most likely to emerge and cause harm in subpopulations, and that synthetic data could be relied upon in place of real-world evidence for validating performance in those groups.",
+      "requested_fda_action": "FDA should require that subpopulation performance validation rest on real-world data, with carefully documented synthetic sources used only as an augmentation rather than as a primary evidentiary substitute.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter accepts synthetic data only as a documented supplement, not a primary substitute, for validating subpopulation performance, arguing generalizability gaps and resulting harms are most likely in subpopulations and should be demonstrated with real-world data.",
+      "summary_cut": false,
+      "source_passage": "izability gaps are most likely to emerge and most likely to cause harm. For subpopulation performance validation, FDA should require real-world data augmented with carefully documented synthetic sources, not synthetic data as a primary evidentiary substitute."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "Independent third-party adjudication adds credibility and reduces sponsor bias, but poorly structured accreditation could concentrate testing in a few well-resourced labs whose costs and entry barriers smaller manufacturers cannot sustain.",
+      "requested_fda_action": "Expand the ASCA program to explicitly accredit qualified AI benchmarking organizations with published qualification criteria and standardized fee structures, and actively encourage multiple testers, including academic medical centers with specialty domain expertise.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment warns that concentrated third-party testing would impose costs smaller manufacturers cannot sustain.",
+        "delegated_authority": "It addresses how FDA structures and accredits private testing organizations acting as gatekeepers in device evaluation."
+      },
+      "public_summary": "WHM supports independent third-party benchmarking and clinical confirmation but warns that unstructured accreditation could create a testing duopoly. It asks FDA to extend ASCA to AI benchmarking organizations with published criteria and standardized fees, encouraging multiple testers including academic medical centers.",
+      "summary_cut": false,
+      "source_passage": "WHM strongly supports the use of independent third-party organizations in benchmarking and clinical confirmation. Independent adjudication provides credibility, reduces sponsorship bias, and improves the reliability of performance evidence. However, if FDA is not deliberate about the structure of third-party testing, it risks creating a duopoly of approved testing organizations — a small number of well-resourced labs with high barriers to entry that impose costs which smaller manufacturers cannot sustain.\nFDA should expand its Accreditation Scheme for Conformity Assessment (ASCA) program to explicitly include qualified AI benchmarking organizations, with published, standardized fee structures and published qualification criteria. Multiple qualified testing organizations should be actively encouraged, including academic medical centers that have the domain expertise to conduct specialty-relevant evaluation. The goal is a competitive, pluralistic testing ecosystem — not a regulatory gatekeeping bottleneck."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q17"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Multimodal devices combining imaging AI with language model components create a combined risk profile that cannot be assessed by evaluating each modality separately; component-level benchmarking alone may miss integration-related degradation.",
+      "requested_fda_action": "Require each modality to meet domain-specific benchmarking requirements plus a demonstration that integrated performance is not materially degraded versus standalone component performance, and issue a companion guidance for multimodal architectures developed with imaging, clinical AI, and specialty society stakeholders.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports extending the competency-based approach to multimodal devices but asks FDA to require both domain-specific benchmarking for each modality and evidence that integrated performance is not materially degraded, plus a dedicated companion guidance developed with imaging, clinical AI, and specialty society input.",
+      "summary_cut": false,
+      "source_passage": "Multimodal devices — those integrating imaging AI with clinical language model components, for example — require explicit framework adaptation. A device that analyzes echocardiographic imaging while simultaneously processing the patient's clinical history through a language model presents a combined risk profile that cannot be adequately assessed by treating each modality in isolation. Each modality must satisfy its domain-specific benchmarking requirements, and the integrated device must demonstrate that combined performance is not materially degraded relative to each component's standalone performance. FDA should issue a specific companion guidance document for multimodal architectures, developed in consultation with imaging, clinical AI, and specialty professional society stakeholders."
+    },
+    {
+      "segment_id": "seg-021",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter accepts trading premarket uncertainty for postmarket monitoring but is concerned that monitoring commitments could become aspirational or negotiated after clearance rather than binding.",
+      "requested_fda_action": "Require that the postmarket monitoring plan—metrics, data collection methodology, reporting cadence, reassessment triggers, and performance thresholds prompting mandatory regulatory action—be fully prespecified at authorization and legally enforceable, with premarket flexibility scaled to the rigor of the monitoring commitment.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment focuses on making ongoing post-authorization performance assurance an enforceable, prespecified obligation rather than a discretionary commitment, which goes beyond FDA's framing of conditions for reduced premarket evidence."
+      },
+      "public_summary": "Endorses accepting greater premarket uncertainty in exchange for postmarket monitoring, but only if the monitoring plan—metrics, methodology, cadence, reassessment triggers, and action thresholds—is fully prespecified at authorization and legally enforceable, with premarket flexibility proportional to monitoring rigor.",
+      "summary_cut": false,
+      "source_passage": "The proposal to accept greater premarket uncertainty in exchange for stronger, more rigorous postmarket monitoring is conceptually sound and practically necessary for generative AI devices. ... WHM endorses this general principle with one critical condition: the postmarket monitoring plan must be fully prespecified at the time of market authorization. It cannot be left to post-clearance negotiation. The monitoring plan — including performance metrics, data collection methodology, reporting cadence, triggering events for reassessment, and defined performance thresholds that would trigger mandatory regulatory action — must be a legally enforceable\n\ncommitment, not an aspirational document. Manufacturers who commit to robust postmarket monitoring should receive meaningful premarket flexibility; those who cannot commit to rigorous monitoring should face correspondingly rigorous premarket standards."
+    },
+    {
+      "segment_id": "seg-022",
+      "question_ids": [
+        "q19",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter is concerned that postmarket reassessment cadence and triggers for GenAI-enabled devices are undefined, and that monitoring intensity should scale with device risk characteristics such as action-taking capability, patient-facing use, and irreversibility of outputs.",
+      "requested_fda_action": "Adopt a default risk-tiered monitoring and reporting cadence (quarterly for high-risk, semi-annual review/annual reporting for medium-risk, annual for lower-risk), modifiable by device characteristics, and mandate out-of-cycle reassessment on specified triggers including foundation model version or architecture changes, adverse event clusters meeting pre-set thresholds, payer policy changes affecting indicated use, peer regulator actions on similar devices, and peer-reviewed evidence undermining the device's clinical assumptions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The commenter would make any material change to the underlying third-party foundation model version or architecture a mandatory trigger for out-of-cycle reassessment, treating upstream supplier changes as a postmarket monitoring obligation.",
+        "dynamic_intended_use": "The proposed triggers include payer policy changes affecting indicated clinical use and new published evidence undermining the clinical assumptions behind the intended use, implying the intended use envelope can shift after authorization."
+      },
+      "public_summary": "Endorses postmarket performance evaluation but asks FDA to specify a default risk-tiered cadence—quarterly, semi-annual, or annual review and reporting by device risk—modifiable per device, plus mandatory out-of-cycle reassessment triggers including foundation model changes, adverse event clusters, payer policy shifts, peer-regulator actions, and new evidence.",
+      "summary_cut": false,
+      "source_passage": "FDA should adopt a risk-tiered monitoring cadence as a default framework, subject to modification based on device-specific characteristics:\n•High-risk devices (action-taking, patient-facing, or involving irreversible outputs): quarterly performance review with quarterly reporting to FDA.\n•Medium-risk devices (action-directing, HCP-supervised): semi-annual performance review with annual reporting to FDA, supplemented by event- triggered reporting as defined below.\n•Lower-risk devices (non-directive, decision-support): annual performance review with annual reporting to FDA.\nTriggering events requiring mandatory out-of-cycle reassessment should include, at minimum: any material change to the underlying foundation model version or architecture; any MDR or adverse event cluster meeting pre-specified thresholds; any payer policy change affecting the device's indicated clinical use; any regulatory action by a peer regulatory authority (EU, Health Canada, TGA) on the same or substantially similar device; and any published peer-reviewed evidence that calls into question the clinical assumptions underlying the device's intended use."
+    },
+    {
+      "segment_id": "seg-023",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Using AI to monitor AI creates a recursive reliability problem — the reliability of the supervisory agent itself is unvalidated, raising the question of who monitors the monitor.",
+      "requested_fda_action": "Before allowing machine supervisory agents as a primary postmarket monitoring mechanism, FDA should set performance standards for the agents themselves (validated sensitivity/specificity for detecting degradation, periodic accuracy re-evaluation, and a mandatory human review layer triggered by alerts), and open a separate docket or technical working group to develop those standards in parallel with the main GenAI framework.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment centers on the risk of delegating safety-critical monitoring oversight to an automated supervisory agent whose own reliability is unestablished.",
+        "human_ai_system_performance": "It conditions acceptability on a mandatory human review layer triggered by agent alerts, making the monitoring system's performance a combined human-AI question rather than an agent-only one."
+      },
+      "public_summary": "Sees promise in machine supervisory agents for postmarket monitoring but argues FDA must first address the \"who monitors the monitor\" problem by setting validated sensitivity/specificity standards, periodic agent accuracy re-evaluation, and mandatory human review of alerts, developed via a separate docket or working group.",
+      "summary_cut": false,
+      "source_passage": "The use of machine-based supervisory agents to conduct real-time postmarket monitoring of generative AI devices is promising and merits continued development. However, it creates a recursive reliability problem that FDA must address directly: if AI is used to monitor AI, who monitors the monitor?\nBefore FDA permits the use of machine supervisory agents as a primary postmarket monitoring mechanism, it must establish performance standards for the supervisory agents themselves — including validated sensitivity and specificity requirements for detecting performance degradation, mandatory periodic evaluation of the supervisory agent's own accuracy, and a mandatory human review layer triggered by supervisory agent alerts. FDA should initiate a separate docket or technical working group to develop supervisory agent performance standards in parallel with the primary GenAI device regulatory framework."
+    },
+    {
+      "segment_id": "seg-024",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter is concerned that multi-stakeholder postmarket monitoring roles remain undefined, leaving gaps in who detects, adjudicates, and reports GenAI device performance problems. It emphasizes that manufacturers must retain primary obligations while institutions, professional societies, and foundation model developers carry defined complementary duties.",
+      "requested_fda_action": "Codify in final guidance the specific postmarket monitoring responsibilities of each stakeholder class — institutions for local workflow monitoring and institutional adverse event detection/reporting, professional societies for domain performance standards and expert MDR adjudication, foundation model developers for proactive disclosure of model changes and known failure modes, and manufacturers for primary reporting and remediation. Also establish clear reporting pathways per class, including electronic submission standards and timelines.",
+      "confidence": "high",
+      "gap_tags": [
+        "distributed_accountability",
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment allocates distinct postmarket duties across institutions, professional societies, model developers, and manufacturers while preserving manufacturer primacy.",
+        "ai_supplier_quality": "It assigns foundation model developers an affirmative duty to proactively disclose model changes and known failure modes.",
+        "deployment_assurance_scalability": "It places local workflow monitoring and user-facing adverse event detection at the deploying healthcare institution, addressing site-level assurance."
+      },
+      "public_summary": "Supports multi-stakeholder postmarket monitoring but asks FDA to codify duties: institutions for local workflow monitoring and event reporting; professional societies for domain standards and MDR expert review; foundation model developers for proactive change and failure-mode disclosure; manufacturers retaining primary reporting and remediation, with defined reporting",
+      "summary_cut": true,
+      "source_passage": "FDA should codify the postmarket monitoring responsibilities of each stakeholder class in its final guidance. Specifically: healthcare institutions — hospitals, integrated delivery networks, ambulatory surgery centers — should bear responsibility for local workflow monitoring, user-\n\nfacing adverse event detection, and institutional adverse event reporting. Professional societies should develop and maintain domain-specific performance standards and should provide expert review for MDR adjudication in their clinical domains. Foundation model developers should bear responsibility for proactive disclosure of model changes and known failure modes. Device manufacturers should retain primary reporting and remediation obligations. FDA should establish clear reporting pathways for each stakeholder class, including electronic submission standards and timeline requirements."
+    },
+    {
+      "segment_id": "seg-025",
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "pccp",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter argues that existing PCCP guidance was built for firmware and design changes and does not fit the types of modifications typical of generative AI devices (model updates, prompt changes, retrieval strategy changes, guardrail adjustments), leaving change control ambiguous.",
+      "requested_fda_action": "Adapt PCCP concepts by establishing three explicit change categories for generative AI devices — Category A locked elements requiring new premarket submission (training data domain, core architecture, intended use expansion, changes materially altering competency benchmark performance), Category B supervised elements eligible for PCCP if benchmark performance stays within prespecified variation limits, and Category C monitored elements requiring documentation only — and publish example lists for each category, updated annually.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts PCCPs but says they need substantial adaptation for generative AI. Proposes three change tiers: locked changes requiring new submission (intended use expansion or materially altered benchmark performance), PCCP-eligible supervised changes within prespecified variation limits, and documentation-only changes, with annually updated FDA example lists.",
+      "summary_cut": false,
+      "source_passage": "Pre-Determined Change Control Plans must be substantially adapted for generative AI devices, where the nature of anticipated changes — model updates, prompt modifications, retrieval strategy refinements, guardrail adjustments — differs fundamentally from the firmware updates or design modifications contemplated by existing PCCP guidance.\nWHM recommends that FDA establish three explicit change categories for generative AI devices: Category A — Locked Elements (require new premarket submission): Changes to training data domain, core model architecture, intended use expansion beyond originally authorized scope, and any change that materially alters the device's performance on its prespecified competency benchmarks.\nCategory B — Supervised Elements (eligible for PCCP): Prompt engineering modifications, retrieval-augmented generation strategy updates, output guardrail changes, and fine-tuning within the original training data domain, provided that performance on competency benchmarks is demonstrated to be maintained within pre-specified variation limits.\nCategory C — Monitored Elements (documentation only): User interface changes, response formatting modifications, language localization updates, and administrative configuration changes that do not affect clinical output.\nFDA should publish explicit example lists for each category, updated annually as generative AI development practices evolve."
+    },
+    {
+      "segment_id": "seg-026",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Third-party foundation model developers can change or deprecate model versions unilaterally, and without enforceable notice and validation gates such changes could reach deployed devices before the manufacturer can validate them.",
+      "requested_fda_action": "As a condition of authorization, require demonstrated contractual rights to at least 90 days advance notice of material model version changes or deprecations, require model version pinning with pre-production validation gates, explicitly prohibit automated deployment of unvalidated foundation model updates, and impose higher premarket evidence requirements where such notification rights cannot be secured.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment treats the foundation model developer as a supplier whose change behavior must be controlled through enforceable contractual notification rights and, absent those rights, higher evidence burdens.",
+        "deployment_assurance_scalability": "It focuses on assuring that no upstream model update reaches a live deployed device without clearing a defined validation protocol, including a ban on automated update deployment."
+      },
+      "public_summary": "Supports FDA's focus on third-party model changes but urges mandatory requirements: authorization conditioned on contractual rights to 90 days' advance notice of material version changes or deprecations, version pinning with pre-deployment validation gates, a ban on automated unvalidated updates, and higher premarket evidence absent notice",
+      "summary_cut": true,
+      "source_passage": "FDA should require — as a condition of market authorization for devices built on third-party foundation models — that manufacturers demonstrate contractual notification rights providing a minimum of ninety days advance notice of any material model version change, including version deprecations. Shorter notice windows are inadequate for conducting validation studies, executing change control procedures, and notifying FDA.\nTechnically, FDA should require manufacturers to implement model versioning pins with pre-production validation gates: no foundation model update should reach a deployed medical\n\ndevice without first clearing a defined validation protocol. Automated deployment of foundation model updates to live medical devices — without validation — should be explicitly prohibited. For devices where contractual notification rights cannot be secured from the foundation model developer, FDA should impose correspondingly higher premarket evidence requirements to account for the elevated ongoing risk."
+    },
+    {
+      "segment_id": "seg-027",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter views the MAF concept as structurally sound but argues that purely voluntary participation will fail because foundation model developers have competitive incentives to withhold training data provenance, architecture details, and known failure modes. The result would be participation by the most transparent developers while the least transparent opt out, effectively penalizing transparency.",
+      "requested_fda_action": "Establish a conditional market access mechanism under which devices built on foundation models lacking a filed MAF, or with MAF content below FDA minimum disclosure standards, face a higher premarket evidence burden through more extensive sponsor-conducted benchmarking and third-party validation, creating an economic incentive to file complete MAFs without legally mandating disclosure.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment centers on the inability of device manufacturers to obtain safety-relevant information about upstream foundation model suppliers absent a mechanism that compels or incentivizes disclosure.",
+        "evidence_burden_commercial_viability": "It proposes using differential premarket evidence burden as an economic lever tied to supplier transparency, linking evidentiary cost to market access."
+      },
+      "public_summary": "Considers voluntary Foundation Model MAFs structurally sound but unworkable as voluntary, arguing developers will withhold data provenance, architecture, and failure modes. Recommends FDA instead tie premarket evidence burden to MAF completeness—requiring more sponsor benchmarking and third-party validation absent adequate disclosure—rather than mandating disclosure.",
+      "summary_cut": false,
+      "source_passage": "The concept of voluntary Foundation Model Device Master Files (MAFs) is structurally sound but will not function as intended on a voluntary basis. Foundation model developers — large technology companies and AI research organizations — have powerful competitive incentives to withhold training data provenance, model architecture details, and known failure mode documentation. Voluntary disclosure, in the absence of any regulatory consequence for non-disclosure, will produce a MAF system that the most responsible foundation model developers participate in, while the least transparent actors opt out entirely. This creates a perverse dynamic in which transparency is penalized.\nWHM recommends that FDA establish a conditional market access mechanism: devices built on foundation models for which no MAF has been filed, or for which MAF content falls below FDA's minimum disclosure standards, should face a higher premarket evidence burden — specifically, requiring more extensive sponsor- conducted benchmarking and third-party validation to compensate for the lack of foundation model transparency. This creates a positive economic incentive for foundation model developers to file complete MAFs without mandating disclosure as a legal matter — a framework that is consistent with FDA's existing least- burdensome principles while addressing the practical incentive problem."
+    },
+    {
+      "segment_id": "seg-028",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter is concerned that foundation model documentation could be too thin to support review unless minimum disclosure content is defined, including data provenance, known clinical failure modes, subgroup performance, version history, guardrails, and notification of material model changes.",
+      "requested_fda_action": "Specify a minimum content set for Foundation Model Master Files, including training data provenance and representation gaps, an inventory of known clinical failure modes, demographic subgroup benchmarks, versioned changelogs, guardrail architecture, and an update notification protocol for downstream device manufacturers.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment treats the foundation model developer as an upstream supplier whose data provenance, known failure modes, versioning, and change notifications must be documented for downstream device assurance.",
+        "distributed_accountability": "It ties device safety to information held by a separate model developer and asks for a protocol ensuring manufacturers are informed of material upstream changes."
+      },
+      "public_summary": "Accepts the Foundation Model Master File concept but asks FDA to mandate minimum content: training data provenance and representation gaps, known clinical failure modes, demographic subgroup benchmarks, versioned changelogs, guardrail architecture, and a protocol notifying manufacturers of material model changes.",
+      "summary_cut": false,
+      "source_passage": "When filed, MAFs should include, at minimum: a training data provenance summary describing data sources, curation methodology, and known demographic representation gaps; a documented inventory of known failure modes in clinical contexts, including clinical domains, subpopulations, and task types where performance degradation has been observed; performance benchmarks across demographic subgroups for relevant clinical tasks; a model version history with meaningful changelog documentation; guardrail architecture description; and an update notification protocol specifying how and when manufacturers using the foundation model will be informed of material changes."
+    },
+    {
+      "segment_id": "seg-029",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter states that agentic AI is the largest gap in the discussion paper and that framework concepts developed for advisory and action-directing devices are insufficient for systems that plan and execute multi-step actions with limited human oversight. It identifies implantable and closed-loop devices (e.g., autonomous neurostimulator parameter adjustment, self-modifying pacing algorithms, AI-titrated infusion) as risk profiles with no adequate precedent in the existing device framework.",
+      "requested_fda_action": "Extend beyond the current advisory-oriented concepts to develop dedicated regulatory considerations for agentic systems, particularly implantable and closed-loop devices that act autonomously rather than advising a clinician.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment characterizes agentic implantable and closed-loop devices as autonomous clinical actors that execute therapy changes with limited human oversight, a delegation of clinical decision authority the commenter says has no precedent in the existing framework."
+      },
+      "public_summary": "Agrees FDA correctly flags agentic AI as needing further consideration, but argues the paper's advisory-oriented concepts are insufficient. Urges dedicated treatment of autonomous implantable and closed-loop systems—self-adjusting neurostimulators, pacing algorithms, infusion titration—whose risk profiles it says lack regulatory precedent.",
+      "summary_cut": false,
+      "source_passage": "Agentic AI represents the most significant gap in the Discussion Paper, and FDA is right to identify it as requiring additional consideration. For agentic AI systems — those capable of planning and executing multi-step actions in clinical environments with limited human oversight — the current framework's concepts, developed primarily for advisory and action-directing devices, are insufficient.\n\nThe stakes are highest for implantable and closed-loop devices. A neurostimulator that uses LLM-analyzed sensor data to autonomously adjust therapy parameters in real time, a cardiac rhythm management device that self-modifies pacing algorithms based on AI-generated clinical pattern recognition, or a drug infusion system that titrates dosing based on agentic AI interpretation of continuous monitoring data — each of these represents a risk profile that has no adequate precedent in the current medical device regulatory framework. These are not advisory tools. They are autonomous clinical actors."
+    },
+    {
+      "segment_id": "seg-030",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter argues the discussion paper's treatment of HCP oversight presumes advisory or action-directing devices and does not adequately address agentic devices that execute irreversible actions, where after-the-fact review cannot prevent harm.",
+      "requested_fda_action": "Require a mandatory, defined human confirmation step before execution of any agentic AI action that cannot be undone (e.g., device parameter changes requiring a procedure to reverse, drug infusions above a dose threshold, surgical robot maneuvers), and redefine oversight for such devices as pre-action authorization rather than post-action review.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment concerns how much execution authority an agentic device may exercise without prior human authorization, particularly for actions that cannot be reversed.",
+        "human_ai_system_performance": "It reframes human oversight as a functional control point that must occur before execution, rather than an assumed safeguard applied after output review.",
+        "operational_harm": "It highlights harms arising from executed actions such as infusions or surgical maneuvers that require clinical intervention to undo, beyond errors in informational output."
+      },
+      "public_summary": "Commenter accepts FDA's attention to agentic devices but asks that human-in-the-loop confirmation be mandatory before any irreversible action, such as reversal-requiring device parameter changes, high-dose infusions, or surgical robot maneuvers, and that oversight be defined as pre-action authorization rather than post-action review.",
+      "summary_cut": false,
+      "source_passage": "First, human-in-the-loop requirements for irreversible actions must be mandatory. Any agentic AI action that cannot be undone — device parameter changes that require a clinical procedure to reverse, drug infusions above a defined dose threshold, surgical robot maneuvers — should require a defined human confirmation step before execution. The Discussion Paper's discussion of HCP oversight assumes advisory or action-directing devices; for agentic devices taking irreversible actions, \"oversight\" must be redefined to mean pre-action authorization, not post-action review."
+    },
+    {
+      "segment_id": "seg-031",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "The commenter is concerned that autonomous multi-step action by agentic devices can proceed without adequate human review checkpoints, and that the permissible extent of autonomy is not bounded in current framing.",
+      "requested_fda_action": "FDA should develop an \"action budget\" concept setting a maximum number of consecutive autonomous actions before a mandatory human confirmation checkpoint, calibrated to risk tier (more restrictive for higher risk) and required as an element of the approved intended use specification.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The proposed action budget would explicitly cap how much sequential autonomous action a device may take before human confirmation, defining the limits of authority delegated to the AI.",
+        "dynamic_intended_use": "Embedding the action budget in the approved intended use specification treats the device's autonomous behavioral envelope as a regulated element of intended use."
+      },
+      "public_summary": "Commenter endorses stronger oversight of agentic devices and asks FDA to add an \"action budget\": a cap on consecutive autonomous actions before mandatory human confirmation, scaled to risk tier and required as part of the device's approved intended use specification.",
+      "summary_cut": false,
+      "source_passage": "Second, FDA should develop the concept of an \"action budget\" for agentic AI systems — a defined maximum number of consecutive autonomous actions a device may take without a mandatory human confirmation checkpoint. Action budgets should be calibrated to device risk tier, with higher-risk devices having more restrictive budgets, and should be a required element of the device's approved intended use specification."
+    },
+    {
+      "segment_id": "seg-032",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Agentic devices that depend on cloud-based supervisory infrastructure may continue acting autonomously, or fail unsafely, if that connection is lost during clinical use.",
+      "requested_fda_action": "Require that fail-safe default behavior upon loss of supervisory connectivity be explicitly defined and validated in premarket evaluation, with the default mode maintaining patient safety and not permitting autonomous AI-directed action.",
+      "confidence": "high",
+      "gap_tags": [
+        "operational_harm",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The concern is harm arising from infrastructure failure (loss of connectivity to supervisory systems) rather than from an incorrect model output.",
+        "delegated_authority": "The comment would bound the device's autonomous action authority by requiring that, absent supervision, the device cannot take AI-directed action."
+      },
+      "public_summary": "Comment addresses agentic GenAI devices, urging FDA to require that behavior upon loss of connectivity to cloud-based supervisory infrastructure be explicitly defined and validated premarket, with a clinically safe default mode that does not permit autonomous AI-directed action.",
+      "summary_cut": false,
+      "source_passage": "Third, fail-safe default behavior when supervisory connectivity is lost must be explicitly defined and validated as part of premarket evaluation. An agentic AI device that loses its connection to cloud-based supervisory infrastructure must have a validated, clinically safe default operating mode that maintains patient safety without autonomous AI-directed action."
+    },
+    {
+      "segment_id": "seg-033",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter argues that agentic AI in surgical robotics combines physical action, irreversibility, time pressure, and anatomical complexity in ways the discussion paper's concepts cannot adequately address.",
+      "requested_fda_action": "Treat agentic AI in surgical robotics as a distinct regulatory topic and convene a separate working group including surgical professional societies, device manufacturers, and patient safety organizations.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment centers on autonomous agentic systems taking physical surgical action with limited opportunity for human intervention, which the question's general agentic framing does not resolve for this setting.",
+        "operational_harm": "It emphasizes irreversibility and time pressure in the live operating field as harm dimensions beyond output accuracy that the current framework does not capture."
+      },
+      "public_summary": "Commenter states that agentic AI in surgical robotics—involving irreversible physical action under time pressure and anatomical complexity—exceeds what the discussion paper's framework can address, and asks FDA to convene a separate working group with surgical societies, manufacturers, and patient safety organizations.",
+      "summary_cut": false,
+      "source_passage": "Fourth, agentic AI in surgical robotics requires entirely separate regulatory consideration. The combination of physical action in an operating field, irreversibility, time pressure, and the inherent complexity of surgical anatomy creates a risk profile that exceeds what the current framework's concepts can adequately address. FDA should initiate a separate working group specifically addressing agentic AI in surgical robotics, with participation from surgical professional societies, medical device manufacturers, and patient safety organizations."
+    },
+    {
+      "segment_id": "seg-034",
+      "question_ids": [
+        "q1",
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter states that manufacturers cannot plan without explicit, published linkage between risk tier, regulatory pathway, and corresponding evidence requirements.",
+      "requested_fda_action": "Publish a pathway decision matrix mapping risk tier to regulatory pathway to evidence requirements as a companion document to any final guidance, issued before that guidance takes effect.",
+      "confidence": "medium",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment ties the absence of predictable, tier-linked evidence requirements to manufacturers' inability to plan development and submission efforts."
+      },
+      "public_summary": "Commenter asks FDA to accompany any final guidance with a published decision matrix linking risk tier to regulatory pathway and evidence requirements, issued before the guidance takes effect, arguing manufacturers cannot plan without that explicit mapping.",
+      "summary_cut": false,
+      "source_passage": "First, publish a pathway decision matrix — linking risk tier to regulatory pathway to evidence requirements — as a companion document to any final guidance, before that guidance takes effect. Manufacturers cannot plan without it."
+    },
+    {
+      "segment_id": "seg-035",
+      "question_ids": [
+        "q1",
+        "q7"
+      ],
+      "position": "support",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter expresses general agreement with FDA's conceptual approach, viewing the competency-based evaluation framework as conceptually sound and the two-axis risk assessment as the appropriate organizing structure. They also value FDA's pre-finalization stakeholder engagement.",
+      "requested_fda_action": "Retain the competency-based framework and two-axis risk assessment structure as proposed, and continue engaging stakeholders before finalizing policy.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter endorses FDA's approach, calling the competency-based framework conceptually right and the two-axis risk assessment an appropriate organizing structure. They also commend FDA's stakeholder engagement before finalizing policy. No specific changes are requested in this passage.",
+      "summary_cut": false,
+      "source_passage": "The competency-based framework is conceptually right. The two-axis risk assessment is the appropriate organizing structure. The engagement of stakeholders before finalizing policy reflects good administrative practice and respect for the complexity of the challenges involved."
+    },
+    {
+      "segment_id": "seg-036",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter views generative AI systems as functioning more like clinical judgment than deterministic software, and considers a competency-based framework the principled way to evaluate them. It draws an analogy to how human clinical expertise is validated through certification, credentialing, and simulation-based assessment.",
+      "requested_fda_action": "Adopt and retain the competency-based approach (device benchmarking followed by clinical confirmation) as the foundation of FDA's regulatory approach for generative AI-enabled devices.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter fully endorses FDA's competency-based approach for generative AI devices, describing it as analogous to how human clinical expertise is validated through board certification, credentialing, and simulation assessment, and appropriate because such systems resemble clinical judgment rather than deterministic software. No modifications requested.",
+      "summary_cut": false,
+      "source_passage": "Response to Question 7: The Competency-Based Approach Is Appropriate\nYes. The competency-based approach is the appropriate framework for evaluating generative AI devices, and FDA deserves credit for developing it. It mirrors the structure by which human clinical expertise is validated — board certification, specialty credentialing, simulation-based assessment — and creates a principled basis for evaluating AI systems that operate similarly to clinical judgment rather than to traditional deterministic software. WHM strongly supports this framework as the foundation for FDA's regulatory approach."
+    },
+    {
+      "segment_id": "seg-037",
+      "question_ids": [
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "Without an explicit linkage between risk tier and regulatory pathway, manufacturers face prolonged pre-submission uncertainty and cannot predict the time, cost, and evidence burdens of 510(k), De Novo, or PMA routes; reviewers would face an uneven submission landscape.",
+      "requested_fda_action": "Publish a public decision matrix linking risk tiers from the two-axis framework to regulatory pathway and corresponding premarket evidence requirements before finalizing the approach, included as an appendix to any final guidance with examples for representative device categories.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment ties pathway predictability directly to development investment decisions and the differing time, cost, and evidence burdens across 510(k), De Novo, and PMA routes."
+      },
+      "public_summary": "Accepts the two-axis risk framework conceptually but says it must be mapped to regulatory pathways to be usable. Asks FDA to publish, before finalizing, a decision matrix linking risk tiers to pathway and evidence requirements, as a guidance appendix with device-category examples.",
+      "summary_cut": false,
+      "source_passage": "Response to Question 8: Pathway Decision Matrix — A Prerequisite for Industry\nMapping the two-axis risk framework to specific regulatory pathways is not merely useful — it is a prerequisite for the framework to function. Responsible manufacturers will not commit development resources to a clinical AI program without knowing whether their device is headed toward a 510(k) review, a De Novo classification request, or a PMA. These pathways carry dramatically different time, cost, and evidence burdens... FDA must publish a decision matrix — a clear, public reference linking risk tier (derived from the two-axis framework) to regulatory pathway and corresponding premarket evidence requirements — before finalizing this regulatory approach. Without it, the competency-based framework, however conceptually sound, will produce prolonged pre-submission uncertainty for manufacturers and an uneven submission landscape for FDA reviewers. We recommend that the decision matrix be included as an appendix to any final guidance document, with explicit examples for representative device categories."
+    },
+    {
+      "segment_id": "seg-038",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter views the two-axis framework as capturing the core risk landscape but incomplete, arguing that dependency on externally controlled foundation models, irreversibility of resulting actions, and real-time versus asynchronous deployment create materially different risk profiles that the current axes do not distinguish.",
+      "requested_fda_action": "Add three explicit risk dimensions to the framework: third-party model dependency (with higher baseline risk classification for devices heavily dependent on non-disclosed, externally controlled foundation models), reversibility as a first-order factor separate from severity, and temporal urgency distinguishing real-time from asynchronous workflows.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The commenter proposes that reliance on non-disclosed, externally controlled third-party foundation models be treated as an explicit risk dimension raising baseline risk classification, a supplier-dependency concern not represented in FDA's two-axis framing."
+      },
+      "public_summary": "Accepts the two-axis risk framework as a core structure but calls it incomplete, urging FDA to add three explicit dimensions: dependency on non-disclosed third-party foundation models (with higher baseline risk), irreversibility separate from severity, and real-time versus asynchronous deployment urgency.",
+      "summary_cut": false,
+      "source_passage": "Response to Question 1: Additional Dimensions of Risk\nThe two-axis framework captures the core of the risk landscape but requires three additional dimensions to be complete.\nFirst, third-party model dependency is a material risk factor not reflected in the current framework... FDA should add third-party model dependency as an explicit risk dimension, with devices heavily dependent on non-disclosed, externally controlled foundation models receiving higher baseline risk classification.\nSecond, reversibility must be treated as a first-order risk factor... The current framework's consequence axis captures severity but does not fully capture irreversibility. A separate reversibility dimension would strengthen the framework's clinical fidelity.\nThird, temporal urgency — whether the device operates in real-time versus asynchronous clinical workflows — creates meaningfully different risk profiles that the current framework does not distinguish. Real-time autonomous action under time pressure (e.g., AI-guided emergency drug dosing) warrants higher scrutiny than asynchronous AI-generated care plan recommendations reviewed by a clinician before acting."
+    },
+    {
+      "segment_id": "seg-039",
+      "question_ids": [
+        "q2"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter agrees directiveness lies on a continuum but argues that without at least one clear presumptive dividing line, manufacturers face ongoing uncertainty about where a device falls on that continuum when planning development programs.",
+      "requested_fda_action": "Establish a rebuttable presumption that any generative AI output containing specific numeric parameters (e.g., drug doses, device therapy thresholds, surgical dimensions) is action-directing regardless of framing language, with manufacturers able to rebut the presumption through pre-submission consultation.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment ties the lack of a bright-line directiveness standard to manufacturers' inability to plan development programs, framing regulatory unpredictability as a practical development burden rather than only a classification question."
+      },
+      "public_summary": "Supports treating directiveness as a spectrum but asks FDA to add a bright-line safe harbor: a rebuttable presumption that outputs containing specific numeric parameters (doses, thresholds, dimensions) are action-directing regardless of wording, rebuttable via pre-submission consultation.",
+      "summary_cut": false,
+      "source_passage": "Response to Question 2: Directiveness as a Spectrum — The Need for Safe Harbor\nWHM supports characterizing directiveness as a spectrum rather than a binary, but manufacturers require a safe harbor bright line to plan development programs. Without at least one clear presumptive standard, manufacturers face perpetual uncertainty about where their device falls on the continuum. We recommend that FDA establish a rebuttable presumption: any generative AI output that includes specific numeric parameters — drug doses, device therapy thresholds, surgical dimensions — is presumptively action-directing, regardless of framing language. Manufacturers who believe their device should be characterized differently can rebut the presumption through pre-submission consultation. This approach provides clarity while preserving flexibility."
+    },
+    {
+      "segment_id": "seg-040",
+      "question_ids": [
+        "q2",
+        "q3"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "regulatory_scope",
+      "stakeholder_concern": "The commenter agrees patients generally lack clinical training to contextualize, assess limitations of, or override AI outputs, justifying differential treatment, but is concerned FDA could overreach by treating general patient-facing informational tools (symptom checkers, medication reminders, wellness education) as action-directing simply because a patient reads and acts on them.",
+      "requested_fda_action": "Maintain differential regulatory treatment for patient-facing applications while defining clear boundaries based on clinical specificity: apply closer scrutiny to outputs containing specific clinical recommendations (e.g., advising an emergency room visit) and generally not to outputs providing general information without clinical specificity.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports FDA treating patient-facing tools differently because patients typically cannot contextualize or override AI outputs, but asks FDA to avoid overreach by drawing explicit boundaries: closer scrutiny for outputs with specific clinical recommendations, lighter treatment for general, non-specific information.",
+      "summary_cut": false,
+      "source_passage": "Response to Question 3: Patient-Facing vs. HCP-Facing Applications\nFDA is right to treat patient-facing and HCP-facing applications differently. Patients generally lack the clinical training to contextualize AI-generated outputs, assess limitations, or override recommendations that conflict with their broader clinical picture. WHM supports differential regulatory treatment.\nHowever, FDA must be careful not to overreach. Patient-facing informational tools — symptom checkers, post-discharge medication reminders, general wellness education — should not be regulated as action-directing devices merely because a patient reads and acts upon them... FDA should define clear boundaries: patient-facing tools that include specific clinical recommendations (e.g., \"your symptoms indicate you should go to the emergency room\") are meaningfully different from those that provide general information without clinical specificity (e.g., \"these are common side effects of your medication\"). The former warrants closer scrutiny; the latter generally should not."
+    },
+    {
+      "segment_id": "seg-041",
+      "question_ids": [
+        "q4"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "The commenter states that the same generative AI tool carries different risk implications depending on whether the user is a relevant specialist (e.g., a board-certified interventional cardiologist) or a generalist lacking specialty training to interpret its outputs.",
+      "requested_fda_action": "FDA should explicitly address the generalist/specialist distinction in labeling and intended use requirements, requiring manufacturers to specify the intended clinical user's competency level and to validate device performance within that specific user population.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment ties device risk and validation to the competency of the specific clinical user, implying performance must be demonstrated for the user-device combination rather than the model alone."
+      },
+      "public_summary": "Agrees the generalist/specialist distinction is clinically significant and asks FDA to go further: require manufacturers to specify the intended clinical user's competency level in labeling and intended use, and to validate device performance within that specific user population.",
+      "summary_cut": false,
+      "source_passage": "Response to Question 4: Generalist vs. Specialist HCP-Facing Applications\nThe distinction between generalist and specialist HCP-facing applications is clinically significant. A generative AI tool designed for use by a board- certified interventional cardiologist carries different risk implications than the same tool used by a primary care physician without specialty training in interpreting its outputs. FDA should address this distinction explicitly in its labeling and intended use requirements, requiring manufacturers to specify the intended clinical user's competency level and to validate performance within that specific user population."
+    },
+    {
+      "segment_id": "seg-042",
+      "question_ids": [
+        "q5"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "intended_use",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter argues that turn-by-turn risk assessment misses the cumulative dynamic of multi-turn conversations, where behavior emerges across an exchange and can drift beyond what was evaluated.",
+      "requested_fda_action": "Define an 'interaction envelope' concept—the manufacturer-defined scope of an intended-use clinical interaction—and require risk assessment at the interaction level, with the highest-risk plausible turn setting the classification. Manufacturers should technically constrain the envelope and specify response behaviors (disclaimer, refusal, escalation) when conversations migrate outside it.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment proposes defining and technically constraining a behavioral envelope for conversational interactions because intended use emerges across turns rather than being fixed at a single output."
+      },
+      "public_summary": "Supports assessing multi-turn conversational risk but urges FDA to go further: define an \"interaction envelope\" of manufacturer-specified intended interaction scope, classify risk by the highest-risk plausible turn, and require defined responses—disclaimer, refusal, or escalation—when conversations drift outside that envelope.",
+      "summary_cut": false,
+      "source_passage": "Response to Question 5: Multi-Turn Conversations — Assess at the Interaction Level\nRisk in multi-turn conversational AI cannot be assessed at the level of individual turns... Assessing each turn in isolation misses this cumulative dynamic entirely.\nFDA should define the concept of an \"interaction envelope\" — the full scope of an intended-use clinical interaction as defined by the manufacturer — and require that risk be assessed at the interaction level, with the device's highest-risk plausible turn defining the interaction's risk classification. Manufacturers must define and technically constrain the intended interaction scope; any conversation that migrates outside the intended envelope should trigger a defined response behavior (e.g., disclaimer, refusal, escalation)."
+    },
+    {
+      "segment_id": "seg-043",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter views under-escalation as the more severe error, with potential for direct patient injury or death, while over-escalation generally causes system burden, patient anxiety, and economic cost rather than life-threatening harm. However, over-escalation still matters because in resource-constrained settings unnecessary escalations may deprive other patients of timely care.",
+      "requested_fda_action": "Establish asymmetric harm standards for GenAI care escalation functions, weighting under-escalation threshold failures more heavily in risk classification and performance evaluation, while still accounting for over-escalation effects, particularly in resource-constrained environments.",
+      "confidence": "high",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment identifies harms from over-escalation that fall outside direct patient injury, including system burden, patient anxiety, economic cost, and diversion of scarce capacity away from other patients."
+      },
+      "public_summary": "Endorses FDA's focus on care escalation but asks that the two error directions be weighted asymmetrically, treating under-escalation as more severe in risk classification and performance evaluation, while still accounting for over-escalation's system burden and resource-diversion effects.",
+      "summary_cut": false,
+      "source_passage": "Response to Question 6: Care Escalation — Asymmetric Harm Standards\nFDA's attention to care escalation is well-placed. Under-escalation — failure to recognize that a patient's condition warrants urgent intervention — represents the more severe harm in most clinical contexts, with potential for direct patient injury or death. Over-escalation — directing patients toward emergency care unnecessarily — creates system burden, patient anxiety, and economic costs, but is rarely life-threatening. FDA should establish asymmetric harm standards for escalation decisions: under-escalation threshold failures should be weighted more heavily in risk classification and performance evaluation. However, over-escalation cannot be dismissed entirely, particularly in resource-constrained environments where unnecessary escalations may deprive other patients of timely care."
+    },
+    {
+      "segment_id": "seg-044",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter views the proposed benchmarking architecture (Safety, Clinical Proficiency, Generalizability, Agentic AI) as sound in general but argues it is domain-neutral, whereas device performance must be judged against specialty-specific clinical context (e.g., cardiology, neuromodulation, radiology).",
+      "requested_fda_action": "Require specialty domain benchmarking modules as additions to the core structure for devices with defined clinical specialty applications, developed with input from relevant professional societies and updated periodically as clinical standards evolve.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter calls FDA's four-part benchmarking architecture a sound general framework but says it is domain-neutral. Requests mandatory specialty domain modules (e.g., cardiology, neurology, radiology) added to the core structure, developed with professional society input and periodically updated as clinical standards evolve.",
+      "summary_cut": false,
+      "source_passage": "Response to Question 9: Benchmarking Structure — Specialty Domain Modules Required\nThe benchmarking structure described in the Discussion Paper — organized across Safety (S.1–S.3), Clinical Proficiency (E.1–E.4), Generalizability (R.1–R.2), and Agentic AI (A.1) — is a sound general architecture. However, medical device generative AI does not exist in a domain-neutral clinical environment. A cardiac AI device must be evaluated against cardiology-specific benchmarks; a neuromodulation AI device requires benchmarks that reflect neuroscience clinical context; a radiology AI tool requires imaging-specific performance standards.\nFDA should establish specialty domain modules as required additions to the core benchmarking structure for devices with defined clinical specialty applications. These modules should be developed with input from relevant professional societies — the American College of Cardiology, the American Academy of Neurology, the American College of Radiology, and their counterparts — and should be updated periodically as clinical standards evolve."
+    },
+    {
+      "segment_id": "seg-045",
+      "question_ids": [
+        "q10",
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter states that contamination of public benchmarks is a documented industry phenomenon that makes such benchmarks unreliable as independent measures of performance, and that sponsor-developed benchmarks may lack demonstrated construct validity.",
+      "requested_fda_action": "Establish a sequestered national medical AI benchmark repository developed with NIST and maintained by an independent steward, with tightly controlled access and blinded third-party submission and scoring; require third-party validation of construct validity before accepting sponsor-developed benchmarks as primary evidence.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Agrees with FDA that public benchmark contamination undermines reliability, but asks for a structural remedy: a sequestered national medical AI benchmark repository built with NIST under an independent steward, blinded third-party scoring, and third-party construct-validity validation of sponsor-developed benchmarks.",
+      "summary_cut": false,
+      "source_passage": "Response to Question 10: Public Benchmark Contamination — A Serious Problem Requiring a Structural Solution\nPublic benchmark contamination is not a theoretical concern. It is a documented phenomenon in the AI industry: widely used public benchmarks have been incorporated — intentionally or inadvertently — into training datasets, rendering them unreliable as independent performance measures... FDA should establish a sequestered national benchmark repository for medical AI, developed in collaboration with NIST and maintained by an independent steward, analogous to NIST's existing machine learning benchmarking challenges. Access to the sequestered evaluation set should be tightly controlled, with submission and scoring handled through a blinded third-party process. Sponsor-developed benchmarks should require third-party validation of construct validity before FDA will accept them as primary evidence."
+    },
+    {
+      "segment_id": "seg-046",
+      "question_ids": [
+        "q11"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "clinical_validation",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter is concerned that broadly requiring prospective randomized studies would be economically unworkable for most Class II generative AI devices and would advantage only the largest manufacturers, while also raising ethical and logistical complexity.",
+      "requested_fda_action": "Calibrate the clinical confirmation threshold to actual risk: accept shadow deployment plus retrospective clinical outcome evaluation for Class II devices used under HCP supervision, and reserve prospective randomized designs for autonomous, patient-facing Class III devices whose outputs drive clinical action without contemporaneous HCP oversight.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment argues that broad prospective RCT requirements would make the competency-based framework economically unworkable for most Class II categories and create a competitive barrier favoring the largest manufacturers.",
+        "human_ai_system_performance": "The proposed evidence tiering turns on whether contemporaneous HCP oversight is present, treating the clinician-device configuration rather than the device alone as the basis for confirmation rigor."
+      },
+      "public_summary": "Supports FDA's tiered clinical confirmation but asks that requirements be calibrated to risk: shadow deployment with retrospective outcome evaluation should generally suffice for HCP-supervised Class II devices, with prospective randomized studies reserved for autonomous, patient-facing Class III devices lacking contemporaneous oversight.",
+      "summary_cut": false,
+      "source_passage": "Response to Question 11: When Prospective Clinical Studies Are Required\nThe threshold for requiring a prospective clinical study should be calibrated to actual risk, not applied uniformly across device categories. For Class II devices operating in HCP-supervised environments, shadow deployment combined with retrospective clinical outcome evaluation should generally satisfy the clinical confirmation requirement. Shadow deployment — in which the AI device's outputs are recorded alongside clinical decisions made without reliance on those outputs — provides meaningful real-world evidence without requiring the ethical and logistical complexity of a prospective randomized design.\nProspective randomized clinical study design should be reserved for autonomous, patient-facing, Class III devices where AI-generated outputs will directly drive clinical actions without contemporaneous HCP oversight. Applying prospective RCT requirements broadly would render the competency-based framework economically unworkable for the vast majority of Class II generative AI device categories and would create a competitive barrier that favors only the largest manufacturers"
+    },
+    {
+      "segment_id": "seg-047",
+      "question_ids": [
+        "q12",
+        "q13"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Synthetic data generated by model families similar to the device under evaluation creates circular validation, and it is especially unreliable for assessing performance in underrepresented racial, ethnic, and demographic subgroups where real-world generalizability gaps and harm are most likely.",
+      "requested_fda_action": "Require out-of-distribution validation for any device using synthetic data in performance evaluation, and require real-world data—augmented by carefully documented synthetic sources rather than synthetic data as a primary evidentiary substitute—for subpopulation performance validation.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts synthetic data's utility for training and augmenting evaluation but warns of circular validation when synthetic data comes from similar model families. Asks FDA to mandate out-of-distribution validation and to require real-world data, only supplemented by documented synthetic sources, for subgroup performance claims.",
+      "summary_cut": false,
+      "source_passage": "Response to Questions 12 and 13: Synthetic Data — Caution and Clear Standards\nSynthetic data has genuine utility in training and in augmenting performance evaluation for underrepresented populations, but its limitations for validation are substantial and must be explicitly addressed. Most critically: synthetic data generated by model families similar to the device under evaluation creates circular validation... FDA should require out-of-distribution (OOD) validation for any device that uses synthetic data in its performance evaluation... Additionally, synthetic data is particularly problematic for assessing performance across underrepresented racial, ethnic, and demographic subgroups, precisely the populations for whom real-world generalizability gaps are most likely to emerge and most likely to cause harm. For subpopulation performance validation, FDA should require real-world data augmented with carefully documented synthetic sources, not synthetic data as a primary evidentiary substitute."
+    },
+    {
+      "segment_id": "seg-048",
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Using the \"median clinician in practice\" as the primary comparator would normalize prevailing care that may reflect training gaps, resource constraints, or systemic underperformance rather than optimal care, particularly for specialty AI devices.",
+      "requested_fda_action": "FDA should adopt board-certified specialist performance within the device's intended clinical domain, under conditions reflecting intended-use environments, as the comparator for specialty devices, and permit comparison against delayed specialist review for devices intended to expand access in underserved settings; both options should be codified in FDA's decision matrix and guidance.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts comparator-based evaluation but opposes \"median clinician in practice\" as the primary standard for specialty devices, arguing it normalizes prevailing care. Recommends board-certified specialist performance under intended-use conditions, or delayed specialist review for access-expanding devices, codified in FDA guidance.",
+      "summary_cut": false,
+      "source_passage": "Response to Question 14: Performance Comparators — Against the Right Standard\n... WHM recommends against using \"median clinician in practice\" as the primary performance comparator for specialty AI devices. This standard, while operationally measurable, normalizes the level of care that happens to prevail in clinical practice — which may reflect training gaps, resource constraints, or systemic underperformance rather than optimal care... For specialty devices, the appropriate comparator is board-certified specialist performance within the device's intended clinical domain and under conditions that reflect intended-use clinical environments. For devices intended to expand access to specialist-level care in underserved settings, comparison against delayed specialist review — reflecting the realistic clinical alternative — is appropriate and clinically meaningful. FDA should codify these comparator options in its decision matrix and guidance documents."
+    },
+    {
+      "segment_id": "seg-049",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter is concerned that FDA's framework will diverge from the EU AI Act/MDR, Health Canada, TGA, and IMDRF approaches, forcing global manufacturers into serial, duplicative validation exercises that multiply development burden and disadvantage them relative to manufacturers in less rigorous markets.",
+      "requested_fda_action": "Treat international harmonization as a first-order priority in developing the framework, including at minimum mutual recognition of benchmarking evidence across jurisdictions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment argues that unharmonized, jurisdiction-by-jurisdiction benchmarking validation multiplies development costs and creates competitive disadvantage, a burden dimension not addressed in the question as framed."
+      },
+      "public_summary": "Commenter urges FDA to make international harmonization a first-order priority rather than an afterthought, seeking at minimum mutual recognition of benchmarking evidence with the EU, Health Canada, TGA, and IMDRF frameworks to avoid duplicative, serial validation and added development burden.",
+      "summary_cut": false,
+      "source_passage": "C. International Harmonization Gaps\nFDA's framework will not exist in isolation. The European Union's AI Act and the Medical Device Regulation together create a parallel, in some respects more prescriptive, regulatory environment for AI-enabled medical devices. Health Canada, Australia's TGA, and IMDRF are each developing or refining comparable frameworks. Without deliberate harmonization — at minimum, mutual recognition of benchmarking evidence — global medtech manufacturers will face serial validation exercises across jurisdictions, multiplying the development burden and creating significant competitive disadvantage relative to manufacturers operating in less rigorous markets. FDA should treat international harmonization as a first-order priority, not an afterthought."
+    },
+    {
+      "segment_id": "seg-050",
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "For devices meant to expand specialist-level access in underserved settings, the commenter holds that the realistic clinical alternative is delayed specialist review, and that comparators should reflect that alternative rather than an idealized standard.",
+      "requested_fda_action": "FDA should explicitly codify comparator options such as delayed specialist review in its decision matrix and guidance documents.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports allowing comparison against the realistic clinical alternative, such as delayed specialist review, for devices expanding specialist-level access in underserved settings, and asks FDA to go further by explicitly codifying these comparator options in its decision matrix and guidance.",
+      "summary_cut": false,
+      "source_passage": "For devices intended to expand access to specialist-level care in underserved settings, comparison against delayed specialist review — reflecting the realistic clinical alternative — is appropriate and clinically meaningful. FDA should codify these comparator options in its decision matrix and guidance documents."
+    },
+    {
+      "segment_id": "seg-051",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "Third-party benchmarking could become a regulatory gatekeeping bottleneck if capacity is limited or qualification and pricing are opaque; the commenter wants a competitive, pluralistic testing ecosystem including academic medical centers with specialty domain expertise.",
+      "requested_fda_action": "Expand the ASCA program to explicitly cover qualified AI benchmarking organizations, with published qualification criteria and standardized fee structures, and actively encourage multiple accredited testing organizations, including academic medical centers.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority",
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment concerns how FDA would accredit and qualify third-party bodies to perform device benchmarking on its behalf, including the criteria governing that delegation.",
+        "evidence_burden_commercial_viability": "It raises cost and access concerns by asking for standardized published fees and multiple testing providers so that required benchmarking does not become a costly bottleneck."
+      },
+      "public_summary": "Supports third-party involvement in benchmarking but asks FDA to expand the ASCA program to accredit AI benchmarking organizations under published qualification criteria and standardized fees, encouraging multiple providers, including academic medical centers, to avoid a gatekeeping bottleneck.",
+      "summary_cut": false,
+      "source_passage": "FDA should expand its Accreditation Scheme for Conformity Assessment (ASCA) program to explicitly include qualified AI benchmarking organizations, with published, standardized fee structures and published qualification criteria. Multiple qualified testing organizations should be actively encouraged, including academic medical centers that have the domain expertise to conduct specialty-relevant evaluation. The goal is a competitive, pluralistic testing ecosystem — not a regulatory gatekeeping bottleneck."
+    },
+    {
+      "segment_id": "seg-052",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Accepting greater premarket uncertainty is only appropriate if the postmarket monitoring plan is fully specified and binding at authorization, rather than negotiated afterward or treated as aspirational.",
+      "requested_fda_action": "Require monitoring plans—metrics, data collection methods, reporting cadence, reassessment triggers, and performance thresholds prompting mandatory regulatory action—to be prespecified and legally enforceable at authorization, and scale premarket flexibility to the rigor of the monitoring commitment.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment focuses on making post-deployment performance surveillance an enforceable, prespecified condition of authorization rather than a discretionary post-clearance activity."
+      },
+      "public_summary": "Endorses trading premarket uncertainty for postmarket monitoring only if the monitoring plan is fully prespecified at authorization and legally enforceable—covering metrics, data collection, cadence, reassessment triggers, and action thresholds—with premarket flexibility scaled to the rigor of monitoring commitments.",
+      "summary_cut": false,
+      "source_passage": "WHM endorses this general principle with one critical condition: the postmarket monitoring plan must be fully prespecified at the time of market authorization. It cannot be left to post-clearance negotiation. The monitoring plan — including performance metrics, data collection methodology, reporting cadence, triggering events for reassessment, and defined performance thresholds that would trigger mandatory regulatory action — must be a legally enforceable commitment, not an aspirational document. Manufacturers who commit to robust postmarket monitoring should receive meaningful premarket flexibility; those who cannot commit to rigorous monitoring should face correspondingly rigorous premarket standards."
+    },
+    {
+      "segment_id": "seg-053",
+      "question_ids": [
+        "q19",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter is concerned that postmarket reassessment cadence alone is insufficient and that specific external and internal signals should compel immediate, out-of-cycle re-evaluation of a GenAI-enabled device.",
+      "requested_fda_action": "FDA should specify a mandatory minimum set of triggering events for out-of-cycle reassessment, including material foundation model version or architecture changes, MDR/adverse event clusters above pre-specified thresholds, payer policy changes affecting indicated clinical use, regulatory action by peer authorities (EU, Health Canada, TGA) on the same or substantially similar device, and peer-reviewed evidence questioning the device's underlying clinical assumptions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The commenter treats a material change to the underlying foundation model version or architecture as an event that must itself compel reassessment, placing upstream model supplier changes at the center of postmarket obligations.",
+        "dynamic_intended_use": "The proposed triggers include payer policy changes affecting the indicated clinical use and new published evidence undermining the clinical assumptions behind the intended use, implying the intended-use envelope can shift after authorization."
+      },
+      "public_summary": "Accepts periodic postmarket reassessment but urges FDA to mandate minimum out-of-cycle triggers: material foundation model version or architecture changes, adverse event clusters above set thresholds, payer policy changes affecting indicated use, peer-regulator actions on similar devices, and peer-reviewed evidence challenging underlying clinical assumptions.",
+      "summary_cut": false,
+      "source_passage": "Triggering events requiring mandatory out-of-cycle reassessment should include, at minimum: any material change to the underlying foundation model version or architecture; any MDR or adverse event cluster meeting pre-specified thresholds; any payer policy change affecting the device's indicated clinical use; any regulatory action by a peer regulatory authority (EU, Health Canada, TGA) on the same or substantially similar device; and any published peer-reviewed evidence that calls into question the clinical assumptions underlying the device's intended use."
+    },
+    {
+      "segment_id": "seg-054",
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "pccp",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter states that applying the existing PCCP framework without modification would create substantial regulatory uncertainty for manufacturers, given the distinctive update cadence of generative AI systems and ambiguity about which categories of change fall where.",
+      "requested_fda_action": "Publish explicit example lists for each category of post-deployment modification (e.g., changes managed within the quality management system versus those requiring premarket review), and update those lists annually as generative AI development practices evolve.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts change-control/PCCP concepts but says the current PCCP framework, unmodified, would create regulatory uncertainty given generative AI's update cadence. Asks FDA to publish explicit example lists for each modification category and update them annually as development practices evolve.",
+      "summary_cut": false,
+      "source_passage": "FDA should publish explicit example lists for each category, updated annually as generative AI development practices evolve. The current PCCP framework, applied without modification, will create substantial regulatory uncertainty for manufacturers navigating the unique update cadence of generative AI systems."
+    },
+    {
+      "segment_id": "seg-055",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Third-party foundation model updates could reach deployed medical devices automatically, without any validation of their effect on device safety or effectiveness, and manufacturers may lack contractual notification rights from model developers.",
+      "requested_fda_action": "Require model version pinning with pre-production validation gates before any foundation model update reaches a deployed device, explicitly prohibit automated unvalidated updates, and impose higher premarket evidence requirements where contractual notification rights from the model developer cannot be secured.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment ties regulatory expectations to what the manufacturer can contractually obtain from the upstream foundation model supplier, including notification rights over developer-initiated changes.",
+        "deployment_assurance_scalability": "It proposes technical deployment controls—version pinning and pre-production validation gates—to ensure that model changes are validated before reaching live devices in the field."
+      },
+      "public_summary": "Supports FDA addressing third-party model changes but asks for specific controls: mandatory model version pinning with pre-production validation gates, an explicit prohibition on automated unvalidated foundation model updates to deployed devices, and higher premarket evidence where developer notification rights cannot be contractually secured.",
+      "summary_cut": false,
+      "source_passage": "Technically, FDA should require manufacturers to implement model versioning pins with pre-production validation gates: no foundation model update should reach a deployed medical device without first clearing a defined validation protocol. Automated deployment of foundation model updates to live medical devices — without validation — should be explicitly prohibited. For devices where contractual notification rights cannot be secured from the foundation model developer, FDA should impose correspondingly higher premarket evidence requirements to account for the elevated ongoing risk."
+    },
+    {
+      "segment_id": "seg-056",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Voluntary Foundation Model MAFs may not be filed or may contain insufficient safety-relevant content, leaving sponsors and FDA without transparency into the underlying model.",
+      "requested_fda_action": "Establish a conditional market access mechanism under which devices built on foundation models lacking an MAF, or with MAF content below FDA minimum disclosure standards, face a higher premarket evidence burden through more extensive sponsor-conducted benchmarking and third-party validation, creating an economic incentive to file complete MAFs without mandating disclosure.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses how to obtain assurance about upstream foundation model suppliers when disclosure is voluntary, proposing minimum disclosure standards backed by consequences.",
+        "evidence_burden_commercial_viability": "It proposes deliberately calibrating premarket evidence burden as an economic lever, tying sponsor testing costs to supplier transparency."
+      },
+      "public_summary": "Supports voluntary Foundation Model MAFs but proposes adding a conditional mechanism: devices built on foundation models without an MAF, or with disclosure below FDA minimum standards, would face higher premarket evidence requirements, including more sponsor benchmarking and third-party validation, instead of mandated disclosure.",
+      "summary_cut": false,
+      "source_passage": "WHM recommends that FDA establish a conditional market access mechanism: devices built on foundation models for which no MAF has been filed, or for which MAF content falls below FDA's minimum disclosure standards, should face a higher premarket evidence burden — specifically, requiring more extensive sponsor- conducted benchmarking and third-party validation to compensate for the lack of foundation model transparency. This creates a positive economic incentive for foundation model developers to file complete MAFs without mandating disclosure as a legal matter"
+    },
+    {
+      "segment_id": "seg-057",
+      "question_ids": [
+        "q1",
+        "q7"
+      ],
+      "position": "support",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter offers a brief endorsement of FDA's overall approach, stating that the competency-based evaluation framework is conceptually sound and that the two-axis risk assessment is the appropriate organizing structure. No specific concerns, conditions, or critiques are stated in the passage.",
+      "requested_fda_action": "Retain the competency-based framework and the two-axis risk assessment as proposed. No changes are requested in this passage.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter endorses FDA's proposed approach without stated conditions, describing the competency-based evaluation framework as conceptually correct and the two-axis risk assessment as the appropriate organizing structure. The passage offers no specific critiques, qualifications, or requested changes.",
+      "summary_cut": false,
+      "source_passage": "The competency-based framework is conceptually right. The two-axis risk assessment is the appropriate organizing structure."
+    },
+    {
+      "segment_id": "seg-058",
+      "question_ids": [
+        "q11"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "economics_burden",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that clinical evidence standards set by FDA may diverge from CMS coverage and coding policy, so that clearance alone does not translate into patient access.",
+      "requested_fda_action": "Establish formal interagency coordination with CMS to align clinical evidence standards with coverage and coding policy.",
+      "confidence": "low",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment ties the evidence FDA requires to downstream coverage and reimbursement, arguing that clearance without coverage access limits real-world availability of authorized devices."
+      },
+      "public_summary": "Recommends that FDA establish formal interagency coordination with CMS so clinical evidence standards align with coverage and coding policy, arguing clearance without coverage access benefits neither patients nor innovation. The passage does not address specific discussion paper questions.",
+      "summary_cut": false,
+      "source_passage": "Second, establish formal interagency coordination with CMS to align clinical evidence standards with coverage and coding policy; FDA clearance without coverage access serves neither patients nor innovation."
+    },
+    {
+      "segment_id": "seg-059",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "economics_burden",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that generative AI device sponsors, particularly small and emerging manufacturers, need structured regulatory interaction to navigate premarket evaluation expectations.",
+      "requested_fda_action": "Establish a dedicated pre-submission consultation program specifically for generative AI device sponsors, including structural support tailored to small and emerging manufacturers.",
+      "confidence": "low",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment ties regulatory navigability to the viability of small and emerging manufacturers as sources of innovation, an issue outside the framing of FDA's evaluation questions."
+      },
+      "public_summary": "Recommends that FDA create a dedicated pre-submission consultation program for generative AI device sponsors, with structural support specifically for small and emerging manufacturers. The passage proposes this as an addition to FDA's approach rather than commenting on the evaluation framework itself.",
+      "summary_cut": false,
+      "source_passage": "Third, create a dedicated pre-submission consultation program specifically for generative AI device sponsors, with particular structural support for small and emerging manufacturers who represent the most dynamic source of clinical innovation in this technology domain."
+    }
+  ]
+}

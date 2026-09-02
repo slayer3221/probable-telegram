@@ -1,0 +1,1476 @@
+{
+  "comment_id": "FDA-2026-N-7874-0049",
+  "input_hash": "32a732706b27a450",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "directiveness",
+      "stakeholder_concern": "The commenter views the two-axis framework as a useful, intuitive primary heuristic but is concerned that adding dimensions directly would create an unmanageable multi-dimensional matrix, while important risk-relevant factors (traceability, reversibility, time pressure, downstream safeguards, user capability, execution authority) would otherwise go unaddressed.",
+      "requested_fda_action": "Retain the two-axis structure and incorporate the listed additional factors as risk modifiers that adjust placement within the framework and the strength of associated controls, rather than as new axes.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The commenter proposes 'execution authority' as a modifier distinguishing functions that merely inform from those that can themselves cause a consequential action to occur.",
+        "human_ai_system_performance": "The proposed 'time pressure' and 'downstream safeguards' modifiers turn on whether meaningful human review or an independent intercepting mechanism is feasible before harm occurs."
+      },
+      "public_summary": "Supports retaining FDA's two-axis risk framework as a primary heuristic rather than expanding it into a multi-dimensional matrix, but asks FDA to operationalize traceability, reversibility, time pressure, downstream safeguards, user capability/setting, and execution authority as risk modifiers affecting placement and controls.",
+      "summary_cut": false,
+      "source_passage": "The proposed two-axis framework - device activity on one axis and consequence of relying on an incorrect output on the other - is a useful primary heuristic. It is intuitive, clinically meaningful, and readily scalable from non-directive informational functions to fully autonomous action-taking functions. FDA should retain the two axes rather than converting the framework into an unmanageable multi-dimensional matrix. [1]\n... Additional dimensions should function as risk modifiers that influence placement within the framework and the strength of associated controls. Particularly important modifiers include:\n• Traceability: whether a consequential output can be linked to the patient or encounter, source information or evidence, model/configuration state, and primary materials on which it relied.\n• Reversibility: whether an incorrect action can be promptly reversed without lasting harm.\n• Time pressure: whether meaningful human review is feasible before harm can occur.\n• Downstream safeguards: whether an independent mechanism can constrain, intercept, escalate, or block an unsafe action.\n• User capability and setting: whether the output is delivered to a patient, generalist, specialist, or another system that may have different ability to independently evaluate it.\n• Execution authority: whether the function merely provides information, strongly directs action, or can itself cause a consequential action to occur.\nThese modifiers can be operationalized without changing the basic two-axis structure."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter agrees that GenAI-enabled in vitro diagnostic, measurement, and signal-processing functions warrant special risk consideration because users often cannot directly assess such outputs and therefore cannot recognize or avoid reliance on an incorrect result.",
+      "requested_fda_action": "Retain and continue to treat the limited user-verifiability of in vitro diagnostic, measurement, and signal-processing outputs as a distinct risk consideration within the risk framework.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment frames risk in terms of whether the human user can detect and avoid reliance on an incorrect output, i.e., the performance of the combined user-device system rather than the device alone."
+      },
+      "public_summary": "Endorses FDA's identification of GenAI-enabled in vitro diagnostic, measurement, and signal-processing functions as raising special risk considerations, because users generally cannot directly assess those outputs and so cannot recognize or avoid relying on incorrect results.",
+      "summary_cut": false,
+      "source_passage": "FDA also appropriately identifies GenAI-enabled in vitro diagnostic, measurement, and signal-processing functions as presenting special risk considerations because their outputs may not be directly assessable by the user, limiting the user's ability to recognize and avoid reliance on an incorrect output. [1]"
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q1",
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter argues that risk and assurance requirements should account for how much clinically relevant system state (external models, tools, clinical data sources, institutional policy, changing configuration) lies outside the sponsor's direct control, a dimension not captured by device activity and consequence of an incorrect output alone.",
+      "requested_fda_action": "Scale assurance proportionately: allow comparatively conventional competency and lifecycle controls for bounded, recommendation-only functions, while requiring substantially stronger provenance, configuration-lineage, authorization, and postmarket controls for high-consequence agentic functions dependent on external components, consistent with a least-burdensome approach that seeks the minimum information and control functions needed for the device's actual risk profile.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment emphasizes that institutional policy, changing configuration, and deployment-side system state outside the sponsor's control should drive configuration-lineage and postmarket assurance requirements.",
+        "ai_supplier_quality": "It ties heightened provenance and control expectations to dependence on external models, tools, and third-party clinical data sources."
+      },
+      "public_summary": "Accepts risk-proportionate regulation but urges FDA to add a dimension: how much clinically relevant system state lies outside sponsor control.",
+      "summary_cut": true,
+      "source_passage": "The amount and type of assurance should also be proportionate to the extent to which clinically relevant system state lies outside the sponsor's direct control. A bounded, recommendation-only function may be adequately addressed through comparatively conventional competency and lifecycle controls, whereas a high-consequence agentic function dependent on external models, tools, clinical data sources, institutional policy, or changing configuration may warrant substantially stronger provenance, configuration-lineage, authorization, and postmarket controls. This is consistent with a least-burdensome approach: the objective is not maximum control for every device, but the minimum information and control functions necessary to address the relevant safety and effectiveness questions for the device's actual risk profile. [15]"
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q2"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "Assessing directiveness based on wording or disclaimers could understate risk, since outputs labeled informational may in practice narrow users toward a specific clinical action; specificity, personalization, imperative strength, confidence presentation, urgency, suppression of alternatives, consequence of the implied action, and repetition across multi-turn interactions all matter.",
+      "requested_fda_action": "Define directiveness functionally rather than lexically, using the test of what a reasonable intended user is likely to do because of the output, and have risk analysis reflect functional directiveness even when the interface labels output as informational.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter grounds risk in the likely behavioral response of a reasonable intended user rather than in the device output alone.",
+        "dynamic_intended_use": "It notes that outputs labeled informational can function as action-directing, including through repetition and reinforcement across a multi-turn interaction, shifting effective behavior beyond the stated framing."
+      },
+      "public_summary": "Supports FDA's directiveness continuum but urges functional rather than word-based assessment. Recommends judging risk by what a reasonable intended user would likely do, weighing specificity, personalization, imperative strength, confidence, urgency, suppressed alternatives, consequence, and reinforcement across multi-turn exchanges, regardless of informational labeling.",
+      "summary_cut": false,
+      "source_passage": "Directiveness should be assessed functionally rather than lexically. The presence or absence of words such as \"recommend,\" \"consider,\" or \"talk to your doctor\" should not determine risk by itself. Relevant characteristics include specificity, personalization, imperative strength, confidence presentation, temporal urgency, the degree to which alternatives are suppressed, the clinical consequence of the implied action, and whether the output is repeated or reinforced across a multi-turn interaction.\nA useful principle is to ask what a reasonable intended user is likely to do because of the output. If the practical effect of an informational function is to narrow the user toward a specific clinical action, the risk analysis should reflect that functional directiveness even when the interface labels the output as informational."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q3"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter accepts that patient-facing functions may need distinct safeguards where safe use depends on clinical knowledge patients cannot be expected to have, but is concerned that treating patient-facing status as automatically higher risk would be inaccurate.",
+      "requested_fda_action": "Assess risk for patient-facing functions based on the output, context, likely downstream action, health-literacy demands, escalation pathways, and the patient's ability to recognize uncertainty or error, rather than by user type alone, and recognize safeguards such as calibrated uncertainty communication, clear scope boundaries, structured escalation for high-risk symptoms, prevention of unsupported specificity, and interface design that reduces automation bias without undermining patient autonomy.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment frames risk as a function of how the patient user interacts with the output, including automation bias and the user's capacity to recognize uncertainty or error, rather than device output performance alone."
+      },
+      "public_summary": "Agrees patient-facing functions may need distinct safeguards where safe use requires clinical knowledge patients lack, but argues patient-facing status should not automatically mean higher risk. Recommends risk be based on output, context, downstream action, health literacy, escalation pathways, and error recognition.",
+      "summary_cut": false,
+      "source_passage": "Patient-facing functions may require different safeguards when safe use depends on clinical knowledge that the intended patient population cannot reasonably be expected to possess. However, patient-facing status should not automatically be treated as higher risk. Risk should depend on the output, context, likely downstream action, health-literacy demands, availability of escalation pathways, and the patient's ability to recognize uncertainty or error.\nUseful safeguards can include calibrated uncertainty communication, clear scope boundaries, structured escalation for high-risk symptoms, prevention of unsupported specificity, and user-interface designs that reduce automation bias without undermining patient autonomy."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q4"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "Risk depends on whether the intended user can independently evaluate an output within the device's operating domain, not on a categorical generalist/specialist label; generalists may gain access to expertise, but safeguards should increase where safe use requires specialist-level interpretation the user likely lacks.",
+      "requested_fda_action": "Treat the generalist/specialist distinction as a context modifier rather than a categorical risk classification, and require sponsors to characterize the expected user, required domain knowledge, intended degree of independent review, and escalation conditions—with any needed specialist review built into the workflow rather than conveyed only through labeling.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment frames risk around the combined performance of the device and a user who may lack the domain knowledge to independently evaluate outputs, including the intended degree of independent review.",
+        "deployment_assurance_scalability": "It argues that required specialist review or confirmation must be enforced in the deployed workflow rather than assumed through labeling, raising how safeguards are actually assured in practice."
+      },
+      "public_summary": "Accepts considering generalist versus specialist users but urges FDA to treat it as a context modifier rather than a categorical risk label, keyed to whether the intended user can independently evaluate outputs. Asks that required specialist review be embedded in workflow, not labeling.",
+      "summary_cut": false,
+      "source_passage": "The distinction should be treated as a context modifier rather than a categorical risk label. The relevant issue is whether the intended user can independently evaluate the output within the domain in which the device is operating. A generalist using a specialist-domain tool may benefit substantially from expanded access to expertise, but safeguards should increase when safe use depends on specialist-level interpretation that the intended user is unlikely to possess.\nSponsors should therefore characterize the expected user, required domain knowledge, intended degree of independent review, and escalation conditions. Where independent specialist-level review or confirmation is necessary for safe use, that requirement should be reflected in the workflow rather than implied only through labeling."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q5"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Turn-by-turn evaluation can miss risk that accumulates across a conversation, where neutral information gradually becomes patient-specific and action-directing through cumulative context and scope drift.",
+      "requested_fda_action": "Evaluate risk across realistic conversational trajectories and the system state at the moment of a consequential output; require transition testing of whether the device detects the shift from general information to patient-specific direction, adjusts safeguards, retains interaction history for reconstruction, and meets acceptance criteria for resistance to gradual scope drift and cumulative prompting.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment describes behavior that migrates beyond its initial framing over the course of an exchange, so the operative intended use and risk are emergent from cumulative interaction rather than fixed at a single turn."
+      },
+      "public_summary": "Endorses assessing multi-turn devices across whole conversational trajectories rather than isolated turns. Asks FDA to add transition testing—whether the device detects the shift to patient-specific direction, adapts safeguards, and retains interaction history—plus acceptance criteria for resistance to gradual scope drift and cumulative prompting.",
+      "summary_cut": false,
+      "source_passage": "Risk should be evaluated across realistic conversational trajectories, not only at the level of isolated turns. A sequence can begin with neutral information, accumulate patient-specific context, progressively narrow alternatives, and ultimately become action-directing. The clinically relevant state is therefore the cumulative interaction and the system state at the time the consequential output is generated.\nEvaluation should include transition testing: whether the device recognizes when a conversation has crossed from general information into patient-specific direction, whether its scope and safeguards change appropriately, and whether the system preserves enough interaction history to reconstruct how that transition occurred. Acceptance criteria should include resistance to gradual scope drift and cumulative prompting that would not appear unsafe when individual turns are evaluated separately."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "Under- and over-escalation produce different, asymmetric harms: under-escalation risks delayed diagnosis or treatment, while over-escalation drives unnecessary emergency utilization, testing, anxiety, procedural risk, and erosion of trust. Collapsing both into a single accuracy metric would obscure these trade-offs.",
+      "requested_fda_action": "Require sponsors to measure and report under-escalation and over-escalation as distinct error classes rather than as one aggregate accuracy figure, and to prespecify clinically justified thresholds reflecting clinical context, the consequence of delayed care, the burden of unnecessary escalation, and the intended user population.",
+      "confidence": "high",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment identifies over-escalation harms such as unnecessary emergency utilization, testing burden, patient anxiety, and erosion of trust, which extend beyond direct clinical error to system-level and operational consequences."
+      },
+      "public_summary": "Supports evaluating care escalation errors in both directions, urging FDA to require under- and over-escalation be reported as distinct error classes rather than a single accuracy metric, with prespecified thresholds justified by clinical context, delayed-care consequences, escalation burden, and intended users.",
+      "summary_cut": false,
+      "source_passage": "Under-escalation and over-escalation should be measured as distinct error classes because their harms are different and often asymmetric. Under-escalation may create delayed diagnosis or treatment; over-escalation may create unnecessary emergency utilization, testing, anxiety, procedural risk, and eventual erosion of trust.\nSponsors should prespecify clinically justified thresholds and report both directions of error rather than collapsing them into a single accuracy statistic. Threshold selection should reflect clinical context, the consequence of delayed care, the burden of unnecessary escalation, and the intended user population."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter accepts competency evaluation as a high-level framework and endorses evaluating the configured, user-facing device rather than the foundation model alone, but warns that competency testing alone does not confirm that the correct patient context was used, that underlying evidence was current and attributable, that the deployed configuration still matches the tested one, or that any downstream action was authorized.",
+      "requested_fda_action": "Treat competency-based evaluation as necessary but not sufficient and supplement it with assurances covering patient-context correctness, evidence currency and attribution, ongoing equivalence between deployed and tested configurations, and authorization of downstream actions.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "delegated_authority",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The commenter raises the need to verify that the postmarket deployed configuration remains equivalent to the configuration that was tested premarket.",
+        "delegated_authority": "The comment notes that competency testing does not establish whether a downstream action taken by the device was authorized.",
+        "dynamic_intended_use": "The commenter emphasizes that clinically relevant behavior emerges from the combination of application, model, prompts, retrieval, tools, context, interface, and workflow rather than the model alone."
+      },
+      "public_summary": "Finds the competency-based approach useful as a high-level framework and supports evaluating the configured user-facing device rather than the foundation model alone, but argues it is necessary yet insufficient: it does not verify patient context, evidence currency and attribution, deployed-versus-tested configuration equivalence, or action authorization.",
+      "summary_cut": false,
+      "source_passage": "The proposed competency-based approach is useful and appropriate as a high-level framework, and is consistent with the broader regulatory discussion around clinician-inspired competency, lifecycle assessment, and accountability [8-11], particularly because FDA proposes evaluating the final user-facing device as configured and intended to be deployed rather than the foundation model standing alone [1]. That focus is important: clinically relevant behavior emerges from the combination of the application, model, prompts, retrieval, tools, context, interface, and workflow.\nCompetency evaluation should nevertheless be treated as necessary but not sufficient. It establishes whether the configured device can perform the intended task under defined conditions. It does not by itself establish that the correct patient context was used, that the evidence was current, attributable, and appropriate for the contemplated clinical use, that the postmarket configuration remained equivalent to the tested configuration, or that a downstream action was authorized."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q7",
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter is concerned that assurance controls could be applied uniformly across all GenAI-enabled functions rather than scaled to the actual risk profile, noting that bounded advisory functions and consequential autonomous functions warrant different levels of control.",
+      "requested_fda_action": "FDA should apply the described assurance functions proportionately, calibrating them to intended function, degree of autonomy, clinical consequence, external dependencies, and execution authority, so that lower-risk advisory functions require only a subset of controls.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment identifies degree of autonomy and 'execution authority' as distinct determinants of how much assurance is required, a dimension beyond FDA's two-axis framing.",
+        "evidence_burden_commercial_viability": "The comment expressly cautions against treating assurance functions as a uniform regulatory burden applied regardless of function type."
+      },
+      "public_summary": "Commenter accepts the described assurance functions but asks that they not be applied uniformly. Requirements should scale with intended function, autonomy, clinical consequence, external dependencies, and execution authority, so bounded advisory functions need only a subset while consequential autonomous functions need substantially more.",
+      "summary_cut": false,
+      "source_passage": "The assurance functions described in this comment should not be understood as a uniform regulatory burden. Their relevance should be proportional to intended function, degree of autonomy, clinical consequence, external dependencies, and execution authority. A bounded advisory function may require only a subset of these controls; a consequential autonomous function may require substantially more of them to establish an appropriate level of assurance."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter accepts that the two-axis framework can scale evidentiary rigor with device independence and consequence severity, but is concerned that rigid risk bins would misallocate evidence, since a highly consequential HCP-supervised function may need different evidence than a lower-consequence autonomous one.",
+      "requested_fda_action": "Apply the two-axis framework to scale evidence continuously rather than through fixed categories, incorporating the additional risk modifiers raised under Question 1, and interpret least burdensome as tailoring and efficiently placing evidentiary burden across the total product lifecycle without lowering the safety and effectiveness standard.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues that the presence of HCP supervision should alter the evidence expected for a highly consequential function, treating the supervised human-device configuration rather than the device alone as the relevant unit for calibrating evidence."
+      },
+      "public_summary": "Supports using the two-axis risk framework to scale premarket evidence, but asks FDA to scale continuously rather than through rigid bins, account for supervision and other Question 1 modifiers, and treat least burdensome as tailored burden, not reduced control.",
+      "summary_cut": false,
+      "source_passage": "The two-axis framework can appropriately scale the rigor and breadth of evidence. As activity becomes more independent and the consequences of an incorrect output become more severe, FDA can reasonably expect stronger benchmarking, more demanding clinical confirmation, greater subgroup coverage, more explicit failure-mode testing, and more robust change-control and postmarket plans.\nThe framework should scale evidence continuously rather than create rigid bins. A highly consequential but HCP-supervised function may warrant different evidence than a lower-consequence autonomous function. The additional modifiers described in response to Question 1 can help determine the appropriate mix.\nThis risk-proportionate approach is compatible with FDA's least-burdensome principles. Least burdensome should not be interpreted as least control; rather, the evidentiary and technical burden should be tailored to the regulatory question, applied efficiently, and placed at the appropriate point in the total product lifecycle while preserving the applicable safety and effectiveness standard. [15]"
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter views FDA's proposed benchmarking categories (safety, clinical proficiency, generalizability, agentic capability) as a strong foundation but sees a missing cross-cutting dimension of evidence integrity and reconstructability, so that the data and configuration conditions under which benchmark results were obtained can be identified and compared to intended deployment conditions.",
+      "requested_fda_action": "Add a cross-cutting assurance dimension for evidence integrity and reconstructability rather than a new competency score, and for higher-consequence devices require benchmark records preserving test asset version, input provenance, correction/supersession state, device and foundation-model versions, material system configuration, scoring method, acceptance criteria, and adjudication process.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment stresses determining whether benchmark test conditions and system configuration correspond to the intended deployment environment, an assurance concern beyond the benchmark content categories FDA's question addresses."
+      },
+      "public_summary": "Calls FDA's benchmarking categories a strong foundation but asks for an added cross-cutting evidence-integrity and reconstructability dimension—not a new competency score. For higher-consequence devices, benchmark records should preserve test asset, provenance, version, configuration, scoring, acceptance criteria, and adjudication details supporting later re-benchmarking.",
+      "summary_cut": false,
+      "source_passage": "FDA's proposed categories - safety, clinical proficiency, generalizability, and agentic capability - are a strong foundation. A cross-cutting assurance dimension should also address evidence integrity and reconstructability. This need not become a new competency score. Rather, sponsors should be able to identify the data and configuration conditions under which benchmark results were obtained and determine whether those conditions correspond to intended deployment.\nFor higher-consequence devices, benchmark records should preserve the test asset version, relevant input provenance, material correction or supersession state where applicable, device/application version, foundation-model version where applicable, material system configuration, scoring method, acceptance criteria, and adjudication process. This improves reproducibility and creates a meaningful reference point for later re-benchmarking."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Benchmark performance may not predict real-world clinical behavior unless construct validity for the specific intended use is demonstrated, and benchmarks are vulnerable to contamination and optimization-to-the-test.",
+      "requested_fda_action": "Accept benchmarks as evidence only where construct validity is justified, and require safeguards such as prespecified evaluation plans, sequestered or independently maintained test sets, contamination disclosure, out-of-distribution and adversarial testing, subgroup and setting coverage, confirmation on real or clinically representative inputs, and transparency for sponsor-developed benchmarks.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports benchmarking as evidence only where construct validity for the intended use is justified. Recommends prespecified evaluation plans, sequestered or independently maintained test sets, contamination disclosure, out-of-distribution, adversarial and subgroup testing, and transparency for sponsor-developed benchmarks to limit optimization-to-the-test.",
+      "summary_cut": false,
+      "source_passage": "A benchmark should be treated as evidence only to the extent that its construct validity for the intended use is established. Sponsors should justify why performance on the benchmark is expected to predict clinically relevant behavior in the deployment environment.\nUseful safeguards include prespecified evaluation plans, sequestered or independently maintained test sets where practical, disclosure of known contamination risks [12], testing on out-of-distribution and adversarial cases, evaluation across clinically relevant settings and subgroups, and confirmation on real or clinically representative inputs. Sponsor-developed benchmarks can be valuable when the intended use is specialized, but their design and acceptance criteria should be transparent enough to reduce optimization-to-the-test risk."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q11"
+      ],
+      "position": "support",
+      "primary_issue": "clinical_validation",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Confirmation rigor should be matched to intended use, risk, reversibility, autonomy, availability of a valid reference standard, and novelty of deployment context, with attention to real-world interaction effects and behaviors that static testing may not surface.",
+      "requested_fda_action": "Retain the graduated ladder of confirmation approaches and allow selection based on the listed factors: retrospective evaluation for lower-risk functions with stable inputs and strong reference standards, shadow deployment where workflow context may alter behavior without patient exposure, and prospective studies for high-consequence autonomous action or where interaction effects or clinical endpoints require them.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment treats workflow context and human-device interaction effects as central determinants of safety and of the appropriate confirmation method.",
+        "dynamic_intended_use": "It emphasizes that real-world interaction may expose behaviors not captured in static premarket testing, requiring evaluation approaches sensitive to emergent behavior."
+      },
+      "public_summary": "Agrees FDA's graduated ladder of clinical confirmation approaches is appropriate, and proposes selection criteria: intended use, risk, reversibility, autonomy, reference-standard validity, and deployment novelty. Suggests retrospective review for lower-risk stable functions, shadow deployment where workflow alters behavior, prospective studies for high-consequence autonomous action.",
+      "summary_cut": false,
+      "source_passage": "FDA's proposed ladder of approaches is appropriate. Selection should depend on intended use, risk, reversibility, degree of autonomy, availability of a valid reference standard, novelty of the deployment context, and the extent to which real-world interaction may expose behaviors not captured in static testing.\nRetrospective evaluation may be sufficient for lower-risk functions with stable inputs and strong reference standards. Shadow deployment is especially useful when workflow context may change system behavior but patient exposure should be avoided. Prospective studies become more important as the device independently directs or takes high-consequence action, when clinically meaningful endpoints cannot be inferred from retrospective data, or when interaction effects are central to safety."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q12"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "Combining synthetic and real-world evidence into a single performance estimate could obscure clinically important differences unless transportability between synthetic and real distributions is justified and weighting is characterized. Some clinical heterogeneity, workflow effects, and latent correlations cannot be credibly reproduced synthetically.",
+      "requested_fda_action": "Suggests FDA consider requiring separate reporting of synthetic and real-world performance before permitting a combined estimate, conditioned on justified transportability and documented weighting. Requests that the evaluation record document generation method, model/simulator version, source population and assumptions, testing purpose, and distributional relationship to the real-world target population, with real-world confirmation retained where synthetic generation is not credible.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts supplemental use of synthetic inputs but suggests FDA require separate reporting of synthetic and real-world performance before any combined estimate, permitted only with justified transportability, documented weighting and generation provenance, and retained real-world confirmation where heterogeneity or workflow effects cannot be simulated.",
+      "summary_cut": false,
+      "source_passage": "FDA may wish to consider separate reporting of synthetic and real-world performance before allowing a combined estimate. A combined performance estimate is most defensible when the sponsor can justify transportability between the synthetic and real distributions, characterize weighting, and show that the combination does not obscure clinically important differences.\nFor synthetic inputs, the evaluation record should identify the generation method, model or simulator version, source population or assumptions used to construct the synthetic cases, intended testing purpose, and the distributional relationship to the real-world target population. Real-world confirmation should remain important where clinical heterogeneity, workflow effects, or latent correlations cannot be credibly reproduced synthetically."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q13"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Synthetic data is useful for rare-event stress testing, controlled perturbations, privacy-preserving scenarios, and edge cases, but unreliable where phenomena depend on complex latent relationships, undocumented workflow behavior, or poorly represented populations; generators of the same model class as the device can produce correlated blind spots and false reassurance.",
+      "requested_fda_action": "Require safeguards when synthetic data come from models of the same or closely related class as the device—independent generation methods, real-world holdout confirmation, explicit provenance, subgroup-specific distribution checks, adversarial challenge cases, and independent clinical adjudication—and treat synthetic evidence as complementary to real-world diversity evidence unless transportability is well established.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports synthetic data for rare-event, edge-case, and privacy-preserving testing, but warns it is unreliable for complex latent relationships or unrepresented populations. Urges safeguards against correlated blind spots—independent generation, real-world holdouts, provenance, subgroup checks, adjudication—and treating synthetic evidence as complementary unless transportability is established.",
+      "summary_cut": false,
+      "source_passage": "Synthetic data may be particularly useful for rare-event stress testing, controlled perturbations, privacy-preserving development of standardized scenarios, device/tool failure simulations, and targeted testing of under-sampled edge cases. It is less reliable when the clinically important phenomenon depends on complex latent relationships, undocumented workflow behavior, or population characteristics that the generator does not represent well.\nA specific safeguard is needed when synthetic data are generated by models of the same or closely related class as the device under evaluation. Correlated blind spots can create false reassurance. Mitigations include independent generation methods, real-world holdout confirmation, explicit provenance, subgroup-specific distribution checks, adversarial challenge cases, and independent clinical adjudication. ... Synthetic evidence should generally be treated as complementary to, rather than a replacement for, evidence of real-world diversity unless transportability is well established."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "The commenter is concerned that performance comparators may be set without regard to the device's intended clinical role, for example by holding a device designed to assist generalists to a subspecialist standard.",
+      "requested_fda_action": "FDA should require that the comparator used for evaluating open-ended outputs be matched to the device's intended clinical role rather than defaulting to a subspecialist benchmark.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter states that performance comparators should correspond to a device's intended clinical role, arguing a device intended to assist generalists should not automatically be evaluated only against subspecialist performance. The brief passage does not otherwise assess FDA's comparator framework.",
+      "summary_cut": false,
+      "source_passage": "The comparator should match the device's intended clinical role. A device intended to assist a generalist should not automatically be judged only against a subspecialist"
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter argues that demonstrated technical capability of an agentic GenAI system does not by itself establish that its output is clinically supportable, that users are permitted to rely on it, or that it is authorized to execute an action, and that this distinction grows more important as devices move from information generation to tool use and autonomous multi-step action.",
+      "requested_fda_action": "Make an explicit regulatory distinction among clinical supportability, permission to rely on an output, and authority to execute an action when evaluating agentic GenAI-enabled devices, rather than treating demonstrated capability as sufficient.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The passage's central claim is that authority to act must be granted separately from demonstrating technical capability, an authorization question FDA's Q26 framing on acceptance criteria and oversight does not directly address."
+      },
+      "public_summary": "Commenter accepts FDA's focus on agentic systems but asks it to add an explicit distinction among clinical supportability, permission to rely on an output, and authority to execute an action, arguing demonstrated technical capability alone confers none of these as autonomy increases.",
+      "summary_cut": false,
+      "source_passage": "Fourth, agentic systems require an explicit distinction between clinical supportability, permission to rely on an output, and authority to execute an action.\nThe core regulatory-science proposition is:\nTechnical capability does not establish clinical supportability, authorization for reliance, or authority for execution.\nCAPABILITY DOES NOT CONFER AUTHORITY.\nA system may be technically capable of producing a clinically supportable recommendation or performing an action. That fact alone does not establish that the output should influence care or that the contemplated action is authorized to occur. As GenAI-enabled devices move from information generation toward tool use and autonomous multi-step action, this distinction becomes increasingly important."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter is concerned that agentic GenAI devices act autonomously through tool use and multi-step actions, and that the scope of that authority, the points of human oversight, and the handling of failures may not be clearly defined or traceable.",
+      "requested_fda_action": "FDA should consider expecting sponsors to explicitly characterize tool permissions, action authority, human-oversight checkpoints, reversibility, failure handling, and auditability for agentic AI devices.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment asks that the scope of authority delegated to an agentic system—its tool permissions and action authority—be explicitly specified and auditable.",
+        "human_ai_system_performance": "It calls for explicit characterization of human-oversight checkpoints, framing safety as a property of the combined human-agent workflow rather than the model alone."
+      },
+      "public_summary": "Supports FDA's attention to agentic devices but asks it to go further: sponsors should be expected to explicitly characterize tool permissions, action authority, human-oversight checkpoints, reversibility, failure handling, and auditability as part of agentic AI evaluation.",
+      "summary_cut": false,
+      "source_passage": "9. For agentic AI, consider whether sponsors should be expected to explicitly characterize tool permissions, action authority, human-oversight checkpoints, reversibility, failure handling, and auditability."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter is concerned that postmarket approaches such as re-benchmarking and sample review may not preserve enough traceable evidence to reconstruct what happened in an individual higher-consequence event, including which model versions, configurations, source evidence, tool calls, and human reliance decisions were involved.",
+      "requested_fda_action": "FDA should evaluate the feasibility of a core reconstructable event record for higher-consequence GenAI-enabled devices that links patient/encounter, source evidence, provenance and temporal state, application and foundation-model versions, configuration, governance state, tool use, output, reliance determination, execution disposition, and outcomes, without mandating a single architecture.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "distributed_accountability",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The proposal ties ongoing assurance to capturing deployment-specific system configuration and governance state, which FDA's postmarket questions do not explicitly address.",
+        "distributed_accountability": "Recording both application and foundation-model versions plus tool use is aimed at enabling root-cause analysis across multiple contributing parties.",
+        "human_ai_system_performance": "The record would capture reliance determination and execution disposition, i.e., how the human acted on the output, not just device output performance."
+      },
+      "public_summary": "Recommends that FDA go beyond the described postmarket approaches by assessing the feasibility of a core reconstructable event record for higher-consequence GenAI devices—capturing source evidence, model versions, configuration, tool use, reliance and outcomes—to enable root-cause analysis, without prescribing one architecture.",
+      "summary_cut": false,
+      "source_passage": "A second cross-cutting recommendation is that FDA evaluate the feasibility of a core reconstructable event record for higher-consequence GenAI-enabled devices. Such a record could link the patient and encounter, source evidence, provenance and temporal state, application and foundation-model versions, system configuration, governance state, tool use, generated output, reliance determination, execution disposition, and available outcome information. The purpose would not be to impose a single architecture, but to preserve enough evidence for root-cause analysis and ongoing assurance."
+    },
+    {
+      "segment_id": "seg-021",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Aggregate performance monitoring alone may be insufficient for higher-consequence systems because it does not permit root-cause investigation of individual failures, and fixed periodic review may miss changes arising between review cycles.",
+      "requested_fda_action": "Require, for higher-consequence systems, reconstructable event-level evidence adequate for root-cause investigation alongside aggregate monitoring, and adopt a hybrid reassessment cadence combining periodic review with event-triggered reassessment following material model, configuration, data-environment, tool, security, or deployment-context changes.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "cybersecurity_as_safety"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment treats changes in configuration, data environment, tools, and deployment context as reassessment triggers, extending monitoring beyond the model itself to local deployment conditions.",
+        "cybersecurity_as_safety": "Security changes are listed as an event that should trigger postmarket performance reassessment, linking security state to ongoing safety assurance."
+      },
+      "public_summary": "Accepts the proposed postmarket approaches but asks FDA to add reconstructable event-level evidence supporting root-cause investigation for higher-consequence systems, and to combine periodic review with reassessment triggered by material model, configuration, data-environment, tool, security, or deployment-context changes.",
+      "summary_cut": false,
+      "source_passage": "4. For higher-consequence systems, complement aggregate postmarket performance monitoring with reconstructable event-level evidence sufficient for root-cause investigation.\n5. Use hybrid postmarket reassessment: periodic review plus event-triggered reassessment after material model, configuration, data-environment, tool, security, or deployment-context changes."
+    },
+    {
+      "segment_id": "seg-022",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "Machine-based supervisory agents can materially affect safety decisions, yet may not be evaluated as assurance components in their own right, and their level of authority (observing, recommending, or intervening) is not clearly differentiated.",
+      "requested_fda_action": "Treat supervisory agents that materially affect safety decisions as independently evaluable assurance components, and explicitly distinguish among supervisory observation, recommendation, and intervention authority in the evaluation framework.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment asks FDA to differentiate the authority a supervisory agent holds—observation versus recommendation versus intervention—which concerns how much decision-making power is delegated to an automated overseer.",
+        "deployment_assurance_scalability": "It frames supervisory agents as assurance components requiring their own independent evaluation, raising how ongoing monitoring assurance is validated in deployment."
+      },
+      "public_summary": "Accepts the use of machine-based supervisory agents in postmarket monitoring but asks FDA to treat them as independently evaluable assurance components when they materially affect safety decisions, and to distinguish supervisory observation, recommendation, and intervention authority.",
+      "summary_cut": false,
+      "source_passage": "6. Treat machine-based supervisory agents as independently evaluable assurance components when they materially affect safety decisions, and distinguish supervisory observation, recommendation, and intervention authority."
+    },
+    {
+      "segment_id": "seg-023",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Changes to third-party foundation models may occur outside the device manufacturer's control, and without reliable version tracking and notification such changes could go undetected or uncharacterized before affecting device behavior.",
+      "requested_fda_action": "FDA should require or encourage mechanisms for reliable version identification, change notification, regression testing, and fail-safe handling of uncharacterized changes to third-party foundation models.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment focuses on supplier-side controls—version identification, change notification, and regression testing—for upstream foundation model providers whose changes the device manufacturer does not initiate."
+      },
+      "public_summary": "Recommends that FDA require or encourage mechanisms addressing third-party foundation model changes, specifically reliable version identification, change notification, regression testing, and fail-safe handling when changes cannot be characterized. Accepts FDA's framing of the issue while urging more concrete supplier-control expectations.",
+      "summary_cut": false,
+      "source_passage": "7. For third-party foundation models, consider requiring or encouraging mechanisms for reliable version identification, change notification, regression testing, and fail-safe handling of uncharacterized changes."
+    },
+    {
+      "segment_id": "seg-024",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "The commenter is concerned that shared responsibility across the GenAI ecosystem could dilute manufacturer accountability unless each participant's obligations are concretely specified.",
+      "requested_fda_action": "Retain manufacturer accountability as the anchor while defining specific technical control responsibilities for healthcare institutions, clinicians, foundation model providers, and other stakeholders.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment directly addresses how responsibility should be allocated among manufacturers, institutions, clinicians, and model providers without weakening manufacturer accountability.",
+        "deployment_assurance_scalability": "Assigning defined technical control responsibilities to deploying institutions and clinicians implicates assurance activities at the point of deployment rather than only at the manufacturer level."
+      },
+      "public_summary": "Supports FDA's aim of preserving manufacturer accountability in postmarket oversight, but asks that shared ecosystem responsibility be made concrete by defining specific technical control responsibilities for healthcare institutions, clinicians, foundation model providers, and other stakeholders.",
+      "summary_cut": false,
+      "source_passage": "10. Preserve manufacturer accountability while translating shared ecosystem responsibility into defined technical control responsibilities for institutions, clinicians, model providers, and other stakeholders."
+    },
+    {
+      "segment_id": "seg-025",
+      "question_ids": [
+        "q22",
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Benchmarking may demonstrate what a model or device is capable of, but not whether, in deployment, it used correctly associated, current, attributable, and fit-for-purpose evidence, ran in the intended configuration, or possessed authority for a downstream action. Configuration state can also change after authorization.",
+      "requested_fda_action": "Evaluate the final user-facing device in its deployed or representative configuration, and treat model competency and contextual/system assurance as distinct evaluation elements rather than assuming benchmarking covers both.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment argues assurance must attach to the deployed or representative configuration, whose state may change after authorization, rather than to benchmark performance alone.",
+        "delegated_authority": "It notes that benchmarking does not establish whether the device had authority for a downstream action, raising an assurance dimension beyond competency testing."
+      },
+      "public_summary": "Accepts FDA's competency-based concept but asks that evaluation target the final user-facing device in its deployed or representative configuration, and that model competency be separated from contextual and system assurance—evidence currency, attribution, correct configuration, and authority for downstream actions—since configuration may change post-authorization.",
+      "summary_cut": false,
+      "source_passage": "2. Evaluate the final user-facing device in its deployed or representative configuration, consistent with FDA's competency-based concept, while recognizing that configuration state may itself change after authorization.\n3. Separate model competency from contextual/system assurance. Benchmarking can establish what a device can do; it does not by itself establish that the device used evidence that was correctly associated, current, sufficiently attributable, and appropriate for the intended use, operated in the intended configuration, or had authority for a downstream action."
+    },
+    {
+      "segment_id": "seg-026",
+      "question_ids": [
+        "q13"
+      ],
+      "position": "unclear",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter distinguishes uses where synthetic data is dependable (rare-event stress testing, controlled perturbations, privacy-preserving standardized scenarios, device/tool failure simulation, under-sampled edge cases) from uses where it is unreliable, namely when the clinically important phenomenon depends on complex latent relationships, undocumented workflow behavior, or populations the generator represents poorly.",
+      "requested_fda_action": "The passage asks FDA to recognize these boundaries in judging when synthetic data may supplement real-world evidence, but states no explicit request or endorsement of a specific FDA approach.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Responding on synthetic data, the commenter says it suits rare-event stress testing, controlled perturbations, privacy-preserving standardized scenarios, device/tool failure simulation, and under-sampled edge cases, but is less reliable where complex latent relationships, undocumented workflow behavior, or unrepresented populations drive the clinical phenomenon. No explicit stance.",
+      "summary_cut": false,
+      "source_passage": "ful for rare-event stress testing, controlled\nperturbations, privacy-preserving development of standardized scenarios, device/tool failure\nsimulations, and targeted testing of under-sampled edge cases. It is less reliable when the\nclinically important phenomenon depends on complex latent relationships, undocumented\nworkflow behavior, or population characteristics that the generator does not represent well."
+    },
+    {
+      "segment_id": "seg-027",
+      "question_ids": [
+        "q13"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "When synthetic data are produced by models of the same or closely related class as the device being evaluated, correlated blind spots can produce false reassurance about performance, including for subgroups.",
+      "requested_fda_action": "Require specific safeguards for same-class synthetic data generation, including independent generation methods, real-world holdout confirmation, explicit provenance, subgroup-specific distribution checks, adversarial challenge cases, and independent clinical adjudication.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter agrees synthetic data can supplement real-world evidence, but says a specific safeguard is needed when it is generated by models of the same class as the device, citing correlated blind spots; mitigations listed include independent generation, real-world holdouts, provenance, subgroup checks, adversarial cases,",
+      "summary_cut": true,
+      "source_passage": "A specific safeguard is needed when synthetic data are generated by models of the same or\nclosely related class as the device under evaluation. Correlated blind spots can create false\nreassurance. Mitigations include independent generation methods, real-world holdout\nconfirmation, explicit provenance, subgroup-specific distribution checks, adversarial\nchallenge cases, and independent clinical adjudication."
+    },
+    {
+      "segment_id": "seg-028",
+      "question_ids": [
+        "q12",
+        "q13"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Synthetic data may be used in place of real-world data that demonstrates population diversity, when the transportability of synthetic distributions to real-world conditions has not been established.",
+      "requested_fda_action": "Treat synthetic evidence as complementary to, not a substitute for, evidence reflecting real-world diversity, unless transportability of the synthetic data to the real-world setting is well established.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter states synthetic evidence should generally complement rather than replace evidence of real-world diversity, allowing substitution only where transportability to real-world conditions is well established.",
+      "summary_cut": false,
+      "source_passage": "Synthetic evidence should generally be treated as\ncomplementary to, rather than a replacement for, evidence of real-world diversity unless\ntransportability is well established."
+    },
+    {
+      "segment_id": "seg-029",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "For open-ended generative outputs there is often no single correct response, so a unidimensional acceptance criterion would not adequately capture performance or safety-relevant failure modes.",
+      "requested_fda_action": "Adopt multidimensional acceptance criteria for open-ended outputs, assessing dimensions such as safety-critical omissions, factual correctness, appropriateness of differential reasoning, calibration, escalation behavior, communication quality, and consistency across equivalent scenarios.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter recommends that, where no single correct response exists, acceptance criteria for open-ended outputs be multidimensional, covering safety-critical omissions, factual correctness, differential reasoning, calibration, escalation behavior, communication quality, and consistency across equivalent scenarios.",
+      "summary_cut": false,
+      "source_passage": "Acceptance criteria should be multidimensional where a single \"correct\" response does not\nexist. Relevant dimensions can include safety-critical omissions, factual correctness,\nappropriateness of differential reasoning, calibration, escalation behavior, communication\nquality, and consistency across equivalent scenarios."
+    },
+    {
+      "segment_id": "seg-030",
+      "question_ids": [
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "In many deployment settings the clinically meaningful comparator is the counterfactual care pathway (delay, triage inconsistency, no specialist access) rather than an idealized expert, but comparator selection could be gamed by choosing a weak baseline to show superiority.",
+      "requested_fda_action": "Permit counterfactual/usual-care comparators where justified by the intended deployment context, require sponsors to justify comparator choice and guard against artificially weak comparators, and, where practicable, require analyses reporting device-alone, human-alone, and intended human-AI workflow performance separately.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter asks that evaluations separately report device-alone, clinician-alone, and combined human-AI workflow performance, treating the deployed sociotechnical system rather than the model alone as the object of evaluation."
+      },
+      "public_summary": "Agrees that comparators may reflect the counterfactual care pathway (delay, triage variability, limited specialist access) rather than an idealized expert, but asks FDA to require sponsors to justify comparator choice, avoid artificially weak baselines, and report device-alone, human-alone, and human-AI workflow performance separately.",
+      "summary_cut": false,
+      "source_passage": "Yes. In some settings the clinically relevant comparator is the counterfactual care pathway\nrather than an idealized expert. A device may create benefit by accelerating access to\nspecialist-level review, improving triage consistency, reducing delay, or increasing detection\neven if it does not outperform the best available specialist on every case.\nSponsors should justify the comparator based on the intended deployment context and\nshould avoid choosing a weak comparator merely to demonstrate superiority. Where\npracticable, analyses should distinguish device-alone performance, human-alone\nperformance, and the performance of the intended human-AI workflow."
+    },
+    {
+      "segment_id": "seg-031",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "Third-party involvement can strengthen independence in benchmark custody, sequestered test-set maintenance, conformity testing, and adjudication, but risks creating a narrow mandatory certification market and blurring where responsibility sits for the final device.",
+      "requested_fda_action": "Allow qualified independent third parties in defined roles under transparent qualification criteria, conflict-of-interest controls, reproducible and auditable methods, while avoiding structures that limit competition and keeping the sponsor accountable for the safety and effectiveness of its final device configuration.",
+      "confidence": "high",
+      "gap_tags": [
+        "distributed_accountability",
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment stresses that reliance on third-party-generated evidence must not diffuse the sponsor's responsibility for the final device configuration.",
+        "evidence_burden_commercial_viability": "It warns that a small mandatory certification market for third-party testing could limit competition."
+      },
+      "public_summary": "Supports independent third parties in benchmark custody, sequestered test sets, conformity testing, adjudication, and tool qualification, but conditions this on transparent qualification criteria, conflict-of-interest controls, reproducible and auditable methods, avoiding a narrow mandatory certification market, and retaining sponsor accountability for the final device.",
+      "summary_cut": false,
+      "source_passage": "Independent third parties can add value in benchmark custody, sequestered test-set\nmaintenance, conformity testing, expert adjudication, and qualification of reusable\nregulatory-science tools. Their role should improve independence without diffusing sponsor\nresponsibility.\nFDA should avoid structures that inadvertently create a small mandatory certification market\nthat limits competition. Participation should be based on transparent qualification criteria,\nconflict-of-interest controls, reproducible methods, and auditability. The sponsor should\nremain accountable for the safety and effectiveness of its final device configuration even\nwhen third-party evidence is used."
+    },
+    {
+      "segment_id": "seg-032",
+      "question_ids": [
+        "q17"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter is concerned that evaluation could be organized around a device's underlying model architecture rather than the clinically consequential behavior of the final configured device, and that multimodal and world-model systems present distinct failure modes (cross-modal inconsistency, mis-association of patient/encounter data, provenance and temporal misalignment, error propagation, and one modality silently dominating another).",
+      "requested_fda_action": "Keep the competency-based framework architecture-neutral by targeting evaluation at the behavior of the final configured device rather than the internal model class, while adding specific evaluation attention to cross-modal consistency, patient/encounter association, per-modality provenance, temporal alignment, inter-modality error propagation, and silent modality dominance.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports applying the competency-based framework to varied architectures, but asks that evaluation remain architecture-neutral and focus on the final configured device's behavior, with added attention to cross-modal consistency, patient/encounter association, modality provenance, temporal alignment, error propagation, and one modality silently dominating another.",
+      "summary_cut": false,
+      "source_passage": "The competency-based framework should remain architecture-neutral. The evaluation target\nshould be the clinically consequential behavior of the final configured device, not the internal\nmodel class. Multimodal and world-model systems may require additional attention to cross-\nmodal consistency, patient/encounter association, provenance of each modality, temporal\nalignment, error propagation between modalities, and the possibility that one modality\nsilently dominates another."
+    },
+    {
+      "segment_id": "seg-033",
+      "question_ids": [
+        "q17"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "The commenter is concerned that regulatory expectations tied to specific model architectures will become outdated as architectures evolve, leaving assurance criteria misaligned with what actually determines device behavior and risk.",
+      "requested_fda_action": "Structure the assurance framework around intended function, input/output behavior, configuration state, failure modes, and the device's downstream authority, rather than anchoring expectations to a particular model architecture.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment frames assurance around observable input/output behavior, configuration state, and failure modes—i.e., a behavioral envelope rather than a fixed architectural or static intended-use description.",
+        "delegated_authority": "It identifies the device's \"downstream authority\" as a core assurance dimension, which FDA's architecture-focused question does not directly address."
+      },
+      "public_summary": "Supports applying a competency-based approach across varied model architectures, but asks FDA to make assurance expectations architecture-agnostic—anchored instead in intended function, input/output behavior, configuration state, failure modes, and the device's downstream authority, so criteria remain valid as architectures evolve.",
+      "summary_cut": false,
+      "source_passage": "As architectures evolve, the assurance framework should therefore focus on intended\nfunction, input/output behavior, configuration state, failure modes, and downstream authority\nrather than tying regulatory expectations to a particular model architecture."
+    },
+    {
+      "segment_id": "seg-034",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Accepting greater premarket uncertainty is only defensible when residual uncertainty is measurable and the postmarket system can actually detect clinically meaningful degradation and support attribution and correction before harm accumulates; otherwise monitoring plans mask uncharacterized high-consequence risk.",
+      "requested_fda_action": "Condition any premarket/postmarket trade-off on explicit prerequisites—measurable residual uncertainty, timely degradation detection, feasible intervention or rollback, and reliable observability—and exclude fully autonomous functions, severe or irreversible consequences, hard-to-detect failures, and poorly observable systems.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment makes reliance on postmarket monitoring contingent on real-world observability, attribution capability, and feasible rollback, which FDA's question does not fully specify as deployment-level assurance prerequisites.",
+        "operational_harm": "It frames the risk in terms of harm accumulating before a monitoring system can react and failures that are difficult to detect promptly, an operational detection-latency concern beyond model performance."
+      },
+      "public_summary": "Conditionally accepts greater reliance on postmarket monitoring, but only where residual uncertainty is measurable, degradation is detectable before harm accumulates, rollback is feasible, and observability supports attribution. Rejects the trade-off for fully autonomous functions, severe or irreversible consequences, and poorly observable systems.",
+      "summary_cut": false,
+      "source_passage": "Greater reliance on postmarket monitoring may be appropriate when the residual\nuncertainty is measurable, monitoring can detect clinically meaningful degradation before\nunacceptable harm accumulates, intervention or rollback is feasible, and the postmarket\nevidence system is sufficiently complete to support attribution and corrective action. [1]\nReduced premarket evidence is less appropriate where the function is fully autonomous,\nconsequences are severe or irreversible, failures may be difficult to detect promptly, or the\nsystem lacks reliable postmarket observability. A monitoring plan should not be used to\ncompensate for a premarket evidence gap that could expose patients to uncharacterized\nhigh-consequence risk before the monitoring system can react."
+    },
+    {
+      "segment_id": "seg-035",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter views periodic re-benchmarking, sample-based clinician review, and performance-degradation monitoring as useful but insufficient on their own, because detecting drift only shows that something changed and does not explain why. Without records of the data, model, configuration, tools, and governance state in effect at the time, root-cause analysis is not possible.",
+      "requested_fda_action": "Supplement the proposed postmarket monitoring approaches with a requirement for reconstructable, event-level evidence for consequential outputs and actions, capturing the data, model version, configuration, tools, and governance state present when a change occurred.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment focuses on maintaining reconstructable records of the deployed data, model, configuration, tool, and governance state so that post-deployment behavior changes can be traced and diagnosed, which goes beyond the monitoring methods FDA lists."
+      },
+      "public_summary": "Agrees that periodic re-benchmarking, clinician review, and degradation monitoring are useful, but argues they only detect that change occurred. Asks FDA to add reconstructable event-level evidence for consequential outputs, recording the data, model, configuration, tools, and governance state, to enable root-cause analysis.",
+      "summary_cut": false,
+      "source_passage": "Periodic re-benchmarking, clinician review, and performance-degradation monitoring are all\nuseful. They should be supplemented by reconstructable event-level evidence for\nconsequential outputs and actions. Detecting drift establishes that something changed; root-\ncause analysis requires knowing what data, model, configuration, tools, and governance\nstate were present when the change occurred."
+    },
+    {
+      "segment_id": "seg-036",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Periodic reassessment alone may miss performance changes that arise between scheduled intervals, particularly those driven by upstream model or infrastructure changes, new deployment contexts, or emerging safety signals.",
+      "requested_fda_action": "Adopt a hybrid postmarket reassessment cadence combining periodic review with event-triggered reassessment, with triggers including foundation-model or application updates, prompt/retrieval/tool changes, new clinical settings or populations, changes in connected data sources, subgroup-specific degradation, cybersecurity events, new safety signals, and crossing prespecified performance thresholds.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "cybersecurity_as_safety",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The commenter treats deployment into a new clinical setting or population, and changes in connected data sources, as events requiring fresh performance reassessment rather than relying on a single premarket assessment.",
+        "cybersecurity_as_safety": "Cybersecurity events affecting relevant components are proposed as triggers for clinical performance reassessment, linking security incidents to safety monitoring.",
+        "ai_supplier_quality": "Updates initiated at the foundation-model layer are identified as reassessment triggers, implying the need to track third-party supplier-driven changes."
+      },
+      "public_summary": "Recommends that FDA adopt a hybrid postmarket reassessment cadence—periodic plus event-triggered—and lists specific triggers, including foundation-model or application updates, prompt/retrieval/tool changes, new settings or populations, data-source changes, subgroup degradation, cybersecurity events, new safety signals, and prespecified performance thresholds.",
+      "summary_cut": false,
+      "source_passage": "Cadence should be hybrid: periodic plus event-triggered. Triggering events can include\nfoundation-model or application updates, material prompt/retrieval/tool changes,\ndeployment into a new clinical setting or population, changes in connected data sources,\nsubgroup-specific degradation, cybersecurity events affecting relevant components,\nemergence of a new safety signal, or crossing a prespecified performance threshold."
+    },
+    {
+      "segment_id": "seg-037",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "Postmarket approaches such as re-benchmarking and sample review may not allow an incident to be reconstructed unless the underlying state of the system, its inputs, and how the output was acted upon are captured. The commenter identifies traceability across model versions, configuration, supervisory state, and execution disposition as necessary for higher-consequence systems.",
+      "requested_fda_action": "Assess the feasibility of requiring or recommending a core reconstructable event record for higher-consequence GenAI systems, linking patient/encounter state, source evidence provenance and temporal validity, application and foundation-model versions, configuration/retrieval/prompt/memory/tool state, policy, permission and supervisory state, generated output and reliance determination, execution disposition (executed, constrained, escalated, deferred, blocked), and downstream outcome information.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "Linking application and foundation-model versions, retrieval sources, and provenance in a single record addresses attribution of a failure across multiple contributors that FDA's postmarket question does not directly frame.",
+        "delegated_authority": "The proposed record captures policy, permission, and supervisory state plus execution disposition (executed, constrained, escalated, deferred, blocked), reflecting how much action authority the system was granted.",
+        "human_ai_system_performance": "Capturing the reliance determination alongside the generated output treats the human's use of the output as part of what must be monitored, not just model performance."
+      },
+      "public_summary": "Recommends FDA go beyond the listed postmarket approaches by evaluating the feasibility of a core reconstructable event record for higher-consequence GenAI systems, linking patient state, evidence provenance, application and foundation-model versions, configuration and tool state, supervisory state, reliance determination, execution disposition, and outcomes.",
+      "summary_cut": false,
+      "source_passage": "For higher-consequence systems, FDA should consider the feasibility of a core\nreconstructable event record linking:\n• patient and encounter state;\n• source evidence, provenance, and temporal validity;\n• application and foundation-model versions;\n• material configuration, retrieval, prompts, memory, and tool state;\n• policy, permission, and supervisory state;\n• generated output and reliance determination;\n• execution disposition, including executed, constrained, escalated, deferred, or\nblocked; and\n• available downstream outcome information."
+    },
+    {
+      "segment_id": "seg-038",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter is concerned that a postmarket reconstructability expectation could be misread as requiring deterministic reproduction of probabilistic model outputs or indefinite retention of all underlying clinical data, which would conflict with data-minimization, privacy, and cybersecurity objectives.",
+      "requested_fda_action": "Define reconstructability as preserving sufficient information about clinically material inputs, configuration, governance conditions, tool interactions, output, reliance determination, and execution disposition for an event, and allow references, persistent identifiers, cryptographic hashes, version attestations, or other verifiable lineage mechanisms in place of full data duplication or retention.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The proposed record set includes deployment-side governance conditions, the user's reliance determination, and execution disposition, which are elements needed to attribute responsibility across manufacturer, deploying institution, and user rather than to the device alone."
+      },
+      "public_summary": "Supports postmarket event reconstructability but urges FDA to scope it: not deterministic reproduction of probabilistic outputs, and not indefinite retention of all clinical data. Proposes preserving clinically material inputs, configuration, governance conditions, tool interactions, outputs, reliance and execution records via verifiable lineage mechanisms.",
+      "summary_cut": false,
+      "source_passage": "Reconstructability need not require deterministic reproduction of a probabilistic model's\ngenerated output. The relevant objective is to preserve sufficient information to reconstruct\nthe clinically material inputs, configuration, governance conditions, tool interactions, output,\nreliance determination, and execution disposition associated with the event.\n\n11\nReconstructability also need not require indefinite duplication or retention of all underlying\nclinical data. Where appropriate, references, persistent identifiers, cryptographic hashes,\nversion attestations, or other verifiable lineage mechanisms may preserve reconstructability\nwhile supporting data-minimization, privacy, and cybersecurity objectives."
+    },
+    {
+      "segment_id": "seg-039",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "A supervisory agent is itself a software system with its own model/version, policy state, data dependencies, failure modes, and drift potential, so its reliability and the authority granted to it cannot be assumed. Reliance on such an agent could obscure who remains answerable for device safety.",
+      "requested_fda_action": "Require that machine-based supervisory agents used in postmarket monitoring be independently evaluated for reliability and for the scope of authority they are given, and make clear that their use does not transfer or dilute the manufacturer's responsibility for device safety and effectiveness.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment treats the supervisory agent's authority as something that must itself be evaluated, not just its technical reliability.",
+        "distributed_accountability": "It warns that inserting an automated supervisor between the device and oversight could transfer or dilute manufacturer responsibility."
+      },
+      "public_summary": "Accepts that machine-based supervisory agents can support postmarket monitoring, but asks FDA to treat each agent as a software system with its own versioning, dependencies, failure modes, and drift, requiring independent evaluation of its reliability and authority while preserving manufacturer accountability.",
+      "summary_cut": false,
+      "source_passage": "Machine-based supervisory agents can support postmarket monitoring, but their reliability\nand authority must be evaluated independently. A supervisory agent is itself a software\nsystem with a model/version, policy state, data dependencies, failure modes, and potential\nfor drift. [1]\nUse of a machine-based supervisory agent should not transfer or dilute the manufacturer's\nresponsibility for the safety and effectiveness of the regulated device."
+    },
+    {
+      "segment_id": "seg-040",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "Machine-based supervisory agents may span very different levels of authority—from passive observation and flagging, to recommending intervention, to actually modifying, overriding, constraining, or blocking another system's actions—and treating these as a single category obscures the additional risk carried by intervention authority.",
+      "requested_fda_action": "FDA should explicitly distinguish supervisory observation, supervisory recommendation, and supervisory intervention authority when considering supervisory agents, and require that any intervention authority have explicit, reconstructable scope and conditions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment centers on tiering and bounding the authority delegated to a machine supervisor, including when it may modify, override, or block another system's actions, and requiring that authority be explicit and reconstructable."
+      },
+      "public_summary": "Comment addresses machine-based supervisory agents, asking FDA to separate supervisory observation, recommendation, and intervention authority rather than treating supervision as one category. Where a supervisor can modify, override, constrain, or block actions, its authority scope and conditions should be explicit and reconstructable.",
+      "summary_cut": false,
+      "source_passage": "FDA should distinguish supervisory observation, supervisory recommendation, and\nsupervisory intervention authority. A supervisor may be authorized to observe, detect,\ncompare, or flag; it may separately be authorized to recommend intervention; and only\nunder a further defined authority may it modify another system, override a workflow,\nconstrain or block an action, or execute a corrective action. If it possesses intervention\nauthority, the scope and conditions of that authority should be explicit and reconstructable."
+    },
+    {
+      "segment_id": "seg-041",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "The commenter warns that a machine-based supervisory agent cannot be assumed reliable simply because its role is to oversee another AI system; its own supervisory competency and authority need to be demonstrated and reconstructable.",
+      "requested_fda_action": "Require that supervisory agents be evaluated in their own right: define the intended supervisory function, benchmark detection of relevant failure conditions, characterize false-negative and false-positive escalation, retain version/configuration/policy state, test disagreement, degraded-input and adversarial conditions, and specify explicit conditions for reverting or escalating to human authority.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment treats the supervisory agent's authority as something that must itself be validated and bounded, with explicit conditions for handing oversight back to a human.",
+        "operational_harm": "It highlights false-positive and false-negative escalation behavior and degraded-input conditions as failure modes of the monitoring layer itself, beyond clinical output accuracy."
+      },
+      "public_summary": "Comment accepts machine-based supervisory agents in postmarket monitoring only if the supervisor itself is validated: defined supervisory function, benchmarked failure detection, characterized false-positive/negative escalation, preserved version and policy state, adversarial and degraded-input testing, and explicit conditions for reverting to human authority.",
+      "summary_cut": false,
+      "source_passage": "A supervisory agent cannot be presumed reliable merely because it supervises another AI\nsystem. Its supervisory competency and authority should themselves be demonstrable and\nreconstructable. Evaluation should define the intended supervisory function; benchmark the\nability to detect relevant failure conditions; characterize false-negative and false-positive\nescalation behavior; preserve supervisor version, configuration, and policy state; test\ndisagreement, degraded-input, and adversarial conditions; and establish explicit conditions\nunder which supervision must revert or escalate to a human authority."
+    },
+    {
+      "segment_id": "seg-042",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "regulatory_scope",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter distinguishes the question of whether a machine-based supervisory component is itself a regulated device from the question of how it must be assured, and is concerned that a component gating consequential device behavior could fall outside safety analysis if the analysis follows the device classification boundary.",
+      "requested_fda_action": "Include any supervisory component that materially determines whether consequential device behavior proceeds within the system-level safety analysis, treating its regulatory classification as a separate question from its inclusion in that analysis.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The passage focuses on a machine supervisory component that decides whether consequential device behavior proceeds, i.e., a gating authority delegated to software that the commenter says must be captured in safety analysis."
+      },
+      "public_summary": "Accepts machine-based supervisory components but argues their regulatory classification is a separate question from assurance: any component that materially determines whether consequential device behavior proceeds should be included in the system-level safety analysis regardless of the device boundary.",
+      "summary_cut": false,
+      "source_passage": "Whether a particular supervisory component falls within the regulated device boundary is a\nseparate classification question. From an assurance perspective, however, a component\nthat materially determines whether consequential device behavior proceeds should be\nincluded in the relevant system-level safety analysis."
+    },
+    {
+      "segment_id": "seg-043",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter is concerned that framing ecosystem participation as generalized 'shared responsibility' leaves accountability undifferentiated, even though stakeholders other than the manufacturer control clinically relevant variables the manufacturer cannot directly control.",
+      "requested_fda_action": "FDA should translate shared ecosystem responsibility into specifically defined technical control responsibilities allocated to the parties that actually control each variable, while retaining manufacturer responsibility for their devices.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment argues accountability should be mapped to which party controls each clinically relevant technical variable, rather than left as undifferentiated shared responsibility across the deployment ecosystem."
+      },
+      "public_summary": "Accepts shared ecosystem responsibility in postmarket oversight but asks FDA to define specific technical control responsibilities for each party. Manufacturers remain responsible for their devices, while other stakeholders control clinically relevant variables manufacturers cannot directly control; undifferentiated shared accountability is considered inadequate.",
+      "summary_cut": false,
+      "source_passage": "Shared ecosystem responsibility should be translated into defined technical control\nresponsibilities rather than treated as undifferentiated shared accountability. Manufacturers\nremain responsible for their devices, but other stakeholders control clinically relevant\nvariables that manufacturers may not control directly."
+    },
+    {
+      "segment_id": "seg-044",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "Ecosystem dependencies affecting device behavior are distributed across parties who control, change, or monitor material state variables, and this allocation could be used to shift responsibility away from the manufacturer.",
+      "requested_fda_action": "Require an assurance plan that documents, for each material state variable, who controls it, who may change it, who monitors it, how changes are communicated, and who holds authority at consequential execution boundaries—while making clear that such allocation cannot disclaim manufacturer responsibility for reasonably foreseeable deployment dependencies.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "delegated_authority",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The passage centers on mapping control and monitoring roles across multiple ecosystem actors while preventing manufacturer disclaimer of responsibility.",
+        "delegated_authority": "It asks that the plan identify who holds authority at consequential execution boundaries.",
+        "deployment_assurance_scalability": "It frames the mechanism as an assurance plan covering dependencies within the device's intended deployment environment."
+      },
+      "public_summary": "Supports preserving manufacturer accountability but asks FDA to require an assurance plan documenting, for each material state variable, who controls, changes, monitors, and communicates changes, and who holds authority at execution boundaries—without allowing allocation to disclaim responsibility for foreseeable deployment dependencies.",
+      "summary_cut": false,
+      "source_passage": "For each material state variable, the assurance plan should identify who controls it, who\nmay change it, who monitors it, how changes are communicated, and who has authority at a\nconsequential execution boundary. This preserves manufacturer accountability while\nmaking ecosystem dependencies operationally visible.\nAllocation of control responsibility should improve attribution, monitoring, and corrective\naction; it should not operate as a mechanism by which a manufacturer disclaims\nresponsibility for dependencies that are reasonably foreseeable components of the device's\nintended deployment."
+    },
+    {
+      "segment_id": "seg-045",
+      "question_ids": [
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that post-deployment modifications to GenAI-enabled devices differ widely in their plausible effect on safety and effectiveness, so a single re-evaluation standard would be misaligned with actual risk.",
+      "requested_fda_action": "Adopt a proportional, tiered change taxonomy that distinguishes administrative changes with no behavioral effect, low-impact configuration changes handled by targeted regression testing, material changes to model/retrieval/tools/patient-context/workflow requiring broader re-benchmarking and clinical confirmation, and high-consequence changes to intended function, autonomy, execution authority, or critical safety behavior that may warrant premarket review.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The commenter treats changes that alter intended function, autonomy, or execution authority as a distinct high-consequence category, implying the device's behavioral envelope can shift post-authorization and must be tracked."
+      },
+      "public_summary": "Endorses scaling re-evaluation to modification impact and proposes a four-tier change taxonomy: administrative changes with no behavioral effect; low-impact configuration changes needing targeted regression testing; material model, retrieval, tool, context, or workflow changes needing re-benchmarking and clinical confirmation; and high-consequence changes possibly requiring premarket review.",
+      "summary_cut": false,
+      "source_passage": "Reassessment should be proportional to the change and its plausible effect on safety and\neffectiveness. A useful change taxonomy could distinguish:\n• administrative or documentary changes with no plausible behavioral effect;\n• low-impact configuration changes that can be addressed through targeted regression\ntesting;\n• material changes to model, retrieval, tools, patient-context handling, or workflow that\nwarrant broader re-benchmarking and clinical confirmation; and\n• high-consequence changes that alter intended function, autonomy, execution authority,\nor critical safety behavior and may warrant premarket review."
+    },
+    {
+      "segment_id": "seg-046",
+      "question_ids": [
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter notes that a premarket baseline competency assessment is only useful if the sponsor can demonstrate which parts of that baseline remain valid after a modification, and that changes may produce unexpected regressions outside the directly affected capabilities.",
+      "requested_fda_action": "Scale post-modification re-benchmarking so that it targets the capabilities affected by the change, while retaining sufficient testing of unaffected areas to detect unexpected cross-domain regressions.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports using the premarket competency assessment as a re-evaluation baseline, but asks that re-benchmarking after a modification be targeted to affected capabilities while retaining enough testing of unaffected areas to detect unexpected cross-domain regressions.",
+      "summary_cut": false,
+      "source_passage": "The baseline competency assessment is valuable only if the sponsor can establish which\naspects of the baseline remain valid after the change. Re-benchmarking should therefore be\ntargeted to the affected capabilities while retaining enough unaffected testing to detect\nunexpected cross-domain regressions."
+    },
+    {
+      "segment_id": "seg-047",
+      "question_ids": [
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "pccp",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter's concern is that exact future modifications to GenAI-enabled devices cannot be fully prespecified, so parameter-level prespecification is not a workable basis for change control.",
+      "requested_fda_action": "Allow PCCPs to prespecify classes or bounds of change together with detection mechanisms, evaluation methodology, acceptance criteria, monitoring requirements, rollback conditions, and escalation thresholds, shifting emphasis to prespecifying the governance process by which bounded modifications are detected, qualified, tested, restricted, further reviewed, rolled back, or blocked from the clinical function.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment proposes that FDA rely on a sponsor-prespecified governance process, rather than specific prespecified changes, to qualify or block future modifications, effectively delegating change-approval judgment to the manufacturer's internal process."
+      },
+      "public_summary": "Supports continued use of PCCP concepts for GenAI devices, but argues emphasis should shift from prespecifying individual future changes to prespecifying bounded classes of change plus governance elements: detection, evaluation methodology, acceptance criteria, monitoring, rollback conditions, and escalation thresholds.",
+      "summary_cut": false,
+      "source_passage": "When exact future modifications cannot be known, PCCP concepts can still be useful if the\nsponsor can prespecify classes or bounds of change, detection mechanisms, evaluation\nmethodology, acceptance criteria, monitoring requirements, rollback conditions, and\nescalation thresholds.\nThe emphasis may appropriately shift from prespecifying every future parameter value to\nprespecifying the governance process by which a bounded class of modifications will be\ndetected, qualified, tested, and either qualified for use, restricted, subjected to additional\nreview, rolled back, or prevented from entering the affected clinical function."
+    },
+    {
+      "segment_id": "seg-048",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Changes initiated by third-party foundation model developers may be invisible to the device manufacturer unless technical and contractual mechanisms make those changes detectable and characterizable.",
+      "requested_fda_action": "Recognize and encourage specific mechanisms for observability of third-party model change, including model/version attestation, reliably verifiable version identifiers, update notifications, structured change manifests, behavioral release notes, compatibility testing, regression suites, and contractual access to safety-relevant change information.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment focuses on supplier-side controls—version attestation, change manifests, and contractual access to safety-relevant information—needed to assure the quality and traceability of an externally supplied foundation model."
+      },
+      "public_summary": "Responding to FDA's question on third-party model changes, the commenter identifies technical and contractual mechanisms to make such changes observable: version attestation and verifiable identifiers, update notifications, structured change manifests, behavioral release notes, compatibility testing, regression suites, and contractual access to safety-relevant change information.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers need technical and contractual mechanisms that make third-party model\nchange observable. Useful mechanisms include model/version attestation, cryptographically\nor otherwise reliably verifiable version identifiers, update notifications, structured change\nmanifests, behavioral release notes, compatibility testing, regression suites, and contractual\naccess to safety-relevant change information."
+    },
+    {
+      "segment_id": "seg-049",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Third-party model providers may alter underlying model behavior without notice, and stable API endpoints or product names can mask clinically relevant behavioral changes entering high-consequence clinical use uncharacterized.",
+      "requested_fda_action": "Expect sponsors to use version pinning, qualification windows, or equivalent change-detection and release controls where technically and contractually feasible, and to define fallback responses such as restricted mode, suspension of affected functions, or requalification before continued high-consequence use.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment centers on controlling upstream foundation model suppliers through contractual and technical release controls and rejects unchanged endpoints or product names as evidence of unchanged behavior.",
+        "deployment_assurance_scalability": "It calls for defined in-field responses—restricted mode, function suspension, or requalification—to maintain assurance when a deployed device's underlying model changes."
+      },
+      "public_summary": "Commenter endorses addressing third-party model changes and recommends, where technically and contractually feasible, version pinning, qualification windows, or equivalent change-detection controls, plus defined fallback responses such as restricted mode or requalification; unchanged API endpoints or product names are not acceptable evidence of unchanged behavior.",
+      "summary_cut": false,
+      "source_passage": "Where technically and contractually feasible, sponsors should consider version pinning,\nqualification windows, or equivalent change-detection and release controls that prevent\nuncharacterized model changes from entering high-consequence clinical use without\ndetection and evaluation. If the model provider changes the underlying system\nunexpectedly, the device should have a defined response, such as entering a restricted\nmode, suspending affected functions, or requiring requalification before continued high-\nconsequence use. An unchanged API endpoint or product name should not be treated as\nproof that the clinically relevant model behavior is unchanged."
+    },
+    {
+      "segment_id": "seg-050",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Voluntary foundation model master files could reduce duplicated review and improve consistency across sponsors relying on the same model, but only if the file holds current, safety-relevant information and model changes are communicated in a form sponsors can act upon.",
+      "requested_fda_action": "Establish referenceable foundation-model files with defined content: model identity and versioning, architecture and training-data provenance, supported use domains, known limitations and failure modes, healthcare-relevant and subgroup evaluation results, safety guardrails, tool-use characteristics, audit-log availability, update history, and change-notification commitments.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The commenter frames the master file's usefulness around upstream model suppliers disclosing provenance, limitations, guardrails, audit logs, and enforceable change-notification commitments that device sponsors can operationalize."
+      },
+      "public_summary": "Sees voluntary foundation-model master files as potentially useful for reducing duplicated review and improving consistency across sponsors using the same model, but conditions their value on currency of safety-relevant content and actionable change notification. Lists specific content elements FDA should require.",
+      "summary_cut": false,
+      "source_passage": "Voluntary foundation-model master files or analogous referenceable regulatory files [1,14]\ncould be useful because they may reduce duplicated review and improve consistency when\nmultiple device sponsors depend on the same underlying model. Their value will depend on\nwhether the file contains sufficiently current, safety-relevant information and whether\nchanges are communicated in a way that sponsors can operationalize.\nUseful content may include model identity and versioning, architecture and training-data\nprovenance at an appropriate level of detail, intended supported use domains, known\nlimitations and failure modes, healthcare-relevant evaluation results, subgroup performance,\nsafety constraints and guardrails, tool-use characteristics, audit-log availability, update\nhistory, and change-notification commitments."
+    },
+    {
+      "segment_id": "seg-051",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The same foundation model can behave differently depending on prompts, retrieval, tools, contextual memory, user interface, workflow, and local policies, so model-level documentation cannot establish the safety and effectiveness of a specific configured device.",
+      "requested_fda_action": "Treat any Foundation Model MAF as supplementary information only, and continue to require the sponsor to demonstrate safety and effectiveness of the configured, deployed device for its intended use.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment insists that reliance on third-party model developer disclosures must not shift or dilute the sponsor's responsibility for the final device.",
+        "ai_supplier_quality": "It addresses the limits of supplier-level (foundation model) information as evidence, since configuration, retrieval, tooling, and deployment context alter behavior."
+      },
+      "public_summary": "Comments that a Foundation Model MAF may inform review but should not replace sponsor validation of the configured device, since behavior varies with prompts, retrieval, tools, memory, interface, workflow, and local policies; the sponsor should remain responsible for demonstrating safety and effectiveness.",
+      "summary_cut": false,
+      "source_passage": "A Foundation Model MAF should not substitute for sponsor-specific validation of the final\ndeployed device. The same foundation model may behave differently depending on\nprompts, retrieval, tools, contextual memory, user interface, workflow, and local policies.\nThe sponsor should remain responsible for demonstrating the safety and effectiveness of\nthe configured device for its intended use."
+    },
+    {
+      "segment_id": "seg-052",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter is concerned that voluntary Foundation Model Master File participation may not yield sufficient safety-relevant information about underlying foundation models, leaving gaps for premarket review.",
+      "requested_fda_action": "If voluntary participation proves insufficient, FDA should consider alternative mechanisms such as standardized sponsor attestations, contractual disclosure requirements between model providers and device manufacturers, independent third-party assessments, machine-readable version metadata, and referenceable standardized model or system cards.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment proposes contractual disclosure, attestations, third-party assessment, and version metadata as supplier-control mechanisms to obtain assurance about upstream foundation model providers."
+      },
+      "public_summary": "Commenter accepts the Foundation Model MAF concept but proposes fallback mechanisms should voluntary participation prove insufficient: standardized sponsor attestations, contractual disclosure between model providers and device manufacturers, independent third-party assessments, machine-readable version metadata, and referenceable standardized model or system cards.",
+      "summary_cut": false,
+      "source_passage": "If voluntary participation is insufficient, alternative mechanisms could include standardized\nsponsor attestations, contractual disclosure requirements between model providers and\ndevice manufacturers, independent third-party assessments, machine-readable version\nmetadata, and referenceable standardized model/system cards."
+    },
+    {
+      "segment_id": "seg-053",
+      "question_ids": [
+        "q1",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "Agentic systems that plan, sequence, use tools, and act over multiple steps require assurance beyond the quality of the generated recommendation; the commenter distinguishes clinical supportability of a recommendation from authority to execute actions.",
+      "requested_fda_action": "Scale requirements as agentic functions move rightward on the activity axis and upward on the consequence axis, requiring explicit execution authorization, policy constraints, mandatory human checkpoints, reversibility controls, non-bypassable safeguards where warranted, reconstructability, and continuous assurance.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment centers on separating clinical supportability of an output from authority to execute actions, calling for explicit execution authorization and non-bypassable constraints.",
+        "operational_harm": "It argues assurance must extend beyond output correctness to multi-step planning, tool use, and action execution, where harm can arise from actions rather than an incorrect recommendation."
+      },
+      "public_summary": "Accepts FDA's two-axis framing for agentic devices but argues assurance must extend beyond output quality to execution. Asks that explicit execution authorization, policy constraints, human checkpoints, reversibility controls, non-bypassable safeguards, reconstructability, and continuous assurance scale with activity and consequence levels.",
+      "summary_cut": false,
+      "source_passage": "Agentic systems require assurance beyond the quality of the generated recommendation\nbecause they can plan, sequence, use tools, and take actions across multiple steps. As an\nagentic function moves rightward on FDA's activity axis and upward on the consequence\naxis, the case for explicit execution authorization, policy constraints, mandatory human\ncheckpoints, reversibility controls, non-bypassable safeguards where warranted,\nreconstructability, and continuous assurance becomes progressively stronger. The central\ndistinction is between clinical supportability and execution authority. [1]"
+    },
+    {
+      "segment_id": "seg-054",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "cybersecurity",
+      "stakeholder_concern": "For higher-consequence agentic devices, the commenter is concerned that autonomous multi-step action, tool use, and untrusted inputs create risks—compounding errors, irreversible actions, and manipulation of the agent's permitted authority—that require explicit characterization rather than general performance evidence.",
+      "requested_fda_action": "FDA should consider expecting sponsors of higher-consequence agentic devices to characterize tool inventory and permissions, action authority, mandatory human-oversight checkpoints, reversibility and fail-safe behavior, multi-step error propagation, prompt-injection and tool-output resilience, state and auditability, and lifecycle change control across model, prompt, tool, policy, and permission changes.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "cybersecurity_as_safety",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The passage centers on defining and bounding the scope of authority delegated to an agent—which tools it may access, which actions are permitted, prohibited, or conditional, and where human approval is mandatory.",
+        "cybersecurity_as_safety": "It treats prompt injection and untrusted tool output as a safety concern because they could alter the agent's authority or policy state, not merely as an information-security matter.",
+        "operational_harm": "It raises harms arising from execution rather than output accuracy, including irreversible actions, tool failures returning inconsistent information, and early errors compounding across later steps."
+      },
+      "public_summary": "Suggests FDA go beyond its current framing for higher-consequence agentic devices by expecting sponsors to characterize tool permissions, action authority, mandatory human-review checkpoints, reversibility and fail-safe behavior, multi-step error propagation, prompt-injection resilience, auditability, and change control across models, prompts, tools, and permissions.",
+      "summary_cut": false,
+      "source_passage": "For higher-consequence agentic devices, FDA should consider whether sponsors should be\nexpected to characterize:\n• Tool inventory and permissions: which external tools or systems the agent can access,\nread, modify, or control.\n• Action authority: which contemplated actions are permitted, prohibited, conditional, or\nsubject to human approval.\n• Human-oversight checkpoints: where review is mandatory before high-consequence or\nirreversible steps.\n• Reversibility and fail-safe behavior: whether an action can be undone and what occurs\nwhen a tool fails or returns inconsistent information.\n• Multi-step error propagation: how an early error is detected before it compounds\nthrough later steps.\n• Prompt-injection and tool-output resilience: whether untrusted retrieved content or\ntool output can alter the agent's authority or policy state.\n• State and auditability: whether the evidence, plan, tool calls, decisions, supervisory\ninterventions, and execution outcomes can be reconstructed.\n• Change control: how model, prompt, tool, policy, and permission changes are qualified\nacross the lifecycle."
+    },
+    {
+      "segment_id": "seg-055",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "cybersecurity",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "An agentic device's authority to act depends on external identity, credential, permission, and tool-access systems; if any of those are compromised, the authorization state is invalidated even for a technically competent agent.",
+      "requested_fda_action": "Treat cybersecurity state as an explicit component of the execution-authority analysis for agentic GenAI-enabled devices wherever external identity, credential, permission, or tool-access controls materially determine whether an action may proceed.",
+      "confidence": "medium",
+      "gap_tags": [
+        "cybersecurity_as_safety",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "cybersecurity_as_safety": "The comment frames compromise of identity, credential, or tool-access systems as directly invalidating an agent's authorization to act, making security state a safety determinant rather than a separate concern.",
+        "delegated_authority": "It addresses how an agent's permission to execute actions is established and can be undermined, going beyond model competence to the integrity of the authority-granting infrastructure."
+      },
+      "public_summary": "Comment on agentic devices argues that execution authority depends on identity, credential, permission, and tool-access systems, and that compromise of these invalidates authorization even for a competent agent. Asks FDA to include cybersecurity state within the execution-authority analysis.",
+      "summary_cut": false,
+      "source_passage": "Execution authority also depends on the integrity of the systems that establish identity,\ncredentials, permissions, and tool access. A compromised identity service, credential, tool\nendpoint, or permission mechanism can invalidate the authorization state for an otherwise\ncompetent agent. Accordingly, cybersecurity state should be treated as part of the\nexecution-authority analysis where those external controls materially determine whether an\naction may proceed."
+    },
+    {
+      "segment_id": "seg-056",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter is concerned that evaluating agentic GenAI devices as a single undifferentiated judgment conflates whether an output can be relied upon with whether an action may be executed, and that treating execution authorization as binary is insufficient.",
+      "requested_fda_action": "Adopt an oversight architecture that separates 'governed reliance' (whether an output is sufficiently supported, contextually appropriate, and authorized for the intended form of clinical reliance) from 'governed execution' (whether an action is authorized under applicable policy, role, risk threshold, and supervision conditions), with graded execution dispositions such as authorized, authorized with constraints, requires human supervision, or not authorized.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The passage frames agentic oversight as a question of what actions a system is authorized to execute under policy, role, risk thresholds, and supervision conditions, rather than only device output accuracy.",
+        "human_ai_system_performance": "It treats 'requires human supervision' as one of several execution dispositions, making the human oversight configuration part of the evaluated system rather than an assumed backstop."
+      },
+      "public_summary": "Commenter proposes that agentic device oversight separate two decisions: whether an output may be relied upon clinically, and whether an action is authorized to execute under policy, role, risk threshold, and supervision conditions—with non-binary dispositions including authorized with constraints or requiring human supervision.",
+      "summary_cut": false,
+      "source_passage": "A practical architecture should separate at least two decisions:\nGOVERNED RELIANCE - Is the output sufficiently supported, contextually\nappropriate, and authorized for the contemplated form of clinical reliance?\nGOVERNED EXECUTION - Is the contemplated action authorized to occur under the\napplicable policy, role, risk threshold, and supervision conditions?\nPossible execution dispositions need not be binary. A system may determine that an action\nis authorized, authorized with constraints, requires human supervision, or is not authorized."
+    },
+    {
+      "segment_id": "seg-057",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "Postmarket assurance depends on whether the information available after a consequential event is sufficient to reconstruct what happened; in connected clinical AI, interoperability gaps make this an evidence problem, not merely a data-transport problem.",
+      "requested_fda_action": "Treat interoperability and data provenance as part of postmarket assurance, expecting that the assurance system can establish, where relevant, which source produced which information, for which patient or encounter, at what time, and with what provenance and correction state.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment ties feasible postmarket evaluation to deployment-side data infrastructure quality, provenance, and correction state rather than to manufacturer-run monitoring methods alone.",
+        "distributed_accountability": "It emphasizes the need to attribute which connected source produced which information for which patient and when, which is a prerequisite for assigning responsibility after a consequential event."
+      },
+      "public_summary": "Supports postmarket performance evaluation but argues it requires adequate evidentiary infrastructure: for connected clinical AI, interoperability should be treated as an evidence problem, enabling reconstruction of which source produced which information, for which patient or encounter, when, and with what provenance and correction state.",
+      "summary_cut": false,
+      "source_passage": "Postmarket assurance is constrained by the quality and provenance of the information\navailable to reconstruct a consequential event. For connected clinical AI, interoperability\nshould therefore be considered not only as data transport but also as an evidence problem.\nWhere relevant, the assurance system should be able to establish which source produced\nwhich information, for which patient or encounter, at what time, and with what provenance\nand correction state."
+    },
+    {
+      "segment_id": "seg-058",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter is concerned that current postmarket evaluation approaches may not preserve enough system state to reconstruct what happened after an event involving a higher-consequence GenAI-enabled device, including the system's information, configuration, and the scope of authority in effect.",
+      "requested_fda_action": "FDA should undertake regulatory-science work on a core, outcome-neutral reconstructable event record for higher-consequence GenAI-enabled devices, designed to preserve what the system knew, how it was configured, what authority applied, and what occurred.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The proposed record explicitly captures 'what authority applied,' indicating that the scope of authority granted to the system is a distinct element requiring documentation beyond FDA's framing of postmarket performance evaluation.",
+        "deployment_assurance_scalability": "The record is intended to preserve how the system was configured at the time of an event, addressing deployment-specific state that periodic re-benchmarking and degradation monitoring do not capture."
+      },
+      "public_summary": "Supports postmarket evaluation but asks FDA to add regulatory-science work on a core, outcome-neutral \"reconstructable event record\" for higher-consequence GenAI devices, preserving enough state to determine what the system knew, how it was configured, what authority applied, and what occurred.",
+      "summary_cut": false,
+      "source_passage": "FDA should consider regulatory-science work on a core reconstructable event record for\nhigher-consequence GenAI-enabled devices. The record should be outcome-neutral: its\npurpose is not to prove safety by itself, but to preserve sufficient state to determine what the\nsystem knew, how it was configured, what authority applied, and what occurred."
+    },
+    {
+      "segment_id": "seg-059",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "The commenter is concerned that periodic or sample-based output review is insufficient for probabilistic systems, and that stable aggregate performance metrics can mask degradation affecting particular subgroups or deployment environments.",
+      "requested_fda_action": "Shift postmarket expectations from isolated output sampling toward continuous, evidence-based assurance that evaluates deployed performance over time against reconstructable evidence, configuration, patient context, and outcomes, with capability to detect subgroup- and environment-specific degradation.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment emphasizes ongoing assurance of performance across specific deployment environments and configurations rather than one-time or aggregate evaluation."
+      },
+      "public_summary": "Accepts postmarket evaluation but urges FDA to go beyond isolated output sampling toward continuous, evidence-based assurance tracking deployed performance against reconstructable evidence, configuration, patient context, and outcomes, and able to detect subgroup- or environment-specific degradation hidden by aggregate metrics.",
+      "summary_cut": false,
+      "source_passage": "For probabilistic systems, postmarket monitoring may need to move beyond isolated output\nsampling toward continuous evidence-based assurance: evaluating deployed performance\nover time against reconstructable evidence, configuration, patient context, and outcomes.\nMonitoring should be capable of identifying subgroup- or environment-specific degradation\nthat may be hidden by stable aggregate metrics."
+    },
+    {
+      "segment_id": "seg-060",
+      "question_ids": [
+        "q1",
+        "q26",
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "The commenter is concerned that regulation could fixate on a particular implementation topology or governance platform rather than on whether risk-appropriate safety functions are demonstrably present and effective, and that burden may not scale with the actual drivers of risk (autonomy, consequence, external dependency, execution authority).",
+      "requested_fda_action": "FDA should adopt a modular, architecture-neutral approach that asks whether required safety functions are present and effective—whether implemented in the device, through distributed controls, or through institutional infrastructure—and scale regulatory burden least-burdensomely with autonomy, consequence, external dependency, and execution authority, allowing low-consequence, bounded, recommendation-only systems to be handled through conventional competency evaluation and lifecycle controls.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The commenter proposes execution authority and autonomy as explicit risk-scaling dimensions, which FDA's two-axis framework does not directly represent.",
+        "deployment_assurance_scalability": "The comment allows required safety functions to be satisfied through distributed controls or institutional infrastructure outside the device, raising questions about how such deployment-side assurance is demonstrated."
+      },
+      "public_summary": "Supports a risk-proportionate framework but urges FDA to remain architecture-neutral: regulate whether risk-appropriate safety functions are demonstrably present and effective, whether implemented in-device, via distributed controls, or institutional infrastructure, with burden scaling to autonomy, consequence, external dependency, and execution authority.",
+      "summary_cut": false,
+      "source_passage": "This model is modular rather than prescriptive. FDA need not require any particular\nimplementation topology or external governance platform. The relevant regulatory question\nis whether the safety functions appropriate to the device's risk are demonstrably present\nand effective. Those functions may be implemented within the device, through distributed\ncontrols, through institutional infrastructure, or through another technically adequate\narchitecture.\nUnder a least-burdensome, risk-proportionate approach [15], the regulatory burden should\nrise with the risk created by autonomy, consequence, external dependency, and execution\nauthority. Low-consequence, bounded, recommendation-only systems may be adequately\naddressed through conventional competency evaluation and lifecycle controls."
+    },
+    {
+      "segment_id": "seg-061",
+      "question_ids": [
+        "q1",
+        "q26",
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "The commenter suggests that model competency is only one of several distinct assurance questions, and that evaluation frameworks should also separately address data validity and identification, the context available to the model, whether an output is permitted to influence care, whether a resulting action is authorized, and whether events can later be reconstructed and performance tracked over time.",
+      "requested_fda_action": "Adopt (as an analytical rather than mandated architecture) a layered decomposition — clinical reality/event state, governed data, governed context, AI competency, governed reliance, governed execution, continuous assurance — so that premarket and postmarket evaluation distinguishes these separate assurance questions rather than treating device benchmarking and clinical confirmation as the whole picture.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The model includes a distinct \"governed execution\" layer asking whether a resulting action is authorized, an authorization question separate from model performance.",
+        "human_ai_system_performance": "The \"governed reliance\" layer treats whether and how an output may influence care as its own assurance question, beyond the device's standalone competency.",
+        "deployment_assurance_scalability": "Governed data, governed context, and continuous assurance frame correctness of inputs, context, and reconstructability at the point of deployment as ongoing assurance requirements."
+      },
+      "public_summary": "Commenter accepts a competency-based evaluation but proposes, as an illustrative rather than mandated model, decomposing assurance into layers: event state, governed data, governed context, AI competency, governed reliance, governed execution authorization, and continuous assurance — treating each as a distinct evaluation question.",
+      "summary_cut": false,
+      "source_passage": "One possible analytical model is:\nClinical Reality / Event State -> Governed Data -> Governed Context -> AI\nCompetency -> Governed Reliance -> Governed Execution -> Continuous\nAssurance\nThis is not proposed as a mandated architecture. It separates distinct assurance questions:\nwhat occurred; whether data are correctly identified and valid; what context the AI may use;\nwhether the model can perform its intended function; whether the output may influence\ncare; whether the resulting action is authorized; and whether the event can later be\nreconstructed and performance evaluated over time."
+    },
+    {
+      "segment_id": "seg-062",
+      "question_ids": [
+        "q1",
+        "q26",
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "The commenter holds that risk and corresponding regulatory burden should scale not only with device activity and consequence but also with autonomy, external dependency, and execution authority, and that for high-consequence or action-taking systems controls such as policy gating, escalation, human override, non-bypassable safeguards, reconstructability, and continuous assurance cannot be treated as optional.",
+      "requested_fda_action": "Adopt a least-burdensome, risk-proportionate structure that expands the risk framework to include autonomy, external dependency, and execution authority, allowing conventional competency evaluation and lifecycle controls for low-consequence, bounded, recommendation-only systems while requiring provenance, configuration lineage, model/version state, context reconstruction, and mandatory execution-authority safeguards as risk increases.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "ai_supplier_quality",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The passage treats execution authority for action-taking systems as a distinct safety control requiring policy gating, escalation, human override, and non-bypassable safeguards, which FDA's two-axis framing does not represent.",
+        "ai_supplier_quality": "It identifies increasing external dependency as a risk dimension calling for provenance, configuration lineage, and model/version state tracking beyond the questions as framed.",
+        "human_ai_system_performance": "It raises \"governed reliance\" for high-consequence recommendations, framing safety as a property of how users are governed in relying on outputs rather than of the device alone."
+      },
+      "public_summary": "Supports a least-burdensome, risk-proportionate approach but argues the risk framework should also scale with autonomy, external dependency, and execution authority. Recommendation-only, low-consequence tools may need only conventional competency evaluation; action-taking or high-consequence systems require provenance tracking, governed reliance, override, and continuous assurance.",
+      "summary_cut": false,
+      "source_passage": "Under a least-burdensome, risk-proportionate approach [15], the regulatory burden should\nrise with the risk created by autonomy, consequence, external dependency, and execution\nauthority. Low-consequence, bounded, recommendation-only systems may be adequately\naddressed through conventional competency evaluation and lifecycle controls. As external\ndependency increases, provenance, configuration lineage, model/version state, and context\n\n16\nreconstruction become more important. For high-consequence recommendations, governed\nreliance becomes more important; for action-taking systems, execution authority becomes a\ndistinct safety control; and for action-taking systems with severe potential consequences,\npolicy gating, escalation, human override, non-bypassable safeguards where warranted,\nreconstructability, and continuous assurance become increasingly difficult to treat as\noptional conveniences."
+    },
+    {
+      "segment_id": "seg-063",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "unclear",
+      "primary_issue": "regulatory_scope",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter is concerned that regulatory expectations could effectively mandate a single technical architecture for safety controls, rather than allowing sponsors or healthcare institutions to meet the same assurance objectives through integrated controls, distributed controls, or an institutional governance layer.",
+      "requested_fda_action": "Regulate safety properties and assurance outcomes in a least-burdensome, risk-proportionate manner rather than prescribing a required control topology, treating cited patent examples only as evidence that such control functions are engineerable.",
+      "confidence": "low",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The passage contemplates that required assurance functions may be implemented at an institutional governance layer or through distributed controls rather than solely within the device.",
+        "distributed_accountability": "It states that either a sponsor or a healthcare institution may satisfy the same assurance question, implying safety responsibilities spread across multiple parties."
+      },
+      "public_summary": "Commenter urges FDA to regulate safety properties and assurance outcomes on a least-burdensome, risk-proportionate basis instead of prescribing a specific control architecture, noting sponsors or healthcare institutions may use integrated, distributed, or institutional governance implementations; cited patents are illustrative only, not required topology.",
+      "summary_cut": false,
+      "source_passage": "5. Least-burdensome, risk-proportionate governance\nFDA can preserve implementation flexibility by regulating safety properties rather than\nprescribing a single architecture. A sponsor or healthcare institution may satisfy the same\nassurance question through integrated controls, distributed controls, an institutional\ngovernance layer, or another technically adequate implementation. The cited patent\nexamples below are therefore offered only as evidence that several relevant control\nfunctions can be engineered; they are not proposed as required regulatory topology."
+    },
+    {
+      "segment_id": "seg-064",
+      "question_ids": [
+        "q26",
+        "q7",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "The commenter argues that evaluating model competency alone is insufficient for higher-consequence GenAI systems, because safety also depends on the conditions surrounding the moment a consequential output or action occurs.",
+      "requested_fda_action": "Separate assessment of model competency from assessment of deployment-time assurance conditions, and for higher-consequence systems require evidence covering provenance, patient/encounter state, model and configuration identity, tool and policy state, reliance determination, execution authority, and event reconstructability.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment locates assurance in deployment-time conditions such as configuration identity, tool and policy state, and event reconstructability rather than in model competency testing alone.",
+        "delegated_authority": "It explicitly names execution authority as an assurance condition that must be evidenced for consequential actions.",
+        "human_ai_system_performance": "It identifies 'reliance determination' as a distinct assurance condition, treating how the output is relied upon as part of what must be evaluated."
+      },
+      "public_summary": "Endorses a competency-based framework but urges FDA to treat model competency as separate from deployment-time assurance conditions. For higher-consequence systems, recommends evidence on provenance, patient and encounter state, model and configuration identity, tool and policy state, reliance determination, execution authority, and event reconstructability.",
+      "summary_cut": false,
+      "source_passage": "The central recommendation is to distinguish model competency from the broader\nassurance conditions under which a consequential output or action occurs. For higher-\nconsequence systems, those conditions may include evidence provenance, patient and\nencounter state, model and configuration identity, tool and policy state, reliance\ndetermination, execution authority, and reconstructability of the event."
+    },
+    {
+      "segment_id": "seg-065",
+      "question_ids": [
+        "q24",
+        "q26"
+      ],
+      "position": "unclear",
+      "primary_issue": "regulatory_scope",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter observes that a device's regulatory boundary may be narrower than the set of dependencies that actually determine whether it performs safely, since assurance can rest on external models, tools, institutional infrastructure, data sources, permissions, and workflow state.",
+      "requested_fda_action": "The passage states an observation rather than a specific request; it implies FDA should recognize that assurance-relevant dependencies extend beyond the defined product boundary, but no concrete action is specified.",
+      "confidence": "low",
+      "gap_tags": [
+        "distributed_accountability",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The passage notes that dependencies affecting device assurance sit with external model providers, institutions, and data sources outside the manufacturer's regulated product boundary.",
+        "deployment_assurance_scalability": "It highlights that institutional infrastructure, permissions, and workflow state at the deployment site are part of the assurance chain rather than the device itself."
+      },
+      "public_summary": "The commenter observes that a device's defined regulatory boundary may not encompass all dependencies affecting its assurance, including external models, tools, institutional infrastructure, data sources, permissions, and workflow state. No explicit position on FDA's proposals or specific requested action is stated.",
+      "summary_cut": false,
+      "source_passage": "A regulated device may have a defined product boundary even when clinically relevant\nassurance dependencies extend beyond that boundary to external models, tools,\ninstitutional infrastructure, data sources, permissions, or workflow state."
+    },
+    {
+      "segment_id": "seg-066",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "unclear",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter asserts that as autonomy increases, a system that is technically capable of performing an action may nonetheless lack the authority to execute a clinically supportable action, stating that capability does not confer authority.",
+      "requested_fda_action": "The passage implies that evaluation of agentic devices should treat authority to act as distinct from technical capability, but it does not state a specific requested FDA action.",
+      "confidence": "low",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The passage directly distinguishes a system's technical capability from its authority to execute clinically consequential actions, an issue not fully captured by FDA's framing of autonomy in terms of performance and oversight."
+      },
+      "public_summary": "Brief comment on agentic devices asserting that increasing technical capability does not itself grant authority to execute a clinically supportable action. No explicit position on FDA's proposed approach or specific requested action is stated in the passage.",
+      "summary_cut": false,
+      "source_passage": "As autonomy increases, a technically capable system may still lack authority to execute a\nclinically supportable action. Capability does not confer authority."
+    },
+    {
+      "segment_id": "seg-067",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter offers a general endorsement of the discussion paper's overall structure, noting that it links risk-proportionate oversight, competency evaluation, clinical confirmation, postmarket monitoring, foundation model considerations, and agentic-AI oversight. No specific deficiency or condition is identified in this passage.",
+      "requested_fda_action": "The commenter indicates FDA should continue building regulatory-science work on the framework as described; no specific change or additional action is requested in this passage.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter endorses the discussion paper as a strong foundation for further regulatory-science work, citing its linkage of risk-proportionate oversight, competency evaluation, clinical confirmation, postmarket monitoring, foundation model considerations, and agentic-AI oversight. No specific changes or conditions are stated in this passage.",
+      "summary_cut": false,
+      "source_passage": "FDA's discussion paper establishes a strong foundation for further regulatory-science work\nby connecting risk-proportionate oversight, competency evaluation, clinical confirmation,\npostmarket monitoring, considerations related to foundation models, and agentic-AI\noversight."
+    }
+  ]
+}

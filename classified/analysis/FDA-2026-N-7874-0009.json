@@ -1,0 +1,441 @@
+{
+  "comment_id": "FDA-2026-N-7874-0009",
+  "input_hash": "c5037e4b5cf81930",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter accepts the two-axis framework as a reasonable organizing heuristic but argues it omits reversibility and time-to-consequence, so that outputs feeding slow, documented, reviewable processes (e.g., long-term services and supports authorization, audit, and appeal) would be treated the same as time-pressured emergency triage outputs.",
+      "requested_fda_action": "Add reversibility and time to consequence as explicit dimensions in the risk framework, so risk reflects the number and nature of intervening human review and appeal checkpoints between a generative output and any resulting action.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues risk should be assessed for the output as it moves through downstream human review, audit, and appeal steps rather than for the model output in isolation."
+      },
+      "public_summary": "Calls the two-axis risk framework a reasonable heuristic but incomplete, urging FDA to add reversibility and time-to-consequence dimensions so outputs passing through slow, documented, reviewable processes such as long-term services and supports authorizations are not risk-rated like emergency triage outputs.",
+      "summary_cut": false,
+      "source_passage": "The two-axis framework is a reasonable organizing heuristic. We suggest three additional dimensions.\n\nReversibility and time to consequence: a generative output feeding a decision made minutes later carries different risk from one feeding a decision made weeks later after human review. In long-term services and supports, an incorrect activity of daily living score flows into a service authorization a plan reviewer examines, a state may audit, and the member may appeal. The path from output to consequence is slow, documented, and reversible at several points. A framework blind to this dimension treats a home safety observation the same way it treats an emergency department triage output."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter contends that the activity axis's binary treatment of clinician supervision versus full autonomy is too coarse, because supervision spans a wide range from cursory review of a generated summary to a clinician forming an independent determination before comparing it with the device output.",
+      "requested_fda_action": "Add a finer-grained dimension within the supervision category that distinguishes depth of downstream human review, so that stronger forms of oversight (independent determination followed by comparison) reduce assessed risk more than cursory review.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues that risk depends on how the clinician actually engages with the output, treating the human-device interaction—not the device alone—as the determinant of residual risk."
+      },
+      "public_summary": "Accepts the two-axis framework's activity dimension but asks FDA to subdivide the supervision category by depth of human review, arguing that a clinician who independently reaches a determination before comparing it to the output is a stronger risk control than cursory review.",
+      "summary_cut": false,
+      "source_passage": "Depth of downstream human review: the activity axis distinguishes healthcare professional supervision from full autonomy. We suggest a finer distinction within supervision. Oversight ranges from a clinician glancing at a generated summary to a clinician independently reaching a determination and then comparing it against the output. The second is a substantially stronger control and should reduce assessed risk more than the first."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter argues that when an output is anchored to a specific artifact the reviewer can directly inspect (a photograph, document image, or recorded statement), the reviewer can verify the output against the underlying evidence, which reduces the likelihood that an incorrect output goes undetected.",
+      "requested_fda_action": "Add traceability of the output to primary source evidence as its own explicit dimension in the risk framework, alongside device activity and consequence of an incorrect output.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment ties residual risk to whether the human reviewer holds and can directly evaluate the underlying evidence, making detectability by the reviewer, rather than model output alone, the determinant of risk."
+      },
+      "public_summary": "Comment accepts FDA's risk framework but asks that traceability of outputs to inspectable source evidence be added as a distinct dimension, reasoning that when reviewers hold the underlying artifact they can directly check outputs, reducing undetected errors.",
+      "summary_cut": false,
+      "source_passage": "Traceability to source evidence: where an output is anchored to a specific artifact the reviewer sees, such as a photograph, a document image, or a recorded statement, the reviewer holds the underlying evidence and evaluates the output directly against it. Traceability of this kind lowers the risk of an undetected incorrect output and belongs in the framework as its own dimension."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q3",
+        "q4"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The paper's binary user taxonomy (patients vs. healthcare professionals, with generalist/specialist subdivision) omits trained non-clinical health workers such as care coordinators, case managers, community health workers, home care aides, and state assessors who conduct much in-home assessment work; classifying them as patients understates their capability while classifying them as healthcare professionals overstates their clinical training.",
+      "requested_fda_action": "Add a third user tier in the risk framework for trained non-clinical health workers operating under organizational supervision, so risk assessment reflects their actual training and accountability structure.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues risk depends on the specific competence and supervision structure of the human user receiving the output, a user class FDA's two-category framing does not represent."
+      },
+      "public_summary": "Accepts the user-based risk framing but says the patient / healthcare-professional split omits trained non-clinical workers (care coordinators, case managers, community health workers, home care aides, state assessors). Requests a third user tier for supervised non-clinical health workers.",
+      "summary_cut": false,
+      "source_passage": "The paper divides users into patients and healthcare professionals, and then divides healthcare professionals into generalists and specialists. A large and growing share of AI-supported health interactions in the United States involves neither group.\n\nCare coordinators, case managers, community health workers, home care aides, and state assessors conduct the majority of in-home health assessments for Medicaid long-term services and supports members. These workers are trained, accountable, supervised, and operating in a defined professional role. They are not licensed clinicians. Under the framework as drafted they fall by default into the patient category, which understates their capability, or into the healthcare professional category, which overstates their clinical training.\n\nWe suggest a third user tier for trained non-clinical health workers operating under organizational supervision"
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q1",
+        "q3",
+        "q4"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter is concerned that framing risk around the individual user's credentials or license alone misses the oversight structure in which the output is used; an output reviewed by a supervising clinician before it affects care carries different risk than the same output reaching an unsupervised consumer.",
+      "requested_fda_action": "Incorporate the supervisory structure surrounding the user—whether outputs are subject to review by a qualified supervisor before affecting care—as a dimension of risk assessment, rather than relying solely on the user's individual licensure or domain knowledge.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment locates risk in the combined human oversight configuration around the device output rather than in the user's individual credentials, which FDA's user-category framing does not fully capture."
+      },
+      "public_summary": "Commenter accepts risk-based assessment of user-facing outputs but argues that risk should turn on the supervisory structure surrounding the user, not licensure alone—citing a community health worker whose assessment is reviewed by a supervising nurse versus an unsupervised consumer.",
+      "summary_cut": false,
+      "source_passage": "First, risk assessment should account for the supervisory structure around the user rather than treating an individual license as the only variable. A community health worker whose assessment is reviewed by a supervising nurse before it affects care presents a different risk profile from an unsupervised consumer."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q3",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter is concerned that output calibrated for one user type will be misunderstood by another — physician-directed text may be misread by a care coordinator, while consumer-directed text may be insufficient for that user.",
+      "requested_fda_action": "Require that benchmarking element E.4 (communication quality and user comprehension) be tested specifically for the user tier that will actually receive the output, rather than generically.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment ties device performance to whether the actual receiving user can correctly comprehend the output, framing comprehension as a user-specific property rather than a property of the model alone."
+      },
+      "public_summary": "Supports the proposed benchmarking element on communication quality but asks FDA to require comprehension testing tailored to the specific user tier receiving the output, noting physician-oriented text may be misread by coordinators and consumer-oriented text may be inadequate for them.",
+      "summary_cut": false,
+      "source_passage": "Second, benchmarking element E.4, communication quality and user comprehension, should test comprehension at this tier specifically. Output written for a physician will be misread by a coordinator, and output written for a consumer will be insufficient for one."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q3",
+        "q4"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter states that an intermediate workforce tier (not named in this passage) is the primary point of contact for populations least represented in clinical AI evaluation, including non-English speakers, people with low literacy, and homebound individuals. Leaving that user tier out of the framework is said to risk excluding those populations from evaluation altogether.",
+      "requested_fda_action": "Include this workforce tier explicitly in the user-related risk framework so that the populations it primarily serves are represented in device evaluation.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues that evaluation must account for a user tier beyond the patient/HCP categories FDA describes, because device performance and evaluation coverage depend on who actually operates it and for whom."
+      },
+      "public_summary": "Argues FDA's user categories should expressly include an additional workforce tier that is the main contact for non-English speakers, people with low literacy, and homebound individuals, warning that omitting the tier would also omit those populations from device evaluation.",
+      "summary_cut": false,
+      "source_passage": "Third, this workforce is the primary point of contact for the members least represented in clinical AI evaluation, including non-English speakers, members with low literacy, and members who are homebound. Omitting the tier from the framework risks omitting those members from evaluation as well."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q1",
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter agrees under- and over-escalation both matter but states that a binary escalate/do-not-escalate framing omits a third response: routing a concerning finding to an accountable clinical channel (a health plan care team holding clinical history, physician contact, and authority to arrange follow-up) with a defined response obligation. They contend that collapsing this handoff into patient-facing escalation overstates the risk of an architecture built to reduce it, since a false positive costs a care team review rather than an emergency department visit, while false negatives remain the most heavily weighted error.",
+      "requested_fda_action": "Recognize a third response path beyond escalate/do-not-escalate and treat routing to an accountable clinical channel as a distinct device activity category within the risk framework, so its different error-cost profile is reflected rather than equated with patient-facing escalation.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter's risk argument rests on the downstream accountable care team that receives and acts on the output, meaning risk is a property of the combined device-plus-clinical-channel system rather than the output alone.",
+        "operational_harm": "The comment frames over-escalation error costs in operational terms, contrasting an unnecessary emergency department visit with a care team review, which is a workflow and resource consequence rather than a direct clinical injury."
+      },
+      "public_summary": "Agrees both under- and over-escalation matter, but asks CDRH to recognize a third response beyond escalate/do-not-escalate: routing findings to an accountable clinical channel with a defined response obligation. Requests this be a distinct activity category, since its false-positive cost is lower.",
+      "summary_cut": false,
+      "source_passage": "We agree both under-escalation and over-escalation matter. We suggest the framework also recognize a third response beyond escalate and do not escalate.\n\nIn our setting, a concerning finding is routed to the member's health plan care team, which holds the member's clinical history, the treating physician's contact information, and the authority to arrange follow-up. The output is not a direction to the member to seek emergency care, and it is not silence. It is a handoff to an accountable clinical channel carrying a defined response obligation.\n\nThis third path changes the error profile substantially. The cost of a false positive is a care team review rather than an emergency department visit. The cost of a false negative remains serious and is the error we weight most heavily. We suggest CDRH consider routing to an accountable channel as a distinct activity category, because collapsing it into patient-facing escalation overstates the risk of an architecture designed specifically to reduce that risk."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "The commenter holds that no single weighting ratio between under-escalation and over-escalation error can generalize across clinical contexts, and that combined accuracy figures obscure the two directions of error.",
+      "requested_fda_action": "Require sponsors to explicitly state the error-weighting ratio they optimized for, justify it against the specific clinical context and the receiving system's capacity to respond, and report under-escalation and over-escalation rates separately rather than as a single combined accuracy metric.",
+      "confidence": "high",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment ties acceptable error weighting to the receiving system's response capacity, indicating that escalation errors impose burdens on downstream care operations beyond individual output correctness."
+      },
+      "public_summary": "Agrees escalation errors must be evaluated in both directions but argues no single weighting ratio generalizes. Asks FDA to require sponsors to state and justify their chosen ratio against clinical context and receiving system capacity, and to report both error rates separately.",
+      "summary_cut": false,
+      "source_passage": "On weighting the two directions of error, we do not think a single ratio generalizes across clinical contexts. What generalizes is the requirement for a sponsor to state the ratio it optimized for, justify it against the clinical context and the receiving system's response capacity, and report both error rates separately rather than inside a combined accuracy figure."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q11"
+      ],
+      "position": "support",
+      "primary_issue": "clinical_validation",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter views the graduated range of clinical confirmation approaches as appropriate and does not consider a prospective clinical study necessary for every GenAI-enabled device.",
+      "requested_fda_action": "Retain the described range of clinical confirmation approaches, including the position that prospective clinical studies are not required in all cases.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter endorses FDA's described range of clinical confirmation approaches for GenAI-enabled devices and agrees that a prospective clinical study should not be required in every case. No modifications or additional conditions are stated in the passage.",
+      "summary_cut": false,
+      "source_passage": "The range of approaches described in Section V.C.1 is sound, and we support the position a prospective clinical study is not required in every case."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q11",
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter is concerned that defaulting to physician panels as the reference standard for adjudicating open-ended outputs would be misaligned with who actually performs certain tasks (e.g., functional assessment, home safety, activities of daily living scoring), where certified nurse assessors or trained assessment coordinators hold the applicable scoring standard. In such domains, physician adjudication would increase clinical confirmation costs while potentially making the reference standard less accurate.",
+      "requested_fda_action": "Define adjudicator qualification by the specific task and applicable scoring standard rather than defaulting to physician review, allowing non-physician experts such as certified nurse assessors or trained assessment coordinators to serve as adjudicators where they perform the task in practice.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The commenter argues that a physician-default adjudication requirement would raise the cost of clinical confirmation without improving, and sometimes degrading, the accuracy of the reference standard."
+      },
+      "public_summary": "Accepts clinical confirmation with expert adjudication but asks FDA to define adjudicator qualifications by task and applicable scoring standard rather than defaulting to physicians, noting that for functional, home-safety, and daily-living assessments non-physician assessors may provide a more accurate, less costly reference standard.",
+      "summary_cut": false,
+      "source_passage": "We suggest CDRH define adjudicator qualification by the task rather than defaulting to physician review. For functional assessment, home safety, and activity of daily living scoring, the appropriate expert is often a certified nurse assessor or a trained assessment coordinator rather than a physician. These are the people who hold the applicable scoring standard and who perform the task in practice. Defaulting to physician adjudication would raise the cost of clinical confirmation without improving the reference standard, and in several domains it would make the reference standard less accurate."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q11",
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "When clinician reviewers see a device-generated output before recording their own reference determination, agreement statistics are inflated by anchoring, and this bias is not visible in the reported metric.",
+      "requested_fda_action": "Make sequencing explicit in any future description of the comparator/clinical confirmation method: require submissions to state whether the reference determination was recorded before or after the reviewer saw the device output, and do not treat unblinded review as evidence equivalent to blinded review.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment highlights that exposure to a generated output changes clinician judgment through anchoring, an interaction effect between human reviewers and AI output that FDA's comparator question does not explicitly address."
+      },
+      "public_summary": "Accepts clinician-panel comparators but asks CDRH to specify evaluation sequencing: submissions should state whether reference determinations were recorded before or after reviewers saw device outputs, since anchoring inflates agreement, and unblinded review should not count as equivalent to blinded review.",
+      "summary_cut": false,
+      "source_passage": "Sequencing matters as much as credential. Once a reviewer has seen a generated output, the reviewer cannot unsee it, and agreement measured afterward is inflated by anchoring in a way invisible in the resulting statistic.\n\nWe suggest CDRH make sequencing explicit in any future description of the method. A submission should state whether the reference determination was recorded before or after the reviewer saw the output, and unblinded review should not be treated as equivalent evidence to blinded review."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q11"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "clinical_validation",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "That clinical confirmation approaches remain feasible for small sponsors that lack dedicated trial funding or research infrastructure; the commenter states blinded paired adjudication requires only disciplined sequencing and documentation of when each determination was made.",
+      "requested_fda_action": "Further define blinded paired adjudication as an accepted form of clinical confirmation for GenAI-enabled devices, possibly qualifying it through the Medical Device Development Tool (MDDT) program.",
+      "confidence": "medium",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment centers on whether clinical confirmation methods are producible by small companies without dedicated trial funding or research infrastructure."
+      },
+      "public_summary": "Supports FDA's flexibility on clinical confirmation but urges CDRH to further define blinded paired adjudication, possibly via the Medical Device Development Tool program, arguing it is achievable for small sponsors without research infrastructure or dedicated trial funding.",
+      "summary_cut": false,
+      "source_passage": "We also note this method is achievable for a small company. It requires no research infrastructure beyond disciplined sequencing and a record of when each determination was made. If CDRH wants a form of clinical confirmation small sponsors are able to produce without dedicated trial funding, blinded paired adjudication is a strong candidate for further definition, possibly through the Medical Device Development Tool program."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Published inter-rater reliability studies for activity of daily living instruments come from controlled research settings with trained raters and a single instrument, and do not establish that assessors agree during Medicaid home visits, across instruments, under time pressure, in the member's own environment. The commenter is not aware of evidence establishing a reliable human reference standard for this task in the deployment setting.",
+      "requested_fda_action": "CDRH should treat the existence of a reliable human reference standard as something a sponsor must demonstrate for the deployment setting, rather than something assumed when clinician or assessor panels are used as the comparator.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment stresses that comparator reliability measured in controlled research conditions does not carry over to real field deployment conditions such as home visits, varied instruments, and time pressure."
+      },
+      "public_summary": "Comment on comparator selection: existing inter-rater reliability evidence for daily-living assessments comes from controlled research settings and may not hold during Medicaid home visits under time pressure. Asks CDRH to require sponsors to demonstrate, not assume, a reliable human reference standard in the deployment setting.",
+      "summary_cut": false,
+      "source_passage": "Agreement among assessors under real field conditions is also largely unmeasured. Published inter-rater reliability studies for activity of daily living instruments are generally conducted in controlled research settings, with trained raters applying a single instrument to a small sample, and several report high agreement. Those results do not establish that assessors agree during Medicaid home visits, across different instruments, under time pressure, in the member's own environment. We are not aware of a body of evidence establishing a reliable human reference standard for this task in the deployment setting, and we suggest CDRH treat the existence of that standard as something a sponsor demonstrates rather than assumes."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q12",
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "When a clinician panel rather than an objective result (e.g., biopsy) serves as the reference standard, raw system-to-panel agreement figures can conceal how reliable the panel itself is, making performance results difficult to interpret.",
+      "requested_fda_action": "Require sponsors using expert-judgment reference standards to report inter-rater agreement within the human reference panel alongside system-to-panel agreement, and to state which assessment instrument each reviewer applied.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts clinician panels as comparators for open-ended outputs but asks FDA to require sponsors to report panel inter-rater agreement alongside system-to-panel agreement, and to identify the instrument each reviewer used, since raw agreement figures obscure reference-standard reliability.",
+      "summary_cut": false,
+      "source_passage": "Where the reference standard is expert judgment rather than an objective result such as a biopsy, sponsors should report inter-rater agreement within the human reference panel alongside system-to-panel agreement, and should state which instrument each reviewer applied. A system matching a panel agreeing with itself 70 percent of the time is a different finding from a system matching a panel agreeing with itself 95 percent of the time, and a raw agreement figure hides the difference."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "For functions intended to reduce variability rather than exceed median clinician performance, comparing device output to a clinician panel's accuracy does not capture the actual objective; consistency of determinations across assessors is itself the clinical and equity goal, particularly in authorization-driven programs.",
+      "requested_fda_action": "Recognize consistency (variance reduction/inter-assessor agreement) as a standalone, measurable performance endpoint and acceptance criterion for such functions, rather than requiring only accuracy comparisons against a median clinician or standard-of-care comparator.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts comparator-based evaluation generally but asks FDA to allow consistency itself as a performance endpoint where a function's purpose is reducing variance rather than outperforming a median clinician, citing authorization programs where identical scoring by two assessors is the objective.",
+      "summary_cut": false,
+      "source_passage": "Where the purpose of a function is to reduce variance rather than to outperform a median clinician, consistency should be measurable as a performance endpoint in its own right. In authorization-driven programs, two assessors reaching the same score for the same member is itself the clinical and equity objective."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "The commenter argues that in home assessment settings the real-world alternative is an incomplete, time-pressured paper form that varies by state and plan, not an idealized expert evaluation; benchmarking against an idealized standard of care yields a systematically misleading benefit-risk assessment that disadvantages populations with the least access to care.",
+      "requested_fda_action": "Give greater weight to comparators reflecting care that would occur absent the device, and permit sponsors to characterize the actual prevailing practice in the deployment setting with supporting evidence and evaluate against it in addition to any clinical reference standard.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports FDA's suggestion of comparators reflecting care absent the device, but urges greater emphasis: in home assessment settings the real alternative is an incomplete paper form, so sponsors should be allowed to evidence and evaluate against actual prevailing practice alongside any clinical reference standard.",
+      "summary_cut": false,
+      "source_passage": "We support this framing strongly and believe it deserves more weight than the paper currently gives it.\n\nIn the home assessment setting, the realistic alternative to a generative AI-supported assessment is not a careful expert evaluation. It is a paper form completed under time pressure, sometimes partly from recall after the visit ended, frequently incomplete, and drawn from an instrument varying by state and by plan. ... Evaluating a system against an idealized standard of care while the real alternative is an incomplete form produces a systematically misleading benefit-risk assessment, and it does so in a direction disadvantaging the populations with the least access to care. We suggest CDRH permit sponsors to characterize the actual prevailing practice in the deployment setting, supported by evidence, and to evaluate against it in addition to any clinical reference standard."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "The discussion paper names payers as ecosystem stakeholders but does not describe any concrete postmarket role for them, even though Medicaid and Medicare Advantage plans already conduct assessment audits, inter-rater reliability checks, and hold downstream utilization and outcome data.",
+      "requested_fda_action": "Define a specific postmarket monitoring role for health plans, leveraging their existing audit infrastructure, contractual access to deployment environments, and outcome data rather than requiring manufacturers to build duplicative monitoring capability.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment argues that much of the postmarket monitoring capability CDRH would ask manufacturers to build already exists inside health plans with access to deployment environments and outcome data."
+      },
+      "public_summary": "Comment notes the paper lists payers as stakeholders without assigning them a role. It proposes a specific postmarket monitoring role for Medicaid and Medicare Advantage plans, citing their existing assessment audits, inter-rater reliability checks, deployment-environment access, and downstream outcome data.",
+      "summary_cut": false,
+      "source_passage": "The paper lists payers among ecosystem stakeholders without describing a role for them. We suggest a specific one.\n\nMedicaid and Medicare Advantage plans already audit completed assessments, already run inter-rater reliability checks across their assessor workforces, and already hold the downstream utilization and outcome data needed to determine whether an assessment output was correct. They have contractual access to the deployment environment, regulatory obligations of their own, and a direct financial interest in accuracy. Much of the monitoring capability CDRH is asking manufacturers to build already exists inside health plans."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "Postmarket monitoring built only on manufacturer-selected samples may not reflect the actual deployment environment, and building parallel audit infrastructure would duplicate capacity that already exists and is already funded.",
+      "requested_fda_action": "Recognize a division of labor in which the manufacturer defines the monitoring specification, sampling frame, and degradation thresholds and retains responsibility for detecting and reporting degradation, while a plan supplies the sample and outcome linkage under contract.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment proposes a contractual split of postmarket monitoring roles between the manufacturer and an external party while explicitly preserving manufacturer accountability for detection and reporting.",
+        "deployment_assurance_scalability": "It argues monitoring should draw on data from the actual deployment environment using existing operating infrastructure rather than duplicating audit capacity or relying on manufacturer-selected samples."
+      },
+      "public_summary": "Supports the postmarket monitoring direction but proposes a specific structure: the manufacturer sets the monitoring specification, sampling frame, and degradation thresholds and remains accountable for detection and reporting, while a plan supplies samples and outcome linkage under contract, drawing on real deployment data.",
+      "summary_cut": false,
+      "source_passage": "A workable structure preserves manufacturer accountability while using this capacity. The manufacturer defines the monitoring specification, the sampling frame, and the degradation thresholds, and remains responsible for detecting and reporting degradation. The plan supplies the sample and the outcome linkage under contract. This avoids duplicating an audit infrastructure already funded and already operating, and it produces monitoring data drawn from the actual deployment environment rather than from a manufacturer-selected sample."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "In Medicaid functional assessment there is no standardized instrument (at least 124 tools identified nationally, with differing data elements such as DC collecting frequency and duration of bathing assistance while Kentucky does not, plus plan-specific scoring conventions), so a clinician panel comparator lacks a stable human reference standard. Panel disagreement may reflect different instruments rather than differing clinical judgment.",
+      "requested_fda_action": "The commenter indicates that FDA's clinician-panel comparator approach must account for instrument and scoring heterogeneity in domains like Medicaid functional assessment, where no standardized reference instrument exists; a specific alternative comparator is not stated in this passage.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Comment questions FDA's assumption that a qualified clinician panel provides a stable comparator. In Medicaid functional assessment, no standardized instrument exists (124+ tools, varying data elements and plan-specific scoring), so panel disagreement may reflect differing instruments rather than clinical judgment.",
+      "summary_cut": false,
+      "source_passage": "Comparing a system against a panel of qualified clinicians assumes a stable human reference standard exists. In Medicaid functional assessment, it largely does not.\nThe instrument itself is not standardized. The federal government does not require states to use a particular functional assessment tool, and a national inventory identified at least 124 tools currently in use.\nThe variation is not cosmetic. The District of Columbia bathing assessment collects the frequency and duration of assistance required, while the Kentucky assessment does not. Individual health plans then apply their own scoring conventions and thresholds within their state's requirements. A reference panel drawn from more than one program may disagree not because clinical judgment differs but because the reviewers are applying different instruments."
+    },
+    {
+      "segment_id": "seg-021",
+      "question_ids": [
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Benchmarking device performance against an idealized standard of care misrepresents benefit-risk when the realistic alternative in the deployment setting is incomplete or absent care, and this distortion falls hardest on populations with the least access.",
+      "requested_fda_action": "Allow sponsors to document, with supporting evidence, the actual prevailing practice in the intended deployment setting and to evaluate device performance against that real-world alternative in addition to any clinical reference standard.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports comparator flexibility but asks CDRH to let sponsors characterize and evaluate against evidence-based actual prevailing practice in the deployment setting, alongside a clinical reference standard, arguing idealized standard-of-care comparators distort benefit-risk assessments, especially for low-access populations.",
+      "summary_cut": false,
+      "source_passage": "Evaluating a system against an idealized standard of care while the real alternative is an incomplete form produces a systematically misleading benefit-risk assessment, and it does so in a direction disadvantaging the populations with the least access to care. We suggest CDRH permit sponsors to characterize the actual prevailing practice in the deployment setting, supported by evidence, and to evaluate against it in addition to any clinical reference standard."
+    }
+  ]
+}

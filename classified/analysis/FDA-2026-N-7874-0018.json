@@ -1,0 +1,183 @@
+{
+  "comment_id": "FDA-2026-N-7874-0018",
+  "input_hash": "bcdb7435b9ca84a2",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter's stated concern is that traditional software validation approaches are insufficient for open-ended GenAI systems, and views the paper's risk-based plus competency-based framework as an appropriate response aligned with a Total Product Lifecycle approach.",
+      "requested_fda_action": "No specific change is requested; the commenter endorses the discussion paper's overall direction and its combined risk-based and competency-based framework.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter endorses the discussion paper overall, describing it as consistent with a Total Product Lifecycle approach and correctly recognizing that traditional software validation is insufficient for open-ended generative AI. Supports the combined risk-based and competency-based framework without requesting specific changes.",
+      "summary_cut": false,
+      "source_passage": "Overall, I think this is one of the most thoughtful FDA discussion papers published to date on GenAI regulation and it aligns well with a Total Product Lifecycle (TPLC) approach. It appropriately recognizes that traditional software validation approaches are insufficient for open-ended GenAI systems and introduces a risk-based + competency-based framework."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "regulatory_scope",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter states the paper only briefly references multiple-function products and does not adequately address platforms combining medical and non-medical GenAI functions, shared foundation models serving both regulated and non-regulated functions, potential contamination or influence between their outputs, segregation requirements, or architecture recommendations.",
+      "requested_fda_action": "Provide explicit multiple function device product examples, boundary control expectations, and evidence requirements demonstrating independence between regulated and non-regulated functions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment raises the possibility that outputs of regulated device functions could be influenced by non-regulated functions sharing the same foundation model, blurring the boundaries of the declared device function."
+      },
+      "public_summary": "Comment finds FDA's treatment of multiple-function products insufficient for platforms mixing medical and non-medical GenAI functions on shared foundation models. Asks FDA to add explicit examples, boundary control expectations, segregation/architecture guidance, and evidence demonstrating independence between regulated and non-regulated functions.",
+      "summary_cut": false,
+      "source_passage": "1. Missing Explicit Multiple Function Device Product (MFDP) Considerations\nAlthough FDA briefly references multiple-function products, the discussion does not\nsufficiently address:\n•Medical + non-medical GenAI functions in the same platform\n•Shared foundation models servicing both regulated and non-regulated functions\n•Contamination or influence between regulated and non-regulated outputs\n•Segregation requirements\n•Architecture Recommendations inclusion Medical + non-medical GenAI functions\nThis is particularly important for platforms like where some functions could be medical-\ndevice functions while others remain non-device administrative functions.\nRecommendation\nFDA should provide:\n•Explicit MFDP examples\n•Boundary control expectations\n•Evidence requirements demonstrating independence between regulated and non-\nregulated functions"
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "cybersecurity",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter states that the discussion paper mentions guardrails and prompt injection but does not sufficiently integrate cybersecurity into the competency framework, specifically omitting model poisoning, retrieval database attacks, prompt injection effects on clinical outputs, adversarial attacks, agentic tool abuse, and LLM supply chain security.",
+      "requested_fda_action": "Add a dedicated cybersecurity competency area to the benchmarking structure, or explicitly align the framework with FDA cybersecurity guidance, SBOM expectations, IEC 81001-5-1, and the NIST AI RMF.",
+      "confidence": "high",
+      "gap_tags": [
+        "cybersecurity_as_safety",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "cybersecurity_as_safety": "The comment treats attacks such as model poisoning, prompt injection, and adversarial inputs as factors that directly affect clinical outputs and therefore belong in the device competency evaluation.",
+        "ai_supplier_quality": "It identifies LLM supply chain security and SBOM expectations as missing elements of the framework."
+      },
+      "public_summary": "Accepts the benchmarking competency structure but finds cybersecurity underrepresented, citing gaps on model poisoning, retrieval database attacks, prompt injection effects on clinical outputs, adversarial attacks, agentic tool abuse, and LLM supply chain security. Requests a dedicated cybersecurity competency area or explicit alignment with existing standards.",
+      "summary_cut": false,
+      "source_passage": "2. Cybersecurity is Underrepresented\nThe paper references guardrails and prompt injection but cybersecurity requirements are not\nsufficiently integrated into the framework.\nParticularly absent:\n•Model poisoning\n•Retrieval database attacks\n•Prompt injection impact on clinical outputs\n•Adversarial attacks\n•Agentic tool abuse\n•LLM supply chain security\nRecommendation\nAdd a dedicated cybersecurity competency area or explicitly align with:\n•FDA Cybersecurity Guidance\n•SBOM expectations\n•IEC 81001-5-1\n•NIST AI RMF"
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter states that the paper mentions communication quality and automation bias but does not explicitly link them to traditional human factors engineering requirements, leaving usability considerations insufficiently prominent in the evaluation framework.",
+      "requested_fda_action": "Make human factors validation a standalone evaluation pillar, and evaluate user trust calibration, overreliance, alert fatigue, automation bias, and explainability effectiveness for GenAI systems.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment focuses on how clinicians interact with GenAI outputs—trust calibration, overreliance, automation bias, alert fatigue, and explainability—rather than model performance alone."
+      },
+      "public_summary": "Accepts the evaluation framework's direction but argues human factors are underemphasized and not tied to traditional human factors engineering requirements. Recommends making human factors validation a standalone evaluation pillar covering trust calibration, overreliance, alert fatigue, automation bias, and explainability effectiveness.",
+      "summary_cut": false,
+      "source_passage": "3. Human Factors / Usability Not Prominent Enough\nThe paper discusses communication quality and automation bias. However, it does not\nexplicitly connect them to traditional human factors engineering requirements.\nFor GenAI systems FDA should evaluate:\n•User trust calibration\n•Overreliance\n•Alert fatigue\n•Automation bias\n•Explainability effectiveness\nRecommendation\nHuman factors validation should become a standalone evaluation pillar."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q17",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter states that most healthcare GenAI systems will not rely on foundation models alone but on retrieval-augmented generation, clinical knowledge repositories, guideline retrieval systems, and enterprise databases, and that the discussion paper insufficiently addresses retrieval quality, source governance, knowledge base drift, and citation accuracy.",
+      "requested_fda_action": "Define validation expectations separately for each architectural layer: the foundation model, the retrieval layer, the orchestrator layer, and the final clinical output.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment raises governance and quality of non-model inputs such as retrieved clinical knowledge sources, guideline repositories, and enterprise databases, including their drift and citation accuracy, which FDA's foundation-model-centric framing does not cover."
+      },
+      "public_summary": "Commenter argues the paper focuses too narrowly on foundation models and overlooks retrieval-augmented architectures, including retrieval quality, source governance, knowledge base drift, and citation accuracy. Asks FDA to set separate validation expectations for the foundation model, retrieval layer, orchestrator layer, and final clinical output.",
+      "summary_cut": false,
+      "source_passage": "4. Lack of Clear Treatment for Retrieval-Augmented Generation (RAG)\nMost healthcare GenAI systems will not rely solely on foundation models.\nInstead, they will rely upon:\n•RAG architectures\n•Clinical knowledge repositories\n•Guideline retrieval systems\n•Enterprise databases\nThe discussion focuses heavily on foundation models but insufficiently addresses:\n•Retrieval quality\n•Source governance\n•Knowledge base drift\n•Citation accuracy\nRecommendation\nFDA should define validation expectations separately for:\n•Foundation model\n•Retrieval layer\n•Orchestrator layer\n•Final clinical output"
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q12",
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter finds that the discussion paper raises questions about statistical rigor but offers no practical path forward on sample size determination, confidence intervals, performance thresholds, or statistical significance for open-ended outputs.",
+      "requested_fda_action": "Provide concrete statistical guidance, including consideration of non-inferiority and Bayesian approaches, risk-adjusted performance thresholds, and measures of human-AI team effectiveness.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter recommends human-AI team effectiveness measures as part of acceptance criteria, rather than evaluating the device output alone."
+      },
+      "public_summary": "Commenter accepts FDA's framing but says the paper poses statistical questions without answers, lacking practical methods for sample size, confidence intervals, thresholds, and significance for open-ended outputs. Recommends FDA consider non-inferiority and Bayesian approaches, risk-adjusted thresholds, and human-AI team effectiveness measures.",
+      "summary_cut": false,
+      "source_passage": "5. Statistics and Acceptance Criteria Remain Vague\n\nOne major weakness is that the document does not provide practical approaches for:\n•Sample size determination\n•Confidence intervals\n•Performance thresholds\n•Statistical significance for open-ended outputs\nFDA raises the question but does not suggest a path forward.\nRecommendation\nConsider:\n•Non-inferiority approaches\n•Bayesian approaches\n•Risk-adjusted performance thresholds\n•Human-AI team effectiveness measures"
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter believes the discussion paper understates the risk of agentic systems, which can execute actions, trigger workflows, modify records, and interact with connected systems, making single-step validation insufficient.",
+      "requested_fda_action": "Require action approval checkpoints, tool-use verification, audit trails, rollback capabilities, and runtime supervision before high-risk autonomous deployment.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment focuses on autonomous multi-step action and tool use, asking for approval checkpoints and tool-use verification before agents are permitted to act.",
+        "operational_harm": "It highlights harms arising from workflow execution, record modification, and interaction with connected systems, and asks for audit trails and rollback capabilities."
+      },
+      "public_summary": "Comment accepts FDA's attention to agentic AI but argues the paper understates its risk, since such systems execute actions, alter records, and interact with connected systems. Recommends requiring approval checkpoints, tool-use verification, audit trails, rollback, and runtime supervision before high-risk autonomous deployment.",
+      "summary_cut": false,
+      "source_passage": "6. Agentic AI Requires Stronger Controls\nAgentic AI is discussed but I think the risk is greater than portrayed.\nAgentic systems can:\n•Execute actions\n•Trigger workflows\n•Modify records\n•Interact with connected systems\nSingle-step validation is insufficient.\nRecommendation\nRequire:\n•Action approval checkpoints\n•Tool-use verification\n•Audit trails\n•Rollback capabilities\n•Runtime supervision\nbefore high-risk autonomous deployment."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q23",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Third-party foundation model providers can change models without the device sponsor's involvement, causing overnight behavioral change, performance drift, and altered safety profiles, so FDA-cleared evidence may no longer reflect deployed device behavior. The commenter characterizes this as the biggest practical regulatory challenge.",
+      "requested_fda_action": "FDA should strongly consider requiring locked model versions, mandatory model version traceability, supplier quality agreements, triggered revalidation criteria, and PCCP provisions specific to foundation-model updates.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment asks for supplier quality agreements, version locking, and traceability to control an upstream AI model supplier whose changes the device manufacturer does not initiate.",
+        "dynamic_intended_use": "It stresses that model behavior and safety profiles can shift overnight so that cleared evidence no longer reflects deployed behavior, requiring triggered revalidation criteria."
+      },
+      "public_summary": "Agrees with FDA that third-party foundation model updates are a major challenge, calling it the biggest practical regulatory problem. Asks FDA to go further by considering locked model versions, version traceability, supplier quality agreements, triggered revalidation criteria, and foundation-model-specific PCCP provisions.",
+      "summary_cut": false,
+      "source_passage": "7. Third-Party Foundation Model Change Management\nThis is probably the biggest practical regulatory challenge.\n\nThe paper recognises that foundation model providers may change their models without\nsponsors initiating updates.\nFor medical device manufacturers, this creates a major regulatory problem because:\n•Behaviour may change overnight\n•Performance may drift\n•Safety profiles may change\n•FDA-cleared evidence may no longer reflect deployed behaviour\nRecommendation\nFDA should strongly consider:\n•Locked model versions\n•Mandatory model version traceability\n•Supplier quality agreements\n•Triggered revalidation criteria\n•PCCP-specific provisions for foundation-model updates"
+    }
+  ]
+}

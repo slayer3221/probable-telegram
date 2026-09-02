@@ -1,0 +1,88 @@
+I appreciate the opportunity to comment on this discussion paper. My comments address Questions 18, 19, 20, 24, and 25.<br/><br/>The paper&#39;s proposed reliance on postmarket monitoring, and its proposed reliance on voluntary self reported information from foundation model developers, both depend on an assumption that has not been established: that the parties being monitored can reliably detect and report their own systems&#39; failures. This year&#39;s pattern of AI safety incidents across multiple major AI developers, in which anomalous model behavior went undetected for weeks or months and was discovered by accident rather than through the developers&#39; own monitoring, suggests this assumption deserves scrutiny before it becomes load bearing for a regulatory framework.<br/><br/>On Foundation Model MAFs (Question 25): if developers with the strongest possible incentive to know their own models&#39; behavior have repeatedly failed to detect meaningful deviations, a voluntary model card filed by that same party carries the same structural limitation. I recommend CDRH require MAF filers to disclose their own internal detection methodology, not just claimed model behavior, so reviewers can assess the reliability of the process behind the claim.<br/><br/>On postmarket monitoring (Questions 18 and 19): a report of zero adverse events could mean the device performed safely, or that monitoring failed to observe the relevant behavior. These are not distinguishable from an absence of reports alone. I recommend sponsors be required to provide affirmative evidence of monitoring coverage, not just adverse event counts.<br/><br/>On degradation monitoring (Questions 19 and 24): a degrading device may not reliably signal its own decline through the same channel used to generate its outputs. I recommend degradation monitoring require at least one detection mechanism independent of the device&#39;s own reporting pathway, such as periodic re benchmarking or sampled clinician review.<br/><br/>These recommendations support, rather than oppose, the competency based framework and reliance on postmarket monitoring. The goal is ensuring monitoring and disclosure mechanisms demonstrate their own reliability before being credited toward reduced premarket evidence.
+
+[Attachment: Comment from Supernova Technologies]
+Comment on Docket FDA-2026-N-7874
+Considerations for the Regulation of Generative AI Enabled Medical Devices: Discussion Paper and Request for
+Feedback
+Submitted in response to Discussion Questions 18, 19, 20, 24, and 25
+Introduction
+I appreciate the opportunity to comment on this discussion paper. My comments focus on a single connected
+concern that runs through Sections VI and VII: the paper's proposed reliance on postmarket monitoring, and its
+proposed reliance on voluntary self reported information from foundation model developers, both depend on an
+assumption that has not been established, namely that the parties being monitored can reliably detect and report their
+own systems' failures. Evidence from this year's pattern of AI safety incidents across multiple major AI developers
+suggests this assumption deserves close scrutiny before it becomes load bearing for a regulatory framework.
+Point One: Voluntary Foundation Model Master Files (Question 25)
+The paper directly asks what would make a voluntary Foundation Model MAF program sufficiently useful given
+that model developers may have limited incentive to disclose safety relevant information. This is the right question
+to ask, and the paper's own framing already identifies the core weakness.
+Organizations with strong internal incentives to understand their own systems' behavior, including several leading
+AI developers, have this year experienced real world incidents in which anomalous or unsafe model behavior went
+undetected for extended periods, in some cases weeks or months, and was ultimately discovered through external
+review or by accident rather than through the organizations' own monitoring processes. These were not
+organizations lacking sophistication or motivation to monitor their systems. If developers with the strongest possible
+incentive to know what their own models are doing have repeatedly failed to detect meaningful deviations in their
+own systems, a voluntary model card or system card filed by that same party carries the same structural limitation: it
+can only disclose what the filer already knows, and this year's pattern indicates that what a developer believes it
+knows about its own system's behavior is not reliable.
+I recommend CDRH consider requiring, as a condition of a Foundation Model MAF being referenced in a premarket
+submission, that the filer disclose its own internal detection and monitoring methodology for the behaviors and
+failure modes described in the card, so that reviewers can evaluate not just the claimed behavior of the model but the
+reliability of the process that produced the claim.
+Point Two: Postmarket Monitoring Completeness (Questions 18 and 19)
+Question 18 asks what characteristics of a monitoring program would need to be in place to justify reduced
+premarket evidence. I recommend that any postmarket monitoring program accepted as a basis for reduced
+premarket evidence be required to demonstrate the completeness of its own coverage, not merely the presence of a
+monitoring process.
+A monitoring program that reports zero adverse events could mean the device performed safely, or it could mean the
+monitoring failed to observe the relevant behavior. These two states are not distinguishable from the absence of a
+report alone, yet a regulatory framework built around greater reliance on postmarket monitoring needs to distinguish
+between them. I recommend that sponsors be required to provide affirmative evidence of monitoring coverage, for
+example documentation of what proportion of real world interactions were captured by the monitoring system and
+what categories of device behavior fall outside its observable scope, alongside any adverse event reporting.
+Point Three: Independent Detection of Performance Degradation
+(Questions 19 and 24)
+The paper names performance degradation over time as one of the core risks of GenAI enabled devices, and
+proposes performance degradation monitoring as a postmarket approach. I recommend that CDRH require
+
+degradation detection mechanisms to operate independently of the deployed device's own output or reporting
+pathway.
+A device that is degrading, whether due to a change in the underlying foundation model, drift in the input
+population, or another cause, may not reliably signal its own decline through the same channel used to generate its
+outputs, particularly for GenAI enabled devices where a single failure mode can affect both the device's clinical
+output and its own self assessment of that output. This concern is closely related to Question 24, regarding changes
+initiated by a third party foundation model developer rather than the device manufacturer. In both cases, the
+manufacturer's ability to detect a problem depends on a signal that is generated or mediated by the same system that
+may be experiencing the problem. I recommend that degradation monitoring specifications require at least one
+detection mechanism, such as periodic re benchmarking against an independent reference set or sampled clinician
+review as described in Section VI.A, that does not depend on the device's own reporting of its performance.
+Conclusion
+The concerns raised above are not arguments against the competency based framework or against reliance on
+postmarket monitoring generally. Postmarket monitoring, done well, is likely necessary given the practical limits of
+premarket testing for open ended systems described elsewhere in this paper. My recommendation is narrower: that
+CDRH require monitoring and disclosure mechanisms to demonstrate their own reliability and completeness as a
+condition of being credited toward reduced premarket evidence, rather than treating the existence of a monitoring
+program or a voluntary disclosure mechanism as sufficient on its own. Given this year's demonstrated pattern of AI
+developers failing to detect problems in their own systems despite strong incentives to do so, this distinction is likely
+to matter in practice.
+Thank you for the opportunity to comment.
+
+[Attachment: Comment from Supernova Technologies]
+Comment on Docket FDA-2026-N-7874
+Considerations for the Regulation of Generative AI Enabled Medical Devices: Discussion Paper and Request for Feedback
+Submitted in response to Discussion Questions 18, 19, 20, 24, and 25
+Introduction
+I appreciate the opportunity to comment on this discussion paper. My comments focus on a single connected concern that runs through Sections VI and VII: the paper's proposed reliance on postmarket monitoring, and its proposed reliance on voluntary self reported information from foundation model developers, both depend on an assumption that has not been established, namely that the parties being monitored can reliably detect and report their own systems' failures. Evidence from this year's pattern of AI safety incidents across multiple major AI developers suggests this assumption deserves close scrutiny before it becomes load bearing for a regulatory framework.
+Point One: Voluntary Foundation Model Master Files (Question 25)
+The paper directly asks what would make a voluntary Foundation Model MAF program sufficiently useful given that model developers may have limited incentive to disclose safety relevant information. This is the right question to ask, and the paper's own framing already identifies the core weakness.
+Organizations with strong internal incentives to understand their own systems' behavior, including several leading AI developers, have this year experienced real world incidents in which anomalous or unsafe model behavior went undetected for extended periods, in some cases weeks or months, and was ultimately discovered through external review or by accident rather than through the organizations' own monitoring processes. These were not organizations lacking sophistication or motivation to monitor their systems. If developers with the strongest possible incentive to know what their own models are doing have repeatedly failed to detect meaningful deviations in their own systems, a voluntary model card or system card filed by that same party carries the same structural limitation: it can only disclose what the filer already knows, and this year's pattern indicates that what a developer believes it knows about its own system's behavior is not reliable.
+I recommend CDRH consider requiring, as a condition of a Foundation Model MAF being referenced in a premarket submission, that the filer disclose its own internal detection and monitoring methodology for the behaviors and failure modes described in the card, so that reviewers can evaluate not just the claimed behavior of the model but the reliability of the process that produced the claim.
+Point Two: Postmarket Monitoring Completeness (Questions 18 and 19)
+Question 18 asks what characteristics of a monitoring program would need to be in place to justify reduced premarket evidence. I recommend that any postmarket monitoring program accepted as a basis for reduced premarket evidence be required to demonstrate the completeness of its own coverage, not merely the presence of a monitoring process.
+A monitoring program that reports zero adverse events could mean the device performed safely, or it could mean the monitoring failed to observe the relevant behavior. These two states are not distinguishable from the absence of a report alone, yet a regulatory framework built around greater reliance on postmarket monitoring needs to distinguish between them. I recommend that sponsors be required to provide affirmative evidence of monitoring coverage, for example documentation of what proportion of real world interactions were captured by the monitoring system and what categories of device behavior fall outside its observable scope, alongside any adverse event reporting.
+Point Three: Independent Detection of Performance Degradation (Questions 19 and 24)
+The paper names performance degradation over time as one of the core risks of GenAI enabled devices, and proposes performance degradation monitoring as a postmarket approach. I recommend that CDRH require degradation detection mechanisms to operate independently of the deployed device's own output or reporting pathway.
+A device that is degrading, whether due to a change in the underlying foundation model, drift in the input population, or another cause, may not reliably signal its own decline through the same channel used to generate its outputs, particularly for GenAI enabled devices where a single failure mode can affect both the device's clinical output and its own self assessment of that output. This concern is closely related to Question 24, regarding changes initiated by a third party foundation model developer rather than the device manufacturer. In both cases, the manufacturer's ability to detect a problem depends on a signal that is generated or mediated by the same system that may be experiencing the problem. I recommend that degradation monitoring specifications require at least one detection mechanism, such as periodic re benchmarking against an independent reference set or sampled clinician review as described in Section VI.A, that does not depend on the device's own reporting of its performance.
+Conclusion
+The concerns raised above are not arguments against the competency based framework or against reliance on postmarket monitoring generally. Postmarket monitoring, done well, is likely necessary given the practical limits of premarket testing for open ended systems described elsewhere in this paper. My recommendation is narrower: that CDRH require monitoring and disclosure mechanisms to demonstrate their own reliability and completeness as a condition of being credited toward reduced premarket evidence, rather than treating the existence of a monitoring program or a voluntary disclosure mechanism as sufficient on its own. Given this year's demonstrated pattern of AI developers failing to detect problems in their own systems despite strong incentives to do so, this distinction is likely to matter in practice.
+Thank you for the opportunity to comment.

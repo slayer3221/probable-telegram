@@ -1,0 +1,436 @@
+{
+  "comment_id": "FDA-2026-N-7874-0020",
+  "input_hash": "0174d564a18c5514",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q10",
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter judges the framework conceptually strong (rated 7.5/10) but evidentiarily immature (~5/10), warning that competency benchmarking may measure test-taking ability rather than actual clinical benefit.",
+      "requested_fda_action": "Implicitly, that FDA ground the competency-based approach in empirical validation demonstrating that benchmark performance predicts real-world clinical benefit, rather than relying on conceptually appealing but unvalidated evaluation constructs.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter rates the paper highly as a conceptual framework but low on evidentiary maturity, noting proposed solutions are appealing rather than empirically validated, and cautioning that competency benchmarking may predict test performance more than real clinical benefit.",
+      "summary_cut": false,
+      "source_passage": "My rating: 7.5/10 as a conceptual regulatory framework, but ~5/10 for evidentiary maturity.\nThe paper identifies the right problems unusually well. Its weakness is that many of the proposed solutions are still conceptually appealing rather than empirically validated. The \"competency\" testing risks becoming the medical-device equivalent of an examination that predicts test-taking performance better than actual clinical benefit."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "regulatory_scope",
+      "stakeholder_concern": "The commenter views the two-axis structure (device activity/autonomy versus consequence of an incorrect output) as clinically intuitive, distinguishing low-consequence informational advice from autonomous initiation of high-consequence interventions.",
+      "requested_fda_action": "Retain the two-axis risk framework as the basis for risk assessment rather than regulating software simply because it incorporates a large language model.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter endorses FDA's two-axis risk framework as clinically intuitive, noting it meaningfully separates low-consequence informational outputs from autonomous systems initiating high-consequence interventions, and prefers this over regulating software merely because it contains a large language model.",
+      "summary_cut": false,
+      "source_passage": "2. The two-axis risk model is clinically intuitive. The framework on page 6 places device activity/autonomy on one axis and consequences of an incorrect output on the other. Thus, an informational system giving low-consequence advice is fundamentally different from an autonomous system initiating a high-consequence intervention. That is much more sensible than regulating something simply because it contains an LLM."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter finds the device activity × consequence framework useful but incomplete, noting that plausible-sounding errors that users cannot readily detect or verify pose different risk than obvious errors, and that small per-interaction risks aggregate into population-level harm at scale.",
+      "requested_fda_action": "Expand the risk framework beyond two axes to include at least detectability of error (including traceability/verifiability of outputs) and frequency of exposure across large volumes of encounters.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment centers risk on whether the human user can detect and independently verify a plausible but incorrect authoritative-seeming output, which is a property of the human-AI pair rather than the model alone.",
+        "deployment_assurance_scalability": "The comment argues that a tiny per-interaction risk multiplied across millions of encounters becomes a significant population-level harm, a scale dimension not represented in the two-axis framework."
+      },
+      "public_summary": "Commenter accepts the two-axis risk framework as useful but considers it insufficient to determine clinical risk. Recommends adding at least detectability of error—whether a plausible but incorrect output can be independently verified—and frequency of exposure, since small per-interaction risks aggregate across millions of encounters.",
+      "summary_cut": false,
+      "source_passage": "1. The two-axis risk framework probably has too few dimensions\nConcern severity: 8/10.\nAutonomy × consequence is useful, but it does not completely determine clinical risk. FDA itself essentially acknowledges this by asking whether reversibility, downstream safeguards, time pressure, and traceability should be incorporated.\nI would add at least detectability of error as a major dimension.\nAn AI error that is immediately obvious to a pediatrician is quite different from a plausible but incorrect statement that appears authoritative and cannot readily be independently verified.\nSimilarly, frequency of exposure matters: a tiny per-interaction risk multiplied across millions of encounters can become an important population-level harm."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter considers the two-axis model (device activity × consequence of an incorrect output) too narrow to capture clinical risk, which they see as also driven by autonomy, error detectability, exposure, and irreversibility.",
+      "requested_fda_action": "Expand the risk framework into a multifactor formulation—consequence × autonomy × error detectability × exposure × irreversibility—modified by human oversight, time-to-intervention, population vulnerability, and recoverability.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The proposed framework treats human oversight, time-to-intervention, and error detectability as explicit risk modifiers, implying risk depends on the combined human-device system rather than the device output alone."
+      },
+      "public_summary": "Accepts a risk-based framework but finds FDA's two axes insufficient. Proposes expanding risk to consequence, autonomy, error detectability, exposure, and irreversibility, modified by human oversight, time-to-intervention, population vulnerability, and recoverability.",
+      "summary_cut": false,
+      "source_passage": "I would evolve the two-dimensional model into something closer to:\nClinical risk ≈ consequence × autonomy × error detectability × exposure × irreversibility,\nmodified by human oversight, time-to-intervention, population vulnerability, and\nrecoverability."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q2"
+      ],
+      "position": "support",
+      "primary_issue": "directiveness",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "Outputs framed as merely informational can in practice direct patient or clinician behavior, and boilerplate disclaimers such as 'talk to your doctor' do not necessarily neutralize otherwise directive advice.",
+      "requested_fda_action": "Retain and apply the paper's substance-and-context approach to assessing directiveness—treating specificity and personalization (e.g., a specific dose change) as directive regardless of hedging language or absence of words like 'recommend.'",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter endorses FDA's view that seemingly informational generative AI outputs can direct behavior, agreeing that directiveness should be judged by substance and context—such as specificity and personalization—rather than particular phrasing, and that disclaimers do not necessarily neutralize directive advice.",
+      "summary_cut": false,
+      "source_passage": "3. FDA recognizes that apparently \"informational\" AI can actually direct behavior. This is particularly important. The paper distinguishes statements ranging from general information through personalized suggestions to explicit instructions—for example, progressing from information about lisinopril dosing to \"increase the lisinopril from 10 mg to 20 mg daily.\" It appropriately argues that directiveness depends on substance and context, rather than magic words such as \"recommend.\" Disclaimers such as \"talk to your doctor\" do not necessarily neutralize otherwise directive advice."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q5"
+      ],
+      "position": "support",
+      "primary_issue": "intended_use",
+      "secondary_issue": "directiveness",
+      "stakeholder_concern": "A conversational system can begin with harmless educational content and gradually migrate toward diagnosis or treatment recommendations over the course of an exchange; evaluating isolated prompts would fail to detect this drift.",
+      "requested_fda_action": "Retain the approach of treating multi-turn behavior as the unit of risk and evaluating realistic conversational trajectories rather than isolated prompts.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment centers on device behavior emerging across a conversation and shifting from education into diagnosis or treatment advice, which extends beyond a fixed stated intended use."
+      },
+      "public_summary": "Endorses FDA's proposal to treat multi-turn behavior as a unit of risk, noting that conversations can drift from education toward diagnostic or treatment recommendations and that evaluating isolated prompts would miss this. Supports assessing realistic conversational trajectories.",
+      "summary_cut": false,
+      "source_passage": "4. Multi-turn behavior is treated as a unit of risk. This is excellent. A system can begin with harmless education and gradually migrate toward diagnosis or treatment recommendations. Evaluating isolated prompts would miss that phenomenon. FDA explicitly proposes evaluating realistic conversational trajectories."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support",
+      "primary_issue": "benchmarking",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter observes that the proposed competency framework goes well beyond simple accuracy testing, spanning safety-critical recognition/escalation, scope adherence, calibration/uncertainty, clinical knowledge, information gathering/reasoning, quantitative performance, communication, robustness/reproducibility, subgroup performance, and agentic competencies.",
+      "requested_fda_action": "No specific change is requested in this passage; the commenter endorses the breadth of the proposed benchmarking domains as a sophisticated conception of clinical AI performance.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter endorses the breadth of FDA's proposed benchmarking domains—covering escalation, scope adherence, calibration, reasoning, communication, robustness, subgroup performance, and agentic competencies—describing the competency framework as a sophisticated conception of clinical AI performance beyond simple accuracy testing. No changes are requested.",
+      "summary_cut": false,
+      "source_passage": "5. The competency framework is substantially broader than simple accuracy testing. The proposed benchmarking domains include safety-critical recognition/escalation, scope adherence, calibration/uncertainty, clinical knowledge, information gathering/reasoning, quantitative performance, communication, robustness/reproducibility, subgroup performance, and separate agentic competencies. That is a sophisticated conception of clinical AI performance."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter views single 'accuracy' statistics as clinically inadequate for care escalation functions, noting that under-escalation can delay lifesaving care while over-escalation can produce anxiety, unnecessary investigations, emergency department utilization, cost, and loss of trust.",
+      "requested_fda_action": "Retain the discussion paper's treatment of asymmetric, bidirectional escalation errors rather than relying on a single aggregate accuracy metric.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The commenter identifies over-escalation harms that are system-level rather than individual clinical harm—unnecessary investigations, emergency department utilization, cost, and erosion of trust."
+      },
+      "public_summary": "Endorses FDA's recognition that care escalation errors are asymmetric, noting under-escalation can delay lifesaving care while over-escalation drives anxiety, unnecessary testing, emergency department use, cost, and distrust. Describes this as more clinically mature than a single accuracy statistic.",
+      "summary_cut": false,
+      "source_passage": "6. The paper recognizes both sides of asymmetric errors. For triage, for example, under-escalation can delay lifesaving care, while over-escalation can generate anxiety, unnecessary\n\ninvestigations, ED utilization, cost, and ultimately distrust. This is a much more clinically mature approach than reporting a single \"accuracy\" statistic."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q10",
+        "q11"
+      ],
+      "position": "support",
+      "primary_issue": "clinical_validation",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter is concerned that benchmark performance can be mistaken for clinical effectiveness, and views FDA's explicit acknowledgment of this limitation as important.",
+      "requested_fda_action": "Retain the proposed approach in which benchmarking is not treated as sufficient evidence of clinical performance and is followed by a tiered hierarchy of clinical confirmation ranging from retrospective data and shadow deployment to standardized patients and prospective trials.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter endorses FDA's position that benchmarking alone may not establish real-world clinical performance and supports the proposed tiered hierarchy of clinical confirmation—retrospective data, shadow deployment, standardized patients, and prospective trials—describing it as among the paper's strongest elements.",
+      "summary_cut": false,
+      "source_passage": "7. It does not assume benchmark performance equals clinical effectiveness. FDA explicitly states that even thorough benchmarking may fail to establish performance in actual clinical use and therefore proposes a hierarchy of clinical confirmation—from retrospective patient data through shadow deployment and standardized patients to prospective trials/RCTs. This is one of the strongest parts of the paper."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter views ongoing postmarket surveillance as essential rather than secondary, because GenAI-enabled device behavior can change after authorization.",
+      "requested_fda_action": "Retain and treat as fundamental the described postmarket approaches—periodic re-benchmarking, clinician review of real-world output samples, drift/performance degradation monitoring, and reassessment following modifications.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter endorses FDA's proposed postmarket approaches, stating that periodic re-benchmarking, clinician review of real-world samples, drift monitoring, and reassessment after modifications are appropriate for technologies whose behavior can change after authorization, and should be treated as fundamental rather than secondary.",
+      "summary_cut": false,
+      "source_passage": "8. Post market surveillance is treated as fundamental rather than an afterthought. Periodic re-benchmarking, clinician review of real-world samples, drift monitoring, and reassessment after modifications make sense for technologies whose behavior can change after authorization."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q10",
+        "q11",
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "The commenter's central methodological concern (rated 9/10 severity) is that benchmark 'competency' functions as a surrogate endpoint: strong benchmark performance does not establish that use of the device improves patient outcomes, because uncertainty is introduced at each step from benchmark performance to device/clinician behavior to clinical decisions to outcomes. A model could score well on diagnostic reasoning tests yet worsen outcomes through automation bias, inappropriate reliance, workflow disruption, differential performance in unusual cases, or incorrect use by patients.",
+      "requested_fda_action": "For high-risk applications, FDA should not allow demonstrated clinical competency on benchmarks to automatically substitute for evidence of clinical utility, and should require confirmation that use of the device improves patient outcomes.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues benchmark scores may not translate into outcomes because of automation bias, inappropriate reliance, and incorrect use by patients, i.e., performance of the human-device combination rather than the model alone.",
+        "operational_harm": "It identifies workflow disruption and differential performance in unusual cases as pathways by which a well-benchmarking device could worsen outcomes in practice."
+      },
+      "public_summary": "Accepts benchmarking as part of evaluation but warns that benchmark 'competency' is a surrogate endpoint: good test performance may not improve outcomes given automation bias, reliance, workflow disruption, or misuse. Asks that, for high-risk uses, competency not automatically replace clinical utility evidence.",
+      "summary_cut": false,
+      "source_passage": "2. \"Competency\" may become a surrogate endpoint\nConcern severity: 9/10.\nThis is the central methodological concern.\nPassing a sophisticated clinical benchmark establishes that the system performs well on that assessment. It does not necessarily establish that using the system improves patient outcomes.\nThe distinction is analogous to:\nbenchmark performance → clinician/device behavior → clinical decisions → patient outcomes.\nEvery arrow introduces uncertainty.\n\nA model could perform impressively on diagnostic reasoning tests yet worsen outcomes through automation bias, inappropriate reliance, workflow disruption, differential performance in unusual cases, or incorrect use by patients.\nFor high-risk applications, clinical competency should therefore not automatically substitute for evidence of clinical utility."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter argues the medical licensure analogy underlying the competency-based approach is misleading because physicians are embedded in an accountability ecosystem (training, credentialing, liability, discipline, institutional governance) that AI systems lack intrinsically, and because AI failures are correlated and can affect thousands or millions of patients at once.",
+      "requested_fda_action": "FDA should avoid letting the human-clinician analogy justify less-than-exhaustive testing of GenAI devices, recognizing that machines can be tested repeatedly at scale and that correlated failure modes warrant more rigorous evaluation than the analogy implies.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment stresses that AI lacks the surrounding accountability structures—licensure, supervision, malpractice liability, professional discipline—that make the clinician comparison work.",
+        "deployment_assurance_scalability": "It highlights that correlated AI failure modes can simultaneously affect thousands or millions of patients, unlike individual clinician error, which the competency analogy does not capture."
+      },
+      "public_summary": "Commenter cautions that the medical licensure analogy behind the competency-based approach has limits: AI lacks clinicians' accountability ecosystem, can be tested at scale, and can fail in correlated ways affecting many patients—so it should not justify less exhaustive testing.",
+      "summary_cut": false,
+      "source_passage": "3. The human-clinician analogy has limits\nConcern severity: 7/10.\nThe medical licensure analogy is clever but potentially misleading. Physicians operate within an extensive accountability ecosystem—training, supervision, credentialing, malpractice liability, professional discipline, continuing education, institutional governance, and an ethical duty to individual patients.\nAn AI system has none of these intrinsically.\nFDA acknowledges this accountability problem, but the analogy could nevertheless encourage the inference:\n\"If we don't test every scenario encountered by physicians, we shouldn't expect exhaustive testing of AI.\"\nThat does not necessarily follow. Machines can be tested repeatedly on an enormous scale, and their correlated failure modes can simultaneously affect thousands or millions of patients."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter states that the menu of comparators FDA lists (clinician panel, median clinician, generalist, specialist, human-AI team) can yield dramatically different conclusions about the same device, and that FDA raises but does not resolve which applies. They note that requiring specialist-level performance could block tools intended to expand access where specialists are unavailable, while a median-clinician standard may overstate adequacy.",
+      "requested_fda_action": "Provide resolution rather than only posing the question: anchor comparator selection to the counterfactual of what would happen to the intended patients absent the device, instead of leaving the choice among clinician panel, median, generalist, specialist, or human-AI team unspecified.",
+      "confidence": "medium",
+      "gap_tags": [
+        "evidence_burden_commercial_viability",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment warns that setting the comparator at specialist-level performance could prevent deployment of useful access-expanding tools, framing comparator choice as an evidence-burden question affecting whether such devices can exist.",
+        "human_ai_system_performance": "The comment includes human-AI team performance among comparator options whose selection materially changes conclusions, indicating that whether the device or the clinician-device system is evaluated remains unsettled."
+      },
+      "public_summary": "Commenter agrees FDA correctly identifies the comparator question but says it is unresolved, noting that clinician-panel, median, generalist, specialist, or human-AI team comparators yield different conclusions, and urges anchoring comparators to the counterfactual care patients would receive without the device.",
+      "summary_cut": false,
+      "source_passage": "4. Comparator selection remains unresolved\nConcern severity: 8/10.\nThe paper considers comparing systems with a clinician panel, median clinician, generalist, specialist, or human-AI team.\nThose choices can produce dramatically different conclusions.\nA device that equals a median clinician may look excellent against usual care but inadequate against specialist care. Conversely, demanding specialist-level performance could prevent useful tools designed specifically to improve access where specialists are unavailable.\nThe comparator therefore needs to reflect the counterfactual: what would happen to these patients without the device? FDA asks exactly this question but does not yet solve it."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q12"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter views the paper's treatment of statistical standards as appropriate for a discussion document but a major unresolved gap, noting that aggregate accuracy figures conceal whether residual errors are disproportionately catastrophic.",
+      "requested_fda_action": "Establish prespecified statistical requirements for GenAI device evaluation, including confidence intervals, handling of repeated stochastic outputs, hierarchical errors, multiplicity, subgroup precision, noninferiority margins, calibration, clinically weighted error severity, and worst-case (not merely average) performance testing.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts that the discussion paper appropriately raises endpoint and sample-size questions, but calls the statistical framework underdeveloped. Requests prespecified requirements covering confidence intervals, stochastic output variability, multiplicity, subgroup precision, calibration, clinically weighted error severity, and worst-case rather than average performance.",
+      "summary_cut": false,
+      "source_passage": "5. Statistical standards are notably underdeveloped\nConcern severity: 8/10.\nThe document recognizes the issue, stating that some clinical-confirmation approaches may not be powered around traditional effectiveness endpoints and explicitly asks stakeholders how endpoints and sample sizes should be determined.\nThat is appropriate for a discussion paper, but it exposes a major unresolved problem.\nFor regulatory evaluation I would want prespecified requirements around confidence intervals, repeated stochastic outputs, hierarchical errors, multiplicity, subgroup precision, noninferiority margins where applicable, calibration, clinically weighted error severity, and testing of worst-case rather than merely average performance.\nA system that is \"97% correct\" tells us surprisingly little if the remaining 3% disproportionately includes catastrophic mistakes."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q13"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "Synthetic data generated by models of the same family as the device under test may reproduce identical blind spots, and synthetic rare pediatric presentations may appear clinically plausible while misrepresenting real disease distributions and atypical presentations.",
+      "requested_fda_action": "Permit synthetic data to augment rather than replace independent validation on real patient data, particularly where consequences of error are substantial and for rare pediatric presentations.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Agrees synthetic cases can help cover uncommon populations and shares FDA's circularity concern, noting synthetic rare pediatric presentations may look plausible but misrepresent real disease distributions. Asks that synthetic data augment, not replace, independent real-patient validation where consequences are substantial.",
+      "summary_cut": false,
+      "source_passage": "6. Synthetic data are simultaneously promising and dangerous\nConcern severity: 8/10.\nFDA appropriately considers synthetic cases for uncommon populations and scenarios but also recognizes a circularity problem: a synthetic-data generator from the same model family may reproduce the same blind spots as the system being tested.\nThis is particularly relevant for rare pediatric presentations, where synthetic cases may look clinically plausible without accurately representing real disease distributions or atypical presentations.\nSynthetic data should generally augment—not replace—independent real-patient validation when consequences are substantial."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "Accepting greater premarket uncertainty in exchange for postmarket monitoring may be reasonable for reversible, low-consequence functions, but not where the first evidence of failure could be patient harm, such as autonomous diagnosis, drug dosing, treatment initiation, or emergency triage.",
+      "requested_fda_action": "Make the premarket/postmarket evidence balance strongly risk-dependent, and do not allow postmarket surveillance to substitute for adequate premarket evidence when errors are irreversible or catastrophic.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts trading premarket uncertainty for postmarket monitoring only for reversible, low-consequence functions. Argues the balance must be strongly risk-dependent and that monitoring cannot substitute for premarket evidence in autonomous diagnosis, dosing, treatment initiation, or triage, where failure may first appear as patient harm.",
+      "summary_cut": false,
+      "source_passage": "7. Greater post market surveillance should not become permission for weak premarket evidence\nConcern severity: 9/10 for high-risk applications.\nThe paper explicitly asks whether FDA should sometimes tolerate greater premarket uncertainty in exchange for stronger post market monitoring.\nThat could be reasonable for reversible, low-consequence functions.\nIt becomes much harder to defend for autonomous diagnosis, drug dosing, treatment initiation, emergency triage, or other functions where the first evidence of failure may be patient harm.\n\nThe acceptable balance should therefore be strongly risk dependent. Post market monitoring cannot ethically rescue inadequate premarket evidence when errors are irreversible or catastrophic."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "The commenter agrees that the benchmarking framework's recognition of pediatric patients and subgroup performance is positive, but warns that treating 'pediatric' as a single subgroup can mask serious deficiencies in neonates, infants, adolescents, children with medical complexity, or specific developmental stages, given age-dependent physiology, weight-based dosing, shifting disease presentation, proxy decision-makers, and distinct communication needs.",
+      "requested_fda_action": "Make age- and developmental-stage-stratified validation a distinct requirement whenever pediatric use falls within the intended population, rather than allowing aggregate pediatric subgroup performance to suffice.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports the benchmarking framework's inclusion of pediatric patients and subgroup performance, but argues aggregate pediatric results can hide deficiencies across developmental stages. Requests that FDA require distinct age- and development-stratified validation whenever pediatric use is within the intended population.",
+      "summary_cut": false,
+      "source_passage": "The benchmarking appendix specifically recognizes pediatric patients as a population requiring population-specific clinical knowledge, and subgroup performance is explicitly included in the proposed framework. That is good—but pediatrics creates problems beyond simply being another subgroup.\nChildren have age-dependent physiology and normal ranges, weight-based dosing, rapidly changing disease prevalence and presentation across developmental stages, proxy decision-makers, different communication requirements, and rare but high-consequence diseases. A model that performs adequately in \"pediatric patients\" overall could conceal serious deficiencies in neonates, infants, adolescents, children with medical complexity, or particular developmental stages.\nI would therefore make age/development-stratified validation a distinct requirement whenever pediatric use is within the intended population rather than treating \"pediatric\" as a single subgroup."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q11",
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter is concerned that the link between a device's risk level and the strength of evidence required is not clearly specified, particularly for devices that take autonomous action.",
+      "requested_fda_action": "Adopt an explicitly escalating evidence ladder tied to risk: benchmarking alone potentially sufficient for low risk; benchmarking plus independent clinical confirmation for moderate risk; real-world clinical validation for high risk; and prospective comparative evidence, randomized where feasible, plus intensive postmarket surveillance for high-risk autonomous action.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The commenter singles out devices taking high-risk autonomous action as warranting a distinct, highest evidence tier with prospective comparative studies and intensive surveillance, beyond the risk-tiering framing in FDA's questions."
+      },
+      "public_summary": "Accepts a risk-proportionate evidence approach but asks FDA to specify an explicit escalating ladder: benchmarking for low risk, benchmarking plus independent clinical confirmation for moderate risk, real-world validation for high risk, and prospective comparative (possibly randomized) evidence plus intensive postmarket surveillance for high-risk autonomous action.",
+      "summary_cut": false,
+      "source_passage": "And I would make evidence requirements escalate accordingly:\nLow risk: benchmarking may sometimes be sufficient → moderate risk: benchmarking + independent clinical confirmation → high risk: real-world clinical validation → high-risk autonomous action: prospective comparative evidence, potentially randomized where feasible, plus intensive post market surveillance.\nThat would more clearly connect risk classification to required strength of evidence."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q7",
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter views the competency-based benchmarking-plus-confirmation framework as workable for low-risk informational uses, but doubts that benchmark competency alone predicts real-world performance for systems that make or execute consequential clinical decisions.",
+      "requested_fda_action": "Scale evidence expectations to risk: for higher-consequence decision-making or decision-executing functions, require substantially stronger evidence linking benchmark competency to actual clinical performance, human-AI interaction, and patient outcomes.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter expressly asks that evidence for consequential functions address human-AI interaction, not only standalone benchmark competency."
+      },
+      "public_summary": "Considers the competency-based approach workable for low-risk informational functions, but for systems making or executing consequential clinical decisions asks FDA to require substantially stronger evidence tying benchmark performance to real clinical performance, human-AI interaction, and patient outcomes.",
+      "summary_cut": false,
+      "source_passage": "For low-risk informational applications, the proposed framework could be highly workable. For systems making or executing consequential clinical decisions, I would require substantially stronger evidence linking benchmark competency to actual clinical performance, human-AI interaction, and ultimately patient outcomes."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q10",
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "The commenter is concerned that benchmark 'competency' could function as a surrogate endpoint, substituting strong performance on increasingly sophisticated test sets for demonstrated safe and effective care of real patients.",
+      "requested_fda_action": "FDA should ensure that, at least for consequential medical decisions, the ultimate evidentiary endpoint remains safe and effective real-patient care rather than benchmark performance alone.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts a competency-based framework but warns against treating benchmark performance as a surrogate endpoint. For consequential medical decisions, FDA should keep the ultimate evidentiary standard tied to safe and effective care for real patients, not examination-style benchmark results.",
+      "summary_cut": false,
+      "source_passage": "Most important issue for stakeholder feedback: FDA should resist allowing \"competency\" to become the GenAI equivalent of a surrogate biomarker. For consequential medical decisions, the evidentiary endpoint should ultimately remain safe and effective care for real patients, not simply excellent performance on increasingly sophisticated examinations."
+    },
+    {
+      "segment_id": "seg-021",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "unclear",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": null,
+      "stakeholder_concern": "The passage is a brief fragment that appears to note third-party model/change risk and rate FDA's framing as correctly identifying a difficult problem. No substantive concern is articulated.",
+      "requested_fda_action": "No specific action is requested in the passage; it only acknowledges that FDA has correctly identified third-party model change risk as a difficult problem.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "A brief fragment noting third-party model and change risk, rated as a correctly identified difficult problem. The passage contains no stated position, reasoning, or requested action regarding FDA's approach to third-party foundation model changes.",
+      "summary_cut": false,
+      "source_passage": "Third-party model/change risk 8/10 Correctly identify a difficult problem"
+    },
+    {
+      "segment_id": "seg-022",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter is concerned that conventional static software validation cannot address GenAI devices, which accept open-ended inputs, produce variable outputs to similar inputs, operate across multi-turn conversations, and change through modifications to models, prompts, retrieval, guardrails, orchestration, or interfaces.",
+      "requested_fda_action": "The commenter endorses FDA's premise that exhaustive input-output validation may be impossible and affirms the shift away from conventional static software validation as a conceptual strength of the proposed approach; no specific change is requested in this passage.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter endorses FDA's rejection of conventional static software validation for generative AI, agreeing that open-ended inputs, variable outputs, multi-turn conversations, and changes to models, prompts, retrieval, guardrails, orchestration, or interfaces make exhaustive input-output validation impossible. No specific change requested.",
+      "summary_cut": false,
+      "source_passage": "1. It correctly rejects the assumption that conventional static software validation is enough. GenAI can accept open-ended inputs, generate variable outputs to similar inputs, operate over multi-turn conversations, and change through modifications to models, prompts, retrieval, guardrails, orchestration, or interfaces. FDA therefore recognizes that exhaustive input-output validation may simply be impossible. That is a major conceptual strength."
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "comment_id": "FDA-2026-N-7874-0046",
+  "input_hash": "286cbc715b495eee",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter agrees with the two-axis framework but is concerned it treats autonomy as risk-raising without symmetrically crediting mitigations; two devices with identical capability should not be treated identically when one routes every consequential output through an accountable licensed reviewer.",
+      "requested_fda_action": "State explicitly in the risk framework that a named human-in-the-loop who reviews the basis for an output and signs or declines it, as well as the reversibility of the resulting action, are first-class risk-lowering variables that move a device down the effective-risk surface.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues risk should be assessed for the device-plus-reviewer configuration rather than raw model capability alone, so that a qualified human reviewing and signing outputs lowers the assessed risk."
+      },
+      "public_summary": "Endorses the two-axis risk framework but asks FDA to make it symmetrical: explicitly treat a named human reviewer who signs or declines consequential outputs, and the reversibility of resulting actions, as first-class risk-lowering variables rather than only sorting risk upward for autonomy.",
+      "summary_cut": false,
+      "source_passage": "1. Endorse the two-axis risk framework — and make a named human-in-the-loop and reversibility first-class, risk-lowering variables, not only a way to sort risk upward. The Activity axis rightly treats fully-autonomous action as higher-risk than an informational, non-directive output. We encourage the framework to state explicitly the mirror image: inserting a qualified human who reviews the basis for an output and signs — or declines — it before it becomes consequential is a mitigation that moves a device down the effective-risk surface, just as autonomy moves it up. Two devices with identical raw capability should not carry identical regulatory risk if one routes every consequential output through an accountable licensed reviewer and the other acts on its own. The reversibility of the action deserves the same first-class treatment. Making these explicit gives developers a concrete, safety-promoting design target rather than a penalty to be discovered late."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "regulatory_scope",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The paper treats HCP-facing use as lower risk because a clinician can catch incorrect outputs, but does not tie this to the statutory independent-review criterion, leaving developers to discover the clinical-decision-support boundary case by case.",
+      "requested_fda_action": "Explicitly connect the risk framework to the independent-review criterion in section 520(o)(1)(E), naming a design pattern in which a qualified professional can independently review the basis for a recommendation and does so before acting, as a distinct lower-risk class.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment grounds lower risk in the clinician's ability to independently review the basis of an output and act on it, making the human-device combination, not the model alone, the unit of safety."
+      },
+      "public_summary": "Accepts the risk framework's logic that HCP-facing use lowers risk, but asks CDRH to make the clinical-decision-support boundary explicit by tying it to the statutory independent-review criterion (section 520(o)(1)(E)), so developers can design toward a clear, predictable lower-risk category.",
+      "summary_cut": false,
+      "source_passage": "2. Make the clinical-decision-support boundary explicit in the framework. The paper notes that HCP-facing use lowers risk because a clinician can catch an incorrect output. We encourage CDRH to connect this directly to the statutory independent-review criterion at section 520(o)(1)(E): when a device is designed so that a qualified professional can independently review the basis for its recommendation, and does so before acting, it occupies a distinct, lower-risk class. Naming that \"name-the-human\" design pattern in the framework would let developers build toward a clear line, rather than discovering it case by case, and would reward exactly the architecture the paper's safety logic favors."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q11",
+        "q14",
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "The commenter cautions, citing Vaccaro et al. (2024), that adding a human reviewer to an already-strong model does not reliably improve task accuracy and can sometimes reduce it, so oversight should not be treated as a performance safeguard; the human's role is ownership and answerability for consequences, which a benchmark score cannot confer.",
+      "requested_fda_action": "Keep the competency-based framework but benchmark the model alone on its own performance, while requiring clinical confirmation to measure the human-AI team as actually deployed, and state explicitly that the human's function is accountability rather than an assumed accuracy gain.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues evaluation must measure the deployed human-AI team rather than the model alone, and warns that human review does not reliably improve accuracy.",
+        "distributed_accountability": "It reframes the human reviewer's regulatory role as ownership of and answerability for consequences, an accountability function distinct from performance assurance."
+      },
+      "public_summary": "Supports the competency-based approach but urges FDA to benchmark the model alone and use clinical confirmation to evaluate the human-AI team as deployed, citing evidence that human review does not reliably improve accuracy; the human's role is accountability, not added performance.",
+      "summary_cut": false,
+      "source_passage": "3. In competency-based evaluation, score the human–AI team as it will be deployed — and be precise that the human's role is accountability, not a guarantee of higher accuracy. The analogy to how clinicians are trained and credentialed is apt. We add one caution from the evidence: adding a human reviewer to an already-strong model does not reliably raise task accuracy, and on some decision tasks can lower it (Vaccaro et al., Nature Human Behaviour, 2024). The right inference is not \"remove the human\" — it is that the human's function in a regulated device is ownership of and answerability for the consequence, which no benchmark score confers. So benchmark the model honestly on its own, but let clinical confirmation measure the team as actually deployed."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter endorses the inclusion of safety competencies—recognizing safety-critical situations and escalating, and calibration, uncertainty, and clinical deferral—in the benchmarking structure, framing reliable handoff to a human as safety-critical behavior rather than a shortcoming in autonomy.",
+      "requested_fda_action": "Retain the described safety behavior competencies (escalation, and calibration/uncertainty/clinical deferral) as elements of the benchmarking framework.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment frames appropriate deferral and handoff to a human clinician as a measurable safety behavior, which situates device performance within the combined human-device workflow rather than the device alone."
+      },
+      "public_summary": "Commenter supports the discussion paper's proposed safety competencies for benchmarking, specifically recognizing and escalating safety-critical situations and calibration, uncertainty, and clinical deferral, characterizing reliable handoff to a human clinician as demonstrating safety-critical behavior rather than a failure of autonomy.",
+      "summary_cut": false,
+      "source_passage": "The paper's safety competencies for recognizing safety-critical situations and escalating, and for calibration, uncertainty, and clinical deferral, are exactly right: a device that reliably knows when to hand off to a human is demonstrating the safety-critical behavior, not failing to be autonomous."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter agrees that periodic re-benchmarking, sample-based clinician review, and drift monitoring are appropriate and that responsibility can realistically be distributed across manufacturers, clinicians, and institutions, but argues this only works if a durable, privacy-preserving record of who reviewed each output and what they decided travels with the determination.",
+      "requested_fda_action": "FDA should expect shared postmarket responsibility to be backed by a portable, tamper-evident, PHI-free record of human review decisions; the commenter offers as an example signed, timestamped attestations whose fingerprints are anchored to an external tamper-evident ledger so determinations and human sign-off can be independently verified later.",
+      "confidence": "high",
+      "gap_tags": [
+        "distributed_accountability",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment argues that spreading postmarket responsibility across manufacturers, clinicians, and institutions is only workable if each human review decision is attributable and independently verifiable after the fact.",
+        "deployment_assurance_scalability": "It proposes a reusable technical pattern for making postmarket oversight auditable across deployment sites without exposing patient data, addressing how assurance is maintained in practice rather than at review time."
+      },
+      "public_summary": "Endorses the paper's postmarket approaches—re-benchmarking, sample-based clinician review, drift monitoring—and shared manufacturer/clinician/institution responsibility, but adds that it works only with a portable, privacy-preserving, tamper-evident record of human review decisions. Offers signed, ledger-anchored attestations as one illustrative pattern.",
+      "summary_cut": false,
+      "source_passage": "4. Postmarket \"shared-ecosystem responsibility\" works only with a portable, tamper-evident record of who reviewed what and what they decided. The paper's call for periodic re-benchmarking, sample-based clinician review, and drift / performance-degradation monitoring is well-placed, and distributing responsibility across manufacturers, clinicians, and institutions is realistic. In practice it functions only if a durable, privacy-preserving record of the human decision travels with the determination. We build and operate one such pattern: each reviewed output becomes a signed, timestamped, PHI-free attestation whose fingerprint is anchored to an external, tamper-evident ledger, so a determination and its human sign-off can be independently verified after the fact without exposing patient data. We offer the pattern, not a product, as one concrete way to make shared postmarket responsibility auditable"
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter agrees agentic systems warrant elevated scrutiny for reduced human review, but argues that abstract autonomy-level labels are a weaker basis for oversight than a functional check at each consequential or hard-to-reverse action, and notes such labels are less robust to prompt injection.",
+      "requested_fda_action": "Anchor agentic oversight to a functional, local test: at each consequential or difficult-to-reverse action, require that a named, qualified licensed human reviews the basis for the action and is accountable for it, rather than relying on autonomy-level classifications alone.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority",
+        "cybersecurity_as_safety"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment reframes agentic oversight around whether a named licensed human signs off on and is accountable for each consequential action, rather than around the device's autonomy level.",
+        "cybersecurity_as_safety": "It argues that checkpoint-based human sign-off is more robust to prompt injection than autonomy-level labels, treating adversarial manipulation as a clinical safety concern."
+      },
+      "public_summary": "Agrees agentic systems merit elevated scrutiny, but proposes oversight be tied to a functional checkpoint — a named, qualified human reviewing and accountable for each consequential or hard-to-reverse action — rather than abstract autonomy-level labels, citing scalability and prompt-injection robustness.",
+      "summary_cut": false,
+      "source_passage": "5. For agentic systems, anchor oversight to whether a named, licensed human signs the consequential action — not to autonomy in the abstract. The paper is right to give agentic AI elevated scrutiny for its \"reduced opportunity for human review.\" We suggest the operative test be functional and local: at each point where the system takes an action that is consequential or difficult to reverse, is there a qualified human who reviews the basis and is accountable for it? Oversight tied to that checkpoint scales across architectures and is more robust to prompt injection than autonomy-level labels alone."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter wants it to remain unambiguous that a foundation model master file does not constitute device authorization and does not shift responsibility away from the entity deploying the device. Accountability should rest with the deploying party and the licensed clinician who signs off on consequential outputs.",
+      "requested_fda_action": "Retain and keep central the stated principle that a Foundation Model MAF is not a device approval and that the deploying sponsor remains responsible for the device, with accountability located in the deployer and the licensed human endorsing the output.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment addresses how responsibility should be allocated across foundation model developers, device sponsors, and deploying parties, insisting it not be diffused by a master file mechanism.",
+        "delegated_authority": "It locates ultimate accountability in the licensed human who signs the consequential output, a point beyond the MAF-content framing of Q25."
+      },
+      "public_summary": "Endorses the paper's stated principle that a foundation model master file is not a device approval and the deploying sponsor remains responsible, urging FDA to keep this central and to place accountability with the deployer and the licensed clinician signing consequential outputs.",
+      "summary_cut": false,
+      "source_passage": "The paper's own principle — that a foundation-model master file is not a device approval, and that the sponsor deploying the device remains responsible for it — is exactly right, and we encourage CDRH to keep it central: the party who deploys the AI, and the licensed human who signs the consequential output, are where accountability must sit."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter accepts that many generative functions (retrieval, drafting, summarization, triage) are well suited to automation and should be regulated lightly, but is concerned that consequential clinical or coverage decisions could be automated on the basis of performance scores alone rather than human accountability.",
+      "requested_fda_action": "Keep the risk framework light-touch for low-consequence automation tasks, but for consequential clinical or coverage decisions require an accountable, licensed human who reviews the basis of the output, signs it, and answers for the outcome — treating this as a durable requirement rather than something satisfied by higher benchmark performance.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment draws a line at consequential clinical or coverage decisions, arguing such decisions cannot be delegated to the model and must rest with a licensed human who signs off.",
+        "distributed_accountability": "It frames the durable safeguard as an identifiable person who answers for the outcome, rather than a performance metric, raising who bears responsibility for a GenAI-informed decision."
+      },
+      "public_summary": "Supports a light-touch risk framework for automatable generative functions such as retrieval, drafting, summarization and triage, but argues that consequential clinical or coverage decisions require an accountable licensed human who reviews the basis, signs, and answers for the outcome — not merely higher performance scores.",
+      "summary_cut": false,
+      "source_passage": "A great deal of what a generative model does — retrieval, drafting, summarization, triage — is genuinely well suited to automation, and the framework should keep that path light. The narrow, load-bearing exception is the consequential clinical or coverage decision, where the durable requirement is not a better score but an accountable, licensed human who reviews the basis, signs, and answers for the outcome."
+    }
+  ]
+}

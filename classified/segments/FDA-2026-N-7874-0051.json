@@ -1,0 +1,199 @@
+{
+  "comment_id": "FDA-2026-N-7874-0051",
+  "input_hash": "131320396346e0e5",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:07:26Z",
+  "model": "claude-opus-5",
+  "chunks": 1,
+  "positions": [
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "The two axes , device activity and the consequences of relying on an incorrect output , capture the dominant drivers of risk, and the framework is usefully continuous with the benefit -risk logic of existing FDA guidance. I recommend keeping the framework two -dimensional and treating the additional dimensions CDRH lists (reversibility of the resulting action, availability of downstream safeguards, time pressure of the deployment setting, and traceability of outputs to primary sources) as documented, auditable modifiers of a function's position on the consequences axis, rather than as additional axes; more than two axes would compromise usability without adding discriminating power. One further modifier warrants explicit inclusion: the detectability of an incorrect output by the intended user. An error the user can plausibly recognize and discou nt (for example, a summary contradicting a visible source record) is materially lower risk than an error the user cannot independently verify.",
+      "position_gist": "Keep the risk framework two-dimensional and treat reversibility, downstream safeguards, time pressure, traceability, and an added dimension—user detectability of an incorrect output—as documented, auditable modifiers on the consequences axis rather than new axes.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q2"
+      ],
+      "source_passage": "To give manufacturers the predictability they need, CDRH could publish a standardized directiveness rubric with anchored levels, general information / information contextualized to the user's circumstances / endorsement of a specific action / specific instruction, illustrated with worked examples across clinical contexts.",
+      "position_gist": "CDRH should publish a standardized, anchored directiveness rubric with four illustrated levels (from general information to specific instruction) to give manufacturers predictability.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q2"
+      ],
+      "source_passage": "(ii) publish an illustrative mapping from risk position to expected evidence, and an anchored directiveness rubric applied to the empirical distribution of device outputs;",
+      "position_gist": "The directiveness rubric should be applied to the empirical distribution of a device's actual outputs.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "Shifting patient -facing functions upward on the consequences axis is justified where the user cannot independently evaluate the output, but the shift should be conditional on demonstrated mitigations rather than automatic, to avoid the medical parentalism the paper rightly flags. Meaningful mitigations include traceable sourcing to authoritative references; calibrated uncertainty language validated for lay comprehension; conservative escalation defaults for safety -critical presentations; and reading-level and health-literacy testing of outputs consistent with e lement E.4 and with human factors principles. Demonstrated comprehension by representative lay users, including users with lower health literacy and limited English proficiency , should be allowed to offset part of the presumptive uplift.",
+      "position_gist": "Patient-facing functions warrant an upward risk shift only conditionally, with mitigations such as traceable sourcing, validated uncertainty language, conservative escalation defaults, and literacy testing, and demonstrated lay comprehension should be allowed to offset part of the uplift.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q4"
+      ],
+      "source_passage": "Three things seem proportionate: labeling that states the expected competency of the intended user explicitly; benchmarking and human factors testing performed with adjudicators and simulated users matching the least specialized intended user (not the most expert avai lable); and referral -prompting behavior, recognizing when specialist involvement is warranted , treated as a tested competency under S.2/E.2 rather than an assumed safeguard. Where these are demonstrated, functions that extend specialist knowledge to generalists can be a meaningful access benefit, particularly in underserved and rural settings.",
+      "position_gist": "For generalist-versus-specialist risk, require explicit labeling of expected user competency, benchmarking/human factors testing calibrated to the least specialized intended user, and referral-prompting treated as a tested competency.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q5"
+      ],
+      "source_passage": "The intended use of such devices could be characterized as a behavioral envelope: the set of functions the device is permitted to perform, the conversational conditions under which it must escalate or defer, and the boundaries it must maintain. Premarket e vidence would then demonstrate that emergent\n\nbehavior remains within the envelope across the trajectory distribution, with drift out of the envelope (for example,  informational functions migrating to action -directing behavior) treated as a reportable failure mode rather than a labeling ambiguity.",
+      "position_gist": "Characterize multi-turn conversational devices' intended use as a 'behavioral envelope,' require premarket evidence that emergent behavior stays within it across trajectories, and treat drift outside the envelope as a reportable failure mode.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "I encourage CDRH to allow explicit decision -analytic weighting rather than a single blended accuracy metric. Manufacturers would prespecify, per clinical context, the relative disutility of missed versus unnecessary escalation, justified with clinical evidence and, where available, health-economic estimates of downstream consequences; this is analogous to how screening programs weigh false negatives against false positives. Both error rates should be reported separately with confidence intervals, and accept able operating points should be justified per indication, since a trade -off acceptable for pediatric sore throat triage is not acceptable for chest pain.",
+      "position_gist": "Allow explicit decision-analytic weighting of under- versus over-escalation with prespecified context-specific disutilities, separate reporting of both error rates with confidence intervals, and per-indication justification of operating points.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q7",
+        "q8"
+      ],
+      "source_passage": "The two-axis framework should drive a published, even if illustrative, evidence gradient: as a function moves up and to the right, the breadth and difficulty of benchmarking, the independence of adjudication, and the rigor of clinical confirmation (from re trospective evaluation toward shadow deployment and prospective study) should increase predictably.",
+      "position_gist": "CDRH should publish an illustrative evidence gradient linking position on the two-axis risk framework to increasing benchmarking breadth, adjudication independence, and clinical confirmation rigor.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "Two additions merit explicit naming: (i) temporal validity, whether clinical knowledge remains current as guidelines change, with a stated knowledge horizon and a defined update mechanism (this could be folded into E.1 but is easily overlooked if unnamed); and (ii) input integrity and provenance handling , behavior when inputs are incomplete, corrupted, out of distribution, or of unverifiable origin (foldable into R.1). Under R.2, I recommend explicitly including performance in languages other than English where the intended population includes non-English speakers; dialects and colloquialisms are named in the paper, but cross-language performance is a distinct and empirically documented failure surface.",
+      "position_gist": "Add temporal validity (knowledge horizon and update mechanism), input integrity/provenance handling, and explicit non-English cross-language performance to the benchmarking element structure.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q16"
+      ],
+      "source_passage": "Sponsor-developed benchmarks are valuable for intended -use specificity and should be permitted, but they should be complemented by at least one sequestered test set held by a party structurally independent of both the sponsor and the foundation model devel oper, to guard against optimization to the test, a role naturally suited to the third-party mechanisms discussed in Question 16.",
+      "position_gist": "Permit sponsor-developed benchmarks but require complementation by at least one sequestered test set held by a party structurally independent of both sponsor and foundation model developer, a role suited to third parties.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q10"
+      ],
+      "source_passage": "(iii) require predictive-validity evidence for gating benchmarks, with contamination testing and independent sequestered test sets;",
+      "position_gist": "Require predictive-validity evidence and contamination testing for benchmarks used to gate device evaluation.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q11"
+      ],
+      "source_passage": "For real -world data and data collected outside the United States, I recommend requiring a formal transportability assessment: characterization of case -mix, practice -pattern, coding, and data -capture differences between source and target settings, with quan titative adjustment ( for example , standardization or reweighting) where differences are material. This is consistent with FDA's RWE program and would be a natural application of modern causal -inference and transportability methods; OUS evidence should be neither privileged nor discounted but transported transparently.",
+      "position_gist": "Require a formal quantitative transportability assessment for real-world and outside-U.S. data used in clinical confirmation, neither privileging nor discounting OUS evidence.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q11"
+      ],
+      "source_passage": "(iv) encourage shadow deployment and require formal transportability assessment for RWD and OUS evidence;",
+      "position_gist": "Encourage shadow deployment as a clinical confirmation approach.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q12"
+      ],
+      "source_passage": "Combining benchmarking and clinical-confirmation evidence into a single pooled performance estimate should generally be avoided unless the sampling frames are demonstrably exchangeable; presenting them as complementary, separately quantified lines of evide nce is more defensible and more informative for review.",
+      "position_gist": "Benchmarking and clinical confirmation evidence should generally not be pooled into a single performance estimate unless sampling frames are demonstrably exchangeable; present them as separate complementary lines of evidence.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q13"
+      ],
+      "source_passage": "(v) anchor subgroup performance claims in a minimum core of real data;",
+      "position_gist": "Subgroup performance claims should be anchored in a minimum core of real (non-synthetic) data.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "source_passage": "I also support comparators reflecting the care likely to occur in the device's absence (unaided clinical judgment, delayed specialist review, or no intervention), which is the comparator most relevant to public health impact and to least -burdensome evaluat ion of access -extending devices. Usual -care characterization from RWD and, where randomization is infeasible, target-trial-emulation designs applied to observational data are established, principled ways to construct and justify such counterfactual comparators.",
+      "position_gist": "Support comparators reflecting the care likely to occur absent the device, constructed via usual-care characterization from RWD and target-trial-emulation designs where randomization is infeasible.",
+      "segment_id": "seg-016"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "A pre -/post-market rebalancing is ill -suited for autonomous functions that take actions with severe consequences; furthermore, for functions where users cannot detect errors, post -market signals would only become apparent after harm has occurred , a situation that pre -market evidence is specifically intended to prevent. Incorporating these conditions into the FDA’s existing guidance on benefit -risk uncertainty would maintain a doctrinally consistent approach rather than an exceptional one.",
+      "position_gist": "Shifting evidence from premarket to postmarket is inappropriate for autonomous severe-consequence functions and for functions whose errors users cannot detect, and these conditions should be folded into FDA's existing benefit-risk uncertainty guidance.",
+      "segment_id": "seg-017"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "I encourage CDRH to add a fourth approach where feasible: outcome -linked surveillance, linking device exposure to downstream utilization and clinical outcomes in administrative, claims, and EHR data ; behavioral metrics alone can miss harms that manifest downstream ( for example, delayed care after under-escalation). Existing infrastructure, including distributed data networks of the kind FDA already uses for medical product surveillance, and coordinated -registry and NEST -type approaches, could be leveraged; this is also where re al-world performance monitoring expectations in the January 2025 draft guidance connect naturally to this paper.",
+      "position_gist": "Add outcome-linked surveillance—linking device exposure to downstream utilization and clinical outcomes in claims/EHR data via distributed data networks, registries, and NEST-type infrastructure—as a fourth postmarket evaluation approach.",
+      "segment_id": "seg-018"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "(vi) pair behavioral postmarket monitoring with outcome -linked surveillance in real-world data, with event-driven re -benchmarking cadence;",
+      "position_gist": "Re-benchmarking cadence should be event-driven, paired with behavioral monitoring and outcome-linked surveillance.",
+      "segment_id": "seg-019"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "source_passage": "Where the nature of future modifications cannot be fully prespecified , the normal condition for GenAI systems; PCCP concepts could be adapted from prespecifying the modifications to prespecifying the verification protocol: a “change-envelope” PCCP that fixes the competency baseline, the re-benchmarking protocol, the acceptance criteria, and the boundaries of the authorized intended use, within which classes of change may be implemented upon passing verification, with results documented and auditable. This preserves the PCCP's core logic (FDA reviews the method once; the method governs many changes) while fitting the continuous-update reality of these systems.",
+      "position_gist": "Adapt PCCPs into 'change-envelope' plans that prespecify the verification protocol, competency baseline, re-benchmarking protocol, acceptance criteria, and intended-use boundaries rather than enumerating specific modifications.",
+      "segment_id": "seg-020"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Acceptance criteria should tighten as autonomy increases and the opportunity for human review declines, consistent with the activity axis of the risk framework, and an agentic system whose action sequences result in control of another medical device should  be evaluated against the risk profile of the controlled device, not merely its own.",
+      "position_gist": "Acceptance criteria for agentic devices should tighten as autonomy rises and human review declines, and an agentic system that controls another medical device should be evaluated against the controlled device's risk profile.",
+      "segment_id": "seg-021"
+    },
+    {
+      "question_ids": [
+        "q25"
+      ],
+      "source_passage": "(viii) pursue international alignment of these concepts, including MAF content, with partner regulators and through IMDRF.",
+      "position_gist": "Pursue international alignment of these concepts, including Foundation Model MAF content, with partner regulators and through IMDRF.",
+      "segment_id": "seg-022"
+    },
+    {
+      "question_ids": [
+        "q7"
+      ],
+      "source_passage": "Overall, I commend CDRH for a thoughtful, well -structured paper. The two -axis risk framework, the competency-based premarket approach (benchmarking plus clinical confirmation), and the emphasis on risk-proportionate postmarket monitoring across the total product life cycle (TPLC) are sound organizing concepts that build coherently on CDRH's recent policy instruments",
+      "position_gist": "The commenter generally endorses the competency-based premarket approach (benchmarking plus clinical confirmation) and the two-axis risk framework as sound organizing concepts.",
+      "segment_id": "seg-023"
+    }
+  ]
+}

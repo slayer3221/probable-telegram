@@ -1,0 +1,220 @@
+{
+  "comment_id": "FDA-2026-N-7874-0030",
+  "input_hash": "db8f3f1ec4359f04",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The two-axis framework is seen as useful only for initial risk characterization and inadequate as a substitute for device-level risk analysis, because risk depends on how an erroneous output progresses to a hazardous situation.",
+      "requested_fda_action": "Retain the two-axis framework as an initial characterization tool while requiring device-level risk analysis that accounts for the user's ability to recognize an error, opportunity for intervention, reversibility, time to respond, and downstream safeguards.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment centers risk on whether the user can recognize an erroneous output and intervene, i.e., on the combined human-device system rather than the device output alone.",
+        "operational_harm": "It frames risk in terms of how an incorrect output progresses to a hazardous situation given time to respond and downstream safeguards, rather than the incorrect output itself."
+      },
+      "public_summary": "Finds the two-axis device activity/consequence framework useful for initial risk characterization but argues it should not replace device-level risk analysis. Recommends accounting for how an erroneous output progresses to harm, including user error recognition, intervention opportunity, reversibility, response time, and downstream safeguards.",
+      "summary_cut": false,
+      "source_passage": "The proposed framework based on device activity and the consequence of relying on an incorrect output is useful for initial risk characterization, but it should not substitute for device-level risk analysis.<br/><br/>Risk also depends on how an erroneous output could progress to a hazardous situation. Relevant factors may include the user's ability to recognize the error, opportunity for intervention, reversibility, time to respond, and downstream safeguards."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "The commenter is concerned that the two-axis risk framework could be applied as a fixed classification matrix, when risk depends on the function's intended use environment and the manufacturer's broader risk management process.",
+      "requested_fda_action": "Use the two-axis framework only as an initial screening or organizing tool, and base further risk evaluation on the GenAI-enabled function in its intended use environment and within the overall risk management process.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts the two-axis risk framework but asks FDA to treat it as a screening or organizing tool rather than a classification matrix, with further evaluation considering the GenAI function's intended use environment and the overall risk management process.",
+      "summary_cut": false,
+      "source_passage": "FDA should treat the two-axis framework as a screening or organizing tool rather than a classification matrix. Further evaluation should consider the GenAI-enabled function within its intended use environment and overall risk management process."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q3"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter agrees that a user's capacity to independently assess an output is a legitimate risk factor, but is concerned that treating patient-facing delivery as inherently higher risk would build in an unwarranted presumption.",
+      "requested_fda_action": "Retain user ability to evaluate outputs as a risk consideration, but avoid establishing a default presumption that patient-facing GenAI functions carry higher risk simply because the user is a patient.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter agrees with FDA that a user's ability to independently evaluate outputs bears on risk, but asks FDA not to presume that patient-facing GenAI functions are inherently higher risk solely because the user is a patient.",
+      "summary_cut": false,
+      "source_passage": "FDA appropriately recognizes that a user's ability to independently evaluate an output can affect risk. Patient-facing use, however, should not by itself create a presumption of higher risk."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q3",
+        "q4"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "directiveness",
+      "stakeholder_concern": "The risk posed by a GenAI output depends on whether the recipient can adequately evaluate it, which varies among patients and between generalist and specialist HCPs. The commenter suggests a device's capacity to gauge and respond to the user's demonstrated understanding is relevant to risk mitigation.",
+      "requested_fda_action": "FDA should recognize adaptive output behavior—adjusting specificity, explanation, uncertainty communication, or directiveness based on the user's demonstrated understanding—as a potential risk control for patient-facing functions, and consider similar treatment for generalist versus specialist HCP users.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment frames risk as a property of the interaction between the device output and the individual user's comprehension rather than of the device output alone.",
+        "dynamic_intended_use": "A device that varies its specificity and directiveness based on inferred user understanding shifts its behavioral envelope during use, which FDA's user-category framing does not fully address."
+      },
+      "public_summary": "Supports FDA's attention to user domain knowledge but asks it to recognize an additional safeguard: devices that assess a user's demonstrated understanding and adapt output specificity, explanation, uncertainty communication, or directiveness accordingly, applied to patients and to generalist versus specialist clinicians.",
+      "summary_cut": false,
+      "source_passage": "FDA should consider whether a GenAI-enabled device's ability to assess and adapt to a user's demonstrated level of understanding may serve as a risk control. A system could adjust the specificity, explanation, uncertainty communication, or directiveness of its output based on whether the user demonstrates adequate understanding of the information and its limitations. Similar considerations may apply to generalist versus specialist HCPs."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q3",
+        "q4"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter is concerned that requiring assessment of user understanding across all GenAI-enabled devices would be inappropriate as a blanket expectation, and that comprehension-related measures are only relevant where safe use actually depends on the user's ability to interpret or independently evaluate an output.",
+      "requested_fda_action": "FDA should not impose assessment of user understanding as a universal requirement, and should instead treat user comprehension and adaptive communication as optional, case-specific risk controls applied when safe use depends on the user's ability to understand or independently evaluate the output.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment frames user comprehension and adaptive communication as safety-relevant features of the user-device interaction rather than device-only attributes, implying evaluation of how the user understands and acts on outputs."
+      },
+      "public_summary": "The commenter accepts comprehension-related safeguards but opposes making assessment of user understanding a universal requirement. It recommends treating user comprehension and adaptive communication as case-specific risk controls, applied only when safe use depends on the user's ability to understand or independently evaluate outputs.",
+      "summary_cut": false,
+      "source_passage": "We do not recommend assessment of user understanding as a universal requirement. Rather, user comprehension and adaptive communication should be considered potential risk controls when safe use depends on the user's ability to understand or independently evaluate the output."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q11"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "clinical_validation",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that clinical confirmation methods could be treated as a fixed ladder of rigor rather than being selected based on the residual uncertainty remaining after benchmarking and nonclinical evaluation.",
+      "requested_fda_action": "Confirm that clinical confirmation is proportionate to intended use and risk without always requiring a prospective study, and frame retrospective evaluation, shadow deployment, standardized patient interactions, clinician adjudication, and prospective investigation as alternative or complementary options rather than a fixed hierarchy, with greater rigor where autonomy, consequences, or residual uncertainty warrant.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The commenter frames uncertainty-driven selection of confirmation methods as consistent with least burdensome principles, tying evidence expectations to proportionality of burden."
+      },
+      "public_summary": "Supports FDA's position that clinical confirmation be proportionate to intended use and risk without always requiring prospective studies, but asks that confirmation methods be treated as alternative or complementary options selected by residual uncertainty rather than as a fixed hierarchy of rigor.",
+      "summary_cut": false,
+      "source_passage": "We support FDA's proposal that clinical confirmation be proportionate to intended use and risk and not necessarily require a prospective clinical study.<br/><br/>The key question should be what uncertainty regarding safety and effectiveness remains after benchmarking and nonclinical evaluation, and what evidence is needed to address that uncertainty. Retrospective evaluation, shadow deployment, standardized patient interactions, clinician adjudication, and prospective investigation should be considered alternative or complementary methods rather than a fixed hierarchy.<br/><br/>This approach supports least burdensome principles while allowing greater rigor when intended use, autonomy, potential consequences, or residual uncertainty warrant additional evidence."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter views third-party foundation model dependency as a significant but not wholly novel regulatory problem, since manufacturers already integrate software components they did not develop and cannot fully control.",
+      "requested_fda_action": "FDA should build on established Software of Unknown Provenance (SOUP) principles, including IEC 62304 and existing software lifecycle expectations, requiring manufacturers to evaluate the third-party component within the finished device, identify how foreseeable failures or changes could create hazardous situations, assess the resulting risks, and establish appropriate controls.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment frames third-party foundation models as software of unknown provenance requiring supplier-component evaluation and risk controls within the finished device, extending beyond FDA's framing of detecting developer-initiated changes."
+      },
+      "public_summary": "Comment agrees third-party foundation model dependency is significant but not entirely novel. It asks FDA to build on existing Software of Unknown Provenance principles (IEC 62304, software lifecycle expectations), with manufacturers evaluating the component within the finished device and establishing risk controls.",
+      "summary_cut": false,
+      "source_passage": "The challenge presented by third-party foundation models is significant, but the underlying regulatory problem is not entirely novel. Medical device manufacturers already incorporate software components they did not develop and over which they may have limited development information or control.<br/><br/>FDA should consider building on established principles for managing Software of Unknown Provenance (SOUP), including IEC 62304 and existing FDA software lifecycle expectations. Manufacturers should evaluate the third-party component within the finished device, identify how reasonably foreseeable failures or changes could contribute to hazardous situations, evaluate resulting risks, and establish appropriate controls."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Commenter contends that requiring complete visibility into or control over a third-party foundation model is the wrong objective; what matters is having enough information and device-level controls to detect, assess, and respond to changes affecting safety or effectiveness.",
+      "requested_fda_action": "Frame expectations for third-party model dependency around sufficiency rather than full transparency, recognizing mechanisms such as supplier change notification, model version control, regression benchmarking, behavioral monitoring, guardrails, and other device-level controls.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The passage centers on supplier-facing mechanisms—change notification, version control, and regression benchmarking—as the means of assuring quality of an externally controlled foundation model input."
+      },
+      "public_summary": "Commenter accepts FDA's focus on managing third-party model changes but reframes the goal: not complete visibility or control over the foundation model, only sufficient information and device-level controls—change notification, version control, regression benchmarking, behavioral monitoring, and guardrails—to detect and respond to safety-relevant changes.",
+      "summary_cut": false,
+      "source_passage": "The objective should not be complete visibility into or control over the foundation model, but sufficient information and controls to identify, evaluate, and respond to changes that could affect device safety or effectiveness. Controls could include supplier change notification, model version control, regression benchmarking, behavioral monitoring, guardrails, and other device-level controls."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "A remotely hosted third-party foundation model can change behavior without any corresponding modification to the manufacturer's own software, so conventional change-control triggers may not fire. Supplier notification of such changes may not always be available.",
+      "requested_fda_action": "The commenter indicates that mechanisms are needed to detect significant behavioral or performance changes in an underlying hosted foundation model when the supplier does not notify the manufacturer.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The passage centers on the manufacturer's dependence on an upstream model supplier that may alter the model without notification, leaving no contractual or informational assurance path.",
+        "dynamic_intended_use": "It highlights that device behavior can shift silently outside any documented software modification, implying the need to monitor a behavioral envelope rather than discrete versioned changes."
+      },
+      "public_summary": "Notes that remotely hosted foundation models may change without any modification to the manufacturer's software, so standard change triggers may not apply. Suggests mechanisms are needed to detect significant behavioral or performance shifts when supplier notification is unavailable.",
+      "summary_cut": false,
+      "source_passage": "Foundation models introduce an additional challenge because a remotely hosted model may change without an identifiable modification to the manufacturer's software. Mechanisms may therefore be needed to detect significant behavioral or performance changes when supplier notification is unavailable."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter emphasizes that regulatory expectations regarding third-party foundation models should center on the finished, user-facing device rather than on the underlying model evaluated in isolation.",
+      "requested_fda_action": "Focus expectations on the device manufacturer's ability to establish and maintain a reasonable assurance of safety and effectiveness for the finished device, consistent with FDA's stated emphasis.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The passage addresses how responsibility should be allocated between upstream foundation model developers and the device manufacturer, placing assurance obligations on the finished-device manufacturer."
+      },
+      "public_summary": "Endorses FDA's emphasis on evaluating the final user-facing device rather than the foundation model in isolation, stating that regulatory expectations should center on the manufacturer's ability to establish and maintain reasonable assurance of the finished device's safety and effectiveness.",
+      "summary_cut": false,
+      "source_passage": "Consistent with FDA's emphasis on evaluating the final user-facing device rather than the foundation model in isolation, expectations should focus on the manufacturer's ability to establish and maintain reasonable assurance of safety and effectiveness of the finished device."
+    }
+  ]
+}

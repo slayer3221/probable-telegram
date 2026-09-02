@@ -1,0 +1,142 @@
+{
+  "comment_id": "FDA-2026-N-7874-0042",
+  "input_hash": "64c952ad64f05df9",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:07:26Z",
+  "model": "claude-opus-5",
+  "chunks": 1,
+  "positions": [
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "I suggest that traceability of the output to source materials and traceability of the action to an accountable person are distinct concerns, and that the second is load-bearing for the activity axis specifically. ... A framework dimension for attribution traceability would ask whether a device's emitted records preserve the distinction between these identities, and would place a device that cannot preserve it at higher risk than one that can, holding activity and consequence constant. The rationale is that supervision claimed at authorization but unverifiable in deployment is not equivalent to supervision that can be shown.",
+      "position_gist": "The risk framework should add a dimension for traceability of attribution (distinguishing authenticating, acting, and authorizing identities), rating devices whose records cannot preserve that distinction as higher risk holding activity and consequence constant.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "The activity axis in Figure 1 distinguishes an action-taking function operating under healthcare professional supervision from one operating fully autonomously. That distinction is central to the proposed risk framework. It is also, at present, not verifiable from the records a clinical system produces.\nHealthcare audit standards, including HL7 FHIR R5 AuditEvent, model a single actor per event. ... A device authorized on the basis that it acts under continuous professional supervision, which then operates without that supervision in practice, produces audit records that are indistinguishable from the supervised case.",
+      "position_gist": "The supervised-versus-autonomous distinction on the activity axis is currently unverifiable because prevailing audit standards model a single actor, so supervised and unsupervised operation produce indistinguishable records.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "The retention of prompts and model outputs illustrates a related point: that content is appropriate for a synthetic corpus, but persisting it over real patients creates a disclosure surface subject to minimum-necessary and, for substance use disorder records, 42 CFR Part 2 constraints. Attribution is better carried as scalar metadata in the audit record than as retained model content, because the metadata form can be preserved indefinitely without creating that surface.",
+      "position_gist": "Attribution should be recorded as scalar metadata in the audit record rather than by retaining prompts and model outputs, which creates privacy disclosure surface under minimum-necessary and 42 CFR Part 2.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "A supervisory agent monitoring a subject agent is an instance of one automated system acting with respect to another. If the supervisory agent takes any action, whether flagging, escalating, or intervening, its own actions enter the record. The record must then represent an agent acting in a chain, under authority that traces back to an accountable human somewhere.\nThe current standard cannot express this. HL7 publishes an extension, auditevent-OnBehalfOf ... A Device can therefore act, but cannot be named as the entity acted for, and the case the first sentence names is not expressible.",
+      "position_gist": "Machine-based supervisory agents create agent-acting-for-agent chains that current FHIR audit standards cannot express, since the OnBehalfOf extension excludes Device as the entity acted for.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "A second effect compounds this. The requestor flag is a sibling of who on the agent element. Extension.extension on this extension has a maximum cardinality of zero, so the extension carries no child elements and there is no location on the referent that could hold a requestor indication. Applying the extension to an agent action therefore leaves requestor on the agent. The most standard access-review query in FHIR, filtering on requestor = true, returns the machine rather than the accountable clinician.",
+      "position_gist": "Because the OnBehalfOf extension carries no child elements, standard requestor=true access-review queries return the machine rather than the accountable clinician, a specific remediable standards gap.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "Suggested consideration. Before a supervisory-agent approach is relied upon for postmarket monitoring, the Agency may wish to consider whether the records such an architecture produces are capable of expressing the supervisory relationship at all, and to encourage or reference standards work that closes the gap.",
+      "position_gist": "FDA should treat record-level expressibility of the supervisory relationship as a precondition before relying on machine-based supervisory agents, and should encourage standards work closing the gap.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Appendix A element A.1 already names the relevant behavior: compliance with human-oversight checkpoints before irreversible or high-consequence actions. That is the right thing to benchmark. I suggest that it also needs to be recorded, and recorded in a form that survives to postmarket review.\nA benchmark demonstrates that the device honors an oversight checkpoint under test conditions. A record demonstrates that it did so on a particular occasion in production.",
+      "position_gist": "Compliance with human-oversight checkpoints for agentic devices should not only be benchmarked but also recorded in production in a form that survives to postmarket review.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Three properties are testable and I suggest they are candidates for acceptance criteria for agentic devices:\nAttribution is emitted, not inferred. The record states which entity acted and which human authorized it, rather than leaving the relationship to be reconstructed by a reviewer from timing or context. ... An unattributed agent action is representable and distinguishable. A device that acts without a resolvable authorizing human should produce a record that says so, positively, rather than a record that omits the field or a record that is not produced at all. ... The strength of the attribution is stated. An authorizing identity derived from a token issued by an identity provider is a different evidentiary object from one asserted by the agent in the call. Both may be acceptable depending on risk profile, but they should not serialize identically",
+      "position_gist": "Three record-level properties—attribution emitted rather than inferred, positive representability of unattributed agent actions, and stated attribution strength—are proposed as testable acceptance criteria for agentic devices.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q24",
+        "q25",
+        "q26"
+      ],
+      "source_passage": "These are properties of the emitted record rather than of the model, which means they can be evaluated without access to model internals or to a third-party foundation model's architecture. That may be useful given the visibility constraints the paper describes in Section II and Section VII.A.\nNote also that footnote 24 already contemplates audit log availability as content for a voluntary Foundation Model Master File. The consideration above is the complement at the device layer: not whether logs exist, but whether their structure preserves the accountability relationship.",
+      "position_gist": "Record-level attribution criteria can be evaluated without model internals or third-party foundation model architecture access, complementing the Foundation Model Master File's contemplated audit log content by addressing log structure at the device layer.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "The properties in Section 4 are semantic properties of an interoperability format. They cannot be established by any single manufacturer, because audit records cross organizational boundaries. ... A manufacturer-specific attribution scheme reproduces the current problem in a proprietary shape and adds a translation burden.\nThis argues for the standards-setting body role being specifically the definition of attribution semantics, with manufacturer accountability preserved intact. The manufacturer remains responsible for what its device does and for what its device emits. The standard determines only whether the emitted record is capable of expressing what happened.",
+      "position_gist": "Standards-setting bodies should define attribution semantics for audit records—a role that cannot be filled by individual manufacturers—while manufacturer accountability for device behavior and emissions remains intact.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "I would note one practical asymmetry. Small and under-resourced provider organizations, including community mental health centers, federally qualified health centers, and behavioral health programs, carry the same obligations as large health systems but cannot build audit infrastructure independently. If attribution semantics are settled in an open standard, those organizations inherit the capability. If they are settled per vendor, those organizations receive whatever their vendor supplies and are least able to evaluate it.",
+      "position_gist": "Settling attribution semantics in an open standard rather than per-vendor is important for equity, since small and under-resourced providers cannot build or evaluate audit infrastructure independently.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "QUESTION 21: STANDARDS BODIES<br/><br/>The gap above has an identified owner and an open technical process. Agency interest expressed as an expectation about what records should preserve would likely move it faster than new regulatory requirements would.",
+      "position_gist": "FDA should express an expectation about what records should preserve rather than impose new regulatory requirements, since the standards gap already has an identified owner and open technical process.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Section VI.C distinguishes intentional sponsor-initiated modifications, model-evolution changes that occur passively and incrementally, and unplanned changes arising from third-party foundation model updates. For an agentic device, there is a fourth category worth naming: change in the degree of human involvement in practice, without any change to the software at all.\nA device may be deployed with an oversight checkpoint that clinicians initially exercise deliberately and, over months, come to acknowledge reflexively or bypass through workflow adaptation. Nothing in the device changed. Its position on the activity axis did.",
+      "position_gist": "CDRH should recognize a fourth degradation category for agentic devices—drift in the degree of human involvement in practice with no software change—which shifts a device's position on the activity axis.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Degradation monitoring that reads audit records can detect this, but only if the records distinguish an action a human authorized from one the agent took alone. If they do not, the drift is invisible to precisely the monitoring the framework relies on.",
+      "position_gist": "Audit-record-based degradation monitoring can detect supervision drift only if records distinguish human-authorized from agent-initiated actions; otherwise the drift is invisible.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q20",
+        "q26"
+      ],
+      "source_passage": "Attribution is not detection. A schema cannot detect a non-cooperating agent. An agent driving a user interface under a clinician's credentials is indistinguishable, to the target system, from that clinician. Attribution must be emitted by the agent layer, which means it works where the deployment path is controlled and does not work where it is not. I have stated this limit in the published specification and state it here.",
+      "position_gist": "The commenter qualifies that attribution schemas cannot detect non-cooperating agents and only work where the deployment path is controlled, since attribution must be emitted by the agent layer.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "This is not a proposal for a new regulatory requirement. The properties in Section 4 are offered as candidates for consideration within the acceptance criteria the Agency is already contemplating for agentic devices, not as an argument for additional regulatory burden. They are, in my assessment, among the less burdensome available, because they concern the format of a record a compliant system already produces.",
+      "position_gist": "The proposed attribution properties are offered as low-burden candidates within acceptance criteria FDA is already contemplating, not as a new regulatory requirement.",
+      "segment_id": "seg-016"
+    }
+  ]
+}

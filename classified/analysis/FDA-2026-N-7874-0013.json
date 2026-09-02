@@ -1,0 +1,1672 @@
+{
+  "comment_id": "FDA-2026-N-7874-0013",
+  "input_hash": "3077034361619a8d",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter argues the two axes capture severity and a proxy for autonomy but omit the probability that an incorrect output is actually acted upon, which is where generative systems differ most from previously regulated software.",
+      "requested_fda_action": "Add \"detectability\" — the likelihood an incorrect output is recognized before reliance — as an explicit third dimension, and treat reversibility, downstream safeguards, time pressure, and output traceability as determinants of detectability rather than separate axes, preserving a usable two-dimensional grid.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "Detectability as proposed depends on whether a user or downstream safeguard recognizes an erroneous output before acting, making risk a property of the combined human-AI system rather than the device output alone."
+      },
+      "public_summary": "Considers FDA's two axes necessary but insufficient because they omit the probability an incorrect output is acted upon. Recommends adding detectability as an explicit dimension, with reversibility, downstream safeguards, time pressure, and traceability treated as determinants of detectability rather than separate axes.",
+      "summary_cut": false,
+      "source_passage": "The two axes — device activity and the consequence of relying on an incorrect output — are necessary but not sufficient. Together they describe severity and a proxy for autonomy. They do not describe the probability that an incorrect output is acted upon , which is where generative systems differ most sharply from the software CDRH has regulated to date.... I recommend CDRH add detectability — the likelihood that an incorrect output is recognized as incorrect before it is relied upon — as an explicit dimension, and treat reversibility, downstream safeguards, time pressure, and output traceability as determinants of detectability rather than as independent axes. This preserves a two-dimensional grid that remains usable in practice while giving the omitted variable a defined home."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "Without an explicit statement of how the two-axis risk framework relates to a manufacturer's existing ISO 14971 risk management file, manufacturers will assume they must maintain a second, FDA-specific risk taxonomy in parallel, creating documentation burden without a corresponding safety benefit.",
+      "requested_fda_action": "CDRH should state explicitly how the two-axis framework relates to the ISO 14971 risk management file, and if the grid functions as a communication and triage tool drawing on the existing 14971 file rather than a separate analysis, say so.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter accepts the two-axis risk framework but asks CDRH to state explicitly how it relates to existing ISO 14971 risk management files—ideally clarifying that the grid draws on that file rather than requiring a parallel, FDA-specific risk taxonomy and added documentation.",
+      "summary_cut": false,
+      "source_passage": "I further recommend that CDRH state explicitly how this framework relates to a manufacturer’s existing ISO 14971 risk management file. If the answer is that the grid is a communication and triage device that draws on the 14971 file rather than a separate analysis, that should be said. Absent such a statement, manufacturers will reasonably assume they must maintain a second, FDA-specific risk taxonomy alongside the first, which produces documentation burden without a corresponding safety gain."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q2"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter argues directiveness is an emergent property of generative outputs that manufacturers can constrain but cannot guarantee, so classification resting on a binary 'non-directive' determination would require attestations no sponsor can honestly make.",
+      "requested_fda_action": "Treat directiveness as a constrained and monitored property: require sponsors to specify a directiveness ceiling for the intended use, document technical controls, and report a measured escape rate from adversarial and representative evaluation sets, with classification conditioned on the escape rate meeting a prespecified bound and the escape rate tracked as a postmarket endpoint.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment reframes directiveness as a probabilistic behavioral envelope (a specified ceiling plus measured escape rate) rather than a fixed design characteristic fixed at authorization."
+      },
+      "public_summary": "Accepts directiveness as a risk modifier but rejects binary classification, arguing directiveness is emergent and unverifiable at design time. Proposes sponsors specify a directiveness ceiling with technical controls and report a measured escape rate, with classification conditioned on that rate and monitored postmarket.",
+      "summary_cut": false,
+      "source_passage": "Directiveness  of  a  generative  output  is  an  emergent  property  of  the  output,  not  a  design  input  the manufacturer controls or can verify at design time. A manufacturer can constrain it — through system prompts, output templates, refusal training, post-generation filtering — but cannot guarantee it. If regulatory classification turns on whether a function is “non-directive,” sponsors will be asked to attest to something no sponsor can honestly attest to... The more workable construction treats directiveness as a constrained and monitored property . A sponsor would specify a directiveness ceiling for the intended use, describe the technical controls enforcing it, and — critically — report a measured escape rate: the rate at which outputs exceeded the specified ceiling across an adversarial and representative evaluation set. Classification would then be based on the specified ceiling, conditioned  on  the  escape  rate  meeting  a  prespecified  bound,  with  escape  rate  becoming  a  postmarket monitoring  endpoint."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q3"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter is concerned that treating patient-facing GenAI functions as categorically higher risk misidentifies the operative variable, which they describe as whether the user has a realistic path to verification at the moment of reliance rather than the user's abstract domain knowledge.",
+      "requested_fda_action": "Structure the risk framework around the verification path — its availability, its latency, and whether the output's design supports or discourages verification — rather than the user category, and credit safeguards such as traceable citations with verifiable links, explicit uncertainty communication, and consequence-scaled prompts to seek confirmation instead of static boilerplate.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment reframes risk around whether the user can realistically verify an output at the moment of reliance, making the human-device interaction, not the device output alone, the unit of assessment."
+      },
+      "public_summary": "Cautions against categorically higher risk for patient-facing functions. Recommends FDA base risk on the user's realistic verification path — availability, latency, and whether output design supports verification — rather than user category, crediting traceable citations, uncertainty communication, and consequence-scaled confirmation prompts.",
+      "summary_cut": false,
+      "source_passage": "I would caution against a categorical elevation of risk for patient-facing functions. ... The variable that actually distinguishes the two cases is not the user’s domain knowledge in the abstract but whether the user has a  realistic path to verification  at the moment of reliance. ... I recommend the framework attend to the verification path — its availability, its latency, and whether the output’s design supports or discourages it — rather than to the user’s category. Safeguards that meaningfully change the analysis include traceable citation to primary sources with verifiable links, explicit uncertainty communication, and a designed prompt to seek confirmation that scales with the consequence of the specific output rather than appearing as static boilerplate."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q4"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "intended_use",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter accepts that the generalist/specialist distinction is analytically real but warns it is not enforceable in practice, since a manufacturer can label an intended user but cannot control which clinician actually opens the application. Labeling-only mitigations are said to have a poor track record in software.",
+      "requested_fda_action": "Distinguish explicitly among labeled intended user, technical enforcement of user scope, and foreseeable off-label user, and state which drives risk assessment. Assess risk against foreseeable use, giving mitigation credit only for demonstrated technical enforcement such as role-based access controls tied to institutional credentialing, not for labeling alone.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment argues risk should be evaluated against foreseeable actual users rather than the labeled intended user, treating the effective use envelope as broader than the stated intended use.",
+        "deployment_assurance_scalability": "It proposes that mitigation credit depend on deployment-side technical enforcement, such as role-based access controls tied to institutional credentialing, rather than on manufacturer labeling."
+      },
+      "public_summary": "Accepts the generalist/specialist risk distinction as analytically real but calls it unenforceable through labeling. Asks CDRH to separate labeled intended user, technical enforcement, and foreseeable off-label user, and to assess risk against foreseeable use, crediting only demonstrated access controls tied to credentialing.",
+      "summary_cut": false,
+      "source_passage": "This distinction is analytically real but creates an enforcement problem CDRH should confront directly. A manufacturer can label an intended user; it cannot control which clinician opens the application. ... If CDRH intends specialty scope to bear regulatory weight, the paper should distinguish between (a) labeled intended user, (b) technical enforcement of user scope, and (c) foreseeable off-label user, and should state which of the three drives the risk assessment. My recommendation is that risk be assessed against foreseeable use, with  credit  given  for  demonstrated  technical  enforcement  —  role-based  access  controls  tied  to institutional credentialing, for example — rather than for labeling alone. Labeling-only mitigations have a poor track record in software and should not be treated as risk-reducing here."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q5"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "intended_use",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "Single-turn or turn-level evaluation of a conversational device does not correspond to how the device is actually used, so risk that emerges across a conversation (drift from non-directive to action-directing output) goes unmeasured.",
+      "requested_fda_action": "State that for multi-turn devices the session, not the turn, is the unit of analysis; define intended use at the conversational level in terms of supported trajectories and boundaries; require trajectory-based multi-turn adversarial evaluation with a measured, bounded escape rate, and treat turn-level evaluation alone as insufficient.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment argues intended use must be specified as a conversational behavioral envelope—the range of trajectories and boundaries the device is designed to hold—rather than as static turn-level function."
+      },
+      "public_summary": "Recommends FDA treat the session rather than the turn as the unit of analysis for multi-turn devices, defining intended use at the conversational level by supported trajectories and boundaries, and requiring trajectory-based adversarial evaluation with bounded escape rates; single-turn benchmarking alone insufficient.",
+      "summary_cut": false,
+      "source_passage": "I recommend CDRH state that for multi-turn devices, the session, not the turn, is the unit of analysis  for both intended use and evaluation. Intended use should be defined at the conversational level, in terms of the range of trajectories the device is designed to support and the boundaries it is designed to hold. Evaluation should then be trajectory-based: multi-turn adversarial evaluation in which evaluators actively attempt to walk the device from non-directive information toward action-directing output, with the escape rate measured and bounded as described under Question 2. Single-turn benchmarking of a multi-turn device measures something that does not correspond to how the device is used... Turn-level evaluation of conversational devices should be treated as insufficient on its own regardless of how thorough it is."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "Without a prespecified trade-off between under- and over-escalation, sponsors can report both error rates after the fact and present whichever is more favorable as the primary endpoint. The commenter also notes the trade-off depends on deployment context and the capacity of the system receiving escalations.",
+      "requested_fda_action": "Require sponsors to prespecify an explicit asymmetric acceptance criterion (e.g., minimum sensitivity for escalation-warranted conditions plus a maximum acceptable over-escalation rate) with a clinical justification referencing the deployment context and receiving system capacity, and to have FDA assess that justification, not just the reported rates.",
+      "confidence": "high",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment ties acceptable over-escalation rates to the capacity of the receiving care system, framing escalation burden on downstream services as a harm dimension to be justified."
+      },
+      "public_summary": "On escalation error trade-offs, the commenter proposes a procedural fix: rather than reconciling incommensurable error types, FDA should require sponsors to prespecify asymmetric acceptance criteria (minimum sensitivity plus maximum over-escalation rate) with context- and capacity-based clinical justification FDA reviews, foreclosing post hoc endpoint selection.",
+      "summary_cut": false,
+      "source_passage": "My recommendation is procedural: rather than asking manufacturers to reconcile them, require that the trade-off be prespecified rather than discovered. A sponsor should state, before evaluation, an explicit asymmetric acceptance criterion — for example, a minimum  sensitivity  for  the  escalation-warranted  condition  together  with  a  maximum  acceptable  over- escalation rate — accompanied by a clinical justification for the chosen ratio that references the specific deployment context and the capacity of the receiving system. The justification, not just the numbers, should be part of the submission and should be assessed. Post hoc reporting of both rates without a prespecified trade-off allows the sponsor to characterize whichever result is more favorable as the primary endpoint, and CDRH should foreclose that."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q19",
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter argues that over-escalation harms — alert fatigue, resource diversion, and downstream harm to patients deprived of consumed capacity — are diffuse, delayed, and rarely attributed to the device, and so are systematically under-detected by the postmarket mechanisms described in Section VI.",
+      "requested_fda_action": "Give over-escalation greater weight in the evaluation of care escalation functions and strengthen postmarket approaches so they can detect diffuse, delayed harms that are not readily attributed to the device.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment centers on system-level harms such as resource diversion and capacity consumption affecting other patients, which are not captured by device-attributed error metrics.",
+        "human_ai_system_performance": "Alert fatigue is identified as a harm arising from how clinicians interact with device outputs over time rather than from the device output alone."
+      },
+      "public_summary": "Comment argues over-escalation deserves more attention than it typically receives: its harms — alert fatigue, resource diversion, and downstream harm to patients whose capacity was consumed — are diffuse, delayed, and rarely attributed to the device, so FDA's described postmarket mechanisms systematically under-detect them.",
+      "summary_cut": false,
+      "source_passage": "Over-escalation  deserves  more  attention  than  it  typically  receives.  Its  harms  —  alert  fatigue,  resource diversion, downstream harm to patients who did need the capacity consumed — are diffuse, delayed, and rarely attributed to the device. They are therefore systematically under-detected by exactly the postmarket mechanisms Section VI describes."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter accepts the competency-based framework as a useful organizing structure but warns that the physician-credentialing analogy carries an unstated assumption: licensure tolerates limited, non-exhaustive testing only because it sits within a system of continuous individual professional accountability, which a device does not reproduce.",
+      "requested_fda_action": "Retain the competency framing as the organizing structure for benchmarking, clinical confirmation, and monitoring, but state explicitly in the paper that the licensure analogy justifies the shape of the evidence rather than its quantity, and that the reduced-testing feature of credentialing does not transfer to devices.",
+      "confidence": "high",
+      "gap_tags": [
+        "distributed_accountability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment argues that the permissiveness of physician credentialing rests on continuous individual accountability mechanisms that a device and its manufacturer do not replicate, so evidentiary expectations cannot be transferred.",
+        "delegated_authority": "It questions the premise of treating a device as analogous to a credentialed clinician, since the device assumes clinician-like functions without the professional accountability that licensure presupposes."
+      },
+      "public_summary": "Endorses the competency-based approach as a useful organizing structure, but asks FDA to state explicitly that the physician-licensure analogy justifies the shape, not the quantity, of required evidence, because credentialing's reduced testing depends on continuous individual accountability devices do not reproduce.",
+      "summary_cut": false,
+      "source_passage": "Broadly, yes, and the paper’s framing is a genuine contribution. But the analogy carries an assumption that should be made explicit before it is relied upon... Physician credentialing is evidentiarily permissive — no exhaustive testing of every scenario — because it is embedded in a system of continuous individual accountability... A device inherits none of this. ... My recommendation is that CDRH retain the competency framing as an organizing structure — it maps cleanly  onto  benchmarking,  confirmation,  and  monitoring  —  while  explicitly  declining  to  import  its evidentiary permissiveness. The paper should state that the licensure analogy justifies  the shape  of the evidence, not the quantity, and that the reduced-testing feature of physician credentialing is a consequence of accountability structures the device context does not reproduce."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "Without an explicit, published mapping from risk tiers to required evidence, a competency-based approach would function as discretionary, case-by-case review rather than a predictable least-burdensome pathway.",
+      "requested_fda_action": "Publish a mapping table that specifies, for each cell or band of the risk grid, the minimum benchmarking elements, the minimum clinical confirmation tier from the Section V.C ladder, whether third-party involvement is expected, and the minimum postmarket monitoring configuration, with a documented justified deviation pathway but a stable published default.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The commenter frames unpublished, discretionary evidence expectations as inconsistent with a least-burdensome pathway and seeks predictable, stable default requirements for sponsors."
+      },
+      "public_summary": "Accepts the competency-based approach but argues it needs a published risk-tier-to-evidence mapping, otherwise it becomes discretionary case-by-case review. Asks CDRH to specify minimum benchmarking, clinical confirmation tier, third-party involvement, and postmarket monitoring per risk band, with a justified deviation pathway.",
+      "summary_cut": false,
+      "source_passage": "A competency-based approach without a published risk-tier-to-evidence mapping is not a least-burdensome pathway. It is discretionary, case-by-case review with a new vocabulary. ... I recommend CDRH publish a mapping table specifying, for each cell or band of the risk grid: the minimum benchmarking elements required; the minimum acceptable clinical confirmation tier from the Section V .C ladder; whether third-party involvement is expected; and the minimum postmarket monitoring configuration. The mapping need not be rigid — a documented, justified deviation pathway should exist — but the default must be published and stable."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "cybersecurity",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter states that the described robustness and reliability benchmarking addresses natural input variation but not adversarial or hostile input such as prompt injection via retrieved documents or patient-supplied text, instruction override, and jailbreak techniques that defeat scope constraints.",
+      "requested_fda_action": "Add adversarial/hostile input resistance as a distinct benchmarking element, treated as a security property rather than a robustness property, and cross-reference it to CDRH's premarket cybersecurity expectations.",
+      "confidence": "high",
+      "gap_tags": [
+        "cybersecurity_as_safety"
+      ],
+      "gap_explanations": {
+        "cybersecurity_as_safety": "The comment frames prompt injection and jailbreak resistance as a security property that must be evaluated within device performance benchmarking and linked to premarket cybersecurity expectations."
+      },
+      "public_summary": "Accepts the benchmarking structure but says it is missing adversarial input testing. Argues prompt injection, instruction override, and jailbreak resistance are security rather than robustness properties, and should form a distinct benchmarking element cross-referenced to CDRH premarket cybersecurity expectations.",
+      "summary_cut": false,
+      "source_passage": "Adversarial and hostile input.  Robustness and reliability, as described, appear oriented toward natural variation in input... Generative devices additionally face adversarial input:  prompt  injection  through  retrieved  documents  or  patient-supplied  text,  instruction  override,  and jailbreak techniques that defeat scope constraints. This is a security property, not a robustness property, and it should  be  a  distinct  benchmarking  element  cross-referenced  to  CDRH’s  premarket  cybersecurity expectations."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Fabricated but plausible citations are a failure mode distinct from inaccurate content, and they undermine the user's ability to verify an output, turning an intended safeguard into a source of hazard.",
+      "requested_fda_action": "Include citation/provenance fidelity as a separately measured element within the benchmarking structure, rather than assuming it correlates with content accuracy.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment identifies that a false citation defeats the human verification step that the framework relies on as a safeguard, so device-alone content accuracy does not capture the combined human-AI outcome."
+      },
+      "public_summary": "Commenter accepts the benchmarking framework but asks FDA to treat citation and provenance fidelity as a separately measured competency. Argues a fabricated yet plausible citation is a distinct failure mode that defeats user verification, and should not be assumed to track content accuracy.",
+      "summary_cut": false,
+      "source_passage": "Provenance and citation fidelity.  Where a device cites sources, the correctness of the citation is a distinct failure mode from the correctness of the claim. A fabricated but plausible citation actively defeats the user’s verification path — it converts a safeguard into a hazard... Citation fidelity should be measured separately and should not be assumed to track content accuracy."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "Scope maintenance testing that only checks whether a device stays within its intended scope misses how the device behaves at the scope boundary; sharp performance collapse accompanied by unchanged high confidence is more dangerous than graceful degradation and is not detectable through aggregate accuracy metrics.",
+      "requested_fda_action": "Include boundary behavior in the benchmarking structure by evaluating whether performance degrades gracefully with visible uncertainty at the edge of scope, rather than relying on aggregate accuracy or scope-adherence measures alone.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment focuses on device behavior at and beyond the edge of its defined scope, treating the boundary of the behavioral envelope—not just in-scope accuracy—as the object of evaluation."
+      },
+      "public_summary": "Supports the benchmarking framework but asks FDA to add evaluation of behavior at the edge of scope, distinguishing graceful degradation with visible uncertainty from sharp performance collapse paired with unchanged high confidence, which aggregate accuracy metrics do not reveal.",
+      "summary_cut": false,
+      "source_passage": "Behavior at the edge of scope.  Scope maintenance measures whether the device stays in scope. Equally important is what it does at the boundary: whether performance degrades gracefully with visible uncertainty, or falls off sharply while confidence remains high. The latter is far more dangerous and is invisible to aggregate accuracy metrics."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "unclear",
+      "primary_issue": "benchmarking",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter is aware of ongoing AI evaluation and risk management standards work but states they lack current verified information on which specific standards are mature enough for regulatory recognition and does not want to cite one incorrectly.",
+      "requested_fda_action": "Recommends that CDRH directly survey the standards landscape and publicly state which externally developed standards it considers suitable for leveraging in benchmarking.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter declines to identify specific external standards for benchmarking, citing lack of verified information on their maturity for regulatory recognition, and asks CDRH to survey the standards landscape itself and state which standards it considers suitable to leverage.",
+      "summary_cut": false,
+      "source_passage": "On external standards: I am aware of ongoing work in AI evaluation and risk management standards that may be relevant here, but I do not have current verified information on which specific standards have reached a maturity appropriate for regulatory recognition, and I would not want to cite one incorrectly. I recommend CDRH survey this landscape directly and state which standards it considers suitable for leveraging."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q10",
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "A sponsor building on a third-party foundation model cannot verify whether a public benchmark appeared in the model's training corpus, because that information is held by the model provider; without it, benchmark results are not interpretable as evidence of real-world performance.",
+      "requested_fda_action": "State that, for devices relying on third-party models, benchmarking evidence based on publicly available assets is not interpretable absent a dated training-data cutoff attestation from the model provider, and identify temporally held-out evaluation data post-dating the attested cutoff as the preferred mitigation.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment turns benchmark validity into a question of what the upstream foundation model provider discloses (a dated training-data cutoff attestation), which the device sponsor cannot generate itself."
+      },
+      "public_summary": "Supports benchmark contamination concerns but argues sponsors cannot test contamination for third-party models. Asks CDRH to state that public-benchmark evidence is uninterpretable without a dated training-data cutoff attestation from the model provider, and to prefer temporally held-out evaluation data.",
+      "summary_cut": false,
+      "source_passage": "Contamination is not testable without a training-data cutoff attestation.  A sponsor cannot demonstrate that a public benchmark was absent from a third-party model’s training corpus without information the sponsor does not possess. I recommend CDRH state that where a device relies on a third-party model, benchmarking evidence based on publicly available assets is not interpretable absent a dated training-data cutoff attestation from the model provider, and that temporally held-out evaluation data — constructed from material post-dating the attested cutoff — is the preferred mitigation. This also creates the market pull discussed under Question 25."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that benchmark construct validity is often assumed rather than demonstrated, leaving the link between benchmark performance and real-world device behavior unexamined.",
+      "requested_fda_action": "CDRH should require sponsors to document, for each benchmark, the specific real-world behavior it is intended to predict, the reasoning connecting the two, and known limitations of that connection, held to the same standard as analytical validation.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter supports benchmark-based evaluation but urges CDRH to require explicit construct-validity documentation: for each benchmark, the real-world behavior it predicts, the reasoning linking them, and known limitations, treated as analytical validation subject to the same documentation standard.",
+      "summary_cut": false,
+      "source_passage": "Construct validity must be argued, not assumed.  I recommend CDRH require a sponsor to state, for each benchmark used, the specific real-world behavior it is intended to predict, the reasoning connecting them, and the known limitations of that connection. This is a familiar requirement in a different vocabulary: it is analytical validation, and it should be documented to the same standard."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Sponsor-developed benchmarks are often unavoidable for novel intended uses, but the sponsor may have optimized the model against its own benchmark, undermining the benchmark's ability to gate device evaluation.",
+      "requested_fda_action": "Permit sponsor-developed benchmarks but require structural separation: pre-submission locking of the benchmark and acceptance thresholds, an auditable attestation (demonstrable from development records) that the gating set was not used for model selection, prompt engineering, fine-tuning, or iteration, and escrow of a held-out portion with FDA or a recognized third party that is never returned to the sponsor.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports allowing sponsor-developed benchmarks, which are often unavoidable for novel intended uses, but asks FDA to require structural safeguards: benchmarks and thresholds locked and submitted before evaluation, auditable proof the gating set was never used in development, and a held-out portion escrowed externally.",
+      "summary_cut": false,
+      "source_passage": "Sponsor-developed  benchmarks  should  be  permitted  but  structurally  separated. They  are  often unavoidable — for a novel intended use, no external benchmark exists. The controlling concern is not that the sponsor  built  the  benchmark  but  that  the  sponsor  may  have  optimized  against  it.  I  recommend  three safeguards: (a) the benchmark and its acceptance thresholds are locked and submitted before evaluation, not after; (b) the sponsor attests, subject to audit, that the gating set was not used for model selection, prompt engineering, fine-tuning, or any iteration on the device — the separation between development and gating sets must be demonstrable from development records, not merely asserted; (c) a held-out portion is escrowed with FDA or a recognized third party and never returned to the sponsor."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Because of data contamination and saturation, strong performance on a public benchmark demonstrates little about real-world safety and effectiveness, while poor performance is highly informative.",
+      "requested_fda_action": "Treat public benchmarks as necessary-but-not-sufficient screening tools and state explicitly that public benchmark performance does not by itself constitute evidence of effectiveness.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts a role for public benchmarks but asks CDRH to classify them as necessary-but-not-sufficient screens rather than evidence, arguing contamination and saturation mean strong scores prove little while weak scores are highly informative, and to say so explicitly.",
+      "summary_cut": false,
+      "source_passage": "Public  benchmarks  should  be  characterized  as  screening,  not  evidence. Given  contamination  and saturation, strong performance on a public benchmark establishes little; weak performance establishes a great deal. I recommend CDRH treat public benchmarks as necessary-but-not-sufficient screens and state explicitly that they do not constitute evidence of effectiveness."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q10",
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Benchmark contamination cannot be solved by sponsors individually, because any valuable benchmark eventually becomes public and enters training data, undermining the construct validity of benchmark-gated evaluation.",
+      "requested_fda_action": "Evaluate creating a periodically refreshed, never-published evaluation set maintained by FDA or a recognized body, while acknowledging the resource and governance implications; the commenter offers it as a direction to explore rather than a costed proposal.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The suggestion that FDA or a \"recognized body\" hold and rotate a non-public evaluation set places a gating evaluative function outside the sponsor, raising governance questions about who holds and exercises that authority."
+      },
+      "public_summary": "Supports benchmark-based evaluation but argues sponsors cannot solve contamination alone, since valuable benchmarks become public training data. Suggests FDA or a recognized body maintain a periodically refreshed, never-published evaluation set, acknowledging resource and governance implications and offering this as a direction, not a costed proposal.",
+      "summary_cut": false,
+      "source_passage": "A rotating non-public evaluation resource is worth serious consideration.  The contamination problem is structurally unsolvable by sponsors acting individually, since any benchmark that becomes valuable becomes public and then becomes training data. A periodically refreshed evaluation set, maintained by FDA or a recognized body and never published, is one of the few mechanisms that addresses the root cause. I recognize this carries substantial resource and governance implications, and I raise it as a direction worth evaluating rather than as a costed proposal."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q11",
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "Allowing sponsors to select and justify their own clinical confirmation approach would create predictable downward pressure on evidentiary rigor and inconsistent review outcomes across submissions.",
+      "requested_fda_action": "Retain the graduated ladder of clinical confirmation approaches, but tie the selection of approach to the risk mapping framework (as recommended under Question 8) rather than to sponsor justification.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The commenter objects to effectively delegating the choice of evidentiary standard to sponsors, arguing that self-selection with justification is insufficient to maintain consistent regulatory rigor."
+      },
+      "public_summary": "Supports the graduated range of clinical confirmation approaches but recommends FDA determine the required approach through its risk framework rather than allowing sponsors to select and justify their own level, which the commenter says invites downward pressure and inconsistent review.",
+      "summary_cut": false,
+      "source_passage": "I support the graduated ladder. Two recommendations. First, the selection should be  driven by the risk mapping recommended under Question 8 , not left to sponsor justification. Sponsor discretion in selecting one’s own evidentiary bar, even with a justification requirement, produces predictable downward pressure and inconsistent review."
+    },
+    {
+      "segment_id": "seg-021",
+      "question_ids": [
+        "q11"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "clinical_validation",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter argues that benchmark input distributions diverge from real clinical input distributions, and that curated retrospective datasets exclude the malformed, incomplete, and atypical inputs that most often cause real-world software failure.",
+      "requested_fda_action": "Make shadow deployment the presumptive default clinical confirmation approach for intermediate-risk GenAI-enabled devices, and do not treat retrospective evaluation on curated real inputs as an adequate substitute.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment stresses that assurance must be generated under real deployment conditions, where messy and atypical inputs occur, rather than from curated or benchmark datasets."
+      },
+      "public_summary": "Accepts FDA's tiered clinical confirmation approach but urges that shadow deployment be the presumptive default for intermediate-risk devices, since it captures real-world input distributions without patient exposure; argues curated retrospective evaluation omits the malformed and atypical inputs that drive failures.",
+      "summary_cut": false,
+      "source_passage": "Second, shadow deployment deserves to be the presumptive default at intermediate risk . It is the only rung  that  produces  genuine  real-world  input  distributions  at  zero  patient  exposure,  and  the  divergence between benchmark input distributions and real clinical input distributions is, in my experience, where software devices most often disappoint. Retrospective evaluation on curated real inputs does not substitute, because  curation  removes  exactly  the  malformed,  incomplete,  and  atypical  inputs  that  drive  real-world failure."
+    },
+    {
+      "segment_id": "seg-022",
+      "question_ids": [
+        "q11"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "clinical_validation",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Clinical confirmation evidence obtained in a narrow set of sites or populations may not generalize to other deployment settings, such as rural critical-access facilities, if the anticipated real-world input distribution is not characterized in advance.",
+      "requested_fda_action": "Require sponsors to prospectively characterize the anticipated real-world input distribution and to label confirmation evidence with the population and setting in which it was obtained.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment stresses that confirmation at a few academic centers does not establish performance in different care settings such as rural critical-access hospitals, raising the question of how assurance transfers across deployment sites."
+      },
+      "public_summary": "Accepts the range of clinical confirmation approaches but asks FDA to require prospective characterization of the anticipated real-world input distribution and labeling of confirmation evidence with the population and setting studied, noting that academic-center confirmation does not extend to rural critical-access settings.",
+      "summary_cut": false,
+      "source_passage": "On input distributions: I recommend CDRH require prospective characterization of the anticipated real-world input distribution, and that confirmation evidence be labeled with the population and setting in which it was obtained. A device confirmed at three academic centers has not been confirmed for a rural critical-access"
+    },
+    {
+      "segment_id": "seg-023",
+      "question_ids": [
+        "q12",
+        "q13"
+      ],
+      "position": "oppose",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "Synthetic data cannot provide a valid denominator for performance rate estimation, and synthetic data generated by a model of the same family as the device under test cannot reveal blind spots shared between generator and device.",
+      "requested_fda_action": "Prohibit the use of synthetic data to establish device performance rates, while allowing its use as a tool for failure discovery and coverage of rare events.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter would bar synthetic data from establishing performance rates, arguing it cannot supply a valid denominator and, when produced by a model of the same family as the device, cannot detect shared blind spots. Accepts synthetic data only for failure-finding and rare-event coverage.",
+      "summary_cut": false,
+      "source_passage": "Do not permit synthetic data to establish performance rates.  Synthetic data is a valid tool for finding failures and covering rare events. It cannot supply a valid denominator, and when generated by a model of the same family as the device under test it is structurally incapable of detecting shared blind spots."
+    },
+    {
+      "segment_id": "seg-024",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter objects to using the performance of a median clinician in practice as the primary performance standard for open-ended GenAI outputs, and is concerned that clinician panels used as comparators are treated as reliable without themselves being validated.",
+      "requested_fda_action": "FDA should anchor evaluation in prespecified clinical acceptance criteria derived from the consequence of the decision, and treat clinician panels as adjudication instruments whose reliability is validated and reported like any other measurement instrument.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter would not use the median practicing clinician as the primary performance standard. Instead, acceptance criteria should be prespecified based on the consequence of the decision, with clinician panels used as adjudication instruments that are themselves validated and reported.",
+      "summary_cut": false,
+      "source_passage": "Reject “median clinician in practice” as the primary performance standard.  Prespecified clinical acceptance criteria derived from the consequence of the decision are the better anchor; clinician panels should  serve  as  adjudication  instruments,  and  should  themselves  be  validated  and  reported  like instruments."
+    },
+    {
+      "segment_id": "seg-025",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "A supervisory agent built on the same foundation model as the device it monitors would share correlated failure modes and therefore fail to detect the very errors that matter most for safety.",
+      "requested_fda_action": "Require that any machine-based supervisory agent submitted as postmarket evidence be independent of the monitored device, including not being built on the same underlying foundation model.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment concerns conditions under which safety oversight can be delegated to an automated supervisory agent rather than human review.",
+        "ai_supplier_quality": "It identifies shared reliance on the same underlying foundation model as a source of correlated failure that undermines independent assurance."
+      },
+      "public_summary": "Accepts machine-based supervisory agents for postmarket monitoring only if they are independent of the monitored device. Notes that an agent built on the same foundation model would share correlated failure modes and miss the errors of greatest concern; asks FDA to require independence.",
+      "summary_cut": false,
+      "source_passage": "Require independence for any supervisory agent offered as postmarket evidence.  A monitoring agent built on the same foundation model as the device it monitors has correlated failure modes and will be blind to precisely the errors that matter."
+    },
+    {
+      "segment_id": "seg-026",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter views the inability to pin a version-identified third-party model endpoint, backed by contractual change notification, as the largest unaddressed gap in the discussion paper, since developer-initiated model changes could alter device behavior without the manufacturer's knowledge.",
+      "requested_fda_action": "FDA should treat model version pinning as a design control expectation and classify the absence of a pinned, version-identified endpoint with contractual change notice as a design deficiency rather than an acceptable residual risk.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment frames control over an upstream foundation model supplier—version pinning and contractual change notification—as a design control and quality expectation rather than a risk to be accepted."
+      },
+      "public_summary": "Commenter calls third-party foundation model changes the paper's largest unaddressed gap. Rather than treating unpinned models as accepted risk, FDA should make version pinning to an identified endpoint, with contractual change notice, a design control expectation, treating its absence as a design deficiency.",
+      "summary_cut": false,
+      "source_passage": "Treat  model  version  pinning  as  a  design  control  expectation. For  devices  built  on  third-party foundation models, the inability to pin a version-identified endpoint, with contractual change notice, should be treated as a design deficiency rather than an accepted risk. This is the single largest unaddressed gap in the paper."
+    },
+    {
+      "segment_id": "seg-027",
+      "question_ids": [
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "pccp",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "For generative systems, future modifications cannot be enumerated in advance, so a PCCP built on a prespecified list of changes is unworkable.",
+      "requested_fda_action": "Reframe PCCPs for GenAI-enabled devices around invariants — prespecifying what must remain true, such as a locked evaluation instrument, locked performance thresholds, and a locked verification protocol — rather than prespecifying the specific changes to be made.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment proposes governing change through a fixed set of invariants (evaluation instrument, thresholds, verification protocol) that bound acceptable behavior, rather than enumerating modifications, which is a behavioral-envelope approach not captured by change-list framing."
+      },
+      "public_summary": "Supports adapting PCCP concepts but asks FDA to restructure them for generative systems: instead of prespecifying anticipated changes, PCCPs should prespecify invariants that must hold — a locked evaluation instrument, locked thresholds, and a locked verification protocol.",
+      "summary_cut": false,
+      "source_passage": "Reframe the PCCP for generative systems around invariants rather than change lists.  A PCCP that prespecifies  what  must  remain  true —  a  locked  evaluation  instrument,  locked  thresholds,  a  locked verification protocol — is workable where a PCCP that prespecifies what will change is not."
+    },
+    {
+      "segment_id": "seg-028",
+      "question_ids": [
+        "q12",
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Generative devices are non-deterministic at fixed input, so conventional performance estimation—which assumes a fixed input-output mapping and attributes all variance to case mix—can understate variability, including outputs that differ in clinical direction.",
+      "requested_fda_action": "Require reporting of repeated-sampling variance at fixed input (within-input separated from between-input) under the deployed sampling configuration, set acceptance criteria on a lower confidence bound rather than a point estimate, and treat sampling parameters (temperature, top-p) as specified device parameters under change control.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment notes that a device evaluated under one sampling configuration but deployed under another has effectively not been evaluated, linking premarket evidence validity to deployed runtime settings."
+      },
+      "public_summary": "Commenter says the paper omits the non-determinism of generative outputs at fixed input. Recommends CDRH require repeated-run variance reporting (within- vs. between-input), acceptance criteria based on a lower confidence bound rather than point estimates, and sampling settings such as temperature specified under change control.",
+      "summary_cut": false,
+      "source_passage": "There is a measurement problem here that classical device statistics do not address and that the paper does\nnot raise: generative devices are non-deterministic at fixed input . The same input can produce different\noutputs across runs, and in some cases outputs that differ in clinical direction. Conventional performance\nestimation assumes a fixed input-output mapping and therefore attributes all observed variance to case mix.\nI recommend CDRH require:\nRepeated-sampling variance reporting.  Performance must be characterized across repeated runs at\nfixed input under the deployed sampling configuration, with within-input variance reported separately\nfrom between-input variance.\nAcceptance  criteria  stated  on  a  lower  confidence  bound. For  a  non-deterministic  device,  a  point\nestimate meeting a threshold does not establish that the device meets the threshold. The bound, not the\nestimate, should be the criterion.\nSampling  configuration  treated  as  a  specified  device  parameter subject  to  change  control.\nTemperature, top-p, and equivalent settings materially change the performance distribution, and a device\nevaluated at one configuration and deployed at another has not been evaluated."
+    },
+    {
+      "segment_id": "seg-029",
+      "question_ids": [
+        "q12"
+      ],
+      "position": "oppose",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "Benchmarking and clinical confirmation draw on different sampling frames and support different inferences, so pooling them yields an estimate describing no actual population and lets large volumes of inexpensive benchmark data dominate and dilute the smaller body of real-world confirmation evidence.",
+      "requested_fda_action": "Do not permit combining benchmarking and clinical confirmation evidence into a single performance estimate; require the two to be reported separately, with the confirmation estimate governing the acceptance decision and the benchmarking estimate serving as supporting evidence and as a locked postmarket baseline.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter opposes combining benchmarking and clinical confirmation data into one performance estimate, arguing the differing sampling frames make pooled estimates meaningless and let abundant benchmark data dilute scarce real-world evidence. Recommends separate reporting, with confirmation governing acceptance and benchmarking as a locked postmarket baseline.",
+      "summary_cut": false,
+      "source_passage": "On combining benchmarking and confirmation evidence into a single estimate: I recommend against\npermitting  it. The  two  arise  from  different  sampling  frames  and  support  different  inferences  —\nbenchmarking  establishes  capability  under  constructed  conditions,  confirmation  establishes  performance\nunder real ones. Pooling them produces an estimate that describes no actual population, and it allows large\nvolumes  of  cheap  benchmark  data  to  dominate  small  volumes  of  expensive  confirmation  data,  diluting\nprecisely the evidence that matters most. They should be reported separately, with the confirmation estimate\ngoverning the acceptance decision and the benchmarking estimate serving as supporting evidence and as the\nlocked postmarket baseline."
+    },
+    {
+      "segment_id": "seg-030",
+      "question_ids": [
+        "q13"
+      ],
+      "position": "oppose",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter warns that synthetic data produced by a generator sharing training data, architecture, or lineage with the device under test will reproduce the device's own blind spots, so evaluations return clean results on a population that does not exist. This correlated failure is characterized as worse than having no synthetic data because it manufactures unwarranted confidence while the evidence appears complete.",
+      "requested_fda_action": "The passage argues against accepting synthetic evaluation data generated by models sharing lineage, architecture, or training data with the device under test; it implies FDA should require independence between the generator and the device rather than treating such synthetic data as valid supplementary evidence.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Argues that synthetic data from generators sharing training data, architecture, or lineage with the device under test produces correlated failures, hiding blind spots behind seemingly complete evidence. Contends such data is worse than none, implying independence of generators should be required.",
+      "summary_cut": false,
+      "source_passage": "The concern is not bias in the usual sense; it is correlated failure.  A generator sharing training data,\narchitecture, or lineage with the device under test shares its blind spots. Where the device misunderstands a\nrare  presentation,  a  same-family  generator  will  produce  synthetic  cases  embodying  the  same\nmisunderstanding. The evaluation then returns a clean result on a population that does not exist, and the\nfailure is invisible because the evidence looks complete. This is worse than having no synthetic data, because\nit manufactures unwarranted confidence."
+    },
+    {
+      "segment_id": "seg-031",
+      "question_ids": [
+        "q12",
+        "q13"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "Synthetic data cannot supply a valid denominator for performance rates because the generator's distribution is unvalidated—and unvalidatable—against the real deployment distribution, whereas for failure-finding the correlated blind-spot problem biases toward under-detection, a conservative direction.",
+      "requested_fda_action": "Replace a domain-based delineation of acceptable synthetic data use with a purpose-based bright line: permit synthetic data for stress testing, adversarial probing, and coverage of rare or dangerous scenarios, but not for establishing quantitative performance rates.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts synthetic data's role but urges FDA to draw the line by purpose rather than clinical domain: acceptable for stress testing, adversarial probing, and rare-scenario coverage, but not for establishing performance rates, which require a real-population denominator that generators cannot validate.",
+      "summary_cut": false,
+      "source_passage": "I recommend CDRH draw a bright line by purpose rather than by domain:\nSynthetic data is appropriate for finding failures.  Stress testing, adversarial probing, coverage of rare\nand dangerous scenarios that cannot be ethically or practically collected. Here a failure discovered is\ninformative regardless of whether the input was real, and the correlated-blind-spot problem biases toward\nunder-detection — a conservative direction.\nSynthetic data is not appropriate for establishing performance rates.  Any rate requires a denominator\nrepresenting a real population. Synthetic data cannot supply one, because the generator's distribution is\nunvalidated against the deployment distribution and unvalidatable except by reference to the real data one\nis trying to avoid collecting."
+    },
+    {
+      "segment_id": "seg-032",
+      "question_ids": [
+        "q13"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "Synthetic data generated by a model of the same family as the device can reproduce correlated blind spots, and underrepresented subgroups are underrepresented in the generator's training data for the same reasons they are underrepresented in the device's, so subgroup evaluations may produce false negatives with equity consequences.",
+      "requested_fda_action": "Prohibit use of same-family generated synthetic data specifically for subgroup performance claims, and where synthetic data is used at all, require disclosure of the generator's identity, provenance, and training lineage, including its explicit relationship to the device's underlying model.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment asks for disclosure of the synthetic-data generator's identity, provenance, and training lineage and its relationship to the device's underlying model, extending upstream model-artifact traceability beyond the question's framing of generic synthetic-data safeguards."
+      },
+      "public_summary": "Accepts limited use of synthetic data but urges FDA to bar synthetic data generated by models of the same family as the device when supporting subgroup performance claims, citing correlated blind spots, and to require disclosure of generator identity, provenance, and training lineage.",
+      "summary_cut": false,
+      "source_passage": "I  further  recommend  that  same-family  generation  be  prohibited  for  subgroup  performance  claims\nspecifically. Subgroup performance is where correlated blind spots do the most damage — underrepresented\nsubgroups  are  underrepresented  in  the  generator's  training  data  for  the  same  reasons  they  are\nunderrepresented in the device's — and it is where a false negative has the clearest equity consequence.\nWhere synthetic data is used at all, the generator's identity, provenance, and training lineage should be\ndisclosed, and its relationship to the device's underlying model stated explicitly."
+    },
+    {
+      "segment_id": "seg-033",
+      "question_ids": [
+        "q12",
+        "q13"
+      ],
+      "position": "oppose",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is unaware of any validated method for demonstrating that a synthetic clinical population is distributionally adequate to a real one for regulatory purposes, and is concerned that FDA might accept synthetic data on the assumption such a method will materialize.",
+      "requested_fda_action": "CDRH should proceed as if no validated method for establishing distributional adequacy of synthetic clinical populations exists, rather than adopting a permissive posture toward synthetic data; the commenter invites other commenters to identify any such validated method.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter is unaware of any validated method for showing a synthetic clinical population is distributionally adequate to a real one, and asks CDRH to assume none exists rather than adopt a permissive posture on synthetic data; invites others to identify such methods.",
+      "summary_cut": false,
+      "source_passage": "I am not aware of a validated method for establishing that a synthetic clinical population is distributionally\nadequate to a real one for regulatory purposes, and would be interested to see any that commenters can point\nto. I would rather CDRH proceed as though none exists than adopt a permissive posture on the assumption\nthat one will emerge."
+    },
+    {
+      "segment_id": "seg-034",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "oppose",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Median clinician performance is not reliably measured for most GenAI device tasks, would in practice be a convenience sample treated as a population parameter, shifts over time, and would itself be shifted by a widely adopted device. Anchoring acceptance to observed practice variation licenses poor device performance wherever median practice is poor, offering no protection to the individual patient.",
+      "requested_fda_action": "Do not adopt 'the median clinician in practice' as a primary performance standard for open-ended device outputs; anchor acceptance criteria to patient benefit rather than to observed practice variation.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Opposes using median clinician performance as the primary comparator for open-ended GenAI outputs, arguing it is unmeasured, shifts over time, is influenced by device adoption, and ties acceptance to practice variation rather than patient benefit, permitting poor performance where practice is poor.",
+      "summary_cut": false,
+      "source_passage": "I recommend against \"the median clinician in practice\" as a primary performance standard, for several\nreasons.\nIt is unmeasured — there is no reliable characterization of median clinician performance for most tasks a\nGenAI device would perform, so the comparator would in practice be a convenience sample presented as a\npopulation parameter. It is a moving target, and one that a widely adopted device would itself move. Most\nimportantly, it anchors the acceptable bar to observed practice variation rather than to patient benefit: where\nmedian practice is poor, the standard licenses a device that is also poor, and the patient in front of that device\nreceives no protection from the fact that the alternative was equally bad."
+    },
+    {
+      "segment_id": "seg-035",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that clinician panel performance would be treated as the acceptance bar itself, when the decisive judgment should be prespecified clinical acceptance criteria derived from the consequence of an incorrect output. They also warn that panels, as measurement instruments, may be unvalidated and inconsistently reported.",
+      "requested_fda_action": "FDA should require sponsors to prespecify and defend clinical acceptance criteria tied to the consequences of error, and treat clinician panels as adjudication instruments that must themselves be validated and reported with prespecified composition, qualifications, and size.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Agrees clinician panels are necessary for scoring open-ended outputs but argues they should serve as validated adjudication instruments, not as the acceptance threshold. Urges FDA to require prespecified, defensible clinical acceptance criteria derived from the consequences of an incorrect output.",
+      "summary_cut": false,
+      "source_passage": "Prespecified  clinical  acceptance  criteria  derived  from  the  consequence  of  the  decision. What\nperformance is required for this device, in this use, to be safe and effective, given what happens when it is\nwrong? This is a clinical and normative judgment, it should be made in advance and defended, and it is\nthe judgment the acceptance decision actually turns on.\nA clinician panel as an adjudication instrument, not as the bar.  Panels are essential for open-ended\noutputs, where automated scoring is inadequate. But a panel is a measurement instrument, and it should\nbe validated and reported as one: prespecified composition and qualifications, prespecified size with"
+    },
+    {
+      "segment_id": "seg-036",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Clinician panels used as performance comparators for open-ended GenAI outputs may function as uncharacterized measurement instruments if their reliability and adjudication procedures are not documented, weakening the evidentiary basis for marketing decisions.",
+      "requested_fda_action": "FDA should require that clinician-panel comparators include documented panel justification, a written adjudication protocol, blinding to output source where feasible, measured and reported inter-rater reliability, and a prespecified disagreement-resolution procedure, consistent with established reader-study practice.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts clinician panels as comparators for open-ended outputs but urges FDA to require reader-study rigor: documented panel justification, written adjudication protocol, blinding where feasible, reported inter-rater reliability, and prespecified disagreement resolution, arguing uncharacterized panels should not gate marketing decisions.",
+      "summary_cut": false,
+      "source_passage": "justification, a written adjudication protocol, blinding to output source where feasible, measured and\nreported inter-rater reliability, and a prespecified procedure for resolving disagreement. A panel with\nunreported  inter-rater  reliability  is  an  uncharacterized  instrument,  and  evidence  generated  by  an\nuncharacterized instrument should not gate a marketing decision. This is standard practice in reader\nstudies and should carry over without modification."
+    },
+    {
+      "segment_id": "seg-037",
+      "question_ids": [
+        "q14",
+        "q4"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "Benchmarking a device against clinicians who do not represent its actual users produces a measurement that does not reflect the device's real contribution, whether it overstates or understates performance. Labeled intended user alone may be insufficient because foreseeable use may extend beyond it.",
+      "requested_fda_action": "Require that the clinician comparator match the device's labeled intended user (generalist vs. specialist), while also accounting for foreseeable use beyond the labeled user as described in the commenter's response to Question 4.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The commenter conditions comparator selection on foreseeable use rather than the labeled intended user alone, implying that actual user populations may diverge from labeling."
+      },
+      "public_summary": "Commenter advises that the clinician comparator should match the device's labeled intended user, so a primary-care device should not be benchmarked against subspecialists, but adds that comparator choice must also account for foreseeable use beyond the labeled user.",
+      "summary_cut": false,
+      "source_passage": "On  generalist versus specialist : the comparator should match the labeled intended user, subject to my\ncomment under Question 4 regarding foreseeable use. A device labeled for primary care benchmarked against\nsubspecialists is being measured against a standard its users do not represent — which may overstate or\nunderstate the device's contribution depending on direction, and in either case measures the wrong thing."
+    },
+    {
+      "segment_id": "seg-038",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Where labeling requires human review, evaluating the device standalone measures a configuration that will never exist in practice, and team evaluations that omit confidently incorrect outputs will overstate the protective value of human-in-the-loop safeguards because of automation bias.",
+      "requested_fda_action": "Make human-AI team performance the primary basis of evaluation whenever labeling requires human review, treating standalone device performance as supporting evidence only, and require team evaluation designs that include cases where the device is confidently wrong so automation bias can be detected.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues the regulated unit of performance should be the clinician-device team, and that evaluations must be constructed to expose automation bias rather than assume human review is an effective safeguard."
+      },
+      "public_summary": "Supports human-AI team performance as the primary evaluation basis whenever labeling requires human review, with standalone performance only as supporting evidence. Asks FDA to further require team evaluations to include confidently incorrect outputs so automation bias and safeguard failure can be detected.",
+      "summary_cut": false,
+      "source_passage": "On human-AI team performance : where the labeling requires human review, team performance should be\nthe primary basis of evaluation, and standalone device performance should be supporting evidence only.\nEvaluating the device in isolation when it will never be used in isolation measures a configuration that does\nnot exist. I would add that team evaluation must be designed to detect automation bias — the tendency of\nreviewers to defer to a confident output — which is a principal mechanism by which human-in-the-loop\nsafeguards fail. A team evaluation that does not include cases where the device is confidently wrong will\nsystematically overstate the safeguard's value."
+    },
+    {
+      "segment_id": "seg-039",
+      "question_ids": [
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "Counterfactual comparators are clinically meaningful for access-expanding devices, but an assumed 'nothing would otherwise happen' baseline is an unverified evidentiary claim, and authorization against a low-resource counterfactual could be followed by use as a specialist substitute in resource-rich settings without evaluation.",
+      "requested_fda_action": "Permit counterfactual comparators but require the counterfactual to be empirically characterized for the specific deployment setting and require the comparator to be reflected in labeling/authorization terms that adopting institutions can act on, to prevent unevaluated scope creep.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The commenter warns that a device authorized against a no-intervention counterfactual may drift in practice into a specialist-substitute role that was never evaluated.",
+        "deployment_assurance_scalability": "The comment ties validity of the comparator to the specific deployment setting and asks that labeling carry that setting-specific limitation to adopting institutions."
+      },
+      "public_summary": "Supports allowing comparison to care that would occur without the device, but asks FDA to require that the counterfactual be empirically demonstrated for the specific deployment setting and that the comparator be carried into labeling, preventing unevaluated expansion into resource-rich, specialist-substitute use.",
+      "summary_cut": false,
+      "source_passage": "I support permitting comparison to the care that would occur absent the device, and I think the paper is right\nthat this is often the clinically meaningful question. For access-expanding devices, the true alternative is\nfrequently no assessment at all, delayed assessment, or assessment by a less qualified party, and holding such\na device to a specialist standard can foreclose a real benefit.\nTwo safeguards should accompany it. First, the counterfactual must be  empirically characterized  for the\nspecific  deployment  setting,  not  assumed  —  the  claim  that  \"nothing  would  otherwise  happen\"  is  an\nevidentiary  claim  about  a  care  pathway  and  should  be  supported.  Second,  and  more  importantly,  the\ncomparator must travel with the labeling. A device authorized against a no-intervention counterfactual in a\nresource-limited setting has not been shown safe and effective as a substitute for specialist review in a\nresource-rich one, and the authorization should say so in terms an adopting institution can act on. Without\nthis, counterfactual comparators become a low-bar entry route followed by scope creep that no one has\nevaluated."
+    },
+    {
+      "segment_id": "seg-040",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "support",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "Independence from the sponsor is the substantive value that third parties add, so their role should be concentrated in activities where sponsor self-interest could otherwise affect evaluation integrity.",
+      "requested_fda_action": "Direct independent third-party participation toward benchmark administration, escrow of held-out evaluation datasets, and clinical adjudication, rather than all aspects of the competency-based assessment.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports independent third-party participation in the competency-based approach, but scopes it to activities where independence from the sponsor is the substantive point: administering benchmarks, holding held-out evaluation sets in escrow, and clinical adjudication.",
+      "summary_cut": false,
+      "source_passage": "Third-party involvement is well suited to benchmark administration, escrow of held-out evaluation sets, and\nclinical adjudication — activities where independence from the sponsor is the substantive point."
+    },
+    {
+      "segment_id": "seg-041",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "Third-party assessment bodies could lack genuine independence if they also advise sponsors or derive most revenue from a few clients, and mandatory third-party review would create gatekeeping chokepoints that disproportionately burden smaller developers and reduce diversity of approaches.",
+      "requested_fda_action": "Publish non-discretionary recognition criteria for qualifying bodies, disqualify (not merely disclose) entities that advised a sponsor on the device, benchmark design, or submission strategy, require public disclosure of financial relationships including revenue concentration, and preserve a voluntary first-party pathway rather than making third-party assessment mandatory.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The commenter warns that mandatory third-party assessment would impose disproportionate cost on smaller developers and reduce the diversity of approaches in the market.",
+        "delegated_authority": "The comment addresses how recognized third-party bodies exercising assessment functions must be constrained by published criteria and independence rules so delegated review does not become a discretionary chokepoint."
+      },
+      "public_summary": "Accepts third-party involvement in competency-based assessment only as an optional pathway, not a mandatory gate. Requests published, non-discretionary recognition criteria, disqualification of bodies that advised the sponsor, and public disclosure of financial ties, citing competition harms to smaller developers.",
+      "summary_cut": false,
+      "source_passage": "The design risks are real and familiar from other accreditation regimes. I recommend:\nPublished recognition criteria  for qualifying bodies, so recognition is not discretionary and entry is\ncontestable.\n\nStrict  separation  of  advisory  and  assessment  roles. An  entity  that  advised  a  sponsor  on  device\ndevelopment, benchmark design, or submission strategy must not assess that device. This is elementary\nquality-system independence and should be stated as a disqualification, not a disclosure.\nPublic disclosure of financial relationships between assessing bodies and sponsors, including aggregate\nrevenue concentration — a body deriving most of its revenue from a small number of sponsors is not\nindependent in any meaningful sense regardless of per-engagement firewalls.\nA  preserved  first-party  pathway. Third-party  assessment  should  be  an  option  that  reduces  review\nfriction, never a mandatory gate. Making it mandatory converts recognized bodies into rent-collecting\nchokepoints and disproportionately burdens smaller developers, which is a competition harm and, over\ntime, a safety harm through reduced diversity of approaches."
+    },
+    {
+      "segment_id": "seg-042",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "unclear",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter states that third-party assessment capacity for generative AI medical devices does not currently exist at scale, and warns that a framework relying on institutions that do not yet exist would not be operable on the timeline at which the technology is advancing.",
+      "requested_fda_action": "If CDRH intends third parties to play a significant role in the competency-based approach, the paper should explicitly acknowledge the capacity-building timeline required for such third-party assessment infrastructure.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment focuses on whether assurance capacity—here, independent third-party assessment institutions—can exist at the scale and speed needed for the framework to function in practice."
+      },
+      "public_summary": "Commenter takes no clear stance on third-party involvement itself but notes that third-party assessment capacity for generative AI devices does not exist at scale. Urges FDA, if it relies on third parties, to acknowledge the capacity-building timeline needed for operability.",
+      "summary_cut": false,
+      "source_passage": "I would also flag that third-party assessment capacity for generative medical devices does not currently exist\nat scale in any form I am aware of. If CDRH intends third parties to play a significant role, the paper should\nacknowledge the capacity-building timeline, because a framework that depends on institutions that do not yet\nexist will not be operable on the timeline the technology is moving."
+    },
+    {
+      "segment_id": "seg-043",
+      "question_ids": [
+        "q10",
+        "q17"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "The commenter cautions that the competency-based approach works for language-centric devices because a language benchmark ecosystem exists, while benchmarking assets for multimodal vision-language and generative/predictive world models are substantially thinner; a uniform framework could imply a thin benchmarking record is as informative as a rich one, letting evidentiary flexibility be claimed where evidence is weakest.",
+      "requested_fda_action": "CDRH should explicitly state a scaling principle that where benchmarking assets are immature, clinical confirmation must carry proportionally more weight, rather than extending the framework to other model architectures by analogy.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts the competency-based approach but warns it should not be extended by analogy to multimodal vision-language or world models, where benchmarking assets are thinner. Asks CDRH to state explicitly that weaker benchmarking requires proportionally greater clinical confirmation.",
+      "summary_cut": false,
+      "source_passage": "I would encourage caution in extending the framework by analogy. The competency-based approach is\nworkable  for  language-centric  devices  in  part  because  a  meaningful,  if  flawed,  ecosystem  of  language\nbenchmarks exists. For multimodal vision-language models and generative or predictive world models, the\nbenchmarking assets are substantially thinner, and I do not have verified information on what is currently\navailable for clinical use cases in these modalities.\nThe structural implication is that where benchmarking assets are immature, clinical confirmation must\ncarry proportionally more weight . I recommend CDRH state this scaling principle explicitly rather than\nallowing a uniform framework to imply that a thin benchmarking record is as informative as a rich one.\nOtherwise  the  framework's  evidentiary  flexibility  will  be  claimed  most  aggressively  exactly  where  the\nunderlying evidence base is weakest."
+    },
+    {
+      "segment_id": "seg-044",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter observes that across regulated products postmarket obligations are generally fulfilled less reliably than premarket ones, with slower completion, resource-intensive enforcement, and passive surveillance dependent on uneven reporting. If postmarket commitments are not discharged, shifting evidence generation to the postmarket period transfers risk to patients.",
+      "requested_fda_action": "Publish CDRH's own data on postmarket study completion rates and software-related adverse event reporting rates before relying on postmarket monitoring as a substitute for premarket evidence, and let that evidence determine whether the approach is justified.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment questions whether FDA and manufacturers can reliably execute and enforce postmarket obligations at scale, given resource-intensive enforcement and uneven passive reporting, which is a precondition FDA's question does not address."
+      },
+      "public_summary": "Comment notes postmarket obligations are historically fulfilled less reliably than premarket ones, citing slow completion, resource-intensive enforcement, and uneven reporting, while stating it lacks verified figures. Urges CDRH to publish its own completion and reporting data before substituting postmarket monitoring for premarket evidence.",
+      "summary_cut": false,
+      "source_passage": "The general pattern across regulated products is that postmarket obligations are less reliably fulfilled than\npremarket ones — completion is slower, enforcement is resource-intensive, and passive surveillance systems\ndepend on reporting behavior that is uneven. I do not have current verified figures on postmarket study\ncompletion rates or software-related adverse event reporting rates, and I would encourage CDRH to publish\nits own data on this before relying on postmarket monitoring as a substitute for premarket evidence. If the\ndata show that postmarket obligations for software devices are reliably met, that materially strengthens the\ncase; if they do not, the paper's proposal transfers risk to patients in exchange for an obligation that may not\nbe discharged."
+    },
+    {
+      "segment_id": "seg-045",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that trading premarket evidence for postmarket monitoring becomes illusory when monitoring commitments are unenforceable, when no data pathway links device outputs to observable clinical consequences, when detection is slower than harm accumulation, or when harm is irreversible.",
+      "requested_fda_action": "Make monitoring programs enforceable conditions of authorization with prespecified triggers and automatic consequences including marketing suspension, add an explicit gating question requiring demonstrated technical capability to observe the endpoint, and disallow the premarket/postmarket trade where detection latency exceeds harm accumulation or harm is irreversible.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment stresses that many GenAI devices lack any observable data pathway from output to recorded clinical outcome, so postmarket assurance may be technically infeasible in real deployment settings.",
+        "delegated_authority": "It argues that relying on sponsor commitments and discretionary FDA enforcement is inadequate, and that consequences must attach automatically rather than being left to post hoc judgment."
+      },
+      "public_summary": "Accepts greater premarket uncertainty only under strict conditions: monitoring must be an enforceable authorization condition with prespecified triggers and automatic consequences; sponsors must show an observable output-to-outcome data pathway; and the trade must be barred where detection lags harm accumulation or harm is irreversible.",
+      "summary_cut": false,
+      "source_passage": "Conditions I would consider necessary:\nThe  monitoring  program  must  be  an  enforceable  condition  of  authorization,  with  prespecified\ntriggers and prespecified consequences — including suspension of marketing — that attach automatically\nrather than through a discretionary enforcement decision. A commitment is not a control.\nThe sponsor must demonstrate technical capability to observe the endpoint.  Many GenAI devices\nhave no linkage between an output and any recorded clinical outcome. Where the sponsor cannot show a\ndata pathway from output to observable consequence, the monitoring program is aspirational and cannot\njustify reduced premarket evidence. This should be an explicit gating question.\nDetection latency must be shorter than harm accumulation. Where a degradation would produce harm\nfaster than the monitoring cadence could detect it, the trade is unavailable regardless of program quality.\nIrreversibility  forecloses  the  trade. Where  the  harm  from  an  incorrect  output  cannot  be  undone,\npostmarket detection is not a mitigation — it is an audit of damage already done."
+    },
+    {
+      "segment_id": "seg-046",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter is concerned that flexibility to accept greater premarket uncertainty in exchange for postmarket monitoring could be applied to the highest-risk devices unless an explicit boundary is stated.",
+      "requested_fda_action": "State affirmatively that reduced premarket evidence is not available for devices falling in the high-consequence, high-activity region of the two-axis risk grid, so the flexibility is bounded on its face.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts the concept of trading premarket uncertainty for postmarket monitoring but asks FDA to state explicitly that this flexibility is unavailable for devices in the high-consequence, high-activity region of the risk grid, bounding the approach on its face.",
+      "summary_cut": false,
+      "source_passage": "I recommend CDRH state affirmatively that reduced premarket evidence is not available for devices in the\nhigh-consequence, high-activity region of the risk grid, so that the flexibility is bounded on its face."
+    },
+    {
+      "segment_id": "seg-047",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Calendar-based reassessment is mismatched to GenAI devices whose performance shifts discontinuously at the moment of a change rather than gradually over time, so fixed-interval review could miss safety-relevant degradation.",
+      "requested_fda_action": "Adopt an event-driven reassessment cadence with a calendar floor (annual, or more frequent for higher-risk devices), with triggers including model version/weight changes (manufacturer- or provider-initiated), prompt/instruction/output template changes, retrieval corpus changes, input-distribution shifts beyond prespecified bounds, sampling configuration changes, and complaint or adjudicated-error thresholds.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The commenter explicitly includes changes to the underlying model version or weights initiated by the model provider, not just the manufacturer, as a mandatory reassessment trigger."
+      },
+      "public_summary": "Finds FDA's three postmarket evaluation approaches sensible and complementary, but recommends replacing calendar-driven cadence with event-driven triggers plus a calendar floor. Proposed triggers include model version/weight changes by manufacturer or model provider, prompt, retrieval corpus, sampling, input-distribution, and complaint/error thresholds.",
+      "summary_cut": false,
+      "source_passage": "The three approaches described are sensible and complementary. My substantive recommendation concerns\ncadence: it should be event-driven with a calendar floor, not calendar-driven.\nCalendar-based reassessment is poorly matched to a technology whose performance changes discontinuously\nat the moment of a change rather than continuously with time. I recommend triggering events include, at\nminimum: any change to the underlying model version or weights, whether initiated by the manufacturer or\nthe model provider; any change to system prompts, instructions, or output templates; any change to a retrieval\ncorpus or knowledge source; any measured shift in the input distribution beyond prespecified bounds; any\nchange in the deployed sampling configuration; and any accumulation of complaints or adjudicated errors\nexceeding a prespecified threshold. A calendar floor — annual, or more frequent for higher-risk devices —\nshould catch slow drift that trips no discrete trigger."
+    },
+    {
+      "segment_id": "seg-048",
+      "question_ids": [
+        "q19",
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter is concerned that postmarket performance monitoring and reassessment triggers would be maintained as a process separate from existing design-change controls, and states that parallel processes diverge.",
+      "requested_fda_action": "Define postmarket monitoring triggers (e.g., reassessment/re-benchmarking events) as change-control triggers within the manufacturer's quality management system, so monitoring obligations are integrated with existing design-change procedures rather than run as a standalone process.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts postmarket reassessment triggers but asks FDA to define them as change-control triggers inside the manufacturer's quality management system, integrated with existing design-change procedures rather than maintained as a separate monitoring process, warning that parallel processes diverge.",
+      "summary_cut": false,
+      "source_passage": "From  a  quality-system  perspective  these  should  be  defined  as  change-control  triggers  within  the\nmanufacturer's QMS, so that the postmarket monitoring obligation is integrated with existing design-change\nprocedures rather than maintained as a separate process. Parallel processes diverge."
+    },
+    {
+      "segment_id": "seg-049",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "Human review of every output is not feasible for high-throughput GenAI devices, so machine-based supervisory agents are effectively unavoidable at scale; the central concern is their trustworthiness rather than whether they should be allowed.",
+      "requested_fda_action": "Accept automated supervision as a practical necessity and focus regulatory attention on how to make machine-based supervisory agents trustworthy, rather than on whether to permit their use.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment rests on the point that output volumes in high-throughput deployment make per-output human review infeasible, forcing reliance on automated assurance mechanisms.",
+        "delegated_authority": "It treats the delegation of oversight from humans to machine supervisory agents as effectively unavoidable, shifting the question to how such delegated supervision can be made trustworthy."
+      },
+      "public_summary": "Commenter accepts machine-based supervisory agents for postmarket monitoring, arguing per-output human review is infeasible at high throughput. Frames the regulatory question as how to make automated supervision trustworthy rather than whether to permit it, without specifying reliability criteria.",
+      "summary_cut": false,
+      "source_passage": "Automated supervision is probably unavoidable at the volumes involved — human review of every output is\nnot feasible for a high-throughput device — so the question is how to make it trustworthy rather than whether\nto permit it."
+    },
+    {
+      "segment_id": "seg-050",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "A machine supervisory agent built on the same foundation model as the device it monitors shares that model's blind spots, producing correlated failures where the supervisor approves erroneous outputs and its agreement is mistaken for independent confirmation.",
+      "requested_fda_action": "Condition evidentiary use of supervisory agents on architectural independence — a model of a different family and provider than the supervised device — and, where full independence is impractical, require sponsors to characterize and report supervisor-device failure-mode correlation on a held-out error set, scaling monitoring credit to demonstrated independence.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment concerns oversight duties delegated to an automated supervisory agent and the conditions under which that agent's judgments may count as credible monitoring evidence.",
+        "ai_supplier_quality": "It ties assurance to the provenance of the underlying model, requiring a different model family and provider to avoid shared, supplier-inherited blind spots."
+      },
+      "public_summary": "Accepts machine supervisory agents for postmarket monitoring but warns of correlated failure when supervisor and device share a foundation model. Asks FDA to require a different model family and provider, or reported failure-mode correlation on held-out errors, with monitoring credit scaled to demonstrated independence.",
+      "summary_cut": false,
+      "source_passage": "The dominant risk is correlated failure.  A supervisory agent built on the same foundation model as the\ndevice it monitors shares that model's blind spots. It will approve exactly the outputs that are wrong for\nreasons the model family does not represent, and its agreement will be misread as independent confirmation.\n\nArchitectural  independence  as  a  condition  of  evidentiary  use. A  supervisory  agent  offered  as\npostmarket evidence should be built on a model of a different family and provider than the supervised\ndevice. Where full independence is impractical, the sponsor should characterize and report the correlation\nin failure modes between supervisor and device on a held-out error set, and the monitoring program's\ncredit should scale with the demonstrated independence."
+    },
+    {
+      "segment_id": "seg-051",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "A machine-based supervisory agent functions as a measuring instrument whose own reliability is uncertain and can degrade; aggregate agreement statistics can look strong while sensitivity for detecting serious errors is near zero because most outputs are correct.",
+      "requested_fda_action": "Require that supervisory agents be validated like measuring instruments, reporting sensitivity for the specific harms of interest against sampled human adjudication rather than aggregate agreement, and re-measuring that sensitivity over time to account for supervisor drift.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses oversight responsibility being handed to an automated supervisory agent and insists that agent's own error-detection capability be independently demonstrated and periodically re-verified.",
+        "deployment_assurance_scalability": "It ties continued postmarket assurance to ongoing sampled human adjudication and repeated re-measurement, raising how monitoring reliability is sustained over time rather than established once."
+      },
+      "public_summary": "Accepts machine-based supervisory agents for postmarket monitoring only if the supervisor is validated as a measuring instrument: reporting sensitivity for specific harms against sampled human adjudication, not aggregate agreement, and re-measuring sensitivity over time as supervisor performance drifts.",
+      "summary_cut": false,
+      "source_passage": "The supervisor is itself a measuring instrument and must be validated as one.  Report its sensitivity\nfor  the  specific  harms  of  interest  against  human  adjudication  on  a  sampled  basis  —  not  aggregate\nagreement, which is dominated by the easy majority of correct outputs and can be high while sensitivity\nfor serious errors is near zero. Sensitivity must be re-measured over time, since the supervisor's own\nperformance drifts."
+    },
+    {
+      "segment_id": "seg-052",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "If a machine supervisory agent renders the final judgment in postmarket monitoring, there is no independent check remaining in the loop. The commenter sees value in machine-assisted triage but not in machine-made conclusions.",
+      "requested_fda_action": "Limit machine-based supervisory agents to prioritizing and sampling outputs for human review, and require that the adjudicated monitoring endpoint remain a human determination.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses how much oversight authority may be delegated to an automated supervisory agent, insisting terminal adjudication stay with humans to preserve an independent check."
+      },
+      "public_summary": "Accepts machine-based supervisory agents for postmarket monitoring only as triage tools that prioritize outputs and expand sampling for human review. Argues the final adjudicated judgment must remain human, since a monitoring program with a machine-made terminal decision lacks any independent check.",
+      "summary_cut": false,
+      "source_passage": "The supervisor triages; it does not conclude.  Its appropriate role is prioritizing outputs for human\nreview and enabling broader sampling than humans could achieve unaided. The adjudicated endpoint\nshould  remain  human.  A  monitoring  program  whose  terminal  judgment  is  machine-made  has  no\nindependent check anywhere in the loop."
+    },
+    {
+      "segment_id": "seg-053",
+      "question_ids": [
+        "q20",
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "If a machine-based supervisory agent is treated as outside the device, changes to it could silently alter the device's monitoring properties without any reassessment.",
+      "requested_fda_action": "Treat the supervisory agent as part of the device system for change-control purposes, so that modifications to the supervisor trigger reassessment on the same terms as modifications to the device itself.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses a machine agent to which oversight functions are delegated, arguing its own modifications must be governed because they change the assurance the monitoring provides."
+      },
+      "public_summary": "Commenter accepts use of machine-based supervisory agents but asks FDA to treat the supervisor as part of the device system for change control, so that changes to the supervisory agent trigger the same reassessment as changes to the device.",
+      "summary_cut": false,
+      "source_passage": "The supervisor is part of the device system  for change-control purposes. A change to the supervisory\nagent changes the device's monitoring properties and should trigger reassessment on the same terms as a\nchange to the device."
+    },
+    {
+      "segment_id": "seg-054",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter is concerned that framing postmarket monitoring as a shared ecosystem could be read as shared responsibility, diluting the manufacturer's complaint-handling, investigation, and reporting obligations even when signals originate from clinicians, institutions, or societies.",
+      "requested_fda_action": "State explicitly in the paper that information may come from any source but the duty to investigate and act remains solely with the manufacturer, and that arrangements to receive third-party signal do not delegate any complaint-handling, investigation, or reporting obligations.",
+      "confidence": "high",
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment directly addresses the risk that multi-actor postmarket signal collection blurs where regulatory duty sits, and asks FDA to fix accountability with the manufacturer."
+      },
+      "public_summary": "Accepts that clinicians, health systems, and societies can supply postmarket signals, including outcome data manufacturers lack, but asks CDRH to state explicitly that manufacturers retain all complaint-handling, investigation, and reporting duties, so shared-ecosystem language is not read as shared responsibility.",
+      "summary_cut": false,
+      "source_passage": "The accountability principle can be stated simply, and I recommend CDRH state it: information may come\nfrom anywhere; the duty to investigate and act remains with the manufacturer.  Clinicians, institutions,\nand societies can be valuable sources of signal, and health systems in particular hold the outcome data\nmanufacturers lack. But a manufacturer that has arranged to receive signal from third parties has not thereby\ndelegated any portion of its complaint-handling, investigation, or reporting obligations, and the paper should\nsay so directly to prevent the shared-ecosystem framing from being read as shared responsibility."
+    },
+    {
+      "segment_id": "seg-055",
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "regulatory_scope",
+      "stakeholder_concern": "The commenter argues postmarket monitoring for GenAI-enabled devices should build on existing complaint-handling and MDR structures, but warns that it is currently undefined what counts as a reportable event or malfunction for a generative output — for example, a clinically incorrect recommendation that the clinician recognizes and disregards, which under a conventional malfunction reading could make hallucinations reportable.",
+      "requested_fda_action": "Use the existing complaint-handling and MDR architecture rather than a parallel postmarket structure, and first clarify what constitutes a reportable event or device malfunction for generative outputs, including outputs caught and disregarded by a clinician.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter raises whether an incorrect generative output intercepted by a clinician constitutes a reportable malfunction, an issue about evaluating the device within the clinician-device system rather than the device alone."
+      },
+      "public_summary": "Supports using existing complaint-handling and MDR structures rather than a parallel postmarket system, but says FDA must first define what counts as a reportable event or malfunction for generative outputs — including incorrect recommendations a clinician recognizes and disregards.",
+      "summary_cut": false,
+      "source_passage": "I recommend building on the existing complaint-handling and MDR architecture rather than creating a\nparallel  structure.  That  said,  I  want  to  flag  a  gap  that  I  believe  requires  attention  before  postmarket\nmonitoring can function at all for these devices:\nIt is currently unclear what constitutes a reportable event for a generative output. If a device produces a\nclinically incorrect recommendation and the clinician recognizes and disregards it, has a device malfunction\noccurred? Under a conventional reading, the device did not perform as intended, and a malfunction that could\ncause or contribute to serious injury if it recurred is reportable — which would imply that hallucinations"
+    },
+    {
+      "segment_id": "seg-056",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter is concerned that postmarket monitoring roles for GenAI-enabled devices could be structured as a new, parallel reporting system separate from established device surveillance mechanisms.",
+      "requested_fda_action": "Build any postmarket monitoring roles and reporting expectations on the existing complaint-handling and medical device reporting (MDR) architecture rather than establishing a separate parallel structure.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter accepts postmarket monitoring for GenAI-enabled devices but recommends that FDA structure it within existing complaint-handling and MDR frameworks rather than creating a separate, parallel reporting system.",
+      "summary_cut": false,
+      "source_passage": "I recommend building on the existing complaint-handling and MDR architecture rather than creating a\nparallel  structure."
+    },
+    {
+      "segment_id": "seg-057",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter states it is unclear whether a clinically incorrect generative output that a clinician recognizes and disregards constitutes a reportable device malfunction, and argues this unresolved ambiguity underlies every element of the postmarket section.",
+      "requested_fda_action": "Asks CDRH to define directly what constitutes a reportable event for generative outputs, and suggests a distinct aggregate reporting channel in which caught errors are reported as rates rather than individual MDRs to preserve signal without unmanageable event volume.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment turns on whether an incorrect output intercepted by a clinician counts as a device malfunction, making reportability depend on the combined human-AI system rather than the model alone."
+      },
+      "public_summary": "Commenter says FDA has not defined what counts as a reportable event when a generative output is clinically incorrect but caught by a clinician, and asks CDRH to resolve this, suggesting caught errors be reported as aggregate rates rather than individual MDRs.",
+      "summary_cut": false,
+      "source_passage": "It is currently unclear what constitutes a reportable event for a generative output. If a device produces a\nclinically incorrect recommendation and the clinician recognizes and disregards it, has a device malfunction\noccurred? ... This ambiguity is consequential and unresolved, and every element of Section VI depends on how it is\nsettled. I recommend CDRH address it directly, and would suggest that the workable answer likely involves a\ndistinct, aggregate reporting channel for caught errors — reported as rates rather than as individual MDRs —\nso that the signal is preserved without generating unmanageable individual-event volume."
+    },
+    {
+      "segment_id": "seg-058",
+      "question_ids": [
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "Categorizing post-deployment modifications by the magnitude of the change may misallocate scrutiny; what matters is whether the locked premarket evaluation instrument (e.g., the benchmark suite) remains valid for the modified device.",
+      "requested_fda_action": "Retain the premarket competency assessment as a locked baseline, but scale re-benchmarking and evidence requirements according to whether a change invalidates the locked evaluation instrument rather than by the size of the change.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports using the premarket competency assessment as a locked baseline, but proposes that change categorization turn on whether the locked evaluation instrument remains valid for the modified device rather than on the magnitude of the change, since small changes may invalidate benchmarks.",
+      "summary_cut": false,
+      "source_passage": "I support using the premarket competency assessment as a locked baseline. The organizing principle I would\npropose for categorizing changes is this:  the question is not how large the change is, but whether the\nlocked evaluation instrument remains valid for the changed device.  A small change that invalidates the\nbenchmark suite requires more scrutiny than a large change that does not."
+    },
+    {
+      "segment_id": "seg-059",
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter is concerned that modification categories for GenAI devices need clear, prespecified boundaries tied to whether a change can affect outputs and whether the existing benchmark suite remains a valid instrument for evaluating the changed device.",
+      "requested_fda_action": "Adopt a three-tier change-control structure: Tier 1 (no re-benchmarking for changes with no path to output), Tier 2 (full re-benchmarking against a locked suite at a prespecified non-inferiority margin under the QMS, with failure escalating to Tier 3), and Tier 3 (premarket submission for foundation model family/provider changes, intended use or user expansion, new modalities, agentic tool access or action scope changes, and changes the locked suite cannot validly probe).",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The proposal makes premarket review turn on whether a change introduces capabilities outside what the locked benchmark suite probes, i.e., whether the device's behavioral envelope has expanded beyond the validated scope.",
+        "ai_supplier_quality": "The tiering distinguishes model version updates within the same foundation model family and provider (QMS-managed) from a change of foundation model family or provider (premarket submission), treating supplier identity as a determinant of evidence needs."
+      },
+      "public_summary": "Proposes a three-tier change-control structure for GenAI device modifications: no re-benchmarking where changes cannot affect outputs; QMS-managed full re-benchmarking against a locked suite at a prespecified non-inferiority margin; and premarket submission for model family/provider changes, scope or modality expansion, agentic action changes, or changes the",
+      "summary_cut": true,
+      "source_passage": "Applying that principle, a tiered structure might look like:\nTier 1 — no re-benchmarking.  Changes that cannot affect device outputs: user interface presentation,\nlogging, analytics instrumentation, infrastructure changes with no path to the output. Documented under\nnormal change control.\nTier 2 — full re-benchmarking against the locked suite, managed within the QMS, no premarket\nsubmission. Model version updates within the same family and provider; prompt or template modifications\nwithin  a  validated  structure;  retrieval  corpus  refreshes  drawing  on  a  validated  source  list;  sampling\nconfiguration changes within a validated range. The condition is that the device passes the complete locked\nbenchmark  suite  at  a  prespecified  non-inferiority  margin,  with  results  documented  and  available  on\ninspection. Failure at any element converts the change to Tier 3.\nTier 3 — premarket submission.  Change of foundation model family or provider; expansion of intended\nuse, intended user, or clinical scope; addition of a new input or output modality; any change to agentic tool\naccess or action scope; and any change for which the locked benchmark suite is no longer a valid instrument\n— for example, a change that introduces capabilities the suite does not probe."
+    },
+    {
+      "segment_id": "seg-060",
+      "question_ids": [
+        "q10",
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "If a sponsor can revise both the device and the benchmark suite under a lower-tier, self-managed change pathway, non-inferiority testing against the revised instrument loses evidentiary meaning.",
+      "requested_fda_action": "Require that the locked benchmark suite cannot be altered under the intermediate (Tier 2) change pathway, and treat any modification of the locked suite as a Tier 3 event subject to the highest level of review.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports a tiered change-control approach but asks FDA to require that the locked benchmark suite itself be unmodifiable under the intermediate tier, since a sponsor revising device and evaluation instrument together renders non-inferiority findings meaningless; suite changes should trigger the highest tier.",
+      "summary_cut": false,
+      "source_passage": "The essential safeguard is that the benchmark suite itself cannot be modified within Tier 2.  If the sponsor\ncan  revise  the  instrument  and  the  device  together,  non-inferiority  against  the  revised  instrument  is\nmeaningless. Modification of the locked suite should always be a Tier 3 event."
+    },
+    {
+      "segment_id": "seg-061",
+      "question_ids": [
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "pccp",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter argues the existing PCCP construct assumes modifications can be enumerated in advance, which fails for generative devices because the change space is genuinely open (e.g., unforeseeable third-party model versions or prompt refinements suggested by experience).",
+      "requested_fda_action": "Adopt an 'invariant-based' PCCP that prespecifies what must remain true after any change rather than the changes themselves: an escrowed, immutable benchmark suite; acceptance thresholds including subgroup thresholds and non-inferiority margin; an independent verification protocol executed before changes reach users; rollback criteria, maximum time-to-rollback and demonstrated rollback capability; change categories defined by a tier boundary rather than enumeration; and documentation and notification obligations per change.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The proposal shifts change control from enumerating modifications to locking a behavioral envelope—fixed benchmarks, thresholds, and rollback conditions that must hold after any change.",
+        "ai_supplier_quality": "It notes sponsors cannot enumerate model versions a third-party provider will release, implying invariants and verification must govern supplier-initiated changes."
+      },
+      "public_summary": "Accepts adapting PCCPs to generative devices but says prespecifying changes is unworkable given an open change space. Proposes an invariant-based PCCP locking escrowed benchmarks, subgroup acceptance thresholds, independent pre-release verification, demonstrated rollback with time limits, tier-defined change categories, and notification duties.",
+      "summary_cut": false,
+      "source_passage": "The current PCCP construct prespecifies what will change  — the modification, the methods to implement\nand validate it, the impact assessment. For generative devices this fails, not because sponsors are unwilling\nbut because the change space is genuinely open: a sponsor cannot enumerate in advance the model versions a\nprovider will release or the prompt refinements that experience will suggest.\nThe adaptation is to invert what is locked. An invariant-based PCCP prespecifies not the change but what\nmust remain true after any change:\nThe evaluation instrument — the complete benchmark suite, escrowed and immutable.\nThe acceptance thresholds, including subgroup-level thresholds and the non-inferiority margin.\nThe verification protocol — what is run, in what order, by whom, with what independence, before any\nchange reaches users.\nThe  rollback  criteria  and  mechanism,  including  maximum  time-to-rollback  and  the  technical\ndemonstration that rollback is achievable.\nThe  change categories in scope , defined by the Tier 2 boundary above rather than by enumeration of\nspecific changes.\nThe documentation and notification obligations attaching to each change."
+    },
+    {
+      "segment_id": "seg-062",
+      "question_ids": [
+        "q10",
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter argues that a benchmark-anchored change-control construct is circular and provides no assurance if a sponsor can alter the benchmark suite at the same time it modifies the device, because the measuring instrument would no longer be fixed.",
+      "requested_fda_action": "Require that the benchmark suite be escrowed (locked) and that any change to the benchmark suite itself be treated at the highest review tier (Tier 3), rather than being optional elements of the framework.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment warns that leaving sponsors free to revise the evaluation instrument alongside the device delegates control over the assurance baseline to the manufacturer, voiding its evidentiary value."
+      },
+      "public_summary": "Commenter accepts a benchmark-anchored change-control approach only if the benchmark suite is escrowed and locked, with any change to the suite subject to the highest (Tier 3) review. Otherwise, sponsors modifying benchmarks alongside devices would render the framework circular and non-assuring.",
+      "summary_cut": false,
+      "source_passage": "The construct depends entirely on the integrity of the locked instrument. If the sponsor can modify the\nbenchmark suite while modifying the device, the whole thing is circular and provides no assurance at all.\nEscrow of the suite, and Tier 3 treatment of any change to it, are not optional features of this proposal — they\nare the proposal."
+    },
+    {
+      "segment_id": "seg-063",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Devices built on third-party models may be exposed to provider-initiated changes if the underlying model endpoint is not version-pinned; the commenter treats the inability to pin a version, or use of a provider that lacks pinning and change notification, as a design deficiency rather than an acceptable residual risk.",
+      "requested_fda_action": "CDRH should explicitly state that GenAI-enabled devices relying on third-party models are expected to execute against a pinned, version-identified model endpoint as a design control expectation, and that lack of pinning or of provider change notice must be remediated.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment frames third-party model provider practices—offering version pinning and change notification—as a supplier qualification and design control matter rather than a manufacturer-only monitoring duty.",
+        "deployment_assurance_scalability": "It ties continued assurance of the deployed device to control over the specific model version actually executing in production, beyond premarket evaluation."
+      },
+      "public_summary": "Endorses FDA addressing third-party model changes but asks CDRH to go further: state as a design control expectation that devices execute against a pinned, version-identified model endpoint, treating inability to pin or absent provider change notice as a design deficiency.",
+      "summary_cut": false,
+      "source_passage": "Treat version pinning as a design control expectation.  CDRH should state that a GenAI-enabled device\nrelying on a third-party model is expected to execute against a pinned, version-identified model endpoint, and\nthat the inability to pin — or reliance on a provider that does not offer pinning with change notice — is a\ndesign deficiency to be addressed, not a residual risk to be accepted. This is the single highest-leverage\nstatement CDRH could make in this area, and it would immediately reshape provider offerings in the medical\ndevice segment."
+    },
+    {
+      "segment_id": "seg-064",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Device manufacturers may not have enough advance warning of third-party foundation model changes to complete re-evaluation before the change takes effect, and pinned model versions may be retired too quickly.",
+      "requested_fda_action": "Require contractual advance change-notice from foundation model developers with a defined minimum notice period sufficient to complete Tier 2 re-benchmarking before a change takes effect, plus a minimum deprecation window for pinned model versions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses upstream supplier obligations—advance change notice and version deprecation timelines—as a precondition for the device manufacturer's ability to maintain assurance."
+      },
+      "public_summary": "Supports contractual mechanisms for third-party model changes but asks FDA to require a defined minimum advance change-notice period, long enough to complete Tier 2 re-benchmarking before a change takes effect, and a minimum deprecation window for pinned model versions.",
+      "summary_cut": false,
+      "source_passage": "Require contractual change notice with a defined minimum period , sufficient to complete the Tier 2 re-\nbenchmarking described above before a change takes effect, together with a minimum deprecation window\nfor pinned versions."
+    },
+    {
+      "segment_id": "seg-065",
+      "question_ids": [
+        "q19",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "Contractual assurances from third-party model hosts cannot be verified in real time, so silent upstream changes to a hosted model could go undetected during deployment.",
+      "requested_fda_action": "CDRH should describe continuous 'canary' monitoring — a small fixed probe suite of inputs with known expected outputs run frequently against the live endpoint — as an expected element of postmarket monitoring for any device built on a third-party hosted model.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment argues that contractual or supplier-based assurances about a third-party hosted model cannot be verified in real time and must be replaced by direct technical verification of endpoint stability.",
+        "deployment_assurance_scalability": "It proposes an ongoing, high-frequency automated probe running against the live deployed endpoint as a low-cost mechanism for continuous assurance rather than point-in-time evaluation."
+      },
+      "public_summary": "Supports postmarket monitoring for devices using third-party hosted models, but asks FDA to go further: describe continuous \"canary\" probe testing — fixed inputs with known expected outputs run frequently against the live endpoint — as an expected element, since contracts cannot be verified in real",
+      "summary_cut": true,
+      "source_passage": "Require continuous canary monitoring, because contracts cannot be verified in real time.  A small, fixed\nprobe suite — a set of inputs with known expected outputs — executed against the live endpoint at high\nfrequency  provides  direct  detection  of  silent  upstream  change.  This  is  inexpensive,  technically\nstraightforward, and the only mechanism I am aware of that verifies rather than assumes endpoint stability. I\nrecommend CDRH describe it as an expected element of postmarket monitoring for any device on a third-\nparty hosted model."
+    },
+    {
+      "segment_id": "seg-066",
+      "question_ids": [
+        "q22",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "When a foundation model provider deprecates a pinned version, the manufacturer is compelled to migrate, and the device then runs on a materially different model regardless of whether the change was voluntary; treating such involuntary migrations as lower-risk changes would understate that reality.",
+      "requested_fda_action": "FDA should classify provider-forced model migrations in the highest change tier (Tier 3) and explicitly foreclose lighter treatment based on involuntariness, and expect manufacturers to address deprecation contingencies in design planning, including maintaining a validated fallback.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment centers on third-party model providers' version deprecation decisions forcing changes to the device, requiring manufacturers to manage supplier lifecycle risk in advance.",
+        "deployment_assurance_scalability": "It asks that continuity of validated device behavior be assured through pre-planned fallback versions rather than emergency response when an upstream model is withdrawn."
+      },
+      "public_summary": "Commenter agrees with tiered change control but urges FDA to treat provider-forced migration off a deprecated pinned model as a highest-tier change, rejecting lighter treatment because migration was involuntary, and to expect pre-planned contingencies including a validated fallback version.",
+      "summary_cut": false,
+      "source_passage": "Treat provider-forced migration as a Tier 3 change. When a provider deprecates a pinned version and the\nmanufacturer must migrate, the resulting device is running on a different model. That it was involuntary does\nnot change what it is, and the paper should foreclose the argument that forced migrations warrant lighter\ntreatment.  Manufacturers  should  be  expected  to  plan  for  this  contingency  —  including  maintaining  a\nvalidated fallback — as part of design planning rather than handling it as an emergency."
+    },
+    {
+      "segment_id": "seg-067",
+      "question_ids": [
+        "q24",
+        "q25"
+      ],
+      "position": "support",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Manufacturers and CDRH currently must infer dependency risk on third-party foundation models rather than assess it from documented facts about model versioning, deprecation, and change notification.",
+      "requested_fda_action": "Establish/maintain the Foundation Model Master File as a standing, current record that documents model versioning, deprecation timelines, and change-notification practices so dependency risk can be assessed directly during review.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment frames upstream model suppliers' versioning, deprecation, and change-notification practices as information that must be documented and assessable, treating supplier practices as a quality input to device assurance."
+      },
+      "public_summary": "Comment sees the greatest value of a Foundation Model Master File in providing a standing, current record of a model's versioning, deprecation, and change-notification practices, enabling CDRH and manufacturers to assess dependency risk directly rather than by inference.",
+      "summary_cut": false,
+      "source_passage": "I would also note that this is where a Foundation Model MAF (Question 25) would deliver the most value: a\nstanding, current record of a model's versioning, deprecation, and change-notification practices would let\nCDRH and manufacturers assess dependency risk directly rather than by inference."
+    },
+    {
+      "segment_id": "seg-068",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter agrees that foundation model developers have little intrinsic incentive to disclose safety-relevant limitations, since medical devices are a small share of their revenue and disclosure carries competitive and litigation exposure, so a purely voluntary MAF program is unlikely to attract broad participation.",
+      "requested_fda_action": "Establish the voluntary Foundation Model MAF program but pair it with a manufacturer-side default: absent an MAF, the device manufacturer must independently and at its own cost characterize the underlying model (training data provenance to the extent determinable, contamination assessment, known failure modes, version and deprecation practices, subgroup performance) or the submission is incomplete.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses how to obtain quality and safety information about upstream foundation model suppliers who are outside FDA's direct reach, proposing procurement pressure as the enforcement mechanism.",
+        "evidence_burden_commercial_viability": "It explicitly relies on the cost and technical infeasibility of independent model characterization to shift manufacturer procurement behavior, making evidence burden the operative lever."
+      },
+      "public_summary": "Agrees the voluntary MAF program faces a real incentive problem but recommends creating it anyway, paired with a default rule placing the full model-characterization burden (provenance, contamination, failure modes, versioning, subgroup performance) on manufacturers when no MAF exists, creating commercial pressure for developer participation.",
+      "summary_cut": false,
+      "source_passage": "The paper's candor about the incentive problem is warranted. Foundation model developers serve markets in\nwhich  medical  devices  are  a  small  fraction  of  revenue;  disclosure  of  safety-relevant  limitations  carries\ncompetitive and litigation exposure; and a voluntary program asking them to document weaknesses for a\nregulator overseeing someone else's product is unlikely to attract broad participation on its own merits.\nI nonetheless recommend CDRH create it, because the mechanism that makes it work is not the model\ndeveloper's incentive — it is the device manufacturer's.\nPair  the  voluntary  MAF  with  a  manufacturer-side  default:  where  an  MAF  is  absent,  the  device\nmanufacturer bears the full characterization burden for the underlying model. Training data provenance\nto  the  extent  determinable,  contamination  assessment,  known  failure  modes,  version  and  deprecation\npractices, subgroup performance characterization — all of it, generated independently at the manufacturer's\ncost, or the submission is incomplete.\nThat default creates a procurement preference. Device manufacturers will strongly prefer model providers\nthat maintain a current MAF, because the alternative is expensive and often technically impossible. Providers\nwill then face a commercial reason to participate that has nothing to do with regulatory goodwill."
+    },
+    {
+      "segment_id": "seg-069",
+      "question_ids": [
+        "q10",
+        "q24",
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "A Foundation Model MAF is only useful if it contains specific, safety-relevant items (version lineage, training data cutoff, change/deprecation policy, known failure modes, safety and refusal behavior, developer evaluations, medical fine-tuning) and is kept current; a static snapshot would not support contamination analysis or timely detection of third-party model changes.",
+      "requested_fda_action": "Specify a defined MAF content set covering model identity/version lineage, training data cutoff, versioning, change notification and deprecation policy, known limitations and failure modes, safety/refusal behavior, developer evaluation results, and medical-domain training. Impose a currency requirement obligating MAF updates within a defined period after any model change.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment defines the specific upstream disclosures (version lineage, data cutoff, failure modes, deprecation policy) a device manufacturer needs from a foundation model supplier to sustain assurance.",
+        "deployment_assurance_scalability": "The proposed currency requirement addresses maintaining valid safety information over time as upstream models change, rather than at a single premarket point."
+      },
+      "public_summary": "Endorses Foundation Model Master Files, but specifies required content: model identity and version lineage, training data cutoff, versioning/change-notification and deprecation policy, known failure modes, safety and refusal behavior, developer evaluations, and medical fine-tuning; urges requiring updates within a defined period after any model change.",
+      "summary_cut": false,
+      "source_passage": "Suggested MAF content: model identity and version lineage; training data cutoff date (essential for the\ncontamination analysis under Question 10); versioning, change notification, and deprecation policy (essential\nfor Question 24); known limitations and documented failure modes; safety training and refusal behavior;\nevaluation results the developer has generated; and any medical-domain-specific training or fine-tuning. A\ncurrency requirement — the MAF must be updated within a defined period of any model change — is what\nmakes it useful rather than a snapshot."
+    },
+    {
+      "segment_id": "seg-070",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that a Foundation Model Master File could be misread as evidence establishing the safety or effectiveness of devices built on that model, displacing evaluation of the device itself.",
+      "requested_fda_action": "FDA should explicitly frame the MAF as contextual information supporting, not substituting for, evaluation of the final user-facing device as configured for deployment, consistent with the paper's stated unit of evaluation.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses how information supplied by upstream foundation model developers should and should not be relied upon in assuring the downstream device."
+      },
+      "public_summary": "Endorses the paper's position that the final deployed device is the unit of evaluation, and cautions that a Foundation Model Master File should be framed only as context for device evaluation, never as evidence of a device's safety or effectiveness.",
+      "summary_cut": false,
+      "source_passage": "I would add one caution: an MAF should never be treated as establishing the safety or effectiveness of any\ndevice built on the model. The paper's statement that the unit of evaluation is the final user-facing device as\nconfigured for deployment is correct and important, and the MAF should be framed as context for that\nevaluation, not as a partial substitute for it."
+    },
+    {
+      "segment_id": "seg-071",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Per-step accuracy metrics overstate end-to-end reliability for multi-step agentic devices, since 95% per-step accuracy yields roughly 60% success across a ten-step task, and error compounding worsens as sequences lengthen.",
+      "requested_fda_action": "CDRH should explicitly state that acceptance criteria for agentic GenAI-enabled devices be set at the level of the completed task, with evaluation measuring task completion rather than step accuracy.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter endorses attention to agentic devices but urges FDA to state explicitly that acceptance criteria and evaluation address completed-task performance rather than per-step accuracy, citing compounding error across multi-step sequences and the ease of generating step-level metrics.",
+      "summary_cut": false,
+      "source_passage": "Trajectory-level  acceptance  criteria. Per-step  performance  is  a  misleading  summary  of  end-to-end\nreliability. A device that completes each step correctly 95% of the time completes a ten-step task correctly\nabout 60% of the time, and that arithmetic is unforgiving as sequences lengthen. Acceptance criteria must be\nstated at the level of the completed task, and evaluation must measure task completion rather than step\naccuracy. I recommend CDRH state this explicitly, because step-level metrics are far easier to generate and\nwill otherwise be offered."
+    },
+    {
+      "segment_id": "seg-072",
+      "question_ids": [
+        "q22",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter is concerned that an agentic device's scope of actions can expand incrementally—adding tools, write operations, or affected external systems—moving a deployment from low to high risk without any regulatory event marking the transition.",
+      "requested_fda_action": "Require sponsors to submit an enumerated inventory of every action the system can take, each classified by reversibility and consequence of erroneous execution; require explicit qualified-user confirmation for irreversible actions; and treat the inventory as a locked specification whose expansion constitutes a Tier 3 change under the Question 22 change framework.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment identifies uncontrolled expansion of an agent's action scope as a silent migration from low-risk to high-risk operation unaccompanied by any regulatory checkpoint.",
+        "delegated_authority": "It proposes bounding the authority delegated to the agent by enumerating permitted actions and requiring explicit qualified-user confirmation before irreversible ones."
+      },
+      "public_summary": "Supports the agentic and change-control framework but asks FDA to require an enumerated inventory of all system actions classified by reversibility and consequence of error, explicit qualified-user confirmation for irreversible actions, and treatment of scope expansion as a Tier 3 change.",
+      "summary_cut": false,
+      "source_passage": "Action inventory with irreversibility classification. I recommend sponsors submit an enumerated inventory\nof every action the system can take — every tool, every write operation, every external system it can affect\n— each classified by reversibility and by the consequence of erroneous execution. Irreversible actions should\nrequire explicit confirmation by a qualified user, and the inventory should be treated as a locked specification\nwhose expansion is a Tier 3 change under the framework in Question 22. Uncontrolled expansion of an\nagent's action scope is the most likely path from a low-risk deployment to a high-risk one without any\nregulatory event marking the transition."
+    },
+    {
+      "segment_id": "seg-073",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "cybersecurity",
+      "stakeholder_concern": "Agentic GenAI devices could hold broader tool permissions than their intended use requires; the commenter views least-privilege, per-deployment scoping as standard security practice already reflected in CDRH cybersecurity expectations.",
+      "requested_fda_action": "Expect agentic systems to hold the narrowest permissions sufficient for the intended use, scoped per deployment, and cross-reference CDRH's existing cybersecurity expectations rather than creating a parallel treatment in the paper.",
+      "confidence": "medium",
+      "gap_tags": [
+        "cybersecurity_as_safety",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "cybersecurity_as_safety": "The comment treats security permission controls as integral to safe agentic device operation and urges alignment with existing cybersecurity expectations rather than a separate framework.",
+        "delegated_authority": "It frames the core control as limiting the scope of tool access and permissions granted to an autonomous agent to the minimum needed for the intended use."
+      },
+      "public_summary": "Supports addressing agentic autonomy but asks FDA to specify least-privilege tool permissions scoped to each deployment and intended use, and to cross-reference CDRH's existing cybersecurity expectations instead of developing a separate, parallel treatment in the discussion paper.",
+      "summary_cut": false,
+      "source_passage": "Least-privilege  tool  access. Agentic  systems  should  hold  the  narrowest  permissions  sufficient  for  the\nintended use, scoped per deployment. This is standard security practice and maps directly onto CDRH's\nexisting cybersecurity expectations; I recommend the paper cross-reference them rather than developing a\nparallel treatment."
+    },
+    {
+      "segment_id": "seg-074",
+      "question_ids": [
+        "q21",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "Without audit logs capturing the full agentic trajectory — inputs, intermediate reasoning artifacts, tool calls, returned values, actions taken, and the model version and configuration in effect — root cause analysis of harmful outcomes is impossible and corrective action becomes guesswork. The commenter states this also prevents discharging the complaint-handling obligations discussed under Question 21.",
+      "requested_fda_action": "Make the adequacy of audit logging an explicit premarket review element for agentic GenAI-enabled devices, rather than treating it as an assumed postmarket capability.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment focuses on autonomous multi-step action and tool use, arguing that actions taken by the agent must be reconstructable after the fact for accountability and corrective action.",
+        "operational_harm": "The concern is the investigability of harmful outcomes arising from an agent's full execution trajectory, not just the correctness of a single output."
+      },
+      "public_summary": "Commenter accepts the framework's attention to agentic oversight but asks FDA to require audit logging that reconstructs full agentic trajectories — inputs, tool calls, actions, model version and configuration — as an explicit premarket review element, arguing root cause analysis and complaint handling otherwise fail.",
+      "summary_cut": false,
+      "source_passage": "Audit logging sufficient for post-hoc reconstruction. When an agentic system produces a harmful outcome,\nthe investigation must be able to reconstruct the full trajectory — inputs, intermediate reasoning artifacts\nwhere available, tool calls, returned values, actions taken, and the model version and configuration in effect.\nWithout this, root cause analysis is not possible, corrective action is guesswork, and the complaint-handling\nobligations under Question 21 cannot be discharged. I recommend audit logging adequacy be an explicit\npremarket review element for agentic devices rather than a postmarket assumption."
+    },
+    {
+      "segment_id": "seg-075",
+      "question_ids": [
+        "q18",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter argues that compounding errors in agentic devices make end-to-end performance hardest to establish premarket while errors propagate fastest and are least reversible after deployment, so accepting greater premarket uncertainty is particularly ill-suited to this device category.",
+      "requested_fda_action": "CDRH should treat agentic GenAI-enabled devices as presumptively ineligible for the reduced-premarket-evidence pathway that relies on greater postmarket monitoring.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment emphasizes that agentic errors propagate rapidly and are least reversible once deployed, a harm dynamic not captured by the premarket-uncertainty trade as framed.",
+        "delegated_authority": "The concern arises from autonomous multi-step action chains where compounding errors occur without intervening human review."
+      },
+      "public_summary": "Commenter accepts the postmarket-reliance concept generally but argues it fits agentic devices poorly, since their end-to-end performance is hardest to establish premarket and errors compound fastest and are least reversible. Recommends CDRH presumptively exclude agentic devices from any reduced-premarket-evidence pathway.",
+      "summary_cut": false,
+      "source_passage": "I would also note that the compounding-error arithmetic above interacts badly with the premarket-uncertainty\ntrade proposed in Question 18. Agentic devices are where end-to-end performance is hardest to establish\npremarket,  and  simultaneously  where  errors  propagate  fastest  and  are  least  reversible  postmarket.  I\nrecommend CDRH treat agentic devices as presumptively outside the reduced-premarket-evidence pathway."
+    },
+    {
+      "segment_id": "seg-076",
+      "question_ids": [
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter is concerned that without an explicit, published mapping from risk tier to required evidence, the competency-based framework will lack predictability and will not in practice be least burdensome.",
+      "requested_fda_action": "Publish the mapping between risk tiers and the corresponding level of premarket evidence expected, so sponsors can anticipate evidence requirements.",
+      "confidence": "medium",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment ties predictability of the risk-to-evidence mapping directly to whether the framework actually reduces evidentiary burden on sponsors."
+      },
+      "public_summary": "Commenter accepts a risk-based, competency-based evidence framework but asks FDA to publish an explicit risk-tier-to-evidence mapping, arguing that without such predictability the approach will not in practice be least burdensome.",
+      "summary_cut": false,
+      "source_passage": "Publish  the  risk-tier-to-evidence  mapping. Predictability  is  the  mechanism  by  which  risk-based\nframeworks reduce burden. Without it, \"competency-based\" and \"least burdensome\" will not describe the\nsame thing."
+    },
+    {
+      "segment_id": "seg-077",
+      "question_ids": [
+        "q22",
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that the proposed competency-based framework could create artifacts parallel to the risk management, design control, and change control documentation manufacturers already maintain under ISO 14971 and the QMSR.",
+      "requested_fda_action": "Build the framework on existing quality system and risk management infrastructure rather than requiring separate parallel artifacts, and explain in the paper how the new elements relate to established QMSR and ISO 14971 processes.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts the framework's direction but asks FDA to ground it in existing ISO 14971 risk files, design controls, and QMSR change control procedures instead of creating parallel artifacts, and to clarify in the paper how these elements relate.",
+      "summary_cut": false,
+      "source_passage": "Integrate with existing quality system and risk management infrastructure.  Manufacturers maintain\nISO 14971 risk files, design controls, and change control procedures under the QMSR. The framework\nshould draw on these rather than establishing parallel artifacts, and the paper should state how the pieces\nrelate."
+    },
+    {
+      "segment_id": "seg-078",
+      "question_ids": [
+        "q16",
+        "q21",
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "regulatory_scope",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter notes that the paper defers the question of statutory authority, yet several proposals — enforceable postmarket conditions with automatic consequences, third-party recognition regimes, and obligations reaching foundation model developers who are not device manufacturers — may sit at or beyond the limits of CDRH's existing authorities.",
+      "requested_fda_action": "CDRH should return to and identify explicitly which elements of the framework it can implement under current authority and which would require new legislation from Congress, so stakeholders know which parts to build toward.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment questions the legal basis for third-party recognition regimes and postmarket conditions carrying automatic consequences.",
+        "distributed_accountability": "It flags that obligations extending to foundation model developers who are not device manufacturers may exceed existing authorities."
+      },
+      "public_summary": "Commenter accepts the framework's direction but urges CDRH to stop deferring the legal-authority question, arguing that enforceable postmarket conditions with automatic consequences, third-party recognition regimes, and obligations on non-manufacturer foundation model developers may require congressional action; stakeholders need that clarity.",
+      "summary_cut": false,
+      "source_passage": "Identify  which  elements  require  new  legal  authority. The  paper  expressly  defers  this  question.  I\nunderstand why, but I would encourage CDRH to return to it, because several proposals — enforceable\npostmarket conditions with automatic consequences, third-party recognition regimes, obligations touching\nfoundation model developers who are not device manufacturers — appear to sit at or beyond the edge of\nexisting authorities. Stakeholders assessing which parts of this framework to build toward would benefit\nfrom knowing which parts CDRH can implement and which would require Congress."
+    },
+    {
+      "segment_id": "seg-079",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "regulatory_scope",
+      "stakeholder_concern": "The commenter observes that the discussion paper's competency-based framing is oriented toward enabling market entry and worries it may be read as an authorization pathway rather than a genuine evaluation framework capable of a negative conclusion.",
+      "requested_fda_action": "CDRH should explicitly state that the competency-based framework contemplates the outcome that a given intended use is not currently supportable by available evidence.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts the competency-based framework in principle but asks CDRH to state explicitly that it can conclude an intended use is not currently supportable by available evidence, so it is understood as an evaluation framework rather than an authorization pathway.",
+      "summary_cut": false,
+      "source_passage": "Preserve  the  option  to  say  no. The  paper's  framing  is  oriented  toward  enabling  market  entry,\nappropriately  so  given  its  purpose.  But  a  competency-based  framework  should  also  be  capable  of\nconcluding  that  a  given  intended  use  is  not  currently  supportable  by  available  evidence.  I  would\nencourage CDRH to state that the framework contemplates that outcome, so that it is understood as an\nevaluation framework rather than an authorization pathway."
+    },
+    {
+      "segment_id": "seg-080",
+      "question_ids": [
+        "q16",
+        "q18",
+        "q24",
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter's central concern is that the framework's regulatory flexibility outpaces the supporting infrastructure: benchmarks that cannot yet be trusted, unsettled postmarket reportability rules, third-party foundation model dependencies manufacturers cannot currently control, and non-existent third-party assessment capacity.",
+      "requested_fda_action": "Sequence the approach so that the enabling infrastructure — trustworthy benchmarks, clear postmarket reportability rules, mechanisms for third-party model dependency control, and qualified third-party assessment capacity — is established before the flexible evidentiary pathways are relied upon.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The commenter states that qualified third-party assessment capacity to support the framework does not yet exist, limiting whether the approach can be executed at scale.",
+        "ai_supplier_quality": "The comment identifies third-party foundation model dependencies that manufacturers cannot presently control as a structural precondition the framework assumes but does not supply."
+      },
+      "public_summary": "The commenter accepts the framework's direction but argues its flexibility currently outruns necessary infrastructure — untrustworthy benchmarks, unsettled postmarket reportability rules, uncontrollable third-party model dependencies, and absent third-party assessment capacity — and asks FDA to build that infrastructure before relying on flexible pathways.",
+      "summary_cut": false,
+      "source_passage": "My central concern is that the framework's flexibility currently outruns the infrastructure needed to make\nflexibility safe: benchmarks that cannot yet be trusted, postmarket monitoring whose reportability rules are\nunsettled,  third-party  model  dependencies  that  manufacturers  cannot  presently  control,  and  third-party\nassessment capacity that does not yet exist. Each of these is addressable, and several are addressable now. But\nthe flexibility and the infrastructure should arrive in that order — infrastructure first — rather than the\nreverse."
+    }
+  ]
+}

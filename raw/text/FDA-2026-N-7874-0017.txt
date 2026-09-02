@@ -1,0 +1,275 @@
+I am a practicing surgeon and health-system surgical executive submitting these comments in my personal capacity. My attached comment addresses high-consequence procedural and surgical applications of generative artificial intelligence.<br/><br/>GenAI could improve surgical safety, accelerate learning, reduce unwanted variation, and extend expert support to patients who cannot reach major centers. In an operating room, however, an AI output may influence an immediate, invasive, and irreversible act while the patient is anesthetized, and the clinical team may have only seconds to identify and correct an error.<br/><br/>I support CDRH&rsquo;s proposed competency-based approach, with five principal recommendations:<br/><br/>1. Risk assessment should explicitly account for system authority, action irreversibility, time to harm, realistic opportunities for error detection, and the local capacity to rescue the patient. A clinician who is nominally &ldquo;in the loop&rdquo; is not an effective safeguard if workload, speed, or interface design prevents meaningful review.<br/><br/>2. Premarket evaluation should examine the complete human-AI team operating within realistic clinical workflows&mdash;not only the model in isolation. Testing should address uncommon events, degraded or missing inputs, workflow interruptions, latency, equipment or network failures, automation bias, abstention, failed handoffs, and takeover.<br/><br/>3. FDA should not accept reduced premarket evidence in exchange for postmarket monitoring when a function can materially influence or execute an invasive action with immediate or irreversible consequences.<br/><br/>4. Postmarket surveillance should be specific to the device and model version, clinical setting, and relevant patient and clinician subgroups. It should capture near misses, overrides, disagreements, abstentions, failed takeovers, delayed error recognition, rescue events, connectivity and interface failures, and performance drift.<br/><br/>5. Transparency and accountability should follow control. Manufacturers, foundation-model providers, deploying institutions, and clinicians should each retain responsibilities proportionate to what they know, control, can prevent, and economically benefit from. Required transparency should address data capture and secondary use, training and validation data provenance, subgroup performance, known limitations, model changes, and third-party dependencies.<br/><br/>Foundation-model changes should be treated as safety-relevant supply-chain events. Agentic systems also require explicit action and tool boundaries, confirmation requirements, stop conditions, immutable audit logs, safe failure modes, and realistic takeover testing.<br/><br/>Systems intended to expand access should be evaluated beyond wealthy academic centers. FDA should expect evidence across relevant patient populations, anatomy and disease severity, rural and community settings, resource levels, workflows, and user experience, with meaningful participation by patients, clinicians, operating-room teams, and underrepresented communities.<br/><br/>GenAI-enabled medical devices could make surgery safer, more consistent, and more accessible. A framework that evaluates the deployed human-AI system and preserves responsibility at every point of control can protect that opportunity while allowing innovation to proceed.<br/><br/>Please see the attached comment for detailed recommendations and supporting references.
+
+[Attachment: Comment from Douglas Stoddard]
+FDA-2026-N-7874  |  Public Comment
+Page 1
+Public Comment on FDA-2026-N-7874
+Considerations for the Regulation of Generative AI-Enabled Medical
+Devices: High-Consequence Procedural and Surgical Applications
+Submitted by: Douglas Stoddard, MD, MBA, FACS
+Capacity: Practicing surgeon and health-system surgical executive, submitting in his personal capacity
+Date: August 2026
+Executive Summary
+Generative artificial intelligence could improve surgical safety, accelerate learning, reduce unwanted
+variation, and extend expert support to patients and clinicians who cannot travel to major academic
+centers. Its greatest benefit exists when AI is integrated with operative video, robotic platforms, digital
+operating rooms, telecollaboration, and eventually surgical robotic systems capable of taking or directing
+physical action through generative AI.
+Those same settings reveal limitations in a regulatory model designed primarily around informational
+outputs rather than physical outputs in an operative procedure. In an operating room, an output may
+influence an immediate, invasive, and irreversible act while the patient is anesthetized and unable to
+protect their own interests. The relevant unit of evaluation is therefore not only the model or device in
+isolation, but the human-AI team operating in a specific clinical workflow, with a defined opportunity to
+detect error, abstain from or cease AI use, recover, and rescue the patient.
+I support CDRH's proposed competency-based approach, with five refinements:
+1. Add action irreversibility, time to harm, rescue opportunity, and system authority explicitly to risk
+assessment.
+2. Require human-AI team evaluation in realistic workflows, including rare events, interruptions,
+degraded inputs, latency, automation bias, and failed handoffs.
+3. Do not trade reduced premarket evidence for postmarket monitoring when a system can materially
+influence or execute an invasive action with immediate or irreversible consequences.
+4. Require version-specific, subgroup-specific, and setting-specific postmarket surveillance,
+including near misses, overrides, failed takeovers, and performance drift.
+5. Make accountability and transparency track control: manufacturers, foundation-model providers,
+deploying institutions, and clinicians should each retain duties proportionate to what they know,
+control, can prevent, and economically benefit from.
+Background and Scope
+My comments focus on GenAI-enabled functions used in or around operative care: systems that interpret
+surgical images or video; provide intraoperative guidance; evaluate technical performance; support
+training or remote consultation; coordinate instruments or other devices; or perform, direct, or sequence
+part of an operation. These functions may be embedded in robotic platforms, digital operating rooms,
+navigation systems, or multimodal foundation models.
+Surgery is not ethically separate from the rest of medicine, but it combines several risks in a distinctive
+way. A GenAI output may produce an immediate physical consequence; the action may be difficult or
+impossible to reverse; the time available to recognize an error may be seconds; responsibility is distributed
+across a team; and the same system may simultaneously record the procedure, evaluate the surgeon, train
+
+FDA-2026-N-7874  |  Public Comment
+Page 2
+future models, and alter how future surgeons acquire skill. These features justify explicit attention within a
+general GenAI device framework.
+I. Risk Assessment (Questions 1, 2, 5, and 6)
+1. Expand the two-axis framework for high-consequence procedural use
+Device activity and the consequence of relying on an incorrect output are necessary but insufficient. CDRH
+should also account explicitly for:
+• Irreversibility: Can the clinical act be stopped or undone without added harm?
+• Time to harm: How quickly can an incorrect output cause injury?
+• Opportunity for detection and rescue: Is there a realistic, validated safeguard before harm occurs,
+and can the local team rescue the patient?
+• System authority: Does the function observe, recommend, direct, coordinate, or execute an action?
+• Human review quality: Is review contemporaneous and meaningful, or merely nominal because of
+workload, speed, interface design, or automation bias?
+• Environmental dependence: Does performance depend on image quality, connectivity, latency,
+instruments, local workflow, staffing, or patient anatomy?
+A useful procedural continuum is: (1) observe or summarize; (2) recommend; (3) direct an action; (4)
+conditionally execute a bounded task; and (5) autonomously sequence or perform actions. Evidence and
+safeguards should escalate with both authority and consequence. A system should not be classified as low
+risk merely because a clinician is nominally "in the loop" when the design leaves that clinician little time or
+information to detect and correct an error.
+2. Assess realistic trajectories, not isolated outputs
+For multi-turn or agentic systems, risk can emerge across a sequence even when no single output appears
+dangerous. Evaluation should include realistic conversational and action trajectories, cumulative
+anchoring, repeated overconfidence, premature closure, tool selection, and migration beyond the
+intended use. Under- and over-escalation should be evaluated separately because their harms are not
+interchangeable.
+II. Competency-Based Premarket Evaluation (Questions 7-17)
+1. Use benchmarking plus clinical confirmation, but evaluate the deployed system
+The proposed competency-based model is useful if "competency" refers to the complete device in its
+intended environment, not a foundation model standing alone. Device benchmarking should evaluate at
+least:
+• clinical and procedural knowledge;
+• perception and spatial or temporal reasoning;
+• uncertainty calibration, abstention, and escalation;
+• robustness to incomplete, corrupted, unfamiliar, or adversarial inputs;
+• rare but foreseeable anatomy, complications, equipment faults, and workflow interruptions;
+• subgroup and site generalizability;
+• communication with the surgeon and operating-room team;
+• recovery from error and safe degradation when a component or network fails; and
+• for agentic systems, adherence to explicit authority, tool, and stop boundaries.
+Public benchmarks alone are inadequate where training-data contamination, saturation, or weak construct
+validity is plausible. Sponsors should demonstrate that benchmarks measure the competencies required
+
+FDA-2026-N-7874  |  Public Comment
+Page 3
+by the intended use and predict performance in representative workflows. Protected test sets and
+independent assessment can reduce optimization to the test.
+2. Clinical confirmation should match procedural consequence
+Retrospective evaluation or silent deployment may be appropriate for bounded observational functions.
+Systems that direct or execute invasive actions should require prospective evaluation under clinically
+realistic conditions before routine use. Testing should include both ordinary cases and deliberately
+constructed stress conditions: degraded visualization, blood or smoke in the field, uncommon anatomy,
+unexpected motion, device conflict, missing data, delayed communication, and urgent conversion or
+bailout.
+High-risk surgical confirmation should include simulation and cadaveric or preclinical evaluation where
+appropriate, followed by staged clinical introduction and prospective study. The IDEAL framework for
+surgical innovation and the IDEAL Robotics recommendations provide useful models for progressive
+evaluation, human factors, learning curves, and long-term monitoring.
+3. Measure the human-AI team when that is the intended use
+If the product is intended to support a clinician, safety and effectiveness should be evaluated for the
+human-AI team as well as for the device alone. Team evaluation should measure:
+• whether users recognize erroneous, uncertain, or out-of-scope outputs;
+• automation bias, complacency, and overreliance;
+• cognitive workload and distraction;
+• time and information available for takeover;
+• skill retention during prolonged use;
+• communication and task allocation across the operating-room team; and
+• outcomes when users have different experience levels.
+The comparator should reflect the care likely without the device, but a device should not be permitted to
+institutionalize substandard care merely because the local baseline is poor. For high-risk functions, the
+evidentiary question should include both comparative benefit and an absolute safety floor.
+4. Real patient data remain essential
+Synthetic data can supplement testing for rare events and controlled perturbations, but they should not
+substitute for representative clinical data in high-consequence procedural applications. A generator
+trained on similar data may reproduce the same omissions and biases that an evaluation is intended to
+detect. Sponsors should separately report performance on real and synthetic datasets, describe how each
+was generated or selected, and demonstrate representativeness across relevant patient, clinician,
+institution, equipment, and resource settings.
+Independent third parties should have a role in high-risk benchmarking, clinical confirmation,
+cybersecurity review, and postmarket audit. Independence criteria should address financial relationships,
+access to necessary technical information, conflicts of interest, and freedom to publish or report safety
+findings.
+III. Postmarket Monitoring and Change Control (Questions 18-24)
+1. Do not substitute surveillance for adequate premarket evidence where harm is immediate
+Greater reliance on postmarket monitoring may be reasonable for low-consequence functions when
+outputs are readily reviewable, errors are reversible, and robust detection and correction mechanisms
+exist. It is not an adequate substitute for premarket evidence when a function can direct or execute an
+invasive action, when harm can occur before meaningful review, or when rescue is uncertain.
+
+FDA-2026-N-7874  |  Public Comment
+Page 4
+2. Require version-specific and setting-specific surveillance
+Postmarket monitoring should capture more than adverse outcomes. It should include:
+• model and device version, configuration, and update history;
+• intended-use and out-of-scope use;
+• subgroup and site-level performance;
+• overrides, ignored recommendations, abstentions, and disagreements;
+• near misses, failed takeovers, delayed recognition, and rescue events;
+• data-quality, instrument, connectivity, latency, and interface failures;
+• evidence of automation bias, workflow disruption, or skill degradation; and
+• shifts in case mix, inputs, and clinical practice that may affect performance.
+Cadence should be tied to risk and triggered by meaningful model, workflow, hardware, dataset, or
+foundation-model changes; new clinical settings or populations; unexpected performance signals; and
+changes in intended user or level of autonomy. Clinicians, institutions, registries, and professional
+societies can contribute data and domain expertise, but participation must not diffuse manufacturer
+accountability.
+Machine-based supervisory agents may assist monitoring, but should not become an unvalidated AI
+system policing another AI system. Their sensitivity, specificity, independence, failure modes, and
+susceptibility to correlated error should be evaluated.
+3. Treat foundation-model changes as safety-relevant supply-chain events
+A manufacturer must remain responsible for detecting and managing changes in any third-party foundation
+model on which its device depends. Contracts should require advance notice, version access, change
+documentation, safety-relevant incident sharing, and the ability to suspend an update. Technical controls
+should prevent unreviewed model substitution. Predetermined change control plans should define
+bounded change categories, validation methods, acceptance criteria, rollback procedures, and user
+notification. Changes that alter authority, clinical scope, refusal behavior, tool use, or performance in
+vulnerable subgroups should presumptively require FDA review.
+IV. Foundation Models, Agentic Systems, Transparency, and Accountability
+(Questions 25-26)
+1. Foundation Model Master Files would help, but voluntary participation may be insufficient
+A Foundation Model Master File could improve review efficiency if it is current, technically meaningful, and
+available for regulatory reliance. Relevant content includes version history, training and evaluation data
+provenance, known limitations, cybersecurity, update practices, refusal and content-control behavior,
+tool-use architecture, subgroup performance, incident reporting, and the contractual allocation of change-
+management duties. Because developers may have weak incentives to disclose safety-relevant
+information voluntarily, CDRH should consider whether access to an adequate Master File or equivalent
+documentation should be expected when a sponsor relies materially on a third-party model.
+2. Agentic systems require explicit authority boundaries
+For agentic devices, CDRH should require:
+• a machine-readable and human-understandable definition of permitted actions and tools;
+• confirmation requirements for consequential actions;
+• validated stop conditions, abstention, and fail-safe states;
+• immutable, time-synchronized audit logs of inputs, outputs, tool calls, actions, and overrides;
+• detection of unauthorized delegation or emergent sub-agents;
+
+FDA-2026-N-7874  |  Public Comment
+Page 5
+• safe behavior during loss of data, instruments, power, or connectivity;
+• realistic takeover testing, including the time and information needed for recovery; and
+• clear labeling of what the system can do, may do, and is prohibited from doing.
+The presence of a human supervisor should reduce risk only when the supervisor has the training,
+attention, authority, information, and time required to intervene effectively.
+3. Require verifiable transparency without requiring public release of identifiable operative data
+Patients, clinicians, institutions, regulators, and independent auditors need different layers of
+transparency. At minimum, manufacturers and deploying institutions should disclose:
+• what data the device captures and retains;
+• the purpose of collection and any secondary uses, including model training or commercial
+improvement;
+• who can access the data and how long it is retained;
+• the provenance and representativeness of training and validation data;
+• intended use, known limitations, uncertainty behavior, and foreseeable failure modes;
+• subgroup, site, and workflow performance;
+• material model or policy changes; and
+• the identity and roles of third-party foundation-model and platform providers.
+This does not require public disclosure of identifiable surgical video or trade secrets. It requires verifiable
+traceability and sufficient access for affected patients and clinicians, regulators, and qualified
+independent auditors. Labeling should make clear when use of a device causes operative video,
+kinematics, audio, or workflow data to be collected or reused.
+4. Accountability should follow control, knowledge, preventability, and benefit
+Responsibility should not default to the surgeon standing closest to the patient. The manufacturer should
+remain responsible for design, validation, labeling, updates, monitoring, and known or knowable defects. A
+deploying institution should be responsible for local validation, credentialing, workflow integration,
+maintenance, staffing, data governance, and response to safety signals. Clinicians should remain
+responsible for reasonable use within their competence and for acting on information that can realistically
+be evaluated. Foundation-model and infrastructure providers should have duties proportionate to their
+control over safety-relevant behavior and changes.
+FDA cannot resolve every question of privacy, employment, intellectual property, reimbursement, or
+malpractice. It can, however, require device documentation and labeling that make the distribution of
+control visible rather than allowing contractual opacity to shift risk downstream.
+V. Equity and Participation Across the Total Product Life Cycle
+The promise of GenAI-enabled surgery includes expanding access to expertise. That promise will not be
+realized if systems are developed and validated primarily in wealthy academic hospitals, on a narrow range
+of patients, devices, procedures, and clinical teams. CDRH should expect evidence across relevant
+demographic groups, anatomy and disease severity, community and rural settings, resource levels,
+workflows, and user experience. Performance aggregation should not conceal clinically meaningful
+subgroup failures.
+Practicing clinicians, operating-room professionals, patients, patient advocates, and representatives of
+rural and lower-resource settings should participate in defining intended use, acceptable tradeoffs,
+evaluation endpoints, transparency, and postmarket monitoring. Their participation should be
+documented, compensated where appropriate, and occur early enough to affect design rather than merely
+validate a completed product.
+
+FDA-2026-N-7874  |  Public Comment
+Page 6
+Conclusion
+GenAI-enabled medical devices could make surgery safer, more consistent, and more accessible.
+Regulation should protect that opportunity, not suppress it. The strongest framework will combine risk-
+proportionate innovation with firm safeguards at the points where software begins to direct or perform
+physical action.
+For procedural and surgical applications, CDRH should evaluate the deployed human-AI system; explicitly
+account for authority, irreversibility, time to harm, and rescue; require realistic clinical confirmation;
+preserve manufacturer accountability; and demand versioned, representative, and auditable evidence
+throughout the product life cycle. If these principles are embedded now, generative AI can democratize
+and scale surgical intelligence without obscuring responsibility, weakening human capability, or leaving
+patients and clinicians outside the decisions that determine how their data and care are used.
+Disclosures
+I am employed by CHRISTUS Health as System Director of Surgery and Robotics for the U.S. and Latin
+America, and practice as a general and emergency surgeon within the health system. I am a former U.S.
+Army Emergency Surgeon and Lieutenant Colonel. I submit these comments in my personal capacity; they
+do not represent the views of my employer. I am a member of Intuitive Surgical's Surgeon Advisory Board
+and have participated in advisory, educational, and technology-demonstration activities with Intuitive
+Surgical, including public and international demonstrations of telesurgery capabilities in 2025 and 2026. I
+have received consulting fees and speaking honoraria for this work. I hold no equity in, and have received
+no research funding from, any company discussed in this comment.
+Selected References
+1. U.S. Food and Drug Administration. Considerations for the Regulation of Generative AI-Enabled
+Medical Devices: Discussion Paper and Request for Feedback. August 2026. Docket FDA-2026-N-
+7874.
+2. U.S. Food and Drug Administration, Health Canada, and Medicines and Healthcare products
+Regulatory Agency. Transparency for Machine Learning-Enabled Medical Devices: Guiding Principles.
+2024.
+3. International Medical Device Regulators Forum. Good Machine Learning Practice for Medical Device
+Development: Guiding Principles. 2025.
+4. U.S. Food and Drug Administration. Artificial Intelligence-Enabled Device Software Functions: Lifecycle
+Management and Marketing Submission Recommendations. Draft Guidance. 2025.
+5. U.S. Food and Drug Administration. Marketing Submission Recommendations for a Predetermined
+Change Control Plan for Artificial Intelligence-Enabled Device Software Functions. Final Guidance.
+2025.
+6. Marcus HJ, et al. The IDEAL framework for surgical robotics: development, comparative evaluation and
+long-term monitoring. Nature Medicine. 2024;30:61-75.
+7. Collins JW, et al. Guidance on AI-enhanced surgical practice: a Delphi consensus. npj Digital Surgery.
+2026.
+8. World Health Organization. Ethics and Governance of Artificial Intelligence for Health. 2021.
+9. Vasey B, et al. DECIDE-AI: reporting guidelines for the early-stage clinical evaluation of decision
+support systems driven by artificial intelligence. Nature Medicine. 2022;28:924-933.
+10. Liu X, et al. Reporting guidelines for clinical trial reports for interventions involving artificial
+intelligence: the CONSORT-AI extension. Nature Medicine. 2020;26:1364-1374.

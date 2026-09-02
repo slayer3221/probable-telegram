@@ -1,0 +1,246 @@
+{
+  "comment_id": "FDA-2026-N-7874-0053",
+  "input_hash": "93abd6cd78530f90",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "regulatory_scope",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter states that the paper's scoping to only the GenAI-enabled component, while reasonable for most products, omits a category it does not name: GenAI functions whose output is a physical, patient-specific implant manufactured at or near the point of care. For such products, the commenter says risk concentrates at the handoff from generated geometry into build preparation, additive manufacturing, postprocessing, sterilization, and release.",
+      "requested_fda_action": "Extend the risk framework and scoping discussion to explicitly address GenAI-enabled functions that produce patient-specific physical/implantable outputs, covering the interface between generated geometry and downstream manufacturing, postprocessing, sterilization, and release steps.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The commenter locates risk not in the correctness of an informational output but in the downstream production workflow—build preparation, additive manufacturing, postprocessing, sterilization, and release—which the two-axis framework as framed does not represent."
+      },
+      "public_summary": "Comment accepts that limiting scope to the GenAI component is reasonable for most products, but argues the framework overlooks GenAI functions producing patient-specific implants made near the point of care, where risk concentrates in the handoff to manufacturing, sterilization, and release.",
+      "summary_cut": false,
+      "source_passage": "This comment concerns a category the discussion paper does not yet name: generative AI (GenAI)-enabled functions whose output is not information but a physical, patient-specific, implantable device manufactured at or near the point of care. Section III of the paper states that it addresses the GenAI-enabled component of a device and not the entire device. For most products, scoping is reasonable. For an implant it sets aside the interface where the risk concentrates: the handoff from generated geometry into build preparation, additive manufacturing, postprocessing, sterilization, and release."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "GenAI functions that generate physical outputs such as implant geometry fall beyond the top of the paper's activity axis, because harm requires revision surgery to remediate and critical properties (internal porosity, stress concentrations, fatigue margin) are not visually verifiable by the operating surgeon.",
+      "requested_fda_action": "Represent reversibility and traceability explicitly in the risk framework and add a physical-output modifier that presumptively places any function generating implant geometry at the high-consequence end, regardless of output wording.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter argues clinician review is an inadequate safeguard because a surgeon can assess anatomic fit but cannot independently evaluate the internal structural properties that drive the risk."
+      },
+      "public_summary": "Accepts the two-axis framework but asks FDA to add reversibility and traceability dimensions and a physical-output modifier placing implant-geometry generation at the high-consequence end, noting surgeons cannot visually verify internal properties such as porosity or fatigue margin.",
+      "summary_cut": false,
+      "source_passage": "Question 1 (additional risk dimensions). An implant proposed by a GenAI function sits beyond the top of the activity axis: the output is an object, not advice, and remediation after implantation means revision surgery. Both reversibility and traceability, which Question 1 raises, should be represented. I suggest a physical-output modifier that presumptively places any function generating implant geometry at the high-consequence end regardless of how the output is worded. The paper\\u2019s reasoning for measurement functions applies with equal force here: a surgeon can judge anatomic fit visually but cannot see internal porosity, a stress concentration, or an inadequate fatigue margin, so the user cannot independently evaluate the properties that matter most."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q11",
+        "q7",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "For GenAI functions that produce physical outputs (e.g., patient-matched devices), evaluating the model alone is insufficient; the commenter argues the unit of evaluation must be the entire validated production system, from imaging input through segmentation, design, build, material, postprocessing, sterilization, and release.",
+      "requested_fda_action": "Apply the competency-based approach to the final configured device and require benchmarking against a prospectively defined 'generative design envelope' (limits on image quality, modifiable dimensions, feature size, fixation and load assumptions, build orientation, postprocessing), consistent with worst-case testing in CDRH's 2017 additive manufacturing guidance, with out-of-envelope geometries flagged for engineering validation rather than routine release.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment proposes a prospectively defined generative design envelope that bounds acceptable generated outputs and triggers additional validation when exceeded, framing intended use as an operating envelope rather than a fixed indication.",
+        "deployment_assurance_scalability": "It extends evaluation beyond the model to the full production and release chain—printer, material, postprocessing, sterilization—so assurance depends on the deployed manufacturing system, not the algorithm alone."
+      },
+      "public_summary": "Supports competency-based evaluation of the final configured device rather than the foundation model, but asks FDA to define, for physical-output functions, the device as the full validated production chain and to benchmark against a prospectively specified generative design envelope, with out-of-envelope geometries requiring engineering validation.",
+      "summary_cut": false,
+      "source_passage": "Questions 7 and 11 (competency-based evaluation and clinical confirmation). I support evaluating the final configured device rather than the foundation model. For physical-output functions, the final configured device should be understood as the validated production system: imaging inputs, segmentation, the design function, build preparation, printer and material, postprocessing, sterilization, and release. This is consistent with the design or performance envelope and worst-case testing described in CDRH\\u2019s 2017 additive manufacturing guidance. Benchmarking should therefore include what might be called a generative design envelope\\u2014prospectively defined limits on image quality, modifiable dimensions, feature size, fixation and load assumptions, build orientation, and postprocessing\\u2014with any generated geometry outside those limits flagged as requiring engineering validation rather than released as a routine patient match."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q11"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "clinical_validation",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "For GenAI functions whose outputs have physical/engineering consequences, clinician adjudication of outputs alone would not demonstrate that the output is safe and effective; physical verification evidence is also needed.",
+      "requested_fda_action": "Expand the clinical confirmation expectations so that confirmation includes physical evidence—dimensional verification, mechanical and worst-case testing, and nondestructive evaluation where appropriate—in addition to clinician review, with retrospective evaluation on real patient imaging as an appropriate first step.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts a graduated clinical confirmation approach, with retrospective evaluation on real patient imaging as a first step, but asks FDA to require physical evidence—dimensional verification, mechanical and worst-case testing, and nondestructive evaluation where appropriate—not only clinician adjudication of outputs.",
+      "summary_cut": false,
+      "source_passage": "Clinical confirmation for these functions should include physical evidence (dimensional verification, mechanical and worst-case testing, nondestructive evaluation where appropriate), not only clinician adjudication of outputs. Retrospective evaluation on real patient imaging is a natural first step."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "For GenAI-enabled functions that result in permanent implants, postmarket monitoring can detect a problem but cannot remediate it without surgery, so surveillance is not a substitute for premarket assurance where harm is irreversible.",
+      "requested_fda_action": "Exclude functions producing permanent implants (and other irreversible-harm functions) from any framework that trades reduced premarket evidence for postmarket monitoring, retaining full premarket assurance of the manufacturing route.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter asks FDA to carve out functions producing permanent implants from any trade of reduced premarket evidence for postmarket monitoring, arguing monitoring can detect but not remediate irreversible harm without surgery, so premarket assurance of the manufacturing route must be retained.",
+      "summary_cut": false,
+      "source_passage": "Question 18 (reliance on postmarket monitoring). Accepting greater premarket uncertainty in exchange for postmarket monitoring is not appropriate for functions that produce permanent implants. Monitoring can detect a problem in this setting; it cannot remediate one without surgery. Where the harm is irreversible, premarket assurance of the manufacturing route should not be traded against surveillance."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "pccp",
+      "stakeholder_concern": "For generative systems tied to physical manufacturing, re-benchmarking triggers framed only around model changes would miss changes to printer firmware, build parameters, material specification or lot, and postprocessing, as well as combinations of digital and physical changes.",
+      "requested_fda_action": "Expand re-benchmarking triggers beyond model changes to include manufacturing and material changes and their combinations, and adopt a tiered scheme (interface-only changes in the QMS; geometry-envelope-altering model changes triggering re-benchmarking; combined model plus manufacturing-parameter changes triggering worst-case physical testing before release), with PCCPs enumerating interaction triggers across the digital-physical boundary.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The commenter frames re-evaluation around whether a change alters the range of geometries the system can generate relative to a defined design envelope, treating the behavioral envelope rather than a static intended use as the reference point for change control."
+      },
+      "public_summary": "Accepts PCCP and scaled re-benchmarking concepts but asks FDA to broaden triggers beyond model changes to printer firmware, build parameters, material specification or lot, postprocessing, and their combinations, with tiered responses ranging from QMS management to worst-case physical testing before release.",
+      "summary_cut": false,
+      "source_passage": "Questions 22\\u201324 (scaling evidence to modifications, PCCPs, third-party model changes). Re-benchmarking triggers for these systems should include changes to printer firmware, build parameters, material specification or lot, and postprocessing\\u2014not only changes to the model\\u2014and should specifically address combinations. A workable tiering: interface-only changes managed within the quality management system; a model change that alters which geometries can be generated triggers re-benchmarking against the design envelope; a model change coupled with a manufacturing-parameter change triggers worst-case physical testing before release. Predetermined change control plan (PCCP) concepts can accommodate this if the plan enumerates interaction triggers across the digital-physical boundary."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "An upstream third-party model update could change device outputs (here, geometry feeding a manufacturing route) without the manufacturer's knowledge or evaluation.",
+      "requested_fda_action": "Expect production systems to pin specific foundation model versions so that any upstream model update cannot propagate into the device workflow without passing a defined release gate.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses control over a third-party model supplier's changes through version pinning and release gating, treating upstream model updates as a supplier-quality control point."
+      },
+      "public_summary": "Responding on third-party foundation models, the commenter proposes that production systems pin specific model versions so an upstream update cannot alter outputs entering the manufacturing route without first passing a defined release gate.",
+      "summary_cut": false,
+      "source_passage": "For third-party foundation models (Question 24), production systems should pin model versions so that an upstream update cannot alter geometry entering the manufacturing route without passing a release gate."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter is concerned that clinician review is treated as proof of device properties it cannot actually reveal, and that shared stakeholder roles could blur where manufacturing accountability sits, particularly for point-of-care systems where the institution holds the clearance.",
+      "requested_fda_action": "Adopt a 'two-signature release' structure in which the surgeon confirms anatomy, indication, and clinical intent while a qualified release authority within the manufacturer of record confirms conformance via design checks, process data, and inspection results, with neither signature substituting for the other; and enable institutions and registries to link revisions, imaging follow-up, and adverse events to the specific model, design, and manufacturing configuration.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment addresses how accountability should be allocated when the institution deploying a point-of-care system is also the manufacturer of record, proposing dual sign-off to keep manufacturer responsibility intact while bounding clinician responsibility.",
+        "human_ai_system_performance": "It argues that clinician visual review cannot verify conformance properties and therefore should not be credited as a safeguard for those properties, which bears on how human oversight is counted in system-level assurance."
+      },
+      "public_summary": "Supports defined stakeholder roles in postmarket oversight but proposes a specific mechanism: a two-signature release separating the surgeon's confirmation of anatomy and clinical intent from a manufacturer release authority's conformance check, plus registry surveillance tied to the specific model, design, and manufacturing configuration.",
+      "summary_cut": false,
+      "source_passage": "Question 21 (stakeholder roles without diffusing accountability). I recommend a two-signature release. The surgeon confirms anatomy, indication, and clinical intent; a qualified release authority within the manufacturer of record confirms conformance using design checks, process data, and inspection results. Neither signature substitutes for the other. This keeps accountability with the manufacturer\\u2014which, for point-of-care systems, is the institution holding the clearance\\u2014while making the clinician\\u2019s responsibility explicit and bounded rather than treating visual review as proof of properties it cannot reveal. Institutions and registries can then support surveillance that links revisions, imaging follow-up, and adverse events to the model, design, and manufacturing configuration in use."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "An agentic design function that writes a build file to a printer within a production system takes an irreversible, high-consequence physical action, and the commenter notes such an action sequence controlling another device may itself meet the device definition.",
+      "requested_fda_action": "Make the human-oversight checkpoints described for agentic competencies (Appendix A, A.1) mandatory rather than optional where agentic functions produce physical outputs, aligning them with the release gates the commenter recommends elsewhere.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment focuses on how much autonomous authority an agentic function may exercise before a mandatory human release gate when it directly commands manufacturing equipment.",
+        "operational_harm": "It emphasizes irreversible, high-consequence actions taken inside a production system rather than diagnostic output error alone."
+      },
+      "public_summary": "Addressing agentic systems, the commenter agrees that agentic functions controlling other devices warrant oversight but argues FDA should require, not merely describe as optional, the Appendix A human-oversight checkpoints where outputs trigger irreversible physical actions such as writing printer build files.",
+      "summary_cut": false,
+      "source_passage": "Question 26 (agentic systems). Section VII.B notes that an action sequence resulting in control of another device may itself meet the device definition. A design function that writes a build file to a printer inside a production system is such a function: it takes an irreversible, high-consequence action. The human-oversight checkpoints described for agentic competencies (Appendix A, A.1) map directly onto the release gates recommended above and should be required, not optional, for physical outputs."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q1",
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "For patient-specific implants, the commenter is concerned that existing device history record requirements do not capture GenAI-specific provenance, i.e., which model version and configuration produced a design and whether geometry was generated or human-edited, and that records be linkable to outcomes.",
+      "requested_fda_action": "Require each implant to carry a proportionate digital manufacturing record spanning source imaging identifiers, software/model versions and clinically material configuration, generated-versus-edited geometry, final design-file identifier, printer/firmware/build parameters and material lot, postprocessing and sterilization records, release signatures, and outcome linkage, building on QMSR device history record requirements with GenAI-specific additions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment focuses on per-unit traceability records tying each produced implant to specific model versions, configurations, and build parameters, an assurance mechanism at the level of individual deployed instances rather than a one-time premarket evaluation."
+      },
+      "public_summary": "Comment on traceability for patient-specific implants: builds on existing QMSR device history record requirements but asks FDA to add GenAI-specific elements—model and configuration identity, generated-versus-edited geometry provenance, build and sterilization records, release signatures, and outcome linkage—in a proportionate per-implant digital record.",
+      "summary_cut": false,
+      "source_passage": "Traceability Each implant should carry a proportionate digital manufacturing record: source imaging identifiers; software and model versions and clinically material configuration; generated versus edited geometry; final design-file identifier; printer, firmware, build parameters, and material lot; postprocessing and sterilization records; release signatures; and outcome linkage. The device history record requirements already incorporated through the Quality Management System Regulation provide the base; the GenAI-specific additions are model and configuration identity and generated-versus-edited provenance."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q1",
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "regulatory_scope",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter argues that GenAI-enabled design functions feeding point-of-care production systems (e.g., patient-specific cranial implants generated from CT data) are a foreseeable, not hypothetical, category, citing a June 2026 clearance held by a point-of-care institution and existing deep-learning implant-geometry pipelines. The current paper does not connect to CDRH's 2021 point-of-care 3D printing concept of a production system that may itself be a device.",
+      "requested_fda_action": "Explicitly link this discussion paper's GenAI framework with CDRH's 2021 discussion paper on 3D printing at the point of care, so that a GenAI-enabled design function placed at the head of a point-of-care production system (scanner, design software, coded limits, materials, printers, processing) is addressed before such systems are deployed.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment raises assurance of GenAI outputs embedded in point-of-care production systems (scanners, design software, printers, processing) that operate at individual institutions rather than a single manufacturing site.",
+        "distributed_accountability": "It notes that a clearance is now held by a point-of-care institution, implying design, production, and oversight responsibilities may sit with care-delivery organizations rather than a conventional device manufacturer."
+      },
+      "public_summary": "Commenter accepts the paper's direction but says it omits GenAI-enabled design functions feeding point-of-care production systems, citing a recent point-of-care cranial plate clearance and existing deep-learning implant-design pipelines. Asks FDA to connect this paper with its 2021 point-of-care 3D printing framework.",
+      "summary_cut": false,
+      "source_passage": "The category is foreseeable rather than hypothetical. On June 18, 2026, CDRH cleared K253116, a patient-specific titanium cranial plate system produced by the 3D Medical Applications Center at Walter Reed National Military Medical Center, reported as the first such clearance held by a point-of-care institution. I make no claim that AI is used in that system; its public summary identifies none. Separately, peer-reviewed deep-learning pipelines already generate cranial implant geometry from CT data. CDRH\\u2019s 2021 discussion paper on 3D printing at the point of care already describes a medical device production system\\u2014scanner, design software, coded limits, materials, printers, and processing\\u2014that may itself be a device. The present paper and that concept should be connected before a GenAI-enabled design function is placed at the head of such a system."
+    }
+  ]
+}

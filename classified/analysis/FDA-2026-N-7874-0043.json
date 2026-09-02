@@ -1,0 +1,313 @@
+{
+  "comment_id": "FDA-2026-N-7874-0043",
+  "input_hash": "838e1f4b4c681ba6",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter accepts that the two-axis framework can work, analogizing it to the classic risk equation (probability of failure x magnitude of consequence), but notes that industry has long struggled with how to measure each axis reliably under ICH Q9 and ISO 14971, and that traceability of GenAI outputs is effectively impossible because the models are opaque.",
+      "requested_fda_action": "Retain the bi-axial structure but incorporate detectability (as in FMEA) and explicitly include human in-the-loop or on-the-loop decision-making within the risk framework, while recognizing that output traceability cannot realistically be implemented for opaque GenAI models.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter states that humans in- or on-the-loop must be represented within the risk framework for decision-making, treating risk as a property of the combined human-model system rather than the device output alone."
+      },
+      "public_summary": "Comment finds the two-axis framework workable, comparing it to probability-times-consequence risk calculus, but notes persistent measurement difficulties under ICH Q9 and ISO 14971. Suggests adding detectability (FMEA-style) and human in- or on-the-loop decision-making, while arguing traceability is unachievable for opaque GenAI models.",
+      "summary_cut": false,
+      "source_passage": "The bi-axial framework can function properly for this application, similarly with the typical risk calculus of R = Pf x Mc (where Pf is the probability of failure, and Mc is the magnitude of consequence). However, that classic equation has also lent itself to uncountable issues in the industry with ‘how’ to measure each properly (qualitatively, subjectively, combined with objective data), including via ICH Q9 and ISO 14971. Layering an ability to detect, such as with an FMEA (Detectability) can help, but traceability is hard (read: impossible) to implement, since the GenAI models are opaque. Humans in- or on- the loop need to be included in the framework for decision-making."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q2"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter treats directive GenAI outputs as the provision of medical advice, and is concerned that such outputs may be presented to users without clear framing about their advisory limits.",
+      "requested_fda_action": "Require that, unless outputs are standardized and FDA-approved, all GenAI outputs be designated 'for information only' and carry mandatory linguistic modifiers making that status explicit.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter characterizes directive GenAI outputs as medical advice and asks FDA to require that, absent standardized FDA-approved outputs, all outputs be labeled 'for information only' with mandatory linguistic modifiers clarifying that status, rather than relying solely on a directiveness continuum.",
+      "summary_cut": false,
+      "source_passage": "GenAI-enabled functions that are directive are giving medical advice, so all outputs (if not standardized and approved by FDA) need to be ‘for information only’ and have linguistic modifiers required to clarify this."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q3"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter asserts that patient-facing generative AI outputs present clearly higher risk because patients are not trained in healthcare, device usability, or interpreting and contextualizing AI outputs. They further object to treating 'patient empowerment' as a benefit, arguing it implies patients applying therapy according to idiosyncratic personal judgment, which they characterize as unregulatable.",
+      "requested_fda_action": "Treat delivery of clinical information directly to patients as presenting distinctly higher risk, and do not credit 'patient empowerment' as a counterbalancing benefit in the risk assessment.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment centers on the untrained lay user's inability to interpret or contextualize generative outputs, making the patient-plus-model combination, rather than the model alone, the locus of risk."
+      },
+      "public_summary": "Commenter agrees without qualification that patient-facing generative AI outputs carry higher risk, citing patients' lack of training in healthcare, device usability, and interpreting AI outputs. Rejects FDA's framing of patient empowerment as a benefit, calling variable patient application of therapy unregulatable.",
+      "summary_cut": false,
+      "source_passage": "Yes, unequivocally. Patients are not trained in healthcare, usability of devices, or translating and inferring context from generative AI outputs. Patient empowerment is a terrible goal, because it implies that the patient would have the ability to differentially-apply the therapy based on their idiosyncratic opinions, which is 100% unregulatable."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q4"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "directiveness",
+      "stakeholder_concern": "The commenter is concerned that a generalist clinician receiving output intended for specialist interpretation will overlay their own general clinical judgment and act on the result without recognizing the specialist context, unless the output itself signals this limitation.",
+      "requested_fda_action": "Require that GenAI outputs carry explicit modifiers or qualifying language informing the user when the output is designed for a specialist audience, as a safeguard for HCP-facing functions used by generalists.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment focuses on how the clinician's interpretation and action combine with the model output, implying that safety depends on the human-device pairing rather than the output alone."
+      },
+      "public_summary": "Agrees the generalist/specialist distinction matters, and asks FDA to require GenAI outputs to carry explicit modifiers stating when content is intended for specialists—otherwise generalists may apply their own judgment and act on specialist-oriented results.",
+      "summary_cut": false,
+      "source_passage": "The GenAI output needs to include modifiers (as mentioned in #2 above) that explain to generalists that the output is designed for specialists. Otherwise generalists will take the output, impute their opinion and overall (general) license to practice medicine, and go forward with the results."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q5"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "Multi-turn conversational GenAI can drift into emergently generating advice or direction that goes beyond non-directive information, and patients may receive such directive output without any signal that the exchange has crossed that line.",
+      "requested_fda_action": "Require that GenAI-enabled conversational devices include a framework that detects and self-identifies when their output has become advice or direction, blocks delivery of that output to the patient, and issues a warning that the conversation has entered that territory.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment focuses on behavior emerging over a conversation that moves beyond non-directive information, and asks for run-time self-detection and blocking to keep the device within its intended behavioral envelope."
+      },
+      "public_summary": "Commenter addresses emergent directiveness in multi-turn conversations, proposing that GenAI devices be built to detect and self-identify when their output becomes advice or direction, withhold that output from the patient, and warn that the conversation has crossed into directive territory.",
+      "summary_cut": false,
+      "source_passage": "The GenAI needs a model framework that recognizes and self-identifies then it is emergently creating advice and direction, and it is prevented from providing that to the patient with a warning that the conversation has entered that territory."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter argues that over-escalation (Type I error) can be more dangerous than under-escalation because it produces errors of commission—unnecessary treatment harms and unnecessary diagnostic use—whereas under-escalation produces errors of omission.",
+      "requested_fda_action": "In evaluating GenAI care escalation functions, FDA should weight over-escalation as potentially more dangerous than under-escalation, accounting for the harms of unnecessary treatment and diagnostic cascades.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment centers harm on downstream consequences of over-escalation—unnecessary treatment and diagnostic use—rather than on the incorrectness of the device output itself."
+      },
+      "public_summary": "Responding to FDA's question on weighing escalation errors, the commenter contends over-escalation can be more dangerous than under-escalation, since it causes errors of commission—unnecessary treatment harms and diagnostic use—versus errors of omission from under-escalation, implying asymmetric weighting in evaluation.",
+      "summary_cut": false,
+      "source_passage": "The correct answer here is that Type I errors can be more dangerous than Type II errors. Over-escalating can lead to unnecessary treatment harms and diagnostic use. These are errors of commission, rather than under-escalation which would lead to potential errors of omission."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter views device benchmarking followed by clinical confirmation as a workable general framework, while noting that some edge and corner cases will fall outside it.",
+      "requested_fda_action": "Adopt the competency-based approach (benchmarking followed by clinical confirmation) as the general evaluation framework for GenAI-enabled devices.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter agrees that FDA's competency-based approach of device benchmarking followed by clinical confirmation is a useful and appropriate framework, stating it would address the bulk of submissions while acknowledging that edge and corner cases will remain.",
+      "summary_cut": false,
+      "source_passage": "7. Is the competency-based approach described above, i.e., device benchmarking followed by clinical confirmation, a useful and appropriate framework for evaluating GenAI-enabled devices? Yes. There will always be edge cases and corner cases, but this will cover the bolus of submissions."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q26",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "The commenter views most of the proposed benchmarking elements as sufficiently robust but considers the single agentic AI capabilities element inadequate, since one benchmarking slice does not examine what an agentic system does or how it does it in enough depth to prevent risks. The commenter also states that externally available guidelines are insufficient to rely on here.",
+      "requested_fda_action": "Expand and deepen the benchmarking treatment of agentic AI capabilities beyond a single element so that the substance and mechanism of agentic behavior are interrogated, rather than relying on existing external guidelines.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The commenter argues that a single benchmarking element cannot adequately probe what an agentic system is doing or how it does it, implying that autonomous action itself requires deeper evaluation than currently framed."
+      },
+      "public_summary": "Commenter finds most proposed benchmarking elements sufficiently robust but says the single agentic AI capabilities element is inadequate because it does not examine what agentic systems do or how, and notes existing external guidelines are insufficient. Requests deeper agentic benchmarking.",
+      "summary_cut": false,
+      "source_passage": "The guidelines available in the wild are insufficient to use here. But the final element of the benchmarking on A.1. Agentic AI Capabilities is woefully inadequate. The previous elements are sufficiently robust, but having a single slice on the agentic AI itself doesn’t interrogate ‘what’ it’s doing or ‘how’ it’s doing it deeply enough to prevent risks."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "If each sponsor constructs its own bespoke benchmarking data approach, problems such as data contamination, benchmark saturation, and overfitting are more likely to go unaddressed or be handled inconsistently.",
+      "requested_fda_action": "Provide sponsors with a baseline (\"naive\") data framework as a starting point for benchmark construction and validation, rather than leaving each sponsor to build one internally, so that contamination, saturation, and overfitting are systematically prevented.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter agrees benchmark contamination, saturation, and overfitting are concerns and asks FDA to supply sponsors with a baseline data framework as a starting point, rather than leaving each sponsor to develop bespoke internal approaches.",
+      "summary_cut": false,
+      "source_passage": "Giving sponsors a naïve data framework to start with, instead of having them build it internally in a bespoke manner will guide them on how to prevent issues like contamination, saturation, overfitting, etc."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q1",
+        "q11"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "The commenter indicates that a risk framework should account for factors beyond those emphasized in the discussion paper, specifically therapeutic area or use, patient exposure, and real-world use cases.",
+      "requested_fda_action": "Implement a risk framework that explicitly incorporates therapeutic area/use, patient exposure, and real-world use cases as dimensions.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter states that a risk framework must be implemented that accounts for therapeutic area or use, patient exposure, and real-world use cases. The passage does not elaborate on how these dimensions would relate to FDA's proposed two-axis framework.",
+      "summary_cut": false,
+      "source_passage": "A risk framework that takes into account therapeutic area/use, patient exposure, and real-world use cases must be implemented."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q12"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "synthetic_data",
+      "stakeholder_concern": "The commenter is concerned that synthetically generated inputs may differ from real-world data distributions in ways that affect whether measured performance is meaningful for clearance or approval decisions.",
+      "requested_fda_action": "Treat synthetic distributions as control data that must be formally compared against real-world distributions, and require demonstration of clinical and practical significance differences as a condition for considering clearance or approval.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Comment addresses use of synthetic data in performance estimation, proposing that synthetic distributions be treated as control data and explicitly compared with real-world distributions, with clinical and practical significance shown to differ meaningfully before clearance or approval is considered. Brief and methodologically ambiguous.",
+      "summary_cut": false,
+      "source_passage": "The synthetic distributions would be the control data, and need to be compared with the real-world distributions, where clinical significance and practical significance are shown to be meaningfully different from each other to be considered for clearance or approval."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q13"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "The commenter suggests synthetic subpopulations are feasible for conditions that are not rare or ultra-rare, but is concerned that synthetic data derived from a single study would fail to reflect large-scale variance.",
+      "requested_fda_action": "Expect synthetic data used for subpopulations to be derived from literature meta-analyses rather than single studies, so that large-scale variance is accounted for.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter views synthetic subpopulation data as plausible for non-rare and non-ultra-rare conditions, but conditions this on generating such data from literature meta-analyses rather than single studies, in order to capture large-scale variance.",
+      "summary_cut": false,
+      "source_passage": "You could argue that you could create synthetic subpopulations for any non-rare and non-ultra rare condition. But the synthetic data should come from literature metaanalyses, not single studies, to account for large-scale variance."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "The commenter is concerned that comparators and clinician performance standards must reflect who will actually use the device in practice and must account for variability among clinicians rather than assuming a single consistent human standard.",
+      "requested_fda_action": "Use available meta-analytic data as the comparator, and define the human performance standard using a mixture of generalist and specialist clinicians, evaluated with a measurement-systems (Gage R&R) style approach that quantifies inter-clinician variance.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts comparator-based evaluation but urges FDA to use meta-analytic data as the comparator and to set the human performance standard using both generalists and specialists, reflecting real-world use, with a Gage R&R-style analysis capturing inter-clinician variability.",
+      "summary_cut": false,
+      "source_passage": "Comparators should be available metaanalytic data for the reasons described above. For performance standards, a mixture of generalists and specialists should be used, because they WILL be used in the real world later on. Treat it like a Gage R&R study, to catch inter-clinician variance."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter regards comparators other than a 'no intervention' condition as too unpredictable and variable to serve as a reliable performance benchmark. Only the absence-of-device baseline is viewed as dependable.",
+      "requested_fda_action": "Narrow the set of acceptable comparators for evaluating GenAI-enabled devices to the 'no intervention' condition, rather than alternatives such as unaided clinical judgment or delayed specialist review.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter states that the only reliable comparator is the 'no intervention' condition, describing the other comparators FDA raises as too unpredictable and variable. No supporting detail or alternative methods are provided in the passage.",
+      "summary_cut": false,
+      "source_passage": "The only reliable comparator is the ‘no intervention’ condition. The others are too unpredictable and variable."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "oppose",
+      "primary_issue": "economics_burden",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter asserts that requiring third-party involvement would allow third-party organizations to game the system and turn prolonged testing into a profit center.",
+      "requested_fda_action": "Do not require independent third-party participation in the competency-based assessment; the commenter calls such a requirement inadvisable.",
+      "confidence": "medium",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment focuses on third parties extending testing for financial gain, raising cost and delay burdens beyond the question's framing of qualifications and independence criteria."
+      },
+      "public_summary": "Opposes requiring independent third-party involvement in device benchmarking or clinical confirmation, arguing third-party organizations could game the process and profit from prolonging testing. Calls such a requirement inadvisable, without proposing alternative safeguards or qualification criteria.",
+      "summary_cut": false,
+      "source_passage": "Bringing a third-party requirement also opens the door to third-party organizations gaming the system and creating a profit center on drawing out these tests. Inadvisable."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q1",
+        "q17"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter appears concerned that the underlying model architecture itself is a risk-relevant factor, suggesting that architectures such as multimodal vision-language models warrant higher risk categorization. The passage is fragmentary and does not elaborate on rationale or supporting evidence.",
+      "requested_fda_action": "Include an assessment of the device's underlying model architecture in every risk evaluation, and treat architectures such as multimodal vision-language models as higher risk under the referenced framework category (A.1).",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Brief comment suggesting FDA assess the underlying model architecture in every case, with architectures such as multimodal vision-language models categorized as higher risk under the framework's category A.1. The passage is fragmentary and offers no supporting rationale.",
+      "summary_cut": false,
+      "source_passage": "Certainly in every case, an assessment of what the architecture includes, such as MMVL models, etc. Those would then be categorized as higher risk, based on A.1 in the framework of your model."
+    }
+  ]
+}

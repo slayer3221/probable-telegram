@@ -1,0 +1,529 @@
+{
+  "comment_id": "FDA-2026-N-7874-0027",
+  "input_hash": "20a33eae373ab137",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T20:59:49Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter agrees with Section V.A's principle that the unit of evaluation should be the final user-facing device as configured for real-world deployment rather than the foundation model or another isolated subcomponent, and views this as resolving a widespread gap in current practice. The concern is that later sections of the paper may not consistently carry this principle through.",
+      "requested_fda_action": "Retain the stated principle that evaluation applies to the complete, as-deployed user-facing device, and ensure subsequent sections of the framework are made consistent with it.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment emphasizes that assurance must attach to the device as configured and intended to be deployed in real-world use, not to an isolated model component."
+      },
+      "public_summary": "Endorses the discussion paper's principle that the competency-based approach evaluates the final user-facing device as configured for real-world deployment, rather than the foundation model or an isolated subcomponent, but cautions that later sections may not consistently apply that principle.",
+      "summary_cut": false,
+      "source_passage": "I want to note agreement with a principle stated in Section V.A: that under a competency-based approach, the final user-facing device as configured and intended to be deployed for real-world use, and not the foundation model standing alone or another isolated subcomponent, would be evaluated.\nThis is the correct unit of evaluation, and it resolves a gap that is widespread in current practice. The comments below concern places where the paper's later sections may not fully carry that principle through."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The enumerated change categories in Section VI.C do not clearly cover compression of the model artifact (quantization, pruning, distillation), so a good-faith sponsor could conclude that recompressing a model for new hardware falls outside any listed change category.",
+      "requested_fda_action": "Add model artifact compression to the enumerated change categories, and require validation of the exact deployed artifact (numerical precision and compression method, inference runtime and accelerator class, decoding configuration, system prompt, retrieval pipeline, tool policy) after material compression or inference-stack changes, with risk-proportionate evidence including targeted regression testing of Safety and Generalizability elements.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment highlights that the artifact actually deployed—shaped by compression, inference runtime, accelerator class, decoding settings, prompts, retrieval, and tool policy—may differ from what was evaluated, requiring validation of the deployed configuration itself."
+      },
+      "public_summary": "Accepts FDA's change-control framework but says its enumerated change categories omit model compression (quantization, pruning, distillation). Recommends adding it and requiring validation of the exact deployed artifact—including precision, runtime, decoding, prompts, retrieval, and tool policy—with risk-proportionate safety and generalizability regression testing.",
+      "summary_cut": false,
+      "source_passage": "Compression of the model artifact fits none of these cleanly. ... Under the taxonomy as written, a sponsor acting in good faith could conclude that recompressing a model to fit a new hardware target falls within no enumerated change category. ... Recommendations:\n  Add compression of the model artifact, including quantization, pruning, and distillation, to the enumerated\nchange categories in Section VI.C.\n A sponsor should validate the exact deployed artifact after a material compression or inference-stack\nchange, where the artifact is understood to include numerical precision and compression method, inference\nruntime and accelerator class, decoding configuration, system prompt, retrieval pipeline, and tool policy.\nEvidence may be risk-proportionate, but should include targeted regression testing of the Safety and\nGeneralizability elements rather than general performance evaluation alone."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "pccp",
+      "stakeholder_concern": "The commenter is concerned that model compression may be nominated as a low-impact change manageable under a quality management system, when compression alters weight representations and shifts output distributions at the token-probability boundaries where refusal versus compliance behavior is decided.",
+      "requested_fda_action": "FDA should not treat compression as a presumptively low-impact category of change; if compression is allowed in a PCCP, the plan should prespecify the compression method, precision target, and the re-benchmarking evidence required.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment highlights that implementation-stage engineering changes such as model compression can alter safety-relevant refusal behavior, so assurance must extend to how the model is instantiated for deployment rather than only to the originally evaluated model."
+      },
+      "public_summary": "Commenter accepts scaled change-control but cautions against classifying model compression as presumptively low-impact, arguing it shifts output distributions where refusal and compliance decisions are resolved. Asks FDA to require PCCPs to prespecify compression method, precision target, and re-benchmarking evidence.",
+      "summary_cut": false,
+      "source_passage": "Question 22 asks whether there are categories of change that might not significantly affect safety or\neffectiveness and might be managed within a sponsor's quality management system rather than requiring\npremarket review. I expect compression to be nominated for that treatment, and would urge caution.\nCompression alters the numerical representation of model weights, and therefore alters output distributions at\nthe token-probability boundaries where refusal and compliance decisions are resolved. ... If compression is considered for inclusion in a PCCP, the plan should prespecify the compression method,\nprecision target, and re-benchmarking evidence, rather than treating compression as a presumptively\nlow-impact class of change."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "Representative real-world sampling and clinician review are not designed to detect resistance to prompt injection, adversarial scope testing, emotional manipulation, or multi-turn escalation, so relying on them would leave safety-behavior and robustness properties unmonitored.",
+      "requested_fda_action": "FDA should state in postmarket monitoring expectations that active adversarial re-benchmarking is the principal reliable evidence source for the safety-behavior (S-series) and robustness (R-series) elements, and set cadence and triggering events for those elements independently of clinical review cadence.",
+      "confidence": "high",
+      "gap_tags": [
+        "cybersecurity_as_safety",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "cybersecurity_as_safety": "The comment treats prompt injection and adversarial manipulation resistance as safety properties requiring dedicated postmarket adversarial testing rather than routine performance sampling.",
+        "dynamic_intended_use": "It flags adversarial scope testing and multi-turn escalation as behaviors that must be probed deliberately, implying the device's behavioral envelope can shift beyond what representative sampling observes."
+      },
+      "public_summary": "Accepts postmarket monitoring approaches but argues representative real-world sampling cannot evidence resistance to prompt injection, adversarial scope testing, manipulation, or multi-turn escalation. Recommends FDA recognize active adversarial re-benchmarking for safety-behavior and robustness elements, with cadence and triggers set independently of clinical review.",
+      "summary_cut": false,
+      "source_passage": "Unless it is deliberately supplemented with adversarially constructed probes, representative real-world sampling\nis not designed to estimate, and should not be treated as evidence of, resistance to prompt injection, adversarial\nscope testing, emotional manipulation, or multi-turn escalation. ... Recommendation: Postmarket monitoring expectations should recognize that active adversarial\nre-benchmarking is the principal reliable evidence source for the S-series and R-series elements, and should set\nre-benchmarking cadence and triggering events for those elements independently of clinical review cadence."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q19",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter finds the proposed benchmarking structure (Figure 2) appropriately decomposed and does not identify missing elements, but is concerned about the level of resolution within an individual benchmarking element when re-benchmarking occurs.",
+      "requested_fda_action": "Accept the benchmarking element structure as described, while addressing how granular measurement within a single element should be at the point of re-benchmarking.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter agrees the proposed benchmarking structure is well decomposed and suggests no additional elements, but raises a concern about insufficient measurement resolution within an individual element when re-benchmarking is performed.",
+      "summary_cut": false,
+      "source_passage": "The benchmarking structure in Figure 2 is well decomposed, and I do not propose additional elements. My\nconcern is resolution inside an element at the point of re-benchmarking."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q22",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Element-level pass/fail re-benchmarking can mask material regression in a specific constituent failure mode, because an aggregate element result absorbs the degradation.",
+      "requested_fda_action": "Specify that post-modification re-benchmarking under Section VI.C compare performance at the level of constituent failure modes within each element, using a taxonomy fixed and versioned at the time of original benchmarking, rather than element-level results alone.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts re-benchmarking modifications against premarket capabilities, but argues element-level pass/fail can hide regression in individual failure modes. Recommends comparison at the level of constituent failure modes using a taxonomy fixed and versioned at original benchmarking.",
+      "summary_cut": false,
+      "source_passage": "If re-benchmarking after a modification produces a pass or fail at element level, a device can pass while a\nconstituent failure mode has regressed materially, because the element result absorbs it. ... Recommendation: Where Section VI.C contemplates re-benchmarking against the same capabilities\nestablished at premarket, the comparison should be made at the level of constituent failure modes within each\nelement, against a taxonomy fixed and versioned at the time of the original benchmarking, rather than at\nelement level alone."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q5",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that multi-turn conversational trajectory testing would be treated as merely one optional method within a broader benchmarking element, leaving conversational and higher-directiveness functions without dedicated evaluation of how behavior evolves across an exchange.",
+      "requested_fda_action": "Make multi-turn trajectory testing a distinct testable behavior under safety behavior element S.2 with its own acceptance criteria, and make it mandatory rather than optional for conversational devices and for any function the two-axis framework places in the action-directing or action-taking columns.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The recommendation targets behavior that emerges and shifts across a conversation, implying evaluation must bound a behavioral envelope over trajectories rather than a static single-output intended use."
+      },
+      "public_summary": "Accepts the benchmarking structure but asks FDA to elevate multi-turn trajectory testing from an optional method to a distinct testable safety behavior with its own acceptance criteria, and to require it for conversational and action-directing or action-taking functions.",
+      "summary_cut": false,
+      "source_passage": "Recommendation: Multi-turn trajectory testing should be a distinct testable behavior within S.2 with its own\nacceptance criteria, rather than one of several methods that may be applied to the element. For conversational\ndevices, and for any function the two-axis framework places in the action-directing or action-taking columns, it\nshould be required rather than optional."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q5"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "intended_use",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "A device whose intended use is well defined at the level of an individual conversational turn may lack a well-defined scope across a full multi-turn trajectory, so emergent behavior can drift outside the stated scope.",
+      "requested_fda_action": "Treat trajectory-level scope definition as an empirically testable device property to be evaluated, rather than something addressed solely through intended-use documentation or labeling.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The passage argues that a conversational device's intended-use scope can be stable turn by turn yet undefined across a conversational trajectory, requiring assessment of the behavioral envelope over time."
+      },
+      "public_summary": "Endorses FDA's concern about emergent conversational behavior, but argues that scope across a multi-turn trajectory is not merely a documentation matter: a device well defined turn by turn may lack defined scope overall, which should be treated as an empirically testable property.",
+      "summary_cut": false,
+      "source_passage": "This connects directly to the paper's own concern in Question 5 about characterizing intended use when device\nbehavior is emergent across a conversation. A device whose scope is well defined turn by turn may not have a\nwell-defined scope across a trajectory, and that is a testable property rather than a documentation problem."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q22",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Fine-tuning, even with benign data and no adversarial intent, can compromise a model's safety alignment, so gains on the targeted dimension do not demonstrate continued adequacy on safety or generalizability elements; evidence inherited from the base model may therefore understate risk in the fine-tuned artifact.",
+      "requested_fda_action": "Require subgroup (R.2) evaluation to be conducted on the fine-tuned artifact itself rather than inherited from the base model, and require sponsors to affirmatively justify any determination that such evaluation is not applicable.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment argues that safety and subgroup evidence from an upstream base model cannot be inherited by a fine-tuned derivative, questioning reliance on supplier-level model assurance.",
+        "dynamic_intended_use": "It notes that fine-tuning can shift model behavior on dimensions other than the one targeted, so safety behavior outside the intended modification may change unpredictably."
+      },
+      "public_summary": "Accepts the benchmarking and re-evaluation framework but argues fine-tuning can degrade safety alignment even with benign data. Asks FDA to require subgroup evaluation on the fine-tuned artifact rather than inherited from the base model, with affirmative justification for any non-applicability determination.",
+      "summary_cut": false,
+      "source_passage": "5. FINE-TUNING REDISTRIBUTES EXPOSURE (Q9, Q22). Published work shows fine-tuning can compromise safety alignment even with benign data and no adversarial intent. Improvement on the dimension the fine-tuning targeted is not evidence of improvement on the Safety or Generalizability elements. Recommend: conduct R.2 subgroup evaluation on the fine-tuned artifact rather than inheriting it from the base model, and require sponsors to affirmatively justify a determination that R.2 is not applicable."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "A Foundation Model MAF characterizes the model as produced by the developer, not the artifact actually deployed in the device, which is altered by fine-tuning, compression, system prompts, retrieval, guardrails, and tool access.",
+      "requested_fda_action": "Require the referencing device submission to document downstream transformations applied to the foundation model, and ask model developers to characterize the stability of safety behavior under common modifications.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses the limits of supplier-provided model documentation, noting that information about the upstream model does not describe the modified artifact integrated into the device."
+      },
+      "public_summary": "Accepts Foundation Model MAFs but notes they describe the developer's model, not the deployed one after fine-tuning, compression, prompts, retrieval, guardrails, and tool access. Asks FDA to require submissions to document downstream transformations and developers to characterize safety-behavior stability under common modifications.",
+      "summary_cut": false,
+      "source_passage": "6. FOUNDATION MODEL MAFs DESCRIBE AN ARTIFACT THAT IS NOT THE DEPLOYED ONE (Q25). A MAF characterizes the model as the developer produced it; the device incorporates it after fine-tuning, often compression, plus system prompt, retrieval, guardrails, and tool access. Recommend: require the referencing submission to document downstream transformations, and ask developers to characterize safety-behavior stability under common modifications."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "cybersecurity",
+      "stakeholder_concern": "Because training corpus provenance is typically undisclosed, publicly available adversarial benchmark assets may already be present in model training data, so measured resistance to attacks can overstate a device's ability to generalize to novel adversarial constructions.",
+      "requested_fda_action": "Require that construct-validity arguments for benchmarks explicitly address potential prior exposure of public adversarial assets, and require disclosure of the attack taxonomy and scoring rubric when sponsor-developed adversarial assets are used.",
+      "confidence": "high",
+      "gap_tags": [
+        "cybersecurity_as_safety"
+      ],
+      "gap_explanations": {
+        "cybersecurity_as_safety": "The comment treats adversarial attack resistance and its valid measurement as a safety-relevant device competency requiring disclosed attack taxonomies and rubrics, which FDA's contamination question does not specifically address."
+      },
+      "public_summary": "Supports FDA's benchmark construct-validity focus but argues public adversarial benchmarks should be presumed exposed in training data, overstating robustness. Asks FDA to require construct-validity arguments addressing exposure and disclosure of attack taxonomies and scoring rubrics for sponsor-developed adversarial assets.",
+      "summary_cut": false,
+      "source_passage": "7. ADVERSARIAL BENCHMARK EXPOSURE (Q10). Because corpus provenance is generally undisclosed, public adversarial assets should be treated as potentially exposed rather than presumed sequestered, which causes measured resistance to overstate generalization to novel constructions. Recommend: require construct-validity arguments to address exposure, and require disclosure of attack taxonomy and scoring rubric where sponsor-developed assets are used."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter distinguishes agentic devices from informational ones on the grounds that a boundary failure that would merely produce an incorrect output becomes an executed action when the system has tool access.",
+      "requested_fda_action": "Tie the referenced S.2 and A.1 acceptance criteria to action surface, reversibility, authorization scope, confirmation checkpoints, and halt or rollback capability, and evaluate these as jointly interacting controls rather than in isolation.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The recommendation centers on authorization scope, confirmation checkpoints, and halt or rollback capability, i.e., the bounds of authority delegated to an agentic system.",
+        "operational_harm": "The comment frames the key concern as failures that produce executed actions with tool access rather than merely erroneous outputs, implicating harm arising from action in the deployment environment."
+      },
+      "public_summary": "Comment on agentic GenAI devices argues that a failure producing only a wrong output in informational devices produces an action when tools are accessible. Recommends acceptance criteria be tied to action surface, reversibility, authorization scope, confirmation checkpoints, and halt/rollback, assessed as jointly interacting controls.",
+      "summary_cut": false,
+      "source_passage": "8. AGENTIC SYSTEMS (Q26). A boundary failure in an informational device produces an output; the same failure with tool access produces an action. Recommend: tie S.2 and A.1 acceptance criteria to action surface, reversibility, authorization scope, confirmation checkpoints, and halt or rollback capability, and evaluate them as jointly interacting controls."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q22",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Fine-tuning alters a model's output distribution beyond the capability it targeted, so improvements on the targeted dimension can coexist with regressions in areas such as refusal/safety behavior and subgroup consistency. The commenter warns that under the proposed framework sponsors could treat targeted-task improvement as evidence about the Safety and Generalizability benchmarking elements more broadly.",
+      "requested_fda_action": "The passage implies FDA should not allow evidence of improvement on a fine-tuned target dimension to substitute for evaluation of the other competency elements, and should require re-evaluation across safety and generalizability dimensions (including subgroup consistency) after fine-tuning.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment highlights that fine-tuning shifts model behavior on dimensions outside the targeted capability, meaning the device's behavioral envelope changes in ways the targeted evaluation does not capture."
+      },
+      "public_summary": "Commenter accepts the competency-based benchmarking structure but warns that fine-tuning changes model behavior beyond the targeted capability, including refusal behavior and subgroup consistency. Improvement on the fine-tuned dimension should not be accepted as evidence for the broader Safety and Generalizability elements.",
+      "summary_cut": false,
+      "source_passage": "Fine-tuning changes the model's learned\nconditional output distribution, including over the token sequences adjacent to refusal decisions. Those changes\nare not confined to the capability the fine-tuning targeted. A fine-tune that improves performance on the\nintended clinical task can simultaneously alter behavior on dimensions the fine-tuning corpus was never\nselected to address, including subgroup consistency... The practical risk under the proposed framework is a sponsor who evaluates the fine-tuned artifact on the\ndimension the fine-tuning targeted, observes improvement, and treats that as evidence about the Safety and\nGeneralizability elements more broadly. Improvement on the targeted dimension is not evidence of\nimprovement elsewhere, and may coexist with substantial regression elsewhere."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "Concern that subgroup/generalizability evaluation (R.2) for devices built on domain fine-tuned models could be inherited from base-model testing or quietly skipped, and that fine-tuning on clinical data could be assumed to improve safety behavior without evidence.",
+      "requested_fda_action": "Require that R.2 subgroup evaluation be performed on the fine-tuned artifact itself rather than inherited from the base model, require sponsors to affirmatively justify any claim that R.2 is inapplicable, and not treat domain fine-tuning as presumptively risk-reducing for Safety elements.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses whether evaluation evidence generated on an upstream base model can be carried over to a downstream fine-tuned device artifact, arguing it cannot be inherited."
+      },
+      "public_summary": "Accepts the benchmarking element structure but asks FDA to require that subgroup evaluation (R.2) be conducted on the fine-tuned model artifact rather than inherited from the base model, with affirmative justification for any inapplicability, and not treat domain fine-tuning as presumptively risk-reducing.",
+      "summary_cut": false,
+      "source_passage": "Where a device incorporates a domain fine-tuned model, R.2 subgroup evaluation should be conducted on\nthe fine-tuned artifact rather than inherited from evaluation of the base model. Sponsors should\naffirmatively justify a determination that R.2 is not applicable, rather than reaching that determination by\nomission.\n Fine-tuning should not be treated as presumptively risk-reducing on the Safety elements merely because it\nwas performed on domain-appropriate clinical data."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "A Foundation Model MAF describes the model as the developer produced it, but the device incorporates that model only after fine-tuning, adaptation, compression, and in combination with system prompts, retrieval configuration, guardrails, and tool access; safety-relevant properties such as refusal behavior are highly sensitive to those steps. The stated risk is that a reviewer holding a thorough MAF may treat the model-level safety characterization as more probative of actual device behavior than it is.",
+      "requested_fda_action": "FDA should recognize the structural limits of model-level MAF information and avoid allowing it to stand in for device-level characterization of safety behavior after fine-tuning, compression, prompting, guardrails, and tool integration.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses whether safety information supplied by an upstream foundation model developer remains valid once the model is adapted and integrated into a device."
+      },
+      "public_summary": "Comment notes a structural limit of Foundation Model MAFs: they characterize the model as produced, while devices add fine-tuning, compression, prompts, guardrails, and tool access that alter safety behavior such as refusal. Warns reviewers may overweight MAF safety characterization as device-predictive.",
+      "summary_cut": false,
+      "source_passage": "The structural limitation is that a MAF characterizes the model as the developer produced it. The device\nincorporates that model after fine-tuning or adaptation, frequently after compression, and always in\ncombination with a system prompt, retrieval configuration, guardrails, and, for agentic devices, tool access.\nRefusal behavior is among the properties most sensitive to each of those steps... The risk is narrower: a reviewer holding a thorough MAF may\nreasonably treat the referenced safety characterization as more probative of device behavior than it is."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "unclear",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter observes that a voluntary Foundation Model MAF limited to the developer's own reference configuration is cheaper to produce but less probative, so developer incentives point toward submitting the least evidentiarily useful version.",
+      "requested_fda_action": "The passage identifies the incentive problem with configuration-limited MAF content but does not state a specific requested FDA action.",
+      "confidence": "low",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment concerns whether voluntary foundation model developer disclosures will convey information probative of behavior outside the developer's own reference configuration, i.e., as integrated into devices."
+      },
+      "public_summary": "Commenting on the voluntary Foundation Model MAF concept, the commenter notes that disclosures limited to a developer's own reference configuration are cheaper to produce yet less probative, so incentives favor the least evidentiarily useful version. No specific alternative is stated in the passage.",
+      "summary_cut": false,
+      "source_passage": "Question 25 also asks what would make the program sufficiently useful given limited developer incentive to\ndisclose. I note that a MAF describing behavior only in the developer's own reference configuration is both\ncheaper to produce and less probative, so the incentive gradient runs toward the version carrying the least\nevidentiary weight."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Evidence contained in a Foundation Model MAF may not transfer to the device as actually deployed, because downstream transformations such as fine-tuning, compression/quantization, and inference configuration can alter safety-relevant behavior relative to the reference configuration.",
+      "requested_fda_action": "Require submissions referencing a Foundation Model MAF to document downstream transformations (fine-tuning, compression method and precision, deployed inference configuration) so referenced evidence can be assessed for applicability, and direct MAF content guidance to have model developers characterize the stability of safety-relevant behaviors under common downstream modifications, including quantization at standard precisions.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment asks that foundation model developers supply evidence about behavioral stability beyond the reference configuration, treating upstream supplier disclosure as a prerequisite for assessing device evidence.",
+        "deployment_assurance_scalability": "It highlights that the as-deployed configuration—compression, precision, and inference settings—may differ from the evaluated model, so assurance must extend to the deployed instantiation."
+      },
+      "public_summary": "Accepts voluntary Foundation Model MAFs but asks FDA to require submissions to document downstream changes—fine-tuning, compression method and precision, and deployed inference configuration—and to have MAF content characterize stability of safety-relevant behaviors under common modifications such as quantization, not only the reference configuration.",
+      "summary_cut": false,
+      "source_passage": "Where a submission references a Foundation Model MAF, the submission should document the\ntransformations applied downstream, including fine-tuning, compression method and precision, and the\ndeployed inference configuration, so the referenced evidence can be assessed for applicability.\n MAF content guidance could ask developers to characterize the stability of safety-relevant behaviors under\ncommon downstream modifications, including quantization at standard precisions, rather than only in the\nreference configuration."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Because training, instruction-tuning, and safety-tuning corpora provenance is typically incomplete or undisclosed, public adversarial benchmarks may already be represented in alignment training; a model may refuse a known adversarial prompt or near neighbor without the underlying safe behavior generalizing, so measured resistance overstates robustness to novel constructions in the same attack class, increasingly so as assets age and circulate.",
+      "requested_fda_action": "Treat publicly available adversarial benchmarking assets as potentially exposed rather than presumed sequestered when assessing whether benchmark performance predicts real-world safety behavior, and account for the degree to which such assets degrade in validity over time.",
+      "confidence": "medium",
+      "gap_tags": [
+        "cybersecurity_as_safety"
+      ],
+      "gap_explanations": {
+        "cybersecurity_as_safety": "The comment frames resistance to adversarial prompt classes as a safety-relevant device property whose apparent measurement can be inflated by benchmark exposure, implying adversarial robustness must be evaluated as a safety question rather than through public test performance."
+      },
+      "public_summary": "Accepts benchmarking but argues public adversarial benchmarks should be presumed contaminated, not sequestered, because undisclosed alignment training may include those prompts. Measured resistance overstates robustness to novel attacks in the same class, and overstatement grows as assets age and circulate.",
+      "summary_cut": false,
+      "source_passage": "Because the provenance of training, instruction-tuning, and safety-tuning corpora is generally incomplete or\nundisclosed, public adversarial benchmarks should be treated as potentially exposed rather than presumed\nsequestered. A model may decline a prompt drawn from a well-known adversarial dataset because that prompt\nor a near neighbor was present during alignment training, rather than because the underlying behavior\ngeneralizes. Measured resistance on public adversarial assets therefore tends to overstate resistance to novel\nconstructions within the same attack class, and the overstatement grows as an asset ages and circulates."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q10",
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Sponsor-developed adversarial benchmarking assets are less likely to be contaminated through public exposure but create an independence problem because the same party chooses both the attacks and the acceptance criteria.",
+      "requested_fda_action": "Consider requiring publication of the adversarial attack category taxonomy and scoring methodology while allowing specific probe payloads to remain undisclosed, and consider sequestered assets held by a qualified independent party as a more complete solution, subject to the program design issues raised in Question 16.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Notes that sponsor-created adversarial test assets avoid contamination but lack independence. Suggests publishing attack taxonomy and scoring methodology while withholding specific probes, and identifies sequestered assets held by a qualified independent party as a fuller but more complex solution.",
+      "summary_cut": false,
+      "source_passage": "This interacts with Question 16. Sponsor-developed adversarial assets are less likely to be exposed but carry an\nevident independence problem, since the same party selects both the attacks and the acceptance criteria. One\navailable balance is to publish the attack category taxonomy and scoring methodology while retaining the\nspecific probe payloads, which preserves reviewability of the construct without publishing a reproduction\nrecipe. Sequestered assets held by a qualified independent party would address both concerns more completely,\nat the cost of the program design considerations raised in Question 16."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "cybersecurity",
+      "stakeholder_concern": "Benchmark assets used to test safety behavior may be contaminated or already reflected in model training and public alignment data, undermining the construct validity of the results; sponsor-developed adversarial testing may also lack transparency.",
+      "requested_fda_action": "Require that construct validity arguments for safety-behavior benchmark elements explicitly address data exposure, including whether assets post-date the model's training data and whether they appear in public alignment datasets, and require prespecification and disclosure of adversarial attack-class taxonomies and scoring rubrics even if individual payloads remain confidential.",
+      "confidence": "medium",
+      "gap_tags": [
+        "cybersecurity_as_safety"
+      ],
+      "gap_explanations": {
+        "cybersecurity_as_safety": "The comment treats adversarial attack-class testing and scoring rubrics as an integral part of safety-behavior benchmarking, linking adversarial robustness to device safety evaluation rather than a separate security review."
+      },
+      "public_summary": "Accepts benchmark-based evaluation but asks FDA to require that construct validity arguments for safety-behavior benchmarks address data exposure, including whether assets post-date training data or appear in public alignment datasets, and that adversarial attack taxonomies and scoring rubrics be prespecified and disclosed.",
+      "summary_cut": false,
+      "source_passage": "Recommendation: For the S-series elements, a sponsor's construct validity argument should address exposure\nspecifically, including whether assets post-date the model's training data and whether they appear in public\nalignment datasets. Where sponsor-developed adversarial assets are used, the taxonomy of attack classes and\nthe scoring rubric should be prespecified and disclosed even where individual payloads are not."
+    },
+    {
+      "segment_id": "seg-021",
+      "question_ids": [
+        "q26",
+        "q9"
+      ],
+      "position": "support",
+      "primary_issue": "cybersecurity",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter is concerned that adversarial manipulation of generative AI devices can occur not only through direct user prompts but also indirectly via retrieved content and tool outputs, which constitute a distinct attack surface.",
+      "requested_fda_action": "Retain Element A.1's benchmarking requirement for resistance to prompt injection across user inputs, retrieved content, and tool outputs, citing published security research supporting the distinction.",
+      "confidence": "medium",
+      "gap_tags": [
+        "cybersecurity_as_safety"
+      ],
+      "gap_explanations": {
+        "cybersecurity_as_safety": "The comment treats resistance to direct and indirect prompt injection as a device performance competency to be benchmarked, framing security robustness as integral to safe operation rather than a separate cybersecurity matter."
+      },
+      "public_summary": "The commenter endorses the discussion paper's Element A.1 for requiring evaluation of resistance to prompt injection via user inputs, retrieved content, and tool outputs, noting published research that indirect injection through retrieved content is a distinct attack surface from direct prompts.",
+      "summary_cut": false,
+      "source_passage": "Element A.1 appropriately includes resistance to prompt injection through user inputs, retrieved content, and\ntool outputs, which reflects the established finding that indirect injection through retrieved content is a distinct\nattack surface from direct user input (Greshake et al., AISec 2023)."
+    },
+    {
+      "segment_id": "seg-022",
+      "question_ids": [
+        "q1",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "The consequence axis in FDA's two-axis framework is defined as the severity of relying on an incorrect output, which presumes a user can choose whether to rely on it. For agentic devices with tool access, the same boundary failure directly produces an action, so no opportunity exists for reliance to be withheld.",
+      "requested_fda_action": "Adapt the consequence axis of the risk framework so that, for agentic or tool-using devices, risk is measured by the severity of an action executed without an intervening opportunity for the user to withhold reliance.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment centers on devices with tool access that execute actions autonomously, removing the user's chance to decline reliance on an output.",
+        "operational_harm": "It distinguishes harm arising from an incorrect output that may or may not be acted upon from harm arising from an action already taken by the device."
+      },
+      "public_summary": "Comment accepts the two-axis risk framework but argues its consequence axis, framed as severity of relying on an incorrect output, does not fit agentic devices with tool access, where a boundary failure produces an action with no opportunity to withhold reliance.",
+      "summary_cut": false,
+      "source_passage": "A boundary failure under S.2 in a non-agentic informational device produces an inappropriate output that a user\nmay or may not rely upon. The same failure in a device with tool access produces an action. The consequences\naxis in Figure 1 captures the severity of relying on an incorrect output, but for agentic systems the relevant\nquantity is closer to the severity of an action taken without any opportunity for reliance to be withheld."
+    },
+    {
+      "segment_id": "seg-023",
+      "question_ids": [
+        "q1",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "For action-taking (agentic) devices, acceptance criteria based only on the likelihood of unsafe generation are insufficient because the human review that moderates risk elsewhere in the framework is absent by construction, leaving the breadth of actions, their reversibility, and the scope of authority granted to the device unaddressed.",
+      "requested_fda_action": "Expand acceptance criteria for action-taking devices to account for the exposed action surface, reversibility of available actions, the device's authorization scope, independent confirmation before high-consequence or irreversible actions, and halt/rollback capability. Evaluate the S.2 and A.1 elements as jointly interacting controls rather than independent checklist items.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment centers on the authorization scope granted to an autonomous device and the need for independent confirmation before high-consequence actions, since human review is absent by construction.",
+        "operational_harm": "It emphasizes harms from the action surface itself—irreversible or in-progress action sequences requiring halt or rollback—rather than solely from an incorrect output."
+      },
+      "public_summary": "Accepts the agentic-device framing but urges FDA to broaden acceptance criteria for action-taking functions beyond likelihood of unsafe generation to include action surface, reversibility, authorization scope, independent confirmation, and halt/rollback capability, evaluating safety and agentic controls as jointly interacting rather than separately.",
+      "summary_cut": false,
+      "source_passage": "Recommendation: For devices in the action-taking columns, acceptance criteria should account not only for\nthe likelihood of unsafe generation but also for the action surface exposed to the model, the reversibility of\navailable actions, the authorization scope granted to the device, the availability of independent confirmation\nbefore high-consequence or irreversible actions, and the capability to halt or roll back an in-progress action\nsequence. Where meaningful autonomous action is possible, S.2 and A.1 should be evaluated as jointly\ninteracting controls rather than as independent checklist items, since the human review that moderates risk\nelsewhere in the framework is absent by construction."
+    },
+    {
+      "segment_id": "seg-024",
+      "question_ids": [
+        "q19",
+        "q22",
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter agrees that exhaustive input testing is impractical and that a competency-based structure is a sound response, but is concerned the structure may not hold up across the device lifecycle. Specific concerns are that the deployed artifact may differ from the one evaluated premarket, that changes may not be systematically enumerated, that safety attributes may be inferred from observational use rather than actively measured, and that comparisons may be too coarse to reveal regressions.",
+      "requested_fda_action": "Strengthen the lifecycle elements of the competency-based approach: ensure the premarket-evaluated artifact is what reaches patients, require enumeration of changes that triggers characterization, require active re-measurement of safety elements rather than inference from observational use, and require comparison at a resolution fine enough to detect performance regression.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment centers on assuring that the artifact evaluated premarket is the one actually deployed to patients and that its safety properties are actively re-measured in the field rather than assumed.",
+        "dynamic_intended_use": "The concern that post-premarket changes must be enumerated and characterized, with regressions made visible, addresses drift in the device's evaluated behavioral envelope over the lifecycle."
+      },
+      "public_summary": "Accepts the competency-based framework as a sound response to untestable input ranges, but urges FDA to strengthen lifecycle durability: confirm the deployed artifact matches the one evaluated, enumerate changes triggering characterization, actively re-measure safety elements rather than infer from observational use, and compare at regression-detecting",
+      "summary_cut": true,
+      "source_passage": "The discussion paper is correct that the range of possible inputs to a GenAI-enabled device may be too large for\nexhaustive testing to be practical, and the competency-based structure is a sound response to that constraint. My\ncomments concern the durability of that structure across the device lifecycle: that the artifact evaluated at\npremarket is the artifact that reaches the patient, that changes to it are enumerated in a way that prompts\ncharacterization, that the safety elements are re-measured actively rather than inferred from observational use,\nand that results are compared at a resolution fine enough to make a regression visible."
+    }
+  ]
+}
