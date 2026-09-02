@@ -1,0 +1,1670 @@
+See attached file(s)
+
+[Attachment: Comment from Alfred McBride]
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 1
+BOUNDARY-CONDITIONED REALIZATION
+(BCR)
+AUDIT + SOLUTIONAL STACK
+FDA CDRH - Considerations for the Regulation of Generative AI-Enabled Medical
+Devices:
+Discussion Paper and Request for Feedback
+REV4 - End-to-End Traceability Edition
+Full realization audit, no-noise drilldown, BCR solutional stack, direct BCR stakeholder answers to all 26 FDA discussion
+questions, and requirement/issue-to-evidence traceability.
+Prepared for: Alfred T. McBride | Audit date: August 18, 2026
+FINAL BCR STATUS
+PARTIAL
+Traceability rule: FDA discussion questions remain labeled as discussion questions/considerations. This audit does not convert them
+into binding FDA requirements. The matrix separately identifies the BCR audit rule that justifies each BCR finding, solution,
+verification method, closure criterion, and re-open trigger.
+No substrate equations, substrate derivation, substrate prediction, branch-selector substrate work, or BAO scoring are
+included in this realization audit.
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 2
+Contents
+1. Executive Summary
+2. Source Control, Scope, and Claim Preservation
+3. BCR Rule ID Registry
+4. Fixed BCR Audit Anchor Ledger
+5. Three-Layer Realization Map
+6. Mandatory Formula Execution and Numerical Status
+7. Structural Numerical Worksheet
+8. Boundary Budget
+9. FDA Framework vs. BCR Side-by-Side
+10. Master End-to-End Traceability Matrix (FDA Q1-Q26)
+11. Mandatory BCR Behavior Ledger
+12. Residual Ledger and No-Noise Drilldown
+13. Deep Drill-Down Tests
+14. Expanded BCR Solutional Stack
+15. BCR Solutional Decision Logic
+16. Direct BCR Stakeholder Responses to FDA Questions 1-26
+17. Closure Loop and Stress-Test Instructions
+18. What the Source Gets Right
+19. What Remains Incomplete
+20. Closure Criteria and Final BCR Ruling
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 3
+1. Executive Summary
+FDA's August 2026 discussion paper identifies a genuine regulatory realization problem: GenAI-enabled devices can accept
+open-ended inputs, produce variable outputs, change through models/prompts/retrieval/guardrails/orchestration/interfaces,
+depend on opaque third-party foundation models, migrate across conversational functions, and change after deployment. FDA
+proposes a two-axis risk heuristic, competency-based benchmarking, clinical confirmation, postmarket monitoring, change
+control, possible Foundation Model Master Files, and additional attention to agentic AI.
+BCR's audit result is PARTIAL, not FAIL. The source explicitly states that it is for discussion and feedback and is not draft/final
+guidance or a completed regulatory policy. BCR therefore applies the no-false-fail rule and judges the document according to
+what it claims to be.
+The central BCR finding is that FDA's two-axis activity-by-consequence picture is useful but cannot serve as the complete
+closure observable. FDA itself asks whether reversibility, downstream safeguards, time pressure, and traceability should also
+be represented. Other sections add user review capability, conversational trajectory, escalation direction, benchmark validity,
+subgroup behavior, third-party model change, postmarket detectability, and agentic tool use. BCR converts these into a 15-
+driver boundary budget and material coupling screen.
+The second central finding is benchmark false-lock. FDA explicitly recognizes contamination, saturation, and limited real-world
+representativeness of public benchmark assets. BCR therefore treats benchmark performance as one witness, never as
+automatic safety closure. The repair chain is benchmark construct validity -> independent/sequestered testing -> clinical
+confirmation -> postmarket residual monitoring -> automatic re-open after safety-relevant change.
+REV4 adds full end-to-end traceability. Each FDA question is linked to: source type -> FDA anchor -> applicable BCR rule(s)
+-> BCR boundary driver(s) -> residual mechanism -> solution-stack control -> verification evidence -> pass criterion -> re-open
+trigger -> status. This makes the justification reviewable without forcing the reader to reconstruct the logic from separate
+sections.
+2. Source Control, Scope, and Claim Preservation
+Field Audit entry
+Audited source FDA CDRH, Considerations for the Regulation of Generative AI-
+Enabled Medical Devices: Discussion Paper and Request for
+Feedback, August 2026, 31-page uploaded PDF.
+Source scope Entire discussion paper, including risk framework, competency-
+based premarket evaluation, benchmarking, clinical confirmation,
+postmarket monitoring/change control, Foundation Model MAF
+concept, agentic AI, Appendices A-B, Figures 1-2, and all 26
+discussion questions.
+BCR standard BCR Theory Formula Run Rules and Terms - Professional Standard
+for Comprehensive Boundary-Conditioned Realization Audits.
+BCR attribution Alfred T. McBride - Boundary-Conditioned Realization (BCR), applied
+as an independent audit and validation framework.
+BCR references 10.5281/zenodo.19669049; 10.5281/zenodo.19935455;
+10.5281/zenodo.20635758.
+FDA source claim boundary Discussion purposes only; not draft/final guidance; not final
+regulatory expectations; does not resolve whether new legal
+authorities are needed.
+Direct use vs. convergence No direct use of BCR by FDA is identified. Similar concepts are
+classified only as independent convergence / BCR-type behavior.
+Patent statement No patent statement identified in the inspected source.
+Exclusion No BCR substrate material is included in this realization run.
+Claim-preservation ruling: the audited object remains FDA's actual discussion paper. BCR does not replace the source with an
+abstract score, benchmark, or policy claim that FDA did not make.
+3. BCR Rule ID Registry
+These are the audit requirements used by the traceability matrix. They come from the uploaded BCR Professional Standard. They
+justify BCR audit actions; they are not presented as FDA legal requirements.
+Rule ID BCR audit requirement Traceability meaning
+BCR-R01 Source control + A=A identity preservation Keep the actual device/regulatory object intact;
+do not substitute a proxy.
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 4
+Rule ID BCR audit requirement Traceability meaning
+BCR-R02 X=0 / no orphan variables No material variable, branch, residual, risk,
+condition, or evidence requirement may remain
+unassigned.
+BCR-R03 Assigned vs. realized separation A proposed or assigned control is not closure
+until post-control evidence demonstrates
+realization.
+BCR-R04 B+E+S discipline Separate boundary, evidence, and structured
+residual.
+BCR-R05 No residual as noise Drill residuals through all behavior branches
+before accepting randomness/noise.
+BCR-R06 Coupled-boundary review Interactions among two or more boundary terms
+must be evaluated when material.
+BCR-R07 Missing-variable gate Essential absent variables prevent a full PASS.
+BCR-R08 Invalid-observable gate A score or witness that cannot support the claim
+is not promoted to truth.
+BCR-R09 Boundary budget List major boundary contributions separately
+with expected effect, evidence, residual, and
+status.
+BCR-R10 Domain-validity + invalid-use risk Classify intended-use domain validity and flag
+use outside the demonstrated envelope.
+BCR-R11 External witness gap Internal/simulated/self-reported evidence
+requires an independent external witness when
+closure depends on it.
+BCR-R12 Meaningful observer control Human approval counts only when the observer
+can see the action, recipient/target, data,
+reason, tool/memory influence, permission, and
+reversibility.
+BCR-R13 Provenance closure Classify and preserve provenance for
+instructions, data, memory, tools, user input,
+external content, privileged sources, and agent
+messages.
+BCR-R14 Reversibility class Classify actions as reversible, partly reversible,
+irreversible, externally harmful, or physically
+consequential.
+BCR-R15 No false pass / no stopping early Do not close on one favorable metric while
+required branches remain open; continue until
+residual closure.
+BCR-R16 Closure loop Show failure -> apply control -> rerun ->
+measure residual -> drill again if residual
+remains.
+BCR-R17 Solutional math and repair After findings, provide repair branches,
+recommendations, instructions for use, and
+closure criteria.
+BCR-R18 Exact RAN/NOT RAN discipline Run numerically where supported; otherwise
+state exactly why numeric execution is not
+available.
+4. Fixed BCR Audit Anchor Ledger
+Anchor Formula Value Status
+phi (1+sqrt(5))/2 1.6180339887 LOCKED
+L_C phi^-1 0.6180339887 LOCKED
+L_T phi^-3 0.2360679775 LOCKED
+L_G 1-phi^-4 0.8541019662 LOCKED
+V_LC 4 phi^-3 0.94427191 LOCKED
+Delta_LC 1-V_LC 0.05572809 LOCKED
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 5
+These fixed audit anchors are displayed as required BCR controls. No FDA quantity in this discussion paper is normalized to them, so
+no artificial numerical comparison is claimed.
+Branch anchor Status Run-specific reason
+A_Phi LOCKED Audited source identity preserved.
+A_B OPEN Boundary inventory extends beyond the two-
+axis visualization.
+A_nablaB OPEN Change over model/dependency/time requires
+explicit delta closure.
+A_R OPEN Device-specific residual acceptance thresholds
+are not provided.
+A_V OPEN Observer/visibility measures are conceptually
+present but not quantitatively closed.
+A_C OPEN Cross-boundary coupling is recognized but not
+systematically quantified.
+A_I LOCKED Intended use and device-function identity are
+explicit FDA organizing concepts.
+A_L OPEN Third-party model lineage/version assurance
+remains incomplete.
+A_G OPEN Non-averagable hard-gate governance requires
+explicit adoption.
+5. Three-Layer Realization Map
+BCR layer FDA/GenAI mapping Audit question
+Layer 1 - X_struct Actual GenAI-enabled medical-device function
+in final deployed configuration: model/version,
+prompts, retrieval, guardrails, tools, interface,
+intended
+use/users/population/environment/dependencie
+s.
+Is the actual device preserved rather than
+replaced by a foundation model, benchmark
+score, or summary category?
+Layer 2 - R_BCR Boundary-conditioned realization
+transformation: intended-use limits, risk
+categorization, benchmarks, clinical
+confirmation, human control, permissions,
+change controls, PCCP, lineage, monitoring,
+escalation, evidence gates.
+Which boundary mechanisms transform
+underlying capability into safe or unsafe realized
+behavior?
+Layer 3 - X_r Observed realized behavior: outputs/actions,
+escalations, clinical decisions, tool actions,
+errors, subgroup performance,
+complaints/adverse events, drift, human
+overrides, postmarket outcomes.
+What actually happened, what is visible, and
+what structured residual remains?
+6. Mandatory Formula Execution and Numerical Status
+Formula branch Formula Status Execution/result
+Main realization law X_r = X_struct * PRODUCT_i(1 + s_i
+c_i J_i)
+RAN QUALITATIVELY FDA supplies identifiable boundary
+terms J_i but not validated c_i
+magnitudes needed for numerical
+realization.
+Coupled-boundary law X_r = X_struct * PRODUCT_i(1+s_i
+c_i J_i) * PRODUCT_{i,j}(1+s_ij c_ij
+J_i J_j)
+RAN QUALITATIVELY Material interactions exist (autonomy
+x consequence, tools x permissions,
+change x monitoring, etc.); no
+numeric c_ij are supplied.
+Linearized diagnostic X_r/X_struct - 1 ~= SUM_i s_i c_i J_i NOT RAN NUMERICALLY No validated common dimensionless
+coefficient set.
+Decrement/residual form X_r = X_struct - Delta R RAN QUALITATIVELY Used to classify remaining
+safety/evidence/visibility residuals;
+device-level numeric residuals are
+absent.
+Residual Residual = Observed - Predicted NOT RAN NUMERICALLY No device-specific predicted-vs-
+observed dataset in the discussion
+paper.
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 6
+Formula branch Formula Status Execution/result
+Realization factor F_R = X_r / X_struct NOT RAN NUMERICALLY No valid common scalar denominator
+for the multi-domain regulatory
+concepts.
+Boundary effect B_eff = X_struct - X_r; B_eff% =
+B_eff/X_struct * 100
+NOT RAN NUMERICALLY No device-level baseline and realized
+outcome values.
+Transition / visibility P(B)=1/(1+exp(-gamma x)); T=P(1-P);
+V=4P(1-P)
+NOT RAN NUMERICALLY No defined x/gamma transition
+variable supplied.
+Observability V_obs=A_r*O_r*L_r;
+X_visible=X_total*V_obs
+RAN QUALITATIVELY FDA discusses reviewability,
+supervision, opacity, and monitoring
+but supplies no calibrated
+A_r/O_r/L_r.
+Amplification A_amp=after/before; Amp%=((after-
+before)/before)*100
+NOT RAN NUMERICALLY No controlled before/after intervention
+dataset.
+7. Structural Numerical Worksheet
+Numeric block Input/substitution Result Status
+FDA risk-plane dimensions 2 Activity + consequence RAN NUMERICALLY
+Additional dimensions explicitly raised
+in FDA Q1
+4 Reversibility + downstream
+safeguards + time pressure +
+traceability
+RAN NUMERICALLY
+Minimum named dimension set 2 + 4 6 dimensions RAN NUMERICALLY
+Current-axis count share of minimum
+set
+2 / 6 33.33% count share only; no equal-
+weight assumption
+RAN NUMERICALLY
+FDA benchmark elements 3 safety + 4 proficiency + 2
+generalizability + 1 agentic
+10 elements RAN NUMERICALLY
+Clinical-confirmation approaches count 5 approaches RAN NUMERICALLY
+Postmarket monitoring examples count 3 example approaches RAN NUMERICALLY
+FDA discussion questions count 26 RAN NUMERICALLY
+BCR boundary drivers N_J = 15 15 major drivers RAN NUMERICALLY
+Candidate pairwise coupling screens 15*14/2 105 before materiality reduction RAN NUMERICALLY
+Traceability coverage 26 / 26 100% of FDA discussion questions
+mapped end-to-end; this is document
+coverage, not a safety score
+RAN NUMERICALLY
+8. Boundary Budget
+Driver Boundary FDA basis BCR realization effect
+J1 Activity/autonomy FDA core axis Higher independent action increases
+exposure and coupling.
+J2 Consequence severity FDA core axis Higher harm severity increases
+evidence/control burden.
+J3 Directiveness/output specificity FDA continuum Realized action pressure depends on
+substance/context, not keywords
+alone.
+J4 User independent-review capability Patient/HCP/generalist/specialist
+discussion
+Actual capability to detect and
+contextualize error changes realized
+risk.
+J5 Conversational trajectory Multi-turn discussion Cumulative context can migrate
+function/risk state.
+J6 Time pressure / time-to-harm Explicitly raised in Q1 Shorter response window can defeat
+nominal human control.
+J7 Reversibility Explicitly raised in Q1 Irreversible actions require hard-gate
+treatment.
+J8 Traceability / provenance Q1 + MAF discussion Low traceability impairs auditability,
+attribution, and correction.
+J9 Downstream safeguards Explicitly raised in Q1 Independent safeguards can
+suppress harmful realization.
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 7
+Driver Boundary FDA basis BCR realization effect
+J10 Model/dependency change Postmarket/PCCP/third-party model
+sections
+Change can invalidate prior evidence
+if identity is not preserved.
+J11 Subgroup performance Benchmarking/clinical confirmation Aggregate pass can mask clinically
+important subgroup failure.
+J12 Benchmark validity/contamination FDA explicitly identifies
+contamination/saturation
+Benchmark pass can false-lock if the
+asset no longer predicts deployment
+behavior.
+J13 Tools/permissions/action sequence Agentic AI section Tool access converts output into
+external action; permissions become
+safety critical.
+J14 Meaningful human control Supervision/reviewability discussion Human presence is not control unless
+visibility, authority, timing, and
+reversibility are demonstrated.
+J15 Postmarket detectability Section VI Safety depends on observing
+emerging residuals before
+unacceptable propagation.
+9. FDA Framework vs. BCR Side-by-Side
+Area FDA discussion approach BCR solution / closure addition
+Risk representation Activity x consequence gradient Retain as front-end visualization; close through
+full J-vector, couplings, and hard gates.
+Action-directing Continuum based on substance/context Treat directiveness as realized trajectory
+behavior, not keyword class.
+User type Patient/HCP; generalist/specialist distinctions Measure actual independent-review capability
+and intervention performance.
+Multi-turn Assess realistic trajectories Model and test full state trajectory and
+cumulative boundary drift.
+Benchmarking Safety/proficiency/generalizability/agentic
+elements
+Add construct-validity, provenance/change,
+observer, tool-permission, reversibility, and
+false-lock gates.
+Clinical confirmation Risk-proportionate evidence ladder Escalate to highest-risk unresolved branch; do
+not close on average risk.
+Postmarket Rebenchmark, clinician review, drift monitoring Add residual owners, trigger thresholds, harm-
+time logic, and automatic re-open.
+Third-party models Possible voluntary Model MAF Require device-boundary
+identity/version/fingerprint/change evidence;
+voluntary data cannot alone close gaps.
+Agentic systems Additional considerations acknowledged Evaluate whole action sequence, permissions,
+irreversible nodes, tool outputs, provenance,
+rollback.
+Human oversight Supervision may moderate risk Credit only when visibility + authority + time +
+intervention + reversibility are demonstrated.
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 8
+10. Master End-to-End Traceability Matrix
+Interpretation rule: the FDA source column identifies the actual FDA discussion question/consideration. The BCR rule column identifies the internal BCR audit requirement that justifies the BCR
+treatment. Nothing in this matrix silently promotes an FDA question into a binding FDA requirement.
+10A. Risk Assessment - FDA Q1-Q6
+ID / FDA anchor Source type BCR rule basis Drivers / residual Solution Verification evidence Pass / re-open Status
+TR-Q01
+FDA Q1; Sec. IV.A; App. B;
+pp. 9-10 / 27-28
+Discussion question; not an
+FDA requirement
+BCR-R02,R07,R09,R14,R17 J1,J2,J6,J7,J8,J9
+Compression + missing-
+variable
+S2,S4 Multidimensional boundary
+record + scenario tests +
+hard-gate results
+PASS: No essential risk
+dimension orphaned; all
+applicable hard gates pass
+RE-OPEN: Relevant
+model/use/tool/workflow
+change or new harm pathway
+PARTIAL
+TR-Q02
+FDA Q2; Sec. IV.A; App. B;
+pp. 9-10 / 27-28
+Discussion question; not an
+FDA requirement
+BCR-R06,R09,R12,R17 J3,J5,J6,J14
+Coupling + emergence
+S2,S3,S6 Semantically equivalent
+multi-turn cases varying
+specificity/personalization/im
+perative force
+PASS: Stable classification
+and no unrecognized
+trajectory crossing
+RE-OPEN: Prompt, UI,
+personalization, or
+conversational-policy change
+PARTIAL
+TR-Q03
+FDA Q3; Sec. IV.A; App. B;
+pp. 9-10 / 27-28
+Discussion question; not an
+FDA requirement
+BCR-R08,R10,R12,R17 J4,J14,J2
+Visibility + masking
+S6,S7,S8 Comprehension, error-
+detection, escalation, and
+intervention testing in
+intended users
+PASS: User population
+meets prespecified
+review/intervention criteria
+RE-OPEN:
+Intended-user/population or
+communication-interface
+change
+PARTIAL
+TR-Q04
+FDA Q4; Sec. IV.A; App. B;
+pp. 9-10 / 27-28
+Discussion question; not an
+FDA requirement
+BCR-R01,R08,R10,R12 J4,J14,J2
+Visibility + invalid-proxy
+S6,S8 Domain-specific error
+detection and specialist-
+escalation testing
+PASS: Intended HCP can
+independently review or
+device reliably escalates
+RE-OPEN: Clinical scope or
+intended-user change
+PARTIAL
+TR-Q05
+FDA Q5; Sec. IV.A; App. B;
+pp. 9-10 / 27-28
+Discussion question; not an
+FDA requirement
+BCR-R06,R09,R15,R17 J3,J5,J13
+Emergence + coupling
+S3,S6 Long-context/order-effect/
+state-transition scenarios
+PASS: No tested trajectory
+crosses intended-use/safety
+boundary without
+detection/control
+RE-OPEN: Prompt
+orchestration, memory,
+context-window, or tool
+change
+PARTIAL
+TR-Q06
+FDA Q6; Sec. IV.A; App. B;
+pp. 9-10 / 27-28
+Discussion question; not an
+FDA requirement
+BCR-R04,R05,R14,R16 J2,J5,J6,J7
+Boundary + asymmetric
+residual
+S1,S4,S6,S7 Separate under- and over-
+escalation rates with
+severity/timing; hard-gate
+misses tracked separately
+PASS: Each direction meets
+prespecified limits;
+catastrophic misses satisfy
+hard gate
+RE-OPEN: Clinical context,
+escalation policy, or
+threshold change
+PARTIAL
+10B. Premarket Evaluation - FDA Q7-Q17
+ID / FDA anchor Source type BCR rule basis Drivers / residual Solution Verification evidence Pass / re-open Status
+TR-Q07
+FDA Q7; Sec. V.E; App. B;
+pp. 18-19 / 28-29
+Discussion question; not an
+FDA requirement
+BCR-R01,R03,R09,R15,R17 J1-J15
+Boundary + evidence closure
+S0,S5,S6,S7,S12,S13 Traceable benchmark +
+clinical confirmation +
+residual monitoring for exact
+deployed configuration
+PASS: Evidence chain
+remains valid to deployed
+configuration and essential
+residuals close
+RE-OPEN: Any safety-
+relevant configuration or
+intended-use change
+PARTIAL
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 9
+ID / FDA anchor Source type BCR rule basis Drivers / residual Solution Verification evidence Pass / re-open Status
+TR-Q08
+FDA Q8; Sec. V.E; App. B;
+pp. 18-19 / 28-29
+Discussion question; not an
+FDA requirement
+BCR-R02,R09,R10,R14,R15 J1,J2 plus material J3-J15
+Compression + hard-gate risk
+S2,S4,S7 Evidence-tier rationale tied to
+highest material
+boundary/hard gate
+PASS: Evidence burden
+justified by highest material
+branch, not average position
+RE-OPEN: New or elevated
+boundary/hard-gate condition
+PARTIAL
+TR-Q09
+FDA Q9; Sec. V.E; App. B;
+pp. 18-19 / 28-29
+Discussion question; not an
+FDA requirement
+BCR-R02,R07,R08,R12,R13 J5,J8,J10,J12,J13,J14
+Missing-variable + masking
+S5,S6,S8,S9,S10 Added tests for provenance,
+change, human override,
+reversibility, tool permissions,
+trajectories, benchmark
+validity
+PASS: No critical boundary
+hidden in aggregate
+competency score
+RE-OPEN: Benchmark/test
+architecture or device
+architecture change
+PARTIAL
+TR-Q10
+FDA Q10; Sec. V.E; App. B;
+pp. 18-19 / 28-29
+Discussion question; not an
+FDA requirement
+BCR-R05,R08,R11,R15,R16 J11,J12,J5,J8
+False-lock + invalid-
+observable
+S5,S7,S12 Sequestered assets,
+contamination checks,
+perturbation stability,
+independent adjudication,
+clinical/postmarket linkage
+PASS: Benchmark predicts
+intended-use behavior within
+defined envelope
+RE-OPEN: Benchmark
+exposure/saturation,
+deployment distribution,
+model revision
+PARTIAL
+TR-Q11
+FDA Q11; Sec. V.E; App. B;
+pp. 18-19 / 28-29
+Discussion question; not an
+FDA requirement
+BCR-R09,R10,R11,R14,R17 J1,J2,J4,J6,J7,J11
+Boundary + external-witness
+S7 Prespecified rationale for
+confirmation tier;
+independent adjudication and
+representativeness evidence
+PASS: Selected method
+closes intended-use
+residuals at required rigor
+RE-OPEN: Risk profile,
+intended use, population, or
+unresolved residual changes
+PARTIAL
+TR-Q12
+FDA Q12; Sec. V.E; App. B;
+pp. 18-19 / 28-29
+Discussion question; not an
+FDA requirement
+BCR-R04,R08,R11,R13,R18 J11,J12,J8
+Compression + masking +
+provenance
+S5,S7 Prespecified
+estimands/denominators/strat
+a/CIs; synthetic and real
+reported separately unless
+justified compatible
+PASS: Statistical claim maps
+to intended-use distribution;
+pooling justified when used
+RE-OPEN: Distribution shift,
+data-source or generator-
+lineage change
+PARTIAL
+TR-Q13
+FDA Q13; Sec. V.E; App. B;
+pp. 18-19 / 28-29
+Discussion question; not an
+FDA requirement
+BCR-R05,R11,R13,R15 J11,J12,J8
+Hidden-realization + masking
+S5,S7 Generator lineage,
+independent real sentinels,
+diverse generators, subgroup
+stress tests
+PASS: Synthetic evidence
+supplements independent
+real witnesses where blind
+spots are plausible
+RE-OPEN: Generator/model
+lineage change or new
+subgroup gap
+PARTIAL
+TR-Q14
+FDA Q14; Sec. V.E; App. B;
+pp. 18-19 / 28-29
+Discussion question; not an
+FDA requirement
+BCR-R01,R08,R10,R17 J1,J2,J4
+Invalid-observable +
+comparator boundary
+S1,S7 Comparator rationale tied to
+intended use/counterfactual;
+device-alone and human-AI
+results separated when
+relevant
+PASS: Comparator directly
+supports claimed role and
+clinical question
+RE-OPEN:
+Intended-use/workflow/comp
+arator standard changes
+PARTIAL
+TR-Q15
+FDA Q15; Sec. V.E; App. B;
+pp. 18-19 / 28-29
+Discussion question; not an
+FDA requirement
+BCR-R01,R09,R10,R17 J1,J2,J9
+Boundary + counterfactual
+S1,S7 Prespecified credible
+counterfactual: unaided
+clinician, delayed specialist,
+alternative technology, or no
+intervention as appropriate
+PASS: Counterfactual aligns
+with claimed benefit-risk
+statement
+RE-OPEN: Care pathway or
+standard practice changes
+PARTIAL
+TR-Q16
+FDA Q16; Sec. V.E; App. B;
+pp. 18-19 / 28-29
+Discussion question; not an
+FDA requirement
+BCR-R11,R13,R15,R17 J8,J12
+External witness +
+governance
+S5,S7,S12 Independence/conflict
+criteria, multiple eligible
+providers,
+rotation/retest/appeal,
+sequestered evidence
+PASS: Independence
+demonstrated without single
+unreviewable gatekeeper
+RE-OPEN: Conflict, vendor,
+dataset, or qualification
+status changes
+PARTIAL
+TR-Q17
+FDA Q17; Sec. V.E; App. B;
+pp. 18-19 / 28-29
+Discussion question; not an
+FDA requirement
+BCR-R01,R06,R10,R17 J1,J5,J13
+Domain-validity +
+morphology/architecture
+residual
+S1,S2,S3,S6,S9 Architecture-specific tests:
+multimodal consistency,
+world-model state error,
+action-state verification, etc.
+PASS: Architecture-specific
+failure modes are mapped to
+evidence
+RE-OPEN: Underlying
+architecture/modality/tooling
+change
+PARTIAL
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 10
+10C. Postmarket Monitoring - FDA Q18-Q24
+ID / FDA anchor Source type BCR rule basis Drivers / residual Solution Verification evidence Pass / re-open Status
+TR-Q18
+FDA Q18; Sec. VI.D; App. B;
+pp. 21-22 / 29-30
+Discussion question; not an
+FDA requirement
+BCR-R10,R12,R14,R15,R16 J2,J6,J7,J15
+Boundary + visibility +
+reversibility
+S4,S12,S13 Detection sensitivity,
+monitoring latency, response
+time, reversibility and harm-
+time analysis
+PASS: Detection + response
+demonstrably precede
+unacceptable harm for
+deferred residuals
+RE-OPEN: Monitoring
+capability, harm latency, or
+action reversibility changes
+PARTIAL
+TR-Q19
+FDA Q19; Sec. VI.D; App. B;
+pp. 21-22 / 29-30
+Discussion question; not an
+FDA requirement
+BCR-R05,R09,R15,R16 J10,J11,J12,J15
+Nonlocal + boundary residual
+S12,S13 Calendar + event triggers;
+rebenchmark, clinician
+review, telemetry,
+complaints/outcomes,
+sentinel cases
+PASS: Prespecified triggers
+force timely
+review/requalification
+RE-OPEN:
+Model/update/distribution/co
+mplaint/adverse-event/tool-
+change triggers
+PARTIAL
+TR-Q20
+FDA Q20; Sec. VI.D; App. B;
+pp. 21-22 / 29-30
+Discussion question; not an
+FDA requirement
+BCR-R06,R08,R11,R13,R15 J10,J13,J15
+Coupling + common-mode
+masking
+S8,S10,S12 Independent supervisor
+validation, version control,
+detection performance,
+common-mode testing,
+human fail-safe
+PASS: Supervisor is
+independently evidenced and
+shared-blind-spot risk is
+tested
+RE-OPEN: Supervisor/device
+update or detection
+degradation
+PARTIAL
+TR-Q21
+FDA Q21; Sec. VI.D; App. B;
+pp. 21-22 / 29-30
+Discussion question; not an
+FDA requirement
+BCR-R02,R04,R09,R13,R17 J8,J15
+Provenance + accountability
+residual
+S12,S13 Master residual ledger with
+named accountable owner;
+external contributors provide
+traceable witnesses
+PASS: Every residual has
+one accountable owner
+despite distributed evidence
+generation
+RE-OPEN: Stakeholder
+responsibility/process change
+PARTIAL
+TR-Q22
+FDA Q22; Sec. VI.D; App. B;
+pp. 21-22 / 29-30
+Discussion question; not an
+FDA requirement
+BCR-R01,R06,R09,R13,R16 J10 plus affected J_i/J_ij
+Boundary-delta + hidden
+realization
+S10,S11 Change delta record,
+affected-branch regression,
+hold/release decision, hard-
+gate retest
+PASS: Requalification scope
+is traceable to changed
+boundaries and passes
+affected gates
+RE-OPEN: Every safety-
+relevant modification
+PARTIAL
+TR-Q23
+FDA Q23; Sec. VI.D; App. B;
+pp. 21-22 / 29-30
+Discussion question; not an
+FDA requirement
+BCR-R02,R09,R15,R16,R17 J10
+Boundary-envelope residual
+S11,S13 Allowable boundary
+envelope, maximum deltas,
+required tests, hold points,
+rollback and new-submission
+triggers
+PASS: Change remains
+inside validated envelope
+and required tests pass
+before release
+RE-OPEN: Change outside
+envelope or failed control/test
+PARTIAL
+TR-Q24
+FDA Q24; Sec. VI.D; App. B;
+pp. 21-22 / 29-30
+Discussion question; not an
+FDA requirement
+BCR-R01,R03,R11,R13,R16 J8,J10,J15
+Hidden-realization + identity
+break
+S10,S11 Provider notice + fingerprints
++ canary/shadow delta tests
++ quarantine/rollback
+PASS: No unrecognized
+safety-relevant dependency
+change reaches production
+RE-OPEN: Any
+provider/model/API/safety-
+behavior change
+PARTIAL
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 11
+10D. Other Topics - FDA Q25-Q26
+ID / FDA anchor Source type BCR rule basis Drivers / residual Solution Verification evidence Pass / re-open Status
+TR-Q25
+FDA Q25; Sec. VII.C; App. B;
+pp. 23 / 30
+Discussion question; not an
+FDA requirement
+BCR-R01,R11,R13,R15 J8,J10
+Provenance + external-
+witness gap
+S10 Versioned/current
+architecture, supported uses,
+limitations, failure modes,
+subgroup evidence,
+guardrails, update/audit
+commitments
+PASS: Evidence is current
+enough for deployed version;
+stale/voluntary gaps remain
+explicit
+RE-OPEN: Model
+version/update or stale file
+evidence
+PARTIAL
+TR-Q26
+FDA Q26; Sec. VII.C; App. B;
+pp. 23 / 30
+Discussion question; not an
+FDA requirement
+BCR-
+R06,R09,R12,R13,R14,R16
+J5,J7,J8,J13,J14
+Coupling + nonlocal +
+irreversible-action residual
+S3,S4,S8,S9 End-to-end action-state logs,
+permission tests, prompt-
+injection via tools/retrieval,
+irreversible confirmation,
+rollback, post-action
+verification
+PASS: No
+unauthorized/unobserved/un
+verified high-consequence
+state transition
+RE-OPEN:
+Tool/permission/memory/retri
+eval/model/action-policy
+change
+PARTIAL
+10E. Traceability Chain Completeness Check
+Chain element Required end-to-end meaning Coverage in REV4 Status
+FDA source anchor Reader can return to the exact FDA question/section that
+generated the issue.
+TR-Q01 through TR-Q26 name question, section, appendix,
+and paper pages.
+PASS
+Source type Discussion question/consideration is not silently promoted to
+a binding FDA requirement.
+Every trace row states discussion question; not an FDA
+requirement.
+PASS
+BCR rule basis Each BCR treatment is justified by one or more explicit BCR
+run rules.
+Every trace row carries BCR-Rxx rule IDs linked to Section 3. PASS
+Boundary driver The risk/realization mechanism is tied to an identified J_i
+boundary.
+Every trace row carries J drivers from the Section 8 budget. PASS
+Residual mechanism The reason closure is incomplete is classified, not called
+noise.
+Every trace row identifies a residual/failure class. PASS
+Solution control The finding maps to a concrete repair branch. Every trace row maps to S0-S13. PASS
+Verification evidence A reviewer can see what test/witness must demonstrate the
+control.
+Every trace row names the evidence/test needed. PASS
+Pass criterion Closure is stated as an observable criterion, not a promise. Every trace row contains a PASS condition. PASS
+Re-open trigger Closure is not permanent when the realized boundary
+changes.
+Every trace row contains a re-open event. PASS
+Status Open vs partial vs pass remains visible. All 26 trace rows remain PARTIAL until device-specific
+evidence exists.
+PASS - traceability only
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 12
+11. Mandatory BCR Behavior Ledger
+Behavior Evidence Status Residual class Closure action
+Nonlocal / accessibility Outputs/actions propagate
+through patients, clinicians,
+tools, workflows, and time.
+RAN QUALITATIVELY Nonlocal residual Add downstream
+action/outcome witnesses and
+time-series monitoring.
+Coupling Autonomy, consequence, tools,
+permissions, user capability,
+change, and monitoring interact.
+RAN QUALITATIVELY Coupling residual Run paired/multi-boundary
+stress tests.
+Suppression Refusal, guardrails, human
+gates, permissions, and
+safeguards can block harmful
+realization.
+RAN QUALITATIVELY Suppression residual Verify under adversarial, long-
+context, and shifted conditions.
+Amplification Personalization, repetition,
+autonomy, or tool access can
+amplify consequence.
+RAN QUALITATIVELY Amplification residual Measure pre/post effects when
+device data exist.
+Masking Aggregate benchmark pass can
+coexist with subgroup,
+trajectory, or hard-gate failure.
+RAN QUALITATIVELY Masking residual Disaggregate by subgroup,
+sequence, scenario, and hard-
+gate event.
+Compression Two-axis risk and aggregate
+scores compress higher-
+dimensional behavior.
+RAN QUALITATIVELY Compression residual Keep heuristic, require full
+boundary ledger for closure.
+Saturation / false-lock Public benchmarks may be
+contaminated or saturated.
+RAN QUALITATIVELY False-lock residual Use sequestered/rotating
+assets, perturbation, clinical
+linkage.
+Conversion Hidden model limitations
+become visible through outputs,
+logs, cards, tools, and
+outcomes.
+RAN QUALITATIVELY Conversion residual Validate that the witness
+exposes the safety-relevant
+hidden state.
+Emergence Multi-turn/agentic sequences
+can create behavior absent in
+single-turn tests.
+RAN QUALITATIVELY Emergence residual Test full trajectories and tool-
+chain state transitions.
+Hidden realization Third-party changes or hidden
+training/guardrail behavior can
+alter device operation.
+RAN QUALITATIVELY Hidden-realization residual Require lineage, version,
+notification, fingerprints,
+regression witnesses.
+Missing-variable gate No closed quantitative
+acceptance thresholds/coupling
+model is provided.
+RAN QUALITATIVELY Missing-variable residual Define device-specific criteria
+before release.
+Invalid-observable gate Benchmark score alone cannot
+prove real-world safety.
+RAN QUALITATIVELY Invalid-observable residual Require clinical/postmarket
+witnesses tied to intended use.
+12. Residual Ledger and No-Noise Drilldown
+Residual Observed source
+condition
+Class Status Closure
+Risk-model dimensionality Two-axis representation
+omits/defers other
+acknowledged factors.
+Compression / missing-
+variable
+PARTIAL Adopt S2/S4.
+Benchmark construct validity Benchmark success may not
+predict deployment behavior.
+False-lock / invalid-
+observable
+PARTIAL S5 + independent
+clinical/postmarket linkage.
+Multi-turn state migration Risk can change across a
+conversation.
+Emergence / coupling PARTIAL S3 trajectory-state testing.
+Patient/HCP reviewability Ability to recognize error
+varies and is not directly
+measured.
+Visibility PARTIAL S8 user-control validation.
+Agentic tool chain Output can become external
+action across multiple steps.
+Coupling / nonlocal PARTIAL S9 action-state closure.
+Third-party model change Sponsor may not control
+underlying update.
+Hidden realization / identity PARTIAL S10/S11 fingerprint-hold-
+retest-rollback.
+Postmarket uncertainty
+transfer
+Harm may realize before
+monitoring detects it.
+Boundary / visibility PARTIAL S4/S12 harm-time gate.
+Synthetic self-confirmation Same-class generator may
+reproduce device blind spots.
+Masking / hidden realization PARTIAL S5/S7 independent real
+sentinels.
+Human oversight Nominal supervision can be
+ineffective.
+Visibility / masking PARTIAL S8 meaningful observer
+criteria.
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 13
+Residual Observed source
+condition
+Class Status Closure
+Subgroup aggregate masking Overall score can hide
+subgroup failure.
+Masking / compression PARTIAL Subgroup floors + hard-gate
+criteria.
+No-noise ruling: these residuals are structured and map to identifiable boundary/visibility/coupling/compression/masking/hidden-
+realization/missing-variable mechanisms. They may not be dismissed as generic AI variability.
+13. Deep Drill-Down Tests
+13.1 Two-Axis Risk Compression
+Source observation. Figure 1 is activity x consequence; FDA Q1 itself raises reversibility, safeguards, time pressure, traceability.
+BCR drill chain. Two-axis visualization -> omitted factor becomes decisive -> aggregate location appears acceptable -> actual
+realization violates an unrepresented boundary.
+Root residual. Compressed visualization is not the full closure observable.
+Solution branch. S2 full boundary ledger + S4 hard-gate overlay.
+Status. PARTIAL
+13.2 Directiveness Is a Trajectory
+Source observation. FDA says directiveness is a continuum and context-dependent.
+BCR drill chain. Neutral information -> personalization -> narrowing -> urgency/authority -> practical instruction -> user acts.
+Root residual. Single-output labeling can understate cumulative action pressure.
+Solution branch. S3 trajectory-state model + validated directiveness tests.
+Status. PARTIAL
+13.3 User Expertise Mismatch
+Source observation. FDA distinguishes patients, generalists, specialists.
+BCR drill chain. User title -> assumed competence -> domain-specific error not recognized -> downstream reliance.
+Root residual. Professional category is a proxy for actual independent-review capability.
+Solution branch. S8 comprehension/error-detection/intervention validation.
+Status. PARTIAL
+13.4 Multi-Turn Scope Migration
+Source observation. FDA notes informational behavior can migrate to action-directing over an exchange.
+BCR drill chain. Each turn appears in scope -> accumulated context changes function -> boundary crossing occurs only at trajectory
+level.
+Root residual. Lawful observable is the trajectory, not isolated turns.
+Solution branch. S3 state-transition testing, long-context adversarial cases, end-state intended-use checks.
+Status. PARTIAL
+13.5 Benchmark False-Lock
+Source observation. FDA identifies benchmark contamination, saturation, limited representativeness.
+BCR drill chain. Training/test exposure -> high score -> confidence lock -> deployment differs -> hidden failure.
+Root residual. Benchmark pass can be a saturated witness rather than closure.
+Solution branch. S5 sequestered assets + contamination controls + perturbation + clinical confirmation.
+Status. PARTIAL
+13.6 Clinical Confirmation Distribution Shift
+Source observation. FDA proposes several confirmation approaches and synthetic supplements.
+BCR drill chain. Benchmark population -> confirmation sample -> deployment distribution shifts -> subgroup/trajectory gap emerges.
+Root residual. Confirmation valid only inside demonstrated transportability envelope.
+Solution branch. S7 deployment-distribution specification + strata + OOD sentinels + evidence escalation.
+Status. PARTIAL
+13.7 Comparator Ambiguity
+Source observation. FDA asks standard-of-care vs median clinician vs specialist/generalist vs human-AI.
+BCR drill chain. Wrong comparator -> favorable metric -> actual clinical-use question differs.
+Root residual. Comparator identity is a boundary condition.
+Solution branch. S1/S7 comparator tied to intended use and counterfactual; separate device-alone/team performance.
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 14
+Status. PARTIAL
+13.8 Postmarket Uncertainty Deferral
+Source observation. FDA asks when greater premarket uncertainty may be accepted with postmarket reliance.
+BCR drill chain. Uncertainty deferred -> harm realizes before detection -> monitoring acts too late.
+Root residual. Monitoring cannot close a branch when detection/response exceeds time-to-harm.
+Solution branch. S4/S12 allow deferral only with detectability + latency + reversibility evidence.
+Status. PARTIAL
+13.9 Third-Party Model Change
+Source observation. FDA recognizes provider-initiated underlying-model changes.
+BCR drill chain. Approved config -> provider update -> behavior change -> sponsor misses delta -> prior evidence no longer maps to
+deployed state.
+Root residual. Unobserved dependency delta breaks identity preservation.
+Solution branch. S10/S11 fingerprint + notice + canary/shadow + hold + regression + rollback.
+Status. PARTIAL
+13.10 Meaningful Human Oversight
+Source observation. FDA distinguishes supervision/autonomy and reviewability.
+BCR drill chain. Human present -> critical context hidden -> short decision window -> nominal approval -> unsafe action proceeds.
+Root residual. Human presence is not meaningful control.
+Solution branch. S8 measure visibility + authority + latency + override + rollback.
+Status. PARTIAL
+13.11 Synthetic Self-Confirmation
+Source observation. FDA asks how to avoid same-class synthetic data reproducing device gaps.
+BCR drill chain. Shared assumptions -> generator omits blind spot -> evaluation omits failure -> device passes.
+Root residual. Synthetic evidence can mask correlated blind spots.
+Solution branch. S5/S7 lineage separation + independent real sentinels + diverse generators.
+Status. PARTIAL
+13.12 Agentic Tool-Chain Realization
+Source observation. FDA notes multi-step planning/tool use/reduced human review.
+BCR drill chain. Benign plan -> tool call -> permission -> external action -> changed world state -> later steps operate on new state.
+Root residual. Output-only testing fails once actions cross into external state.
+Solution branch. S9 whole action-state sequence + permission + irreversible-node + rollback/post-action verification.
+Status. PARTIAL
+14. Expanded BCR Solutional Stack
+Level Stack control Required implementation Evidence / pass criterion Status
+S0 Identity/configuration lock Pin the exact final device
+configuration: model/version,
+prompts, retrieval, guardrails,
+tools, UI, intended
+use/users/population/environme
+nt/dependencies.
+Exact configuration
+manifest/fingerprint; no
+untracked component.
+OPEN
+S1 Function and hazard map Map each function and action
+through foreseeable hazard ->
+user/tool response ->
+clinical/system harm.
+Every safety claim links to
+hazard, control, and witness.
+OPEN
+S2 Multidimensional boundary
+ledger
+Track J1-J15 and material
+couplings; retain the two-axis
+picture as a front-end heuristic
+only.
+No essential boundary
+orphaned; material couplings
+identified.
+OPEN
+S3 Trajectory-state model Evaluate multi-turn and agentic
+state transitions over complete
+interaction/action trajectories.
+No hidden trajectory crossing
+without detection/control.
+OPEN
+S4 Hard-gate screen Prevent catastrophic,
+irreversible, unauthorized, or
+identity-breaking branches from
+being averaged into a pass.
+All applicable hard gates pass
+before aggregate metrics are
+credited.
+OPEN
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 15
+Level Stack control Required implementation Evidence / pass criterion Status
+S5 Benchmark construct-validity
+gate
+Use prespecified methods,
+independent/sequestered
+assets, contamination checks,
+subgroup/trajectory coverage,
+and perturbation tests.
+Benchmark predicts intended-
+use behavior within a
+demonstrated envelope.
+PARTIAL
+S6 Competency benchmark Evaluate safety, clinical
+proficiency, generalizability, and
+agentic competence in the final
+configuration.
+Prespecified competency
+acceptance criteria pass with no
+hidden hard-gate failure.
+PARTIAL
+S7 Clinical confirmation ladder Escalate evidence from
+retrospective/shadow/standardiz
+ed/adjudicated/prospective
+methods based on the highest-
+risk unresolved branch.
+Clinically representative witness
+closes intended-use residuals.
+PARTIAL
+S8 Meaningful observer control Demonstrate visibility, authority,
+timing, intervention ability, and
+reversibility for human
+oversight.
+Observer can detect/stop
+unsafe action within required
+time.
+OPEN
+S9 Agentic sequence closure Control tool permissions, action-
+state transitions, irreversible
+nodes, tool-output validation,
+rollback, and post-action
+checks.
+No unauthorized/unobserved
+high-consequence transition.
+OPEN
+S10 Lineage/dependency assurance Maintain model/provider version
+identity, fingerprints, safety-
+relevant limitations, update
+notices, and current
+dependency evidence.
+Deployed dependency
+identity/version is known and
+current.
+OPEN
+S11 Change/PCCP gate Classify change by boundary
+delta; test affected branches;
+hold or roll back when limits are
+exceeded.
+No safety-relevant change
+enters production without
+required evidence.
+OPEN
+S12 Postmarket residual monitor Use rebenchmarking, clinician
+sampling, drift/subgroup
+surveillance,
+complaints/adverse
+events/outcomes, and sentinel
+cases.
+Prespecified triggers detect
+meaningful residuals before
+unacceptable propagation.
+PARTIAL
+S13 Closure/re-open logic Give every residual an owner,
+evidence requirement, pass
+limit, trigger, and re-open rule.
+All essential branches
+CLOSED/PASS or deployment
+is constrained.
+OPEN
+15. BCR Solutional Decision Logic
+15.1 Boundary vector. FDA's activity and consequence dimensions remain useful, but the closure object is the broader
+boundary vector J={J1...J15} plus material couplings. This prevents the two-dimensional visualization from replacing the actual
+regulatory realization problem.
+15.2 Realization execution. For a device-specific implementation:
+X_r = X_struct * PRODUCT_i(1 + s_i c_i J_i)
+and for material interactions:
+X_r = X_struct * PRODUCT_i(1 + s_i c_i J_i) * PRODUCT_{i,j}(1 + s_ij c_ij J_i J_j)
+The source identifies many J_i concepts but does not provide validated c_i/c_ij coefficients. Therefore the formulas are RAN
+QUALITATIVELY and NOT RAN NUMERICALLY rather than populated with invented coefficients.
+15.3 Hard-gate overlay. Define a prespecified hard-gate event H=1 for any non-averagable safety branch such as an
+unauthorized high-consequence action, an irreversible action without required confirmation, a catastrophic missed escalation
+above its allowable limit, a dependency identity mismatch, or failure of required human intervention. When H=1, the affected
+release/use slice cannot close regardless of favorable aggregate metrics.
+15.4 Two-direction escalation residuals. Keep R_under and R_over separate with severity and timing. Do not collapse them
+into one scalar unless the clinical weighting is prospectively justified. Severe under-escalation can remain a hard gate even if
+over-escalation is low.
+15.5 Residual closure. For each branch k, Residual_k = Observed_k - Predicted_k. Where the ideal error target is zero, report
+absolute residual and the prespecified acceptance limit directly rather than dividing by zero. Closure requires the post-control
+residual to satisfy the limit and the same failure path to remain closed under perturbation.
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 16
+15.6 Change delta. A postmarket modification or third-party dependency update creates a boundary delta, Delta J.
+Requalification scope follows the changed J_i and material J_iJ_j couplings, while hard-gate branches always receive direct
+re-evidence. This turns PCCP into a controlled envelope of allowable boundary movement.
+15.7 Evidence fusion. Benchmark, clinical, synthetic, and postmarket evidence remain distinct witnesses until independence
+and transportability are demonstrated. Synthetic and real-world data should not be merged into one performance estimate
+solely because both are available.
+16. Direct BCR Stakeholder Responses to FDA Questions 1-26
+The short response below is the solution output; each answer is cross-referenced to the Master Traceability Matrix (TR-Qxx) and the
+solution stack. The discussion questions remain FDA questions, not converted requirements.
+FDA Question 1 - Risk framework dimensions
+Trace ID. TR-Q01 | FDA Q1; Sec. IV.A; App. B; pp. 9-10 / 27-28
+BCR response. Use the activity x consequence matrix as a communication layer, not the full closure model. Add a mandatory
+boundary ledger for reversibility, downstream safeguards, time pressure/time-to-harm, traceability/provenance, user review capability,
+conversational trajectory, model/dependency change, subgroup performance, tool permissions, and postmarket detectability. Overlay
+hard gates for irreversible or catastrophic branches.
+BCR rule basis. BCR-R02,R07,R09,R14,R17
+Solution-stack link. S2,S4
+Closure evidence. Multidimensional boundary record + scenario tests + hard-gate results
+Pass / re-open. No essential risk dimension orphaned; all applicable hard gates pass Re-open when: Relevant
+model/use/tool/workflow change or new harm pathway.
+FDA Question 2 - Spectrum of informational directiveness
+Trace ID. TR-Q02 | FDA Q2; Sec. IV.A; App. B; pp. 9-10 / 27-28
+BCR response. Treat directiveness as realized action pressure across the interaction, not a keyword test. Evaluate specificity,
+personalization, imperative force, immediacy, repetition, preservation of alternatives, and consequence across realistic trajectories.
+BCR rule basis. BCR-R06,R09,R12,R17
+Solution-stack link. S2,S3,S6
+Closure evidence. Semantically equivalent multi-turn cases varying specificity/personalization/imperative force
+Pass / re-open. Stable classification and no unrecognized trajectory crossing Re-open when: Prompt, UI, personalization, or
+conversational-policy change.
+FDA Question 3 - Patient-facing vs HCP-facing risk
+Trace ID. TR-Q03 | FDA Q3; Sec. IV.A; App. B; pp. 9-10 / 27-28
+BCR response. Do not infer safe use solely from patient/HCP labels. Measure whether intended users understand limitations, detect
+plausible errors, respond to uncertainty, and act on escalation instructions across health-literacy levels.
+BCR rule basis. BCR-R08,R10,R12,R17
+Solution-stack link. S6,S7,S8
+Closure evidence. Comprehension, error-detection, escalation, and intervention testing in intended users
+Pass / re-open. User population meets prespecified review/intervention criteria Re-open when: Intended-user/population or
+communication-interface change.
+FDA Question 4 - Generalist vs specialist HCP use
+Trace ID. TR-Q04 | FDA Q4; Sec. IV.A; App. B; pp. 9-10 / 27-28
+BCR response. Base risk on task-to-competency mismatch, not professional title alone. If safety depends on specialty knowledge,
+validate the generalist's independent review and the device's specialist-escalation behavior.
+BCR rule basis. BCR-R01,R08,R10,R12
+Solution-stack link. S6,S8
+Closure evidence. Domain-specific error detection and specialist-escalation testing
+Pass / re-open. Intended HCP can independently review or device reliably escalates Re-open when: Clinical scope or intended-user
+change.
+FDA Question 5 - Multi-turn conversational trajectories
+Trace ID. TR-Q05 | FDA Q5; Sec. IV.A; App. B; pp. 9-10 / 27-28
+BCR response. Evaluate the entire conversation as a state trajectory. Track migration from non-directive to action-directing/action-
+taking states, order effects, long-context degradation, and cumulative boundary drift.
+BCR rule basis. BCR-R06,R09,R15,R17
+Solution-stack link. S3,S6
+Closure evidence. Long-context/order-effect/state-transition scenarios
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 17
+Pass / re-open. No tested trajectory crosses intended-use/safety boundary without detection/control Re-open when: Prompt
+orchestration, memory, context-window, or tool change.
+FDA Question 6 - Under- vs over-escalation
+Trace ID. TR-Q06 | FDA Q6; Sec. IV.A; App. B; pp. 9-10 / 27-28
+BCR response. Maintain separate under- and over-escalation residuals with severity and timing. Do not force them into one score
+unless a clinical weighting rule is justified in advance; severe missed escalation can be a hard gate.
+BCR rule basis. BCR-R04,R05,R14,R16
+Solution-stack link. S1,S4,S6,S7
+Closure evidence. Separate under- and over-escalation rates with severity/timing; hard-gate misses tracked separately
+Pass / re-open. Each direction meets prespecified limits; catastrophic misses satisfy hard gate Re-open when: Clinical context,
+escalation policy, or threshold change.
+FDA Question 7 - Competency-based premarket approach
+Trace ID. TR-Q07 | FDA Q7; Sec. V.E; App. B; pp. 18-19 / 28-29
+BCR response. The competency-based model is useful if benchmark -> clinical confirmation -> postmarket monitoring forms one
+continuous closure chain tied to the exact final deployed configuration.
+BCR rule basis. BCR-R01,R03,R09,R15,R17
+Solution-stack link. S0,S5,S6,S7,S12,S13
+Closure evidence. Traceable benchmark + clinical confirmation + residual monitoring for exact deployed configuration
+Pass / re-open. Evidence chain remains valid to deployed configuration and essential residuals close Re-open when: Any safety-
+relevant configuration or intended-use change.
+FDA Question 8 - Risk framework used to scale evidence
+Trace ID. TR-Q08 | FDA Q8; Sec. V.E; App. B; pp. 18-19 / 28-29
+BCR response. Use activity and consequence for initial tiering, then scale evidence using the full boundary vector and hard gates. A
+low average position cannot reduce evidence when irreversibility, hidden tool action, poor observability, or severe subgroup failure
+exists.
+BCR rule basis. BCR-R02,R09,R10,R14,R15
+Solution-stack link. S2,S4,S7
+Closure evidence. Evidence-tier rationale tied to highest material boundary/hard gate
+Pass / re-open. Evidence burden justified by highest material branch, not average position Re-open when: New or elevated
+boundary/hard-gate condition.
+FDA Question 9 - Adequacy of benchmarking elements
+Trace ID. TR-Q09 | FDA Q9; Sec. V.E; App. B; pp. 18-19 / 28-29
+BCR response. FDA's ten benchmark elements are a strong core. Add explicit gates for provenance/dependency identity, model-
+change sensitivity, meaningful human override, reversibility/rollback, tool permissions, long trajectories, and benchmark construct
+validity/contamination.
+BCR rule basis. BCR-R02,R07,R08,R12,R13
+Solution-stack link. S5,S6,S8,S9,S10
+Closure evidence. Added tests for provenance, change, human override, reversibility, tool permissions, trajectories, benchmark
+validity
+Pass / re-open. No critical boundary hidden in aggregate competency score Re-open when: Benchmark/test architecture or device
+architecture change.
+FDA Question 10 - Benchmark construct validity
+Trace ID. TR-Q10 | FDA Q10; Sec. V.E; App. B; pp. 18-19 / 28-29
+BCR response. Require evidence that benchmark performance predicts intended-use behavior: independent/sequestered assets,
+contamination controls, representative morphology, subgroup/trajectory coverage, perturbation stability, and correlation with
+clinical/postmarket witnesses.
+BCR rule basis. BCR-R05,R08,R11,R15,R16
+Solution-stack link. S5,S7,S12
+Closure evidence. Sequestered assets, contamination checks, perturbation stability, independent adjudication, clinical/postmarket
+linkage
+Pass / re-open. Benchmark predicts intended-use behavior within defined envelope Re-open when: Benchmark exposure/saturation,
+deployment distribution, model revision.
+FDA Question 11 - Selecting clinical-confirmation rigor
+Trace ID. TR-Q11 | FDA Q11; Sec. V.E; App. B; pp. 18-19 / 28-29
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 18
+BCR response. Use a sequential clinical-confirmation ladder based on the highest-risk realized branch. Lower-risk informational uses
+may close with retrospective/shadow evidence; high-consequence or autonomous uses need stronger clinically representative
+confirmation and may require prospective study.
+BCR rule basis. BCR-R09,R10,R11,R14,R17
+Solution-stack link. S7
+Closure evidence. Prespecified rationale for confirmation tier; independent adjudication and representativeness evidence
+Pass / re-open. Selected method closes intended-use residuals at required rigor Re-open when: Risk profile, intended use,
+population, or unresolved residual changes.
+FDA Question 12 - Statistically meaningful performance; synthetic/real evidence
+Trace ID. TR-Q12 | FDA Q12; Sec. V.E; App. B; pp. 18-19 / 28-29
+BCR response. Prespecify estimands, denominators, subgroup/trajectory strata, uncertainty intervals, and missing-data rules. Keep
+synthetic and real estimates separate unless distributional transportability and lineage independence justify combination.
+BCR rule basis. BCR-R04,R08,R11,R13,R18
+Solution-stack link. S5,S7
+Closure evidence. Prespecified estimands/denominators/strata/CIs; synthetic and real reported separately unless justified
+compatible
+Pass / re-open. Statistical claim maps to intended-use distribution; pooling justified when used Re-open when: Distribution shift, data-
+source or generator-lineage change.
+FDA Question 13 - Where synthetic data helps or fails
+Trace ID. TR-Q13 | FDA Q13; Sec. V.E; App. B; pp. 18-19 / 28-29
+BCR response. Use synthetic data for combinatorial stress, rare known scenarios, perturbations, and privacy-constrained coverage;
+do not rely on it alone for unknown blind spots or safety-critical claims where generator and device may share correlated gaps. Add
+independent real sentinels and lineage disclosure.
+BCR rule basis. BCR-R05,R11,R13,R15
+Solution-stack link. S5,S7
+Closure evidence. Generator lineage, independent real sentinels, diverse generators, subgroup stress tests
+Pass / re-open. Synthetic evidence supplements independent real witnesses where blind spots are plausible Re-open when:
+Generator/model lineage change or new subgroup gap.
+FDA Question 14 - Comparator and acceptance criteria
+Trace ID. TR-Q14 | FDA Q14; Sec. V.E; App. B; pp. 18-19 / 28-29
+BCR response. Choose the comparator from intended use and counterfactual workflow. Use an appropriate clinical standard for
+substitution claims; test human-AI team and device-alone performance separately when both matter.
+BCR rule basis. BCR-R01,R08,R10,R17
+Solution-stack link. S1,S7
+Closure evidence. Comparator rationale tied to intended use/counterfactual; device-alone and human-AI results separated when
+relevant
+Pass / re-open. Comparator directly supports claimed role and clinical question Re-open when: Intended-use/workflow/comparator
+standard changes.
+FDA Question 15 - Compare to care absent the device
+Trace ID. TR-Q15 | FDA Q15; Sec. V.E; App. B; pp. 18-19 / 28-29
+BCR response. Yes - include the actual counterfactual care likely without the device: unaided clinician, delayed specialist review,
+alternative technology, or no intervention when clinically appropriate.
+BCR rule basis. BCR-R01,R09,R10,R17
+Solution-stack link. S1,S7
+Closure evidence. Prespecified credible counterfactual: unaided clinician, delayed specialist, alternative technology, or no
+intervention as appropriate
+Pass / re-open. Counterfactual aligns with claimed benefit-risk statement Re-open when: Care pathway or standard practice
+changes.
+FDA Question 16 - Independent third parties
+Trace ID. TR-Q16 | FDA Q16; Sec. V.E; App. B; pp. 18-19 / 28-29
+BCR response. Use qualified independent third parties for sequestered datasets, red-team testing, adjudication, and benchmark
+maintenance, with transparent qualification/conflict rules, multiple eligible providers, rotation, and retest/appeal mechanisms.
+BCR rule basis. BCR-R11,R13,R15,R17
+Solution-stack link. S5,S7,S12
+Closure evidence. Independence/conflict criteria, multiple eligible providers, rotation/retest/appeal, sequestered evidence
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 19
+Pass / re-open. Independence demonstrated without single unreviewable gatekeeper Re-open when: Conflict, vendor, dataset, or
+qualification status changes.
+FDA Question 17 - Other model architectures
+Trace ID. TR-Q17 | FDA Q17; Sec. V.E; App. B; pp. 18-19 / 28-29
+BCR response. Keep the closure architecture technology-neutral but add architecture-specific failure branches: multimodal
+consistency, world-model state/long-horizon error, clinically relevant morphology preservation, and action-state verification for
+autonomous controllers.
+BCR rule basis. BCR-R01,R06,R10,R17
+Solution-stack link. S1,S2,S3,S6,S9
+Closure evidence. Architecture-specific tests: multimodal consistency, world-model state error, action-state verification, etc.
+Pass / re-open. Architecture-specific failure modes are mapped to evidence Re-open when: Underlying architecture/modality/tooling
+change.
+FDA Question 18 - Greater postmarket reliance / premarket uncertainty
+Trace ID. TR-Q18 | FDA Q18; Sec. VI.D; App. B; pp. 21-22 / 29-30
+BCR response. Allow greater postmarket reliance only when residuals are bounded, detectability is proven, monitoring is sensitive,
+intervention precedes unacceptable harm, and actions are reversible or otherwise controlled. Do not defer catastrophic, irreversible,
+or poorly observable risk.
+BCR rule basis. BCR-R10,R12,R14,R15,R16
+Solution-stack link. S4,S12,S13
+Closure evidence. Detection sensitivity, monitoring latency, response time, reversibility and harm-time analysis
+Pass / re-open. Detection + response demonstrably precede unacceptable harm for deferred residuals Re-open when: Monitoring
+capability, harm latency, or action reversibility changes.
+FDA Question 19 - Postmarket approaches and cadence
+Trace ID. TR-Q19 | FDA Q19; Sec. VI.D; App. B; pp. 21-22 / 29-30
+BCR response. Use both calendar cadence and event triggers: model/dependency update, distribution shift, complaint/adverse-event
+signal, subgroup degradation, tool change, safety-metric drift, or near-miss. Combine rebenchmarking, clinician review, telemetry,
+outcomes, and sentinel cases.
+BCR rule basis. BCR-R05,R09,R15,R16
+Solution-stack link. S12,S13
+Closure evidence. Calendar + event triggers; rebenchmark, clinician review, telemetry, complaints/outcomes, sentinel cases
+Pass / re-open. Prespecified triggers force timely review/requalification Re-open when: Model/update/distribution/complaint/adverse-
+event/tool-change triggers.
+FDA Question 20 - Machine-based supervisory agents
+Trace ID. TR-Q20 | FDA Q20; Sec. VI.D; App. B; pp. 21-22 / 29-30
+BCR response. Machine supervisors may assist but should not self-certify the device. Validate them independently, control their
+version/lineage, measure detection performance, test common-mode blind spots, maintain audit logs, and provide fail-safe human
+escalation.
+BCR rule basis. BCR-R06,R08,R11,R13,R15
+Solution-stack link. S8,S10,S12
+Closure evidence. Independent supervisor validation, version control, detection performance, common-mode testing, human fail-safe
+Pass / re-open. Supervisor is independently evidenced and shared-blind-spot risk is tested Re-open when: Supervisor/device update
+or detection degradation.
+FDA Question 21 - Shared ecosystem roles without diffusing accountability
+Trace ID. TR-Q21 | FDA Q21; Sec. VI.D; App. B; pp. 21-22 / 29-30
+BCR response. Distribute evidence generation, not accountability. The manufacturer should retain the master residual/closure
+ledger; clinicians/institutions supply witnesses, societies supply clinical standards, and standards bodies support interoperable
+evidence structures.
+BCR rule basis. BCR-R02,R04,R09,R13,R17
+Solution-stack link. S12,S13
+Closure evidence. Master residual ledger with named accountable owner; external contributors provide traceable witnesses
+Pass / re-open. Every residual has one accountable owner despite distributed evidence generation Re-open when: Stakeholder
+responsibility/process change.
+FDA Question 22 - Scaling reevaluation after modifications
+Trace ID. TR-Q22 | FDA Q22; Sec. VI.D; App. B; pp. 21-22 / 29-30
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 20
+BCR response. Classify modification by boundary delta. Cosmetic/non-safety UI changes may stay within QMS; prompt/retrieval
+changes require targeted requalification; model/tool/intended-use/permission/safety-behavior changes can require broad revalidation.
+Hard-gate branches always receive direct regression evidence.
+BCR rule basis. BCR-R01,R06,R09,R13,R16
+Solution-stack link. S10,S11
+Closure evidence. Change delta record, affected-branch regression, hold/release decision, hard-gate retest
+Pass / re-open. Requalification scope is traceable to changed boundaries and passes affected gates Re-open when: Every safety-
+relevant modification.
+FDA Question 23 - PCCP when future changes not fully known
+Trace ID. TR-Q23 | FDA Q23; Sec. VI.D; App. B; pp. 21-22 / 29-30
+BCR response. Prespecify an allowable change envelope rather than every exact future edit: which boundaries may move, maximum
+deltas, required tests, hold points, rollback conditions, and new-submission triggers.
+BCR rule basis. BCR-R02,R09,R15,R16,R17
+Solution-stack link. S11,S13
+Closure evidence. Allowable boundary envelope, maximum deltas, required tests, hold points, rollback and new-submission triggers
+Pass / re-open. Change remains inside validated envelope and required tests pass before release Re-open when: Change outside
+envelope or failed control/test.
+FDA Question 24 - Third-party foundation-model changes
+Trace ID. TR-Q24 | FDA Q24; Sec. VI.D; App. B; pp. 21-22 / 29-30
+BCR response. Use contractual notification plus technical detection: version identifiers/fingerprints, canary probes, shadow/delta
+tests, API behavior checks, change quarantine, rollback, and requalification. If the sponsor cannot detect a safety-relevant
+dependency change, the branch is not closed.
+BCR rule basis. BCR-R01,R03,R11,R13,R16
+Solution-stack link. S10,S11
+Closure evidence. Provider notice + fingerprints + canary/shadow delta tests + quarantine/rollback
+Pass / re-open. No unrecognized safety-relevant dependency change reaches production Re-open when: Any
+provider/model/API/safety-behavior change.
+FDA Question 25 - Voluntary Foundation Model MAFs
+Trace ID. TR-Q25 | FDA Q25; Sec. VII.C; App. B; pp. 23 / 30
+BCR response. Foundation Model MAFs can help if current, versioned, and safety-relevant. Include architecture/interface
+boundaries, appropriate training-data provenance, supported uses, known limitations/failure modes, subgroup evaluations, guardrails,
+version history, update commitments, and audit-log availability. Voluntary gaps remain explicit and sponsors still need independent
+dependency assurance.
+BCR rule basis. BCR-R01,R11,R13,R15
+Solution-stack link. S10
+Closure evidence. Versioned/current architecture, supported uses, limitations, failure modes, subgroup evidence, guardrails,
+update/audit commitments
+Pass / re-open. Evidence is current enough for deployed version; stale/voluntary gaps remain explicit Re-open when: Model
+version/update or stale file evidence.
+FDA Question 26 - Agentic AI additional considerations
+Trace ID. TR-Q26 | FDA Q26; Sec. VII.C; App. B; pp. 23 / 30
+BCR response. Evaluate sequence-level realization: planning, tool selection, permission boundaries, memory/retrieval provenance,
+multi-agent propagation, tool-output validation, prompt injection through retrieved/tool content, irreversible-action confirmation,
+rollback, and post-action state checks. Acceptance criteria apply to the entire action path, not only the final text output.
+BCR rule basis. BCR-R06,R09,R12,R13,R14,R16
+Solution-stack link. S3,S4,S8,S9
+Closure evidence. End-to-end action-state logs, permission tests, prompt-injection via tools/retrieval, irreversible confirmation,
+rollback, post-action verification
+Pass / re-open. No unauthorized/unobserved/unverified high-consequence state transition Re-open when:
+Tool/permission/memory/retrieval/model/action-policy change.
+17. Closure Loop and Stress-Test Instructions
+Step Instruction Required witness
+1 - Realize/bound failure Use clinically credible, adversarial, long-context,
+subgroup, tool-chain, and distribution-shift
+scenarios.
+Failure trace or justified upper bound.
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 21
+Step Instruction Required witness
+2 - Identify driver Assign J_i and material J_iJ_j couplings; do not
+hide interaction inside aggregate score.
+Boundary/coupling record.
+3 - Apply control Guardrail/refusal/escalation/human
+gate/permission/retrieval/version/sandbox
+control.
+Configured control + provenance.
+4 - Re-run same path Repeat identical and perturbed scenarios after
+control.
+Post-control output/action log.
+5 - Measure residual Compare expected vs observed and pre/post
+where valid; keep directions/subgroups
+separate.
+Residual + uncertainty + breakdown.
+6 - Drill residual Test masking, compression, saturation,
+coupling, visibility, hidden realization, missing
+variables.
+Residual classification ledger.
+7 - Re-open on change If model, tool, environment, intended use,
+permissions, or safety behavior changes,
+reopen affected branches.
+Change-delta + requalification record.
+8 - Close only with evidence Do not credit assigned controls until post-control
+evidence demonstrates closure.
+PASS/CLOSED or constrained deployment.
+18. What the Source Gets Right
+ Correctly treats GenAI-enabled medical-device risk as different from fixed-output software because inputs, outputs,
+models, prompts, retrieval, guardrails, orchestration, and interfaces may vary or change.
+ Correctly recognizes that exhaustive input-output testing can be impractical and that new evaluation methodologies may
+be necessary.
+ Correctly focuses evaluation on the final user-facing device configuration rather than only the foundation model.
+ Correctly identifies action-directing, autonomous, patient-facing, multi-turn, and escalation behavior as risk-relevant.
+ Correctly identifies benchmark contamination, saturation, and real-world representativeness as threats to validity.
+ Correctly pairs non-clinical benchmarking with clinical confirmation and offers multiple evidence approaches.
+ Correctly recognizes subgroup performance, robustness/reproducibility, prompt injection, tool use, and agentic behavior
+as evaluation targets.
+ Correctly anticipates postmarket drift, rebenchmarking, third-party model changes, and change-control challenges.
+ Correctly preserves sponsor responsibility even when third-party models or ecosystem actors contribute.
+19. What Remains Incomplete
+ The two-axis risk picture is not sufficient as a complete regulatory closure function because the paper itself identifies
+multiple additional dimensions.
+ No systematic coupling rule is specified for autonomy x consequence, tools x permissions, user capability x directiveness,
+change x monitoring, and other material interactions.
+ Non-averagable hard-gate conditions are not yet defined.
+ Meaningful human oversight is not yet reduced to measurable visibility, authority, intervention time, override, and
+reversibility criteria.
+ Benchmark construct validity is recognized as a problem but a mandatory proof chain from benchmark -> clinical
+confirmation -> postmarket behavior is not closed.
+ Clinical confirmation selection remains open and lacks a deterministic escalation rule for unresolved residuals.
+ Synthetic/real evidence combination lacks a closed independence/transportability rule.
+ Third-party model identity/change detection and hold/rollback requirements are not yet mandatory.
+ PCCP concepts are not yet expressed as a measurable boundary-delta envelope.
+ Agentic evaluation needs explicit action-state, tool-permission, irreversible-node, and post-action verification requirements.
+ Postmarket monitoring needs residual owners, trigger thresholds, harm-time logic, and automatic re-open/requalification.
+ Device-specific quantitative thresholds, datasets, acceptance criteria, and outcome evidence are absent by design in the
+discussion paper; empirical numerical closure therefore remains NOT RAN.
+20. Closure Criteria and Final BCR Ruling
+Closure branch Pass criterion Status
+Identity closure Exact deployed configuration/dependencies are
+pinned and traceable.
+OPEN
+Boundary closure All material J_i and couplings are mapped; no
+essential variable orphaned.
+OPEN
+
+BCR Realization Audit - FDA GenAI Medical Devices - REV4
+Page 22
+Closure branch Pass criterion Status
+Hard-gate closure Non-averagable
+catastrophic/irreversible/unauthorized branches
+have explicit criteria and pass.
+OPEN
+Benchmark closure Construct validity, independence, contamination
+resistance, subgroup and trajectory coverage
+demonstrated.
+PARTIAL
+Clinical closure Risk-proportionate clinical confirmation closes
+intended-use residuals.
+PARTIAL
+Observer closure Human/user control is meaningful under real
+timing/information constraints.
+OPEN
+Agentic closure Tool/action sequences, permissions, irreversible
+nodes, rollback, post-action verification pass.
+OPEN
+Lineage/change closure Third-party and sponsor changes are detected,
+tested, held, rolled back as needed.
+OPEN
+Postmarket closure Residual monitoring has prespecified thresholds
+and automatic re-open logic.
+PARTIAL
+End-to-end traceability All 26 FDA questions link to source type, BCR
+rule, finding, drivers, residual, solution,
+evidence, pass, re-open, status.
+PASS - document traceability only
+Final status: PARTIAL
+What the source proves. FDA has identified a substantial portion of the correct GenAI medical-device problem space and proposed
+a coherent discussion architecture around risk, benchmarking, clinical confirmation, postmarket monitoring, change control, and
+agentic considerations.
+What BCR adds. A complete boundary inventory, coupling discipline, no-noise residual treatment, hard gates, meaningful observer
+criteria, lineage/change closure, sequence-level agentic controls, automatic re-open logic, and direct solution responses with end-to-
+end traceability for all 26 questions.
+What remains incomplete. Empirical device-specific coefficients, thresholds, datasets, acceptance criteria, validation outcomes, and
+implementation evidence. These are explicitly NOT RAN NUMERICALLY rather than guessed.
+Residual classification. Compression, coupling, visibility, masking, saturation/false-lock, hidden-realization, missing-variable,
+boundary, and invalid-observable residuals remain open at the policy-design level.
+Required closure before full pass. Implement and validate S0-S13 with device-specific evidence; close hard gates; demonstrate
+benchmark-to-clinical transportability; validate observer and agentic control; verify change/postmarket re-open behavior.
+Final BCR conclusion. FDA's discussion paper is a strong starting point. BCR does not reject it; BCR converts the open questions
+into a traceable realization-and-closure architecture. The policy concept remains PARTIAL until the proposed controls are
+implemented and empirically demonstrated.

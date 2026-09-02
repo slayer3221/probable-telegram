@@ -1,0 +1,1018 @@
+{
+  "comment_id": "FDA-2026-N-7874-0005",
+  "input_hash": "f1059c60f3354345",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T14:49:55Z",
+  "model": "claude-opus-5",
+  "chunks": 4,
+  "positions": [
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "The central BCR finding is that FDA's two-axis activity-by-consequence picture is useful but cannot serve as the complete closure observable. FDA itself asks whether reversibility, downstream safeguards, time pressure, and traceability should also be represented. Other sections add user review capability, conversational trajectory, escalation direction, benchmark validity, subgroup behavior, third-party model change, postmarket detectability, and agentic tool use. BCR converts these into a 15-driver boundary budget and material coupling screen.",
+      "position_gist": "The two-axis activity-by-consequence framework is useful but incomplete as a risk closure measure and should be expanded into a 15-driver boundary set (including reversibility, downstream safeguards, time pressure, traceability, user review capability, conversational trajectory, benchmark validity, subgroup behavior, third-party model change, postmarket detectability, and agentic tool use) with screening of material interactions among drivers.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "FDA risk-plane dimensions 2 Activity + consequence RAN NUMERICALLY\nAdditional dimensions explicitly raised\nin FDA Q1\n4 Reversibility + downstream\nsafeguards + time pressure +\ntraceability\nRAN NUMERICALLY\nMinimum named dimension set 2 + 4 6 dimensions RAN NUMERICALLY\nCurrent-axis count share of minimum\nset\n2 / 6 33.33% count share only; no equal-\nweight assumption",
+      "position_gist": "Counting exercise arguing that FDA's two current axes represent only two of at least six named risk dimensions (adding reversibility, downstream safeguards, time pressure, and traceability), supporting expansion of the risk framework.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "Risk representation Activity x consequence gradient Retain as front-end visualization; close through\nfull J-vector, couplings, and hard gates.",
+      "position_gist": "The activity-by-consequence gradient should be retained only as a front-end visualization, with actual risk determination made through the full multidimensional driver vector, driver couplings, and non-averagable hard gates.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q7"
+      ],
+      "source_passage": "J6 Time pressure / time-to-harm Explicitly raised in Q1 Shorter response window can defeat\nnominal human control.\nJ7 Reversibility Explicitly raised in Q1 Irreversible actions require hard-gate\ntreatment.\nJ8 Traceability / provenance Q1 + MAF discussion Low traceability impairs auditability,\nattribution, and correction.\nJ9 Downstream safeguards Explicitly raised in Q1 Independent safeguards can\nsuppress harmful realization.",
+      "position_gist": "Time pressure/time-to-harm, reversibility, traceability/provenance, and downstream safeguards should each be represented as separate boundary drivers, with irreversible actions handled through hard gates rather than averaged risk scoring.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q10",
+        "q11",
+        "q19",
+        "q22",
+        "q9"
+      ],
+      "source_passage": "The second central finding is benchmark false-lock. FDA explicitly recognizes contamination, saturation, and limited real-world\nrepresentativeness of public benchmark assets. BCR therefore treats benchmark performance as one witness, never as\nautomatic safety closure. The repair chain is benchmark construct validity -> independent/sequestered testing -> clinical\nconfirmation -> postmarket residual monitoring -> automatic re-open after safety-relevant change.",
+      "position_gist": "Benchmark performance should count as only one evidentiary witness and never as automatic safety closure; evidence should follow a chain of benchmark construct validity, independent/sequestered testing, clinical confirmation, postmarket residual monitoring, and automatic re-opening of evaluation after any safety-relevant change.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q2"
+      ],
+      "source_passage": "Action-directing Continuum based on substance/context Treat directiveness as realized trajectory\nbehavior, not keyword class.",
+      "position_gist": "Directiveness should be assessed as realized behavior across an interaction trajectory rather than as a keyword- or wording-based classification.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q2"
+      ],
+      "source_passage": "TR-Q02\nFDA Q2; Sec. IV.A; App. B;\npp. 9-10 / 27-28\n... J3,J5,J6,J14\nCoupling + emergence\nS2,S3,S6 Semantically equivalent\nmulti-turn cases varying\nspecificity/personalization/im\nperative force\nPASS: Stable classification\nand no unrecognized\ntrajectory crossing\nRE-OPEN: Prompt, UI,\npersonalization, or\nconversational-policy change",
+      "position_gist": "Directiveness risk should be verified by testing semantically equivalent multi-turn cases that vary specificity, personalization, and imperative force, passing only if classification is stable with no unrecognized trajectory crossing, and re-opened upon prompt, UI, personalization, or conversational-policy changes.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q3",
+        "q4"
+      ],
+      "source_passage": "User type Patient/HCP; generalist/specialist distinctions Measure actual independent-review capability\nand intervention performance.",
+      "position_gist": "Rather than relying on user-category distinctions (patient/HCP, generalist/specialist), evaluation should measure the intended users' actual independent-review capability and intervention performance.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "TR-Q03\nFDA Q3; Sec. IV.A; App. B;\npp. 9-10 / 27-28\n... J4,J14,J2\nVisibility + masking\nS6,S7,S8 Comprehension, error-\ndetection, escalation, and\nintervention testing in\nintended users\nPASS: User population\nmeets prespecified\nreview/intervention criteria\nRE-OPEN:\nIntended-user/population or\ncommunication-interface\nchange",
+      "position_gist": "For patient-facing functions, risk should be closed by comprehension, error-detection, escalation, and intervention testing in the actual intended users against prespecified review/intervention criteria, with re-evaluation triggered by changes to intended users, population, or the communication interface.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q4"
+      ],
+      "source_passage": "TR-Q04\nFDA Q4; Sec. IV.A; App. B;\npp. 9-10 / 27-28\n... J4,J14,J2\nVisibility + invalid-proxy\nS6,S8 Domain-specific error\ndetection and specialist-\nescalation testing\nPASS: Intended HCP can\nindependently review or\ndevice reliably escalates\nRE-OPEN: Clinical scope or\nintended-user change",
+      "position_gist": "For HCP-facing specialist-domain outputs, evaluation should include domain-specific error-detection and specialist-escalation testing, passing only if the intended HCP can independently review the output or the device reliably escalates, with re-evaluation on clinical scope or intended-user change.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q5"
+      ],
+      "source_passage": "Multi-turn Assess realistic trajectories Model and test full state trajectory and\ncumulative boundary drift.",
+      "position_gist": "Multi-turn devices should be evaluated by modeling and testing the full conversational state trajectory and cumulative boundary drift, not just isolated turns.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q5"
+      ],
+      "source_passage": "TR-Q05\nFDA Q5; Sec. IV.A; App. B;\npp. 9-10 / 27-28\n... J3,J5,J13\nEmergence + coupling\nS3,S6 Long-context/order-effect/\nstate-transition scenarios\nPASS: No tested trajectory\ncrosses intended-use/safety\nboundary without\ndetection/control\nRE-OPEN: Prompt\norchestration, memory,\ncontext-window, or tool\nchange",
+      "position_gist": "Multi-turn risk should be tested with long-context, order-effect, and state-transition scenarios, passing only if no tested trajectory crosses the intended-use/safety boundary without detection or control, with re-evaluation triggered by prompt orchestration, memory, context-window, or tool changes.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "TR-Q06\nFDA Q6; Sec. IV.A; App. B;\npp. 9-10 / 27-28\n... J2,J5,J6,J7\nBoundary + asymmetric\nresidual\nS1,S4,S6,S7 Separate under- and over-\nescalation rates with\nseverity/timing; hard-gate\nmisses tracked separately\nPASS: Each direction meets\nprespecified limits;\ncatastrophic misses satisfy\nhard gate\nRE-OPEN: Clinical context,\nescalation policy, or\nthreshold change",
+      "position_gist": "Under-escalation and over-escalation should be reported as separate rates with severity and timing rather than combined, with catastrophic misses tracked separately against a hard gate and each direction meeting prespecified limits.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q7",
+        "q8"
+      ],
+      "source_passage": "TR-Q07\nFDA Q7; Sec. V.E; App. B;\npp. 18-19 / 28-29\nDiscussion question; not an\nFDA requirement\nBCR-R01,R03,R09,R15,R17 J1-J15\nBoundary + evidence closure\nS0,S5,S6,S7,S12,S13 Traceable benchmark +\nclinical confirmation +\nresidual monitoring for exact\ndeployed configuration\nPASS: Evidence chain\nremains valid to deployed\nconfiguration and essential\nresiduals close\nRE-OPEN: Any safety-\nrelevant configuration or\nintended-use change",
+      "position_gist": "The competency-based approach is workable only if benchmarking, clinical confirmation, and residual monitoring are traceable to the exact deployed configuration and all essential residuals are closed, with re-opening on any safety-relevant configuration or intended-use change (status assessed as PARTIAL as described).",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "source_passage": "Benchmarking Safety/proficiency/generalizability/agentic\nelements\nAdd construct-validity, provenance/change,\nobserver, tool-permission, reversibility, and\nfalse-lock gates.",
+      "position_gist": "The proposed benchmarking element set should be supplemented with gates for benchmark construct validity, provenance/change, observer/visibility, tool permissions, reversibility, and benchmark false-lock.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q11"
+      ],
+      "source_passage": "Clinical confirmation Risk-proportionate evidence ladder Escalate to highest-risk unresolved branch; do\nnot close on average risk.",
+      "position_gist": "The clinical confirmation approach should be selected by escalating to the highest-risk unresolved branch of the device's behavior rather than by averaging overall risk.",
+      "segment_id": "seg-016"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Postmarket Rebenchmark, clinician review, drift monitoring Add residual owners, trigger thresholds, harm-\ntime logic, and automatic re-open.",
+      "position_gist": "Postmarket monitoring should add designated residual owners, explicit trigger thresholds, time-to-harm logic, and automatic re-opening of evaluation to the proposed re-benchmarking, clinician review, and drift monitoring approaches.",
+      "segment_id": "seg-017"
+    },
+    {
+      "question_ids": [
+        "q24",
+        "q25"
+      ],
+      "source_passage": "Third-party models Possible voluntary Model MAF Require device-boundary\nidentity/version/fingerprint/change evidence;\nvoluntary data cannot alone close gaps.",
+      "position_gist": "Voluntary Foundation Model Master Files cannot by themselves close information gaps; manufacturers should be required to provide device-boundary evidence of model identity, version, fingerprint, and change.",
+      "segment_id": "seg-018"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Agentic systems Additional considerations acknowledged Evaluate whole action sequence, permissions,\nirreversible nodes, tool outputs, provenance,\nrollback.",
+      "position_gist": "Agentic devices should be evaluated across the whole action sequence, including permissions, irreversible nodes, tool outputs, provenance, and rollback capability.",
+      "segment_id": "seg-019"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q26"
+      ],
+      "source_passage": "Human oversight Supervision may moderate risk Credit only when visibility + authority + time +\nintervention + reversibility are demonstrated.",
+      "position_gist": "Human supervision should be credited as a risk-mitigating safeguard only when visibility, authority, adequate time, demonstrated intervention, and reversibility are all shown.",
+      "segment_id": "seg-020"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q22",
+        "q23",
+        "q24",
+        "q7"
+      ],
+      "source_passage": "Branch anchor Status Run-specific reason\nA_Phi LOCKED Audited source identity preserved.\nA_B OPEN Boundary inventory extends beyond the two-\naxis visualization.\nA_nablaB OPEN Change over model/dependency/time requires\nexplicit delta closure.\nA_R OPEN Device-specific residual acceptance thresholds\nare not provided.\nA_V OPEN Observer/visibility measures are conceptually\npresent but not quantitatively closed.\nA_C OPEN Cross-boundary coupling is recognized but not\nsystematically quantified.\nA_I LOCKED Intended use and device-function identity are\nexplicit FDA organizing concepts.\nA_L OPEN Third-party model lineage/version assurance\nremains incomplete.\nA_G OPEN Non-averagable hard-gate governance requires\nexplicit adoption.",
+      "position_gist": "The commenter identifies specific gaps in the discussion paper—boundary inventory beyond two axes, explicit closure for model/dependency/time change, device-specific residual acceptance thresholds, quantified observer/visibility measures, systematic cross-boundary coupling analysis, third-party model lineage/version assurance, and adoption of non-averagable hard-gate governance.",
+      "segment_id": "seg-021"
+    },
+    {
+      "question_ids": [
+        "q5"
+      ],
+      "source_passage": "TR-Q05\nFDA Q5; Sec. IV.A; App. B;\npp. 9-10 / 27-28\n...\nEmergence + coupling\nS3,S6 Long-context/order-effect/\nstate-transition scenarios\nPASS: No tested trajectory\ncrosses intended-use/safety\nboundary without\ndetection/control\nRE-OPEN: Prompt\norchestration, memory,\ncontext-window, or tool\nchange",
+      "position_gist": "For multi-turn conversational devices, risk should be assessed with long-context, order-effect and state-transition scenario testing, with the pass criterion being that no tested trajectory crosses the intended-use/safety boundary without detection or control, and re-evaluation triggered by prompt-orchestration, memory, context-window, or tool changes.",
+      "segment_id": "seg-022"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "TR-Q06\nFDA Q6; Sec. IV.A; App. B;\npp. 9-10 / 27-28\n...\nBoundary + asymmetric\nresidual\nS1,S4,S6,S7 Separate under- and over-\nescalation rates with\nseverity/timing; hard-gate\nmisses tracked separately\nPASS: Each direction meets\nprespecified limits;\ncatastrophic misses satisfy\nhard gate\nRE-OPEN: Clinical context,\nescalation policy, or\nthreshold change",
+      "position_gist": "Under-escalation and over-escalation should be measured and reported separately with severity and timing, each meeting prespecified limits, with catastrophic misses tracked against a separate hard gate rather than averaged.",
+      "segment_id": "seg-023"
+    },
+    {
+      "question_ids": [
+        "q7"
+      ],
+      "source_passage": "TR-Q07\nFDA Q7; Sec. V.E; App. B;\npp. 18-19 / 28-29\n...\nBoundary + evidence closure\nS0,S5,S6,S7,S12,S13 Traceable benchmark +\nclinical confirmation +\nresidual monitoring for exact\ndeployed configuration\nPASS: Evidence chain\nremains valid to deployed\nconfiguration and essential\nresiduals close\nRE-OPEN: Any safety-\nrelevant configuration or\nintended-use change",
+      "position_gist": "The competency-based approach is workable only if benchmarking, clinical confirmation, and residual monitoring are traceable to the exact deployed configuration, with re-evaluation triggered by any safety-relevant configuration or intended-use change.",
+      "segment_id": "seg-024"
+    },
+    {
+      "question_ids": [
+        "q8"
+      ],
+      "source_passage": "TR-Q08\nFDA Q8; Sec. V.E; App. B;\npp. 18-19 / 28-29\n...\nCompression + hard-gate risk\nS2,S4,S7 Evidence-tier rationale tied to\nhighest material\nboundary/hard gate\nPASS: Evidence burden\njustified by highest material\nbranch, not average position\nRE-OPEN: New or elevated\nboundary/hard-gate condition",
+      "position_gist": "The level of premarket evidence should be set by the highest material boundary or hard-gate condition the device can reach, not by its average position in the two-axis risk grid.",
+      "segment_id": "seg-025"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "TR-Q09\nFDA Q9; Sec. V.E; App. B;\npp. 18-19 / 28-29\n...\nMissing-variable + masking\nS5,S6,S8,S9,S10 Added tests for provenance,\nchange, human override,\nreversibility, tool permissions,\ntrajectories, benchmark\nvalidity\nPASS: No critical boundary\nhidden in aggregate\ncompetency score\nRE-OPEN: Benchmark/test\narchitecture or device\narchitecture change",
+      "position_gist": "The proposed benchmarking categories are incomplete and should be supplemented with tests for provenance, change control, human override, reversibility, tool permissions, conversational trajectories, and benchmark validity so that no critical boundary is hidden inside an aggregate competency score.",
+      "segment_id": "seg-026"
+    },
+    {
+      "question_ids": [
+        "q10"
+      ],
+      "source_passage": "TR-Q10\nFDA Q10; Sec. V.E; App. B;\npp. 18-19 / 28-29\n...\nFalse-lock + invalid-\nobservable\nS5,S7,S12 Sequestered assets,\ncontamination checks,\nperturbation stability,\nindependent adjudication,\nclinical/postmarket linkage\nPASS: Benchmark predicts\nintended-use behavior within\ndefined envelope\nRE-OPEN: Benchmark\nexposure/saturation,\ndeployment distribution,\nmodel revision",
+      "position_gist": "Benchmark construct validity should be established through sequestered assets, contamination checks, perturbation stability testing, independent adjudication, and linkage to clinical/postmarket evidence, with validity claimed only within a defined envelope.",
+      "segment_id": "seg-027"
+    },
+    {
+      "question_ids": [
+        "q11"
+      ],
+      "source_passage": "TR-Q11\nFDA Q11; Sec. V.E; App. B;\npp. 18-19 / 28-29\n...\nBoundary + external-witness\nS7 Prespecified rationale for\nconfirmation tier;\nindependent adjudication and\nrepresentativeness evidence\nPASS: Selected method\ncloses intended-use\nresiduals at required rigor\nRE-OPEN: Risk profile,\nintended use, population, or\nunresolved residual changes",
+      "position_gist": "Sponsors should prespecify and justify the clinical confirmation tier with independent adjudication and representativeness evidence, demonstrating that the chosen method closes intended-use residuals at the required rigor.",
+      "segment_id": "seg-028"
+    },
+    {
+      "question_ids": [
+        "q12"
+      ],
+      "source_passage": "TR-Q12\nFDA Q12; Sec. V.E; App. B;\npp. 18-19 / 28-29\n...\nCompression + masking +\nprovenance\nS5,S7 Prespecified\nestimands/denominators/strat\na/CIs; synthetic and real\nreported separately unless\njustified compatible\nPASS: Statistical claim maps\nto intended-use distribution;\npooling justified when used\nRE-OPEN: Distribution shift,\ndata-source or generator-\nlineage change",
+      "position_gist": "Statistical performance measurement should use prespecified estimands, denominators, strata and confidence intervals, and synthetic and real-world results should be reported separately unless compatibility is justified before pooling.",
+      "segment_id": "seg-029"
+    },
+    {
+      "question_ids": [
+        "q13"
+      ],
+      "source_passage": "TR-Q13\nFDA Q13; Sec. V.E; App. B;\npp. 18-19 / 28-29\n...\nHidden-realization + masking\nS5,S7 Generator lineage,\nindependent real sentinels,\ndiverse generators, subgroup\nstress tests\nPASS: Synthetic evidence\nsupplements independent\nreal witnesses where blind\nspots are plausible\nRE-OPEN: Generator/model\nlineage change or new\nsubgroup gap",
+      "position_gist": "Synthetic data should only supplement independent real-world evidence, with safeguards including generator lineage disclosure, diverse generators, independent real sentinel cases, and subgroup stress tests.",
+      "segment_id": "seg-030"
+    },
+    {
+      "question_ids": [
+        "q14"
+      ],
+      "source_passage": "TR-Q14\nFDA Q14; Sec. V.E; App. B;\npp. 18-19 / 28-29\n...\nInvalid-observable +\ncomparator boundary\nS1,S7 Comparator rationale tied to\nintended use/counterfactual;\ndevice-alone and human-AI\nresults separated when\nrelevant\nPASS: Comparator directly\nsupports claimed role and\nclinical question",
+      "position_gist": "Comparators and acceptance criteria should be justified against the device's intended use and counterfactual, with device-alone and human-AI team results reported separately when both are relevant.",
+      "segment_id": "seg-031"
+    },
+    {
+      "question_ids": [
+        "q15"
+      ],
+      "source_passage": "TR-Q15\nFDA Q15; Sec. V.E; App. B;\npp. 18-19 / 28-29\n...\nBoundary + counterfactual\nS1,S7 Prespecified credible\ncounterfactual: unaided\nclinician, delayed specialist,\nalternative technology, or no\nintervention as appropriate\nPASS: Counterfactual aligns\nwith claimed benefit-risk\nstatement\nRE-OPEN: Care pathway or\nstandard practice changes",
+      "position_gist": "Performance should be assessed against a prespecified, credible counterfactual (unaided clinician, delayed specialist, alternative technology, or no intervention) that aligns with the claimed benefit-risk statement.",
+      "segment_id": "seg-032"
+    },
+    {
+      "question_ids": [
+        "q16"
+      ],
+      "source_passage": "TR-Q16\nFDA Q16; Sec. V.E; App. B;\npp. 18-19 / 28-29\n...\nExternal witness +\ngovernance\nS5,S7,S12 Independence/conflict\ncriteria, multiple eligible\nproviders,\nrotation/retest/appeal,\nsequestered evidence\nPASS: Independence\ndemonstrated without single\nunreviewable gatekeeper\nRE-OPEN: Conflict, vendor,\ndataset, or qualification\nstatus changes",
+      "position_gist": "Third-party involvement should be governed by explicit independence/conflict criteria, multiple eligible providers, rotation, retest and appeal mechanisms, and sequestered evidence so that no single unreviewable gatekeeper emerges.",
+      "segment_id": "seg-033"
+    },
+    {
+      "question_ids": [
+        "q17"
+      ],
+      "source_passage": "TR-Q17\nFDA Q17; Sec. V.E; App. B;\npp. 18-19 / 28-29\n...\nDomain-validity +\nmorphology/architecture\nresidual\nS1,S2,S3,S6,S9 Architecture-specific tests:\nmultimodal consistency,\nworld-model state error,\naction-state verification, etc.\nPASS: Architecture-specific\nfailure modes are mapped to\nevidence\nRE-OPEN: Underlying\narchitecture/modality/tooling\nchange",
+      "position_gist": "Applying the competency-based approach to other architectures requires architecture-specific tests such as multimodal consistency, world-model state error, and action-state verification, so that architecture-specific failure modes map to evidence.",
+      "segment_id": "seg-034"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "TR-Q18\nFDA Q18; Sec. VI.D; App. B;\npp. 21-22 / 29-30\n...\nBoundary + visibility +\nreversibility\nS4,S12,S13 Detection sensitivity,\nmonitoring latency, response\ntime, reversibility and harm-\ntime analysis\nPASS: Detection + response\ndemonstrably precede\nunacceptable harm for\ndeferred residuals\nRE-OPEN: Monitoring\ncapability, harm latency, or\naction reversibility changes",
+      "position_gist": "Greater premarket uncertainty may be deferred to postmarket monitoring only where detection sensitivity, monitoring latency, response time, and reversibility evidence show that detection and response demonstrably precede unacceptable harm.",
+      "segment_id": "seg-035"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "TR-Q19\nFDA Q19; Sec. VI.D; App. B;\npp. 21-22 / 29-30\n...\nNonlocal + boundary residual\nS12,S13 Calendar + event triggers;\nrebenchmark, clinician\nreview, telemetry,\ncomplaints/outcomes,\nsentinel cases\nPASS: Prespecified triggers\nforce timely\nreview/requalification\nRE-OPEN:\nModel/update/distribution/co\nmplaint/adverse-event/tool-\nchange triggers",
+      "position_gist": "Postmarket evaluation should combine calendar-based and event-based triggers across re-benchmarking, clinician review, telemetry, complaints/outcomes and sentinel cases, with prespecified triggers forcing timely review or requalification.",
+      "segment_id": "seg-036"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "TR-Q20\nFDA Q20; Sec. VI.D; App. B;\npp. 21-22 / 29-30\n...\nCoupling + common-mode\nmasking\nS8,S10,S12 Independent supervisor\nvalidation, version control,\ndetection performance,\ncommon-mode testing,\nhuman fail-safe\nPASS: Supervisor is\nindependently evidenced and\nshared-blind-spot risk is\ntested\nRE-OPEN: Supervisor/device\nupdate or detection\ndegradation",
+      "position_gist": "Machine supervisory agents may assist postmarket monitoring only with independent validation of the supervisor, version control, measured detection performance, common-mode (shared blind spot) testing, and a human fail-safe.",
+      "segment_id": "seg-037"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "TR-Q21\nFDA Q21; Sec. VI.D; App. B;\npp. 21-22 / 29-30\n...\nProvenance + accountability\nresidual\nS12,S13 Master residual ledger with\nnamed accountable owner;\nexternal contributors provide\ntraceable witnesses\nPASS: Every residual has\none accountable owner\ndespite distributed evidence\ngeneration\nRE-OPEN: Stakeholder\nresponsibility/process change",
+      "position_gist": "External stakeholders should contribute traceable evidence while a master residual ledger assigns a single named accountable owner to every residual, preventing diffusion of manufacturer accountability.",
+      "segment_id": "seg-038"
+    },
+    {
+      "question_ids": [
+        "q22"
+      ],
+      "source_passage": "TR-Q22\nFDA Q22; Sec. VI.D; App. B;\npp. 21-22 / 29-30\n...\nBoundary-delta + hidden\nrealization\nS10,S11 Change delta record,\naffected-branch regression,\nhold/release decision, hard-\ngate retest\nPASS: Requalification scope\nis traceable to changed\nboundaries and passes\naffected gates\nRE-OPEN: Every safety-\nrelevant modification",
+      "position_gist": "Re-evaluation of modifications should be scaled via a change-delta record, regression testing of affected branches, a hold/release decision, and hard-gate retesting, with requalification scope traceable to the changed boundaries.",
+      "segment_id": "seg-039"
+    },
+    {
+      "question_ids": [
+        "q23"
+      ],
+      "source_passage": "TR-Q23\nFDA Q23; Sec. VI.D; App. B;\npp. 21-22 / 29-30\n...\nBoundary-envelope residual\nS11,S13 Allowable boundary\nenvelope, maximum deltas,\nrequired tests, hold points,\nrollback and new-submission\ntriggers\nPASS: Change remains\ninside validated envelope\nand required tests pass\nbefore release\nRE-OPEN: Change outside\nenvelope or failed control/test",
+      "position_gist": "When future modifications cannot be fully prespecified, change control should define an allowable boundary envelope with maximum deltas, required tests, hold points, rollback, and explicit new-submission triggers.",
+      "segment_id": "seg-040"
+    },
+    {
+      "question_ids": [
+        "q24"
+      ],
+      "source_passage": "TR-Q24\nFDA Q24; Sec. VI.D; App. B;\npp. 21-22 / 29-30\n...\nHidden-realization + identity\nbreak\nS10,S11 Provider notice + fingerprints\n+ canary/shadow delta tests\n+ quarantine/rollback\nPASS: No unrecognized\nsafety-relevant dependency\nchange reaches production\nRE-OPEN: Any\nprovider/model/API/safety-\nbehavior change",
+      "position_gist": "Third-party model changes should be managed through contractual provider notice, model fingerprinting, canary/shadow delta testing, and quarantine/rollback so no unrecognized safety-relevant dependency change reaches production.",
+      "segment_id": "seg-041"
+    },
+    {
+      "question_ids": [
+        "q25"
+      ],
+      "source_passage": "TR-Q25\nFDA Q25; Sec. VII.C; App. B;\npp. 23 / 30\n...\nProvenance + external-\nwitness gap\nS10 Versioned/current\narchitecture, supported uses,\nlimitations, failure modes,\nsubgroup evidence,\nguardrails, update/audit\ncommitments\nPASS: Evidence is current\nenough for deployed version;\nstale/voluntary gaps remain\nexplicit\nRE-OPEN: Model\nversion/update or stale file\nevidence",
+      "position_gist": "Foundation Model MAFs should contain versioned architecture, supported uses, limitations, failure modes, subgroup evidence, guardrails and update/audit commitments, and must be current for the deployed version with stale or voluntary gaps made explicit.",
+      "segment_id": "seg-042"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "TR-Q26\nFDA Q26; Sec. VII.C; App. B;\npp. 23 / 30\n...\nCoupling + nonlocal +\nirreversible-action residual\nS3,S4,S8,S9 End-to-end action-state logs,\npermission tests, prompt-\ninjection via tools/retrieval,\nirreversible confirmation,\nrollback, post-action\nverification\nPASS: No\nunauthorized/unobserved/un\nverified high-consequence\nstate transition\nRE-OPEN:\nTool/permission/memory/retri\neval/model/action-policy\nchange",
+      "position_gist": "Agentic devices require end-to-end action-state logging, permission testing, prompt-injection testing via tools/retrieval, confirmation steps for irreversible actions, rollback and post-action verification, with the acceptance criterion that no unauthorized, unobserved, or unverified high-consequence state transition occurs.",
+      "segment_id": "seg-043"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q8",
+        "q9"
+      ],
+      "source_passage": "Compression Two-axis risk and aggregate\nscores compress higher-\ndimensional behavior.\nRAN QUALITATIVELY Compression residual Keep heuristic, require full\nboundary ledger for closure.",
+      "position_gist": "The two-axis risk framework and aggregate scores should be retained only as heuristics, with a full multidimensional boundary ledger required for closure.",
+      "segment_id": "seg-044"
+    },
+    {
+      "question_ids": [
+        "q12",
+        "q13",
+        "q9"
+      ],
+      "source_passage": "Masking Aggregate benchmark pass can\ncoexist with subgroup,\ntrajectory, or hard-gate failure.\nRAN QUALITATIVELY Masking residual Disaggregate by subgroup,\nsequence, scenario, and hard-\ngate event.",
+      "position_gist": "Because an aggregate benchmark pass can hide subgroup, trajectory or hard-gate failures, results should be disaggregated by subgroup, sequence, scenario and hard-gate event.",
+      "segment_id": "seg-045"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q19",
+        "q7"
+      ],
+      "source_passage": "Invalid-observable gate Benchmark score alone cannot\nprove real-world safety.\nRAN QUALITATIVELY Invalid-observable residual Require clinical/postmarket\nwitnesses tied to intended use.",
+      "position_gist": "Benchmark scores alone cannot demonstrate real-world safety, so clinical and postmarket evidence tied to intended use must be required.",
+      "segment_id": "seg-046"
+    },
+    {
+      "question_ids": [
+        "q12",
+        "q9"
+      ],
+      "source_passage": "Subgroup aggregate masking Overall score can hide\nsubgroup failure.\nMasking / compression PARTIAL Subgroup floors + hard-gate\ncriteria.",
+      "position_gist": "Evaluation should include subgroup performance floors and hard-gate criteria to prevent overall scores from hiding subgroup failures.",
+      "segment_id": "seg-047"
+    },
+    {
+      "question_ids": [
+        "q3",
+        "q4"
+      ],
+      "source_passage": "Patient/HCP reviewability Ability to recognize error\nvaries and is not directly\nmeasured.\nVisibility PARTIAL S8 user-control validation.",
+      "position_gist": "Users' actual ability to recognize device error varies and is not directly measured, so user-control/reviewability validation is needed.",
+      "segment_id": "seg-048"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "13.1 Two-Axis Risk Compression\nSource observation. Figure 1 is activity x consequence; FDA Q1 itself raises reversibility, safeguards, time pressure, traceability.\nBCR drill chain. Two-axis visualization -> omitted factor becomes decisive -> aggregate location appears acceptable -> actual\nrealization violates an unrepresented boundary.\nRoot residual. Compressed visualization is not the full closure observable.\nSolution branch. S2 full boundary ledger + S4 hard-gate overlay.",
+      "position_gist": "The two-axis framework omits decisive factors (reversibility, safeguards, time pressure, traceability) and should be supplemented with a full boundary ledger and a hard-gate overlay rather than used as the closure observable.",
+      "segment_id": "seg-049"
+    },
+    {
+      "question_ids": [
+        "q2"
+      ],
+      "source_passage": "13.2 Directiveness Is a Trajectory\nSource observation. FDA says directiveness is a continuum and context-dependent.\nBCR drill chain. Neutral information -> personalization -> narrowing -> urgency/authority -> practical instruction -> user acts.\nRoot residual. Single-output labeling can understate cumulative action pressure.\nSolution branch. S3 trajectory-state model + validated directiveness tests.",
+      "position_gist": "Directiveness should be modeled as a trajectory rather than labeled per output, because personalization, narrowing, urgency and authority cumulatively increase action pressure; validated directiveness tests and a trajectory-state model are recommended.",
+      "segment_id": "seg-050"
+    },
+    {
+      "question_ids": [
+        "q3",
+        "q4"
+      ],
+      "source_passage": "13.3 User Expertise Mismatch\nSource observation. FDA distinguishes patients, generalists, specialists.\nBCR drill chain. User title -> assumed competence -> domain-specific error not recognized -> downstream reliance.\nRoot residual. Professional category is a proxy for actual independent-review capability.\nSolution branch. S8 comprehension/error-detection/intervention validation.",
+      "position_gist": "User category (patient, generalist, specialist) is only a proxy for actual independent-review capability, so risk assessment should rely on validated comprehension, error-detection and intervention testing.",
+      "segment_id": "seg-051"
+    },
+    {
+      "question_ids": [
+        "q5"
+      ],
+      "source_passage": "13.4 Multi-Turn Scope Migration\nSource observation. FDA notes informational behavior can migrate to action-directing over an exchange.\nBCR drill chain. Each turn appears in scope -> accumulated context changes function -> boundary crossing occurs only at trajectory\nlevel.\nRoot residual. Lawful observable is the trajectory, not isolated turns.\nSolution branch. S3 state-transition testing, long-context adversarial cases, end-state intended-use checks.",
+      "position_gist": "Intended-use compliance for multi-turn devices must be evaluated at the trajectory level using state-transition testing, long-context adversarial cases, and end-state intended-use checks, since individual turns can each appear in scope.",
+      "segment_id": "seg-052"
+    },
+    {
+      "question_ids": [
+        "q10"
+      ],
+      "source_passage": "13.5 Benchmark False-Lock\nSource observation. FDA identifies benchmark contamination, saturation, limited representativeness.\nBCR drill chain. Training/test exposure -> high score -> confidence lock -> deployment differs -> hidden failure.\nRoot residual. Benchmark pass can be a saturated witness rather than closure.\nSolution branch. S5 sequestered assets + contamination controls + perturbation + clinical confirmation.",
+      "position_gist": "Benchmark passes can reflect contamination/saturation rather than real capability, so sequestered assets, contamination controls, perturbation testing and clinical confirmation are needed.",
+      "segment_id": "seg-053"
+    },
+    {
+      "question_ids": [
+        "q11",
+        "q12"
+      ],
+      "source_passage": "13.6 Clinical Confirmation Distribution Shift\nSource observation. FDA proposes several confirmation approaches and synthetic supplements.\nBCR drill chain. Benchmark population -> confirmation sample -> deployment distribution shifts -> subgroup/trajectory gap emerges.\nRoot residual. Confirmation valid only inside demonstrated transportability envelope.\nSolution branch. S7 deployment-distribution specification + strata + OOD sentinels + evidence escalation.",
+      "position_gist": "Clinical confirmation is valid only within a demonstrated transportability envelope, requiring explicit deployment-distribution specification, strata, out-of-distribution sentinels, and escalation of evidence when distributions shift.",
+      "segment_id": "seg-054"
+    },
+    {
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "source_passage": "13.7 Comparator Ambiguity\nSource observation. FDA asks standard-of-care vs median clinician vs specialist/generalist vs human-AI.\nBCR drill chain. Wrong comparator -> favorable metric -> actual clinical-use question differs.\nRoot residual. Comparator identity is a boundary condition.\nSolution branch. S1/S7 comparator tied to intended use and counterfactual; separate device-alone/team performance.",
+      "position_gist": "Comparator choice is a boundary condition that must be tied to the intended use and the real-world counterfactual, with device-alone and human-AI team performance reported separately.",
+      "segment_id": "seg-055"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "13.8 Postmarket Uncertainty Deferral\nSource observation. FDA asks when greater premarket uncertainty may be accepted with postmarket reliance.\nBCR drill chain. Uncertainty deferred -> harm realizes before detection -> monitoring acts too late.\nRoot residual. Monitoring cannot close a branch when detection/response exceeds time-to-harm.\nSolution branch. S4/S12 allow deferral only with detectability + latency + reversibility evidence.",
+      "position_gist": "Deferring premarket uncertainty to postmarket monitoring should be permitted only where evidence shows detectability, response latency, and reversibility are faster than the time-to-harm.",
+      "segment_id": "seg-056"
+    },
+    {
+      "question_ids": [
+        "q24"
+      ],
+      "source_passage": "13.9 Third-Party Model Change\nSource observation. FDA recognizes provider-initiated underlying-model changes.\nBCR drill chain. Approved config -> provider update -> behavior change -> sponsor misses delta -> prior evidence no longer maps to\ndeployed state.\nRoot residual. Unobserved dependency delta breaks identity preservation.\nSolution branch. S10/S11 fingerprint + notice + canary/shadow + hold + regression + rollback.",
+      "position_gist": "Provider-initiated model updates break the identity between approved evidence and the deployed device, requiring fingerprinting, notification, canary/shadow testing, holds, regression testing and rollback.",
+      "segment_id": "seg-057"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "13.10 Meaningful Human Oversight\nSource observation. FDA distinguishes supervision/autonomy and reviewability.\nBCR drill chain. Human present -> critical context hidden -> short decision window -> nominal approval -> unsafe action proceeds.\nRoot residual. Human presence is not meaningful control.\nSolution branch. S8 measure visibility + authority + latency + override + rollback.",
+      "position_gist": "Human presence should not be credited as a safeguard unless visibility, authority, decision latency, override, and rollback are measured, since nominal supervision can be ineffective.",
+      "segment_id": "seg-058"
+    },
+    {
+      "question_ids": [
+        "q13"
+      ],
+      "source_passage": "13.11 Synthetic Self-Confirmation\nSource observation. FDA asks how to avoid same-class synthetic data reproducing device gaps.\nBCR drill chain. Shared assumptions -> generator omits blind spot -> evaluation omits failure -> device passes.\nRoot residual. Synthetic evidence can mask correlated blind spots.\nSolution branch. S5/S7 lineage separation + independent real sentinels + diverse generators.",
+      "position_gist": "To prevent same-class synthetic data from masking correlated blind spots, evaluations should require generator lineage separation, independent real-data sentinels, and diverse generators.",
+      "segment_id": "seg-059"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "13.12 Agentic Tool-Chain Realization\nSource observation. FDA notes multi-step planning/tool use/reduced human review.\nBCR drill chain. Benign plan -> tool call -> permission -> external action -> changed world state -> later steps operate on new state.\nRoot residual. Output-only testing fails once actions cross into external state.\nSolution branch. S9 whole action-state sequence + permission + irreversible-node + rollback/post-action verification.",
+      "position_gist": "Output-only testing is inadequate for agentic devices; evaluation must cover the whole action-state sequence including permissions, irreversible action nodes, rollback and post-action verification.",
+      "segment_id": "seg-060"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q24",
+        "q7"
+      ],
+      "source_passage": "S0 Identity/configuration lock Pin the exact final device\nconfiguration: model/version,\nprompts, retrieval, guardrails,\ntools, UI, intended\nuse/users/population/environme\nnt/dependencies.\nExact configuration\nmanifest/fingerprint; no\nuntracked component.",
+      "position_gist": "Evaluation should begin with an identity/configuration lock pinning model version, prompts, retrieval, guardrails, tools, UI and intended use, evidenced by a configuration manifest or fingerprint with no untracked component.",
+      "segment_id": "seg-061"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "S2 Multidimensional boundary\nledger\nTrack J1-J15 and material\ncouplings; retain the two-axis\npicture as a front-end heuristic\nonly.\nNo essential boundary\norphaned; material couplings\nidentified.",
+      "position_gist": "A multidimensional boundary ledger tracking additional risk dimensions and their couplings should replace the two-axis picture as the basis for risk closure, with the two-axis view retained only as a front-end heuristic.",
+      "segment_id": "seg-062"
+    },
+    {
+      "question_ids": [
+        "q26",
+        "q5"
+      ],
+      "source_passage": "S3 Trajectory-state model Evaluate multi-turn and agentic\nstate transitions over complete\ninteraction/action trajectories.\nNo hidden trajectory crossing\nwithout detection/control.",
+      "position_gist": "Multi-turn and agentic behavior should be evaluated over complete interaction and action trajectories with the criterion that no hidden trajectory crossing occurs without detection or control.",
+      "segment_id": "seg-063"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q6",
+        "q8"
+      ],
+      "source_passage": "S4 Hard-gate screen Prevent catastrophic,\nirreversible, unauthorized, or\nidentity-breaking branches from\nbeing averaged into a pass.\nAll applicable hard gates pass\nbefore aggregate metrics are\ncredited.",
+      "position_gist": "A hard-gate screen should prevent catastrophic, irreversible, unauthorized or identity-breaking failure modes from being averaged into an aggregate pass, requiring all applicable hard gates to pass before aggregate metrics count.",
+      "segment_id": "seg-064"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Benign plan -> tool call -> permission -> external action -> changed world state -> later steps operate on new state.\nRoot residual. Output-only testing fails once actions cross into external state.\nSolution branch. S9 whole action-state sequence + permission + irreversible-node + rollback/post-action verification.",
+      "position_gist": "Output-only testing is inadequate for agentic devices; evaluation must cover the whole action-state sequence including tool permissions, irreversible nodes, rollback, and post-action verification.",
+      "segment_id": "seg-065"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "S9 Agentic sequence closure Control tool permissions, action-state transitions, irreversible nodes, tool-output validation, rollback, and post-action checks.\nNo unauthorized/unobserved high-consequence transition.",
+      "position_gist": "Agentic devices should be required to control tool permissions, action-state transitions, irreversible nodes, tool-output validation, rollback and post-action checks, with a pass criterion of no unauthorized or unobserved high-consequence transition.",
+      "segment_id": "seg-066"
+    },
+    {
+      "question_ids": [
+        "q18",
+        "q26"
+      ],
+      "source_passage": "S8 Meaningful observer control Demonstrate visibility, authority, timing, intervention ability, and reversibility for human oversight.\nObserver can detect/stop unsafe action within required time.",
+      "position_gist": "Human oversight should be evidenced as 'meaningful observer control' — demonstrated visibility, authority, timing, intervention ability, and reversibility such that an observer can detect and stop an unsafe action in time.",
+      "segment_id": "seg-067"
+    },
+    {
+      "question_ids": [
+        "q24"
+      ],
+      "source_passage": "S10 Lineage/dependency assurance Maintain model/provider version identity, fingerprints, safety-relevant limitations, update notices, and current dependency evidence.\nDeployed dependency identity/version is known and current.",
+      "position_gist": "Manufacturers should maintain lineage/dependency assurance — model/provider version identity, fingerprints, safety-relevant limitations, and update notices — so the deployed dependency version is always known and current.",
+      "segment_id": "seg-068"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "source_passage": "S11 Change/PCCP gate Classify change by boundary delta; test affected branches; hold or roll back when limits are exceeded.\nNo safety-relevant change enters production without required evidence.",
+      "position_gist": "Changes should be gated by classifying them according to boundary delta, testing affected branches, and holding or rolling back when limits are exceeded so no safety-relevant change enters production without evidence.",
+      "segment_id": "seg-069"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "S12 Postmarket residual monitor Use rebenchmarking, clinician sampling, drift/subgroup surveillance, complaints/adverse events/outcomes, and sentinel cases.\nPrespecified triggers detect meaningful residuals before unacceptable propagation.",
+      "position_gist": "Postmarket monitoring should combine rebenchmarking, clinician sampling, drift/subgroup surveillance, complaints/adverse events/outcomes and sentinel cases with prespecified triggers.",
+      "segment_id": "seg-070"
+    },
+    {
+      "question_ids": [
+        "q10"
+      ],
+      "source_passage": "S5 Benchmark construct-validity gate Use prespecified methods, independent/sequestered assets, contamination checks, subgroup/trajectory coverage, and perturbation tests.\nBenchmark predicts intended-use behavior within a demonstrated envelope.",
+      "position_gist": "Benchmarks should pass a construct-validity gate using prespecified methods, independent/sequestered assets, contamination checks, subgroup/trajectory coverage and perturbation tests demonstrating prediction of intended-use behavior.",
+      "segment_id": "seg-071"
+    },
+    {
+      "question_ids": [
+        "q7",
+        "q9"
+      ],
+      "source_passage": "S6 Competency benchmark Evaluate safety, clinical proficiency, generalizability, and agentic competence in the final configuration.\nPrespecified competency acceptance criteria pass with no hidden hard-gate failure.",
+      "position_gist": "Competency benchmarking should evaluate safety, clinical proficiency, generalizability and agentic competence in the exact final configuration against prespecified acceptance criteria.",
+      "segment_id": "seg-072"
+    },
+    {
+      "question_ids": [
+        "q11"
+      ],
+      "source_passage": "S7 Clinical confirmation ladder Escalate evidence from retrospective/shadow/standardized/adjudicated/prospective methods based on the highest-risk unresolved branch.\nClinically representative witness closes intended-use residuals.",
+      "position_gist": "Clinical confirmation should follow an escalating ladder (retrospective, shadow, standardized, adjudicated, prospective) selected by the highest-risk unresolved branch.",
+      "segment_id": "seg-073"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "15.1 Boundary vector. FDA's activity and consequence dimensions remain useful, but the closure object is the broader boundary vector J={J1...J15} plus material couplings. This prevents the two-dimensional visualization from replacing the actual regulatory realization problem.",
+      "position_gist": "The two-axis activity/consequence framework is useful but insufficient; risk closure should be based on a broader multidimensional boundary vector plus material couplings.",
+      "segment_id": "seg-074"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q8"
+      ],
+      "source_passage": "15.3 Hard-gate overlay. Define a prespecified hard-gate event H=1 for any non-averagable safety branch such as an unauthorized high-consequence action, an irreversible action without required confirmation, a catastrophic missed escalation above its allowable limit, a dependency identity mismatch, or failure of required human intervention. When H=1, the affected release/use slice cannot close regardless of favorable aggregate metrics.",
+      "position_gist": "A prespecified hard-gate overlay should block closure for non-averagable safety branches (unauthorized high-consequence action, unconfirmed irreversible action, catastrophic missed escalation, dependency identity mismatch, failed human intervention) regardless of favorable aggregate metrics.",
+      "segment_id": "seg-075"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "15.4 Two-direction escalation residuals. Keep R_under and R_over separate with severity and timing. Do not collapse them into one scalar unless the clinical weighting is prospectively justified. Severe under-escalation can remain a hard gate even if over-escalation is low.",
+      "position_gist": "Under- and over-escalation errors should be tracked separately with severity and timing and not collapsed into a single scalar absent prospectively justified clinical weighting, with severe under-escalation treated as a hard gate.",
+      "segment_id": "seg-076"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q23",
+        "q24"
+      ],
+      "source_passage": "15.6 Change delta. A postmarket modification or third-party dependency update creates a boundary delta, Delta J. Requalification scope follows the changed J_i and material J_iJ_j couplings, while hard-gate branches always receive direct re-evidence. This turns PCCP into a controlled envelope of allowable boundary movement.",
+      "position_gist": "Requalification after a modification or third-party dependency update should scale to the changed boundary dimensions and their couplings, with hard-gate branches always directly re-evidenced, reframing PCCPs as a controlled envelope of allowable boundary movement.",
+      "segment_id": "seg-077"
+    },
+    {
+      "question_ids": [
+        "q12"
+      ],
+      "source_passage": "15.7 Evidence fusion. Benchmark, clinical, synthetic, and postmarket evidence remain distinct witnesses until independence and transportability are demonstrated. Synthetic and real-world data should not be merged into one performance estimate solely because both are available.",
+      "position_gist": "Benchmark, clinical, synthetic and postmarket evidence should remain separate estimates unless independence and transportability are demonstrated; synthetic and real data should not be pooled merely because both exist.",
+      "segment_id": "seg-078"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "FDA Question 1 - Risk framework dimensions\n...\nBCR response. Use the activity x consequence matrix as a communication layer, not the full closure model. Add a mandatory boundary ledger for reversibility, downstream safeguards, time pressure/time-to-harm, traceability/provenance, user review capability, conversational trajectory, model/dependency change, subgroup performance, tool permissions, and postmarket detectability. Overlay hard gates for irreversible or catastrophic branches.",
+      "position_gist": "The two-axis matrix should serve only as a communication layer, supplemented by a mandatory boundary ledger of additional risk dimensions (reversibility, safeguards, time-to-harm, traceability, user review capability, trajectory, dependency change, subgroup performance, tool permissions, detectability) with hard gates for irreversible or catastrophic branches.",
+      "segment_id": "seg-079"
+    },
+    {
+      "question_ids": [
+        "q2"
+      ],
+      "source_passage": "FDA Question 2 - Spectrum of informational directiveness\n...\nBCR response. Treat directiveness as realized action pressure across the interaction, not a keyword test. Evaluate specificity, personalization, imperative force, immediacy, repetition, preservation of alternatives, and consequence across realistic trajectories.",
+      "position_gist": "Directiveness should be assessed as realized action pressure across realistic multi-turn interactions—specificity, personalization, imperative force, immediacy, repetition, preservation of alternatives, and consequence—rather than by keyword or binary tests.",
+      "segment_id": "seg-080"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "FDA Question 3 - Patient-facing vs HCP-facing risk\n...\nBCR response. Do not infer safe use solely from patient/HCP labels. Measure whether intended users understand limitations, detect plausible errors, respond to uncertainty, and act on escalation instructions across health-literacy levels.",
+      "position_gist": "Risk should not be inferred from a patient vs. HCP label; sponsors should empirically test whether intended users understand limitations, detect plausible errors, respond to uncertainty, and follow escalation instructions across health-literacy levels.",
+      "segment_id": "seg-081"
+    },
+    {
+      "question_ids": [
+        "q4"
+      ],
+      "source_passage": "FDA Question 4 - Generalist vs specialist HCP use\n...\nBCR response. Base risk on task-to-competency mismatch, not professional title alone. If safety depends on specialty knowledge, validate the generalist's independent review and the device's specialist-escalation behavior.",
+      "position_gist": "Risk for HCP-facing functions should be based on task-to-competency mismatch rather than professional title, with validation of generalist independent review and device specialist-escalation behavior where safety depends on specialty knowledge.",
+      "segment_id": "seg-082"
+    },
+    {
+      "question_ids": [
+        "q5"
+      ],
+      "source_passage": "FDA Question 5 - Multi-turn conversational trajectories\n...\nBCR response. Evaluate the entire conversation as a state trajectory. Track migration from non-directive to action-directing/action-taking states, order effects, long-context degradation, and cumulative boundary drift.",
+      "position_gist": "Multi-turn devices should be evaluated as whole-conversation state trajectories, tracking migration to action-directing states, order effects, long-context degradation, and cumulative boundary drift.",
+      "segment_id": "seg-083"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "FDA Question 6 - Under- vs over-escalation\n...\nBCR response. Maintain separate under- and over-escalation residuals with severity and timing. Do not force them into one score unless a clinical weighting rule is justified in advance; severe missed escalation can be a hard gate.",
+      "position_gist": "Under- and over-escalation should be reported as separate residuals with severity and timing rather than a single combined score, with severe missed escalation treated as a hard gate.",
+      "segment_id": "seg-084"
+    },
+    {
+      "question_ids": [
+        "q7"
+      ],
+      "source_passage": "FDA Question 7 - Competency-based premarket approach\n...\nBCR response. The competency-based model is useful if benchmark -> clinical confirmation -> postmarket monitoring forms one continuous closure chain tied to the exact final deployed configuration.",
+      "position_gist": "The competency-based approach is appropriate conditional on benchmarking, clinical confirmation, and postmarket monitoring forming one continuous evidence chain tied to the exact final deployed configuration.",
+      "segment_id": "seg-085"
+    },
+    {
+      "question_ids": [
+        "q8"
+      ],
+      "source_passage": "FDA Question 8 - Risk framework used to scale evidence\n...\nBCR response. Use activity and consequence for initial tiering, then scale evidence using the full boundary vector and hard gates. A low average position cannot reduce evidence when irreversibility, hidden tool action, poor observability, or severe subgroup failure exists.",
+      "position_gist": "The two-axis framework should be used only for initial evidence tiering, with the final evidence burden set by the highest material boundary condition or hard gate rather than an average risk position.",
+      "segment_id": "seg-086"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "FDA Question 9 - Adequacy of benchmarking elements\n...\nBCR response. FDA's ten benchmark elements are a strong core. Add explicit gates for provenance/dependency identity, model-change sensitivity, meaningful human override, reversibility/rollback, tool permissions, long trajectories, and benchmark construct validity/contamination.",
+      "position_gist": "FDA's ten benchmark elements are a strong core but should be supplemented with explicit gates for provenance/dependency identity, model-change sensitivity, human override, reversibility/rollback, tool permissions, long trajectories, and benchmark construct validity/contamination.",
+      "segment_id": "seg-087"
+    },
+    {
+      "question_ids": [
+        "q10"
+      ],
+      "source_passage": "FDA Question 10 - Benchmark construct validity\n...\nBCR response. Require evidence that benchmark performance predicts intended-use behavior: independent/sequestered assets, contamination controls, representative morphology, subgroup/trajectory coverage, perturbation stability, and correlation with clinical/postmarket witnesses.",
+      "position_gist": "Sponsors should be required to show benchmark performance predicts intended-use behavior via independent/sequestered assets, contamination controls, representativeness, subgroup/trajectory coverage, perturbation stability, and correlation with clinical and postmarket evidence.",
+      "segment_id": "seg-088"
+    },
+    {
+      "question_ids": [
+        "q11"
+      ],
+      "source_passage": "FDA Question 11 - Selecting clinical-confirmation rigor\n...\nBCR response. Use a sequential clinical-confirmation ladder based on the highest-risk realized branch. Lower-risk informational uses may close with retrospective/shadow evidence; high-consequence or autonomous uses need stronger clinically representative confirmation and may require prospective study.",
+      "position_gist": "Clinical confirmation rigor should be selected via a sequential ladder keyed to the highest-risk branch, allowing retrospective/shadow evidence for lower-risk informational uses while high-consequence or autonomous uses may require prospective study.",
+      "segment_id": "seg-089"
+    },
+    {
+      "question_ids": [
+        "q12"
+      ],
+      "source_passage": "FDA Question 12 - Statistically meaningful performance; synthetic/real evidence\n...\nBCR response. Prespecify estimands, denominators, subgroup/trajectory strata, uncertainty intervals, and missing-data rules. Keep synthetic and real estimates separate unless distributional transportability and lineage independence justify combination.",
+      "position_gist": "Sponsors should prespecify estimands, denominators, strata, uncertainty intervals and missing-data rules, and keep synthetic and real performance estimates separate unless transportability and lineage independence justify pooling.",
+      "segment_id": "seg-090"
+    },
+    {
+      "question_ids": [
+        "q13"
+      ],
+      "source_passage": "FDA Question 13 - Where synthetic data helps or fails\n...\nBCR response. Use synthetic data for combinatorial stress, rare known scenarios, perturbations, and privacy-constrained coverage; do not rely on it alone for unknown blind spots or safety-critical claims where generator and device may share correlated gaps. Add independent real sentinels and lineage disclosure.",
+      "position_gist": "Synthetic data is suited to combinatorial stress, rare known scenarios, perturbations and privacy-constrained coverage but should not be relied on alone where generator and device share correlated blind spots; independent real sentinels and lineage disclosure are needed.",
+      "segment_id": "seg-091"
+    },
+    {
+      "question_ids": [
+        "q14"
+      ],
+      "source_passage": "FDA Question 14 - Comparator and acceptance criteria\n...\nBCR response. Choose the comparator from intended use and counterfactual workflow. Use an appropriate clinical standard for substitution claims; test human-AI team and device-alone performance separately when both matter.",
+      "position_gist": "Comparators should be derived from intended use and the counterfactual workflow, with an appropriate clinical standard for substitution claims and separate reporting of device-alone and human-AI team performance when both matter.",
+      "segment_id": "seg-092"
+    },
+    {
+      "question_ids": [
+        "q15"
+      ],
+      "source_passage": "FDA Question 15 - Compare to care absent the device\n...\nBCR response. Yes - include the actual counterfactual care likely without the device: unaided clinician, delayed specialist review, alternative technology, or no intervention when clinically appropriate.",
+      "position_gist": "Performance should be assessed against the prespecified counterfactual care likely absent the device (unaided clinician, delayed specialist review, alternative technology, or no intervention).",
+      "segment_id": "seg-093"
+    },
+    {
+      "question_ids": [
+        "q16"
+      ],
+      "source_passage": "FDA Question 16 - Independent third parties\n...\nBCR response. Use qualified independent third parties for sequestered datasets, red-team testing, adjudication, and benchmark maintenance, with transparent qualification/conflict rules, multiple eligible providers, rotation, and retest/appeal mechanisms.",
+      "position_gist": "Qualified independent third parties should handle sequestered datasets, red-teaming, adjudication and benchmark maintenance, with transparent conflict rules, multiple eligible providers, rotation, and retest/appeal safeguards against a single gatekeeper.",
+      "segment_id": "seg-094"
+    },
+    {
+      "question_ids": [
+        "q17"
+      ],
+      "source_passage": "FDA Question 17 - Other model architectures\n...\nBCR response. Keep the closure architecture technology-neutral but add architecture-specific failure branches: multimodal consistency, world-model state/long-horizon error, clinically relevant morphology preservation, and action-state verification for autonomous controllers.",
+      "position_gist": "The evaluation framework should remain technology-neutral while adding architecture-specific failure tests for multimodal consistency, world-model long-horizon state error, morphology preservation, and action-state verification for autonomous controllers.",
+      "segment_id": "seg-095"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "FDA Question 18 - Greater postmarket reliance / premarket uncertainty\n...\nBCR response. Allow greater postmarket reliance only when residuals are bounded, detectability is proven, monitoring is sensitive, intervention precedes unacceptable harm, and actions are reversible or otherwise controlled. Do not defer catastrophic, irreversible, or poorly observable risk.",
+      "position_gist": "Greater postmarket reliance should be permitted only when residuals are bounded, detection and monitoring are proven sensitive, intervention precedes harm, and actions are reversible—never for catastrophic, irreversible, or poorly observable risks.",
+      "segment_id": "seg-096"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "FDA Question 19 - Postmarket approaches and cadence\n...\nBCR response. Use both calendar cadence and event triggers: model/dependency update, distribution shift, complaint/adverse-event signal, subgroup degradation, tool change, safety-metric drift, or near-miss. Combine rebenchmarking, clinician review, telemetry, outcomes, and sentinel cases.",
+      "position_gist": "Postmarket reassessment should use both calendar cadence and specified event triggers, combining rebenchmarking, clinician review, telemetry, outcomes and sentinel cases.",
+      "segment_id": "seg-097"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "FDA Question 20 - Machine-based supervisory agents\n...\nBCR response. Machine supervisors may assist but should not self-certify the device. Validate them independently, control their version/lineage, measure detection performance, test common-mode blind spots, maintain audit logs, and provide fail-safe human escalation.",
+      "position_gist": "Machine supervisory agents may assist but must not self-certify the device; they require independent validation, version/lineage control, measured detection performance, common-mode blind-spot testing, audit logs, and fail-safe human escalation.",
+      "segment_id": "seg-098"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "FDA Question 21 - Shared ecosystem roles without diffusing accountability\n...\nBCR response. Distribute evidence generation, not accountability. The manufacturer should retain the master residual/closure ledger; clinicians/institutions supply witnesses, societies supply clinical standards, and standards bodies support interoperable evidence structures.",
+      "position_gist": "Evidence generation may be distributed across clinicians, institutions, societies and standards bodies, but accountability must remain with the manufacturer, who retains the master residual/closure ledger with a named owner for every residual.",
+      "segment_id": "seg-099"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "Machine supervisors may assist but should not self-certify the device. Validate them independently, control their version/lineage, measure detection performance, test common-mode blind spots, maintain audit logs, and provide fail-safe human escalation.\nBCR rule basis. BCR-R06,R08,R11,R13,R15\n...\nClosure evidence. Independent supervisor validation, version control, detection performance, common-mode testing, human fail-safe\nPass / re-open. Supervisor is independently evidenced and shared-blind-spot risk is tested Re-open when: Supervisor/device update or detection degradation.",
+      "position_gist": "Machine-based supervisory agents may support postmarket monitoring but must not self-certify the device; they should be independently validated, version-controlled, measured for detection performance, tested for common-mode blind spots, audit-logged, and backed by fail-safe human escalation.",
+      "segment_id": "seg-100"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "BCR response. Distribute evidence generation, not accountability. The manufacturer should retain the master residual/closure ledger; clinicians/institutions supply witnesses, societies supply clinical standards, and standards bodies support interoperable evidence structures.\n...\nClosure evidence. Master residual ledger with named accountable owner; external contributors provide traceable witnesses\nPass / re-open. Every residual has one accountable owner despite distributed evidence generation",
+      "position_gist": "Ecosystem stakeholders should contribute evidence (witnesses, clinical standards, interoperable evidence structures) while the manufacturer retains a master residual/closure ledger so every residual risk has one named accountable owner.",
+      "segment_id": "seg-101"
+    },
+    {
+      "question_ids": [
+        "q22"
+      ],
+      "source_passage": "BCR response. Classify modification by boundary delta. Cosmetic/non-safety UI changes may stay within QMS; prompt/retrieval changes require targeted requalification; model/tool/intended-use/permission/safety-behavior changes can require broad revalidation. Hard-gate branches always receive direct regression evidence.\n...\nClosure evidence. Change delta record, affected-branch regression, hold/release decision, hard-gate retest\nPass / re-open. Requalification scope is traceable to changed boundaries and passes affected gates",
+      "position_gist": "Post-deployment modifications should be tiered by 'boundary delta': cosmetic/non-safety UI changes managed in the QMS, prompt/retrieval changes requiring targeted requalification, and model/tool/intended-use/permission/safety-behavior changes requiring broad revalidation, with hard-gate branches always retested.",
+      "segment_id": "seg-102"
+    },
+    {
+      "question_ids": [
+        "q23"
+      ],
+      "source_passage": "BCR response. Prespecify an allowable change envelope rather than every exact future edit: which boundaries may move, maximum deltas, required tests, hold points, rollback conditions, and new-submission triggers.\n...\nPass / re-open. Change remains inside validated envelope and required tests pass before release Re-open when: Change outside envelope or failed control/test.",
+      "position_gist": "PCCPs for GenAI devices should prespecify an allowable change envelope (movable boundaries, maximum deltas, required tests, hold points, rollback conditions, new-submission triggers) rather than enumerating exact future modifications.",
+      "segment_id": "seg-103"
+    },
+    {
+      "question_ids": [
+        "q24"
+      ],
+      "source_passage": "BCR response. Use contractual notification plus technical detection: version identifiers/fingerprints, canary probes, shadow/delta tests, API behavior checks, change quarantine, rollback, and requalification. If the sponsor cannot detect a safety-relevant dependency change, the branch is not closed.",
+      "position_gist": "Third-party foundation model changes should be managed by combining contractual notification with technical detection (fingerprints, canary probes, shadow/delta tests, API behavior checks) plus quarantine, rollback, and requalification, with the device deemed not closed if the sponsor cannot detect safety-relevant dependency changes.",
+      "segment_id": "seg-104"
+    },
+    {
+      "question_ids": [
+        "q25"
+      ],
+      "source_passage": "BCR response. Foundation Model MAFs can help if current, versioned, and safety-relevant. Include architecture/interface boundaries, appropriate training-data provenance, supported uses, known limitations/failure modes, subgroup evaluations, guardrails, version history, update commitments, and audit-log availability. Voluntary gaps remain explicit and sponsors still need independent dependency assurance.",
+      "position_gist": "Voluntary Foundation Model MAFs are useful only if current, versioned, and safety-relevant, should contain specified content (architecture/interface boundaries, training-data provenance, supported uses, limitations/failure modes, subgroup evaluations, guardrails, version history, update commitments, audit logs), and voluntary disclosure gaps must be made explicit with sponsors retaining independent dependency assurance.",
+      "segment_id": "seg-105"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "BCR response. Evaluate sequence-level realization: planning, tool selection, permission boundaries, memory/retrieval provenance, multi-agent propagation, tool-output validation, prompt injection through retrieved/tool content, irreversible-action confirmation, rollback, and post-action state checks. Acceptance criteria apply to the entire action path, not only the final text output.",
+      "position_gist": "Agentic devices should be evaluated at the sequence level (planning, tool selection, permissions, memory/retrieval provenance, multi-agent propagation, tool-output validation, prompt injection, irreversible-action confirmation, rollback, post-action state checks), with acceptance criteria applied to the entire action path rather than only the final output.",
+      "segment_id": "seg-106"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q22"
+      ],
+      "source_passage": "7 - Re-open on change If model, tool, environment, intended use, permissions, or safety behavior changes, reopen affected branches.\nChange-delta + requalification record.\n8 - Close only with evidence Do not credit assigned controls until post-control evidence demonstrates closure.",
+      "position_gist": "Reassessment should be automatically triggered (re-opening affected evaluation branches) whenever the model, tool, environment, intended use, permissions, or safety behavior changes, and controls should not be credited until post-control evidence demonstrates closure.",
+      "segment_id": "seg-107"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q11",
+        "q7"
+      ],
+      "source_passage": "Correctly identifies benchmark contamination, saturation, and real-world representativeness as threats to validity.\n Correctly pairs non-clinical benchmarking with clinical confirmation and offers multiple evidence approaches.",
+      "position_gist": "The commenter endorses FDA's pairing of non-clinical benchmarking with clinical confirmation and its identification of benchmark contamination, saturation, and limited real-world representativeness as validity threats.",
+      "segment_id": "seg-108"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "The two-axis risk picture is not sufficient as a complete regulatory closure function because the paper itself identifies multiple additional dimensions.",
+      "position_gist": "The two-axis risk framework is insufficient on its own because the paper itself identifies additional risk dimensions.",
+      "segment_id": "seg-109"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q2"
+      ],
+      "source_passage": "No systematic coupling rule is specified for autonomy x consequence, tools x permissions, user capability x directiveness, change x monitoring, and other material interactions.",
+      "position_gist": "FDA should specify systematic rules for how risk dimensions couple (autonomy x consequence, tools x permissions, user capability x directiveness, change x monitoring) rather than treating them independently.",
+      "segment_id": "seg-110"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q14"
+      ],
+      "source_passage": "Non-averagable hard-gate conditions are not yet defined.\n...\nHard-gate closure Non-averagable catastrophic/irreversible/unauthorized branches have explicit criteria and pass.\nOPEN",
+      "position_gist": "FDA should define non-averagable 'hard gate' criteria for catastrophic, irreversible, or unauthorized behavior branches so they are not diluted within aggregate performance scores.",
+      "segment_id": "seg-111"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Meaningful human oversight is not yet reduced to measurable visibility, authority, intervention time, override, and reversibility criteria.",
+      "position_gist": "Meaningful human oversight should be operationalized into measurable criteria for visibility, authority, intervention time, override, and reversibility.",
+      "segment_id": "seg-112"
+    },
+    {
+      "question_ids": [
+        "q10"
+      ],
+      "source_passage": "Benchmark construct validity is recognized as a problem but a mandatory proof chain from benchmark -> clinical confirmation -> postmarket behavior is not closed.",
+      "position_gist": "FDA should require a mandatory proof chain linking benchmark performance to clinical confirmation and postmarket behavior, since construct validity is acknowledged but not resolved.",
+      "segment_id": "seg-113"
+    },
+    {
+      "question_ids": [
+        "q11"
+      ],
+      "source_passage": "Clinical confirmation selection remains open and lacks a deterministic escalation rule for unresolved residuals.",
+      "position_gist": "FDA should provide a deterministic escalation rule tying selection of clinical confirmation approach to unresolved residual risks.",
+      "segment_id": "seg-114"
+    },
+    {
+      "question_ids": [
+        "q12",
+        "q13"
+      ],
+      "source_passage": "Synthetic/real evidence combination lacks a closed independence/transportability rule.",
+      "position_gist": "Combining synthetic and real-world evidence requires an explicit independence and transportability rule, which is currently missing.",
+      "segment_id": "seg-115"
+    },
+    {
+      "question_ids": [
+        "q24"
+      ],
+      "source_passage": "Third-party model identity/change detection and hold/rollback requirements are not yet mandatory.",
+      "position_gist": "Third-party model identity/change detection with hold and rollback requirements should be made mandatory rather than optional.",
+      "segment_id": "seg-116"
+    },
+    {
+      "question_ids": [
+        "q23"
+      ],
+      "source_passage": "PCCP concepts are not yet expressed as a measurable boundary-delta envelope.",
+      "position_gist": "PCCP concepts should be expressed as a measurable boundary-delta envelope.",
+      "segment_id": "seg-117"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Agentic evaluation needs explicit action-state, tool-permission, irreversible-node, and post-action verification requirements.",
+      "position_gist": "Agentic device evaluation requires explicit requirements for action-state tracking, tool permissions, irreversible action nodes, and post-action verification.",
+      "segment_id": "seg-118"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "source_passage": "Postmarket monitoring needs residual owners, trigger thresholds, harm-time logic, and automatic re-open/requalification.",
+      "position_gist": "Postmarket monitoring should specify named residual owners, trigger thresholds, harm-time logic, and automatic re-open/requalification mechanisms.",
+      "segment_id": "seg-119"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q19",
+        "q26",
+        "q7"
+      ],
+      "source_passage": "Final BCR conclusion. FDA's discussion paper is a strong starting point. BCR does not reject it; BCR converts the open questions into a traceable realization-and-closure architecture. The policy concept remains PARTIAL until the proposed controls are implemented and empirically demonstrated.",
+      "position_gist": "Overall, the commenter endorses FDA's discussion paper as a strong starting point but judges the framework incomplete until the proposed traceability and closure controls are implemented and empirically demonstrated.",
+      "segment_id": "seg-120"
+    }
+  ]
+}

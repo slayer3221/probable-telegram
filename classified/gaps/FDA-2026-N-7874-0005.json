@@ -1,0 +1,950 @@
+{
+  "comment_id": "FDA-2026-N-7874-0005",
+  "input_hash": "8a10c2585a4ab92c",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T15:34:47Z",
+  "model": "claude-opus-5",
+  "gaps": {
+    "seg-001": {
+      "gap_tags": [
+        "dynamic_intended_use",
+        "human_ai_system_performance",
+        "ai_supplier_quality"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The comment argues the risk framework must incorporate conversational trajectory and agentic tool use as drivers, i.e., behavior that evolves beyond a static declared intended use.",
+        "human_ai_system_performance": "It adds 'user review capability' and downstream safeguards as explicit risk dimensions, framing risk as a property of the human-plus-device system rather than the device output alone.",
+        "ai_supplier_quality": "It lists third-party model change as one of the drivers a complete risk framework must represent, pointing to upstream supplier-initiated changes as a source of device risk."
+      }
+    },
+    "seg-002": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-003": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-004": {
+      "gap_tags": [
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "explanations": {
+        "human_ai_system_performance": "The comment argues that a short time-to-harm window can \"defeat nominal human control,\" i.e., that assumed human review/oversight may not function as a real mitigation under time pressure, an issue about the combined human-AI system rather than device output alone.",
+        "operational_harm": "By framing risk in terms of time-to-harm, irreversibility, and independent downstream safeguards that \"suppress harmful realization,\" the comment locates harm in the operational pathway from output to patient consequence rather than solely in device accuracy."
+      }
+    },
+    "seg-005": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-006": {
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The comment argues directiveness should be assessed as realized behavior along an interaction trajectory rather than as a static output-wording classification, implying the device's effective intended use/behavioral envelope emerges dynamically in use rather than being fixed at labeling."
+      }
+    },
+    "seg-007": {
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The passage frames multi-turn behavior as an emergent trajectory that must be tested for stable classification and \"unrecognized trajectory crossing,\" with re-opening triggered by prompt, UI, personalization, or conversational-policy changes—treating intended use as a dynamic behavioral envelope rather than a fixed statement."
+      }
+    },
+    "seg-008": {
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "explanations": {
+        "human_ai_system_performance": "The comment argues that risk should not be inferred from user-type labels (patient vs. HCP, generalist vs. specialist) but from empirically measured capability of the user to independently review outputs and intervene, which is a human-AI system performance question broader than FDA's user-category framing."
+      }
+    },
+    "seg-009": {
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "explanations": {
+        "human_ai_system_performance": "The passage's proposed criteria center on testing comprehension, error-detection, escalation, and intervention by the intended user population, i.e., evaluating the combined human-plus-device system rather than the device output alone, which FDA's Q3 framing on patient-facing risk does not fully capture."
+      }
+    },
+    "seg-010": {
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "explanations": {
+        "human_ai_system_performance": "The passage's pass criterion turns on whether the intended HCP can independently review the output (or the device reliably escalates), framing adequacy as a property of the clinician-device pair rather than the model alone, which FDA's Q4 framing of specialist-knowledge risk does not fully capture."
+      }
+    },
+    "seg-011": {
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The comment urges modeling and testing the full conversational state trajectory and 'cumulative boundary drift,' framing intended use as a behavioral envelope that can shift across a multi-turn exchange rather than a fixed static claim."
+      }
+    },
+    "seg-012": {
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The entry frames evaluation around whether tested conversational trajectories cross the intended-use/safety boundary and requires re-opening when orchestration, memory, or context-window changes, treating intended use as a dynamic behavioral envelope rather than a fixed statement."
+      }
+    },
+    "seg-013": {
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "explanations": {
+        "deployment_assurance_scalability": "The entry makes local clinical context, escalation policy, and threshold settings explicit re-opening triggers for the assessment, implying that acceptance evidence must be revalidated per deployment configuration rather than established once at market entry."
+      }
+    },
+    "seg-014": {
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "deployment_assurance_scalability": "The entry conditions a pass on the benchmark/clinical-confirmation evidence chain remaining valid for the \"exact deployed configuration\" with residual monitoring, raising the issue of assuring evidence at each specific deployment rather than only at generic premarket review.",
+        "dynamic_intended_use": "It requires the assessment to be re-opened upon \"any safety-relevant configuration or intended-use change,\" treating the device's intended-use boundary as something that can shift after authorization rather than being fixed."
+      }
+    },
+    "seg-015": {
+      "gap_tags": [
+        "delegated_authority",
+        "ai_supplier_quality"
+      ],
+      "explanations": {
+        "delegated_authority": "The comment asks that benchmarking include tool-permission and reversibility gates plus agentic elements, i.e., testing the bounds of the action authority delegated to the model beyond FDA's benchmark-content framing.",
+        "ai_supplier_quality": "It calls for provenance/change gates in benchmarking, implicating assurance over the underlying (often third-party) model's origin and version changes rather than just benchmark construct validity."
+      }
+    },
+    "seg-016": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-017": {
+      "gap_tags": [
+        "distributed_accountability",
+        "operational_harm"
+      ],
+      "explanations": {
+        "distributed_accountability": "",
+        "operational_harm": ""
+      }
+    },
+    "seg-018": {
+      "gap_tags": [
+        "ai_supplier_quality",
+        "distributed_accountability"
+      ],
+      "explanations": {
+        "ai_supplier_quality": "The comment centers on the inadequacy of voluntary foundation model disclosures and instead demands verifiable supplier artifacts—model identity, version, fingerprint, and change evidence—as a condition of relying on a third-party model component.",
+        "distributed_accountability": "By insisting that evidence be established at the device boundary because voluntary upstream data 'cannot alone close gaps,' the comment addresses how responsibility is allocated between the foundation model developer and the device manufacturer when neither fully controls the model."
+      }
+    },
+    "seg-019": {
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "explanations": {
+        "delegated_authority": "",
+        "operational_harm": ""
+      }
+    },
+    "seg-020": {
+      "gap_tags": [
+        "human_ai_system_performance",
+        "delegated_authority"
+      ],
+      "explanations": {
+        "human_ai_system_performance": "The comment argues risk mitigation credit for human supervision should be granted only when the human-in-the-loop's actual capacity to see, intervene, and reverse is demonstrated, treating the combined human-AI arrangement rather than the model alone as the unit of evaluation.",
+        "delegated_authority": "It explicitly conditions oversight credit on the supervisor having genuine authority (and time) to intervene, raising the question of what decision-making authority is effectively delegated to the device when those conditions are absent."
+      }
+    },
+    "seg-021": {
+      "gap_tags": [
+        "ai_supplier_quality",
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "ai_supplier_quality": "The passage flags third-party model lineage/version assurance as an open, unclosed anchor, asserting that upstream supplier identity and versioning evidence is incomplete under the current framing.",
+        "dynamic_intended_use": "It treats change over model, dependency, and time as requiring explicit 'delta closure' and boundary inventory beyond the static two-axis view, i.e., the device's behavioral envelope shifts and must be re-bounded rather than fixed at authorization."
+      }
+    },
+    "seg-022": {
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The passage proposes acceptance criteria framed around whether any tested conversational trajectory crosses the intended-use/safety boundary without detection or control, and re-opens testing when prompt orchestration, memory, context-window, or tool configuration changes — treating intended use as a behavioral envelope that can shift emergently rather than a fixed static statement."
+      }
+    },
+    "seg-023": {
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "explanations": {
+        "deployment_assurance_scalability": "The row conditions the acceptance of escalation error limits on local factors and specifies re-opening the assessment when clinical context, escalation policy, or thresholds change, implying that assurance must be re-established per deployment setting rather than once at authorization — an issue FDA's Q6 framing on error direction trade-offs does not address."
+      }
+    },
+    "seg-024": {
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "deployment_assurance_scalability": "The passage insists the benchmarking-plus-clinical-confirmation evidence chain must remain traceable and valid for the exact deployed configuration with residual monitoring, an issue of per-deployment assurance that Q7's framing of a generic competency approach does not address.",
+        "dynamic_intended_use": "It conditions continued validity of the evidence closure on re-opening whenever any safety-relevant configuration or intended-use change occurs, treating intended use as a mutable envelope rather than the fixed premarket statement assumed in Q7."
+      }
+    },
+    "seg-025": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-026": {
+      "gap_tags": [
+        "human_ai_system_performance",
+        "delegated_authority",
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "human_ai_system_performance": "The commenter proposes adding explicit tests for human override to the benchmarking battery, indicating that competency evidence must cover the clinician-device combination rather than the model alone.",
+        "delegated_authority": "The suggested additional tests for tool permissions and reversibility go beyond FDA's benchmark categories by addressing the scope of action authority the device is granted.",
+        "dynamic_intended_use": "The commenter would add tests for change and conversational trajectories, implying benchmarking must characterize a shifting behavioral envelope rather than a fixed intended use."
+      }
+    },
+    "seg-027": {
+      "gap_tags": [
+        "dynamic_intended_use",
+        "deployment_assurance_scalability"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The passage conditions benchmark validity on the device behaving \"within defined envelope\" and treats model revision as a trigger to re-open the validity claim, framing assurance as bounded by a behavioral envelope that shifts over time rather than a static intended use statement.",
+        "deployment_assurance_scalability": "It flags \"deployment distribution\" divergence (alongside benchmark exposure/saturation) as a condition that invalidates the benchmark-to-real-world inference, raising the issue of whether premarket benchmark evidence holds across actual deployment settings."
+      }
+    },
+    "seg-028": {
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The passage builds a re-open trigger around changes in intended use, population, or risk profile, treating the confirmation approach as valid only within a defined boundary that must be revisited when the device's intended-use envelope shifts — an issue beyond FDA's static framing of selecting a confirmation approach at a single point in time."
+      }
+    },
+    "seg-029": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-030": {
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "explanations": {
+        "ai_supplier_quality": "The passage conditions synthetic-data acceptability on generator/model lineage disclosure and re-opens evaluation when generator lineage changes, raising upstream model/data supplier provenance and quality issues beyond FDA's framing of synthetic data adequacy."
+      }
+    },
+    "seg-031": {
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "explanations": {
+        "human_ai_system_performance": "The passage requires that device-alone and human-AI (team) performance results be reported separately when relevant, treating the clinician-plus-device combination as a distinct performance object rather than folding it into a single comparator estimate."
+      }
+    },
+    "seg-032": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-033": {
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "explanations": {
+        "distributed_accountability": ""
+      }
+    },
+    "seg-034": {
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The entry ties the validity of architecture-specific evidence to a defined envelope, with an explicit \"RE-OPEN\" trigger when the underlying architecture, modality, or tooling changes, implying assurance must be bounded and revisited as the device's behavioral envelope shifts rather than fixed at a single premarket determination."
+      }
+    },
+    "seg-035": {
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "operational_harm"
+      ],
+      "explanations": {
+        "deployment_assurance_scalability": "The comment conditions any deferral of premarket evidence on demonstrated in-deployment monitoring capability—detection sensitivity, monitoring latency, and response time—raising the question of whether post-deployment assurance infrastructure can actually be sustained and verified, which FDA's Q18 framing treats only generically.",
+        "operational_harm": "It introduces harm-latency and reversibility analysis as gating criteria, i.e., whether harm accrues faster in live operation than the monitoring loop can detect and reverse, a harm-accumulation dimension beyond the incorrect-output framing of the question."
+      }
+    },
+    "seg-036": {
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "explanations": {
+        "ai_supplier_quality": "The proposed re-open trigger list explicitly includes upstream model updates and tool changes, implying that supplier-initiated changes to the underlying model/tooling must force requalification—an issue beyond Q19's framing of cadence for periodic re-benchmarking."
+      }
+    },
+    "seg-037": {
+      "gap_tags": [
+        "delegated_authority",
+        "deployment_assurance_scalability"
+      ],
+      "explanations": {
+        "delegated_authority": "The comment treats the machine supervisory agent as an entity being handed oversight authority and conditions acceptance on an explicit human fail-safe and independent evidence that the supervisor itself can be trusted, an issue beyond FDA's framing of supervisory agents as a monitoring convenience.",
+        "deployment_assurance_scalability": "It ties acceptability to sustained in-deployment assurance mechanisms—version control, detection performance, and re-opening the assessment when the supervisor or device updates or detection degrades—rather than a one-time validation."
+      }
+    },
+    "seg-038": {
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "explanations": {
+        "distributed_accountability": "The comment proposes a master residual ledger assigning a single named accountable owner to every residual risk even though evidence is generated by external contributors (clinicians, institutions, societies), directly addressing how accountability can remain undiffused across a distributed set of postmarket actors."
+      }
+    },
+    "seg-039": {
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The passage frames post-deployment change control around a \"boundary-delta\" record and \"hidden realization,\" i.e., scoping requalification to shifts in the device's declared behavioral boundaries rather than only to nominal intended-use changes, which goes beyond Q22's modification-category framing."
+      }
+    },
+    "seg-040": {
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "dynamic_intended_use": ""
+      }
+    },
+    "seg-041": {
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "explanations": {
+        "ai_supplier_quality": "The passage proposes concrete controls for upstream foundation-model provider risk—provider notice obligations, model identity fingerprints, and detection of 'hidden realization/identity break' (silent model or API substitution)—treating the third-party model supplier as a safety-critical dependency requiring verification beyond FDA's framing of manufacturer-initiated change control.",
+        "deployment_assurance_scalability": "It frames assurance as an ongoing production-side pipeline—canary/shadow delta testing, quarantine and rollback, with a standing 're-open' trigger on any provider/model/API/safety-behavior change—rather than a one-time premarket evaluation."
+      }
+    },
+    "seg-042": {
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "explanations": {
+        "ai_supplier_quality": "The passage treats the Foundation Model MAF as a supplier-provenance instrument, calling for versioned architecture, supported uses, limitations, failure modes, subgroup evidence, guardrails, and update/audit commitments from the upstream model developer, and flags the 'external-witness'/voluntary disclosure gap as a residual risk.",
+        "deployment_assurance_scalability": "It conditions acceptance on the MAF evidence being current for the actually deployed model version and requires re-opening when a model version/update occurs or the file goes stale, raising assurance maintenance across changing deployed instances rather than one-time review."
+      }
+    },
+    "seg-043": {
+      "gap_tags": [
+        "delegated_authority",
+        "cybersecurity_as_safety",
+        "operational_harm"
+      ],
+      "explanations": {
+        "delegated_authority": "The comment centers on bounding what an agent is permitted to do—permission tests, confirmation gates for irreversible actions, and a pass criterion of no unauthorized or unverified high-consequence state transition—which is about the scope and control of authority delegated to the system rather than output accuracy.",
+        "cybersecurity_as_safety": "It explicitly calls for testing prompt injection via tools and retrieval as part of the safety evaluation, treating adversarial manipulation of the agent as a clinical safety failure mode rather than a separate security concern.",
+        "operational_harm": "The focus on end-to-end action-state logs, rollback, and post-action verification addresses harm arising from real-world actions and state changes executed by the agent, not merely from an incorrect informational output."
+      }
+    },
+    "seg-044": {
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The comment argues that a two-axis risk heuristic and aggregate benchmark scores compress higher-dimensional model behavior and should be supplemented by a full \"boundary ledger,\" i.e., an explicit characterization of the device's behavioral envelope rather than summary risk/performance metrics."
+      }
+    },
+    "seg-045": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-046": {
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "explanations": {
+        "deployment_assurance_scalability": "The comment argues that controlled benchmark performance cannot by itself establish real-world safety, and that clinical and postmarket evidence tied to the actual intended use is needed — raising the gap between pre-deployment test evidence and assurance in real deployment settings."
+      }
+    },
+    "seg-047": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-048": {
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "explanations": {
+        "human_ai_system_performance": "The fragment notes that a user's (patient or HCP) ability to recognize an erroneous output varies and is not directly measured, pointing to the unaddressed need to evaluate the combined human-plus-device system rather than the device alone."
+      }
+    },
+    "seg-049": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-050": {
+      "gap_tags": [
+        "dynamic_intended_use",
+        "human_ai_system_performance"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The comment argues that a device's effective behavior drifts across a conversational trajectory from neutral information to practical instruction, so single-output labeling of intended use understates the actual behavioral envelope and requires a trajectory-state model.",
+        "human_ai_system_performance": "The 'drill chain' framing centers on cumulative action pressure exerted on the user across turns culminating in the user acting, implying evaluation must address the human-device interaction rather than isolated output properties."
+      }
+    },
+    "seg-051": {
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "explanations": {
+        "human_ai_system_performance": "The comment argues that user professional category is only a proxy for actual independent-review capability and that evaluation should instead validate users' comprehension, error-detection, and intervention performance with the device, which goes beyond FDA's user-category framing of risk."
+      }
+    },
+    "seg-052": {
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The comment argues that individual conversational turns each appear within scope while the accumulated context shifts the device's function, so intended use must be assessed as a trajectory-level behavioral envelope with state-transition and end-state testing rather than as a fixed static claim."
+      }
+    },
+    "seg-053": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-054": {
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "explanations": {
+        "deployment_assurance_scalability": "The comment argues that clinical confirmation evidence is only valid within a demonstrated transportability envelope and calls for deployment-distribution specification, stratification, and out-of-distribution sentinels, raising the issue that premarket evidence does not automatically carry over to each real-world deployment population."
+      }
+    },
+    "seg-055": {
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "explanations": {
+        "human_ai_system_performance": "The comment explicitly calls for separating device-alone performance from human-AI team performance and tying the comparator to the actual clinical-use counterfactual, raising the concern that device-only metrics may not reflect how the combined clinician-AI system performs in practice."
+      }
+    },
+    "seg-056": {
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "operational_harm"
+      ],
+      "explanations": {
+        "deployment_assurance_scalability": "The comment argues that postmarket monitoring cannot substitute for premarket evidence unless detection and response latency are demonstrably shorter than time-to-harm, raising the adequacy of ongoing deployment-phase assurance mechanisms rather than just the conditions FDA framed.",
+        "operational_harm": "It highlights that harm may already be realized in real-world operation before monitoring detects degradation, making irreversibility and latency of harm in the deployment setting the decisive consideration."
+      }
+    },
+    "seg-057": {
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability",
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "ai_supplier_quality": "The passage centers on a third-party foundation model provider unilaterally updating the underlying model and the sponsor's dependence on supplier notice, fingerprinting, and contractual/technical visibility into supplier-initiated changes.",
+        "deployment_assurance_scalability": "It proposes deployment-side assurance mechanisms—canary/shadow testing, hold, regression testing, and rollback—to keep the deployed state matching the evidence base, which goes beyond FDA's premarket/PCCP framing.",
+        "dynamic_intended_use": "The core concern is that a provider update silently shifts device behavior so prior evidence 'no longer maps to the deployed state,' i.e., loss of identity preservation of the authorized behavioral envelope."
+      }
+    },
+    "seg-058": {
+      "gap_tags": [
+        "human_ai_system_performance",
+        "delegated_authority"
+      ],
+      "explanations": {
+        "human_ai_system_performance": "The passage argues that nominal human presence in the loop does not equate to meaningful control and that evaluation must measure the human-AI interaction properties (visibility of context, decision latency, override) rather than assuming oversight works.",
+        "delegated_authority": "It focuses on the degree of authority actually delegated to the agentic system when approval is only nominal, proposing measurement of authority, override, and rollback as conditions on autonomous action."
+      }
+    },
+    "seg-059": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-060": {
+      "gap_tags": [
+        "operational_harm",
+        "delegated_authority"
+      ],
+      "explanations": {
+        "operational_harm": "The comment argues that once an agent's tool calls produce external actions and changed world state, output-only testing is insufficient and evaluation must cover the whole action-state sequence with irreversible-node identification and rollback/post-action verification—harms arising from operational execution rather than output accuracy.",
+        "delegated_authority": "It foregrounds permission-granting steps in the tool-chain and the need to bound and verify the authority an agent exercises when initiating consequential external actions with reduced human review."
+      }
+    },
+    "seg-061": {
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "explanations": {
+        "ai_supplier_quality": "The passage calls for pinning the exact model/version, prompts, retrieval, guardrails, tools and dependencies with a configuration manifest/fingerprint and \"no untracked component,\" which speaks to controlling and tracing supplier-provided AI components beyond FDA's change-review framing."
+      }
+    },
+    "seg-062": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-063": {
+      "gap_tags": [
+        "dynamic_intended_use",
+        "delegated_authority"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The proposal to model state transitions across complete interaction trajectories and prevent 'hidden trajectory crossing' addresses the behavioral envelope shifting during use, i.e., a device drifting beyond its declared intended use as a conversation or action sequence evolves.",
+        "delegated_authority": "By extending trajectory-state evaluation to agentic action sequences with required detection/control of boundary crossings, the comment implicates limits on how much autonomous action authority the device may exercise before human control is reasserted."
+      }
+    },
+    "seg-064": {
+      "gap_tags": [
+        "dynamic_intended_use",
+        "delegated_authority"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The proposed hard gate on \"identity-breaking\" branches treats the model's ability to depart from its intended behavioral envelope during a conversation as a pass/fail safety property rather than something captured by the two-axis intended-use framing.",
+        "delegated_authority": "By singling out \"unauthorized\" branches as a non-averageable failure, the comment raises the concern that a GenAI device may act or direct beyond the scope of authority granted to it, which the risk framework as posed does not address."
+      }
+    },
+    "seg-065": {
+      "gap_tags": [
+        "operational_harm",
+        "delegated_authority"
+      ],
+      "explanations": {
+        "operational_harm": "The comment argues that once agentic tool calls produce external actions and changed world states, output-only evaluation is inadequate because harm arises from the executed action sequence itself, requiring irreversible-node identification, rollback, and post-action verification.",
+        "delegated_authority": "It centers on the permission step by which the device is granted authority to act externally and on subsequent steps compounding on that authority, implying a need to bound and verify delegated action authority rather than just output accuracy."
+      }
+    },
+    "seg-066": {
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "explanations": {
+        "delegated_authority": "",
+        "operational_harm": ""
+      }
+    },
+    "seg-067": {
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "explanations": {
+        "delegated_authority": "The passage frames agentic oversight as requiring demonstrated authority, timing, intervention ability, and reversibility—i.e., explicit bounds on the autonomy delegated to the system and a retained human ability to stop unsafe action, which goes beyond FDA's framing of acceptance criteria for autonomous multi-step action.",
+        "human_ai_system_performance": "By requiring that the observer can actually detect and halt an unsafe action within a required time, the comment treats oversight effectiveness as a demonstrable property of the combined human-AI system rather than assuming nominal human review suffices."
+      }
+    },
+    "seg-068": {
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "explanations": {
+        "ai_supplier_quality": "The passage calls for maintaining upstream model/provider version identity, fingerprints, disclosed safety-relevant limitations, update notices, and current dependency evidence, which is about assuring the quality and transparency of third-party AI suppliers rather than only the manufacturer's own change control.",
+        "deployment_assurance_scalability": "The stated outcome that the deployed dependency's identity and version be 'known and current' extends assurance to what is actually running in each deployed instance, not just what was evaluated premarket."
+      }
+    },
+    "seg-069": {
+      "gap_tags": [
+        "dynamic_intended_use",
+        "deployment_assurance_scalability"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The comment frames change control around classifying a modification by its \"boundary delta\" and holding or rolling back when limits are exceeded, implying an explicitly declared behavioral envelope that changes are measured against rather than a static intended-use statement.",
+        "deployment_assurance_scalability": "It proposes an operational gating mechanism—testing affected branches and blocking or rolling back releases so no safety-relevant change reaches production without evidence—which concerns continuous release-time assurance in deployment rather than one-time premarket review."
+      }
+    },
+    "seg-070": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-071": {
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The position frames benchmark validity as demonstrating predictive value only 'within a demonstrated envelope' and calls for trajectory coverage, invoking a behavioral-envelope conception of intended use that FDA's construct-validity question does not itself frame."
+      }
+    },
+    "seg-072": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-073": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-074": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-075": {
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance",
+        "ai_supplier_quality"
+      ],
+      "explanations": {
+        "delegated_authority": "The proposed hard gates explicitly include \"unauthorized high-consequence action\" and \"irreversible action without required confirmation,\" framing exceedance of the authority the device was permitted to exercise as a non-averagable failure that FDA's aggregate two-axis risk framing does not capture.",
+        "human_ai_system_performance": "\"Failure of required human intervention\" is treated as a distinct gating failure mode, recognizing that the safety case depends on the human oversight step actually functioning rather than on model output metrics alone.",
+        "ai_supplier_quality": "Including \"dependency identity mismatch\" as a hard-gate event raises verification of the identity and integrity of underlying model/component dependencies as a safety-critical supplier-control issue beyond the risk-axis framing."
+      }
+    },
+    "seg-076": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-077": {
+      "gap_tags": [
+        "dynamic_intended_use",
+        "ai_supplier_quality"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The comment reframes PCCP as \"a controlled envelope of allowable boundary movement,\" treating permissible change as a defined behavioral/boundary envelope rather than a static intended use plus enumerated modifications.",
+        "ai_supplier_quality": "It treats third-party dependency updates as a source of boundary delta requiring scoped requalification and direct re-evidence for hard-gate branches, implicating control over upstream supplier-initiated changes."
+      }
+    },
+    "seg-078": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-079": {
+      "gap_tags": [
+        "dynamic_intended_use",
+        "human_ai_system_performance",
+        "delegated_authority"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The comment asks that the risk framework track \"conversational trajectory\" and \"model/dependency change\" as ledger dimensions, i.e., that risk be bounded by an evolving behavioral envelope rather than a static activity/consequence pairing.",
+        "human_ai_system_performance": "It proposes \"user review capability\" and \"downstream safeguards\" as explicit risk dimensions, recognizing that risk depends on the combined human-plus-device system rather than the output alone.",
+        "delegated_authority": "The recommended ledger includes \"tool permissions\" and hard gates for irreversible branches, raising the scope of action authority delegated to the system as a distinct risk dimension not captured in FDA's two axes."
+      }
+    },
+    "seg-080": {
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The comment argues directiveness must be assessed as realized action pressure across realistic multi-turn interaction trajectories rather than as a static property of output wording, which points to the need to characterize an evolving behavioral envelope beyond a fixed intended-use statement."
+      }
+    },
+    "seg-081": {
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "explanations": {
+        "human_ai_system_performance": "The comment argues that risk cannot be inferred from user-category labels and must instead be evaluated empirically on whether real users comprehend limitations, catch plausible errors, and act on escalation guidance—i.e., performance of the combined human-AI system rather than the device alone."
+      }
+    },
+    "seg-082": {
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "explanations": {
+        "human_ai_system_performance": "The comment argues that risk turns on whether the specific user can independently review the output, and calls for validating the generalist's review capability alongside the device's escalation behavior—i.e., evaluating the combined human-device system rather than the model alone."
+      }
+    },
+    "seg-083": {
+      "gap_tags": [
+        "dynamic_intended_use",
+        "delegated_authority"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The comment argues evaluation must track the conversation as a state trajectory including long-context degradation and cumulative boundary drift, i.e., the device's effective behavioral envelope shifts during use rather than being fixed by a static intended-use statement.",
+        "delegated_authority": "It highlights migration from non-directive information to action-directing and action-taking states within a single exchange, raising the concern that the device acquires greater decisional/action authority than initially sanctioned."
+      }
+    },
+    "seg-084": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-085": {
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "explanations": {
+        "deployment_assurance_scalability": "The comment conditions support for the competency-based approach on the benchmark-confirmation-postmarket chain being tied to the exact final deployed configuration, raising the issue that premarket evidence must be traceable to what is actually fielded rather than a test-time configuration."
+      }
+    },
+    "seg-086": {
+      "gap_tags": [
+        "delegated_authority",
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "delegated_authority": "The comment insists that hidden tool action and irreversibility act as hard gates that cannot be averaged away, raising the issue of autonomous action taken on the user's behalf beyond what the two-axis activity/consequence framing captures.",
+        "dynamic_intended_use": "The proposal to scale evidence against a 'full boundary vector' with observability and subgroup-failure conditions frames risk in terms of an operating envelope rather than a static intended-use statement."
+      }
+    },
+    "seg-087": {
+      "gap_tags": [
+        "ai_supplier_quality",
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "explanations": {
+        "ai_supplier_quality": "The comment asks that benchmarking include explicit gates for provenance/dependency identity and model-change sensitivity, i.e., assurance about the underlying/third-party model supply chain that FDA's benchmark element list does not cover.",
+        "delegated_authority": "It proposes gates for tool permissions, reversibility/rollback, and long action trajectories, addressing the scope of authority delegated to the device rather than just its knowledge and communication competencies.",
+        "human_ai_system_performance": "It calls for benchmarking 'meaningful human override,' treating the human-plus-device configuration as part of what must be evaluated rather than the model alone."
+      }
+    },
+    "seg-088": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-089": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-090": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-091": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-092": {
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "explanations": {
+        "human_ai_system_performance": ""
+      }
+    },
+    "seg-093": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-094": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-095": {
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "explanations": {
+        "delegated_authority": ""
+      }
+    },
+    "seg-096": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-097": {
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "explanations": {
+        "ai_supplier_quality": "The comment names upstream model/dependency updates and tool changes as explicit reassessment triggers, implying manufacturers must continuously watch supplier-initiated changes that FDA's question on monitoring cadence does not directly address."
+      }
+    },
+    "seg-098": {
+      "gap_tags": [
+        "delegated_authority",
+        "deployment_assurance_scalability"
+      ],
+      "explanations": {
+        "delegated_authority": "The comment addresses how much oversight authority can be handed to an automated supervisor, insisting it must not self-certify the device and that fail-safe human escalation remain in place, an issue of bounding machine-delegated decision rights that FDA's question frames only as a technical reliability matter.",
+        "deployment_assurance_scalability": "It treats the supervisory agent as itself requiring independent validation, version/lineage control, detection-performance measurement, common-mode blind-spot testing, and audit logging, raising the challenge of sustaining assurance over an ongoing automated monitoring layer in deployment."
+      }
+    },
+    "seg-099": {
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "explanations": {
+        "distributed_accountability": "The comment directly addresses how evidence generation can be shared across clinicians, institutions, societies, and standards bodies while the manufacturer retains a master residual/closure ledger, articulating a mechanism for preventing accountability from diffusing across ecosystem actors."
+      }
+    },
+    "seg-100": {
+      "gap_tags": [
+        "delegated_authority",
+        "deployment_assurance_scalability"
+      ],
+      "explanations": {
+        "delegated_authority": "The comment insists that a machine supervisory agent may assist but must never self-certify the device, requiring independent validation and a fail-safe human escalation path, which raises the unframed issue of how much oversight authority can legitimately be delegated to another AI system.",
+        "deployment_assurance_scalability": "It ties continued assurance to version/lineage control, detection-performance measurement, audit logs, and explicit re-open triggers on supervisor or device updates and detection degradation, addressing how monitoring assurance is sustained across ongoing deployment rather than at a single review point."
+      }
+    },
+    "seg-101": {
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "explanations": {
+        "distributed_accountability": "The comment substantively addresses how postmarket evidence generation can be spread across clinicians, institutions, societies, and standards bodies while insisting each residual risk retain a single named accountable owner in a manufacturer-held master ledger, foregrounding the accountability-allocation problem across a multi-party ecosystem."
+      }
+    },
+    "seg-102": {
+      "gap_tags": [
+        "dynamic_intended_use",
+        "delegated_authority"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The comment reframes change control around a 'boundary delta' — i.e., changes to the device's declared behavioral envelope (intended use, safety behaviors, retrieval/prompt scope) — rather than FDA's modification categories, treating the envelope itself as the baseline against which modifications are scoped and requalified.",
+        "delegated_authority": "It singles out permission changes and 'hard-gate' branches as requiring broad revalidation and mandatory direct regression evidence, implying that the scope of authority the system is allowed to exercise is a distinct control dimension not captured in FDA's modification-scaling question."
+      }
+    },
+    "seg-103": {
+      "gap_tags": [
+        "dynamic_intended_use",
+        "deployment_assurance_scalability"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The comment proposes governing change through a prespecified 'allowable change envelope' with boundaries, maximum deltas, and re-opening triggers, framing authorization around a behavioral envelope rather than fully enumerated modifications.",
+        "deployment_assurance_scalability": "It emphasizes operational release controls—required tests, hold points, rollback conditions, and pass/re-open gates—as the mechanism for maintaining assurance across ongoing deployment changes."
+      }
+    },
+    "seg-104": {
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "explanations": {
+        "ai_supplier_quality": "The comment addresses assurance of an upstream foundation model supplier by requiring contractual notification plus technical detection (version fingerprints, canary probes, shadow/delta tests, API behavior checks) and quarantine/rollback/requalification, asserting that undetectable safety-relevant dependency changes leave the supplier-risk branch unclosed."
+      }
+    },
+    "seg-105": {
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "explanations": {
+        "ai_supplier_quality": "The comment specifies the supplier-disclosure content needed from foundation model developers (provenance, limitations, subgroup evaluations, guardrails, version history, update commitments, audit logs) and stresses that voluntary participation leaves gaps requiring sponsors to independently assure their upstream model dependency."
+      }
+    },
+    "seg-106": {
+      "gap_tags": [
+        "cybersecurity_as_safety",
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "explanations": {
+        "cybersecurity_as_safety": "The comment explicitly calls for evaluating prompt injection via retrieved or tool-returned content and tool-output validation, treating adversarial manipulation of the agent's inputs as a clinical safety evaluation requirement rather than a separate security matter.",
+        "delegated_authority": "It urges assessment of permission boundaries, irreversible-action confirmation, and rollback, which concerns how much autonomous authority an agent may exercise and what checkpoints constrain it.",
+        "operational_harm": "By insisting acceptance criteria cover the entire action path including multi-agent propagation and post-action state checks rather than only the final text output, the comment points to harms arising from executed actions and altered system state, not just erroneous informational output."
+      }
+    },
+    "seg-107": {
+      "gap_tags": [
+        "dynamic_intended_use",
+        "deployment_assurance_scalability"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The passage treats changes to intended use, safety behavior, and permissions as triggers to reopen assurance branches, implying the device's behavioral envelope is not static and must be requalified when it shifts, which goes beyond FDA's modification-scaling framing.",
+        "deployment_assurance_scalability": "By naming 'environment' and 'tool' changes as requalification triggers alongside model changes, the comment implies assurance must be re-established per deployment context rather than once premarket."
+      }
+    },
+    "seg-108": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-109": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-110": {
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "explanations": {
+        "delegated_authority": "The comment argues the risk framework fails to systematically couple autonomy with consequence and tool use with permission scope, i.e., the degree of action authority delegated to the system is not represented as a risk dimension.",
+        "human_ai_system_performance": "It flags the missing interaction between user capability and output directiveness, implying risk depends on the combined human-plus-device system rather than the device output alone."
+      }
+    },
+    "seg-111": {
+      "gap_tags": [
+        "operational_harm",
+        "delegated_authority"
+      ],
+      "explanations": {
+        "operational_harm": "The passage insists that catastrophic and irreversible branches are \"non-averagable\" and require explicit pass/fail gates rather than aggregate performance statistics, raising the issue that rare but severe operational harms are not captured by averaged accuracy comparators.",
+        "delegated_authority": "By grouping \"unauthorized\" branches with catastrophic and irreversible ones as requiring hard-gate criteria, the comment points to the need to bound and explicitly test whether the device acts beyond the authority granted to it, which FDA's risk-axis and comparator questions do not address."
+      }
+    },
+    "seg-112": {
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "explanations": {
+        "delegated_authority": "The passage centers on the unresolved need for measurable criteria defining the authority an agentic device holds versus the human's ability to override or reverse its actions, which goes beyond FDA's framing of acceptance criteria and oversight.",
+        "human_ai_system_performance": "It frames 'meaningful human oversight' — visibility, intervention time, override — as something that must be operationalized and measured, implying evaluation of the combined human-AI system rather than the device alone."
+      }
+    },
+    "seg-113": {
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "explanations": {
+        "deployment_assurance_scalability": "The comment argues that the evidentiary chain must be closed from benchmarking through clinical confirmation to observed postmarket behavior, raising the unaddressed problem of maintaining traceable assurance that premarket evidence actually holds in real-world deployment."
+      }
+    },
+    "seg-114": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-115": {
+      "gap_tags": [],
+      "explanations": {}
+    },
+    "seg-116": {
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "explanations": {
+        "ai_supplier_quality": "The passage flags that requirements to detect third-party foundation model identity/version changes and to hold or roll back on such changes are not mandatory, which is a supplier-control and upstream-model-quality concern beyond the manufacturer-centric framing of Q24."
+      }
+    },
+    "seg-117": {
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "explanations": {
+        "dynamic_intended_use": "The comment argues PCCP change control should be recast as a measurable \"boundary-delta envelope,\" i.e., a specified behavioral envelope within which the device may change, which goes beyond FDA's framing of adapting prespecification for unforeseeable modifications."
+      }
+    },
+    "seg-118": {
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "explanations": {
+        "delegated_authority": "By calling for explicit tool-permission and action-state requirements, the comment raises the question of how much autonomous authority an agentic device may exercise and how those permission boundaries are specified and constrained, which FDA's question does not frame as a distinct assurance requirement.",
+        "operational_harm": "The emphasis on identifying irreversible nodes and requiring post-action verification points to harms that arise from the agent's actions within a clinical workflow, beyond the accuracy of any single output."
+      }
+    },
+    "seg-119": {
+      "gap_tags": [
+        "distributed_accountability",
+        "operational_harm"
+      ],
+      "explanations": {
+        "distributed_accountability": "The call for named \"residual owners\" of postmarket monitoring obligations goes beyond FDA's framing by demanding explicit allocation of who retains responsibility across manufacturers, institutions, and clinicians when monitoring duties are shared.",
+        "operational_harm": "The demand for \"harm-time logic\" and trigger thresholds implies monitoring must be calibrated to how quickly harm materializes in real-world operation, a dimension not captured by FDA's cadence-and-triggering-event framing."
+      }
+    },
+    "seg-120": {
+      "gap_tags": [],
+      "explanations": {}
+    }
+  }
+}
