@@ -33,6 +33,8 @@ jobs:
     env:
       REGULATIONS_GOV_API_KEY: ${{ secrets.REGULATIONS_GOV_API_KEY }}
       REGULATION_TRACKER_ANTHROPIC: ${{ secrets.REGULATION_TRACKER_ANTHROPIC }}
+      # Required only for identity-linked keys. A repository variable or secret both work.
+      ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID || vars.ANTHROPIC_WORKSPACE_ID }}
       FETCH_LIMIT: ${{ github.event.inputs.fetch_limit || '0' }}
       STAGE_LIMIT: ${{ github.event.inputs.stage_limit || '0' }}
     steps:
@@ -46,6 +48,8 @@ jobs:
         run: |
           test -n "$REGULATIONS_GOV_API_KEY" || { echo "REGULATIONS_GOV_API_KEY secret is missing"; exit 1; }
           test -n "$REGULATION_TRACKER_ANTHROPIC" || { echo "REGULATION_TRACKER_ANTHROPIC secret is missing"; exit 1; }
+      - name: Check model access
+        run: python3 scripts/check_llm_access.py
       - name: Fetch comments and attachments
         run: python3 scripts/fetch_comments.py --limit "$FETCH_LIMIT"
       - name: Extract attachment text
