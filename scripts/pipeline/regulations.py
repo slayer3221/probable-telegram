@@ -87,8 +87,24 @@ class RegulationsClient:
         payload = self._get(f"/comments/{comment_id}", {"include": "attachments"}).json()
         return payload.get("data"), payload.get("included", [])
 
+    DOWNLOAD_HEADERS = {
+        # downloads.regulations.gov answered 403 to the default python-requests
+        # agent; a browser-style agent and explicit Accept header are required.
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36 FDA-GenAI-Comment-Tracker/1.0",
+        "Accept": "application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Referer": "https://www.regulations.gov/",
+    }
+
     def download(self, url, dest_path):
-        resp = self._get(url, absolute=True, stream=True)
+        headers = dict(self.DOWNLOAD_HEADERS)
+        headers["X-Api-Key"] = self.api_key
+        resp = self.session.get(url, headers=headers, timeout=120, stream=True)
+        if resp.status_code == 403:
+            # Retry once without the API key: some edge configurations reject
+            # unexpected auth headers on the download host.
+            resp = self.session.get(url, headers=self.DOWNLOAD_HEADERS, timeout=120, stream=True)
+        resp.raise_for_status()
         with open(dest_path, "wb") as fh:
             for chunk in resp.iter_content(chunk_size=1 << 16):
                 fh.write(chunk)

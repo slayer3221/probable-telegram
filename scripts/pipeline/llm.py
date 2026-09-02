@@ -64,13 +64,16 @@ class LLM:
         self.system = system_prompt()
         self.calls = 0
 
-    def _create(self, prompt, output_config=None, max_tokens=None):
+    def _create(self, prompt, output_config=None, max_tokens=None, effort=None):
         kwargs = {
             "model": self.model,
             "max_tokens": max_tokens or self.max_tokens,
             "system": [{"type": "text", "text": self.system, "cache_control": {"type": "ephemeral"}}],
             "messages": [{"role": "user", "content": prompt}],
         }
+        output_config = dict(output_config or {})
+        if effort:
+            output_config["effort"] = effort
         if output_config:
             kwargs["output_config"] = output_config
         # The SDK retries a few times with sub-second backoff. Transient 529
@@ -120,8 +123,10 @@ class LLM:
                 cleaned = cleaned[4:]
             return json.loads(cleaned)
 
-    def text(self, prompt, max_tokens=None):
-        return self._create(prompt, max_tokens=max_tokens).strip()
+    def text(self, prompt, max_tokens=None, effort=None):
+        # Thinking tokens count toward max_tokens on current models, so short
+        # text outputs still need a few thousand tokens of headroom.
+        return self._create(prompt, max_tokens=max_tokens or 2048, effort=effort).strip()
 
     def preflight(self):
         """One minimal request to prove authentication and model access
