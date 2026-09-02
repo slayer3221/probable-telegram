@@ -10,6 +10,9 @@ REGULATIONS_API_KEY = env("REGULATIONS_GOV_API_KEY")
 # The Anthropic key is read from REGULATION_TRACKER_ANTHROPIC (the GitHub
 # secret name); ANTHROPIC_API_KEY is accepted as a local-development fallback.
 LLM_API_KEY = env("REGULATION_TRACKER_ANTHROPIC") or env("ANTHROPIC_API_KEY")
+# Identity-linked API keys must name the workspace each request acts in.
+# Leave unset for workspace-scoped keys.
+LLM_WORKSPACE_ID = env("ANTHROPIC_WORKSPACE_ID")
 
 # Bump when segmentation, classification or build logic changes in a way that
 # should force reprocessing of every submission.

@@ -7,7 +7,7 @@ import json
 import logging
 import time
 
-from .config import LLM_API_KEY, LLM_MODEL, PROMPT_CONFIG, PROMPTS_DIR
+from .config import LLM_API_KEY, LLM_MODEL, LLM_WORKSPACE_ID, PROMPT_CONFIG, PROMPTS_DIR
 from .io_utils import read_json, ROOT
 
 log = logging.getLogger("llm")
@@ -53,7 +53,10 @@ class LLM:
         if not LLM_API_KEY:
             raise RuntimeError("REGULATION_TRACKER_ANTHROPIC is not set (ANTHROPIC_API_KEY is accepted as a local fallback)")
         self.anthropic = anthropic
-        self.client = anthropic.Anthropic(api_key=LLM_API_KEY, max_retries=3)
+        # An identity-linked key is rejected with HTTP 400 unless the request
+        # carries the workspace it acts in; a workspace-scoped key needs no header.
+        headers = {"anthropic-workspace-id": LLM_WORKSPACE_ID} if LLM_WORKSPACE_ID else None
+        self.client = anthropic.Anthropic(api_key=LLM_API_KEY, max_retries=3, default_headers=headers)
         self.model = model or LLM_MODEL
         self.max_tokens = max_tokens or PROMPT_CONFIG.get("max_tokens", 4096)
         self.system = system_prompt()
@@ -72,6 +75,13 @@ class LLM:
             try:
                 self.calls += 1
                 resp = self.client.messages.create(**kwargs)
+            except self.anthropic.BadRequestError as exc:
+                if "workspace" in str(exc).lower():
+                    raise RuntimeError(
+                        "Anthropic rejected the request: the API key is identity-linked and needs a workspace id. "
+                        "Set ANTHROPIC_WORKSPACE_ID (e.g. wrkspc_01...) or use a workspace-scoped API key."
+                    ) from exc
+                raise
             except self.anthropic.RateLimitError as exc:
                 delay = int(exc.response.headers.get("retry-after", "30") or 30)
                 log.warning("rate limited; sleeping %ss", delay)
@@ -98,6 +108,11 @@ class LLM:
 
     def text(self, prompt, max_tokens=None):
         return self._create(prompt, max_tokens=max_tokens).strip()
+
+    def preflight(self):
+        """One minimal request to prove authentication and model access
+        before any docket work starts. Returns the model's reply."""
+        return self.text("Reply with the single word OK.", max_tokens=16)
 
 
 # JSON schemas for each stage -------------------------------------------------
