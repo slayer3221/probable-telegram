@@ -1,0 +1,423 @@
+{
+  "source": {
+    "title": "Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and Request for Feedback",
+    "publisher": "U.S. Food and Drug Administration, Digital Health Center of Excellence",
+    "published_date": "2026-08-18",
+    "landing_page_url": "https://www.fda.gov/medical-devices/digital-health-center-excellence/considerations-regulation-generative-ai-enabled-medical-devices-discussion-paper-and-request",
+    "pdf_url": "https://www.fda.gov/media/194242/download",
+    "docket_id": "FDA-2026-N-7874",
+    "docket_url": "https://www.regulations.gov/docket/FDA-2026-N-7874",
+    "document_id": "FDA-2026-N-7874-0001",
+    "comment_deadline": "2026-10-19",
+    "question_text_note": "question_text holds the exact wording from Appendix B (Consolidated Discussion Questions) of the discussion paper, imported with scripts/fetch_fda_questions.py. short_title, summary_ask, about and tags are tracker labels, not FDA wording."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "question_number": 1,
+      "question_text": "Does the two-axis risk framework, organized around device activity and the consequence of relying on an incorrect output, appropriately capture the dimensions most relevant to the risk of a GenAI-enabled software function? If there are additional dimensions—such as the reversibility of a resulting action, the availability of downstream safeguards, the time pressure of the deployment setting, or the traceability of the output (i.e., to primary source materials)—that should be represented in a risk framework, please describe and provide examples of how they should be represented.",
+      "short_title": "Two-axis risk framework: device activity and consequence",
+      "theme": "risk",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": true,
+      "summary_ask": "FDA asks whether a risk framework built on device activity and the consequence of relying on an incorrect output captures what matters, and whether dimensions such as reversibility, downstream safeguards, time pressure or traceability should be added.",
+      "about": "The paper proposes two axes: how independently a function acts, and how bad it is to rely on a wrong output. Commenters largely accept the frame and argue about what else belongs on it, and about whether output variability is itself a hazard or only a modifier of consequence.",
+      "tags": [
+        "Risk framing",
+        "Two-axis framework",
+        "Consequence of error"
+      ]
+    },
+    {
+      "id": "q2",
+      "question_number": 2,
+      "question_text": "CDRH seeks input on how to account for the spectrum of GenAI-enabled informational functions that vary in the degree to which they direct a user to a particular action (i.e., between “non-directive” and “action-directing”). What characteristics of an output—such as its wording, specificity, personalization, or context—could be considered as modifiers of the risk associated with an informational function, after accounting for the device’s overall functionality and intended use? What additional information would provide manufacturers with sufficient clarity and predictability around risk assessment for informational functions while recognizing that directiveness may exist along a continuum rather than as a binary distinction?",
+      "short_title": "Directiveness as a continuum for informational functions",
+      "theme": "risk",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": false,
+      "summary_ask": "FDA asks which output characteristics, such as wording, specificity or personalization, should modify the risk of an informational function that sits between non-directive and action-directing.",
+      "about": "",
+      "tags": [
+        "Directiveness",
+        "Informational functions",
+        "Risk modifiers"
+      ]
+    },
+    {
+      "id": "q3",
+      "question_number": 3,
+      "question_text": "CDRH seeks input on whether and when a GenAI-enabled function that results in delivery of clinical information to patients, as opposed to HCPs, could present different or higher risks, while also recognizing the potential benefits associated with improved patient empowerment, engagement, and access to clinical information. What device characteristics, output features, or safeguards might mitigate risks that could arise when a user lacks the domain knowledge to independently evaluate an output, without unnecessarily underestimating patient capability?",
+      "short_title": "Patient-facing versus clinician-facing information",
+      "theme": "risk",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": false,
+      "summary_ask": "FDA asks whether delivering clinical information to patients rather than clinicians presents different or higher risks, and what safeguards mitigate them without underestimating patients.",
+      "about": "",
+      "tags": [
+        "Patient-facing",
+        "Safeguards",
+        "Access"
+      ]
+    },
+    {
+      "id": "q4",
+      "question_number": 4,
+      "question_text": "CDRH seeks input on whether and how the distinction between generalist and specialist physicians might inform the assessment of risk for HCP-facing GenAI-enabled functions. Under what circumstances, if any, might risk be affected when an HCP who lacks the relevant clinical specialist knowledge receives information that falls within a specialist area of practice? What device characteristics or safeguards might mitigate such risks?",
+      "short_title": "Generalist versus specialist clinicians as users",
+      "theme": "risk",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": false,
+      "summary_ask": "FDA asks whether the generalist and specialist distinction should inform risk when a clinician receives information outside their specialty.",
+      "about": "",
+      "tags": [
+        "Human oversight",
+        "Specialist knowledge"
+      ]
+    },
+    {
+      "id": "q5",
+      "question_number": 5,
+      "question_text": "For multi-turn conversational GenAI-enabled devices that may migrate from providing “non-directive” information to “action-directing” information over the course of an exchange, how should risk be assessed across realistic conversational trajectories? How could the intended use of such a device be characterized when its behavior is emergent across a conversation?",
+      "short_title": "Multi-turn conversations and emergent intended use",
+      "theme": "risk",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": true,
+      "summary_ask": "FDA asks how risk should be assessed across realistic conversational trajectories when a device drifts from non-directive to action-directing, and how intended use can be characterized when behavior is emergent.",
+      "about": "Intended use has always been a static statement. A conversational device can summarize, then recommend, then draft an order inside one exchange. The question is whether intended use becomes a behavioral envelope with defined exit conditions, and who observes the trajectory in practice.",
+      "tags": [
+        "Behavioral envelope",
+        "Conversational drift",
+        "Intended use"
+      ]
+    },
+    {
+      "id": "q6",
+      "question_number": 6,
+      "question_text": "For GenAI-enabled care escalation functions, CDRH is considering how the evaluation may account for both under-escalation and over-escalation. How could manufacturers characterize and weigh these two directions of error, given that they may not be commensurable and that acceptable trade-offs may vary by clinical context? Enabled Devices",
+      "short_title": "Care escalation: under- and over-escalation",
+      "theme": "risk",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": false,
+      "summary_ask": "FDA asks how manufacturers should characterize and weigh under-escalation and over-escalation errors for care escalation functions when the two are not commensurable.",
+      "about": "",
+      "tags": [
+        "Care escalation",
+        "Error trade-offs"
+      ]
+    },
+    {
+      "id": "q7",
+      "question_number": 7,
+      "question_text": "Is the competency-based approach described above, i.e., device benchmarking followed by clinical confirmation, a useful and appropriate framework for evaluating GenAI-enabled devices?",
+      "short_title": "Is the competency-based approach appropriate",
+      "theme": "premarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": false,
+      "summary_ask": "FDA asks whether device benchmarking followed by clinical confirmation is a useful and appropriate framework for evaluating GenAI-enabled devices.",
+      "about": "",
+      "tags": [
+        "Competency assessment",
+        "Benchmarking",
+        "Clinical confirmation"
+      ]
+    },
+    {
+      "id": "q8",
+      "question_number": 8,
+      "question_text": "How might the two-axis risk framework described in Section IV be considered within the competency-based approach described above to help determine the level of evidence needed for a premarket submission?",
+      "short_title": "Level of evidence by risk within the competency approach",
+      "theme": "premarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": true,
+      "summary_ask": "FDA asks how the two-axis risk framework should determine the level of evidence needed for a premarket submission under the competency-based approach.",
+      "about": "The paper says evidence should scale with risk but does not say where the floor sits. Commenters read the same sentence very differently depending on whether they are funding the studies or relying on them.",
+      "tags": [
+        "Evidence",
+        "Proportionality",
+        "Clinical validation"
+      ]
+    },
+    {
+      "id": "q9",
+      "question_number": 9,
+      "question_text": "Would a benchmarking structure such as the one described above be likely to provide adequate evidence of clinical knowledge, analytic capabilities, safety behavior, communication, and generalizability to support a reasonable assurance of safety and effectiveness? Are there elements that are missing, redundant, or inappropriately categorized? Are there externally developed standards that could be leveraged?",
+      "short_title": "Benchmarking structure: elements and external standards",
+      "theme": "premarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": false,
+      "summary_ask": "FDA asks whether the proposed benchmarking structure (clinical knowledge, analytic capability, safety behavior, communication, generalizability) is adequate, what is missing or redundant, and whether external standards could be used.",
+      "about": "The benchmarking structure bundles safety behaviors such as adversarial robustness and scope adherence with clinical proficiency. Several commenters treat the security-flavored elements as clinical hazards rather than IT controls, which changes where the evidence is reviewed.",
+      "tags": [
+        "Benchmarks",
+        "Safety behavior",
+        "Standards"
+      ]
+    },
+    {
+      "id": "q10",
+      "question_number": 10,
+      "question_text": "CDRH recognizes that publicly available benchmarking assets may be subject to data contamination, saturation, and limited real-world representativeness. How should a sponsor establish that performance on a given benchmark predicts safe and effective real-world behavior for the device’s intended use? What evidence should support the construct validity of a benchmark used to gate device evaluation, and what role should sponsor-developed benchmarks play given potential concerns around independence and optimization to the test?",
+      "short_title": "Benchmark validity, contamination and sponsor-built benchmarks",
+      "theme": "premarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": false,
+      "summary_ask": "FDA asks how a sponsor should show that benchmark performance predicts real-world behavior, what supports construct validity, and what role sponsor-developed benchmarks should play.",
+      "about": "",
+      "tags": [
+        "Benchmarks",
+        "Construct validity",
+        "Data contamination"
+      ]
+    },
+    {
+      "id": "q11",
+      "question_number": 11,
+      "question_text": "CDRH is considering that clinical confirmation for a GenAI-enabled device might not require a prospective clinical study in every case, and has described above a range of approaches of increasing rigor and patient exposure. How might a sponsor select and justify a confirmation approach tailored to a device’s intended use and proportionate to the device’s risk profile? Are there device types or risk profiles for which one or more of these approaches would be insufficient or inappropriate? How might the anticipated distribution of real-world inputs be taken into consideration? Are there other methods of clinical confirmation that might help inform the evaluation of GenAI-enabled devices?",
+      "short_title": "Selecting and justifying a clinical confirmation approach",
+      "theme": "premarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": true,
+      "summary_ask": "FDA asks how a sponsor should select a clinical confirmation approach proportionate to risk, given that a prospective study may not be required in every case, and where the lighter approaches would be insufficient.",
+      "about": "",
+      "tags": [
+        "Clinical validation",
+        "Study design",
+        "Proportionality"
+      ]
+    },
+    {
+      "id": "q12",
+      "question_number": 12,
+      "question_text": "How should sponsors achieve statistically meaningful performance measurement for GenAI-enabled devices? Where synthetically generated inputs supplement real patient data, how should sponsors account for differences between the synthetic and real-world distributions when estimating performance, and under what conditions, if any, is it appropriate to combine benchmarking evidence and clinical confirmation evidence to support a single performance estimate?",
+      "short_title": "Statistically meaningful measurement and synthetic inputs",
+      "theme": "premarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": false,
+      "summary_ask": "FDA asks how sponsors should achieve statistically meaningful performance measurement, account for synthetic versus real-world input distributions, and when benchmarking and confirmation evidence may be combined.",
+      "about": "",
+      "tags": [
+        "Statistical methods",
+        "Synthetic data"
+      ]
+    },
+    {
+      "id": "q13",
+      "question_number": 13,
+      "question_text": "For which clinical domains, device functions, or subpopulations is synthetic data particularly well-suited, or particularly inadequate, as a supplement to real-world evidence? What safeguards would mitigate the risk that synthetic data generated by models of the same class as the device under evaluation reproduces the very performance gaps the evaluation is intended to detect, particularly for underrepresented subgroups?",
+      "short_title": "Where synthetic data helps and where it fails",
+      "theme": "premarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": false,
+      "summary_ask": "FDA asks for which domains, functions or subpopulations synthetic data is well suited or inadequate, and what safeguards prevent same-class models from reproducing the gaps an evaluation is meant to detect.",
+      "about": "",
+      "tags": [
+        "Synthetic data",
+        "Subgroups"
+      ]
+    },
+    {
+      "id": "q14",
+      "question_number": 14,
+      "question_text": "For open-ended device outputs, how should performance comparators and acceptance criteria be selected? When a panel of qualified clinicians serves as the comparator, how should the applicable standard (for example, the standard of care versus the performance of a median clinician in practice) be defined and justified? Should generalist or specialist physicians be used as a performance standard? When should human-AI team performance, rather than the device operating alone, serve as the basis for evaluation?",
+      "short_title": "Comparators, acceptance criteria and human-AI team performance",
+      "theme": "premarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": true,
+      "summary_ask": "FDA asks how comparators and acceptance criteria should be set for open-ended outputs, how a clinician-panel standard should be defined, and when human-AI team performance rather than the device alone should be the basis for evaluation.",
+      "about": "The clinically relevant unit of performance is often the clinician plus the tool, not the model alone. Commenters split on whether FDA can meaningfully evaluate a combined system whose human half varies by site.",
+      "tags": [
+        "Human-AI team",
+        "Comparators",
+        "Automation bias"
+      ]
+    },
+    {
+      "id": "q15",
+      "question_number": 15,
+      "question_text": "Are there ways in which performance might be assessed relative to the care, technology, or course of action likely to occur in the absence of the device, rather than to the comparators described in this section? What approaches might be used to identify and justify a comparator such as unaided clinical judgment, delayed specialist review, or no intervention?",
+      "short_title": "Comparing against care in the absence of the device",
+      "theme": "premarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": false,
+      "summary_ask": "FDA asks whether performance could be assessed against the care or course of action likely to occur without the device, and how such a comparator would be identified and justified.",
+      "about": "",
+      "tags": [
+        "Comparators",
+        "Counterfactual care"
+      ]
+    },
+    {
+      "id": "q16",
+      "question_number": 16,
+      "question_text": "Should independent third parties be involved in some or all aspects of a competency-based approach, including device benchmarking and clinical confirmation? If so, in what ways might qualified, independent third-party participation contribute to this approach, and what qualifications and independence criteria should apply? Are there aspects of the assessment for which third-party involvement would be impractical or inadvisable? What safeguards or program design features would be critical to prevent third-party participation from limiting competition or preventing innovation?",
+      "short_title": "Role of independent third parties",
+      "theme": "premarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": false,
+      "summary_ask": "FDA asks whether independent third parties should take part in benchmarking or clinical confirmation, with what qualifications, and what safeguards would keep participation from limiting competition.",
+      "about": "",
+      "tags": [
+        "Third parties",
+        "Independence"
+      ]
+    },
+    {
+      "id": "q17",
+      "question_number": 17,
+      "question_text": "CDRH is exploring whether a competency-based approach could be applied to devices that incorporate a variety of underlying model architectures, such as multimodal vision-language models and generative or predictive world models. Are there aspects of the described approach that might be ineffective or inapplicable to these devices? What additional or distinct considerations might need to be addressed?",
+      "short_title": "Applying the approach to other model architectures",
+      "theme": "premarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": false,
+      "summary_ask": "FDA asks whether the competency-based approach would work for devices built on multimodal vision-language models or world models, and what distinct considerations they raise.",
+      "about": "",
+      "tags": [
+        "Model architectures",
+        "Multimodal"
+      ]
+    },
+    {
+      "id": "q18",
+      "question_number": 18,
+      "question_text": "CDRH is considering whether it may be appropriate to accept greater premarket uncertainty regarding a GenAI-enabled device’s benefit-risk profile through greater reliance on postmarket monitoring. Under what conditions might such an approach be appropriate, and what characteristics of a monitoring program would need to be in place to justify reduced premarket evidence? Are there device types or risk profiles for which this approach would not be appropriate?",
+      "short_title": "Trading premarket evidence for postmarket monitoring",
+      "theme": "postmarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": true,
+      "summary_ask": "FDA asks under what conditions greater premarket uncertainty could be accepted in exchange for stronger postmarket monitoring, and which device types should be excluded from such an approach.",
+      "about": "The paper floats a trade: less evidence before market if monitoring after market is strong enough. Whether that trade is attractive depends on who runs the monitoring, what it costs, and what happens when it finds something.",
+      "tags": [
+        "Postmarket monitoring",
+        "Real-world evidence",
+        "Evidence"
+      ]
+    },
+    {
+      "id": "q19",
+      "question_number": 19,
+      "question_text": "Please comment on the potential approaches to postmarket performance evaluation, including periodic re-benchmarking, sample-based clinician review, and performance degradation monitoring. What additional approaches should CDRH consider, and how should the cadence and triggering events for reassessment be determined?",
+      "short_title": "Postmarket performance evaluation: approaches, cadence and triggers",
+      "theme": "postmarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": true,
+      "summary_ask": "FDA asks for comment on periodic re-benchmarking, sample-based clinician review and degradation monitoring, what other approaches to consider, and how cadence and triggering events should be set.",
+      "about": "The same cleared product behaves differently depending on EHR configuration, retrieval content, patient population and which safeguards a site turns on. Commenters point to site-level validation as the postmarket approach the paper does not list.",
+      "tags": [
+        "Postmarket monitoring",
+        "Local assurance",
+        "Configuration"
+      ]
+    },
+    {
+      "id": "q20",
+      "question_number": 20,
+      "question_text": "Please comment on whether the proposed approaches to postmarket monitoring can be facilitated by machine-based supervisory agents. What considerations, including the evaluation and reliability of the supervisory agent itself, should CDRH take into account for such an approach?",
+      "short_title": "Machine-based supervisory agents for monitoring",
+      "theme": "postmarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": false,
+      "summary_ask": "FDA asks whether postmarket monitoring could be carried out by machine-based supervisory agents, and how the reliability of the supervisory agent itself should be evaluated.",
+      "about": "",
+      "tags": [
+        "Supervisory agents",
+        "Monitoring"
+      ]
+    },
+    {
+      "id": "q21",
+      "question_number": 21,
+      "question_text": "What roles might clinicians, healthcare institutions, professional societies, standards-setting bodies, and other stakeholders appropriately play in postmarket monitoring, and how can these roles be structured without diffusing manufacturer accountability?",
+      "short_title": "Roles of clinicians, institutions and other stakeholders in monitoring",
+      "theme": "postmarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": true,
+      "summary_ask": "FDA asks what roles clinicians, healthcare institutions, professional societies and standards bodies should play in postmarket monitoring, and how those roles can be structured without diffusing manufacturer accountability.",
+      "about": "Monitoring requires data the manufacturer usually cannot see and interpretation the health system usually cannot fund. The paper names the parties but does not say who pays for the part that happens inside the hospital.",
+      "tags": [
+        "Postmarket monitoring",
+        "Accountability",
+        "Deployment"
+      ]
+    },
+    {
+      "id": "q22",
+      "question_number": 22,
+      "question_text": "CDRH envisions that a manufacturer’s premarket competency-based assessment might serve as a baseline against which post-deployment modifications could be re-evaluated. How might the extent of re-benchmarking or other evidence be scaled to the nature and expected impact of a given modification? For example, are there categories of change that might not significantly affect safety or effectiveness of a GenAI-enabled device, or might be appropriately managed within a sponsor’s quality management system versus requiring FDA premarket review and authorization before implementation? Are there categories of changes that might be appropriate for inclusion in a PCCP?",
+      "short_title": "Re-evaluating modifications against the premarket baseline",
+      "theme": "postmarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": true,
+      "summary_ask": "FDA asks how re-benchmarking should scale with the impact of a modification, which categories of change could be managed within a quality system rather than premarket review, and which belong in a PCCP.",
+      "about": "Change control assumes discrete, sponsor-initiated versions. Generative products change through prompts, retrieval content, tool access and upstream base-model updates the sponsor did not schedule.",
+      "tags": [
+        "Change control",
+        "PCCP",
+        "Modifications"
+      ]
+    },
+    {
+      "id": "q23",
+      "question_number": 23,
+      "question_text": "How might PCCP concepts or other change-control approaches be adapted for GenAI-enabled devices when the nature or scope of future modifications cannot be fully prespecified?",
+      "short_title": "Change control when modifications cannot be prespecified",
+      "theme": "postmarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": false,
+      "summary_ask": "FDA asks how PCCP concepts or other change-control approaches could be adapted when the nature or scope of future modifications cannot be fully specified in advance.",
+      "about": "",
+      "tags": [
+        "PCCP",
+        "Change control"
+      ]
+    },
+    {
+      "id": "q24",
+      "question_number": 24,
+      "question_text": "For devices built on third-party foundation models, changes to the underlying model may be initiated by the third-party model developer rather than the device manufacturer. How can a manufacturer detect, evaluate, and respond to such changes in a timely manner? What mechanisms—for example, contractual, technical, or through a PCCP—could provide reasonable assurance that third-party developer-initiated changes do not compromise the safety or effectiveness of the device?",
+      "short_title": "Third-party foundation model changes",
+      "theme": "postmarket",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": true,
+      "summary_ask": "FDA asks how a manufacturer can detect, evaluate and respond to changes initiated by a third-party foundation model developer, and what contractual, technical or PCCP mechanisms could provide assurance.",
+      "about": "A regulated product can change behavior because a supplier shipped a new checkpoint. Supplier controls in the quality system were written for components, not for models that update on a commercial schedule.",
+      "tags": [
+        "Supply chain",
+        "Foundation models",
+        "Change control"
+      ]
+    },
+    {
+      "id": "q25",
+      "question_number": 25,
+      "question_text": "Would voluntary Foundation Model MAFs be practical for foundation model developers to provide and to keep current, and what content might they include? Given that participation would be voluntary and that model developers may have limited incentive to disclose safety-relevant information, what would make such a program sufficiently useful for premarket review? Are there alternative mechanisms CDRH should consider for obtaining information about underlying foundation models?",
+      "short_title": "Voluntary Foundation Model Master Files",
+      "theme": "foundation_models_agents",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": false,
+      "summary_ask": "FDA asks whether voluntary Foundation Model Master Files would be practical for developers to provide and keep current, what would make them useful for review given weak incentives, and what alternatives exist.",
+      "about": "",
+      "tags": [
+        "Master files",
+        "Foundation models",
+        "Disclosure"
+      ]
+    },
+    {
+      "id": "q26",
+      "question_number": 26,
+      "question_text": "Are there additional considerations that inform the premarket and postmarket evaluation of agentic GenAI-enabled devices, beyond those applicable to non-agentic GenAI-enabled devices? How should the elevated risk associated with autonomous multi-step action, tool use, and reduced opportunity for human review be reflected in acceptance criteria and oversight?",
+      "short_title": "Agentic devices: autonomous action and reduced human review",
+      "theme": "foundation_models_agents",
+      "source_url": "https://www.fda.gov/media/194242/download",
+      "high_impact": true,
+      "summary_ask": "FDA asks what additional considerations apply to agentic GenAI-enabled devices, and how the elevated risk of autonomous multi-step action, tool use and reduced human review should be reflected in acceptance criteria and oversight.",
+      "about": "Once a system can place an order, send a message or trigger a workflow, the regulatory question shifts from output quality to how far an error can travel before a person intervenes.",
+      "tags": [
+        "Agentic AI",
+        "Delegated authority",
+        "Oversight"
+      ]
+    }
+  ]
+}
