@@ -91,7 +91,7 @@ fetch_fda_questions.py Imports exact FDA question wording from the discussion pa
 Set up credentials:
 
 ```bash
-cp .env.example .env      # fill in REGULATIONS_GOV_API_KEY and ANTHROPIC_API_KEY
+cp .env.example .env      # fill in REGULATIONS_GOV_API_KEY and REGULATION_TRACKER_ANTHROPIC
 pip install -r requirements.txt
 set -a; source .env; set +a
 python3 scripts/fetch_comments.py --limit 5     # small test run
@@ -122,7 +122,7 @@ Many institutional comments put the substance in an attachment. Supported format
 
 ### Scheduled refresh
 
-`.github/workflows/refresh-comments.yml` runs daily and on demand. It needs two repository secrets: `REGULATIONS_GOV_API_KEY` and `ANTHROPIC_API_KEY`. It commits changes to `raw/`, `classified/`, `data/` and `public/` only. Optionally set the `LLM_MODEL` variable to override the model in `prompts/config.json`.
+`.github/workflows/refresh-comments.yml` runs daily and on demand. It needs two repository secrets: `REGULATIONS_GOV_API_KEY` and `REGULATION_TRACKER_ANTHROPIC`. Manual runs accept `fetch_limit` and `stage_limit` inputs for small live tests, and `commit_results` can be set to `false` to leave the repository untouched. It commits changes to `raw/`, `classified/`, `data/` and `public/` only. Optionally set the `LLM_MODEL` variable to override the model in `prompts/config.json`.
 
 ## Editorial layer
 

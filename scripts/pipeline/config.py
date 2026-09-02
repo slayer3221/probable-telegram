@@ -7,7 +7,9 @@ DOCKET_ID = env("DOCKET_ID", "FDA-2026-N-7874")
 DOCUMENT_ID = env("DOCUMENT_ID", "FDA-2026-N-7874-0001")
 REGULATIONS_API_BASE = "https://api.regulations.gov/v4"
 REGULATIONS_API_KEY = env("REGULATIONS_GOV_API_KEY")
-ANTHROPIC_API_KEY = env("ANTHROPIC_API_KEY")
+# The Anthropic key is read from REGULATION_TRACKER_ANTHROPIC (the GitHub
+# secret name); ANTHROPIC_API_KEY is accepted as a local-development fallback.
+LLM_API_KEY = env("REGULATION_TRACKER_ANTHROPIC") or env("ANTHROPIC_API_KEY")
 
 # Bump when segmentation, classification or build logic changes in a way that
 # should force reprocessing of every submission.

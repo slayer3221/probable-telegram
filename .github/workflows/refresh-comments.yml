@@ -9,9 +9,16 @@ on:
     - cron: "17 6 * * *"   # daily at 06:17 UTC
   workflow_dispatch:
     inputs:
-      limit:
-        description: "Limit new submissions processed per stage (0 = no limit)"
+      fetch_limit:
+        description: "Stop after fetching N new or changed comments (0 = whole docket)"
         default: "0"
+      stage_limit:
+        description: "Process at most N submissions per classification stage (0 = no limit)"
+        default: "0"
+      commit_results:
+        description: "Commit refreshed raw/, classified/, data/ and public/ back to the branch"
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -25,8 +32,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       REGULATIONS_GOV_API_KEY: ${{ secrets.REGULATIONS_GOV_API_KEY }}
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-      LIMIT: ${{ github.event.inputs.limit || '0' }}
+      REGULATION_TRACKER_ANTHROPIC: ${{ secrets.REGULATION_TRACKER_ANTHROPIC }}
+      FETCH_LIMIT: ${{ github.event.inputs.fetch_limit || '0' }}
+      STAGE_LIMIT: ${{ github.event.inputs.stage_limit || '0' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -34,25 +42,41 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Check secrets are present
+        run: |
+          test -n "$REGULATIONS_GOV_API_KEY" || { echo "REGULATIONS_GOV_API_KEY secret is missing"; exit 1; }
+          test -n "$REGULATION_TRACKER_ANTHROPIC" || { echo "REGULATION_TRACKER_ANTHROPIC secret is missing"; exit 1; }
       - name: Fetch comments and attachments
-        run: python3 scripts/fetch_comments.py
+        run: python3 scripts/fetch_comments.py --limit "$FETCH_LIMIT"
       - name: Extract attachment text
         run: python3 scripts/parse_attachments.py
       - name: Segment submissions
-        run: python3 scripts/segment_comments.py --limit "$LIMIT"
+        run: python3 scripts/segment_comments.py --limit "$STAGE_LIMIT"
       - name: Classify positions
-        run: python3 scripts/classify_positions.py --limit "$LIMIT"
+        run: python3 scripts/classify_positions.py --limit "$STAGE_LIMIT"
       - name: Classify cross-cutting gaps
-        run: python3 scripts/classify_gaps.py --limit "$LIMIT"
+        run: python3 scripts/classify_gaps.py --limit "$STAGE_LIMIT"
       - name: Generate public summaries
-        run: python3 scripts/generate_summaries.py --limit "$LIMIT"
+        run: python3 scripts/generate_summaries.py --limit "$STAGE_LIMIT"
       - name: Build public data
         run: python3 scripts/build_public_data.py
       - name: Validate public data
         run: python3 scripts/validate_data.py
       - name: Run integrity tests
         run: python3 tests/test_data_integrity.py
+      - name: Summarize run
+        if: always()
+        run: |
+          echo "## Refresh summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "Raw comments on disk: $(ls raw/comments/*.json 2>/dev/null | wc -l)" >> "$GITHUB_STEP_SUMMARY"
+          echo "Usable submissions: $(grep -l '"usable": true' raw/text/*.meta.json 2>/dev/null | wc -l)" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f public/build-manifest.json ]; then
+            echo '```json' >> "$GITHUB_STEP_SUMMARY"
+            python3 -c "import json;m=json.load(open('public/build-manifest.json'));print(json.dumps({k:m[k] for k in ('counts','exclusions','model','prompt_version')},indent=2))" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: Commit refreshed data
+        if: ${{ github.event_name == 'schedule' || github.event.inputs.commit_results == 'true' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

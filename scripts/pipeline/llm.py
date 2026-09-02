@@ -7,7 +7,7 @@ import json
 import logging
 import time
 
-from .config import ANTHROPIC_API_KEY, LLM_MODEL, PROMPT_CONFIG, PROMPTS_DIR
+from .config import LLM_API_KEY, LLM_MODEL, PROMPT_CONFIG, PROMPTS_DIR
 from .io_utils import read_json, ROOT
 
 log = logging.getLogger("llm")
@@ -50,10 +50,10 @@ class LLM:
             import anthropic  # noqa: WPS433
         except ImportError as exc:  # pragma: no cover
             raise RuntimeError("pip install -r requirements.txt (anthropic missing)") from exc
-        if not ANTHROPIC_API_KEY:
-            raise RuntimeError("ANTHROPIC_API_KEY is not set")
+        if not LLM_API_KEY:
+            raise RuntimeError("REGULATION_TRACKER_ANTHROPIC is not set (ANTHROPIC_API_KEY is accepted as a local fallback)")
         self.anthropic = anthropic
-        self.client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY, max_retries=3)
+        self.client = anthropic.Anthropic(api_key=LLM_API_KEY, max_retries=3)
         self.model = model or LLM_MODEL
         self.max_tokens = max_tokens or PROMPT_CONFIG.get("max_tokens", 4096)
         self.system = system_prompt()
