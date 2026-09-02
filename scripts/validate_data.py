@@ -160,14 +160,18 @@ def validate(data_dir: Path, editorial_dir: Path):
         if t and (not t.get("synthesis") or len(t.get("groups", [])) < 2):
             errors.append(f"editorial {qid}: tension needs a synthesis and at least two groups")
 
-    # No review / verification workflow anywhere in public data
+    # No review / verification workflow fields anywhere in public data.
+    # Free text is not scanned: commenters legitimately write about FDA
+    # "reviewers" and "premarket review", and the validator must not reject
+    # real docket language.
     for payload, name in ((q, "questions"), (c, "commenters"), (s, "submissions"), (p, "positions"), (g, "gaps"), (summary, "site-summary"), (editorial, "editorial")):
         for path, key in walk_keys(payload):
             if key in FORBIDDEN_FIELDS:
                 errors.append(f"{name}{path}: review/verification field '{key}' is not allowed")
-        text = json.dumps(payload)
-        if FORBIDDEN_TEXT.search(text):
-            errors.append(f"{name}.json contains review/verification wording")
+    # Labels the page renders must not carry review-status wording either.
+    for card in summary.get("signals", []):
+        if FORBIDDEN_TEXT.search(card.get("label", "")):
+            errors.append(f"signal label '{card['label']}' carries review/verification wording")
     return errors, warnings
 
 

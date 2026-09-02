@@ -62,10 +62,10 @@ def main():
         for pos in positions["positions"]:
             prompt = render(template, QUESTION_IDS=", ".join(pos["question_ids"]), POSITION=pos["position"],
                             CONCERN=pos["stakeholder_concern"], ACTION=pos["requested_fda_action"], PASSAGE=pos["source_passage"])
-            summary = llm.text(prompt, max_tokens=400)
+            summary = llm.text(prompt, max_tokens=2048, effort="low")
             attempts = 1
             while word_count(summary) > MAX_WORDS and attempts < 3:
-                summary = llm.text(prompt + f"\n\nYour previous answer had {word_count(summary)} words. Rewrite it in at most {MAX_WORDS} words.", max_tokens=400)
+                summary = llm.text(prompt + f"\n\nYour previous answer had {word_count(summary)} words. Rewrite it in at most {MAX_WORDS} words.", max_tokens=2048, effort="low")
                 attempts += 1
             if word_count(summary) > MAX_WORDS:
                 log.warning("%s %s: summary still long after retries; shortened at sentence boundary", comment_id, pos["segment_id"])

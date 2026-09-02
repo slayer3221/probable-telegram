@@ -7,8 +7,10 @@ Public summaries and excerpts are prefixed or labelled accordingly so the
 demo cannot be mistaken for real docket content.
 
 Usage:
-    python3 scripts/seed_synthetic_data.py
+    python3 scripts/seed_synthetic_data.py            # writes data/
+    python3 scripts/seed_synthetic_data.py --out DIR  # writes DIR (tests)
 """
+import argparse
 import random
 import sys
 from pathlib import Path
@@ -391,7 +393,8 @@ GAP_BY_QUESTION = {
 }
 
 
-def main():
+def main(out_dir=None):
+    out_dir = Path(out_dir) if out_dir else DATA_DIR
     rng = random.Random(SEED)
     questions = read_json(DATA_DIR / "questions.json")["questions"]
     q_by_n = {q["question_number"]: q for q in questions}
@@ -484,7 +487,7 @@ def main():
     }
     files = build_public_dataset(questions, commenters, list(submissions.values()), positions, editorial_gaps, editorial_cards, meta)
     for name, payload in files.items():
-        write_json(DATA_DIR / name, payload)
+        write_json(out_dir / name, payload)
     s = files["site-summary.json"]["metrics"]
     print(f"seeded: {s['comments_analyzed']} submissions, {s['commenters_represented']} commenters, {s['positions_identified']} positions")
     for card in files["site-summary.json"]["signals"]:
@@ -492,4 +495,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--out", help="output directory (default: data/)")
+    args = parser.parse_args()
+    main(args.out)

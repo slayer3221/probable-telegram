@@ -58,7 +58,10 @@ def test_no_verification_workflow_in_codebase():
     pattern = re.compile(r"human[ -]verified|ai[ -]classified|review[ _-]status|reviewer|verified\s*[:=]\s*(true|false)|verification[ _-]count", re.I)
     offenders = []
     for path in ROOT.rglob("*"):
-        if path.is_dir() or any(part in ("node_modules", ".git", "raw", "classified", "screenshots", "__pycache__", ".pytest_cache") for part in path.parts):
+        # data/ holds live commenter text after a refresh; real submissions
+        # talk about FDA reviewers, so only code, docs and the curated
+        # editorial layer are scanned for workflow wording.
+        if path.is_dir() or any(part in ("node_modules", ".git", "raw", "classified", "data", "public", "screenshots", "__pycache__", ".pytest_cache") for part in path.parts):
             continue
         if path.suffix not in (".html", ".css", ".js", ".json", ".py", ".md", ".yml", ".yaml", ".txt"):
             continue
@@ -120,10 +123,14 @@ def test_tiny_dataset_yields_four_signals(tmp_path):
 
 
 def test_seed_is_deterministic(tmp_path):
-    before = (ROOT / "data" / "positions.json").read_bytes()
-    subprocess.run([sys.executable, str(ROOT / "scripts" / "seed_synthetic_data.py")], check=True, capture_output=True)
-    after = json.loads((ROOT / "data" / "positions.json").read_text(encoding="utf-8"))
-    assert json.loads(before)["positions"] == after["positions"]
+    """Two seed runs produce identical positions. Writes only to temp dirs so
+    the test never overwrites data/, which holds live data after a refresh."""
+    outputs = []
+    for name in ("a", "b"):
+        out = tmp_path / name
+        subprocess.run([sys.executable, str(ROOT / "scripts" / "seed_synthetic_data.py"), "--out", str(out)], check=True, capture_output=True)
+        outputs.append(json.loads((out / "positions.json").read_text(encoding="utf-8"))["positions"])
+    assert outputs[0] == outputs[1]
 
 
 if __name__ == "__main__":
