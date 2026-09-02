@@ -48,8 +48,13 @@ def main():
             prompt = render(template, GAP_LIST=GAP_LIST, QUESTION_IDS=", ".join(pos["question_ids"]),
                             POSITION=pos["position"], PASSAGE=pos["source_passage"])
             out = llm.json(prompt, GAP_SCHEMA, max_tokens=1024)
-            tags = [t for t in out.get("gap_tags", []) if t in GAPS][:3]
-            results[pos["segment_id"]] = {"gap_tags": tags, "explanations": {t: out.get("explanations", {}).get(t, "") for t in tags}}
+            tags = []
+            for t in out.get("gap_tags", []):
+                if t in GAPS and t not in tags:
+                    tags.append(t)
+            tags = tags[:3]  # zero to three gaps per position, enforced here
+            explained = {e.get("gap"): e.get("explanation", "") for e in out.get("explanations", []) if isinstance(e, dict)}
+            results[pos["segment_id"]] = {"gap_tags": tags, "explanations": {t: explained.get(t, "") for t in tags}}
         save_stage("gaps", comment_id, stage_envelope(comment_id, input_hash, {"gaps": results}))
         processed += 1
         if args.limit and processed >= args.limit:
