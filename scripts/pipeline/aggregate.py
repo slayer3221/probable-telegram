@@ -278,6 +278,8 @@ def compute_signals(questions, qstats, gap_rows, editorial_cards):
             continue
         cards.append({"category": category, "label": label, "headline": headline, "detail": detail,
                       "evidence": "Limited data", "target_question_id": ranked[0][0] if ranked else "q1"})
+    order = {"most_discussed": 0, "divide": 1, "commercialization": 2, "deployment": 3, "alignment": 4, "blind_spot": 5}
+    cards.sort(key=lambda c: order.get(c["category"], 9))
     return cards[:4]
 
 
