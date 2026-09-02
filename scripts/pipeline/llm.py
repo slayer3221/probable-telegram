@@ -5,6 +5,7 @@ model. Prompts live in prompts/*.md and are versioned by prompts/config.json.
 """
 import json
 import logging
+import random
 import time
 
 from .config import LLM_API_KEY, LLM_MODEL, LLM_WORKSPACE_ID, PROMPT_CONFIG, PROMPTS_DIR
@@ -72,7 +73,10 @@ class LLM:
         }
         if output_config:
             kwargs["output_config"] = output_config
-        for attempt in range(3):
+        # The SDK retries a few times with sub-second backoff. Transient 529
+        # Overloaded / 5xx / connection errors can last longer than that, so
+        # this loop adds a slower outer backoff (5s, 10s, 20s, 40s, 60s, 60s).
+        for attempt in range(7):
             try:
                 self.calls += 1
                 resp = self.client.messages.create(**kwargs)
@@ -86,6 +90,15 @@ class LLM:
             except self.anthropic.RateLimitError as exc:
                 delay = int(exc.response.headers.get("retry-after", "30") or 30)
                 log.warning("rate limited; sleeping %ss", delay)
+                time.sleep(delay)
+                continue
+            except (self.anthropic.APIStatusError, self.anthropic.APIConnectionError) as exc:
+                status = getattr(exc, "status_code", None)
+                transient = status is None or status >= 500 or status == 429
+                if not transient or attempt == 6:
+                    raise
+                delay = min(60, 5 * (2 ** attempt)) + random.uniform(0, 2)
+                log.warning("transient API error (%s); retrying in %.0fs (attempt %d/7)", status or type(exc).__name__, delay, attempt + 1)
                 time.sleep(delay)
                 continue
             if resp.stop_reason == "refusal":
