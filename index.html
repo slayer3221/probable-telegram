@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FDA GenAI Comment Tracker · Vahana Labs</title>
+  <meta name="description" content="A public intelligence resource tracking what stakeholders are telling FDA about its August 18, 2026 discussion paper on generative AI-enabled medical devices, question by question, with every interpretation linked to source evidence.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Prata&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#tracker">Skip to questions</a>
+
+  <header class="wrap">
+    <div class="masthead">
+      <a class="masthead__brand" href="./">Vahana Labs</a>
+      <div class="masthead__tagline">Commercialization &amp; technology value creation</div>
+    </div>
+  </header>
+
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero__grid">
+      <div>
+        <div class="kicker kicker--brand hero__kicker" id="hero-kicker">Public comment tracker · Docket FDA-2026-N-7874</div>
+        <h1 id="hero-title">FDA GenAI Comment Tracker</h1>
+        <p class="hero__sub">26 questions. See what stakeholders are telling FDA — and where <em>the real disagreements are</em>.</p>
+        <p class="hero__lede">FDA released its discussion paper on generative AI-enabled medical devices on August 18, 2026. This tracker reads every public submission to the docket, maps each position to the question it answers, and keeps the source excerpt attached to the claim.</p>
+        <div class="hero__links" id="hero-links">
+          <a href="https://www.fda.gov/media/194242/download" target="_blank" rel="noopener" data-link="paper">FDA discussion paper ↗</a>
+          <a href="https://www.regulations.gov/docket/FDA-2026-N-7874" target="_blank" rel="noopener" data-link="docket">Regulations.gov docket ↗</a>
+          <span class="hero__note" id="hero-note" hidden></span>
+        </div>
+      </div>
+      <dl class="metrics" id="metrics" aria-label="Docket metrics"></dl>
+    </div>
+  </section>
+
+  <section class="signals" aria-labelledby="signals-title">
+    <div class="wrap">
+      <h2 class="kicker signals__kicker" id="signals-title">What the docket shows so far</h2>
+      <div class="signals__grid" id="signals"></div>
+    </div>
+  </section>
+
+  <div class="controls" id="controls">
+    <div class="wrap">
+      <div class="controls__row">
+        <div class="views" role="group" aria-label="View" id="views"></div>
+        <label class="visually-hidden" for="search">Search organization, issue, summary</label>
+        <input class="search" id="search" type="search" placeholder="Search organization, issue, summary" autocomplete="off">
+        <button class="filter-toggle" id="filter-toggle" type="button" data-action="open-filters" aria-haspopup="dialog" aria-controls="filter-drawer">Filters</button>
+        <span class="result-line" id="result-line" aria-live="polite"></span>
+        <button class="btn-text" type="button" data-action="reset">Reset</button>
+      </div>
+      <div class="filter-rows" id="filter-rows"></div>
+    </div>
+  </div>
+
+  <main class="wrap" id="main">
+    <div id="tracker" aria-live="polite">
+      <p class="status" id="status">Loading docket data…</p>
+    </div>
+
+    <section class="section gaps" id="gaps" aria-labelledby="gaps-title">
+      <div class="section__head">
+        <h2 id="gaps-title">What FDA may be missing</h2>
+        <span class="section__meta" id="gaps-meta">9 cross-cutting issues</span>
+      </div>
+      <p class="gaps__intro">Themes that appear across multiple questions and multiple stakeholder groups, but that the discussion paper does not ask about directly. Each is drawn from the comments below it, not from the paper.</p>
+      <div class="gaps__grid" id="gaps-grid"></div>
+    </section>
+  </main>
+
+  <section class="method" id="methodology" aria-labelledby="method-title">
+    <div class="wrap">
+      <div class="method__grid">
+        <div>
+          <h2 id="method-title">How this tracker works</h2>
+          <p>Comments are pulled from the public Regulations.gov docket. AI is used to segment submissions, map passages to the FDA questions they address, classify the position being expressed, and summarize that position in neutral language.</p>
+          <p>The tracker preserves distinctions among support, support with modification, opposition, mixed positions, and unclear positions rather than reducing comments to simple sentiment.</p>
+          <p>Every interpretation remains linked to the source passage and original submission so readers can inspect the evidence directly.</p>
+          <p>Vahana Labs’ editorial analysis, including commercialization and real-world deployment implications, is visually separated from what commenters themselves said.</p>
+          <p>Classifications and summaries are interpretive. The underlying public submission is authoritative.</p>
+        </div>
+        <div class="method__aside">
+          <div class="method__box">
+            <h3>Every interpretation is traceable to its source evidence.</h3>
+            <p>Any position on this page opens to the passage it came from, the question it was mapped to, and the original submission. Read the source before relying on the summary.</p>
+          </div>
+          <div class="method__box">
+            <h3>Editorial analysis is kept separate.</h3>
+            <p>Vahana read panels are interpretation, including commercialization and deployment consequences. They are never presented as a commenter position.</p>
+          </div>
+        </div>
+      </div>
+      <div class="method__foot">
+        <span class="method__brand">Vahana Labs</span>
+        <span class="method__note" id="method-note"></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="drawer-backdrop" id="filter-drawer" hidden data-action="close-filters">
+    <div class="drawer" role="dialog" aria-modal="true" aria-labelledby="filter-drawer-title" data-stop>
+      <div class="drawer__head">
+        <h2 class="drawer__title" id="filter-drawer-title">Filters</h2>
+        <button class="btn-plain" type="button" data-action="close-filters">Done</button>
+      </div>
+      <div class="drawer__groups" id="filter-drawer-groups"></div>
+    </div>
+  </div>
+
+  <div class="drawer-backdrop drawer-backdrop--evidence" id="evidence-drawer" hidden data-action="close-evidence">
+    <div class="drawer drawer--evidence" role="dialog" aria-modal="true" aria-labelledby="evidence-title" data-stop id="evidence-panel"></div>
+  </div>
+
+  <noscript><p class="wrap status">This tracker needs JavaScript to render docket data. The underlying data is available as JSON in the <code>data/</code> directory.</p></noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
