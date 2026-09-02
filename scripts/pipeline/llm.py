@@ -1,15 +1,22 @@
-"""Thin wrapper over the Anthropic SDK for JSON-shaped classification calls.
+"""Anthropic client for the classification stages, with bounded concurrency
+and per-stage run metrics.
 
 All AI processing happens here, during ingestion. The frontend never calls a
-model. Prompts live in prompts/*.md and are versioned by prompts/config.json.
+model. Prompts live in prompts/*.md and are versioned per stage in
+prompts/config.json.
 """
 import json
 import logging
 import random
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
 
-from .config import LLM_API_KEY, LLM_MODEL, LLM_WORKSPACE_ID, PROMPT_CONFIG, PROMPTS_DIR
-from .io_utils import read_json, ROOT
+from .config import (
+    LLM_API_KEY, LLM_CONCURRENCY, LLM_MODEL, LLM_WORKSPACE_ID, PRICING, PROMPT_CONFIG,
+    PROMPTS_DIR, RUN_METRICS_PATH, env,
+)
+from .io_utils import ROOT, now_iso, read_json, write_json
 from .taxonomies import GAPS
 
 log = logging.getLogger("llm")
@@ -28,9 +35,7 @@ def load_prompt(stage: str) -> str:
 
 
 def question_list_text() -> str:
-    """Question identifiers and text for the system prompt. Exact FDA wording
-    is used when present; otherwise the tracker's short label is given and the
-    model is told the exact text is pending."""
+    """Question identifiers and exact text for the system prompt."""
     data = read_json(ROOT / "data" / "questions.json")
     lines = []
     for q in data["questions"]:
@@ -38,7 +43,7 @@ def question_list_text() -> str:
         if text:
             lines.append(f"{q['id']} (Q{q['question_number']}, theme {q['theme']}): {text}")
         else:
-            lines.append(f"{q['id']} (Q{q['question_number']}, theme {q['theme']}): [exact FDA text pending] {q['short_title']}. {q.get('summary_ask','')}")
+            lines.append(f"{q['id']} (Q{q['question_number']}, theme {q['theme']}): [exact FDA text pending] {q['short_title']}. {q.get('summary_ask', '')}")
     return "\n".join(lines)
 
 
@@ -46,8 +51,73 @@ def system_prompt() -> str:
     return render((PROMPTS_DIR / "system.md").read_text(encoding="utf-8"), QUESTION_LIST=question_list_text())
 
 
+class Metrics:
+    """Thread-safe counters for one pipeline stage."""
+
+    FIELDS = ("llm_calls", "retries", "input_tokens", "output_tokens", "cache_read_tokens", "cache_write_tokens")
+
+    def __init__(self, stage):
+        self.stage = stage
+        self.started = time.monotonic()
+        self.lock = threading.Lock()
+        self.counts = {f: 0 for f in self.FIELDS}
+        self.extra = {}
+
+    def record(self, usage, retries=0):
+        with self.lock:
+            self.counts["llm_calls"] += 1
+            self.counts["retries"] += retries
+            if usage is not None:
+                self.counts["input_tokens"] += getattr(usage, "input_tokens", 0) or 0
+                self.counts["output_tokens"] += getattr(usage, "output_tokens", 0) or 0
+                self.counts["cache_read_tokens"] += getattr(usage, "cache_read_input_tokens", 0) or 0
+                self.counts["cache_write_tokens"] += getattr(usage, "cache_creation_input_tokens", 0) or 0
+
+    def add(self, key, value=1):
+        with self.lock:
+            self.extra[key] = self.extra.get(key, 0) + value
+
+    def estimated_cost(self, model):
+        price = PRICING.get(model)
+        if not price:
+            return None
+        c = self.counts
+        usd = (c["input_tokens"] * price["input"] + c["output_tokens"] * price["output"]
+               + c["cache_read_tokens"] * price["cache_read"] + c["cache_write_tokens"] * price["cache_write"]) / 1_000_000
+        return round(usd, 4)
+
+    def as_dict(self, model):
+        out = {"elapsed_seconds": round(time.monotonic() - self.started, 1), "model": model}
+        out.update(self.counts)
+        out.update(self.extra)
+        out["estimated_cost_usd"] = self.estimated_cost(model)
+        return out
+
+
+def save_stage_metrics(stage, payload):
+    """Append one stage's metrics to public/run-metrics.json for this run."""
+    run_id = env("GITHUB_RUN_ID", "local")
+    data = read_json(RUN_METRICS_PATH, {}) or {}
+    if data.get("run_id") != run_id:
+        data = {"run_id": run_id, "started_at": now_iso(), "stages": {}}
+    data["stages"][stage] = payload
+    data["updated_at"] = now_iso()
+    totals = {k: 0 for k in Metrics.FIELDS}
+    cost = 0.0
+    seconds = 0.0
+    for st in data["stages"].values():
+        for k in Metrics.FIELDS:
+            totals[k] += st.get(k, 0) or 0
+        cost += st.get("estimated_cost_usd") or 0
+        seconds += st.get("elapsed_seconds") or 0
+    totals["estimated_cost_usd"] = round(cost, 4)
+    totals["elapsed_seconds"] = round(seconds, 1)
+    data["totals"] = totals
+    write_json(RUN_METRICS_PATH, data)
+
+
 class LLM:
-    def __init__(self, model=None, max_tokens=None):
+    def __init__(self, stage="llm", model=None, max_tokens=None, concurrency=None):
         try:
             import anthropic  # noqa: WPS433
         except ImportError as exc:  # pragma: no cover
@@ -61,8 +131,23 @@ class LLM:
         self.client = anthropic.Anthropic(api_key=LLM_API_KEY, max_retries=3, default_headers=headers)
         self.model = model or LLM_MODEL
         self.max_tokens = max_tokens or PROMPT_CONFIG.get("max_tokens", 4096)
+        self.concurrency = max(1, concurrency or LLM_CONCURRENCY)
         self.system = system_prompt()
-        self.calls = 0
+        self.metrics = Metrics(stage)
+
+    @property
+    def calls(self):
+        return self.metrics.counts["llm_calls"]
+
+    def map(self, fn, items):
+        """Run fn over items with bounded concurrency; results keep input order.
+        The first exception is re-raised after the pool drains."""
+        if not items:
+            return []
+        if self.concurrency == 1 or len(items) == 1:
+            return [fn(item) for item in items]
+        with ThreadPoolExecutor(max_workers=self.concurrency) as pool:
+            return list(pool.map(fn, items))
 
     def _create(self, prompt, output_config=None, max_tokens=None, effort=None):
         kwargs = {
@@ -79,9 +164,9 @@ class LLM:
         # The SDK retries a few times with sub-second backoff. Transient 529
         # Overloaded / 5xx / connection errors can last longer than that, so
         # this loop adds a slower outer backoff (5s, 10s, 20s, 40s, 60s, 60s).
+        retries = 0
         for attempt in range(7):
             try:
-                self.calls += 1
                 resp = self.client.messages.create(**kwargs)
             except self.anthropic.BadRequestError as exc:
                 if "workspace" in str(exc).lower():
@@ -93,6 +178,7 @@ class LLM:
             except self.anthropic.RateLimitError as exc:
                 delay = int(exc.response.headers.get("retry-after", "30") or 30)
                 log.warning("rate limited; sleeping %ss", delay)
+                retries += 1
                 time.sleep(delay)
                 continue
             except (self.anthropic.APIStatusError, self.anthropic.APIConnectionError) as exc:
@@ -102,19 +188,23 @@ class LLM:
                     raise
                 delay = min(60, 5 * (2 ** attempt)) + random.uniform(0, 2)
                 log.warning("transient API error (%s); retrying in %.0fs (attempt %d/7)", status or type(exc).__name__, delay, attempt + 1)
+                retries += 1
                 time.sleep(delay)
                 continue
+            self.metrics.record(getattr(resp, "usage", None), retries)
+            retries = 0
             if resp.stop_reason == "refusal":
                 raise RuntimeError("model declined the request")
             if resp.stop_reason == "max_tokens":
                 log.warning("response hit max_tokens; retrying with a larger budget")
                 kwargs["max_tokens"] = kwargs["max_tokens"] * 2
+                retries += 1
                 continue
             return "".join(b.text for b in resp.content if b.type == "text")
         raise RuntimeError("model call failed after retries")
 
-    def json(self, prompt, schema, max_tokens=None):
-        text = self._create(prompt, output_config={"format": {"type": "json_schema", "schema": schema}}, max_tokens=max_tokens)
+    def json(self, prompt, schema, max_tokens=None, effort=None):
+        text = self._create(prompt, output_config={"format": {"type": "json_schema", "schema": schema}}, max_tokens=max_tokens, effort=effort)
         try:
             return json.loads(text)
         except json.JSONDecodeError:
@@ -133,9 +223,19 @@ class LLM:
         before any docket work starts. Returns the model's reply."""
         return self.text("Reply with the single word OK.", max_tokens=16)
 
+    def finish(self, **extra):
+        """Persist this stage's metrics and return them."""
+        payload = self.metrics.as_dict(self.model)
+        payload.update(extra)
+        save_stage_metrics(self.metrics.stage, payload)
+        return payload
 
-# JSON schemas for each stage -------------------------------------------------
+
+# JSON schemas -----------------------------------------------------------
+# The structured-output validator rejects some JSON Schema keywords
+# (maxItems was refused with HTTP 400), so list limits are enforced in code.
 QIDS = {"type": "array", "items": {"type": "string", "enum": [f"q{n}" for n in range(1, 27)]}}
+GAP_IDS = {"type": "string", "enum": list(GAPS)}
 
 SEGMENT_SCHEMA = {
     "type": "object",
@@ -159,7 +259,7 @@ SEGMENT_SCHEMA = {
     "additionalProperties": False,
 }
 
-POSITION_SCHEMA = {
+ANALYSIS_SCHEMA = {
     "type": "object",
     "properties": {
         "question_ids": QIDS,
@@ -169,31 +269,20 @@ POSITION_SCHEMA = {
         "stakeholder_concern": {"type": "string"},
         "requested_fda_action": {"type": "string"},
         "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
-    },
-    "required": ["question_ids", "position", "primary_issue", "secondary_issue", "stakeholder_concern", "requested_fda_action", "confidence"],
-    "additionalProperties": False,
-}
-
-# Note: the structured-output validator rejects some JSON Schema keywords
-# (maxItems was refused with HTTP 400), so limits are enforced in code.
-GAP_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "gap_tags": {"type": "array", "items": {"type": "string", "enum": list(GAPS)}},
-        "explanations": {
+        "gap_tags": {"type": "array", "items": GAP_IDS},
+        "gap_explanations": {
             "type": "array",
             "items": {
                 "type": "object",
-                "properties": {
-                    "gap": {"type": "string", "enum": list(GAPS)},
-                    "explanation": {"type": "string"},
-                },
+                "properties": {"gap": GAP_IDS, "explanation": {"type": "string"}},
                 "required": ["gap", "explanation"],
                 "additionalProperties": False,
             },
         },
+        "public_summary": {"type": "string"},
     },
-    "required": ["gap_tags", "explanations"],
+    "required": ["question_ids", "position", "primary_issue", "secondary_issue", "stakeholder_concern",
+                 "requested_fda_action", "confidence", "gap_tags", "gap_explanations", "public_summary"],
     "additionalProperties": False,
 }
 

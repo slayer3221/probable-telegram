@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Stage 3: identify the commenter and break each usable submission into
 substantive positions mapped to FDA questions (classified/segments and
-classified/commenters.json). Long submissions are processed in overlapping
-chunks; positions duplicated across chunk boundaries are merged.
+classified/commenters.json).
+
+Long submissions are processed in overlapping chunks; chunks and commenter
+identification for all pending submissions run with bounded concurrency.
+Positions duplicated across chunk boundaries are merged.
 
 Usage:
     python3 scripts/segment_comments.py [--limit N] [--only COMMENT_ID]
@@ -16,8 +19,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from pipeline.config import CLASSIFIED_COMMENTERS, LLM_MODEL, PROMPT_CONFIG, PROMPT_VERSION, PROCESSING_VERSION, ensure_dirs  # noqa: E402
-from pipeline.io_utils import content_hash, read_json, write_json  # noqa: E402
+from pipeline.config import CLASSIFIED_COMMENTERS, LLM_MODEL, PROMPT_CONFIG, ensure_dirs, prompt_version  # noqa: E402
+from pipeline.io_utils import read_json, write_json  # noqa: E402
 from pipeline.llm import COMMENTER_SCHEMA, LLM, SEGMENT_SCHEMA, load_prompt, render  # noqa: E402
 from pipeline.store import (list_raw_comment_ids, load_raw_comment, load_raw_text, load_stage,  # noqa: E402
                             load_text_meta, save_stage, stage_envelope, stage_is_fresh)
@@ -70,16 +73,6 @@ def merge(positions):
     return out
 
 
-def classify_commenter(llm, raw, text):
-    attrs = raw.get("attributes", {})
-    meta = {k: attrs.get(k) for k in ("organization", "category", "submitterRep", "govAgency", "govAgencyType", "title") if attrs.get(k)}
-    prompt = render(load_prompt("classify_commenter"), METADATA=json.dumps(meta, ensure_ascii=False), TEXT=text[:6000])
-    result = llm.json(prompt, COMMENTER_SCHEMA, max_tokens=1024)
-    if result.get("stakeholder_type") not in STAKEHOLDER_TYPES:
-        result["stakeholder_type"] = "other"
-    return result
-
-
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=0)
@@ -87,11 +80,15 @@ def main():
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
     ensure_dirs()
-    llm = LLM()
+    llm = LLM(stage="segment")
     commenters = read_json(CLASSIFIED_COMMENTERS, {"commenters": {}})
-    template = load_prompt("segment")
-    processed = fresh = skipped = 0
+    segment_template = load_prompt("segment")
+    commenter_template = load_prompt("classify_commenter")
+    commenter_version = prompt_version("classify_commenter")
 
+    # Plan the work first so every model call across all pending submissions
+    # can share one bounded pool.
+    pending, fresh, skipped = [], 0, 0
     for comment_id in list_raw_comment_ids():
         if args.only and comment_id != args.only:
             continue
@@ -100,33 +97,57 @@ def main():
             skipped += 1
             continue
         source_hash = meta["content_hash"]
-        existing = load_stage("segments", comment_id)
         commenter = commenters["commenters"].get(comment_id)
-        commenter_fresh = commenter and commenter.get("input_hash") == source_hash and commenter.get("prompt_version") == PROMPT_VERSION
-        if stage_is_fresh(existing, source_hash) and commenter_fresh:
+        commenter_fresh = bool(commenter and commenter.get("input_hash") == source_hash
+                               and commenter.get("prompt_version") == commenter_version and commenter.get("model") == LLM_MODEL)
+        segments_fresh = stage_is_fresh(load_stage("segments", comment_id), source_hash, "segments")
+        if commenter_fresh and segments_fresh:
             fresh += 1
             continue
+        pending.append((comment_id, source_hash, commenter_fresh, segments_fresh))
+        if args.limit and len(pending) >= args.limit:
+            break
+
+    tasks = []
+    for comment_id, source_hash, commenter_fresh, segments_fresh in pending:
         raw = load_raw_comment(comment_id)
         text = load_raw_text(comment_id)
         if not commenter_fresh:
-            info = classify_commenter(llm, raw, text)
-            info.update({"input_hash": source_hash, "prompt_version": PROMPT_VERSION, "model": LLM_MODEL})
-            commenters["commenters"][comment_id] = info
-            write_json(CLASSIFIED_COMMENTERS, commenters)
-        if not stage_is_fresh(existing, source_hash):
+            attrs = raw.get("attributes", {})
+            meta = {k: attrs.get(k) for k in ("organization", "category", "submitterRep", "govAgency", "govAgencyType", "title") if attrs.get(k)}
+            tasks.append(("commenter", comment_id, 0, render(commenter_template, METADATA=json.dumps(meta, ensure_ascii=False), TEXT=text[:6000])))
+        if not segments_fresh:
             parts = chunks(text)
-            found = []
             for i, part in enumerate(parts, start=1):
-                prompt = render(template, TEXT=part, CHUNK_INDEX=i, CHUNK_TOTAL=len(parts))
-                result = llm.json(prompt, SEGMENT_SCHEMA, max_tokens=8192)
-                found.extend(result.get("positions", []))
+                tasks.append(("chunk", comment_id, i, render(segment_template, TEXT=part, CHUNK_INDEX=i, CHUNK_TOTAL=len(parts))))
+
+    def run(task):
+        kind, comment_id, index, prompt = task
+        if kind == "commenter":
+            return kind, comment_id, index, llm.json(prompt, COMMENTER_SCHEMA, max_tokens=1024)
+        return kind, comment_id, index, llm.json(prompt, SEGMENT_SCHEMA, max_tokens=8192)
+
+    results = llm.map(run, tasks)
+
+    for comment_id, source_hash, commenter_fresh, segments_fresh in pending:
+        mine = [r for r in results if r[1] == comment_id]
+        if not commenter_fresh:
+            info = next(r[3] for r in mine if r[0] == "commenter")
+            if info.get("stakeholder_type") not in STAKEHOLDER_TYPES:
+                info["stakeholder_type"] = "other"
+            info.update({"input_hash": source_hash, "prompt_version": commenter_version, "model": LLM_MODEL})
+            commenters["commenters"][comment_id] = info
+        if not segments_fresh:
+            chunk_results = sorted((r for r in mine if r[0] == "chunk"), key=lambda r: r[2])
+            found = [p for r in chunk_results for p in r[3].get("positions", [])]
             positions = merge(found)
-            save_stage("segments", comment_id, stage_envelope(comment_id, source_hash, {"chunks": len(parts), "positions": positions}))
-            log.info("%s: %d substantive positions from %d chunk(s)", comment_id, len(positions), len(parts))
-        processed += 1
-        if args.limit and processed >= args.limit:
-            break
-    log.info("done: %d processed, %d already fresh, %d skipped (no usable text); %d model calls", processed, fresh, skipped, llm.calls)
+            save_stage("segments", comment_id, stage_envelope(comment_id, source_hash, {"chunks": len(chunk_results), "positions": positions}, "segments"))
+            log.info("%s: %d substantive positions from %d chunk(s)", comment_id, len(positions), len(chunk_results))
+    write_json(CLASSIFIED_COMMENTERS, commenters)
+
+    metrics = llm.finish(records_processed=len(pending), records_reused=fresh, records_skipped=skipped, chunks=sum(1 for t in tasks if t[0] == "chunk"))
+    log.info("done: %d processed, %d already fresh, %d skipped (no usable text); %d model calls in %.0fs (est. $%s)",
+             len(pending), fresh, skipped, metrics["llm_calls"], metrics["elapsed_seconds"], metrics["estimated_cost_usd"])
 
 
 if __name__ == "__main__":

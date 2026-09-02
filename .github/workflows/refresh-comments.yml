@@ -42,6 +42,7 @@ jobs:
       ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID || vars.ANTHROPIC_WORKSPACE_ID }}
       FETCH_LIMIT: ${{ github.event.inputs.fetch_limit || '0' }}
       STAGE_LIMIT: ${{ github.event.inputs.stage_limit || '0' }}
+      LLM_CONCURRENCY: ${{ vars.LLM_CONCURRENCY || '4' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -61,12 +62,8 @@ jobs:
         run: python3 scripts/parse_attachments.py
       - name: Segment submissions
         run: python3 scripts/segment_comments.py --limit "$STAGE_LIMIT"
-      - name: Classify positions
-        run: python3 scripts/classify_positions.py --limit "$STAGE_LIMIT"
-      - name: Classify cross-cutting gaps
-        run: python3 scripts/classify_gaps.py --limit "$STAGE_LIMIT"
-      - name: Generate public summaries
-        run: python3 scripts/generate_summaries.py --limit "$STAGE_LIMIT"
+      - name: Analyze positions (classification, gaps, summary in one call each)
+        run: python3 scripts/analyze_positions.py --limit "$STAGE_LIMIT"
       - name: Build public data
         run: python3 scripts/build_public_data.py
       - name: Validate public data
@@ -81,7 +78,13 @@ jobs:
           echo "Usable submissions: $(grep -l '"usable": true' raw/text/*.meta.json 2>/dev/null | wc -l)" >> "$GITHUB_STEP_SUMMARY"
           if [ -f public/build-manifest.json ]; then
             echo '```json' >> "$GITHUB_STEP_SUMMARY"
-            python3 -c "import json;m=json.load(open('public/build-manifest.json'));print(json.dumps({k:m[k] for k in ('counts','exclusions','model','prompt_version')},indent=2))" >> "$GITHUB_STEP_SUMMARY"
+            python3 -c "import json;m=json.load(open('public/build-manifest.json'));print(json.dumps({k:m.get(k) for k in ('counts','exclusions','model','prompt_versions')},indent=2))" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ -f public/run-metrics.json ]; then
+            echo "### Run metrics (calls, tokens, elapsed, estimated cost)" >> "$GITHUB_STEP_SUMMARY"
+            echo '```json' >> "$GITHUB_STEP_SUMMARY"
+            cat public/run-metrics.json >> "$GITHUB_STEP_SUMMARY"
             echo '```' >> "$GITHUB_STEP_SUMMARY"
           fi
       - name: Commit refreshed data

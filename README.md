@@ -75,10 +75,8 @@ All AI processing happens during ingestion. The browser only reads static JSON.
 fetch_comments.py      Regulations.gov -> raw/comments/*.json, raw/attachments/
 parse_attachments.py   PDF/DOCX/TXT extraction -> raw/text/*.txt (+ .meta.json with usability and content hash)
 segment_comments.py    Stage 1 prompt: identify commenter, split into substantive positions -> classified/segments, classified/commenters.json
-classify_positions.py  Stage 2 prompt: position, issues, concern, requested action, confidence -> classified/positions
-classify_gaps.py       Stage 3 prompt: zero to three cross-cutting gaps -> classified/gaps
-generate_summaries.py  Stage 4 prompt: neutral public summary (max 45 words) -> classified/summaries
-build_public_data.py   Aggregation -> data/*.json and public/build-manifest.json
+analyze_positions.py   Stage 2 prompt, one structured-output call per substantive position: classification, zero to three cross-cutting gaps, and the neutral public summary (max 45 words) as separate fields -> classified/analysis
+build_public_data.py   Aggregation -> data/*.json, public/build-manifest.json and public/run-metrics.json
 validate_data.py       Integrity rules; non-zero exit blocks the workflow
 fetch_fda_questions.py Imports exact FDA question wording from the discussion paper PDF into data/questions.json
 ```
@@ -92,16 +90,18 @@ set -a; source .env; set +a
 python3 scripts/fetch_comments.py --limit 5     # small test run
 python3 scripts/parse_attachments.py
 python3 scripts/segment_comments.py
-python3 scripts/classify_positions.py
-python3 scripts/classify_gaps.py
-python3 scripts/generate_summaries.py
+python3 scripts/analyze_positions.py
 python3 scripts/build_public_data.py
 python3 scripts/validate_data.py
 ```
 
 ### Reprocessing rules
 
-Each stage stores an `input_hash`, `prompt_version`, `processing_version` and `model`. A stage reruns for a submission only when the source text changed, the upstream stage output changed, the prompt version in `prompts/config.json` changed, or `PROCESSING_VERSION` in `scripts/pipeline/config.py` changed. Unchanged submissions are never re-sent to the model.
+Each stage stores an `input_hash`, its own `prompt_version`, `processing_version` and `model`. A stage reruns for a submission only when the source text changed, the upstream stage output changed, that stage's prompt version in `prompts/config.json` changed, or `PROCESSING_VERSION` in `scripts/pipeline/config.py` changed. Prompt versions are per stage, so editing the analysis prompt does not re-segment anything. Unchanged submissions are never re-sent to the model.
+
+### Runtime, concurrency and cost
+
+Model calls within a stage run through a bounded pool (`llm_concurrency` in `prompts/config.json`, or the `LLM_CONCURRENCY` environment variable; the workflow reads a repository variable of the same name, default 4). Every stage writes calls, retries, input and output tokens, cache reads and writes, elapsed time and an estimated cost to `public/run-metrics.json`, which the workflow prints in its run summary. Prices per model live in `prompts/config.json`.
 
 ### Attachments
 

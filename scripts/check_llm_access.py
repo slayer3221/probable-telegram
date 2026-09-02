@@ -17,7 +17,7 @@ from pipeline.llm import LLM  # noqa: E402
 
 def main():
     try:
-        reply = LLM().preflight()
+        reply = LLM(stage="preflight").preflight()
     except Exception as exc:  # noqa: BLE001
         print(f"LLM access check failed: {exc}")
         sys.exit(1)

@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from pipeline import aggregate, taxonomies  # noqa: E402
+from pipeline import aggregate, llm, store, taxonomies  # noqa: E402
 from validate_data import validate  # noqa: E402
 
 
@@ -121,6 +121,53 @@ def test_tiny_dataset_yields_four_signals(tmp_path):
         (out / name).write_text(json.dumps(payload), encoding="utf-8")
     errors, _ = validate(out, ROOT / "editorial")
     assert errors == [], "\n".join(errors)
+
+
+def test_metrics_cost_and_totals():
+    m = llm.Metrics("unit")
+
+    class Usage:
+        input_tokens = 1_000_000
+        output_tokens = 100_000
+        cache_read_input_tokens = 2_000_000
+        cache_creation_input_tokens = 0
+
+    m.record(Usage(), retries=2)
+    m.record(Usage(), retries=0)
+    d = m.as_dict("claude-opus-5")
+    assert d["llm_calls"] == 2 and d["retries"] == 2
+    assert d["input_tokens"] == 2_000_000 and d["cache_read_tokens"] == 4_000_000
+    # 2M input at $5 + 0.2M output at $25 + 4M cache reads at $0.50
+    assert d["estimated_cost_usd"] == round(2 * 5 + 0.2 * 25 + 4 * 0.5, 4)
+
+
+def test_bounded_concurrency_preserves_order():
+    import threading
+    import time as _t
+    client = llm.LLM.__new__(llm.LLM)
+    client.concurrency = 3
+    active, peak, lock = [0], [0], threading.Lock()
+
+    def work(i):
+        with lock:
+            active[0] += 1
+            peak[0] = max(peak[0], active[0])
+        _t.sleep(0.05)
+        with lock:
+            active[0] -= 1
+        return i * 2
+
+    assert client.map(work, list(range(10))) == [i * 2 for i in range(10)]
+    assert 1 < peak[0] <= 3
+
+
+def test_stage_freshness_is_per_stage_prompt_version():
+    rec = store.stage_envelope("c", "hash", {"positions": []}, "analysis")
+    assert store.stage_is_fresh(rec, "hash", "analysis")
+    assert not store.stage_is_fresh(rec, "other", "analysis")
+    assert rec["prompt_version"] == store.prompt_version("analyze")
+    seg = store.stage_envelope("c", "hash", {"positions": []}, "segments")
+    assert seg["prompt_version"] == store.prompt_version("segment")
 
 
 if __name__ == "__main__":
