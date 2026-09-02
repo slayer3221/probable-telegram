@@ -267,6 +267,7 @@ def compute_signals(questions, qstats, gap_rows, editorial_cards):
     # Fallbacks so the strip always holds four cards without overstating anything.
     fallbacks = [
         ("most_discussed", "Most discussed", "No positions yet", "The tracker shows the most discussed question once comments have been classified."),
+        ("divide", "Biggest stakeholder divide", "No clear divide yet", "A divide is reported only when positions on a question with enough commenters spread across categories with no majority."),
         ("alignment", "Strongest alignment", "Not enough comments yet", f"Alignment is reported only once a question has at least {MIN_COMMENTERS_FOR_CONCLUSION} distinct commenters."),
         ("blind_spot", "Emerging blind spot", "Not enough comments yet", "Cross-cutting issues are surfaced once commenters raise them across several questions."),
     ]
