@@ -1,5 +1,5 @@
 {
-  "note": "DRAFT. Not read by the site. Curated Vahana editorial synthesis grounded only in the real classified positions published in data/positions.json (five submissions on docket FDA-2026-N-7874, classification prompt 1.0.0). Provenance under each field is internal and must be stripped before any of this is copied into editorial/vahana-read.json, which uses the keys alignment, tension, commercialization, deployment, missing.",
+  "note": "DRAFT. Not read by the site. Curated Vahana editorial synthesis grounded only in the real classified positions published in data/positions.json (five submissions on docket FDA-2026-N-7874, classification prompt 1.0.0). Provenance under each field is internal and must be stripped before any of this is copied into editorial/vahana-read.json, which uses the keys alignment, tension, commercialization, deployment, missing. Revision 2: alignment copy rewritten synthesis-first; Q5 implication fields narrowed at review.",
   "generated_at": "2026-09-02T19:25:22Z",
   "sources": {
     "submissions": [
@@ -29,7 +29,7 @@
     "q8": {
       "title": "Level of evidence by risk within the competency approach",
       "alignment": {
-        "text": "The early comments are directionally aligned that evidence should scale with risk, and they want much more predictability about what that proportionality means in practice. Walnut Hill Medical asks FDA to publish a decision matrix connecting risk tier to regulatory pathway and evidence expectations; BellyMD asks for presumptive clinical-confirmation tiers keyed to the two-axis framework so sponsors know what evidence to expect before designing a program. A third commenter accepts the tiering but warns that an averaged risk position should not lower the evidence bar where an irreversible or high-consequence failure branch exists.",
+        "text": "The early comments are directionally aligned that evidence should scale with risk, but they differ on how the tiers should be defined. Across the submissions, commenters call for clearer links between risk tier, pathway, evidence expectations, and high-consequence failure modes. The common thread is predictability: sponsors want to know the evidence bar before designing a program, and one submission warns that an averaged risk position should not lower that bar where a failure branch is irreversible.",
         "basis": [
           {
             "position_id": "p-fda-2026-n-7874-0003-seg-001",
@@ -68,7 +68,7 @@
           }
         ],
         "vahana_inference": false,
-        "notes": "Three distinct commenters. The third sentence adds the independent auditor's hard-gate point, which the approved example did not cover."
+        "notes": "Three distinct commenters. The third sentence adds the independent auditor's hard-gate point, which the approved example did not cover. Public copy is synthesis-first; commenter attribution lives in the provenance only."
       },
       "tension": null,
       "commercialization_implication": {
@@ -145,7 +145,7 @@
     "q11": {
       "title": "Selecting and justifying a clinical confirmation approach",
       "alignment": {
-        "text": "The current comments support FDA's premise that a prospective clinical study should not be mandatory for every GenAI function, and all three commenters on this question propose a graduated ladder. They draw the line differently: BellyMD by function type and consequence, with retrospective real-world inputs and standardized-patient testing for low-consequence non-directive functions; Walnut Hill Medical by device class and supervision setting, with shadow deployment plus retrospective outcome review for clinician-supervised Class II devices; and an independent auditor by the highest-risk branch a device actually realizes.",
+        "text": "The current comments support FDA's premise that a prospective clinical study should not be required for every GenAI function, and they converge on a graduated ladder of confirmation methods. They differ on where the line sits: by function type and consequence, by device class and supervision setting, or by the highest-risk branch a device actually realizes.",
         "basis": [
           {
             "position_id": "p-fda-2026-n-7874-0006-seg-008",
@@ -194,7 +194,7 @@
           }
         ],
         "vahana_inference": false,
-        "notes": "Three distinct commenters. The approved example named only BellyMD; the records support attributing the same premise to all three, with different line-drawing criteria."
+        "notes": "Three distinct commenters. The approved example named only BellyMD; the records support attributing the same premise to all three, with different line-drawing criteria. Public copy is synthesis-first; commenter attribution lives in the provenance only."
       },
       "tension": null,
       "commercialization_implication": {
@@ -256,7 +256,7 @@
     "q19": {
       "title": "Postmarket performance evaluation: approaches, cadence and triggers",
       "alignment": {
-        "text": "The current comments do not challenge the need for postmarket monitoring itself. Both commenters on this question push FDA toward specificity about cadence, triggers and ownership: Walnut Hill Medical proposes a default risk-tiered cadence with mandatory out-of-cycle reassessment on defined events such as a foundation-model change or an adverse-event cluster, while an independent auditor asks FDA to name who owns residual risk, set trigger thresholds, require an automatic mechanism for reopening reassessment, and pair calendar cadence with event triggers such as model updates, distribution shift, complaints and tool changes.",
+        "text": "The current comments do not challenge the need for postmarket monitoring itself. They push FDA toward specificity: a default cadence scaled to risk, defined events that force out-of-cycle reassessment such as a foundation-model change or an adverse-event cluster, explicit thresholds, and a named owner for residual risk.",
         "basis": [
           {
             "position_id": "p-fda-2026-n-7874-0003-seg-022",
@@ -295,7 +295,7 @@
           }
         ],
         "vahana_inference": false,
-        "notes": "Two distinct commenters. Corrected from the approved example, which read as two commenters for the residual-owner and calendar-plus-event points; both of those come from the auditor. Walnut Hill Medical supplies the cadence and out-of-cycle trigger proposal."
+        "notes": "Two distinct commenters. Corrected from the approved example, which read as two commenters for the residual-owner and calendar-plus-event points; both of those come from the auditor. Walnut Hill Medical supplies the cadence and out-of-cycle trigger proposal. Public copy is synthesis-first; commenter attribution lives in the provenance only."
       },
       "tension": null,
       "commercialization_implication": {
@@ -368,7 +368,7 @@
     "q24": {
       "title": "Third-party foundation model changes",
       "alignment": {
-        "text": "The current comments consistently treat upstream model change as a problem that contractual notification alone cannot solve. Walnut Hill Medical argues third-party dependency changes the risk profile itself and asks for notice rights, version pinning and pre-deployment validation gates as conditions of authorization; an independent auditor recommends pairing contractual notice with technical detection such as model fingerprints, canary probes, delta testing, quarantine, rollback and requalification; and BellyMD notes that a small manufacturer cannot compel a model developer to disclose or give notice at all, because contractual leverage sits with the largest sponsors.",
+        "text": "The current comments consistently treat upstream model change as a problem that contractual notification alone cannot solve. Across the submissions, commenters ask for notice rights paired with technical controls such as version pinning, pre-deployment validation gates, change detection, quarantine and rollback, and one notes that smaller manufacturers may lack the leverage to obtain notice at all.",
         "basis": [
           {
             "position_id": "p-fda-2026-n-7874-0003-seg-003",
@@ -417,7 +417,7 @@
           }
         ],
         "vahana_inference": false,
-        "notes": "Three distinct commenters. BellyMD's leverage point is added to the approved example."
+        "notes": "Three distinct commenters. BellyMD's leverage point is added to the approved example. Public copy is synthesis-first; commenter attribution lives in the provenance only."
       },
       "tension": null,
       "commercialization_implication": {
@@ -494,7 +494,7 @@
     "q26": {
       "title": "Agentic devices: autonomous action and reduced human review",
       "alignment": {
-        "text": "The strongest early theme is that agentic systems should be evaluated at the level of the action sequence, not the final generated output, and that a human's presence is not by itself oversight. An independent auditor asks FDA to assess planning, tool selection, permission boundaries, irreversible decision points, rollback and post-action verification, and to credit human oversight only where visibility, authority, time and a means of intervention are demonstrated. Walnut Hill Medical asks for mandatory human confirmation before any irreversible action, a risk-calibrated cap on consecutive autonomous steps, validated fail-safe behavior on loss of supervisory connectivity, and separate treatment for surgical robotics.",
+        "text": "The strongest early theme is that agentic systems should be evaluated at the level of the action sequence, not the final generated output, and that a human's presence is not by itself oversight. Across the submissions, commenters ask for evaluation of planning, tool selection, permission boundaries and irreversible decision points, human confirmation before irreversible actions, bounds on consecutive autonomous steps, and fail-safe behavior when supervision is lost.",
         "basis": [
           {
             "position_id": "p-fda-2026-n-7874-0005-seg-019",
@@ -563,7 +563,7 @@
           }
         ],
         "vahana_inference": false,
-        "notes": "Two distinct commenters. Attributions are now explicit; the approved example folded both into 'current comments'."
+        "notes": "Two distinct commenters. Attributions are now explicit; the approved example folded both into 'current comments'. Public copy is synthesis-first; commenter attribution lives in the provenance only."
       },
       "tension": null,
       "commercialization_implication": {
@@ -649,7 +649,7 @@
     "q5": {
       "title": "Multi-turn conversations and emergent intended use",
       "alignment": {
-        "text": "The three commenters addressing multi-turn devices agree that turn-by-turn evaluation misses the risk, and each proposes evaluating whole conversational trajectories instead. Walnut Hill Medical asks FDA to define an interaction envelope and classify risk by the highest-risk plausible turn; BellyMD proposes adversarial longitudinal simulation with standardized personas and a declared conversational envelope of prohibited behaviors with reported violation rates; an independent auditor asks for trajectory-level testing with a pass criterion that no tested conversation crosses an intended-use or safety boundary undetected.",
+        "text": "The early comments converge on a distinctive construct: multi-turn GenAI should be evaluated as a trajectory within a bounded conversational envelope, not as a series of isolated turns. Across the submissions, commenters ask for trajectory-level testing, a declared envelope of permitted and prohibited behavior, risk classified by the highest-risk plausible turn, and evidence that departures from the envelope are detected.",
         "basis": [
           {
             "position_id": "p-fda-2026-n-7874-0003-seg-009",
@@ -693,11 +693,11 @@
           }
         ],
         "vahana_inference": false,
-        "notes": "Added beyond the five priority questions: three distinct commenters converge on the same construct independently."
+        "notes": "Added beyond the five priority questions: three distinct commenters converge on the same construct independently. Public copy is synthesis-first; commenter attribution lives in the provenance only."
       },
       "tension": null,
       "commercialization_implication": {
-        "text": "If intended use for a conversational device is expressed as a declared envelope with measured violation rates, the envelope becomes part of the product specification and the evidence package rather than a labeling afterthought. A narrower envelope is cheaper to validate and easier to defend; a wider one is more valuable to buyers and more expensive to prove, so scope becomes a priced decision.",
+        "text": "If intended use is defined through a bounded conversational envelope, product scope and evidence scope become more tightly linked. Expanding what the system is permitted to do may increase the validation burden and complicate claims strategy, which makes intended-use boundaries an earlier product and commercialization decision rather than a labeling exercise.",
         "basis": [
           {
             "position_id": "p-fda-2026-n-7874-0003-seg-042",
@@ -711,10 +711,10 @@
           }
         ],
         "vahana_inference": true,
-        "notes": "The envelope and violation-rate constructs are in the records; the pricing consequence is Vahana inference."
+        "notes": "Vahana inference strongly supported: the envelope and violation-rate constructs are in the records; pricing and buyer-value claims removed at review."
       },
       "deployment_implication": {
-        "text": "A trajectory-level claim cannot be checked by reading a label. Observing drift toward action-directing behavior in production requires session-level records and someone to review them, which pushes conversational monitoring into the operating model rather than the premarket file.",
+        "text": "If risk emerges across a sequence of interactions rather than in a single response, deployment assurance may need to evaluate trajectories as well as individual outputs. That raises questions about what evidence a site can observe in production and how departures from the intended conversational envelope are detected and escalated.",
         "basis": [
           {
             "position_id": "p-fda-2026-n-7874-0005-seg-022",
@@ -733,10 +733,10 @@
           }
         ],
         "vahana_inference": true,
-        "notes": "Reassessment triggers on orchestration or memory changes are in the records; the operating-model consequence is Vahana inference."
+        "notes": "Vahana inference strongly supported: trajectory-level evaluation and detection criteria are in the records; no specific operating model is implied."
       },
       "what_fda_may_be_missing": {
-        "text": "The paper asks how to characterize intended use when behavior is emergent, and the current comments answer with a shared construct: a bounded envelope with exit conditions and detection. The unresolved question is who observes the trajectory after clearance and what happens when a real conversation leaves the envelope, since the party that sees the drift is usually the deploying site rather than the sponsor.",
+        "text": "The paper asks how to characterize intended use when behavior is emergent, and the current comments converge on a bounded envelope with exit conditions and detection. The unresolved issue is operational: who can observe when a real interaction leaves that envelope, who is responsible for responding, and whether the manufacturer and deploying organization have access to the same signals.",
         "basis": [
           {
             "position_id": "p-fda-2026-n-7874-0003-seg-042",
@@ -754,7 +754,8 @@
             "commenter_id": "c-bellymd-inc"
           }
         ],
-        "vahana_inference": true
+        "vahana_inference": true,
+        "notes": "Vahana inference strongly supported; no assumption about which party sees the drift."
       }
     }
   },
@@ -789,5 +790,6 @@
       "tension": "none (no substantive disagreement in current records)",
       "positions_cited": 8
     }
-  }
+  },
+  "revised_at": "2026-09-02T19:38:52Z"
 }
