@@ -215,18 +215,18 @@ def compute_signals(questions, qstats, gap_rows, editorial_cards):
             "target_question_id": ranked[0][0] if ranked else "q1",
         })
 
-    # Editorial implication cards, validated against data
+    # Editorial implication cards. They are hedged editorial interpretation,
+    # so they always render; the evidence line states the sample honestly.
     gap_by_id = {g["id"]: g for g in gap_rows}
     for card in editorial_cards:
         qids = [q for q in card.get("question_ids", []) if q in qstats]
-        commenters = sum(qstats[q]["distinct_commenters"] for q in qids)
+        qlabel = ", ".join(f"Q{by_id[q]['question_number']}" for q in qids) or "the docket"
         gap = gap_by_id.get(card.get("gap_id"))
-        if gap and gap["distinct_commenters"] >= MIN_COMMENTERS_FOR_CONCLUSION:
-            evidence = "Drawn from " + ", ".join(f"Q{by_id[q]['question_number']}" for q in qids) + f" · {gap['distinct_commenters']} commenters"
-        elif commenters >= MIN_COMMENTERS_FOR_CONCLUSION:
-            evidence = "Drawn from " + ", ".join(f"Q{by_id[q]['question_number']}" for q in qids) + " · limited data"
+        commenters = gap["distinct_commenters"] if gap else sum(qstats[q]["distinct_commenters"] for q in qids)
+        if commenters >= MIN_COMMENTERS_FOR_CONCLUSION:
+            evidence = f"Drawn from {qlabel} · {commenters} commenters"
         else:
-            continue
+            evidence = f"Limited data · {commenters} commenter{'s' if commenters != 1 else ''} so far on {qlabel}"
         cards.append({
             "category": card["category"],
             "label": card["label"],
@@ -264,6 +264,20 @@ def compute_signals(questions, qstats, gap_rows, editorial_cards):
                 "target_question_id": g["question_ids"][0] if g["question_ids"] else "q1",
             })
 
+    # Fallbacks so the strip always holds four cards without overstating anything.
+    fallbacks = [
+        ("most_discussed", "Most discussed", "No positions yet", "The tracker shows the most discussed question once comments have been classified."),
+        ("alignment", "Strongest alignment", "Not enough comments yet", f"Alignment is reported only once a question has at least {MIN_COMMENTERS_FOR_CONCLUSION} distinct commenters."),
+        ("blind_spot", "Emerging blind spot", "Not enough comments yet", "Cross-cutting issues are surfaced once commenters raise them across several questions."),
+    ]
+    present = {c["category"] for c in cards}
+    for category, label, headline, detail in fallbacks:
+        if len(cards) >= 4:
+            break
+        if category in present:
+            continue
+        cards.append({"category": category, "label": label, "headline": headline, "detail": detail,
+                      "evidence": "Limited data", "target_question_id": ranked[0][0] if ranked else "q1"})
     return cards[:4]
 
 
@@ -276,7 +290,7 @@ def build_site_summary(questions, commenters, submissions, positions, qstats, ga
         "docket": meta["docket"],
         "metrics": {
             "comments_analyzed": len(usable_submissions),
-            "commenters_represented": len(commenters),
+            "commenters_represented": len({p["commenter_id"] for p in positions}),
             "positions_identified": len(positions),
             "questions_tracked": len(questions),
             "comment_deadline": meta["docket"]["comment_deadline"],
@@ -300,10 +314,11 @@ def build_public_dataset(questions, commenters, submissions, positions, editoria
     # Only positions whose submission and commenter exist are published.
     positions = [p for p in positions if p["submission_id"] in submissions_by_id
                  and submissions_by_id[p["submission_id"]]["commenter_id"] in commenters_by_id]
-    used_commenters = {submissions_by_id[p["submission_id"]]["commenter_id"] for p in positions}
-    used_submissions = {p["submission_id"] for p in positions}
-    pub_commenters = public_commenters([c for c in commenters if c["id"] in used_commenters])
-    pub_submissions = public_submissions([s for s in submissions if s["id"] in used_submissions])
+    # Every analyzed submission is published (comments_analyzed counts them all);
+    # commenters_represented counts only commenters with a published position.
+    analyzed_commenters = {s["commenter_id"] for s in submissions}
+    pub_commenters = public_commenters([c for c in commenters if c["id"] in analyzed_commenters])
+    pub_submissions = public_submissions(submissions)
     pub_positions = public_positions(positions, submissions_by_id)
     qids = [q["id"] for q in questions]
     qstats = question_stats(qids, pub_positions, submissions_by_id, commenters_by_id)

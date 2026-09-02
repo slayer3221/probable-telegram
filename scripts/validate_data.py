@@ -122,7 +122,8 @@ def validate(data_dir: Path, editorial_dir: Path):
         if sum(st["stakeholder_mix"].values()) != st["distinct_commenters"]:
             errors.append(f"{qid}: stakeholder_mix does not sum to distinct commenters")
     m = summary["metrics"]
-    if m["commenters_represented"] != len(commenters) or m["comments_analyzed"] != len(submissions) or m["positions_identified"] != len(p["positions"]):
+    represented = {x["commenter_id"] for x in p["positions"]}
+    if m["commenters_represented"] != len(represented) or m["comments_analyzed"] != len(submissions) or m["positions_identified"] != len(p["positions"]):
         errors.append("site-summary metrics do not match dataset sizes")
     if m["questions_tracked"] != 26:
         errors.append("questions_tracked must be 26")
