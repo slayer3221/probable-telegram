@@ -20,10 +20,13 @@ from pipeline.regulations import RegulationsClient  # noqa: E402
 from pipeline.store import load_raw_comment, raw_comment_path  # noqa: E402
 
 log = logging.getLogger("fetch")
+# Metadata kept from each comment. Personal names and the representative's
+# postal address are deliberately not stored: the tracker never displays
+# them, and the source_url points to the full public record on Regulations.gov.
 KEEP_ATTRS = (
-    "title", "comment", "firstName", "lastName", "organization", "category", "postedDate",
+    "title", "comment", "organization", "category", "postedDate",
     "receiveDate", "lastModifiedDate", "docketId", "commentOnDocumentId", "submitterRep",
-    "submitterRepAddress", "govAgency", "govAgencyType", "stateProvinceRegion", "country",
+    "govAgency", "govAgencyType", "stateProvinceRegion", "country",
     "duplicateComments", "withdrawn", "openForComment", "pageCount", "trackingNbr", "modifyDate",
 )
 

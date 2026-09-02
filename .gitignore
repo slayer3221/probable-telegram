@@ -1,15 +1,20 @@
-# Local environment
+# Local environment and credentials
 .env
+.env.*
+!.env.example
 .venv/
 venv/
 __pycache__/
 *.pyc
 .pytest_cache/
+*.log
 
-# Downloaded attachment binaries (extracted text is kept in raw/text)
+# Downloaded attachment binaries. Regulations.gov metadata and the extracted
+# text in raw/comments and raw/text are committed on purpose: they are public
+# docket content and the refresh workflow's change detection depends on them.
 raw/attachments/*
 !raw/attachments/.gitkeep
 
-# Local test output
+# Local test output and tooling
 tests/screenshots/
 node_modules/

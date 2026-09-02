@@ -15,7 +15,7 @@ js/app.js                  Bootstrap, state, URL sync, drawers, focus management
 js/filters.js              Filter state, URL parsing, matching and per-question counts
 js/tracker.js              Rendering (hero, signals, question cards, gaps, evidence drawer)
 js/taxonomies.js           Public labels; mirrors scripts/pipeline/taxonomies.py
-data/                      Public JSON the page loads (questions, commenters, submissions, positions, gaps, site-summary)
+data/                      Public JSON the page loads (questions, commenters, submissions, positions, gaps, site-summary); live docket data only
 editorial/                 Curated Vahana Labs layer: vahana-read.json, gaps.json, signals.json (never touched by ingestion)
 scripts/                   Python ingestion and build pipeline (see below)
 scripts/pipeline/          Shared modules: taxonomies, aggregation rules, Regulations.gov client, LLM client, storage
@@ -37,12 +37,7 @@ python3 -m http.server 8000
 # open http://localhost:8000/
 ```
 
-Regenerate the synthetic demo dataset at any time (deterministic):
-
-```bash
-python3 scripts/seed_synthetic_data.py
-python3 scripts/validate_data.py
-```
+Until the first committed refresh, `data/` holds an empty live dataset: the page renders all 26 questions with zero commenters and the signal strip shows "Not enough comments yet". There is no demo or synthetic data in this repository.
 
 Run the tests:
 
@@ -126,11 +121,15 @@ Many institutional comments put the substance in an attachment. Supported format
 
 ## Editorial layer
 
-`editorial/vahana-read.json` holds the curated Vahana read fields per question (alignment, tension, commercialization implication, real-world deployment implication, what FDA may be missing) and the stakeholder tension blocks. `editorial/gaps.json` holds the nine cross-cutting issue definitions. `editorial/signals.json` holds the two implication signal cards. Ingestion reads these files and never writes to them; counts, stakeholder groups and representative examples under each gap are computed from commenter data at build time.
+`editorial/vahana-read.json` holds the curated Vahana read fields per question (alignment, tension, commercialization implication, real-world deployment implication, what FDA may be missing) and the stakeholder tension blocks. It ships empty: entries are written only after reading the real submissions for a question, and ingestion never modifies the file. `editorial/gaps.json` holds the nine cross-cutting issue definitions. `editorial/signals.json` holds optional implication signal cards and also ships empty; computed cards fill the strip until it has content. Counts, stakeholder groups and representative examples under each gap are computed from commenter data at build time.
 
 ## FDA question text
 
 `data/questions.json` carries the exact wording of all 26 discussion questions, imported verbatim from Appendix B (Consolidated Discussion Questions) of the discussion paper with `scripts/fetch_fda_questions.py`. The script downloads the PDF (or reads a local `--pdf` or `--text` file), parses the appendix and writes only `question_text`; short titles, neutral explanations, tags and the `high_impact` flag are tracker labels curated by hand. Section boundaries follow the paper: Section IV risk (Q1–Q6), Section V competency-based premarket evaluation (Q7–Q17), Section VI postmarket monitoring (Q18–Q24), Section VII other topics (Q25–Q26).
+
+## License
+
+Copyright Vahana Labs. All rights reserved. The source is published for transparency; no permission is granted to copy, modify, distribute or reuse it. See `LICENSE`.
 
 ## Trust model
 

@@ -1,4 +1,5 @@
-"""Data integrity tests. Run with `python3 -m pytest tests/` or `python3 tests/test_data_integrity.py`."""
+"""Data integrity tests. Run with `python3 -m pytest tests/` or `python3 tests/test_data_integrity.py`.
+The public dataset in data/ may be empty (before the first committed refresh) or live."""
 import json
 import re
 import subprocess
@@ -120,17 +121,6 @@ def test_tiny_dataset_yields_four_signals(tmp_path):
         (out / name).write_text(json.dumps(payload), encoding="utf-8")
     errors, _ = validate(out, ROOT / "editorial")
     assert errors == [], "\n".join(errors)
-
-
-def test_seed_is_deterministic(tmp_path):
-    """Two seed runs produce identical positions. Writes only to temp dirs so
-    the test never overwrites data/, which holds live data after a refresh."""
-    outputs = []
-    for name in ("a", "b"):
-        out = tmp_path / name
-        subprocess.run([sys.executable, str(ROOT / "scripts" / "seed_synthetic_data.py"), "--out", str(out)], check=True, capture_output=True)
-        outputs.append(json.loads((out / "positions.json").read_text(encoding="utf-8"))["positions"])
-    assert outputs[0] == outputs[1]
 
 
 if __name__ == "__main__":

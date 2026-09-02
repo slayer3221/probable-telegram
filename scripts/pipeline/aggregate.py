@@ -267,6 +267,7 @@ def compute_signals(questions, qstats, gap_rows, editorial_cards):
     # Fallbacks so the strip always holds four cards without overstating anything.
     fallbacks = [
         ("most_discussed", "Most discussed", "No positions yet", "The tracker shows the most discussed question once comments have been classified."),
+        ("divide", "Biggest stakeholder divide", "No clear divide yet", "A divide is reported only when positions on a question with enough commenters spread across categories with no majority."),
         ("alignment", "Strongest alignment", "Not enough comments yet", f"Alignment is reported only once a question has at least {MIN_COMMENTERS_FOR_CONCLUSION} distinct commenters."),
         ("blind_spot", "Emerging blind spot", "Not enough comments yet", "Cross-cutting issues are surfaced once commenters raise them across several questions."),
     ]
@@ -278,6 +279,8 @@ def compute_signals(questions, qstats, gap_rows, editorial_cards):
             continue
         cards.append({"category": category, "label": label, "headline": headline, "detail": detail,
                       "evidence": "Limited data", "target_question_id": ranked[0][0] if ranked else "q1"})
+    order = {"most_discussed": 0, "divide": 1, "commercialization": 2, "deployment": 3, "alignment": 4, "blind_spot": 5}
+    cards.sort(key=lambda c: order.get(c["category"], 9))
     return cards[:4]
 
 
