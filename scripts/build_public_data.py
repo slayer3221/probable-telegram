@@ -116,6 +116,11 @@ def main():
     if not positions:
         log.error("no classified positions found; data/ left unchanged. Run the earlier stages first.")
         sys.exit(2)
+    with_positions = {p["submission_id"] for p in positions}
+    for s in submissions:
+        if s["id"] not in with_positions:
+            exclusions["submissions_without_published_positions"] += 1
+            excluded_ids.append({"id": s["regulations_gov_comment_id"], "reason": "analyzed, but no substantive position survived classification"})
 
     meta = {
         "generated_at": now_iso(),

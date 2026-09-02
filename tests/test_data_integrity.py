@@ -81,6 +81,44 @@ def test_editorial_layer_is_separate_from_public_data():
         assert set(entry).issubset({"tension", "vahana_read"}), qid
 
 
+def test_tiny_dataset_yields_four_signals(tmp_path):
+    """A first live run may have only a couple of commenters; the signal strip
+    must still hold four cards and the dataset must validate."""
+    questions = json.loads((ROOT / "data" / "questions.json").read_text(encoding="utf-8"))["questions"]
+    gaps = json.loads((ROOT / "editorial" / "gaps.json").read_text(encoding="utf-8"))["gaps"]
+    cards = json.loads((ROOT / "editorial" / "signals.json").read_text(encoding="utf-8"))["cards"]
+    commenters = [
+        {"id": "c1", "display_name": "Org A", "organization": "Org A", "stakeholder_type": "device_manufacturer", "source_identity_text": ""},
+        {"id": "c2", "display_name": "Org B", "organization": "Org B", "stakeholder_type": "health_system_provider", "source_identity_text": ""},
+        {"id": "c3", "display_name": "Org C", "organization": "Org C", "stakeholder_type": "other", "source_identity_text": ""},
+    ]
+    submissions = [{"id": f"s{i}", "commenter_id": f"c{i}", "regulations_gov_comment_id": f"X-{i}", "received_date": "2026-09-01",
+                    "posted_date": "2026-09-01", "source_url": "https://example.invalid", "attachment_urls": []} for i in (1, 2, 3)]
+    positions = [
+        {"id": "p1", "submission_id": "s1", "question_ids": ["q7"], "position": "support", "primary_issue": "evidence_standards",
+         "secondary_issue": None, "stakeholder_concern": "c", "requested_fda_action": "a", "public_summary": "s",
+         "supporting_text": "quote one", "model_confidence": "high", "gap_tags": ["evidence_burden_commercial_viability"], "featured": True},
+        {"id": "p2", "submission_id": "s2", "question_ids": ["q7", "q21"], "position": "mixed", "primary_issue": "postmarket_monitoring",
+         "secondary_issue": None, "stakeholder_concern": "c", "requested_fda_action": "a", "public_summary": "s",
+         "supporting_text": "quote two", "model_confidence": "medium", "gap_tags": [], "featured": False},
+    ]
+    meta = {"generated_at": "2026-09-02T00:00:00Z", "dataset_kind": "live", "processing_version": "t",
+            "docket": {"docket_id": "D", "docket_url": "", "document_id": "", "discussion_paper_url": "", "comment_deadline": "2026-10-19", "paper_date": "2026-08-18"}}
+    files = aggregate.build_public_dataset(questions, commenters, submissions, positions, gaps, cards, meta)
+    summary = files["site-summary.json"]
+    assert len(summary["signals"]) == 4, [c["label"] for c in summary["signals"]]
+    assert all("Limited data" in c["evidence"] or "Not enough" in c["headline"] for c in summary["signals"][1:])
+    assert summary["metrics"]["comments_analyzed"] == 3
+    assert summary["metrics"]["commenters_represented"] == 2
+    out = tmp_path / "data"
+    out.mkdir()
+    (out / "questions.json").write_text(json.dumps({"questions": questions}), encoding="utf-8")
+    for name, payload in files.items():
+        (out / name).write_text(json.dumps(payload), encoding="utf-8")
+    errors, _ = validate(out, ROOT / "editorial")
+    assert errors == [], "\n".join(errors)
+
+
 def test_seed_is_deterministic(tmp_path):
     before = (ROOT / "data" / "positions.json").read_bytes()
     subprocess.run([sys.executable, str(ROOT / "scripts" / "seed_synthetic_data.py")], check=True, capture_output=True)
@@ -93,7 +131,12 @@ if __name__ == "__main__":
     for name, fn in list(globals().items()):
         if name.startswith("test_") and callable(fn):
             try:
-                fn(Path("/tmp")) if "tmp_path" in fn.__code__.co_varnames else fn()
+                if "tmp_path" in fn.__code__.co_varnames:
+                    import tempfile
+                    with tempfile.TemporaryDirectory() as d:
+                        fn(Path(d))
+                else:
+                    fn()
                 print(f"PASS {name}")
             except AssertionError as exc:
                 failures += 1
