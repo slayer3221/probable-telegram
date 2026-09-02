@@ -130,7 +130,7 @@ Many institutional comments put the substance in an attachment. Supported format
 
 ## FDA question text
 
-`data/questions.json` reserves `question_text` for the exact wording from the discussion paper. It is empty in the seed dataset because the paper could not be fetched from the environment where the seed was built. Run `python3 scripts/fetch_fda_questions.py` (preview) then `--write` to import it, and review the result against the PDF. Until the text is imported, the page shows a pending notice with a link to the source instead of paraphrasing FDA wording. Short titles, the neutral explanations and the section boundaries (Q1–Q6, Q7–Q17, Q18–Q24, Q25–Q26) are tracker labels and should be reconciled against the paper at the same time.
+`data/questions.json` carries the exact wording of all 26 discussion questions, imported verbatim from Appendix B (Consolidated Discussion Questions) of the discussion paper with `scripts/fetch_fda_questions.py`. The script downloads the PDF (or reads a local `--pdf` or `--text` file), parses the appendix and writes only `question_text`; short titles, neutral explanations, tags and the `high_impact` flag are tracker labels curated by hand. Section boundaries follow the paper: Section IV risk (Q1–Q6), Section V competency-based premarket evaluation (Q7–Q17), Section VI postmarket monitoring (Q18–Q24), Section VII other topics (Q25–Q26).
 
 ## Trust model
 

@@ -4,24 +4,47 @@
     "q1": {
       "tension": {
         "groups": [
-          {"label": "Manufacturers", "text": "Accept risk-based tiering; resist variability itself being treated as a hazard."},
-          {"label": "Health systems", "text": "Accept the frame but say it fails where a tool shifts behavior mid-conversation."},
-          {"label": "Researchers", "text": "Want risk expressed distributionally, including tail behavior."}
+          {
+            "label": "Manufacturers",
+            "text": "Accept risk-based tiering; resist variability itself being treated as a hazard."
+          },
+          {
+            "label": "Health systems",
+            "text": "Accept the frame but say it fails where a tool shifts behavior mid-conversation."
+          },
+          {
+            "label": "Researchers",
+            "text": "Want risk expressed distributionally, including tail behavior."
+          }
         ],
         "synthesis": "There is broad agreement on risk-based tiering. The disagreement is about what gets measured: manufacturers want consequence of action, health systems want behavior over a session, researchers want the shape of the output distribution."
       },
       "vahana_read": {
         "alignment": "No commenter argues for a uniform evidence bar. Proportionality is settled.",
-        "tension": "The unit of analysis is unsettled: output, session, or deployment.",
-        "missing": "Intended use may need to be described as a behavioral envelope with defined exit conditions, rather than a static statement."
+        "tension": "The unit of analysis is unsettled: output, session, or deployment."
       }
     },
-    "q7": {
+    "q5": {
+      "vahana_read": {
+        "commercialization": "If intended use is expressed as a behavioral envelope with exit conditions, the envelope becomes a product decision with a price attached: narrower envelopes are cheaper to validate and less valuable to buyers.",
+        "deployment": "Sites cannot check a trajectory by reading a label. Observing conversational drift needs session-level logging and review, which is a monitoring capability few deployments have today."
+      }
+    },
+    "q8": {
       "tension": {
         "groups": [
-          {"label": "Manufacturers", "text": "Accept a high bar if it is stated in advance."},
-          {"label": "Professional societies", "text": "Want prospective, in-setting evidence for anything that informs a decision."},
-          {"label": "Trade associations", "text": "Warn that a prospective floor prices out low-risk tools."}
+          {
+            "label": "Manufacturers",
+            "text": "Accept a high bar if it is stated in advance."
+          },
+          {
+            "label": "Professional societies",
+            "text": "Want prospective, in-setting evidence for anything that informs a decision."
+          },
+          {
+            "label": "Trade associations",
+            "text": "Warn that a prospective floor prices out low-risk tools."
+          }
         ],
         "synthesis": "Nobody argues against proportionality. The dispute is where the prospective-evidence line sits, and whether the cost of clearing it falls on tools whose harm potential is mainly operational."
       },
@@ -33,12 +56,21 @@
         "missing": "Evidence economics: if continuous validation is required at every tier, the obligations may become unscalable before they become unsafe."
       }
     },
-    "q13": {
+    "q14": {
       "tension": {
         "groups": [
-          {"label": "Professional societies", "text": "Want the combined system evaluated, with override behavior measured."},
-          {"label": "Manufacturers", "text": "Accept the concept, resist accountability for site-level variation."},
-          {"label": "Patient groups", "text": "Question whether the proposed metrics measure safety at all."}
+          {
+            "label": "Professional societies",
+            "text": "Want the combined system evaluated, with override behavior measured."
+          },
+          {
+            "label": "Manufacturers",
+            "text": "Accept the concept, resist accountability for site-level variation."
+          },
+          {
+            "label": "Patient groups",
+            "text": "Question whether the proposed metrics measure safety at all."
+          }
         ],
         "synthesis": "All three groups accept that model-only performance is insufficient. The unresolved question is who is accountable for the part of the system that lives inside a hospital."
       },
@@ -59,9 +91,44 @@
     "q19": {
       "tension": {
         "groups": [
-          {"label": "Manufacturers and trade associations", "text": "Accept the duty; want a scalable, sampling-based framework."},
-          {"label": "Health systems", "text": "Support monitoring but resist absorbing manufacturer surveillance obligations."},
-          {"label": "AI companies", "text": "Focus on the data pathway that makes monitoring technically possible."}
+          {
+            "label": "Health systems",
+            "text": "Want a defined local validation step and are willing to run it."
+          },
+          {
+            "label": "Manufacturers",
+            "text": "Will define a supported envelope; resist owning site deviations."
+          },
+          {
+            "label": "Researchers",
+            "text": "Note that the measurement infrastructure does not exist yet."
+          }
+        ],
+        "synthesis": "There is no disagreement that deployment changes behavior. The gap is that no party currently owns, funds, or can observe performance at the site level."
+      },
+      "vahana_read": {
+        "alignment": "Deployment-specific variation is treated as real by every group that raised it.",
+        "tension": "Who validates, and against what baseline.",
+        "commercialization": "If assurance is partly local, implementation stops being a cost center and becomes part of the offer. A repeatable deployment-assurance package shortens sales cycles and adds defensibility; its absence caps how many sites can be run at once.",
+        "deployment": "FDA clearance may not eliminate the need for local validation. Health systems may need defined go-live and revalidation processes covering configuration, population, workflow, and model change.",
+        "missing": "Deployment-specific assurance is not among the monitoring approaches the paper lists, though it is where most reported behavior differences originate."
+      }
+    },
+    "q21": {
+      "tension": {
+        "groups": [
+          {
+            "label": "Manufacturers and trade associations",
+            "text": "Accept the duty; want a scalable, sampling-based framework."
+          },
+          {
+            "label": "Health systems",
+            "text": "Support monitoring but resist absorbing manufacturer surveillance obligations."
+          },
+          {
+            "label": "AI companies",
+            "text": "Focus on the data pathway that makes monitoring technically possible."
+          }
         ],
         "synthesis": "Every group supports monitoring and every group locates the operating burden somewhere else. The unsettled question is not whether to monitor but who pays for the part that happens inside the hospital."
       },
@@ -70,15 +137,24 @@
         "tension": "Cost and labor allocation between manufacturer and site.",
         "commercialization": "Monitoring obligations become an operating cost inside the product's margin. If the vendor does not fund site-level surveillance, the cost is either priced into the contract or quietly transferred to the customer.",
         "deployment": "Contracts may need to define telemetry access, monitoring responsibility, escalation pathways, and who bears the operational cost. Without that, monitoring exists on paper at every site and in practice at none.",
-        "missing": "Distributed accountability: the parties who can detect a problem, diagnose it, and fix it are three different organizations."
+        "missing": "Distributed accountability: the parties who can detect a problem, diagnose it, and fix it are three different organizations, and the paper asks how to avoid diffusing accountability without saying who funds the work."
       }
     },
-    "q21": {
+    "q22": {
       "tension": {
         "groups": [
-          {"label": "Manufacturers", "text": "Want change control extended to changes they do not control."},
-          {"label": "AI companies", "text": "Point to commercial deprecation timelines that regulation has not accounted for."},
-          {"label": "Health systems", "text": "Want notification before behavior changes reach clinicians."}
+          {
+            "label": "Manufacturers",
+            "text": "Want change control extended to changes they do not control."
+          },
+          {
+            "label": "AI companies",
+            "text": "Point to commercial deprecation timelines that regulation has not accounted for."
+          },
+          {
+            "label": "Health systems",
+            "text": "Want notification before behavior changes reach clinicians."
+          }
         ],
         "synthesis": "The parties agree that current change control assumes a version cadence generative products do not have. They differ on whether the fix belongs in the sponsor's PCCP or in supplier obligations."
       },
@@ -93,26 +169,18 @@
     "q24": {
       "tension": {
         "groups": [
-          {"label": "Health systems", "text": "Want a defined local validation step and are willing to run it."},
-          {"label": "Manufacturers", "text": "Will define a supported envelope; resist owning site deviations."},
-          {"label": "Researchers", "text": "Note that the measurement infrastructure does not exist yet."}
-        ],
-        "synthesis": "There is no disagreement that deployment changes behavior. The gap is that no party currently owns, funds, or can observe performance at the site level."
-      },
-      "vahana_read": {
-        "alignment": "Deployment-specific variation is treated as real by every group that raised it.",
-        "tension": "Who validates, and against what baseline.",
-        "commercialization": "If assurance is partly local, implementation stops being a cost center and becomes part of the offer. A repeatable deployment-assurance package shortens sales cycles and adds defensibility; its absence caps how many sites can be run at once.",
-        "deployment": "FDA clearance may not eliminate the need for local validation. Health systems may need defined go-live and revalidation processes covering configuration, population, workflow, and model change.",
-        "missing": "Deployment-specific assurance is largely absent from the paper, though it is where most reported behavior differences originate."
-      }
-    },
-    "q25": {
-      "tension": {
-        "groups": [
-          {"label": "Trade associations", "text": "Extend existing supplier controls rather than write new ones."},
-          {"label": "AI companies", "text": "Accept notification duties, resist training-data transparency."},
-          {"label": "Manufacturers", "text": "Want contractual visibility to match regulatory liability."}
+          {
+            "label": "Trade associations",
+            "text": "Extend existing supplier controls rather than write new ones."
+          },
+          {
+            "label": "AI companies",
+            "text": "Accept notification duties, resist training-data transparency."
+          },
+          {
+            "label": "Manufacturers",
+            "text": "Want contractual visibility to match regulatory liability."
+          }
         ],
         "synthesis": "All parties accept that foundation model providers sit inside the safety system. They differ on how much of the supplier's internals the sponsor is entitled to see."
       },
@@ -127,9 +195,18 @@
     "q26": {
       "tension": {
         "groups": [
-          {"label": "Professional societies", "text": "Focus on intervention points before execution."},
-          {"label": "AI companies", "text": "Focus on declaring permitted actions in labeling."},
-          {"label": "Health systems", "text": "Focus on who inside the organization actually delegated the authority."}
+          {
+            "label": "Professional societies",
+            "text": "Focus on intervention points before execution."
+          },
+          {
+            "label": "AI companies",
+            "text": "Focus on declaring permitted actions in labeling."
+          },
+          {
+            "label": "Health systems",
+            "text": "Focus on who inside the organization actually delegated the authority."
+          }
         ],
         "synthesis": "The three groups describe the same problem at three different layers: the moment of execution, the product's declared scope, and the organizational decision to switch a capability on."
       },

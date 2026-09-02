@@ -39,7 +39,7 @@ Public sections: Risk Assessment (Q1–Q6), Premarket Evaluation (Q7–Q17), Pos
   "source": {"title": "", "pdf_url": "", "docket_id": "", "docket_url": "", "document_id": "", "comment_deadline": ""},
   "questions": [{
     "id": "q1", "question_number": 1,
-    "question_text": "exact FDA wording, empty until imported",
+    "question_text": "exact FDA wording from Appendix B of the discussion paper",
     "short_title": "tracker label", "theme": "risk", "source_url": "", "high_impact": true,
     "summary_ask": "one-sentence neutral description of what FDA asks",
     "about": "neutral explanation shown under 'What this is really about' (optional)",
