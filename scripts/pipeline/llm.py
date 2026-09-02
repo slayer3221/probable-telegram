@@ -9,6 +9,7 @@ import time
 
 from .config import LLM_API_KEY, LLM_MODEL, LLM_WORKSPACE_ID, PROMPT_CONFIG, PROMPTS_DIR
 from .io_utils import read_json, ROOT
+from .taxonomies import GAPS
 
 log = logging.getLogger("llm")
 
@@ -116,7 +117,7 @@ class LLM:
 
 
 # JSON schemas for each stage -------------------------------------------------
-QIDS = {"type": "array", "items": {"type": "string", "pattern": "^q([1-9]|1[0-9]|2[0-6])$"}}
+QIDS = {"type": "array", "items": {"type": "string", "enum": [f"q{n}" for n in range(1, 27)]}}
 
 SEGMENT_SCHEMA = {
     "type": "object",
@@ -155,11 +156,24 @@ POSITION_SCHEMA = {
     "additionalProperties": False,
 }
 
+# Note: the structured-output validator rejects some JSON Schema keywords
+# (maxItems was refused with HTTP 400), so limits are enforced in code.
 GAP_SCHEMA = {
     "type": "object",
     "properties": {
-        "gap_tags": {"type": "array", "maxItems": 3, "items": {"type": "string"}},
-        "explanations": {"type": "object", "additionalProperties": {"type": "string"}},
+        "gap_tags": {"type": "array", "items": {"type": "string", "enum": list(GAPS)}},
+        "explanations": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "gap": {"type": "string", "enum": list(GAPS)},
+                    "explanation": {"type": "string"},
+                },
+                "required": ["gap", "explanation"],
+                "additionalProperties": False,
+            },
+        },
     },
     "required": ["gap_tags", "explanations"],
     "additionalProperties": False,

@@ -22,7 +22,7 @@ Return structured JSON only, in this shape:
 
 {
   "gap_tags": ["deployment_assurance_scalability"],
-  "explanations": {"deployment_assurance_scalability": "one sentence"}
+  "explanations": [{"gap": "deployment_assurance_scalability", "explanation": "one sentence"}]
 }
 
 Gap definitions:
