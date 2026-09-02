@@ -1,0 +1,145 @@
+{
+  "comment_id": "FDA-2026-N-7874-0006",
+  "input_hash": "aa320e3b3943ba2c",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-02T14:50:48Z",
+  "model": "claude-opus-5",
+  "chunks": 1,
+  "positions": [
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "Question 1: additional risk dimensions. Two dimensions deserve explicit representation. First, the counterfactual care environment. The consequence of relying on an incorrect output is properly measured against what would have happened without the device, and that baseline varies widely across deployment contexts. A function deployed to a population with ready access to specialty care presents a different risk calculus than the same function deployed to a population whose realistic alternative is no professional input at all. Section V.D.1 and Question 15 touch this in the comparator discussion; it belongs in the risk assessment itself. Second, duration and accumulation of reliance. A longitudinal companion that shapes a patient's understanding of their condition over months is different from a single-encounter tool, because error in the former compounds and becomes belief. Exposure time should modify risk the way dose modifies toxicity.",
+      "position_gist": "The risk framework should explicitly add two dimensions: the counterfactual care environment (what would have happened without the device) and the duration/accumulation of reliance, with exposure time modifying risk as dose modifies toxicity.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q2"
+      ],
+      "source_passage": "Question 2: modifiers of directiveness. I support judging directiveness by substance and context rather than wording, and I support discounting boilerplate disclaimers. The modifiers that can be specified and audited are: specificity (a named drug and dose versus class-level education); personalization (general statements versus statements tied to the user's own data); imperative framing; and traceability, meaning whether the output is grounded in and cites validated instruments and published guidelines. Outputs constructed from validated frameworks (in my field, the Rome diagnostic criteria and PROMIS measures) are easier for users, sponsors, and reviewers to evaluate than free generation, and that grounding should be credited as risk-reducing.",
+      "position_gist": "Directiveness should be judged by substance rather than wording, with boilerplate disclaimers discounted, and auditable modifiers should be specificity, personalization, imperative framing, and traceability to validated instruments and guidelines (which should be credited as risk-reducing).",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q2"
+      ],
+      "source_passage": "On predictability: publish worked examples along the four-step gradient the paper describes (general information, contextualization, endorsement, instruction) for a handful of clinical domains. Small sponsors need to be able to classify their own functions before they build, not after a deficiency letter.",
+      "position_gist": "CDRH should publish worked classification examples along the four-step directiveness gradient across several clinical domains so small sponsors can classify functions before development.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "Question 3: patient-facing functions. The paper is right that a \"talk to your doctor\" line does not make an output less directive, and boilerplate should not be accepted as mitigation. But I urge CDRH not to convert \"patient-facing\" into a per se elevation on the consequences axis. In DGBI, diagnostic delay is commonly measured in years, most patients are managed without subspecialty input, and many are managed with no professional input at all. The practical alternative to a well-designed informational tool is not a clinician conversation; it is whatever search results and social content the patient finds alone.",
+      "position_gist": "Patient-facing delivery should not automatically elevate risk, because in underserved conditions like DGBI the realistic alternative is unvetted internet content rather than a clinician conversation.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "The mitigations that should count are verifiable behaviors: output frames that are structurally non-directive, teaching mechanisms and describing guideline-concordant options without endorsing one; forced deferral whenever a user requests a treatment change; escalation scaffolding tested in both directions (element S.1); and communication testing across health-literacy levels (element E.4). A device that demonstrates these behaviors under adversarial testing has done something a disclaimer never did.",
+      "position_gist": "Credit should be given only to verifiable safeguard behaviors for patient-facing functions—structurally non-directive output frames, forced deferral on treatment-change requests, bidirectionally tested escalation scaffolding, and health-literacy communication testing—demonstrated under adversarial testing.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q5"
+      ],
+      "source_passage": "Question 5: multi-turn trajectories. Trajectory-level assessment is the correct unit of analysis. A practical method: adversarial longitudinal simulation using standardized personas, including symptom minimizers, escalation resisters, and users who persistently solicit directive advice, scored for drift along the directiveness continuum and for time-to-escalation across the full exchange. I suggest formalizing a \"conversational envelope\": the sponsor declares the behaviors the device must never exhibit at any point in any trajectory (for example, never proposing a medication dose change), demonstrates enforcement under adversarial testing, and reports envelope violation rates. Intended use for a conversational device is then characterized by its envelope, which is testable, rather than by per-turn labels, which are not.",
+      "position_gist": "Multi-turn devices should be assessed at the trajectory level using adversarial longitudinal simulation with standardized personas, and intended use should be characterized by a testable, declared \"conversational envelope\" of never-permitted behaviors with reported violation rates.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "Question 6: escalation error in both directions. I see both failure modes in the emergency department every week. Under-escalation injures the patient in front of the device. Over-escalation injures the same patient through cascade testing, cost, and anxiety, and injures everyone else through crowding and triage dilution; over time it erodes the trust that appropriate care-seeking depends on. The two directions are real, asymmetric, and not commensurable, and they should not be collapsed into a single utility score. Sponsors should prespecify asymmetric error tolerances justified by clinical context and report both rates against clinician performance on the same scenario set. For DGBI functions, alarm features (gastrointestinal bleeding, unintended weight loss, progressive dysphagia, nocturnal symptoms) warrant near-zero tolerance for under-escalation, while a bounded, disclosed tolerance for conservative over-referral is acceptable and honest.",
+      "position_gist": "Under- and over-escalation errors should not be collapsed into a single utility score; sponsors should prespecify context-justified asymmetric error tolerances and report both rates against clinician performance on the same scenarios (e.g., near-zero under-escalation tolerance for DGBI alarm features with bounded over-referral tolerance).",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q11",
+        "q8"
+      ],
+      "source_passage": "Question 11: proportionate clinical confirmation. I support the confirmation ladder and the recognition that a prospective study is not always necessary. For non-directive informational functions in the low-consequence region of the framework, retrospective evaluation on real-world inputs plus standardized patient interactions should ordinarily suffice, with prospective study reserved for action-directing and action-taking functions and high-consequence domains. I ask CDRH to publish presumptive confirmation tiers keyed to position on the two-axis framework, so a sponsor can locate its device and know the default evidence expectation before designing a program.",
+      "position_gist": "Supports the graduated confirmation ladder, recommending retrospective evaluation plus standardized patient interactions for low-consequence non-directive informational functions and prospective study for action-directing/high-consequence functions, and asks CDRH to publish presumptive confirmation tiers keyed to the two-axis framework.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q11"
+      ],
+      "source_passage": "The economics deserve plain statement: if every conversational function requires a prospective trial, the field consolidates to the largest incumbents, and the low-risk informational functions that would have reached unserved patients are never built. That outcome has a public-health cost too, and it is paid by patients who currently receive nothing.",
+      "position_gist": "Warns that requiring prospective trials for every conversational function would consolidate the field among large incumbents and prevent low-risk informational tools for unserved patients from being built.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "source_passage": "Questions 14 and 15: comparators. This is the most consequential question in the paper. For informational functions deployed directly to patients, a specialist panel is often the wrong comparator because it does not describe what the device displaces. In much of DGBI care, the device does not replace a specialist; it replaces nothing, or it replaces uncurated internet content. I recommend: first, comparator selection anchored to the realistic deployment context, supported by care-access data for the intended population; second, recognition of a \"usual information environment\" comparator, validated by sampling what patients in the intended population encounter when they search their symptoms; third, reservation of clinician-panel parity for functions that displace clinician judgment, meaning action-directing and action-taking functions or deployment inside clinical workflows; and fourth, where clinician comparison is appropriate for generalist-shaped contexts, the median generalist rather than a specialist panel.",
+      "position_gist": "Comparators should be anchored to the realistic deployment context, with FDA recognizing a validated \"usual information environment\" comparator for patient-facing informational functions, reserving clinician-panel parity for functions that displace clinician judgment, and using the median generalist rather than a specialist panel in generalist contexts.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "source_passage": "Holding low-risk educational software to a standard the delivery system itself does not meet protects no one. It preserves the status quo for patients whose status quo is nothing.",
+      "position_gist": "Argues that acceptance criteria for low-risk educational software should not exceed the standard the existing delivery system actually meets.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "Question 18: postmarket-weighted evidence. I support accepting greater premarket uncertainty in exchange for postmarket monitoring, under conditions: a prespecified monitoring plan with quantitative thresholds and defined triggers; automated performance and drift surveillance with sampled adjudication by independent clinicians; a transparent reporting cadence; and demonstrated rollback capability. A deployed conversational device generates more decision-relevant performance evidence in a month of instrumented use than any premarket sample can contain. A regulatory posture that credits well-built monitoring will also push manufacturers to build the instrumentation, which improves safety independent of any submission.",
+      "position_gist": "Supports accepting greater premarket uncertainty in exchange for postmarket monitoring, conditioned on a prespecified monitoring plan with quantitative thresholds and triggers, automated drift surveillance with sampled independent clinician adjudication, transparent reporting cadence, and demonstrated rollback capability.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q24",
+        "q25"
+      ],
+      "source_passage": "Questions 24 and 25: third-party foundation models. A small manufacturer cannot compel a foundation model developer to disclose changes or give advance notice, and contractual leverage is concentrated in the largest sponsors. Four mechanisms would help. Treat model version pinning as a baseline design expectation, with developers disclosing deprecation timelines. Advance the voluntary Foundation Model MAF program with update notification commitments and healthcare-relevant evaluation summaries as core content, and signal that devices built on MAF-holding models will see more predictable review; that signal creates the developer's incentive to participate. Endorse sponsor-side re-benchmarking gates, under which no underlying model change enters production until the premarket benchmark battery has been re-run and passed, consistent with Section VI.C.",
+      "position_gist": "Because small manufacturers lack contractual leverage over foundation model developers, FDA should treat model version pinning as a baseline design expectation, advance the voluntary Foundation Model MAF program with update-notification commitments and healthcare-relevant evaluation summaries while signaling more predictable review for MAF-based devices as a participation incentive, and endorse sponsor-side re-benchmarking gates before any model change enters production.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q23",
+        "q24"
+      ],
+      "source_passage": "And define a PCCP category for like-for-like model version upgrades validated through that prespecified re-benchmarking. Together these convert an uncontrollable third-party dependency into a controlled, auditable change process inside the sponsor's quality system.",
+      "position_gist": "FDA should define a PCCP category for like-for-like underlying model version upgrades validated through prespecified re-benchmarking.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q16"
+      ],
+      "source_passage": "Question 16: independent third parties. Sequestered benchmark datasets and independent adjudication panels are the right roles for qualified third parties, and ASCA and MDDT are reasonable scaffolds. One caution: fee structures and access terms must scale with sponsor size, or third-party certification becomes a toll gate that only incumbents can pay, with the competitive consequences the paper itself warns against.",
+      "position_gist": "Third parties are appropriate for sequestered benchmark datasets and independent adjudication (leveraging ASCA and MDDT), but fee structures and access terms must scale with sponsor size to avoid becoming a competitive toll gate.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q7"
+      ],
+      "source_passage": "The direction of the paper is sound. The two-axis framework is a workable heuristic, the competency-based model maps naturally onto how medicine already evaluates human judgment, and the recognition that clinical confirmation need not mean a prospective trial in every case reflects real least-burdensome thinking.",
+      "position_gist": "Endorses the competency-based approach and the two-axis framework as workable and consistent with how medicine evaluates human clinical judgment.",
+      "segment_id": "seg-016"
+    }
+  ]
+}

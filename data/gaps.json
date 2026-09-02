@@ -6,40 +6,37 @@
       "explanation": "GenAI systems may move between informational, recommendatory, and action-directing behavior over the course of a conversation.",
       "question_ids": [
         "q5",
-        "q3",
-        "q2"
+        "q23",
+        "q22"
       ],
-      "distinct_commenters": 9,
-      "positions": 9,
+      "distinct_commenters": 3,
+      "positions": 36,
       "stakeholder_types": [
-        "foundation_model_ai_platform",
-        "device_manufacturer",
+        "other",
         "individual",
-        "health_system_provider",
-        "patient_consumer_group",
-        "clinician_professional_society"
+        "device_manufacturer"
       ],
       "examples": [
         {
-          "position_id": "p-0002",
-          "commenter_id": "c-ashford",
-          "display_name": "Ashford Health Network",
+          "position_id": "p-fda-2026-n-7874-0003-seg-009",
+          "commenter_id": "c-walnut-hill-medical",
+          "display_name": "Walnut Hill Medical",
           "question_id": "q5",
-          "excerpt": "In our pilot the same assistant summarized, then recommended, then produced an order draft, all in one exchange."
+          "excerpt": "Risk in multi-turn conversational AI cannot be assessed at the level of individual turns. ... FDA should define the concept of an \"interaction envelope\" — the full scope of an intended-use clinical interaction as defined by the manufacturer — and require that risk be assessed at the interaction level, with the device's highest-risk plausible turn defining the interaction's risk classification. Manufacturers must define and technically constrain the intended interaction scope; any conversation that migrates outside the intended envelope should trigger a defined response behavior (e.g., disclaimer, refusal, escalation)."
         },
         {
-          "position_id": "p-0004",
-          "commenter_id": "c-psa",
-          "display_name": "Patients for Safe Automation",
+          "position_id": "p-fda-2026-n-7874-0005-seg-001",
+          "commenter_id": "c-fda-2026-n-7874-0005",
+          "display_name": "Individual commenter (independent Boundary-Conditioned Realization auditor)",
+          "question_id": "q1",
+          "excerpt": "The central BCR finding is that FDA's two-axis activity-by-consequence picture is useful but cannot serve as the complete closure observable. FDA itself asks whether reversibility, downstream safeguards, time pressure, and traceability should also be represented. Other sections add user review capability, conversational trajectory, escalation direction, benchmark validity, subgroup behavior, third-party model change, postmarket detectability, and agentic tool use. BCR converts these into a 15-driver boundary budget and material coupling screen."
+        },
+        {
+          "position_id": "p-fda-2026-n-7874-0006-seg-005",
+          "commenter_id": "c-bellymd-inc",
+          "display_name": "BellyMD, Inc.",
           "question_id": "q3",
-          "excerpt": "A patient reading a confident paragraph does not see an informational feature. They see an instruction."
-        },
-        {
-          "position_id": "p-0042",
-          "commenter_id": "c-lumen",
-          "display_name": "Lumen Clinical AI",
-          "question_id": "q26",
-          "excerpt": "Say what the system is allowed to do, in a list, in the labeling."
+          "excerpt": "The mitigations that should count are verifiable behaviors: output frames that are structurally non-directive, teaching mechanisms and describing guideline-concordant options without endorsing one; forced deferral whenever a user requests a treatment change; escalation scaffolding tested in both directions (element S.1); and communication testing across health-literacy levels (element E.4). A device that demonstrates these behaviors under adversarial testing has done something a disclaimer never did."
         }
       ]
     },
@@ -48,41 +45,38 @@
       "title": "Human-AI system performance",
       "explanation": "The clinically relevant unit of performance may often be the combined human-AI system rather than the model alone.",
       "question_ids": [
-        "q14",
-        "q15",
-        "q11"
+        "q1",
+        "q3",
+        "q4"
       ],
-      "distinct_commenters": 9,
-      "positions": 10,
+      "distinct_commenters": 3,
+      "positions": 27,
       "stakeholder_types": [
-        "clinician_professional_society",
-        "device_manufacturer",
+        "other",
         "individual",
-        "patient_consumer_group",
-        "academic_research",
-        "health_system_provider"
+        "device_manufacturer"
       ],
       "examples": [
         {
-          "position_id": "p-0007",
-          "commenter_id": "c-sacm",
-          "display_name": "Society for Acute Care Medicine",
-          "question_id": "q8",
-          "excerpt": "Benchmark performance and bedside performance have not matched in any deployment we have reviewed."
+          "position_id": "p-fda-2026-n-7874-0005-seg-087",
+          "commenter_id": "c-fda-2026-n-7874-0005",
+          "display_name": "Individual commenter (independent Boundary-Conditioned Realization auditor)",
+          "question_id": "q9",
+          "excerpt": "FDA Question 9 - Adequacy of benchmarking elements\n...\nBCR response. FDA's ten benchmark elements are a strong core. Add explicit gates for provenance/dependency identity, model-change sensitivity, meaningful human override, reversibility/rollback, tool permissions, long trajectories, and benchmark construct validity/contamination."
         },
         {
-          "position_id": "p-0015",
-          "commenter_id": "c-acci",
-          "display_name": "American College of Clinical Informatics",
-          "question_id": "q14",
-          "excerpt": "The question is not whether the model is right. It is whether a tired clinician at hour ten will notice when it is not."
+          "position_id": "p-fda-2026-n-7874-0003-seg-005",
+          "commenter_id": "c-walnut-hill-medical",
+          "display_name": "Walnut Hill Medical",
+          "question_id": "q1",
+          "excerpt": "Third, temporal urgency — whether the device operates in real-time versus asynchronous clinical workflows — creates meaningfully different risk profiles that the current framework does not distinguish. Real-time autonomous action under time pressure (e.g., AI-guided emergency drug dosing) warrants higher scrutiny than asynchronous AI-generated care plan recommendations reviewed by a clinician before acting."
         },
         {
-          "position_id": "p-0016",
-          "commenter_id": "c-northlight",
-          "display_name": "Northlight Imaging",
-          "question_id": "q14",
-          "excerpt": "We can characterize the tool under representative use. We cannot warrant a staffing model."
+          "position_id": "p-fda-2026-n-7874-0006-seg-001",
+          "commenter_id": "c-bellymd-inc",
+          "display_name": "BellyMD, Inc.",
+          "question_id": "q1",
+          "excerpt": "Question 1: additional risk dimensions. Two dimensions deserve explicit representation. First, the counterfactual care environment. The consequence of relying on an incorrect output is properly measured against what would have happened without the device, and that baseline varies widely across deployment contexts. A function deployed to a population with ready access to specialty care presents a different risk calculus than the same function deployed to a population whose realistic alternative is no professional input at all. Section V.D.1 and Question 15 touch this in the comparator discussion; it belongs in the risk assessment itself. Second, duration and accumulation of reliance. A longitudinal companion that shapes a patient's understanding of their condition over months is different from a single-encounter tool, because error in the former compounds and becomes belief. Exposure time should modify risk the way dose modifies toxicity."
         }
       ]
     },
@@ -91,40 +85,38 @@
       "title": "Deployment assurance & scalability",
       "explanation": "The same product may perform differently across populations, workflows, EHR configurations, local data, users, and safeguards. FDA needs a clearer framework for what manufacturers establish globally and what deploying organizations must validate locally.",
       "question_ids": [
-        "q19",
-        "q21",
-        "q9"
+        "q24",
+        "q20",
+        "q7"
       ],
-      "distinct_commenters": 8,
-      "positions": 8,
+      "distinct_commenters": 3,
+      "positions": 27,
       "stakeholder_types": [
-        "health_system_provider",
-        "trade_association",
-        "device_manufacturer",
-        "academic_research",
-        "individual"
+        "other",
+        "individual",
+        "device_manufacturer"
       ],
       "examples": [
         {
-          "position_id": "p-0020",
-          "commenter_id": "c-amtc",
-          "display_name": "Advanced Medical Technology Council",
-          "question_id": "q21",
-          "excerpt": "Site-by-site surveillance of every deployment is not a program. It is a headcount problem with no ceiling."
+          "position_id": "p-fda-2026-n-7874-0005-seg-098",
+          "commenter_id": "c-fda-2026-n-7874-0005",
+          "display_name": "Individual commenter (independent Boundary-Conditioned Realization auditor)",
+          "question_id": "q20",
+          "excerpt": "FDA Question 20 - Machine-based supervisory agents\n...\nBCR response. Machine supervisors may assist but should not self-certify the device. Validate them independently, control their version/lineage, measure detection performance, test common-mode blind spots, maintain audit logs, and provide fail-safe human escalation."
         },
         {
-          "position_id": "p-0029",
-          "commenter_id": "c-ashford",
-          "display_name": "Ashford Health Network",
-          "question_id": "q22",
-          "excerpt": "The first signal we received was a nurse saying the summaries had started sounding different."
+          "position_id": "p-fda-2026-n-7874-0003-seg-023",
+          "commenter_id": "c-walnut-hill-medical",
+          "display_name": "Walnut Hill Medical",
+          "question_id": "q20",
+          "excerpt": "The use of machine-based supervisory agents to conduct real-time postmarket monitoring of generative AI devices is promising and merits continued development. However, it creates a recursive reliability problem that FDA must address directly: if AI is used to monitor AI, who monitors the monitor?\nBefore FDA permits the use of machine supervisory agents as a primary postmarket monitoring mechanism, it must establish performance standards for the supervisory agents themselves — including validated sensitivity and specificity requirements for detecting performance degradation, mandatory periodic evaluation of the supervisory agent's own accuracy, and a mandatory human review layer triggered by supervisory agent alerts. FDA should initiate a separate docket or technical working group to develop supervisory agent performance standards in parallel with the primary GenAI device regulatory framework."
         },
         {
-          "position_id": "p-0031",
-          "commenter_id": "c-perrin",
-          "display_name": "Perrin Valley Health",
-          "question_id": "q19",
-          "excerpt": "Same product, same version, two hospitals, materially different output quality."
+          "position_id": "p-fda-2026-n-7874-0006-seg-001",
+          "commenter_id": "c-bellymd-inc",
+          "display_name": "BellyMD, Inc.",
+          "question_id": "q1",
+          "excerpt": "Question 1: additional risk dimensions. Two dimensions deserve explicit representation. First, the counterfactual care environment. The consequence of relying on an incorrect output is properly measured against what would have happened without the device, and that baseline varies widely across deployment contexts. A function deployed to a population with ready access to specialty care presents a different risk calculus than the same function deployed to a population whose realistic alternative is no professional input at all. Section V.D.1 and Question 15 touch this in the comparator discussion; it belongs in the risk assessment itself. Second, duration and accumulation of reliance. A longitudinal companion that shapes a patient's understanding of their condition over months is different from a single-encounter tool, because error in the former compounds and becomes belief. Exposure time should modify risk the way dose modifies toxicity."
         }
       ]
     },
@@ -133,41 +125,38 @@
       "title": "Operational harm",
       "explanation": "Over-escalation, rework, unnecessary utilization, clinician burden, and workflow disruption may matter even where classic device harm is absent.",
       "question_ids": [
-        "q21",
+        "q26",
         "q6",
         "q19"
       ],
-      "distinct_commenters": 8,
-      "positions": 9,
+      "distinct_commenters": 3,
+      "positions": 18,
       "stakeholder_types": [
-        "health_system_provider",
-        "trade_association",
-        "clinician_professional_society",
-        "investor_vc",
-        "patient_consumer_group",
-        "foundation_model_ai_platform"
+        "other",
+        "individual",
+        "device_manufacturer"
       ],
       "examples": [
         {
-          "position_id": "p-0008",
-          "commenter_id": "c-dhif",
-          "display_name": "Digital Health Industry Forum",
-          "question_id": "q8",
-          "excerpt": "A prospective study for a discharge summary drafting aid costs more than the product will ever return."
+          "position_id": "p-fda-2026-n-7874-0003-seg-009",
+          "commenter_id": "c-walnut-hill-medical",
+          "display_name": "Walnut Hill Medical",
+          "question_id": "q5",
+          "excerpt": "Risk in multi-turn conversational AI cannot be assessed at the level of individual turns. ... FDA should define the concept of an \"interaction envelope\" — the full scope of an intended-use clinical interaction as defined by the manufacturer — and require that risk be assessed at the interaction level, with the device's highest-risk plausible turn defining the interaction's risk classification. Manufacturers must define and technically constrain the intended interaction scope; any conversation that migrates outside the intended envelope should trigger a defined response behavior (e.g., disclaimer, refusal, escalation)."
         },
         {
-          "position_id": "p-0021",
-          "commenter_id": "c-greatlakes",
-          "display_name": "Great Lakes Health Alliance",
-          "question_id": "q21",
-          "excerpt": "We are willing to monitor. We are not willing to staff someone else's compliance program."
+          "position_id": "p-fda-2026-n-7874-0005-seg-004",
+          "commenter_id": "c-fda-2026-n-7874-0005",
+          "display_name": "Individual commenter (independent Boundary-Conditioned Realization auditor)",
+          "question_id": "q1",
+          "excerpt": "J6 Time pressure / time-to-harm Explicitly raised in Q1 Shorter response window can defeat\nnominal human control.\nJ7 Reversibility Explicitly raised in Q1 Irreversible actions require hard-gate\ntreatment.\nJ8 Traceability / provenance Q1 + MAF discussion Low traceability impairs auditability,\nattribution, and correction.\nJ9 Downstream safeguards Explicitly raised in Q1 Independent safeguards can\nsuppress harmful realization."
         },
         {
-          "position_id": "p-0024",
-          "commenter_id": "c-nrpc",
-          "display_name": "National Radiology Practice Council",
-          "question_id": "q21",
-          "excerpt": "Sample-based review by independent clinicians is a good idea with no line item."
+          "position_id": "p-fda-2026-n-7874-0006-seg-007",
+          "commenter_id": "c-bellymd-inc",
+          "display_name": "BellyMD, Inc.",
+          "question_id": "q6",
+          "excerpt": "Question 6: escalation error in both directions. I see both failure modes in the emergency department every week. Under-escalation injures the patient in front of the device. Over-escalation injures the same patient through cascade testing, cost, and anxiety, and injures everyone else through crowding and triage dilution; over time it erodes the trust that appropriate care-seeking depends on. The two directions are real, asymmetric, and not commensurable, and they should not be collapsed into a single utility score. Sponsors should prespecify asymmetric error tolerances justified by clinical context and report both rates against clinician performance on the same scenario set. For DGBI functions, alarm features (gastrointestinal bleeding, unintended weight loss, progressive dysphagia, nocturnal symptoms) warrant near-zero tolerance for under-escalation, while a bounded, disclosed tolerance for conservative over-referral is acceptable and honest."
         }
       ]
     },
@@ -177,41 +166,29 @@
       "explanation": "Continuous benchmarking and clinical validation can improve assurance, but regulatory obligations may become economically unscalable if they are not proportional to risk and product value.",
       "question_ids": [
         "q8",
-        "q18",
+        "q11",
         "q16"
       ],
-      "distinct_commenters": 11,
-      "positions": 12,
+      "distinct_commenters": 2,
+      "positions": 15,
       "stakeholder_types": [
-        "investor_vc",
-        "foundation_model_ai_platform",
-        "health_system_provider",
-        "patient_consumer_group",
-        "device_manufacturer",
-        "trade_association",
-        "other"
+        "other",
+        "device_manufacturer"
       ],
       "examples": [
         {
-          "position_id": "p-0006",
-          "commenter_id": "c-meridian",
-          "display_name": "Meridian Medical Systems",
-          "question_id": "q8",
-          "excerpt": "We can build to a demanding standard. We cannot build to an unstated one."
+          "position_id": "p-fda-2026-n-7874-0006-seg-003",
+          "commenter_id": "c-bellymd-inc",
+          "display_name": "BellyMD, Inc.",
+          "question_id": "q2",
+          "excerpt": "On predictability: publish worked examples along the four-step gradient the paper describes (general information, contextualization, endorsement, instruction) for a handful of clinical domains. Small sponsors need to be able to classify their own functions before they build, not after a deficiency letter."
         },
         {
-          "position_id": "p-0008",
-          "commenter_id": "c-dhif",
-          "display_name": "Digital Health Industry Forum",
+          "position_id": "p-fda-2026-n-7874-0003-seg-001",
+          "commenter_id": "c-walnut-hill-medical",
+          "display_name": "Walnut Hill Medical",
           "question_id": "q8",
-          "excerpt": "A prospective study for a discharge summary drafting aid costs more than the product will ever return."
-        },
-        {
-          "position_id": "p-0010",
-          "commenter_id": "c-bramble",
-          "display_name": "Bramble Health Ventures",
-          "question_id": "q8",
-          "excerpt": "Every unstated requirement shows up in our models as a discount on the round."
+          "excerpt": "The Discussion Paper describes regulatory concepts without providing a clear map of which generative AI device type belongs in which regulatory pathway. Before manufacturers can make rational development investments, FDA must publish a decision matrix that links device risk tier (derived from the two-axis framework) to the applicable regulatory pathway — 510(k), De Novo, or PMA — and to the corresponding premarket evidence requirements."
         }
       ]
     },
@@ -221,38 +198,37 @@
       "explanation": "Foundation model companies function increasingly like critical suppliers whose changes can alter regulated product behavior.",
       "question_ids": [
         "q24",
-        "q22",
-        "q25"
+        "q25",
+        "q1"
       ],
-      "distinct_commenters": 5,
-      "positions": 7,
+      "distinct_commenters": 3,
+      "positions": 27,
       "stakeholder_types": [
-        "foundation_model_ai_platform",
-        "device_manufacturer",
-        "trade_association",
-        "investor_vc"
+        "other",
+        "individual",
+        "device_manufacturer"
       ],
       "examples": [
         {
-          "position_id": "p-0027",
-          "commenter_id": "c-calder",
-          "display_name": "Calder Diagnostics",
-          "question_id": "q22",
-          "excerpt": "We can plan our own releases. The base model changed twice during our submission review."
+          "position_id": "p-fda-2026-n-7874-0005-seg-087",
+          "commenter_id": "c-fda-2026-n-7874-0005",
+          "display_name": "Individual commenter (independent Boundary-Conditioned Realization auditor)",
+          "question_id": "q9",
+          "excerpt": "FDA Question 9 - Adequacy of benchmarking elements\n...\nBCR response. FDA's ten benchmark elements are a strong core. Add explicit gates for provenance/dependency identity, model-change sensitivity, meaningful human override, reversibility/rollback, tool permissions, long trajectories, and benchmark construct validity/contamination."
         },
         {
-          "position_id": "p-0036",
-          "commenter_id": "c-dhif",
-          "display_name": "Digital Health Industry Forum",
-          "question_id": "q24",
-          "excerpt": "The supplier control framework already exists. It was written for parts that do not change themselves."
+          "position_id": "p-fda-2026-n-7874-0003-seg-003",
+          "commenter_id": "c-walnut-hill-medical",
+          "display_name": "Walnut Hill Medical",
+          "question_id": "q1",
+          "excerpt": "First, third-party model dependency is a material risk factor not reflected in the current framework. A generative AI device built entirely on a proprietary, auditable, manufacturer- controlled model presents a fundamentally different risk profile than a device built on an opaque third-party foundation model over which the manufacturer has no visibility, no contractual governance rights, and no notification of changes. ... FDA should add third-party model dependency as an explicit risk dimension, with devices heavily dependent on non-disclosed, externally controlled foundation models receiving higher baseline risk classification."
         },
         {
-          "position_id": "p-0037",
-          "commenter_id": "c-ravel",
-          "display_name": "Ravel Foundation Models",
+          "position_id": "p-fda-2026-n-7874-0006-seg-013",
+          "commenter_id": "c-bellymd-inc",
+          "display_name": "BellyMD, Inc.",
           "question_id": "q24",
-          "excerpt": "We can commit to telling customers when behavior changes. We cannot open the training corpus."
+          "excerpt": "Questions 24 and 25: third-party foundation models. A small manufacturer cannot compel a foundation model developer to disclose changes or give advance notice, and contractual leverage is concentrated in the largest sponsors. Four mechanisms would help. Treat model version pinning as a baseline design expectation, with developers disclosing deprecation timelines. Advance the voluntary Foundation Model MAF program with update notification commitments and healthcare-relevant evaluation summaries as core content, and signal that devices built on MAF-holding models will see more predictable review; that signal creates the developer's incentive to participate. Endorse sponsor-side re-benchmarking gates, under which no underlying model change enters production until the premarket benchmark battery has been re-run and passed, consistent with Section VI.C."
         }
       ]
     },
@@ -261,39 +237,20 @@
       "title": "Cybersecurity as clinical safety",
       "explanation": "Prompt injection, tool manipulation, retrieval poisoning, and related vulnerabilities can become direct clinical hazards.",
       "question_ids": [
-        "q9",
-        "q19",
         "q26"
       ],
-      "distinct_commenters": 4,
-      "positions": 4,
+      "distinct_commenters": 1,
+      "positions": 2,
       "stakeholder_types": [
-        "device_manufacturer",
-        "academic_research",
-        "health_system_provider",
         "individual"
       ],
       "examples": [
         {
-          "position_id": "p-0012",
-          "commenter_id": "c-northlight",
-          "display_name": "Northlight Imaging",
-          "question_id": "q9",
-          "excerpt": "A retrieval poisoning event is not an IT incident. It is a clinical one."
-        },
-        {
-          "position_id": "p-0013",
-          "commenter_id": "c-tallis",
-          "display_name": "Tallis University Biomedical Informatics Lab",
-          "question_id": "q9",
-          "excerpt": "Red-teaming without a reported matrix is an anecdote, not evidence."
-        },
-        {
-          "position_id": "p-0014",
-          "commenter_id": "c-stmarrow",
-          "display_name": "St. Marrow Regional Medical Center",
-          "question_id": "q9",
-          "excerpt": "The documents that poisoned our pilot were our own. No sponsor could have tested against them."
+          "position_id": "p-fda-2026-n-7874-0005-seg-043",
+          "commenter_id": "c-fda-2026-n-7874-0005",
+          "display_name": "Individual commenter (independent Boundary-Conditioned Realization auditor)",
+          "question_id": "q26",
+          "excerpt": "TR-Q26\nFDA Q26; Sec. VII.C; App. B;\npp. 23 / 30\n...\nCoupling + nonlocal +\nirreversible-action residual\nS3,S4,S8,S9 End-to-end action-state logs,\npermission tests, prompt-\ninjection via tools/retrieval,\nirreversible confirmation,\nrollback, post-action\nverification\nPASS: No\nunauthorized/unobserved/un\nverified high-consequence\nstate transition\nRE-OPEN:\nTool/permission/memory/retri\neval/model/action-policy\nchange"
         }
       ]
     },
@@ -303,39 +260,37 @@
       "explanation": "Manufacturers, foundation-model developers, platform vendors, health systems, and clinicians may each control different parts of the safety system.",
       "question_ids": [
         "q21",
-        "q19",
-        "q14"
+        "q24",
+        "q19"
       ],
-      "distinct_commenters": 8,
-      "positions": 9,
+      "distinct_commenters": 3,
+      "positions": 11,
       "stakeholder_types": [
-        "device_manufacturer",
-        "health_system_provider",
-        "clinician_professional_society",
         "other",
-        "investor_vc"
+        "individual",
+        "device_manufacturer"
       ],
       "examples": [
         {
-          "position_id": "p-0021",
-          "commenter_id": "c-greatlakes",
-          "display_name": "Great Lakes Health Alliance",
-          "question_id": "q21",
-          "excerpt": "We are willing to monitor. We are not willing to staff someone else's compliance program."
+          "position_id": "p-fda-2026-n-7874-0003-seg-003",
+          "commenter_id": "c-walnut-hill-medical",
+          "display_name": "Walnut Hill Medical",
+          "question_id": "q1",
+          "excerpt": "First, third-party model dependency is a material risk factor not reflected in the current framework. A generative AI device built entirely on a proprietary, auditable, manufacturer- controlled model presents a fundamentally different risk profile than a device built on an opaque third-party foundation model over which the manufacturer has no visibility, no contractual governance rights, and no notification of changes. ... FDA should add third-party model dependency as an explicit risk dimension, with devices heavily dependent on non-disclosed, externally controlled foundation models receiving higher baseline risk classification."
         },
         {
-          "position_id": "p-0023",
-          "commenter_id": "c-perrin",
-          "display_name": "Perrin Valley Health",
-          "question_id": "q21",
-          "excerpt": "Every deployment should have a name attached to it before go-live."
+          "position_id": "p-fda-2026-n-7874-0005-seg-017",
+          "commenter_id": "c-fda-2026-n-7874-0005",
+          "display_name": "Individual commenter (independent Boundary-Conditioned Realization auditor)",
+          "question_id": "q19",
+          "excerpt": "Postmarket Rebenchmark, clinician review, drift monitoring Add residual owners, trigger thresholds, harm-\ntime logic, and automatic re-open."
         },
         {
-          "position_id": "p-0038",
-          "commenter_id": "c-calder",
-          "display_name": "Calder Diagnostics",
+          "position_id": "p-fda-2026-n-7874-0006-seg-013",
+          "commenter_id": "c-bellymd-inc",
+          "display_name": "BellyMD, Inc.",
           "question_id": "q24",
-          "excerpt": "The liability sits with us and the visibility sits with them."
+          "excerpt": "Questions 24 and 25: third-party foundation models. A small manufacturer cannot compel a foundation model developer to disclose changes or give advance notice, and contractual leverage is concentrated in the largest sponsors. Four mechanisms would help. Treat model version pinning as a baseline design expectation, with developers disclosing deprecation timelines. Advance the voluntary Foundation Model MAF program with update notification commitments and healthcare-relevant evaluation summaries as core content, and signal that devices built on MAF-holding models will see more predictable review; that signal creates the developer's incentive to participate. Endorse sponsor-side re-benchmarking gates, under which no underlying model change enters production until the premarket benchmark battery has been re-run and passed, consistent with Section VI.C."
         }
       ]
     },
@@ -345,41 +300,36 @@
       "explanation": "Agentic systems raise a distinct question: what actions has the organization actually delegated to the AI, and how far can an error propagate before meaningful human intervention?",
       "question_ids": [
         "q26",
-        "q20",
-        "q4"
+        "q1",
+        "q20"
       ],
-      "distinct_commenters": 9,
-      "positions": 9,
+      "distinct_commenters": 3,
+      "positions": 32,
       "stakeholder_types": [
-        "clinician_professional_society",
-        "patient_consumer_group",
-        "foundation_model_ai_platform",
-        "health_system_provider",
-        "device_manufacturer",
         "individual",
-        "academic_research"
+        "other"
       ],
       "examples": [
         {
-          "position_id": "p-0041",
-          "commenter_id": "c-sacm",
-          "display_name": "Society for Acute Care Medicine",
-          "question_id": "q26",
-          "excerpt": "A wrong sentence is a draft. A wrong action is an event."
+          "position_id": "p-fda-2026-n-7874-0005-seg-087",
+          "commenter_id": "c-fda-2026-n-7874-0005",
+          "display_name": "Individual commenter (independent Boundary-Conditioned Realization auditor)",
+          "question_id": "q9",
+          "excerpt": "FDA Question 9 - Adequacy of benchmarking elements\n...\nBCR response. FDA's ten benchmark elements are a strong core. Add explicit gates for provenance/dependency identity, model-change sensitivity, meaningful human override, reversibility/rollback, tool permissions, long trajectories, and benchmark construct validity/contamination."
         },
         {
-          "position_id": "p-0043",
-          "commenter_id": "c-greatlakes",
-          "display_name": "Great Lakes Health Alliance",
-          "question_id": "q26",
-          "excerpt": "Nobody in our organization signed a document saying the assistant could do that."
+          "position_id": "p-fda-2026-n-7874-0003-seg-004",
+          "commenter_id": "c-walnut-hill-medical",
+          "display_name": "Walnut Hill Medical",
+          "question_id": "q1",
+          "excerpt": "Second, reversibility must be treated as a first-order risk factor. An AI- generated recommendation that a clinician reviews and acts upon over the course of hours is materially different from an AI-generated command that triggers an immediate, irreversible action — a drug infusion, a neurostimulation parameter change, a surgical robot maneuver. The current framework's consequence axis captures severity but does not fully capture irreversibility. A separate reversibility dimension would strengthen the framework's clinical fidelity."
         },
         {
-          "position_id": "p-0042",
-          "commenter_id": "c-lumen",
-          "display_name": "Lumen Clinical AI",
-          "question_id": "q26",
-          "excerpt": "Say what the system is allowed to do, in a list, in the labeling."
+          "position_id": "p-fda-2026-n-7874-0007-seg-001",
+          "commenter_id": "c-fda-2026-n-7874-0007",
+          "display_name": "Individual commenter (cancer patient)",
+          "question_id": "q1",
+          "excerpt": "Using generative AI for any healthcare usage at the moment is too risky, both in terms of accuracy (so much hallucinating going on), and in terms of protecting my privacy. I want trained human minds caring for me and monitoring my health, not some flaws hallucinating AI device."
         }
       ]
     }
