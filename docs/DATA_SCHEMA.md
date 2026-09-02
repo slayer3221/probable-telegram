@@ -129,7 +129,7 @@ Titles and explanations for the nine gaps, and the two editorial signal cards (`
 
 ## Raw layer (`raw/`)
 
-- `raw/comments/<comment_id>.json`: Regulations.gov metadata subset, source URL, `last_modified_date`, attachment metadata (`file_url`, `local_path`, `downloaded`, `error`), `fetched_at`.
+- `raw/comments/<comment_id>.json`: Regulations.gov metadata subset (no personal names or postal addresses), source URL, `last_modified_date`, attachment metadata (`file_url`, `local_path`, `downloaded`, `error`), `fetched_at`.
 - `raw/text/<comment_id>.txt`: canonical raw text (comment body followed by each extracted attachment).
 - `raw/text/<comment_id>.meta.json`: `content_hash`, character counts, per-attachment extraction status, `usable`, `exclusion_reason`.
 - `raw/attachments/<comment_id>/`: downloaded binaries (git-ignored).
