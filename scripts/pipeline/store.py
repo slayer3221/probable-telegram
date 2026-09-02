@@ -7,17 +7,17 @@ A stage output is reused when all of the following match the current run:
 - model (for LLM stages)
 """
 from .config import (
-    CLASSIFIED_GAPS, CLASSIFIED_POSITIONS, CLASSIFIED_SEGMENTS, CLASSIFIED_SUMMARIES,
-    LLM_MODEL, PROCESSING_VERSION, PROMPT_VERSION, RAW_COMMENTS, RAW_TEXT,
+    CLASSIFIED_ANALYSIS, CLASSIFIED_SEGMENTS, LLM_MODEL, PROCESSING_VERSION,
+    RAW_COMMENTS, RAW_TEXT, prompt_version,
 )
 from .io_utils import content_hash, now_iso, read_json, write_json
 
 STAGE_DIRS = {
     "segments": CLASSIFIED_SEGMENTS,
-    "positions": CLASSIFIED_POSITIONS,
-    "gaps": CLASSIFIED_GAPS,
-    "summaries": CLASSIFIED_SUMMARIES,
+    "analysis": CLASSIFIED_ANALYSIS,
 }
+# Which prompt version governs each stored stage.
+STAGE_PROMPT = {"segments": "segment", "analysis": "analyze"}
 
 
 def raw_comment_path(comment_id):
@@ -57,23 +57,27 @@ def load_stage(stage, comment_id):
     return read_json(stage_path(stage, comment_id))
 
 
-def stage_is_fresh(record, input_hash, uses_model=True):
+def stage_is_fresh(record, input_hash, stage, uses_model=True):
+    """Reuse a stored stage record only when its input hash, the stage's
+    prompt version, the processing version and the model all match."""
     if not record:
         return False
     if record.get("input_hash") != input_hash:
         return False
-    if record.get("prompt_version") != PROMPT_VERSION or record.get("processing_version") != PROCESSING_VERSION:
+    if record.get("prompt_version") != prompt_version(STAGE_PROMPT[stage]):
+        return False
+    if record.get("processing_version") != PROCESSING_VERSION:
         return False
     if uses_model and record.get("model") != LLM_MODEL:
         return False
     return True
 
 
-def stage_envelope(comment_id, input_hash, payload, uses_model=True):
+def stage_envelope(comment_id, input_hash, payload, stage, uses_model=True):
     env = {
         "comment_id": comment_id,
         "input_hash": input_hash,
-        "prompt_version": PROMPT_VERSION,
+        "prompt_version": prompt_version(STAGE_PROMPT[stage]),
         "processing_version": PROCESSING_VERSION,
         "created_at": now_iso(),
     }

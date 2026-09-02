@@ -24,9 +24,7 @@ RAW_TEXT = RAW_DIR / "text"
 RAW_ATTACHMENTS = RAW_DIR / "attachments"
 CLASSIFIED_DIR = ROOT / "classified"
 CLASSIFIED_SEGMENTS = CLASSIFIED_DIR / "segments"
-CLASSIFIED_POSITIONS = CLASSIFIED_DIR / "positions"
-CLASSIFIED_GAPS = CLASSIFIED_DIR / "gaps"
-CLASSIFIED_SUMMARIES = CLASSIFIED_DIR / "summaries"
+CLASSIFIED_ANALYSIS = CLASSIFIED_DIR / "analysis"
 CLASSIFIED_COMMENTERS = CLASSIFIED_DIR / "commenters.json"
 PUBLIC_DIR = ROOT / "public"
 DATA_DIR = ROOT / "data"
@@ -34,8 +32,17 @@ EDITORIAL_DIR = ROOT / "editorial"
 PROMPTS_DIR = ROOT / "prompts"
 
 PROMPT_CONFIG = read_json(PROMPTS_DIR / "config.json", {})
-PROMPT_VERSION = PROMPT_CONFIG.get("prompt_version", "0")
-LLM_MODEL = env("LLM_MODEL", PROMPT_CONFIG.get("model", "claude-sonnet-5"))
+# One prompt version per stage, so a change to the analysis prompt does not
+# force every submission to be re-segmented.
+PROMPT_VERSIONS = PROMPT_CONFIG.get("prompt_versions", {})
+LLM_MODEL = env("LLM_MODEL", PROMPT_CONFIG.get("model", "claude-opus-5"))
+LLM_CONCURRENCY = int(env("LLM_CONCURRENCY", PROMPT_CONFIG.get("llm_concurrency", 4)))
+PRICING = PROMPT_CONFIG.get("pricing_usd_per_million_tokens", {})
+RUN_METRICS_PATH = PUBLIC_DIR / "run-metrics.json"
+
+
+def prompt_version(stage: str) -> str:
+    return str(PROMPT_VERSIONS.get(stage, "0"))
 
 DOCKET_META = {
     "docket_id": DOCKET_ID,
@@ -49,6 +56,5 @@ DOCKET_META = {
 
 
 def ensure_dirs():
-    for d in (RAW_COMMENTS, RAW_TEXT, RAW_ATTACHMENTS, CLASSIFIED_SEGMENTS, CLASSIFIED_POSITIONS,
-              CLASSIFIED_GAPS, CLASSIFIED_SUMMARIES, PUBLIC_DIR, DATA_DIR):
+    for d in (RAW_COMMENTS, RAW_TEXT, RAW_ATTACHMENTS, CLASSIFIED_SEGMENTS, CLASSIFIED_ANALYSIS, PUBLIC_DIR, DATA_DIR):
         Path(d).mkdir(parents=True, exist_ok=True)

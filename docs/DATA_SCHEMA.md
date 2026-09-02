@@ -138,12 +138,10 @@ Raw text is never overwritten with interpretations.
 
 ## Classified layer (`classified/`)
 
-Every file carries `comment_id`, `input_hash`, `prompt_version`, `processing_version`, `model`, `created_at`.
+Every file carries `comment_id`, `input_hash`, `prompt_version` (of that stage's prompt), `processing_version`, `model`, `created_at`.
 
 - `segments/<id>.json`: `positions[]` with `segment_id`, `question_ids`, `source_passage`, `position_gist`.
-- `positions/<id>.json`: `positions[]` with `segment_id`, `question_ids`, `position`, `primary_issue`, `secondary_issue`, `stakeholder_concern`, `requested_fda_action`, `confidence`, `source_passage`.
-- `gaps/<id>.json`: `gaps{segment_id: {gap_tags, explanations}}`.
-- `summaries/<id>.json`: `summaries{segment_id: text}`.
+- `analysis/<id>.json`: `positions[]` with `segment_id`, `question_ids`, `position`, `primary_issue`, `secondary_issue`, `stakeholder_concern`, `requested_fda_action`, `confidence`, `gap_tags`, `gap_explanations`, `public_summary`, `summary_cut`, `source_passage`. Produced by one structured-output call per position; the fields stay separate.
 - `commenters.json`: `commenters{comment_id: {display_name, organization, stakeholder_type, source_identity_text, confidence, input_hash, prompt_version, model}}`.
 
 ## Integrity rules enforced by `scripts/validate_data.py`

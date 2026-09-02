@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from pipeline.aggregate import build_public_dataset  # noqa: E402
 from pipeline.config import (CLASSIFIED_COMMENTERS, DATA_DIR, DOCKET_META, EDITORIAL_DIR, LLM_MODEL,  # noqa: E402
-                             PROCESSING_VERSION, PROMPT_VERSION, PUBLIC_DIR, ensure_dirs)
+                             PROCESSING_VERSION, PROMPT_VERSIONS, PUBLIC_DIR, ensure_dirs)
 from pipeline.io_utils import now_iso, read_json, write_json  # noqa: E402
 from pipeline.store import list_raw_comment_ids, load_raw_comment, load_stage, load_text_meta  # noqa: E402
 
@@ -53,9 +53,7 @@ def main():
             excluded_ids.append({"id": comment_id, "reason": "no usable text"})
             continue
         identity = identities.get(comment_id)
-        pos_stage = load_stage("positions", comment_id)
-        gap_stage = load_stage("gaps", comment_id) or {"gaps": {}}
-        sum_stage = load_stage("summaries", comment_id) or {"summaries": {}}
+        pos_stage = load_stage("analysis", comment_id)
         if not identity or not pos_stage:
             exclusions["not_yet_classified"] += 1
             excluded_ids.append({"id": comment_id, "reason": "classification pending"})
@@ -91,11 +89,11 @@ def main():
             if pos["position"] == "unclear" and pos["confidence"] == "low":
                 exclusions["unclear_low_confidence_positions"] += 1
                 continue
-            summary = sum_stage["summaries"].get(seg)
+            summary = pos.get("public_summary")
             if not summary:
                 exclusions["positions_without_summary"] += 1
                 continue
-            gap_tags = gap_stage["gaps"].get(seg, {}).get("gap_tags", [])
+            gap_tags = pos.get("gap_tags", [])
             passage = pos["source_passage"]
             positions.append({
                 "id": f"p-{comment_id.lower()}-{seg}",
@@ -125,7 +123,7 @@ def main():
     meta = {
         "generated_at": now_iso(),
         "dataset_kind": "live",
-        "processing_version": f"{PROCESSING_VERSION}+prompt-{PROMPT_VERSION}",
+        "processing_version": f"{PROCESSING_VERSION}+analyze-{PROMPT_VERSIONS.get('analyze', '0')}",
         "docket": DOCKET_META,
     }
     files = build_public_dataset(questions, commenters, submissions, positions, editorial_gaps, editorial_cards, meta)
@@ -134,7 +132,7 @@ def main():
     manifest = {
         "generated_at": meta["generated_at"],
         "processing_version": PROCESSING_VERSION,
-        "prompt_version": PROMPT_VERSION,
+        "prompt_versions": PROMPT_VERSIONS,
         "model": LLM_MODEL,
         "counts": files["site-summary.json"]["metrics"],
         "exclusions": dict(exclusions),
