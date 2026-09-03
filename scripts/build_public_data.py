@@ -16,16 +16,40 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from pipeline.aggregate import build_public_dataset  # noqa: E402
-from pipeline.config import (CLASSIFIED_COMMENTERS, DATA_DIR, DOCKET_META, EDITORIAL_DIR, LLM_MODEL,  # noqa: E402
-                             PROCESSING_VERSION, PROMPT_VERSIONS, PUBLIC_DIR, ensure_dirs)
+from pipeline.config import (CLASSIFIED_COMMENTERS, CLASSIFIED_CONSOLIDATION, DATA_DIR, DOCKET_META, EDITORIAL_DIR,  # noqa: E402
+                             LLM_MODEL, PROCESSING_VERSION, PROMPT_VERSIONS, PUBLIC_DIR, ensure_dirs)
+from pipeline.consolidate import RULE_VERSION as CONSOLIDATION_RULE_VERSION, consolidate_positions  # noqa: E402
 from pipeline.io_utils import now_iso, read_json, write_json  # noqa: E402
-from pipeline.store import list_raw_comment_ids, load_raw_comment, load_stage, load_text_meta  # noqa: E402
+from pipeline.store import (hash_of_record, list_raw_comment_ids, load_raw_comment, load_stage,  # noqa: E402
+                            load_text_meta)
 
 log = logging.getLogger("build")
 
 
 def slug(text):
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")[:60]
+
+
+def record_consolidation(comment_id, pos_stage, clusters):
+    """Keep the merged segment ids next to the analysis they came from.
+    The sidecar is rewritten only when its content changes, and removed when
+    a submission no longer has any near-duplicates."""
+    path = CLASSIFIED_CONSOLIDATION / f"{comment_id}.json"
+    if not clusters:
+        if path.exists():
+            path.unlink()
+        return
+    record = {
+        "comment_id": comment_id,
+        "analysis_hash": hash_of_record(pos_stage),
+        "rule_version": CONSOLIDATION_RULE_VERSION,
+        "clusters": clusters,
+    }
+    existing = read_json(path, None)
+    if existing and hash_of_record(existing) == hash_of_record(record):
+        return
+    record["created_at"] = now_iso()
+    write_json(path, record)
 
 
 def main():
@@ -40,6 +64,7 @@ def main():
     submissions, positions = [], []
     exclusions = Counter()
     excluded_ids = []
+    consolidation_log = []
 
     for comment_id in list_raw_comment_ids():
         raw = load_raw_comment(comment_id)
@@ -84,15 +109,24 @@ def main():
             "attachment_urls": [a["file_url"] for a in raw.get("attachments", [])],
             "source_url": raw["source_url"],
         })
+        publishable = []
         for pos in pos_stage["positions"]:
-            seg = pos["segment_id"]
             if pos["position"] == "unclear" and pos["confidence"] == "low":
                 exclusions["unclear_low_confidence_positions"] += 1
                 continue
-            summary = pos.get("public_summary")
-            if not summary:
+            if not pos.get("public_summary"):
                 exclusions["positions_without_summary"] += 1
                 continue
+            publishable.append(pos)
+        kept, clusters = consolidate_positions(publishable)
+        record_consolidation(comment_id, pos_stage, clusters)
+        if clusters:
+            merged_count = sum(len(c["merged_segment_ids"]) for c in clusters)
+            exclusions["near_duplicate_positions_consolidated"] += merged_count
+            consolidation_log.append({"id": comment_id, "clusters": len(clusters), "positions_merged": merged_count})
+        for pos in kept:
+            seg = pos["segment_id"]
+            summary = pos["public_summary"]
             gap_tags = pos.get("gap_tags", [])
             passage = pos["source_passage"]
             positions.append({
@@ -137,11 +171,20 @@ def main():
         "counts": files["site-summary.json"]["metrics"],
         "exclusions": dict(exclusions),
         "excluded_submissions": excluded_ids,
+        "consolidation": {
+            "rule_version": CONSOLIDATION_RULE_VERSION,
+            "submissions_affected": len(consolidation_log),
+            "positions_merged": sum(c["positions_merged"] for c in consolidation_log),
+            "submissions": consolidation_log,
+        },
     }
     write_json(PUBLIC_DIR / "build-manifest.json", manifest)
     log.info("built data/: %s", files["site-summary.json"]["metrics"])
     if exclusions:
         log.info("exclusions: %s", dict(exclusions))
+    if consolidation_log:
+        log.info("consolidated %d near-duplicate positions across %d submissions",
+                 manifest["consolidation"]["positions_merged"], len(consolidation_log))
 
 
 if __name__ == "__main__":

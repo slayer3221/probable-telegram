@@ -218,8 +218,11 @@ main { padding: 36px 0 8px; }
 .badge--unclear { background: var(--pos-unclear); color: var(--neutral-black); }
 .pc__summary { font-size: 14.5px; line-height: 1.6; color: var(--neutral-black); margin: 12px 0 0; max-width: 76ch; }
 .pc__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 14px; }
+.pc__grid > div { min-width: 0; }
 .pc__grid .label { margin-bottom: 5px; display: block; }
 .pc__text { font-size: 14px; line-height: 1.55; color: var(--neutral-black); }
+/* Commenter text can carry long slash-joined or hyphenless tokens; let them wrap rather than widen the page. */
+.pc, .drawer { overflow-wrap: anywhere; }
 .pc__foot { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-subtle); }
 .pc__tags { display: flex; gap: 6px; flex-wrap: wrap; }
 .pc__actions { display: flex; gap: 14px; align-items: center; }

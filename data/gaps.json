@@ -5,12 +5,12 @@
       "title": "Dynamic intended use / behavioral envelope",
       "explanation": "GenAI systems may move between informational, recommendatory, and action-directing behavior over the course of a conversation.",
       "question_ids": [
-        "q5",
         "q22",
+        "q5",
         "q23"
       ],
       "distinct_commenters": 30,
-      "positions": 149,
+      "positions": 144,
       "stakeholder_types": [
         "individual",
         "other",
@@ -51,7 +51,7 @@
         "q14"
       ],
       "distinct_commenters": 33,
-      "positions": 191,
+      "positions": 184,
       "stakeholder_types": [
         "individual",
         "other",
@@ -74,11 +74,11 @@
           "excerpt": "Greater reliance on postmarket monitoring may be reasonable for low-consequence functions when\noutputs are readily reviewable, errors are reversible, and robust detection and correction mechanisms\nexist. It is not an adequate substitute for premarket evidence when a function can direct or execute an\ninvasive action, when harm can occur before meaningful review, or when rescue is uncertain."
         },
         {
-          "position_id": "p-fda-2026-n-7874-0003-seg-005",
+          "position_id": "p-fda-2026-n-7874-0003-seg-023",
           "commenter_id": "c-walnut-hill-medical",
           "display_name": "Walnut Hill Medical",
-          "question_id": "q1",
-          "excerpt": "Third, temporal urgency — whether the device operates in real-time versus asynchronous clinical workflows — creates meaningfully different risk profiles that the current framework does not distinguish. Real-time autonomous action under time pressure (e.g., AI-guided emergency drug dosing) warrants higher scrutiny than asynchronous AI-generated care plan recommendations reviewed by a clinician before acting."
+          "question_id": "q20",
+          "excerpt": "The use of machine-based supervisory agents to conduct real-time postmarket monitoring of generative AI devices is promising and merits continued development. However, it creates a recursive reliability problem that FDA must address directly: if AI is used to monitor AI, who monitors the monitor?\nBefore FDA permits the use of machine supervisory agents as a primary postmarket monitoring mechanism, it must establish performance standards for the supervisory agents themselves — including validated sensitivity and specificity requirements for detecting performance degradation, mandatory periodic evaluation of the supervisory agent's own accuracy, and a mandatory human review layer triggered by supervisory agent alerts. FDA should initiate a separate docket or technical working group to develop supervisory agent performance standards in parallel with the primary GenAI device regulatory framework."
         }
       ]
     },
@@ -92,7 +92,7 @@
         "q1"
       ],
       "distinct_commenters": 29,
-      "positions": 194,
+      "positions": 187,
       "stakeholder_types": [
         "individual",
         "other",
@@ -100,13 +100,6 @@
         "academic_research"
       ],
       "examples": [
-        {
-          "position_id": "p-fda-2026-n-7874-0005-seg-098",
-          "commenter_id": "c-fda-2026-n-7874-0005",
-          "display_name": "Individual commenter (independent Boundary-Conditioned Realization auditor)",
-          "question_id": "q20",
-          "excerpt": "FDA Question 20 - Machine-based supervisory agents\n...\nBCR response. Machine supervisors may assist but should not self-certify the device. Validate them independently, control their version/lineage, measure detection performance, test common-mode blind spots, maintain audit logs, and provide fail-safe human escalation."
-        },
         {
           "position_id": "p-fda-2026-n-7874-0010-seg-026",
           "commenter_id": "c-fda-2026-n-7874-0010",
@@ -120,6 +113,13 @@
           "display_name": "Individual commenter (practicing surgeon and health-system surgical executive)",
           "question_id": "q20",
           "excerpt": "Machine-based supervisory agents may assist monitoring, but should not become an unvalidated AI\nsystem policing another AI system. Their sensitivity, specificity, independence, failure modes, and\nsusceptibility to correlated error should be evaluated."
+        },
+        {
+          "position_id": "p-fda-2026-n-7874-0048-seg-001",
+          "commenter_id": "c-vitasignal",
+          "display_name": "VitaSignal",
+          "question_id": "q1",
+          "excerpt": "The proposed activity and consequence axes are useful, but systems in the same cell can present different risks. FDA should also consider reversibility, time to correction, error detectability, traceability to data and system versions, safeguard independence, exposure before containment, and stability of the population and workflow."
         }
       ]
     },
@@ -133,7 +133,7 @@
         "q19"
       ],
       "distinct_commenters": 32,
-      "positions": 141,
+      "positions": 136,
       "stakeholder_types": [
         "individual",
         "other",
@@ -169,12 +169,12 @@
       "title": "Evidence burden & commercial viability",
       "explanation": "Continuous benchmarking and clinical validation can improve assurance, but regulatory obligations may become economically unscalable if they are not proportional to risk and product value.",
       "question_ids": [
-        "q16",
         "q8",
+        "q16",
         "q11"
       ],
       "distinct_commenters": 16,
-      "positions": 45,
+      "positions": 42,
       "stakeholder_types": [
         "individual",
         "other",
@@ -215,7 +215,7 @@
         "q19"
       ],
       "distinct_commenters": 27,
-      "positions": 155,
+      "positions": 148,
       "stakeholder_types": [
         "individual",
         "other",
@@ -256,7 +256,7 @@
         "q1"
       ],
       "distinct_commenters": 18,
-      "positions": 55,
+      "positions": 52,
       "stakeholder_types": [
         "individual",
         "other",
@@ -296,7 +296,7 @@
         "q25"
       ],
       "distinct_commenters": 26,
-      "positions": 115,
+      "positions": 108,
       "stakeholder_types": [
         "individual",
         "other",
@@ -333,11 +333,11 @@
       "explanation": "Agentic systems raise a distinct question: what actions has the organization actually delegated to the AI, and how far can an error propagate before meaningful human intervention?",
       "question_ids": [
         "q26",
-        "q20",
-        "q1"
+        "q1",
+        "q20"
       ],
       "distinct_commenters": 32,
-      "positions": 200,
+      "positions": 192,
       "stakeholder_types": [
         "individual",
         "other",
@@ -352,18 +352,18 @@
           "excerpt": "Third, fail-safe default behavior when supervisory connectivity is lost must be explicitly defined and validated as part of premarket evaluation. An agentic AI device that loses its connection to cloud-based supervisory infrastructure must have a validated, clinically safe default operating mode that maintains patient safety without autonomous AI-directed action."
         },
         {
-          "position_id": "p-fda-2026-n-7874-0005-seg-098",
-          "commenter_id": "c-fda-2026-n-7874-0005",
-          "display_name": "Individual commenter (independent Boundary-Conditioned Realization auditor)",
-          "question_id": "q20",
-          "excerpt": "FDA Question 20 - Machine-based supervisory agents\n...\nBCR response. Machine supervisors may assist but should not self-certify the device. Validate them independently, control their version/lineage, measure detection performance, test common-mode blind spots, maintain audit logs, and provide fail-safe human escalation."
-        },
-        {
           "position_id": "p-fda-2026-n-7874-0010-seg-020",
           "commenter_id": "c-fda-2026-n-7874-0010",
           "display_name": "Individual commenter (regulatory and quality affairs professional)",
           "question_id": "q11",
           "excerpt": "I support the graduated ladder. Two recommendations.\nFirst, the selection should be  driven by the risk mapping recommended under Question 8 , not left to sponsor justification. Sponsor discretion in selecting one’s own evidentiary bar, even with a justification requirement, produces predictable downward pressure and inconsistent review."
+        },
+        {
+          "position_id": "p-fda-2026-n-7874-0013-seg-020",
+          "commenter_id": "c-fda-2026-n-7874-0013",
+          "display_name": "Individual commenter (regulatory and quality-affairs professional)",
+          "question_id": "q11",
+          "excerpt": "I support the graduated ladder. Two recommendations. First, the selection should be  driven by the risk mapping recommended under Question 8 , not left to sponsor justification. Sponsor discretion in selecting one’s own evidentiary bar, even with a justification requirement, produces predictable downward pressure and inconsistent review."
         }
       ]
     }

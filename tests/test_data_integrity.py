@@ -170,6 +170,79 @@ def test_stage_freshness_is_per_stage_prompt_version():
     assert seg["prompt_version"] == store.prompt_version("segment")
 
 
+
+def _pos(seg, qids, stance, passage, summary, confidence="high", gaps=None):
+    return {"segment_id": seg, "question_ids": qids, "position": stance, "primary_issue": "evidence_standards",
+            "secondary_issue": None, "stakeholder_concern": "c", "requested_fda_action": "a", "confidence": confidence,
+            "gap_tags": gaps or [], "gap_explanations": {g: "why" for g in (gaps or [])},
+            "public_summary": summary, "summary_cut": False, "source_passage": passage}
+
+
+def test_consolidation_folds_restatements_but_keeps_distinct_stances():
+    from pipeline import consolidate
+    body = ("FDA should require ninety days of advance notice before any material foundation model version change, "
+            "because shorter windows leave no time to rerun validation studies and execute change control procedures.")
+    full = _pos("seg-001", ["q24"], "support_with_modification", "Executive summary. " + body + " We also ask for version pinning.",
+                "Asks FDA to require 90 days' notice of model changes and version pinning.", gaps=["ai_supplier_quality"])
+    fragment = _pos("seg-002", ["q24", "q19"], "support_with_modification", body,
+                    "Requests a ninety-day notice window before model version changes.", confidence="medium",
+                    gaps=["deployment_assurance_scalability"])
+    opposite = _pos("seg-003", ["q24"], "oppose", body, "Opposes mandatory notice windows as unworkable.")
+    other_question = _pos("seg-004", ["q9"], "support_with_modification", body,
+                          "Asks FDA to require 90 days' notice of model changes and version pinning.")
+    kept, clusters = consolidate.consolidate_positions([full, fragment, opposite, other_question])
+    assert [p["segment_id"] for p in kept] == ["seg-001", "seg-003", "seg-004"]
+    assert clusters == [{
+        "kept_segment_id": "seg-001", "merged_segment_ids": ["seg-002"], "question_ids": ["q19", "q24"],
+        "position": "support_with_modification",
+        "matches": [{"segment_ids": ["seg-001", "seg-002"], "shared_question_ids": ["q24"],
+                     "passage_containment": clusters[0]["matches"][0]["passage_containment"],
+                     "summary_similarity": clusters[0]["matches"][0]["summary_similarity"]}],
+    }]
+    assert clusters[0]["matches"][0]["passage_containment"] >= consolidate.PASSAGE_CONTAINMENT
+    merged = kept[0]
+    assert merged["question_ids"] == ["q19", "q24"]
+    assert merged["gap_tags"] == ["ai_supplier_quality", "deployment_assurance_scalability"]
+    assert merged["gap_explanations"] == {"ai_supplier_quality": "why", "deployment_assurance_scalability": "why"}
+    assert merged["public_summary"] == full["public_summary"]
+    # Deterministic: the same input yields the same output, whatever the order.
+    kept2, clusters2 = consolidate.consolidate_positions([other_question, opposite, fragment, full])
+    assert {p["segment_id"] for p in kept2} == {"seg-001", "seg-003", "seg-004"}
+    assert clusters2 == clusters
+
+
+def test_consolidation_keeps_most_complete_record_and_caps_gaps():
+    from pipeline import consolidate
+    text = "Synthetic data suits rare-event stress testing and privacy-preserving scenario development but not latent relationships."
+    weaker = _pos("seg-001", ["q13"], "support_with_modification", text, "Backs synthetic data for rare events only.",
+                  confidence="medium", gaps=["evidence_burden_commercial_viability"])
+    stronger = _pos("seg-002", ["q13"], "support_with_modification", "Response to Question 13. " + text,
+                    "Backs synthetic data for rare-event testing, not for latent relationships.",
+                    gaps=["human_ai_system_performance", "operational_harm", "delegated_authority"])
+    kept, clusters = consolidate.consolidate_positions([weaker, stronger])
+    assert [p["segment_id"] for p in kept] == ["seg-002"]
+    assert kept[0]["gap_tags"] == ["human_ai_system_performance", "operational_harm", "delegated_authority"]
+    assert clusters[0]["merged_segment_ids"] == ["seg-001"]
+
+
+def test_consolidation_provenance_matches_analysis_records():
+    """Every consolidation sidecar must describe the analysis record it was
+    derived from; a stale sidecar would misattribute merged ids."""
+    from pipeline import consolidate
+    sidecars = sorted((ROOT / "classified" / "consolidation").glob("*.json"))
+    for path in sidecars:
+        record = json.loads(path.read_text(encoding="utf-8"))
+        analysis = store.load_stage("analysis", record["comment_id"])
+        assert analysis, f"{path.name}: analysis record missing"
+        assert record["analysis_hash"] == store.hash_of_record(analysis), f"{path.name}: stale consolidation record"
+        assert record["rule_version"] == consolidate.RULE_VERSION
+        segment_ids = {p["segment_id"] for p in analysis["positions"]}
+        for cluster in record["clusters"]:
+            assert cluster["kept_segment_id"] in segment_ids
+            assert set(cluster["merged_segment_ids"]) <= segment_ids
+            assert cluster["kept_segment_id"] not in cluster["merged_segment_ids"]
+
+
 if __name__ == "__main__":
     failures = 0
     for name, fn in list(globals().items()):
