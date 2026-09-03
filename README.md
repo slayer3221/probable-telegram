@@ -16,7 +16,7 @@ js/filters.js              Filter state, URL parsing, matching and per-question 
 js/tracker.js              Rendering (hero, signals, question cards, gaps, evidence drawer)
 js/taxonomies.js           Public labels; mirrors scripts/pipeline/taxonomies.py
 data/                      Public JSON the page loads (questions, commenters, submissions, positions, gaps, site-summary); live docket data only
-editorial/                 Curated Vahana Labs layer: vahana-read.json, gaps.json, signals.json (never touched by ingestion)
+editorial/                 Curated Vahana Labs layer: executive-read.json, vahana-read.json, gaps.json, signals.json (never touched by ingestion)
 scripts/                   Python ingestion and build pipeline (see below)
 scripts/pipeline/          Shared modules: taxonomies, aggregation rules, Regulations.gov client, LLM client, storage
 prompts/                   Versioned classification prompts and prompts/config.json
@@ -37,7 +37,7 @@ python3 -m http.server 8000
 # open http://localhost:8000/
 ```
 
-Until the first committed refresh, `data/` holds an empty live dataset: the page renders all 26 questions with zero commenters and the signal strip shows "Not enough comments yet". There is no demo or synthetic data in this repository.
+Until the first committed refresh, `data/` holds an empty live dataset: the page renders all 26 questions with zero commenters and the signal strip shows "Not enough comments yet". The executive read above the signals is curated copy and renders regardless; its framing line reads the live counts. There is no demo or synthetic data in this repository.
 
 Run the tests:
 
@@ -111,7 +111,7 @@ Many institutional comments put the substance in an attachment. Supported format
 
 - Distinct commenters, distinct submissions and substantive positions are counted separately. Several positions from one submission never inflate the commenter count.
 - When one submission states the same point more than once on the same question (an executive summary and a per-question response, a passage that straddles a chunk boundary), the build folds those records into one position. The rule is deterministic and makes no model call: same submission, a shared question, the same position label, and either the shorter passage is largely contained in the longer one or the two summaries are close (`scripts/pipeline/consolidate.py`). The most complete record is kept; the merged segment ids are written to `classified/consolidation/<id>.json` and counted in `public/build-manifest.json`. Positions with different stances are never merged.
-- Stakeholder-level conclusions (biggest divide, strongest alignment, implication cards) require at least 5 distinct commenters; below that the tracker says "Limited data" or "Not enough comments yet".
+- Stakeholder-level conclusions (implication cards, the docket-wide pattern card) require at least 5 distinct commenters; below that the tracker says "Limited data" or "Not enough comments yet". No top-level signal is derived from a per-question majority of stance labels, because on open-ended questions "support with modification" says little on its own.
 - A curated tension block renders only when a question has at least 3 distinct commenters from at least 2 stakeholder groups.
 - No percentages are shown.
 - Positions classified `unclear` with `low` confidence are not published. Model confidence is never published.
@@ -122,7 +122,7 @@ Many institutional comments put the substance in an attachment. Supported format
 
 ## Editorial layer
 
-`editorial/vahana-read.json` holds the curated Vahana read fields per question (alignment, tension, commercialization implication, real-world deployment implication, what FDA may be missing) and the stakeholder tension blocks. It ships empty: entries are written only after reading the real submissions for a question, and ingestion never modifies the file. `editorial/gaps.json` holds the nine cross-cutting issue definitions. `editorial/signals.json` holds optional implication signal cards and also ships empty; computed cards fill the strip until it has content. Counts, stakeholder groups and representative examples under each gap are computed from commenter data at build time.
+`editorial/executive-read.json` holds the executive layer shown above the signals: five takeaways drafted from the approved Vahana reads, each naming the questions it draws on, and three role lenses. `editorial/vahana-read.json` holds the curated Vahana read fields per question (alignment, tension, commercialization implication, real-world deployment implication, what FDA may be missing) and the stakeholder tension blocks. It ships empty: entries are written only after reading the real submissions for a question, and ingestion never modifies the file. `editorial/gaps.json` holds the nine cross-cutting issue definitions. `editorial/signals.json` holds optional implication signal cards and also ships empty; computed cards fill the strip until it has content. Counts, stakeholder groups and representative examples under each gap are computed from commenter data at build time.
 
 ## FDA question text
 

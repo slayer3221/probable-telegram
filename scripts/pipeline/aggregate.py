@@ -143,31 +143,38 @@ def gap_stats(editorial_gaps, positions, submissions_by_id, commenters_by_id, ma
     return out
 
 
-def _divide_score(stat):
-    """Higher when positions are spread across several categories."""
-    dist = stat["position_distribution"]
-    total = sum(dist.values())
-    if total == 0:
-        return 0.0
-    shares = [v / total for v in dist.values()]
-    return 1.0 - max(shares) if len(shares) > 1 else 0.0
-
-
-def _alignment_score(stat):
-    dist = stat["position_distribution"]
-    total = sum(dist.values())
-    if total == 0:
-        return 0.0
-    return max(dist.values()) / total
+def _pattern(qstats, totals):
+    """Docket-wide check for the 'how, not whether' pattern: on every question
+    with enough commenters, positions asking for modification outnumber every
+    other category, and outright opposition is rare across the docket.
+    `totals` counts distinct positions by stance (a position mapped to several
+    questions counts once). Returns (holds, totals)."""
+    eligible = [st for st in qstats.values() if st["conclusion_eligible"]]
+    totals = Counter(totals or {})
+    total = sum(totals.values())
+    if not eligible or total == 0:
+        return False, totals
+    plurality = all(
+        st["position_distribution"].get("support_with_modification", 0) > max(
+            (v for k, v in st["position_distribution"].items() if k != "support_with_modification"), default=0)
+        for st in eligible)
+    modify = totals.get("support_with_modification", 0)
+    oppose = totals.get("oppose", 0)
+    holds = plurality and modify > total / 2 and oppose * 10 < total
+    return holds, totals
 
 
 def _label(stakeholder_type):
     return STAKEHOLDER_TYPES[stakeholder_type]["label"]
 
 
-def compute_signals(questions, qstats, gap_rows, editorial_cards):
-    """Return exactly four signal cards, selected from computed findings and
-    editorial implication cards. Cards make no strong claim below threshold."""
+SIGNAL_COUNT = 3
+
+
+def compute_signals(questions, qstats, gap_rows, editorial_cards, position_totals=None):
+    """Return exactly SIGNAL_COUNT signal cards, selected from computed
+    findings and editorial implication cards. Cards make no strong claim
+    below threshold, and none is derived from a per-question stance majority."""
     by_id = {q["id"]: q for q in questions}
     ranked = sorted(qstats.items(), key=lambda kv: (kv[1]["distinct_commenters"], kv[1]["positions"]), reverse=True)
     cards = []
@@ -191,27 +198,18 @@ def compute_signals(questions, qstats, gap_rows, editorial_cards):
             "target_question_id": top_qid,
         })
 
-    # Biggest stakeholder divide (threshold applies)
-    eligible = [(qid, st) for qid, st in qstats.items() if st["conclusion_eligible"]]
-    if eligible:
-        qid, st = max(eligible, key=lambda kv: (_divide_score(kv[1]), kv[1]["distinct_commenters"]))
-        if _divide_score(st) >= 0.4:
-            groups = " · ".join(_label(t) for t in list(st["stakeholder_mix"])[:4])
-            cards.append({
-                "category": "divide",
-                "label": "Biggest stakeholder divide",
-                "headline": by_id[qid]["short_title"],
-                "detail": f"Positions on Q{by_id[qid]['question_number']} spread across {len(st['position_distribution'])} categories, with no single position holding a majority.",
-                "evidence": f"Q{by_id[qid]['question_number']} · {len(st['stakeholder_mix'])} stakeholder types · {st['distinct_submissions']} submissions",
-                "target_question_id": qid,
-            })
-    else:
+    # Notable pattern (docket-wide, threshold applies). The stance labels are
+    # not read as agreement or disagreement with FDA; the card only reports
+    # that positions overwhelmingly accept the direction and argue the terms.
+    holds, totals = _pattern(qstats, position_totals)
+    if holds:
+        eligible_n = sum(1 for st in qstats.values() if st["conclusion_eligible"])
         cards.append({
-            "category": "divide",
-            "label": "Biggest stakeholder divide",
-            "headline": "Not enough comments yet",
-            "detail": f"Stakeholder-level conclusions are stated only once a question has at least {MIN_COMMENTERS_FOR_CONCLUSION} distinct commenters.",
-            "evidence": "Limited data",
+            "category": "pattern",
+            "label": "Notable pattern",
+            "headline": "The debate is about how, not whether",
+            "detail": "Commenters seldom reject FDA's proposed approaches outright. Most positions accept the direction and argue over where to draw the boundaries, how much evidence to require, and who should carry the burden.",
+            "evidence": f"{totals.get('support_with_modification', 0)} of {sum(totals.values())} positions ask for modification · {totals.get('oppose', 0)} oppose · plurality on {eligible_n} of {len(qstats)} questions",
             "target_question_id": ranked[0][0] if ranked else "q1",
         })
 
@@ -236,22 +234,8 @@ def compute_signals(questions, qstats, gap_rows, editorial_cards):
             "target_question_id": card.get("target_question_id") or (qids[0] if qids else "q1"),
         })
 
-    # Strongest alignment (threshold applies)
-    if len(cards) < 4 and eligible:
-        qid, st = max(eligible, key=lambda kv: (_alignment_score(kv[1]), kv[1]["distinct_commenters"]))
-        if _alignment_score(st) >= 0.6:
-            top_pos = max(st["position_distribution"], key=st["position_distribution"].get)
-            cards.append({
-                "category": "alignment",
-                "label": "Strongest alignment",
-                "headline": by_id[qid]["short_title"],
-                "detail": f"Most positions on Q{by_id[qid]['question_number']} are classified as '{POSITIONS[top_pos]['label']}' across {len(st['stakeholder_mix'])} stakeholder types.",
-                "evidence": f"Q{by_id[qid]['question_number']} · {st['distinct_commenters']} commenters",
-                "target_question_id": qid,
-            })
-
     # Emerging blind spot (gap with most distinct commenters)
-    if len(cards) < 4 and gap_rows:
+    if len(cards) < SIGNAL_COUNT and gap_rows:
         g = max(gap_rows, key=lambda r: r["distinct_commenters"])
         if g["distinct_commenters"] > 0:
             cards.append({
@@ -264,24 +248,23 @@ def compute_signals(questions, qstats, gap_rows, editorial_cards):
                 "target_question_id": g["question_ids"][0] if g["question_ids"] else "q1",
             })
 
-    # Fallbacks so the strip always holds four cards without overstating anything.
+    # Fallbacks so the strip always holds three cards without overstating anything.
     fallbacks = [
         ("most_discussed", "Most discussed", "No positions yet", "The tracker shows the most discussed question once comments have been classified."),
-        ("divide", "Biggest stakeholder divide", "No clear divide yet", "A divide is reported only when positions on a question with enough commenters spread across categories with no majority."),
-        ("alignment", "Strongest alignment", "Not enough comments yet", f"Alignment is reported only once a question has at least {MIN_COMMENTERS_FOR_CONCLUSION} distinct commenters."),
+        ("pattern", "Notable pattern", "Not enough comments yet", f"Docket-wide patterns are reported only once questions have at least {MIN_COMMENTERS_FOR_CONCLUSION} distinct commenters."),
         ("blind_spot", "Emerging blind spot", "Not enough comments yet", "Cross-cutting issues are surfaced once commenters raise them across several questions."),
     ]
     present = {c["category"] for c in cards}
     for category, label, headline, detail in fallbacks:
-        if len(cards) >= 4:
+        if len(cards) >= SIGNAL_COUNT:
             break
         if category in present:
             continue
         cards.append({"category": category, "label": label, "headline": headline, "detail": detail,
                       "evidence": "Limited data", "target_question_id": ranked[0][0] if ranked else "q1"})
-    order = {"most_discussed": 0, "divide": 1, "commercialization": 2, "deployment": 3, "alignment": 4, "blind_spot": 5}
+    order = {"most_discussed": 0, "pattern": 1, "commercialization": 2, "deployment": 3, "blind_spot": 4}
     cards.sort(key=lambda c: order.get(c["category"], 9))
-    return cards[:4]
+    return cards[:SIGNAL_COUNT]
 
 
 def build_site_summary(questions, commenters, submissions, positions, qstats, gap_rows, signals, meta):
@@ -326,7 +309,7 @@ def build_public_dataset(questions, commenters, submissions, positions, editoria
     qids = [q["id"] for q in questions]
     qstats = question_stats(qids, pub_positions, submissions_by_id, commenters_by_id)
     gap_rows = gap_stats(editorial_gaps, pub_positions, submissions_by_id, commenters_by_id)
-    signals = compute_signals(questions, qstats, gap_rows, editorial_cards)
+    signals = compute_signals(questions, qstats, gap_rows, editorial_cards, Counter(p["position"] for p in pub_positions))
     summary = build_site_summary(questions, pub_commenters, pub_submissions, pub_positions, qstats, gap_rows, signals, meta)
     return {
         "commenters.json": {"commenters": pub_commenters},

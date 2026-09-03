@@ -1,0 +1,57 @@
+{
+  "note": "Curated Vahana Labs executive layer rendered above the docket signals. Routine ingestion never writes to this file. Every takeaway is drafted from the approved entries in editorial/vahana-read.json and the live gap counts; question_ids name the questions it draws on. Counts in the framing line are read from data/site-summary.json at render time, never hard-coded here.",
+  "title": "Executive read: what this docket could change",
+  "intro": "Vahana Labs interpretation of the public comments, written for product, strategy and operating leaders. It is editorial, not a commenter position, and every theme links to the questions it draws on.",
+  "takeaways": [
+    {
+      "id": "evidence-burden",
+      "title": "Evidence burden and market structure",
+      "text": "Commenters back evidence that scales with risk, but proportionality only helps if sponsors can predict the evidence bar before they design a program. Where that bar cannot be anticipated, development cost, capital requirements, and time to market stay uncertain, and a uniform evidence floor could make lower-value informational use cases uneconomic and favor incumbents.",
+      "question_ids": ["q8", "q11"]
+    },
+    {
+      "id": "product-boundary",
+      "title": "The product boundary expands",
+      "text": "For multi-turn and agentic systems, the comments treat the regulated product as more than the model. Permission architecture, tool interfaces, logging, rollback controls, human-intervention design, and a declared envelope of permitted behavior may all become part of what is evaluated, which makes intended-use boundaries an early product decision rather than a labeling exercise.",
+      "question_ids": ["q5", "q26"]
+    },
+    {
+      "id": "postmarket-operating-model",
+      "title": "Postmarket monitoring becomes an operating model",
+      "text": "Commenters do not question postmarket monitoring. They ask for a risk-scaled cadence, defined triggers for reassessment, and a named owner for residual risk. If re-benchmarking, telemetry, clinician review, and event-triggered requalification become expected, they turn into recurring costs and shared responsibilities between vendors and deploying organizations, defined in contracts and implementation plans rather than regulatory files alone.",
+      "question_ids": ["q19", "q21"]
+    },
+    {
+      "id": "supplier-risk",
+      "title": "Foundation-model dependence is supplier risk",
+      "text": "Commenters treat upstream model change as a problem that contractual notice alone cannot solve, pairing notice rights with version pinning, validation gates, change detection, and rollback. That makes base-model selection an architecture and financing decision. It shapes validation cost, update velocity, switching costs, and diligence, and one submission notes that smaller manufacturers may lack the leverage to obtain notice at all.",
+      "question_ids": ["q24", "q25"]
+    },
+    {
+      "id": "deployment-assurance",
+      "title": "Deployment assurance may be the differentiator",
+      "text": "A lighter FDA pathway does not necessarily mean a lighter buyer review. Health systems may still ask how evidence maps to their population, workflow, and users. The comments point toward an advantage for companies that can repeatedly demonstrate safe deployment across sites, workflows, populations, and upstream model changes, not only strong model performance.",
+      "question_ids": ["q11", "q19", "q24"]
+    }
+  ],
+  "lenses": [
+    {
+      "id": "cpo",
+      "role": "For a Chief Product Officer",
+      "question": "What changes about what I build?",
+      "themes": ["Product boundary", "Intended use and claims", "Evidence strategy", "Model and supplier architecture", "Monitoring capability", "Human oversight and agentic permissions"]
+    },
+    {
+      "id": "cso",
+      "role": "For a Chief Strategy Officer or CEO",
+      "question": "What changes about where I compete?",
+      "themes": ["Capital intensity", "Viable use cases", "Incumbent advantage", "Defensibility", "Supplier leverage", "Sales cycle", "Market structure"]
+    },
+    {
+      "id": "coo",
+      "role": "For a COO or health-system operator",
+      "question": "What changes about how this gets deployed?",
+      "themes": ["Procurement", "Local validation", "Telemetry", "Monitoring ownership", "Change management", "Escalation and rollback", "Governance", "Contracting"]
+    }
+  ]
+}
