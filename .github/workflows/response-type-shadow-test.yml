@@ -1,0 +1,76 @@
+name: Response type shadow test
+
+# Runs one or more response-type variants (model x representation) against
+# the same submissions as the production records and reports agreement.
+# Writes only to classified/response_types_shadow/; production records, the
+# build and the site are untouched.
+
+on:
+  workflow_dispatch:
+    inputs:
+      variants:
+        description: "Comma-separated variants: opus-full, opus-compact, opus-summary, haiku-full, haiku-compact, haiku-summary, sonnet-compact"
+        default: "haiku-compact,opus-summary"
+      questions:
+        description: "Restrict to submissions holding a position on these questions (empty = all with production records)"
+        default: "q1,q13"
+      commit_results:
+        description: "Commit the shadow records and metrics back to the branch"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-comments
+  cancel-in-progress: false
+
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    env:
+      REGULATION_TRACKER_ANTHROPIC: ${{ secrets.REGULATION_TRACKER_ANTHROPIC }}
+      ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID || vars.ANTHROPIC_WORKSPACE_ID }}
+      VARIANTS: ${{ github.event.inputs.variants || 'haiku-compact,opus-summary' }}
+      QUESTIONS: ${{ github.event.inputs.questions }}
+      LLM_CONCURRENCY: ${{ vars.LLM_CONCURRENCY || '4' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Check model access
+        run: python3 scripts/check_llm_access.py
+      - name: Run shadow variants
+        run: |
+          IFS=',' read -ra LIST <<< "$VARIANTS"
+          for v in "${LIST[@]}"; do
+            v="$(echo "$v" | xargs)"
+            echo "::group::variant $v"
+            python3 scripts/classify_response_types.py --shadow "$v" --questions "$QUESTIONS"
+            echo "::endgroup::"
+          done
+      - name: Report agreement
+        if: always()
+        run: |
+          echo "## Response type shadow test" >> "$GITHUB_STEP_SUMMARY"
+          IFS=',' read -ra LIST <<< "$VARIANTS"
+          for v in "${LIST[@]}"; do
+            v="$(echo "$v" | xargs)"
+            python3 scripts/compare_response_types.py --shadow "$v" --questions "$QUESTIONS" --markdown | tee -a "$GITHUB_STEP_SUMMARY"
+          done
+      - name: Commit shadow results
+        if: ${{ github.event.inputs.commit_results == 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add classified/response_types_shadow public/run-metrics.json
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Response type shadow test ($VARIANTS, $(date -u +%Y-%m-%d))"
+            git push
+          fi
