@@ -215,7 +215,7 @@ def main():
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
     ensure_dirs()
-    wanted = [q.strip() for q in args.questions.split(",") if q.strip()]
+    wanted = [] if args.questions.strip().lower() == "all" else [q.strip() for q in args.questions.split(",") if q.strip()]
 
     data = assemble_dataset()
     if data["response_types_missing"]:

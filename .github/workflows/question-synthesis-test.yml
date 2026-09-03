@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       questions:
-        description: "Comma-separated question ids to synthesize (response types run for the submissions on them)"
+        description: "Comma-separated question ids to synthesize, or all (response types run for the submissions on them; cached records are reused)"
         default: "q1,q13"
       commit_results:
         description: "Commit classified/, data/ and public/ back to the branch"

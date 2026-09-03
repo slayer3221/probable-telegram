@@ -107,7 +107,7 @@ def main():
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
     ensure_dirs()
-    wanted_qs = {q.strip() for q in args.questions.split(",") if q.strip()}
+    wanted_qs = set() if args.questions.strip().lower() == "all" else {q.strip() for q in args.questions.split(",") if q.strip()}
     model, representation = (VARIANTS[args.shadow] if args.shadow else (None, "full"))
     model = args.model or model or LLM_MODEL
     representation = args.representation or representation
