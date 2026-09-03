@@ -53,7 +53,7 @@ export function renderFraming(summary) {
   if (!m.positions_identified) {
     return 'This is not a yes/no docket. Once public submissions are classified, this line reports how many distinct positions, recommendations and concerns they contain across FDA\u2019s 26 questions.';
   }
-  return `This is not a yes/no docket. The public submissions analyzed so far contain <strong>${esc(m.positions_identified)} distinct positions</strong>, recommendations and concerns across FDA\u2019s ${esc(m.questions_tracked)} questions, from ${esc(m.commenters_represented)} commenters.`;
+  return `This is not a yes/no docket. ${esc(m.commenters_represented)} commenters have put <strong>${esc(m.positions_identified)} distinct positions</strong> on the record across FDA\u2019s ${esc(m.questions_tracked)} questions. So far, the argument is mostly over terms, not direction.`;
 }
 
 function questionLinks(qids, index) {
