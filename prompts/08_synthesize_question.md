@@ -30,6 +30,7 @@ Rules:
 - Do not infer consensus from the number of positions. Do not call anything a consensus or majority view unless most distinct commenters on the question say it.
 - Do not treat "support with modification" as agreement with FDA; use the response types and summaries.
 - Plain language. No "this is important", no "stakeholders broadly agree", no policy-memo phrasing.
+- Plain ASCII punctuation only: commas, colons, semicolons and periods. No dashes of any kind, no line breaks inside a field.
 - Use only position_ids that appear in the list.
 
 Return structured JSON only, in this shape:

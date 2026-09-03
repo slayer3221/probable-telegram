@@ -62,6 +62,11 @@ def compare_snapshots(prior, new):
     if new_combos:
         reasons.append({"reason": "new_substantive_position",
                         "detail": "new issue and response-type combination(s): " + ", ".join(c.replace("|", " / ") for c in new_combos)})
+    # Synthesis-derived comparisons need a prior synthesis. The first build
+    # after a question is synthesized establishes its baseline instead of
+    # reporting that a disagreement "emerged" from nothing.
+    if prior["synthesis_status"] == "pending" or not prior["saying"] or new["synthesis_status"] == "pending":
+        return reasons
     if prior["dominant_response_type"] and new["dominant_response_type"] \
             and prior["dominant_response_type"] != new["dominant_response_type"]:
         reasons.append({"reason": "dominant_response_type_changed",

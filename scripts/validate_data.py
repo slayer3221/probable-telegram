@@ -150,7 +150,9 @@ def validate(data_dir: Path, editorial_dir: Path):
         if [a.get("question_id") for a in rows] != QUESTION_IDS:
             errors.append("analyses.json must hold one record per question, q1..q26 in order")
         position_ids = {x["id"]: x for x in p["positions"]}
-        limits = {"saying": 60, "disagreement": 60}
+        # The stage enforces 60 words before cleanup; replacing a dash that
+        # joined two words can add one, so the published limit allows 10% over.
+        limits = {"saying": 66, "disagreement": 66}
         for a in rows:
             qid = a.get("question_id")
             if a.get("status") not in ("generated", "stale", "pending"):
@@ -159,6 +161,9 @@ def validate(data_dir: Path, editorial_dir: Path):
                 continue
             if a.get("dominant_response_type") not in RESPONSE_TYPES:
                 errors.append(f"{qid}: unknown dominant_response_type")
+            for label, text in (("saying", a.get("saying")), ("disagreement text", (a.get("disagreement") or {}).get("text"))):
+                if re.search(r"\\u[0-9a-fA-F]{4}|[\r\n\x00-\x08\x0b\x0c\x0e-\x1f\x7f]|[\u2013\u2014]", text or ""):
+                    errors.append(f"{qid}: {label} carries a broken escape, control character or dash")
             if len((a.get("saying") or "").split()) > limits["saying"] or not a.get("saying"):
                 errors.append(f"{qid}: saying missing or over {limits['saying']} words")
             d = a.get("disagreement") or {}
