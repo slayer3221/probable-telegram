@@ -134,4 +134,4 @@ Copyright Vahana Labs. All rights reserved. The source is published for transpar
 
 ## Trust model
 
-Every interpretation is traceable to source evidence. Each commenter card offers **View evidence** (excerpt, question mapping, classification, submission date, Regulations.gov ID) and **Original comment**. There is no review or verification workflow in the data model or the code.
+Every interpretation is traceable to source evidence. Each question shows one card per commenter; a commenter who makes several distinct points on that question has them numbered inside the one card, each with its own stance and evidence. Every point offers **View evidence** (excerpt, question mapping, classification, submission date, Regulations.gov ID) and **Original comment**. There is no review or verification workflow in the data model or the code.

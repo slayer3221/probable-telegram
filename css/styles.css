@@ -210,6 +210,15 @@ main { padding: 36px 0 8px; }
 .pc__head { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; align-items: flex-start; }
 .pc__org { font-size: 15.5px; font-weight: 600; color: var(--neutral-black); }
 .pc__type { font-size: 12px; color: var(--neutral-slate); margin-top: 3px; }
+.pc__badges { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.pc__points { list-style: none; margin: 0; padding: 0; }
+.pc__points--multi { counter-reset: point; }
+.pc__points--multi .pc__point { position: relative; padding-left: 26px; }
+.pc__points--multi .pc__point::before { counter-increment: point; content: counter(point); position: absolute; left: 0; top: 13px; width: 18px; height: 18px; border-radius: 50%; border: 1px solid var(--brand-primary); color: var(--brand-primary); font: 600 10.5px/16px var(--font-body); text-align: center; }
+.pc__points--multi .pc__point + .pc__point { border-top: 1px solid var(--border-subtle); margin-top: 14px; }
+.pc__point-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+.pc__point-head + .pc__summary { margin-top: 8px; }
+.pc__point-meta { font-size: 12px; color: var(--neutral-slate); }
 .badge { display: inline-block; border-radius: 999px; padding: 4px 10px; font-size: 11.5px; font-weight: 600; line-height: 1.3; color: #fff; white-space: nowrap; }
 .badge--support { background: var(--pos-support); }
 .badge--support_with_modification { background: var(--pos-modify); }
