@@ -85,9 +85,10 @@ def test_editorial_layer_is_separate_from_public_data():
         assert set(entry).issubset({"tension", "vahana_read"}), qid
 
 
-def test_tiny_dataset_yields_four_signals(tmp_path):
+def test_tiny_dataset_yields_three_signals(tmp_path):
     """A first live run may have only a couple of commenters; the signal strip
-    must still hold four cards and the dataset must validate."""
+    must still hold three cards, none derived from a stance majority, and the
+    dataset must validate."""
     questions = json.loads((ROOT / "data" / "questions.json").read_text(encoding="utf-8"))["questions"]
     gaps = json.loads((ROOT / "editorial" / "gaps.json").read_text(encoding="utf-8"))["gaps"]
     cards = json.loads((ROOT / "editorial" / "signals.json").read_text(encoding="utf-8"))["cards"]
@@ -110,7 +111,8 @@ def test_tiny_dataset_yields_four_signals(tmp_path):
             "docket": {"docket_id": "D", "docket_url": "", "document_id": "", "discussion_paper_url": "", "comment_deadline": "2026-10-19", "paper_date": "2026-08-18"}}
     files = aggregate.build_public_dataset(questions, commenters, submissions, positions, gaps, cards, meta)
     summary = files["site-summary.json"]
-    assert len(summary["signals"]) == 4, [c["label"] for c in summary["signals"]]
+    assert len(summary["signals"]) == 3, [c["label"] for c in summary["signals"]]
+    assert [c["category"] for c in summary["signals"]] == ["most_discussed", "pattern", "blind_spot"]
     assert all("Limited data" in c["evidence"] or "Not enough" in c["headline"] for c in summary["signals"][1:])
     assert summary["metrics"]["comments_analyzed"] == 3
     assert summary["metrics"]["commenters_represented"] == 2
@@ -121,6 +123,29 @@ def test_tiny_dataset_yields_four_signals(tmp_path):
         (out / name).write_text(json.dumps(payload), encoding="utf-8")
     errors, _ = validate(out, ROOT / "editorial")
     assert errors == [], "\n".join(errors)
+
+
+def test_pattern_signal_requires_docket_wide_support():
+    """The 'how, not whether' card is reported only when modification positions
+    hold the plurality on every eligible question and opposition is rare."""
+    def stat(dist, commenters=6):
+        return {"distinct_commenters": commenters, "distinct_submissions": commenters, "positions": sum(dist.values()),
+                "stakeholder_mix": {"other": commenters}, "position_distribution": dist,
+                "tension_eligible": True, "conclusion_eligible": commenters >= 5}
+    holds, totals = aggregate._pattern({"q1": stat({"support_with_modification": 20, "support": 2, "oppose": 1}),
+                                        "q2": stat({"support_with_modification": 9, "oppose": 1})},
+                                       {"support_with_modification": 27, "support": 2, "oppose": 2})
+    assert holds and totals["support_with_modification"] == 27, "totals are distinct positions, not per-question sums"
+    holds, _ = aggregate._pattern({"q1": stat({"support_with_modification": 20, "oppose": 1}),
+                                   "q2": stat({"oppose": 6, "support_with_modification": 5})},
+                                  {"support_with_modification": 25, "oppose": 7})
+    assert not holds, "a question where opposition leads must block the pattern"
+    holds, _ = aggregate._pattern({"q1": stat({"support_with_modification": 12, "oppose": 3})},
+                                  {"support_with_modification": 12, "oppose": 3})
+    assert not holds, "one in five positions opposing is not rare"
+    holds, _ = aggregate._pattern({"q1": stat({"support_with_modification": 3}, commenters=2)},
+                                  {"support_with_modification": 3})
+    assert not holds, "no eligible question means no pattern"
 
 
 def test_metrics_cost_and_totals():

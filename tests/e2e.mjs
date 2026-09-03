@@ -39,7 +39,20 @@ page.on('console', (m) => { if (m.type() === 'error' && !/Failed to load resourc
 await page.goto(`${BASE}/index.html`, { waitUntil: 'networkidle' });
 await page.waitForSelector('.q');
 check('page renders 26 question cards', (await page.locator('.q').count()) === 26);
-check('four signal cards', (await page.locator('.signal').count()) === 4);
+check('three signal cards', (await page.locator('.signal').count()) === 3);
+check('no stance-majority signal', !(await page.locator('.signal__label').allInnerTexts()).some((t) => /alignment|divide/i.test(t)));
+// Executive read sits between the hero and the signals
+check('executive read renders five takeaways', (await page.locator('#exec .exec__item').count()) === 5);
+check('executive read renders three lenses', (await page.locator('#exec .lens').count()) === 3);
+check('executive read precedes signals', await page.evaluate(() => document.getElementById('exec').compareDocumentPosition(document.querySelector('.signals')) & Node.DOCUMENT_POSITION_FOLLOWING));
+check('framing line uses live counts', (await page.locator('#exec-framing').innerText()).includes(String(positions.length)));
+check('executive read is labeled editorial', /editorial|interpretation/i.test(await page.locator('#exec .exec__meta').innerText()));
+if (HAS_DATA) {
+  await page.locator('#exec .exec__item [data-action="jump"]').first().click();
+  await page.waitForTimeout(300);
+  check('takeaway link opens its question', (await page.locator('.q[data-open="true"]').count()) >= 1);
+  await page.locator('.q[data-open="true"] .q__toggle').first().click();
+}
 check('six hero metrics', (await page.locator('.metric').count()) === 6);
 check('nine gap cards', (await page.locator('.gap').count()) === 9);
 check('four sections', (await page.locator('#tracker .section').count()) === 4);

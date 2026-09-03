@@ -47,6 +47,7 @@ def validate(data_dir: Path, editorial_dir: Path):
     summary = read_json(data_dir / "site-summary.json")
     editorial = read_json(editorial_dir / "vahana-read.json")
     editorial_gaps = read_json(editorial_dir / "gaps.json")
+    executive = read_json(editorial_dir / "executive-read.json")
     for name, payload in (("questions", q), ("commenters", c), ("submissions", s), ("positions", p), ("gaps", g), ("site-summary", summary), ("editorial", editorial)):
         if payload is None:
             errors.append(f"{name}.json missing")
@@ -127,11 +128,37 @@ def validate(data_dir: Path, editorial_dir: Path):
         errors.append("site-summary metrics do not match dataset sizes")
     if m["questions_tracked"] != 26:
         errors.append("questions_tracked must be 26")
-    if len(summary.get("signals", [])) != 4:
-        errors.append(f"exactly four signal cards required, got {len(summary.get('signals', []))}")
+    if len(summary.get("signals", [])) != 3:
+        errors.append(f"exactly three signal cards required, got {len(summary.get('signals', []))}")
+    if any(c.get("category") in ("alignment", "divide") for c in summary.get("signals", [])):
+        errors.append("signal cards must not be derived from a per-question stance majority or spread")
     for card in summary.get("signals", []):
         if card["target_question_id"] not in QUESTION_IDS:
             errors.append(f"signal '{card['label']}' targets unknown question")
+
+    # Executive read (curated, rendered above the signals)
+    if not executive:
+        errors.append("editorial/executive-read.json missing")
+    else:
+        takeaways = executive.get("takeaways", [])
+        if len(takeaways) != 5:
+            errors.append(f"executive read must hold exactly five takeaways, got {len(takeaways)}")
+        for t in takeaways:
+            if not t.get("title") or not t.get("text"):
+                errors.append(f"executive takeaway '{t.get('id')}' needs a title and text")
+            if len(t.get("text", "").split(". ")) > 4:
+                warnings.append(f"executive takeaway '{t.get('id')}' runs longer than three sentences")
+            if not t.get("question_ids") or any(qid not in QUESTION_IDS for qid in t.get("question_ids", [])):
+                errors.append(f"executive takeaway '{t.get('id')}' must name valid question ids")
+            for qid in t.get("question_ids", []):
+                if qid not in editorial.get("questions", {}) and qid not in ("q21", "q25"):
+                    warnings.append(f"executive takeaway '{t.get('id')}' cites {qid}, which has no Vahana read")
+        lenses = executive.get("lenses", [])
+        if len(lenses) != 3:
+            errors.append(f"executive read must hold exactly three role lenses, got {len(lenses)}")
+        for lens in lenses:
+            if not lens.get("role") or not lens.get("question") or not 3 <= len(lens.get("themes", [])) <= 8:
+                errors.append(f"executive lens '{lens.get('id')}' needs a role, a question and three to eight themes")
 
     # Gaps
     gap_ids = [x["id"] for x in g["gaps"]]

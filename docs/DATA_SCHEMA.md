@@ -108,7 +108,7 @@ Computed at build time from `editorial/gaps.json` plus positions.
 }
 ```
 
-Exactly four signal cards are published. Most discussed, biggest stakeholder divide, strongest alignment and emerging blind spot are computed; commercialization and deployment cards come from `editorial/signals.json` and are shown only when the referenced gap or questions meet the conclusion threshold.
+Exactly three signal cards are published. Most discussed, notable pattern and emerging blind spot are computed; commercialization and deployment cards from `editorial/signals.json` take precedence over the blind spot when present. No card is derived from a per-question stance majority or spread: the notable pattern ("The debate is about how, not whether") is reported only when modification positions hold the plurality on every question with enough commenters and outright opposition is rare across the docket; otherwise it reads "Not enough comments yet".
 
 ## Editorial layer (`editorial/`)
 
@@ -122,6 +122,10 @@ Exactly four signal cards are published. Most discussed, biggest stakeholder div
 ```
 
 All `vahana_read` fields are optional; only fields with content render. A `tension` block renders only when the question's live data meets the tension threshold.
+
+### executive-read.json
+
+Curated executive layer rendered above the signals: `title`, `intro`, `takeaways[]` (`id`, `title`, `text`, `question_ids` naming the questions each draws on) and `lenses[]` (`id`, `role`, `question`, `themes[]`). Drafted from the approved Vahana read entries; the framing line's counts come from `site-summary.json` at render time.
 
 ### gaps.json and signals.json
 
@@ -153,5 +157,6 @@ Every file carries `comment_id`, `input_hash`, `prompt_version` (of that stage's
 - `model_confidence` and any review or verification field are absent from public data.
 - Per question: distinct commenters <= distinct submissions <= positions; distributions sum correctly.
 - Exactly nine gaps, at most three examples each, all references resolvable.
-- Exactly four signal cards targeting valid questions.
+- Exactly three signal cards targeting valid questions, none with category `alignment` or `divide`.
+- `editorial/executive-read.json` holds exactly five takeaways with valid `question_ids` and three role lenses with three to eight themes each.
 - Editorial entries keyed by valid question ids with only the allowed fields.

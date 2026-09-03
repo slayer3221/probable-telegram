@@ -1,8 +1,8 @@
 // Bootstrap: load static JSON, own state and DOM, wire interactions.
 import { DEFAULT_STATE, buildIndex, buildUrl, computeView, parseLocation } from './filters.js';
 import {
-  renderEvidence, renderFilterGroups, renderGaps, renderMetrics, renderSections,
-  renderSignals, renderViews, resultLine,
+  renderEvidence, renderExecutive, renderFilterGroups, renderFraming, renderGaps, renderLenses, renderMetrics,
+  renderSections, renderSignals, renderVahanaLinks, renderViews, resultLine,
 } from './tracker.js';
 
 const DATA_FILES = {
@@ -13,11 +13,13 @@ const DATA_FILES = {
   gaps: 'data/gaps.json',
   summary: 'data/site-summary.json',
   editorial: 'editorial/vahana-read.json',
+  executive: 'editorial/executive-read.json',
 };
 
 const $ = (id) => document.getElementById(id);
 const el = {
   metrics: $('metrics'), heroNote: $('hero-note'), heroLinks: $('hero-links'), heroKicker: $('hero-kicker'),
+  execFraming: $('exec-framing'), execList: $('exec-list'), lenses: $('lenses'), vahanaLinks: $('vahana-links'),
   signals: $('signals'), views: $('views'), search: $('search'), filterRows: $('filter-rows'),
   resultLine: $('result-line'), tracker: $('tracker'), gaps: $('gaps'), gapsGrid: $('gaps-grid'),
   methodNote: $('method-note'), filterDrawer: $('filter-drawer'), filterDrawerGroups: $('filter-drawer-groups'),
@@ -48,6 +50,7 @@ async function loadData() {
     gaps: raw.gaps.gaps,
     summary: raw.summary,
     editorial: raw.editorial,
+    executive: raw.executive,
   });
 }
 
@@ -71,6 +74,10 @@ function renderStatic() {
   const s = index.summary;
   el.metrics.innerHTML = renderMetrics(s);
   el.signals.innerHTML = renderSignals(s.signals || []);
+  el.execFraming.innerHTML = renderFraming(s);
+  el.execList.innerHTML = renderExecutive(index);
+  el.lenses.innerHTML = renderLenses(index);
+  el.vahanaLinks.innerHTML = renderVahanaLinks(index);
   const docket = s.docket || {};
   if (docket.docket_id) el.heroKicker.textContent = `Public comment tracker · Docket ${docket.docket_id}`;
   const paper = el.heroLinks.querySelector('[data-link="paper"]');

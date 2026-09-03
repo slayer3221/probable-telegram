@@ -46,6 +46,50 @@ export function renderSignals(signals) {
     </button>`).join('');
 }
 
+// Executive layer. Copy comes from editorial/executive-read.json; counts come
+// from the live site summary so the framing never carries a stale number.
+export function renderFraming(summary) {
+  const m = summary.metrics || {};
+  if (!m.positions_identified) {
+    return 'This is not a yes/no docket. Once public submissions are classified, this line reports how many distinct positions, recommendations and concerns they contain across FDA\u2019s 26 questions.';
+  }
+  return `This is not a yes/no docket. The public submissions analyzed so far contain <strong>${esc(m.positions_identified)} distinct positions</strong>, recommendations and concerns across FDA\u2019s ${esc(m.questions_tracked)} questions, from ${esc(m.commenters_represented)} commenters.`;
+}
+
+function questionLinks(qids, index) {
+  return qids.filter((qid) => index.questionsById[qid]).map((qid) =>
+    `<button class="btn-outline btn-outline--tiny" type="button" data-action="jump" data-q="${esc(qid)}" title="${esc(index.questionsById[qid].short_title)}">${qcode(qid)}</button>`).join('');
+}
+
+export function renderExecutive(index) {
+  const takeaways = (index.executive && index.executive.takeaways) || [];
+  return takeaways.map((t, i) => `
+    <li class="exec__item" id="exec-${esc(t.id)}">
+      <span class="exec__num" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+      <h3>${esc(t.title)}</h3>
+      <p class="exec__text">${esc(t.text)}</p>
+      <div class="exec__links"><span class="label">Drawn from</span> ${questionLinks(t.question_ids || [], index)}</div>
+    </li>`).join('');
+}
+
+export function renderLenses(index) {
+  const lenses = (index.executive && index.executive.lenses) || [];
+  return lenses.map((l) => `
+    <div class="lens" id="lens-${esc(l.id)}">
+      <div class="lens__role">${esc(l.role)}</div>
+      <p class="lens__q">${esc(l.question)}</p>
+      <ul class="lens__themes">${(l.themes || []).map((t) => `<li>${esc(t)}</li>`).join('')}</ul>
+    </div>`).join('');
+}
+
+export function renderVahanaLinks(index) {
+  const qids = Object.keys((index.editorial && index.editorial.questions) || {})
+    .filter((qid) => index.questionsById[qid] && index.editorial.questions[qid].vahana_read)
+    .sort((a, b) => qnum(a) - qnum(b));
+  if (!qids.length) return '';
+  return `<span>Vahana commercialization and deployment reads on</span> ${questionLinks(qids, index)}`;
+}
+
 export function renderViews(state) {
   return VIEWS.map((v) => `
     <button class="view-btn" type="button" data-action="view" data-view="${v.id}" aria-pressed="${state.view === v.id}">${esc(v.label)}</button>`).join('');
