@@ -142,6 +142,7 @@ Every file carries `comment_id`, `input_hash`, `prompt_version` (of that stage's
 
 - `segments/<id>.json`: `positions[]` with `segment_id`, `question_ids`, `source_passage`, `position_gist`.
 - `analysis/<id>.json`: `positions[]` with `segment_id`, `question_ids`, `position`, `primary_issue`, `secondary_issue`, `stakeholder_concern`, `requested_fda_action`, `confidence`, `gap_tags`, `gap_explanations`, `public_summary`, `summary_cut`, `source_passage`. Produced by one structured-output call per position; the fields stay separate.
+- `consolidation/<id>.json`: build-time provenance for near-duplicate positions folded within one submission: `analysis_hash` (of the analysis record it was derived from), `rule_version`, `clusters[]` with `kept_segment_id`, `merged_segment_ids`, `question_ids`, `position` and the pairwise `matches` (`passage_containment`, `summary_similarity`). Present only for submissions where something was merged. No model call is involved.
 - `commenters.json`: `commenters{comment_id: {display_name, organization, stakeholder_type, source_identity_text, confidence, input_hash, prompt_version, model}}`.
 
 ## Integrity rules enforced by `scripts/validate_data.py`

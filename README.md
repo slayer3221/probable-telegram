@@ -21,7 +21,7 @@ scripts/                   Python ingestion and build pipeline (see below)
 scripts/pipeline/          Shared modules: taxonomies, aggregation rules, Regulations.gov client, LLM client, storage
 prompts/                   Versioned classification prompts and prompts/config.json
 raw/                       Source-faithful Regulations.gov records and extracted text (attachment binaries are git-ignored)
-classified/                AI-derived segments, classifications, gap tags, summaries with prompt/model metadata
+classified/                AI-derived segments, classifications, gap tags, summaries with prompt/model metadata; consolidation/ records near-duplicate positions folded at build time
 public/                    Build manifest (versions, counts, exclusions)
 tests/                     Data integrity tests and a Playwright end-to-end script
 docs/DATA_SCHEMA.md        Field-level schema documentation
@@ -110,6 +110,7 @@ Many institutional comments put the substance in an attachment. Supported format
 ### Aggregation rules
 
 - Distinct commenters, distinct submissions and substantive positions are counted separately. Several positions from one submission never inflate the commenter count.
+- When one submission states the same point more than once on the same question (an executive summary and a per-question response, a passage that straddles a chunk boundary), the build folds those records into one position. The rule is deterministic and makes no model call: same submission, a shared question, the same position label, and either the shorter passage is largely contained in the longer one or the two summaries are close (`scripts/pipeline/consolidate.py`). The most complete record is kept; the merged segment ids are written to `classified/consolidation/<id>.json` and counted in `public/build-manifest.json`. Positions with different stances are never merged.
 - Stakeholder-level conclusions (biggest divide, strongest alignment, implication cards) require at least 5 distinct commenters; below that the tracker says "Limited data" or "Not enough comments yet".
 - A curated tension block renders only when a question has at least 3 distinct commenters from at least 2 stakeholder groups.
 - No percentages are shown.
