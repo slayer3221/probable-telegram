@@ -87,7 +87,9 @@ if (HAS_DATA) {
 const analyses = JSON.parse(fs.readFileSync('data/analyses.json', 'utf8')).analyses.filter((a) => a.status !== 'pending');
 if (analyses.length) {
   const a = analyses[0];
-  if (a.question_id !== Q) { await page.locator(`#${a.question_id}-toggle`).click(); await page.waitForTimeout(150); }
+  const synthToggle = page.locator(`#${a.question_id}-toggle`);
+  const openedForSynth = (await synthToggle.getAttribute('aria-expanded')) !== 'true';
+  if (openedForSynth) { await synthToggle.click(); await page.waitForTimeout(150); }
   const synth = page.locator(`#${a.question_id}-panel .q__synth`);
   check('synthesis block renders', (await synth.count()) === 1);
   check('synthesis has saying and disagreement text', (await synth.locator('.q__saying').innerText()).length > 20 && (await synth.locator('.q__disagree').innerText()).length > 20);
@@ -96,7 +98,7 @@ if (analyses.length) {
   check('synthesis evidence opens evidence drawer', !(await page.locator('#evidence-drawer').isHidden()));
   await page.keyboard.press('Escape');
   check('synthesis makes no implication claims', !/commercializ|deployment implication|market structure/i.test(await synth.innerText()));
-  if (a.question_id !== Q) await page.locator(`#${a.question_id}-toggle`).click();
+  if (openedForSynth) await synthToggle.click();
 }
 
 // Grouped card: a commenter with several distinct points on one question
