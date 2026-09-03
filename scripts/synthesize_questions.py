@@ -257,6 +257,8 @@ def main():
         llm.metrics.add("synthesis_rewrites")
         return llm.text(render(template_shorten, MAX_WORDS=max_words, WORDS=word_count(text), TEXT=text), max_tokens=512, effort="low")
 
+    saved = []
+
     def run(task):
         qid, input_hash, payload, rows = task
         q = questions_by_id[qid]
@@ -267,17 +269,22 @@ def main():
                         MAX_SAYING_WORDS=LIMITS["saying"], MAX_DISAGREEMENT_WORDS=LIMITS["disagreement"],
                         POSITIONS=positions_text(rows))
         raw = llm.json(prompt, SYNTHESIS_SCHEMA, max_tokens=4096)
-        return qid, input_hash, raw, finalize(qid, raw, rows, shorten=shorten)
-
-    for qid, input_hash, raw, record in llm.map(run, pending):
+        record = finalize(qid, raw, rows, shorten=shorten)
         record["raw_model_output"] = raw
+        # Persist per question so an aborted run keeps completed syntheses.
         save_stage("synthesis", qid, stage_envelope(qid, input_hash, record, "synthesis"))
+        saved.append(qid)
         log.info("%s: synthesized (%d commenters, disagreement=%s, downgrades=%s)", qid, record["distinct_commenters"],
                  record["disagreement"]["exists"], record["downgrades"] or "none")
+        return qid
 
-    metrics = llm.finish(questions_processed=len(pending), questions_reused=fresh, questions_without_positions=empty)
-    log.info("done: %d synthesized, %d already fresh, %d without positions; %d model calls in %.0fs (est. $%s)",
-             len(pending), fresh, empty, metrics["llm_calls"], metrics["elapsed_seconds"], metrics["estimated_cost_usd"])
+    try:
+        llm.map(run, pending)
+    finally:
+        metrics = llm.finish(questions_processed=len(saved), questions_pending_at_exit=len(pending) - len(saved),
+                             questions_reused=fresh, questions_without_positions=empty)
+        log.info("done: %d synthesized, %d already fresh, %d without positions; %d model calls in %.0fs (est. $%s)",
+                 len(saved), fresh, empty, metrics["llm_calls"], metrics["elapsed_seconds"], metrics["estimated_cost_usd"])
 
 
 if __name__ == "__main__":
