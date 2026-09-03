@@ -22,6 +22,7 @@ from pipeline.consolidate import RULE_VERSION as CONSOLIDATION_RULE_VERSION  # n
 from pipeline.io_utils import now_iso, read_json, write_json  # noqa: E402
 from pipeline.review import STATE_VERSION, build_review_queue, question_snapshot  # noqa: E402
 from pipeline.store import load_stage, stage_is_fresh  # noqa: E402
+from pipeline.textclean import clean_text, has_broken_escapes  # noqa: E402
 
 log = logging.getLogger("build")
 PUBLIC_ANALYSIS_FIELDS = ("saying", "dominant_response_type", "response_type_distribution", "disagreement",
@@ -34,7 +35,7 @@ def question_analyses(questions, grouped):
     'generated' when it matches the current positions, 'stale' when the
     positions changed since it was written, and 'pending' when none exists."""
     from synthesize_questions import synthesis_input  # local import: script module, not a package
-    out, internal = [], {}
+    out, internal, broken = [], {}, []
     for q in questions:
         qid = q["id"]
         rows = grouped.get(qid, [])
@@ -48,11 +49,19 @@ def question_analyses(questions, grouped):
         status = "generated" if stage_is_fresh(record, input_hash, "synthesis") else "stale"
         public = {"question_id": qid, "status": status}
         public.update({k: record.get(k) for k in PUBLIC_ANALYSIS_FIELDS})
-        # Sides carry commenter ids for the guards; the page needs only position ids.
+        # Records written before text cleanup existed are cleaned here; a record
+        # whose text is still broken after cleanup is reported for regeneration.
+        public["saying"] = clean_text(record.get("saying"))
         public["disagreement"] = dict(record["disagreement"])
-        public["disagreement"]["sides"] = [{"summary": s["summary"], "position_ids": s["position_ids"]} for s in record["disagreement"].get("sides", [])]
+        public["disagreement"]["text"] = clean_text(record["disagreement"].get("text"))
+        public["disagreement"]["sides"] = [{"summary": clean_text(s["summary"]), "position_ids": s["position_ids"]} for s in record["disagreement"].get("sides", [])]
+        public["stakeholder_divide"] = dict(record["stakeholder_divide"], text=clean_text(record["stakeholder_divide"].get("text")))
+        if any(has_broken_escapes(t) for t in (record.get("saying"), record["disagreement"].get("text"))):
+            broken.append(qid)
         out.append(public)
         internal[qid] = dict(record, status=status)
+    if broken:
+        log.warning("synthesis text with broken escapes (regenerate these questions): %s", ", ".join(broken))
     return out, internal
 
 

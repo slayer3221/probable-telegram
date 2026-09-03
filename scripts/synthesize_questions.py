@@ -31,6 +31,7 @@ from pipeline.config import PROMPT_CONFIG, ensure_dirs  # noqa: E402
 from pipeline.io_utils import content_hash  # noqa: E402
 from pipeline.llm import LLM, SYNTHESIS_SCHEMA, load_prompt, render  # noqa: E402
 from pipeline.store import load_stage, save_stage, stage_envelope, stage_is_fresh  # noqa: E402
+from pipeline.textclean import clean_text  # noqa: E402
 from pipeline.taxonomies import (DISAGREEMENT_TOPICS, MIN_COMMENTERS_FOR_CONCLUSION, MIN_COMMENTERS_FOR_TENSION,  # noqa: E402
                                  MIN_COMMENTERS_PER_SIDE_FOR_DIVIDE, RESPONSE_TYPES, STAKEHOLDER_TYPES)
 
@@ -107,7 +108,7 @@ def finalize(qid, raw, rows, shorten=None):
     flags, downgrades = [], []
 
     def limit(text, key):
-        text = (text or "").strip().strip('"')
+        text = clean_text((text or "").strip().strip('"'))
         if word_count(text) > LIMITS[key]:
             if shorten:
                 text = shorten(text, LIMITS[key]).strip().strip('"')
@@ -136,7 +137,7 @@ def finalize(qid, raw, rows, shorten=None):
     for side in dis.get("sides") or []:
         ids = [i for i in side.get("position_ids") or [] if i in by_id]
         if ids:
-            sides.append({"summary": (side.get("summary") or "").strip(), "position_ids": ids,
+            sides.append({"summary": clean_text((side.get("summary") or "").strip()), "position_ids": ids,
                           "commenter_ids": sorted({commenter_of(i) for i in ids})})
     exists = bool(dis.get("exists"))
     if exists:
@@ -168,7 +169,7 @@ def finalize(qid, raw, rows, shorten=None):
         note = "The current docket does not yet support a reliable stakeholder comparison on this question."
         downgrades.append("stakeholder_divide_unsupported")
     divide = {"exists": divide_ok, "groups": groups if divide_ok else [],
-              "text": (div.get("text") or "").strip() if divide_ok else "", "note": note}
+              "text": clean_text((div.get("text") or "").strip()) if divide_ok else "", "note": note}
 
     # Evidence: valid ids, distinct commenters, both sides when a disagreement exists.
     evidence = []

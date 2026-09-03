@@ -318,6 +318,15 @@ def test_synthesis_guards_downgrade_unsupported_claims():
     assert len(out["saying"].split()) <= 60 and "saying_cut_at_sentence" in out["quality_flags"]
 
 
+def test_text_cleanup_repairs_broken_escapes_without_adding_words():
+    from pipeline.textclean import clean_text, has_broken_escapes
+    assert clean_text("how to operationalize it \\u2014 how intended use") == "how to operationalize it, how intended use"
+    assert clean_text("otherwise get\ninformationally\nunaided clinicians\nbut want") == "otherwise get, informationally, unaided clinicians, but want"
+    assert clean_text("A sound start \u2014 not complete.") == "A sound start, not complete."
+    assert clean_text("keeps: \u2014 the rest") == "keeps: the rest"
+    assert has_broken_escapes("details \x08enchmark") and not has_broken_escapes(clean_text("plain text, fine."))
+
+
 def test_review_queue_flags_only_material_changes():
     from pipeline import review
     rows = [_row("p1", "c1"), _row("p2", "c2", "concern")]
@@ -340,6 +349,10 @@ def test_review_queue_flags_only_material_changes():
     assert queue["flagged"][0]["question_id"] == "q8" and queue["flagged"][0]["vahana_read_may_need_review"] is True
     assert queue["flagged"][0]["prior_distinct_commenters"] == 2 and queue["flagged"][0]["new_distinct_commenters"] == 3
     assert review.build_review_queue(None, {"q8": new}, "t")["baseline"] is True
+    # The first synthesis of a question establishes a baseline; it does not "emerge" from a pending state.
+    pending = review.question_snapshot("q8", rows, None, True)
+    first = review.question_snapshot("q8", rows, dict(syn, disagreement={"exists": True, "about": ["ownership"]}), True)
+    assert review.compare_snapshots(pending, first) == []
 
 
 if __name__ == "__main__":
