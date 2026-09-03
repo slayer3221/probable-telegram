@@ -69,6 +69,32 @@ GAPS = {
     "delegated_authority": "Delegated authority",
 }
 
+# How a position responds to an open-ended FDA question. Stance (POSITIONS)
+# stays for compatibility; response type is the primary lens where stance is
+# not meaningful.
+RESPONSE_TYPES = {
+    "direct_answer": "Direct answer",
+    "recommendation": "Recommendation",
+    "concern": "Concern",
+    "proposed_criterion": "Proposed criterion",
+    "evidence_suggestion": "Evidence suggestion",
+    "scope_challenge": "Scope challenge",
+    "implementation_issue": "Implementation issue",
+    "no_clear_answer": "No clear answer",
+}
+
+# What a question's debate is about when commenters differ.
+DISAGREEMENT_TOPICS = {
+    "thresholds": "Thresholds",
+    "scope": "Scope",
+    "evidence_burden": "Evidence burden",
+    "ownership": "Ownership",
+    "implementation": "Implementation",
+    "definitions": "Definitions",
+    "timing": "Timing",
+    "degree_of_autonomy": "Degree of autonomy",
+}
+
 CONFIDENCE = ("high", "medium", "low")
 
 # Minimum distinct commenters before the tracker states a stakeholder-level
@@ -79,6 +105,12 @@ MIN_COMMENTERS_FOR_CONCLUSION = 5
 # curated tension block is rendered on a question.
 MIN_COMMENTERS_FOR_TENSION = 3
 MIN_GROUPS_FOR_TENSION = 2
+
+# A substantive disagreement needs two distinct commenters in material
+# conflict. A stakeholder divide needs more: at least this many distinct
+# commenters on each side, and each named stakeholder group represented by
+# at least MIN_COMMENTERS_FOR_TENSION distinct commenters on the question.
+MIN_COMMENTERS_PER_SIDE_FOR_DIVIDE = 2
 
 QUESTION_IDS = [f"q{n}" for n in range(1, 27)]
 

@@ -76,6 +76,9 @@ fetch_comments.py      Regulations.gov -> raw/comments/*.json, raw/attachments/
 parse_attachments.py   PDF/DOCX/TXT extraction -> raw/text/*.txt (+ .meta.json with usability and content hash)
 segment_comments.py    Stage 1 prompt: identify commenter, split into substantive positions -> classified/segments, classified/commenters.json
 analyze_positions.py   Stage 2 prompt, one structured-output call per substantive position: classification, zero to three cross-cutting gaps, and the neutral public summary (max 45 words) as separate fields -> classified/analysis
+classify_response_types.py  One call per submission: a response type (direct answer, recommendation, concern, proposed criterion, evidence suggestion, scope challenge, implementation issue, no clear answer) for each analyzed position -> classified/response_types. Keyed by the analysis record's hash, so the analysis cache is never invalidated
+synthesize_questions.py     One call per FDA question: a short descriptive synthesis (what commenters are saying, where the real disagreement is, evidence position ids) -> classified/synthesis. Keyed by a hash of the question's positions, so only changed questions rerun
+report_synthesis.py         Prints a question's synthesis as rendered, with response-type distribution, evidence, counts and stage metrics
 build_public_data.py   Aggregation -> data/*.json, public/build-manifest.json and public/run-metrics.json
 validate_data.py       Integrity rules; non-zero exit blocks the workflow
 fetch_fda_questions.py Imports exact FDA question wording from the discussion paper PDF into data/questions.json
@@ -91,6 +94,8 @@ python3 scripts/fetch_comments.py --limit 5     # small test run
 python3 scripts/parse_attachments.py
 python3 scripts/segment_comments.py
 python3 scripts/analyze_positions.py
+python3 scripts/classify_response_types.py
+python3 scripts/synthesize_questions.py
 python3 scripts/build_public_data.py
 python3 scripts/validate_data.py
 ```
@@ -115,10 +120,16 @@ Many institutional comments put the substance in an attachment. Supported format
 - A curated tension block renders only when a question has at least 3 distinct commenters from at least 2 stakeholder groups.
 - No percentages are shown.
 - Positions classified `unclear` with `low` confidence are not published. Model confidence is never published.
+- Stance (support, support with modification, oppose, mixed) is kept for compatibility, but on open-ended questions the response type is the primary lens. The question synthesis and the top-level signals never read a stance majority as agreement.
+- The generated question synthesis is descriptive only: what commenters are saying, where the real disagreement is, and which positions evidence it. It never adds commercialization, deployment, market or operating implications; those stay in the curated Vahana read. Deterministic guards run after the model call: evidence ids must exist and span distinct commenters; a disagreement needs at least two distinct commenters in material conflict; a stakeholder divide needs at least 2 distinct commenters on each side, each group represented by at least 3 distinct commenters on the question. Anything weaker is downgraded and the record says the docket does not yet support a stakeholder comparison.
+
+### Question-level change detection
+
+Every build snapshots each question (distinct commenters, stakeholder groups, issue and response-type combinations, disagreement state, synthesis text) in `classified/question-state.json` and compares it with the previous build. A question lands in `public/question-review-queue.json` only when something material changed: a new issue and response-type combination, a new stakeholder group, a changed dominant response type, a disagreement that appeared or disappeared, an issue crossing 5 distinct commenters, a materially changed synthesis, or a synthesis that went stale. Another commenter repeating an existing point, wording changes, or metadata changes do not flag. Each entry carries the reasons, what changed, prior and new distinct-commenter counts, new stakeholder groups and whether the question has a Vahana read that may need review. `public/` is never published by the Pages workflow, so the queue stays private.
 
 ### Scheduled refresh
 
-`.github/workflows/refresh-comments.yml` runs on demand, and daily once the repository variable `REFRESH_SCHEDULE_ENABLED` is set to `true` (scheduled runs process the whole docket and commit, so they stay off until you turn them on). It needs two repository secrets: `REGULATIONS_GOV_API_KEY` and `REGULATION_TRACKER_ANTHROPIC`. If the Anthropic key is identity-linked (the API returns "anthropic-workspace-id is required"), also set `ANTHROPIC_WORKSPACE_ID` as a secret or repository variable; a workspace-scoped key needs nothing extra. The workflow runs `scripts/check_llm_access.py` first so a bad key or workspace fails before any docket calls. Manual runs accept `fetch_limit` and `stage_limit` inputs for small live tests, and `commit_results` can be set to `false` to leave the repository untouched. It commits changes to `raw/`, `classified/`, `data/` and `public/` only. Optionally set the `LLM_MODEL` variable to override the model in `prompts/config.json`.
+`.github/workflows/refresh-comments.yml` runs on demand, and daily once the repository variable `REFRESH_SCHEDULE_ENABLED` is set to `true` (scheduled runs process the whole docket and commit, so they stay off until you turn them on). It needs two repository secrets: `REGULATIONS_GOV_API_KEY` and `REGULATION_TRACKER_ANTHROPIC`. If the Anthropic key is identity-linked (the API returns "anthropic-workspace-id is required"), also set `ANTHROPIC_WORKSPACE_ID` as a secret or repository variable; a workspace-scoped key needs nothing extra. The workflow runs `scripts/check_llm_access.py` first so a bad key or workspace fails before any docket calls. In scheduled and manual refreshes the two question-level stages run only once the repository variable `QUESTION_SYNTHESIS_ENABLED` is `true`. The `Question synthesis test` workflow runs only the response-type and synthesis stages for a comma-separated list of questions against the classified records already in the repository, then prints the rendered synthesis, evidence and stage metrics in the job summary. Manual refresh runs accept `fetch_limit` and `stage_limit` inputs for small live tests, and `commit_results` can be set to `false` to leave the repository untouched. It commits changes to `raw/`, `classified/`, `data/` and `public/` only. Optionally set the `LLM_MODEL` variable to override the model in `prompts/config.json`.
 
 ## Editorial layer
 

@@ -7,17 +7,19 @@ A stage output is reused when all of the following match the current run:
 - model (for LLM stages)
 """
 from .config import (
-    CLASSIFIED_ANALYSIS, CLASSIFIED_SEGMENTS, LLM_MODEL, PROCESSING_VERSION,
-    RAW_COMMENTS, RAW_TEXT, prompt_version,
+    CLASSIFIED_ANALYSIS, CLASSIFIED_RESPONSE_TYPES, CLASSIFIED_SEGMENTS, CLASSIFIED_SYNTHESIS, LLM_MODEL,
+    PROCESSING_VERSION, RAW_COMMENTS, RAW_TEXT, prompt_version,
 )
 from .io_utils import content_hash, now_iso, read_json, write_json
 
 STAGE_DIRS = {
     "segments": CLASSIFIED_SEGMENTS,
     "analysis": CLASSIFIED_ANALYSIS,
+    "response_types": CLASSIFIED_RESPONSE_TYPES,
+    "synthesis": CLASSIFIED_SYNTHESIS,
 }
 # Which prompt version governs each stored stage.
-STAGE_PROMPT = {"segments": "segment", "analysis": "analyze"}
+STAGE_PROMPT = {"segments": "segment", "analysis": "analyze", "response_types": "response_types", "synthesis": "synthesize"}
 
 
 def raw_comment_path(comment_id):

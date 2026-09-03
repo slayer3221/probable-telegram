@@ -1,0 +1,68 @@
+name: Question synthesis test
+
+# Runs the two new stages on a small set of questions against the classified
+# records already in the repository. No fetching, segmentation or analysis
+# happens here, so the existing caches are untouched.
+
+on:
+  workflow_dispatch:
+    inputs:
+      questions:
+        description: "Comma-separated question ids to synthesize (response types run for the submissions on them)"
+        default: "q1,q13"
+      commit_results:
+        description: "Commit classified/, data/ and public/ back to the branch"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-comments
+  cancel-in-progress: false
+
+jobs:
+  synthesize:
+    runs-on: ubuntu-latest
+    env:
+      REGULATION_TRACKER_ANTHROPIC: ${{ secrets.REGULATION_TRACKER_ANTHROPIC }}
+      ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID || vars.ANTHROPIC_WORKSPACE_ID }}
+      QUESTIONS: ${{ github.event.inputs.questions || 'q1,q13' }}
+      LLM_CONCURRENCY: ${{ vars.LLM_CONCURRENCY || '4' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Check model access
+        run: python3 scripts/check_llm_access.py
+      - name: Assign response types for submissions on the requested questions
+        run: python3 scripts/classify_response_types.py --questions "$QUESTIONS"
+      - name: Synthesize the requested questions
+        run: python3 scripts/synthesize_questions.py --questions "$QUESTIONS"
+      - name: Build public data
+        run: python3 scripts/build_public_data.py
+      - name: Validate public data
+        run: python3 scripts/validate_data.py
+      - name: Run integrity tests
+        run: python3 tests/test_data_integrity.py
+      - name: Report
+        if: always()
+        run: |
+          echo "## Question synthesis report" >> "$GITHUB_STEP_SUMMARY"
+          python3 scripts/report_synthesis.py --questions "$QUESTIONS" --markdown | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Commit results
+        if: ${{ github.event.inputs.commit_results == 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add classified data public
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Question synthesis test ($QUESTIONS, $(date -u +%Y-%m-%d))"
+            git push
+          fi
