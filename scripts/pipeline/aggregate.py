@@ -208,7 +208,7 @@ def compute_signals(questions, qstats, gap_rows, editorial_cards, position_total
             "category": "pattern",
             "label": "Notable pattern",
             "headline": "The debate is about how, not whether",
-            "detail": "Commenters seldom reject FDA's proposed approaches outright. Most positions accept the direction and argue over where to draw the boundaries, how much evidence to require, and who should carry the burden.",
+            "detail": "Commenters rarely reject FDA's direction. They argue over the terms: where the boundaries sit, how much evidence is enough, and who carries the burden.",
             "evidence": f"{totals.get('support_with_modification', 0)} of {sum(totals.values())} positions ask for modification · {totals.get('oppose', 0)} oppose · plurality on {eligible_n} of {len(qstats)} questions",
             "target_question_id": ranked[0][0] if ranked else "q1",
         })

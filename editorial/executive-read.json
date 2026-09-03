@@ -5,53 +5,93 @@
   "takeaways": [
     {
       "id": "evidence-burden",
-      "title": "Evidence burden and market structure",
-      "text": "Commenters back evidence that scales with risk, but proportionality only helps if sponsors can predict the evidence bar before they design a program. Where that bar cannot be anticipated, development cost, capital requirements, and time to market stay uncertain, and a uniform evidence floor could make lower-value informational use cases uneconomic and favor incumbents.",
-      "question_ids": ["q8", "q11"]
+      "title": "Evidence burden could decide which products get built.",
+      "text": "Commenters back evidence that scales with risk. Proportionality only helps if a sponsor can predict the bar before it designs a program. If the bar stays unpredictable, capital cost and time to market stay uncertain, and a uniform evidence floor could price lower-value informational use cases out of the market and favor incumbents.",
+      "question_ids": [
+        "q8",
+        "q11"
+      ]
     },
     {
       "id": "product-boundary",
-      "title": "The product boundary expands",
-      "text": "For multi-turn and agentic systems, the comments treat the regulated product as more than the model. Permission architecture, tool interfaces, logging, rollback controls, human-intervention design, and a declared envelope of permitted behavior may all become part of what is evaluated, which makes intended-use boundaries an early product decision rather than a labeling exercise.",
-      "question_ids": ["q5", "q26"]
+      "title": "The model may be only part of the regulated product.",
+      "text": "For multi-turn and agentic systems, commenters treat what gets evaluated as more than the model: permission architecture, tool interfaces, logging, rollback controls, human-intervention design, and a declared envelope of permitted behavior. That moves intended-use boundaries from a labeling exercise to an early product decision.",
+      "question_ids": [
+        "q5",
+        "q26"
+      ]
     },
     {
       "id": "postmarket-operating-model",
-      "title": "Postmarket monitoring becomes an operating model",
-      "text": "Commenters do not question postmarket monitoring. They ask for a risk-scaled cadence, defined triggers for reassessment, and a named owner for residual risk. If re-benchmarking, telemetry, clinician review, and event-triggered requalification become expected, they turn into recurring costs and shared responsibilities between vendors and deploying organizations, defined in contracts and implementation plans rather than regulatory files alone.",
-      "question_ids": ["q19", "q21"]
+      "title": "Monitoring is not overhead. It is part of the product economics.",
+      "text": "Commenters do not question postmarket monitoring. They ask for a risk-scaled cadence, defined reassessment triggers, and a named owner for residual risk. If that holds, re-benchmarking, telemetry, clinician review, and requalification become recurring costs and shared obligations, set in contracts and implementation plans rather than regulatory files alone.",
+      "question_ids": [
+        "q19",
+        "q21"
+      ]
     },
     {
       "id": "supplier-risk",
-      "title": "Foundation-model dependence is supplier risk",
-      "text": "Commenters treat upstream model change as a problem that contractual notice alone cannot solve, pairing notice rights with version pinning, validation gates, change detection, and rollback. That makes base-model selection an architecture and financing decision. It shapes validation cost, update velocity, switching costs, and diligence, and one submission notes that smaller manufacturers may lack the leverage to obtain notice at all.",
-      "question_ids": ["q24", "q25"]
+      "title": "Your model supplier may become part of your regulatory risk.",
+      "text": "Commenters treat upstream model change as a problem notice alone cannot solve. They pair notice rights with version pinning, validation gates, change detection, and rollback. That makes base-model choice an architecture and financing decision: it shapes validation cost, update velocity, switching costs, and diligence, and one submission notes smaller manufacturers may not have the bargaining power to get notice at all.",
+      "question_ids": [
+        "q24",
+        "q25"
+      ]
     },
     {
       "id": "deployment-assurance",
-      "title": "Deployment assurance may be the differentiator",
-      "text": "A lighter FDA pathway does not necessarily mean a lighter buyer review. Health systems may still ask how evidence maps to their population, workflow, and users. The comments point toward an advantage for companies that can repeatedly demonstrate safe deployment across sites, workflows, populations, and upstream model changes, not only strong model performance.",
-      "question_ids": ["q11", "q19", "q24"]
+      "title": "Safe deployment may become a competitive advantage.",
+      "text": "A lighter FDA pathway does not guarantee a lighter buyer review. Health systems can still ask how the evidence maps to their population, workflow, and users. The comments point to an edge for companies that can show safe deployment again and again, across sites, workflows, populations, and upstream model changes, not only strong model performance.",
+      "question_ids": [
+        "q11",
+        "q19",
+        "q24"
+      ]
     }
   ],
   "lenses": [
     {
       "id": "cpo",
       "role": "For a Chief Product Officer",
-      "question": "What changes about what I build?",
-      "themes": ["Product boundary", "Intended use and claims", "Evidence strategy", "Model and supplier architecture", "Monitoring capability", "Human oversight and agentic permissions"]
+      "question": "What now becomes part of the product?",
+      "themes": [
+        "Product boundary",
+        "Intended use and claims",
+        "Evidence strategy",
+        "Model and supplier architecture",
+        "Monitoring capability",
+        "Human oversight and agentic permissions"
+      ]
     },
     {
       "id": "cso",
       "role": "For a Chief Strategy Officer or CEO",
-      "question": "What changes about where I compete?",
-      "themes": ["Capital intensity", "Viable use cases", "Incumbent advantage", "Defensibility", "Supplier leverage", "Sales cycle", "Market structure"]
+      "question": "What changes the market?",
+      "themes": [
+        "Capital intensity",
+        "Viable use cases",
+        "Incumbent advantage",
+        "Defensibility",
+        "Supplier leverage",
+        "Sales cycle",
+        "Market structure"
+      ]
     },
     {
       "id": "coo",
       "role": "For a COO or health-system operator",
-      "question": "What changes about how this gets deployed?",
-      "themes": ["Procurement", "Local validation", "Telemetry", "Monitoring ownership", "Change management", "Escalation and rollback", "Governance", "Contracting"]
+      "question": "What gets harder to deploy?",
+      "themes": [
+        "Procurement",
+        "Local validation",
+        "Telemetry",
+        "Monitoring ownership",
+        "Change management",
+        "Escalation and rollback",
+        "Governance",
+        "Contracting"
+      ]
     }
   ]
 }
