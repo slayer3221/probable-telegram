@@ -53,6 +53,13 @@ check('accordion opens', (await toggle.getAttribute('aria-expanded')) === 'true'
 check('panel shows FDA question text', (await page.locator(`#${Q}-panel .q__fda`).innerText()).length > 40);
 check(`hash updated to #${Q}`, page.url().endsWith(`#${Q}`));
 if (HAS_DATA) check('panel shows commenter cards', (await page.locator(`#${Q}-panel .pc`).count()) >= 1);
+if (HAS_DATA) {
+  // One card per commenter per question; every position on the question appears as a point inside its commenter's card.
+  const qPositions = positions.filter((p) => p.question_ids.includes(Q));
+  const qCommenters = new Set(qPositions.map((p) => p.commenter_id));
+  check('one card per commenter', (await page.locator(`#${Q}-panel .pc`).count()) === qCommenters.size);
+  check('every position rendered as a point', (await page.locator(`#${Q}-panel .pc__point`).count()) === qPositions.length);
+}
 if (editorial[Q] && editorial[Q].tension) check('tension block rendered', (await page.locator(`#${Q}-panel .tension`).count()) === 1);
 if (editorial[Q] && editorial[Q].vahana_read) check('vahana read rendered', (await page.locator(`#${Q}-panel .vahana`).count()) === 1);
 check('no review/verification text', !(await page.content()).match(/human verified|ai classified|review status/i));
@@ -63,7 +70,23 @@ check('accordion closes with Enter', (await toggle.getAttribute('aria-expanded')
 check('focus retained on toggle after re-render', await page.evaluate((id) => document.activeElement && document.activeElement.id === id, `${Q}-toggle`));
 
 if (HAS_DATA) {
-  // Evidence drawer
+  // Grouped card: a commenter with several distinct points on one question
+const multi = (() => {
+  const counts = {};
+  for (const p of positions) for (const q of p.question_ids) { counts[q] = counts[q] || {}; counts[q][p.commenter_id] = (counts[q][p.commenter_id] || 0) + 1; }
+  for (const q of Object.keys(counts)) for (const c of Object.keys(counts[q])) if (counts[q][c] > 1) return { q, c, n: counts[q][c] };
+  return null;
+})();
+if (multi) {
+  if (multi.q !== Q) { await page.locator(`#${multi.q}-toggle`).click(); await page.waitForTimeout(150); }
+  const card = page.locator(`#${multi.q}-panel .pc[data-commenter="${multi.c}"]`);
+  check('grouped card renders once', (await card.count()) === 1);
+  check('grouped card lists each distinct point', (await card.locator('.pc__point').count()) === multi.n);
+  check('grouped card announces point count', (await card.locator('.pc__type').innerText()).includes(`${multi.n} distinct points`));
+  if (multi.q !== Q) await page.locator(`#${multi.q}-toggle`).click();
+}
+
+// Evidence drawer
   await toggle.click();
   const evidenceBtn = page.locator(`#${Q}-panel .pc button[data-action="evidence"]`).first();
   await evidenceBtn.click();

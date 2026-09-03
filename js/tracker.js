@@ -81,33 +81,63 @@ function tagList(tags, cls = 'tag') {
   return tags.filter(Boolean).map((t) => `<span class="${cls}">${esc(t)}</span>`).join('');
 }
 
-function renderPositionCard(p, qid) {
-  const c = p._commenter;
+function renderPoint(p, qid, showBadge) {
   const s = p._submission;
   const tags = [issueLabel(p.primary_issue), issueLabel(p.secondary_issue), ...(p.gap_tags || []).map(gapLabel)];
   const otherQs = p.question_ids.filter((x) => x !== qid).map(qcode);
+  const meta = otherQs.length ? `<span class="pc__point-meta">Also addresses ${esc(otherQs.join(', '))}</span>` : '';
+  const head = showBadge || meta
+    ? `<div class="pc__point-head">${showBadge ? `<span class="badge badge--${esc(p.position)}">${esc(positionLabel(p.position))}</span>` : ''}${meta}</div>`
+    : '';
   return `
-    <article class="pc" id="${esc(p.id)}-${esc(qid)}" aria-label="${esc(c.display_name)} position on ${qcode(qid)}">
+      <li class="pc__point" id="${esc(p.id)}-${esc(qid)}">
+        ${head}
+        <p class="pc__summary">${esc(p.public_summary)}</p>
+        <div class="pc__grid">
+          <div><span class="label">Main concern</span><div class="pc__text">${esc(p.stakeholder_concern)}</div></div>
+          <div><span class="label">What they want FDA to do</span><div class="pc__text">${esc(p.requested_fda_action)}</div></div>
+        </div>
+        <div class="pc__foot">
+          <div class="pc__tags">${tagList(tags)}</div>
+          <div class="pc__actions">
+            <button class="btn-outline" type="button" data-action="evidence" data-position="${esc(p.id)}" data-q="${esc(qid)}" aria-haspopup="dialog">View evidence</button>
+            <a href="${esc(s.source_url)}" target="_blank" rel="noopener">Original comment ↗</a>
+          </div>
+        </div>
+      </li>`;
+}
+
+// One card per commenter per question. A commenter who makes several distinct
+// points on the same question gets one card with those points listed inside it.
+function renderCommenterCard(positions, qid) {
+  const c = positions[0]._commenter;
+  const labels = POSITIONS.filter((pos) => positions.some((p) => p.position === pos.id));
+  const multi = positions.length > 1;
+  const typeLine = `${stakeholderLabel(c.stakeholder_type)}${multi ? ` · ${positions.length} distinct points on ${qcode(qid)}` : ''}`;
+  const otherQs = multi ? [] : positions[0].question_ids.filter((x) => x !== qid).map(qcode);
+  return `
+    <article class="pc" id="${esc(c.id)}-${esc(qid)}" data-commenter="${esc(c.id)}" aria-label="${esc(c.display_name)} on ${qcode(qid)}">
       <div class="pc__head">
         <div>
           <div class="pc__org">${esc(c.display_name)}</div>
-          <div class="pc__type">${esc(stakeholderLabel(c.stakeholder_type))}${otherQs.length ? ` · also addresses ${esc(otherQs.join(', '))}` : ''}</div>
+          <div class="pc__type">${esc(typeLine)}${otherQs.length ? ` · also addresses ${esc(otherQs.join(', '))}` : ''}</div>
         </div>
-        <span class="badge badge--${esc(p.position)}">${esc(positionLabel(p.position))}</span>
+        <div class="pc__badges">${labels.map((pos) => `<span class="badge badge--${esc(pos.id)}">${esc(pos.label)}</span>`).join('')}</div>
       </div>
-      <p class="pc__summary">${esc(p.public_summary)}</p>
-      <div class="pc__grid">
-        <div><span class="label">Main concern</span><div class="pc__text">${esc(p.stakeholder_concern)}</div></div>
-        <div><span class="label">What they want FDA to do</span><div class="pc__text">${esc(p.requested_fda_action)}</div></div>
-      </div>
-      <div class="pc__foot">
-        <div class="pc__tags">${tagList(tags)}</div>
-        <div class="pc__actions">
-          <button class="btn-outline" type="button" data-action="evidence" data-position="${esc(p.id)}" data-q="${esc(qid)}" aria-haspopup="dialog">View evidence</button>
-          <a href="${esc(s.source_url)}" target="_blank" rel="noopener">Original comment ↗</a>
-        </div>
-      </div>
+      <ol class="pc__points${multi ? ' pc__points--multi' : ''}">
+        ${positions.map((p) => renderPoint(p, qid, labels.length > 1)).join('')}
+      </ol>
     </article>`;
+}
+
+function groupByCommenter(positions) {
+  const groups = new Map();
+  for (const p of positions) {
+    const cid = p._commenter.id;
+    if (!groups.has(cid)) groups.set(cid, []);
+    groups.get(cid).push(p);
+  }
+  return Array.from(groups.values());
 }
 
 function renderTension(editorial, row) {
@@ -150,7 +180,9 @@ function renderPanel(index, row) {
   const about = q.about && q.about.trim()
     ? q.about
     : 'FDA is asking how existing device expectations translate to systems whose behavior is generated rather than fixed. Commenter positions below address that translation directly.';
-  const shownLine = filtering ? `Showing ${shown.length} of ${all.length} under current filters` : plural(all.length, 'position');
+  const shownLine = filtering
+    ? `Showing ${shown.length} of ${all.length} under current filters`
+    : `${plural(all.length, 'position')} from ${plural(row.allStats.distinctCommenters, 'commenter')}`;
   return `
     <span class="label">FDA asked</span>
     ${fda}
@@ -159,7 +191,7 @@ function renderPanel(index, row) {
     <p class="q__about">${esc(about)}</p>
     <div class="q__saying"><span class="label">What commenters are saying</span><span class="q__shown">${esc(shownLine)}</span></div>
     <div class="positions">
-      ${shown.length ? shown.map((p) => renderPositionCard(p, q.id)).join('') : '<p class="section__empty">No positions on this question match the current filters.</p>'}
+      ${shown.length ? groupByCommenter(shown).map((group) => renderCommenterCard(group, q.id)).join('') : '<p class="section__empty">No positions on this question match the current filters.</p>'}
     </div>
     ${renderTension(editorial, row)}
     ${renderVahana(editorial)}`;
