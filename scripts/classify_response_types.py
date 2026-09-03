@@ -87,21 +87,28 @@ def main():
         if args.limit and len(pending) >= args.limit:
             break
 
+    saved = []
+
     def run(task):
         comment_id, input_hash, analysis = task
         out = llm.json(render(template, POSITIONS=positions_text(analysis["positions"])), RESPONSE_TYPES_SCHEMA, max_tokens=2048, effort="low")
         result, defaulted = normalize(analysis["positions"], out)
         if defaulted:
             llm.metrics.add("response_types_defaulted", defaulted)
-        return comment_id, input_hash, result
-
-    for comment_id, input_hash, result in llm.map(run, pending):
+        # Persist as soon as this submission is done, so an aborted run keeps
+        # every completed record and the next run resumes from the cache.
         save_stage("response_types", comment_id, stage_envelope(comment_id, input_hash, {"response_types": result}, "response_types"))
+        saved.append(comment_id)
         log.info("%s: %d response types", comment_id, len(result))
+        return comment_id
 
-    metrics = llm.finish(records_processed=len(pending), records_reused=fresh, records_outside_questions=skipped)
-    log.info("done: %d processed, %d already fresh, %d outside requested questions; %d model calls in %.0fs (est. $%s)",
-             len(pending), fresh, skipped, metrics["llm_calls"], metrics["elapsed_seconds"], metrics["estimated_cost_usd"])
+    try:
+        llm.map(run, pending)
+    finally:
+        metrics = llm.finish(records_processed=len(saved), records_pending_at_exit=len(pending) - len(saved),
+                             records_reused=fresh, records_outside_questions=skipped)
+        log.info("done: %d processed, %d already fresh, %d outside requested questions; %d model calls in %.0fs (est. $%s)",
+                 len(saved), fresh, skipped, metrics["llm_calls"], metrics["elapsed_seconds"], metrics["estimated_cost_usd"])
 
 
 if __name__ == "__main__":
