@@ -286,6 +286,70 @@ ANALYSIS_SCHEMA = {
     "additionalProperties": False,
 }
 
+RESPONSE_TYPE_IDS = {"type": "string", "enum": ["direct_answer", "recommendation", "concern", "proposed_criterion",
+                                                "evidence_suggestion", "scope_challenge", "implementation_issue", "no_clear_answer"]}
+DISAGREEMENT_TOPIC_IDS = {"type": "string", "enum": ["thresholds", "scope", "evidence_burden", "ownership", "implementation",
+                                                     "definitions", "timing", "degree_of_autonomy"]}
+
+# One call per submission: a response type for every position it holds.
+RESPONSE_TYPES_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "positions": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {"segment_id": {"type": "string"}, "response_type": RESPONSE_TYPE_IDS},
+                "required": ["segment_id", "response_type"],
+                "additionalProperties": False,
+            },
+        },
+    },
+    "required": ["positions"],
+    "additionalProperties": False,
+}
+
+# One call per question: a descriptive synthesis of the positions on it.
+SYNTHESIS_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "saying": {"type": "string"},
+        "dominant_response_type": RESPONSE_TYPE_IDS,
+        "disagreement": {
+            "type": "object",
+            "properties": {
+                "exists": {"type": "boolean"},
+                "about": {"type": "array", "items": DISAGREEMENT_TOPIC_IDS},
+                "text": {"type": "string"},
+                "sides": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {"summary": {"type": "string"}, "position_ids": {"type": "array", "items": {"type": "string"}}},
+                        "required": ["summary", "position_ids"],
+                        "additionalProperties": False,
+                    },
+                },
+            },
+            "required": ["exists", "about", "text", "sides"],
+            "additionalProperties": False,
+        },
+        "stakeholder_divide": {
+            "type": "object",
+            "properties": {
+                "claimed": {"type": "boolean"},
+                "groups": {"type": "array", "items": {"type": "string"}},
+                "text": {"type": "string"},
+            },
+            "required": ["claimed", "groups", "text"],
+            "additionalProperties": False,
+        },
+        "evidence_position_ids": {"type": "array", "items": {"type": "string"}},
+    },
+    "required": ["saying", "dominant_response_type", "disagreement", "stakeholder_divide", "evidence_position_ids"],
+    "additionalProperties": False,
+}
+
 COMMENTER_SCHEMA = {
     "type": "object",
     "properties": {

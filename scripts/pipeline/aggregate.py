@@ -18,12 +18,13 @@ from .taxonomies import (
     MIN_COMMENTERS_FOR_TENSION,
     MIN_GROUPS_FOR_TENSION,
     POSITIONS,
+    RESPONSE_TYPES,
     STAKEHOLDER_TYPES,
     THEMES,
 )
 
 PUBLIC_POSITION_FIELDS = (
-    "id", "submission_id", "commenter_id", "question_ids", "position",
+    "id", "submission_id", "commenter_id", "question_ids", "position", "response_type",
     "primary_issue", "secondary_issue", "stakeholder_concern",
     "requested_fda_action", "public_summary", "supporting_text", "gap_tags",
     "featured",
@@ -48,6 +49,7 @@ def public_positions(positions, submissions_by_id):
         record = {k: p.get(k) for k in PUBLIC_POSITION_FIELDS if k != "commenter_id"}
         record["commenter_id"] = sub["commenter_id"]
         record["secondary_issue"] = record.get("secondary_issue") or None
+        record["response_type"] = record.get("response_type") or None
         record["gap_tags"] = list(record.get("gap_tags") or [])
         record["featured"] = bool(record.get("featured"))
         out.append(record)
@@ -76,6 +78,7 @@ def question_stats(question_ids, positions, submissions_by_id, commenters_by_id)
         submission_ids = set()
         by_type = Counter()
         by_position = Counter()
+        rtype_commenters = defaultdict(set)
         for p in qpos:
             sub = submissions_by_id[p["submission_id"]]
             submission_ids.add(sub["id"])
@@ -84,12 +87,15 @@ def question_stats(question_ids, positions, submissions_by_id, commenters_by_id)
                 commenter_ids.add(cid)
                 by_type[commenters_by_id[cid]["stakeholder_type"]] += 1
             by_position[p["position"]] += 1
+            if p.get("response_type"):
+                rtype_commenters[p["response_type"]].add(cid)
         stats[qid] = {
             "distinct_commenters": len(commenter_ids),
             "distinct_submissions": len(submission_ids),
             "positions": len(qpos),
             "stakeholder_mix": {k: by_type[k] for k in STAKEHOLDER_TYPES if by_type[k]},
             "position_distribution": {k: by_position[k] for k in POSITIONS if by_position[k]},
+            "response_type_commenters": {k: len(rtype_commenters[k]) for k in RESPONSE_TYPES if rtype_commenters.get(k)},
             "tension_eligible": len(commenter_ids) >= MIN_COMMENTERS_FOR_TENSION and len(by_type) >= MIN_GROUPS_FOR_TENSION,
             "conclusion_eligible": len(commenter_ids) >= MIN_COMMENTERS_FOR_CONCLUSION,
         }

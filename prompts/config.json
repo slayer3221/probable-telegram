@@ -9,17 +9,41 @@
   "prompt_versions": {
     "segment": "1.0.0",
     "classify_commenter": "1.0.0",
-    "analyze": "2.0.0"
+    "analyze": "2.0.0",
+    "response_types": "1.0.0",
+    "synthesize": "1.0.0"
   },
   "stages": {
     "segment": "01_segment.md",
     "analyze": "02_analyze_position.md",
     "classify_commenter": "05_classify_commenter.md",
-    "shorten_summary": "06_shorten_summary.md"
+    "shorten_summary": "06_shorten_summary.md",
+    "response_types": "07_response_types.md",
+    "synthesize": "08_synthesize_question.md",
+    "shorten_synthesis": "09_shorten_synthesis.md"
   },
   "pricing_usd_per_million_tokens": {
-    "claude-opus-5": {"input": 5.0, "output": 25.0, "cache_read": 0.5, "cache_write": 6.25},
-    "claude-sonnet-5": {"input": 2.0, "output": 10.0, "cache_read": 0.2, "cache_write": 2.5},
-    "claude-haiku-4-5": {"input": 1.0, "output": 5.0, "cache_read": 0.1, "cache_write": 1.25}
+    "claude-opus-5": {
+      "input": 5.0,
+      "output": 25.0,
+      "cache_read": 0.5,
+      "cache_write": 6.25
+    },
+    "claude-sonnet-5": {
+      "input": 2.0,
+      "output": 10.0,
+      "cache_read": 0.2,
+      "cache_write": 2.5
+    },
+    "claude-haiku-4-5": {
+      "input": 1.0,
+      "output": 5.0,
+      "cache_read": 0.1,
+      "cache_write": 1.25
+    }
+  },
+  "synthesis_max_words": {
+    "saying": 60,
+    "disagreement": 60
   }
 }

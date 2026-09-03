@@ -64,6 +64,15 @@ jobs:
         run: python3 scripts/segment_comments.py --limit "$STAGE_LIMIT"
       - name: Analyze positions (classification, gaps, summary in one call each)
         run: python3 scripts/analyze_positions.py --limit "$STAGE_LIMIT"
+      # The two question-level stages run in refreshes only once the repository
+      # variable QUESTION_SYNTHESIS_ENABLED is "true"; until then use the
+      # "Question synthesis test" workflow for a chosen set of questions.
+      - name: Assign response types (one call per changed submission)
+        if: ${{ vars.QUESTION_SYNTHESIS_ENABLED == 'true' }}
+        run: python3 scripts/classify_response_types.py --limit "$STAGE_LIMIT"
+      - name: Synthesize questions (one call per question whose positions changed)
+        if: ${{ vars.QUESTION_SYNTHESIS_ENABLED == 'true' }}
+        run: python3 scripts/synthesize_questions.py
       - name: Build public data
         run: python3 scripts/build_public_data.py
       - name: Validate public data

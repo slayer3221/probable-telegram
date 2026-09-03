@@ -28,6 +28,10 @@ def test_js_taxonomies_match_python():
         assert re.search(rf"\b{key}:", js), key
     for key, label in taxonomies.GAPS.items():
         assert f"{key}: '{label}'" in js or f"{key}: \"{label}\"" in js, key
+    for key, label in taxonomies.RESPONSE_TYPES.items():
+        assert f"{key}: '{label}'" in js, key
+    for key, label in taxonomies.DISAGREEMENT_TOPICS.items():
+        assert f"{key}: '{label}'" in js, key
 
 
 def test_counting_rules_do_not_inflate_commenters():
@@ -121,6 +125,7 @@ def test_tiny_dataset_yields_three_signals(tmp_path):
     (out / "questions.json").write_text(json.dumps({"questions": questions}), encoding="utf-8")
     for name, payload in files.items():
         (out / name).write_text(json.dumps(payload), encoding="utf-8")
+    (out / "analyses.json").write_text(json.dumps({"analyses": [{"question_id": q["id"], "status": "pending"} for q in questions]}), encoding="utf-8")
     errors, _ = validate(out, ROOT / "editorial")
     assert errors == [], "\n".join(errors)
 
@@ -266,6 +271,75 @@ def test_consolidation_provenance_matches_analysis_records():
             assert cluster["kept_segment_id"] in segment_ids
             assert set(cluster["merged_segment_ids"]) <= segment_ids
             assert cluster["kept_segment_id"] not in cluster["merged_segment_ids"]
+
+
+def _row(pid, cid, rtype="recommendation", group="device_manufacturer", issue="evidence_standards"):
+    return {"position_id": pid, "commenter_id": cid, "commenter": cid.upper(), "stakeholder_type": group,
+            "submission_id": f"s-{cid}", "response_type": rtype, "stance": "support_with_modification",
+            "primary_issue": issue, "summary": f"summary of {pid}"}
+
+
+def test_synthesis_guards_downgrade_unsupported_claims():
+    from synthesize_questions import finalize
+    rows = [_row("p1", "c1"), _row("p2", "c2", "concern"), _row("p3", "c3", "proposed_criterion", "health_system_provider"),
+            _row("p4", "c4", "recommendation", "health_system_provider"), _row("p5", "c1", "concern")]
+    # A disagreement whose two "sides" are the same commenter is not a disagreement.
+    raw = {"saying": "Most commenters ask for tiers.", "dominant_response_type": "recommendation",
+           "disagreement": {"exists": True, "about": ["thresholds"], "text": "Commenters split on thresholds.",
+                            "sides": [{"summary": "a", "position_ids": ["p1"]}, {"summary": "b", "position_ids": ["p5"]}]},
+           "stakeholder_divide": {"claimed": True, "groups": ["device_manufacturer", "health_system_provider"], "text": "Makers vs systems."},
+           "evidence_position_ids": ["p1", "p-bogus"]}
+    out = finalize("q9", raw, rows)
+    assert out["disagreement"]["exists"] is False and out["disagreement"]["sides"] == []
+    assert "disagreement_unsupported" in out["downgrades"]
+    assert out["disagreement"]["text"].startswith("No material disagreement")
+    assert out["stakeholder_divide"]["exists"] is False and out["stakeholder_divide"]["note"]
+    assert "p-bogus" not in out["evidence_position_ids"]
+    assert len(out["evidence_position_ids"]) >= 3 and len({r["commenter_id"] for r in rows if r["position_id"] in out["evidence_position_ids"]}) >= 2
+    assert out["response_type_distribution"]["by_distinct_commenters"] == {"recommendation": 2, "concern": 2, "proposed_criterion": 1}
+
+    # Two distinct commenters in conflict is a disagreement, but one against several is not a stakeholder divide.
+    raw["disagreement"]["sides"] = [{"summary": "a", "position_ids": ["p1", "p2"]}, {"summary": "b", "position_ids": ["p3"]}]
+    rows_big = rows + [_row("p6", "c5", group="health_system_provider"), _row("p7", "c6", group="health_system_provider"),
+                       _row("p8", "c7"), _row("p9", "c8")]
+    out = finalize("q9", raw, rows_big)
+    assert out["disagreement"]["exists"] is True
+    assert out["stakeholder_divide"]["exists"] is False, "one commenter on a side cannot make a stakeholder divide"
+    assert all(pid in out["evidence_position_ids"] for pid in ("p1", "p3")), "evidence must cover both sides"
+
+    # Two or more distinct commenters on each side, from comparable groups, is a divide.
+    raw["disagreement"]["sides"] = [{"summary": "a", "position_ids": ["p1", "p2"]}, {"summary": "b", "position_ids": ["p3", "p6"]}]
+    out = finalize("q9", raw, rows_big)
+    assert out["stakeholder_divide"]["exists"] is True and out["stakeholder_divide"]["groups"] == ["device_manufacturer", "health_system_provider"]
+
+    # Over-long text is cut at a sentence boundary and flagged when no rewrite is available.
+    raw["saying"] = " ".join(["Sentence one has words."] * 20)
+    out = finalize("q9", raw, rows_big)
+    assert len(out["saying"].split()) <= 60 and "saying_cut_at_sentence" in out["quality_flags"]
+
+
+def test_review_queue_flags_only_material_changes():
+    from pipeline import review
+    rows = [_row("p1", "c1"), _row("p2", "c2", "concern")]
+    syn = {"saying": "Commenters ask for tiers.", "dominant_response_type": "recommendation",
+           "disagreement": {"exists": False, "about": ["thresholds"]}, "stakeholder_divide": {"exists": False}}
+    prior = review.question_snapshot("q8", rows, syn, has_vahana_read=True)
+    # One more commenter repeating an existing issue and response type: not material.
+    same = review.question_snapshot("q8", rows + [_row("p3", "c3")], syn, True)
+    assert review.compare_snapshots(prior, same) == []
+    # A new stakeholder group and a new issue/response-type combination: material.
+    changed_rows = rows + [_row("p4", "c9", "scope_challenge", "patient_consumer_group", "intended_use")]
+    new = review.question_snapshot("q8", changed_rows, dict(syn, saying="Commenters now challenge the scope entirely and ask FDA to start over."), True)
+    reasons = {r["reason"] for r in review.compare_snapshots(prior, new)}
+    assert {"new_stakeholder_group", "new_substantive_position", "synthesis_changed"} <= reasons
+    # Disagreement appearing is material; a stale synthesis is flagged once.
+    dis = review.question_snapshot("q8", rows, dict(syn, disagreement={"exists": True, "about": ["ownership"]}, status="stale"), True)
+    reasons = {r["reason"] for r in review.compare_snapshots(prior, dis)}
+    assert {"disagreement_emerged", "synthesis_stale"} <= reasons
+    queue = review.build_review_queue({"q8": prior}, {"q8": new}, "2026-09-03T00:00:00Z")
+    assert queue["flagged"][0]["question_id"] == "q8" and queue["flagged"][0]["vahana_read_may_need_review"] is True
+    assert queue["flagged"][0]["prior_distinct_commenters"] == 2 and queue["flagged"][0]["new_distinct_commenters"] == 3
+    assert review.build_review_queue(None, {"q8": new}, "t")["baseline"] is True
 
 
 if __name__ == "__main__":

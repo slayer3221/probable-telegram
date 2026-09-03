@@ -17,7 +17,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from pipeline.taxonomies import GAPS, ISSUES, POSITIONS, QUESTION_IDS, STAKEHOLDER_TYPES, THEMES  # noqa: E402
+from pipeline.taxonomies import DISAGREEMENT_TOPICS, GAPS, ISSUES, POSITIONS, QUESTION_IDS, RESPONSE_TYPES, STAKEHOLDER_TYPES, THEMES  # noqa: E402
 from pipeline.io_utils import ROOT, read_json  # noqa: E402
 
 FORBIDDEN_FIELDS = {"verified", "review_status", "reviewer", "reviewer_notes", "human_verified", "ai_classified", "verification_count", "review_queue"}
@@ -45,6 +45,7 @@ def validate(data_dir: Path, editorial_dir: Path):
     p = read_json(data_dir / "positions.json")
     g = read_json(data_dir / "gaps.json")
     summary = read_json(data_dir / "site-summary.json")
+    analyses = read_json(data_dir / "analyses.json")
     editorial = read_json(editorial_dir / "vahana-read.json")
     editorial_gaps = read_json(editorial_dir / "gaps.json")
     executive = read_json(editorial_dir / "executive-read.json")
@@ -136,6 +137,61 @@ def validate(data_dir: Path, editorial_dir: Path):
         if card["target_question_id"] not in QUESTION_IDS:
             errors.append(f"signal '{card['label']}' targets unknown question")
 
+    # Positions: response type is optional but must be valid when present.
+    for x in p["positions"]:
+        if x.get("response_type") is not None and x["response_type"] not in RESPONSE_TYPES:
+            errors.append(f"{x['id']}: unknown response_type {x['response_type']}")
+
+    # Question analyses (generated, descriptive)
+    if not analyses:
+        errors.append("analyses.json missing")
+    else:
+        rows = analyses.get("analyses", [])
+        if [a.get("question_id") for a in rows] != QUESTION_IDS:
+            errors.append("analyses.json must hold one record per question, q1..q26 in order")
+        position_ids = {x["id"]: x for x in p["positions"]}
+        limits = {"saying": 60, "disagreement": 60}
+        for a in rows:
+            qid = a.get("question_id")
+            if a.get("status") not in ("generated", "stale", "pending"):
+                errors.append(f"{qid}: analysis status must be generated, stale or pending")
+            if a.get("status") == "pending":
+                continue
+            if a.get("dominant_response_type") not in RESPONSE_TYPES:
+                errors.append(f"{qid}: unknown dominant_response_type")
+            if len((a.get("saying") or "").split()) > limits["saying"] or not a.get("saying"):
+                errors.append(f"{qid}: saying missing or over {limits['saying']} words")
+            d = a.get("disagreement") or {}
+            if len((d.get("text") or "").split()) > limits["disagreement"] or not d.get("text"):
+                errors.append(f"{qid}: disagreement text missing or over {limits['disagreement']} words")
+            if any(t not in DISAGREEMENT_TOPICS for t in d.get("about", [])):
+                errors.append(f"{qid}: unknown disagreement topic")
+            if d.get("exists") and len(d.get("sides", [])) < 2:
+                errors.append(f"{qid}: a disagreement needs two sides")
+            if not d.get("exists") and d.get("sides"):
+                errors.append(f"{qid}: sides listed without a disagreement")
+            div = a.get("stakeholder_divide") or {}
+            if div.get("exists") and (not d.get("exists") or len(div.get("groups", [])) < 2):
+                errors.append(f"{qid}: a stakeholder divide needs a disagreement and at least two groups")
+            ev = a.get("evidence_position_ids") or []
+            if not ev:
+                errors.append(f"{qid}: no evidence positions")
+            for pid in ev:
+                if pid not in position_ids:
+                    errors.append(f"{qid}: evidence position {pid} not in positions.json")
+                elif qid not in position_ids[pid]["question_ids"]:
+                    errors.append(f"{qid}: evidence position {pid} is not mapped to this question")
+            ev_commenters = {position_ids[pid]["commenter_id"] for pid in ev if pid in position_ids}
+            if a.get("distinct_commenters", 0) >= 2 and len(ev_commenters) < 2:
+                errors.append(f"{qid}: evidence must span at least two distinct commenters")
+            for side in d.get("sides", []):
+                for pid in side.get("position_ids", []):
+                    if pid not in position_ids:
+                        errors.append(f"{qid}: side position {pid} not in positions.json")
+            for key in ("commercialization", "deployment", "market", "buyer", "capital"):
+                if key in (a.get("saying") or "").lower() and key not in " ".join(position_ids[pid]["public_summary"].lower() for pid in ev if pid in position_ids):
+                    warnings.append(f"{qid}: saying mentions '{key}', which no cited evidence summary mentions")
+
     # Executive read (curated, rendered above the signals)
     if not executive:
         errors.append("editorial/executive-read.json missing")
@@ -191,7 +247,7 @@ def validate(data_dir: Path, editorial_dir: Path):
     # Free text is not scanned: commenters legitimately write about FDA
     # "reviewers" and "premarket review", and the validator must not reject
     # real docket language.
-    for payload, name in ((q, "questions"), (c, "commenters"), (s, "submissions"), (p, "positions"), (g, "gaps"), (summary, "site-summary"), (editorial, "editorial")):
+    for payload, name in ((q, "questions"), (c, "commenters"), (s, "submissions"), (p, "positions"), (g, "gaps"), (summary, "site-summary"), (analyses or {}, "analyses"), (editorial, "editorial")):
         for path, key in walk_keys(payload):
             if key in FORBIDDEN_FIELDS:
                 errors.append(f"{name}{path}: review/verification field '{key}' is not allowed")

@@ -12,6 +12,7 @@ const DATA_FILES = {
   positions: 'data/positions.json',
   gaps: 'data/gaps.json',
   summary: 'data/site-summary.json',
+  analyses: 'data/analyses.json',
   editorial: 'editorial/vahana-read.json',
   executive: 'editorial/executive-read.json',
 };
@@ -49,6 +50,7 @@ async function loadData() {
     positions: raw.positions.positions,
     gaps: raw.gaps.gaps,
     summary: raw.summary,
+    analyses: raw.analyses.analyses,
     editorial: raw.editorial,
     executive: raw.executive,
   });

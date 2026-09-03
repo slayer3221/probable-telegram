@@ -1,7 +1,7 @@
 // Rendering. Every function returns an HTML string; app.js owns the DOM.
 import {
   GAPS, POSITIONS, POSITION_BY_ID, STAKEHOLDERS, STAKEHOLDER_BY_ID, THEMES, THEME_BY_ID,
-  VAHANA_FIELDS, VIEWS, gapLabel, issueLabel, positionLabel, stakeholderLabel,
+  VAHANA_FIELDS, VIEWS, disagreementTopicLabel, gapLabel, issueLabel, positionLabel, responseTypeLabel, stakeholderLabel,
 } from './taxonomies.js';
 
 export function esc(value) {
@@ -128,6 +128,7 @@ function tagList(tags, cls = 'tag') {
 function renderPoint(p, qid, showBadge) {
   const s = p._submission;
   const tags = [issueLabel(p.primary_issue), issueLabel(p.secondary_issue), ...(p.gap_tags || []).map(gapLabel)];
+  const rtype = responseTypeLabel(p.response_type);
   const otherQs = p.question_ids.filter((x) => x !== qid).map(qcode);
   const meta = otherQs.length ? `<span class="pc__point-meta">Also addresses ${esc(otherQs.join(', '))}</span>` : '';
   const head = showBadge || meta
@@ -142,7 +143,7 @@ function renderPoint(p, qid, showBadge) {
           <div><span class="label">What they want FDA to do</span><div class="pc__text">${esc(p.requested_fda_action)}</div></div>
         </div>
         <div class="pc__foot">
-          <div class="pc__tags">${tagList(tags)}</div>
+          <div class="pc__tags">${rtype ? `<span class="tag tag--rtype">${esc(rtype)}</span>` : ''}${tagList(tags)}</div>
           <div class="pc__actions">
             <button class="btn-outline" type="button" data-action="evidence" data-position="${esc(p.id)}" data-q="${esc(qid)}" aria-haspopup="dialog">View evidence</button>
             <a href="${esc(s.source_url)}" target="_blank" rel="noopener">Original comment ↗</a>
@@ -182,6 +183,35 @@ function groupByCommenter(positions) {
     groups.get(cid).push(p);
   }
   return Array.from(groups.values());
+}
+
+// Generated, descriptive synthesis of the positions on one question. It
+// describes what commenters said and where they differ; interpretation stays
+// in the curated Vahana read below the cards.
+function renderSynthesis(index, q, all) {
+  const a = index.analysesById && index.analysesById[q.id];
+  // Nothing renders until a synthesis exists; the positions below are the record.
+  if (!a || a.status === 'pending') return '';
+  const d = a.disagreement || {};
+  const div = a.stakeholder_divide || {};
+  const topics = (d.about || []).map((t) => `<span class="tag">${esc(disagreementTopicLabel(t))}</span>`).join('');
+  const evidence = (a.evidence_position_ids || []).map((pid) => {
+    const p = index.positionsById[pid];
+    if (!p) return '';
+    return `<button class="btn-outline btn-outline--tiny" type="button" data-action="evidence" data-position="${esc(pid)}" data-q="${esc(q.id)}" aria-haspopup="dialog">${esc(p._commenter.display_name)}</button>`;
+  }).join('');
+  const commenters = plural(a.distinct_commenters, 'distinct commenter');
+  return `
+    <div class="q__synth" data-status="${esc(a.status)}">
+      <div class="q__synth-head"><span class="label">What commenters are saying</span><span class="q__synth-meta">${esc(commenters)} · ${esc(a.dominant_response_type ? `mostly ${responseTypeLabel(a.dominant_response_type).toLowerCase()}s` : '')}</span></div>
+      <p class="q__saying">${esc(a.saying)}</p>
+      <span class="label">Where the real disagreement is</span>
+      <p class="q__disagree">${esc(d.text)}</p>
+      ${topics ? `<div class="q__topics"><span class="q__topics-label">Debate is about</span>${topics}</div>` : ''}
+      ${div.exists ? `<p class="q__divide"><strong>Stakeholder divide.</strong> ${esc(div.text)}</p>` : ''}
+      ${!div.exists && div.note ? `<p class="q__divide-note">${esc(div.note)}</p>` : ''}
+      ${evidence ? `<div class="q__evidence"><span class="label">Evidence</span><div class="q__evidence-links">${evidence}</div></div>` : ''}
+    </div>`;
 }
 
 function renderTension(editorial, row) {
@@ -233,7 +263,8 @@ function renderPanel(index, row) {
     <a class="q__sublink" href="${esc(q.source_url)}" target="_blank" rel="noopener">Discussion paper, question ${n} ↗</a>
     <span class="label label--gap">What this is really about</span>
     <p class="q__about">${esc(about)}</p>
-    <div class="q__saying"><span class="label">What commenters are saying</span><span class="q__shown">${esc(shownLine)}</span></div>
+    ${renderSynthesis(index, q, all)}
+    <div class="q__saying-row"><span class="label">Positions on this question</span><span class="q__shown">${esc(shownLine)}</span></div>
     <div class="positions">
       ${shown.length ? groupByCommenter(shown).map((group) => renderCommenterCard(group, q.id)).join('') : '<p class="section__empty">No positions on this question match the current filters.</p>'}
     </div>

@@ -22,6 +22,10 @@ Public sections: Risk Assessment (Q1–Q6), Premarket Evaluation (Q7–Q17), Pos
 | individual | Individuals | individuals |
 | other | Other | other |
 
+**Response types** `direct_answer`, `recommendation`, `concern`, `proposed_criterion`, `evidence_suggestion`, `scope_challenge`, `implementation_issue`, `no_clear_answer`: how a position responds to an open-ended question. Published on each position as `response_type` (null until the sidecar stage has run for its submission).
+
+**Disagreement topics** `thresholds`, `scope`, `evidence_burden`, `ownership`, `implementation`, `definitions`, `timing`, `degree_of_autonomy`.
+
 **Positions** `support`, `support_with_modification`, `oppose`, `mixed`, `unclear` (public labels: Support, Support with modification, Oppose, Mixed, Unclear). These are never collapsed into positive/negative sentiment.
 
 **Issues** `regulatory_scope`, `risk_classification`, `intended_use`, `directiveness`, `human_factors`, `evidence_standards`, `benchmarking`, `clinical_validation`, `statistical_methods`, `synthetic_data`, `comparator_standard_of_care`, `postmarket_monitoring`, `change_control`, `pccp`, `foundation_model_dependency`, `supplier_controls`, `cybersecurity`, `agentic_autonomy`, `health_system_implementation`, `economics_burden`, `accountability_liability`
@@ -78,6 +82,10 @@ Comment bodies, attachment URLs and raw text stay in `raw/`.
 ```
 
 Every position keeps its submission id (which resolves to a source URL and Regulations.gov id), its supporting excerpt and its FDA question mapping. `commenter_id` is denormalized from the submission for convenience and is validated to match.
+
+### analyses.json
+
+One record per question, `q1`..`q26` in order, with `status` `generated`, `stale` (positions changed since the synthesis was written) or `pending`. Generated and stale records carry `saying` (at most 60 words), `dominant_response_type`, `response_type_distribution`, `disagreement` (`exists`, `about` from the disagreement topics, `text` at most 60 words, `sides[]` of `summary` and `position_ids`), `stakeholder_divide` (`exists`, `groups`, `text`, `note`), `evidence_position_ids` (three to five ids from at least two distinct commenters, both sides when a disagreement exists), `distinct_commenters`, `distinct_submissions`, `positions`, `comparable_groups`. No implications: the field set is descriptive by design.
 
 ### gaps.json
 
@@ -147,6 +155,9 @@ Every file carries `comment_id`, `input_hash`, `prompt_version` (of that stage's
 - `segments/<id>.json`: `positions[]` with `segment_id`, `question_ids`, `source_passage`, `position_gist`.
 - `analysis/<id>.json`: `positions[]` with `segment_id`, `question_ids`, `position`, `primary_issue`, `secondary_issue`, `stakeholder_concern`, `requested_fda_action`, `confidence`, `gap_tags`, `gap_explanations`, `public_summary`, `summary_cut`, `source_passage`. Produced by one structured-output call per position; the fields stay separate.
 - `consolidation/<id>.json`: build-time provenance for near-duplicate positions folded within one submission: `analysis_hash` (of the analysis record it was derived from), `rule_version`, `clusters[]` with `kept_segment_id`, `merged_segment_ids`, `question_ids`, `position` and the pairwise `matches` (`passage_containment`, `summary_similarity`). Present only for submissions where something was merged. No model call is involved.
+- `response_types/<id>.json`: `response_types{segment_id: response_type}` per submission, keyed by the analysis record's hash (`input_hash`) so it reruns only when that record, the prompt version or the model changes.
+- `synthesis/<qid>.json`: the descriptive question synthesis: `saying`, `dominant_response_type`, `response_type_distribution` (by distinct commenters and by positions), `disagreement` (`exists`, `about`, `text`, `sides[]` with position and commenter ids), `stakeholder_divide` (`exists`, `groups`, `text`, `note`), `evidence_position_ids`, counts, `comparable_groups`, `quality_flags`, `downgrades` and the `raw_model_output`. `input_hash` covers the question's positions, so an unchanged question is never regenerated.
+- `question-state.json`: per-question snapshot used for change detection between builds (see `public/question-review-queue.json`, never published).
 - `commenters.json`: `commenters{comment_id: {display_name, organization, stakeholder_type, source_identity_text, confidence, input_hash, prompt_version, model}}`.
 
 ## Integrity rules enforced by `scripts/validate_data.py`

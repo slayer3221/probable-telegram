@@ -26,6 +26,9 @@ CLASSIFIED_DIR = ROOT / "classified"
 CLASSIFIED_SEGMENTS = CLASSIFIED_DIR / "segments"
 CLASSIFIED_ANALYSIS = CLASSIFIED_DIR / "analysis"
 CLASSIFIED_CONSOLIDATION = CLASSIFIED_DIR / "consolidation"
+CLASSIFIED_RESPONSE_TYPES = CLASSIFIED_DIR / "response_types"
+CLASSIFIED_SYNTHESIS = CLASSIFIED_DIR / "synthesis"
+QUESTION_STATE_PATH = CLASSIFIED_DIR / "question-state.json"
 CLASSIFIED_COMMENTERS = CLASSIFIED_DIR / "commenters.json"
 PUBLIC_DIR = ROOT / "public"
 DATA_DIR = ROOT / "data"
@@ -40,6 +43,9 @@ LLM_MODEL = env("LLM_MODEL", PROMPT_CONFIG.get("model", "claude-opus-5"))
 LLM_CONCURRENCY = int(env("LLM_CONCURRENCY", PROMPT_CONFIG.get("llm_concurrency", 4)))
 PRICING = PROMPT_CONFIG.get("pricing_usd_per_million_tokens", {})
 RUN_METRICS_PATH = PUBLIC_DIR / "run-metrics.json"
+# Editorial review queue from question-level change detection. public/ is
+# never published by the Pages workflow, so the queue stays private.
+REVIEW_QUEUE_PATH = PUBLIC_DIR / "question-review-queue.json"
 
 
 def prompt_version(stage: str) -> str:
@@ -57,5 +63,5 @@ DOCKET_META = {
 
 
 def ensure_dirs():
-    for d in (RAW_COMMENTS, RAW_TEXT, RAW_ATTACHMENTS, CLASSIFIED_SEGMENTS, CLASSIFIED_ANALYSIS, CLASSIFIED_CONSOLIDATION, PUBLIC_DIR, DATA_DIR):
+    for d in (RAW_COMMENTS, RAW_TEXT, RAW_ATTACHMENTS, CLASSIFIED_SEGMENTS, CLASSIFIED_ANALYSIS, CLASSIFIED_CONSOLIDATION, CLASSIFIED_RESPONSE_TYPES, CLASSIFIED_SYNTHESIS, PUBLIC_DIR, DATA_DIR):
         Path(d).mkdir(parents=True, exist_ok=True)

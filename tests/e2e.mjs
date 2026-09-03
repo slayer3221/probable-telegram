@@ -83,7 +83,23 @@ check('accordion closes with Enter', (await toggle.getAttribute('aria-expanded')
 check('focus retained on toggle after re-render', await page.evaluate((id) => document.activeElement && document.activeElement.id === id, `${Q}-toggle`));
 
 if (HAS_DATA) {
-  // Grouped card: a commenter with several distinct points on one question
+  // Generated question synthesis renders above the cards when one exists
+const analyses = JSON.parse(fs.readFileSync('data/analyses.json', 'utf8')).analyses.filter((a) => a.status !== 'pending');
+if (analyses.length) {
+  const a = analyses[0];
+  if (a.question_id !== Q) { await page.locator(`#${a.question_id}-toggle`).click(); await page.waitForTimeout(150); }
+  const synth = page.locator(`#${a.question_id}-panel .q__synth`);
+  check('synthesis block renders', (await synth.count()) === 1);
+  check('synthesis has saying and disagreement text', (await synth.locator('.q__saying').innerText()).length > 20 && (await synth.locator('.q__disagree').innerText()).length > 20);
+  check('synthesis evidence links open the drawer', (await synth.locator('.q__evidence-links button').count()) === a.evidence_position_ids.length);
+  await synth.locator('.q__evidence-links button').first().click();
+  check('synthesis evidence opens evidence drawer', !(await page.locator('#evidence-drawer').isHidden()));
+  await page.keyboard.press('Escape');
+  check('synthesis makes no implication claims', !/commercializ|deployment implication|market structure/i.test(await synth.innerText()));
+  if (a.question_id !== Q) await page.locator(`#${a.question_id}-toggle`).click();
+}
+
+// Grouped card: a commenter with several distinct points on one question
 const multi = (() => {
   const counts = {};
   for (const p of positions) for (const q of p.question_ids) { counts[q] = counts[q] || {}; counts[q][p.commenter_id] = (counts[q][p.commenter_id] || 0) + 1; }

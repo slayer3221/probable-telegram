@@ -55,6 +55,28 @@ export const GAPS = {
   delegated_authority: 'Delegated authority',
 };
 
+export const RESPONSE_TYPES = {
+  direct_answer: 'Direct answer',
+  recommendation: 'Recommendation',
+  concern: 'Concern',
+  proposed_criterion: 'Proposed criterion',
+  evidence_suggestion: 'Evidence suggestion',
+  scope_challenge: 'Scope challenge',
+  implementation_issue: 'Implementation issue',
+  no_clear_answer: 'No clear answer',
+};
+
+export const DISAGREEMENT_TOPICS = {
+  thresholds: 'Thresholds',
+  scope: 'Scope',
+  evidence_burden: 'Evidence burden',
+  ownership: 'Ownership',
+  implementation: 'Implementation',
+  definitions: 'Definitions',
+  timing: 'Timing',
+  degree_of_autonomy: 'Degree of autonomy',
+};
+
 export const VAHANA_FIELDS = [
   ['alignment', 'Where there is alignment'],
   ['tension', 'Where there is tension'],
@@ -82,3 +104,5 @@ export const stakeholderLabel = (id) => (STAKEHOLDER_BY_ID[id] || STAKEHOLDER_BY
 export const positionLabel = (id) => (POSITION_BY_ID[id] || POSITION_BY_ID.unclear).label;
 export const issueLabel = (id) => ISSUES[id] || null;
 export const gapLabel = (id) => GAPS[id] || null;
+export const responseTypeLabel = (id) => RESPONSE_TYPES[id] || null;
+export const disagreementTopicLabel = (id) => DISAGREEMENT_TOPICS[id] || id;

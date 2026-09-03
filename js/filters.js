@@ -1,7 +1,7 @@
 // Filter state, URL serialization and matching rules.
 import {
   POSITION_BY_ID, POSITION_BY_SLUG, STAKEHOLDER_BY_ID, STAKEHOLDER_BY_SLUG,
-  THEME_BY_ID, THEME_BY_SLUG, VIEWS, issueLabel, gapLabel,
+  THEME_BY_ID, THEME_BY_SLUG, VIEWS, issueLabel, gapLabel, responseTypeLabel,
 } from './taxonomies.js';
 
 export const DEFAULT_STATE = Object.freeze({
@@ -64,7 +64,7 @@ export function buildIndex(data) {
     p._submission = submission;
     p._haystack = [
       commenter.display_name, commenter.organization,
-      issueLabel(p.primary_issue), issueLabel(p.secondary_issue),
+      issueLabel(p.primary_issue), issueLabel(p.secondary_issue), responseTypeLabel(p.response_type),
       ...(p.gap_tags || []).map(gapLabel),
       p.public_summary,
     ].filter(Boolean).join(' ').toLowerCase();
@@ -73,10 +73,11 @@ export function buildIndex(data) {
     }
   }
   const questionsById = Object.fromEntries(data.questions.map((q) => [q.id, q]));
+  const analysesById = Object.fromEntries((data.analyses || []).map((a) => [a.question_id, a]));
   for (const q of data.questions) {
     q._haystack = `${q.short_title} ${(q.tags || []).join(' ')}`.toLowerCase();
   }
-  return { ...data, commentersById, submissionsById, positionsById, positionsByQuestion, questionsById };
+  return { ...data, commentersById, submissionsById, positionsById, positionsByQuestion, questionsById, analysesById };
 }
 
 export function positionMatches(state, position, question) {
