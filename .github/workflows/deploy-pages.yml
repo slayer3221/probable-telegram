@@ -13,8 +13,10 @@ on:
       - "data/**"
       - "editorial/**"
       - ".github/workflows/deploy-pages.yml"
+  # Commits made by the refresh and synthesis workflows use the Actions token,
+  # which never triggers a push workflow, so deploy after they complete.
   workflow_run:
-    workflows: ["Refresh comments"]
+    workflows: ["Refresh comments", "Question synthesis test"]
     types: [completed]
   workflow_dispatch:
 
