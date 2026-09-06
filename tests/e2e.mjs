@@ -33,7 +33,9 @@ const errors = [];
 const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
 const page = await context.newPage();
 page.on('pageerror', (e) => errors.push(String(e)));
-page.on('requestfailed', (r) => { if (!/fonts\.g(oogleapis|static)\.com/.test(r.url())) errors.push(`request failed: ${r.url()}`); });
+// Third-party assets (Google Fonts, LinkedIn Insight Tag) may be unreachable from a sandbox; the page must not depend on them.
+const THIRD_PARTY = /fonts\.g(oogleapis|static)\.com|snap\.licdn\.com|px\.ads\.linkedin\.com/;
+page.on('requestfailed', (r) => { if (!THIRD_PARTY.test(r.url())) errors.push(`request failed: ${r.url()}`); });
 page.on('console', (m) => { if (m.type() === 'error' && !/Failed to load resource/.test(m.text())) errors.push(m.text()); });
 
 await page.goto(`${BASE}/index.html`, { waitUntil: 'networkidle' });
