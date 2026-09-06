@@ -1,0 +1,315 @@
+{
+  "comment_id": "FDA-2026-N-7874-0054",
+  "input_hash": "6660a6124ad9debf",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-06T17:01:55Z",
+  "model": "claude-opus-5",
+  "chunks": 2,
+  "positions": [
+    {
+      "question_ids": [
+        "q7",
+        "q9"
+      ],
+      "source_passage": "Its central recommendation is that the unit of regulatory assessment should be the complete sociotechnical system, rather than the foundation model in isolation. This includes source evidence, deterministic safety controls, generative reasoning, retrieval and tools, verification and provenance, escalation logic, the user interface, human clinical authority and lifecycle monitoring.",
+      "position_gist": "The unit of regulatory assessment should be the complete sociotechnical system (evidence sources, deterministic controls, generative model, retrieval/tools, verification, escalation, interface, human authority, monitoring) rather than the foundation model in isolation.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "Sitora supports the two-axis concept as a strong foundation but recommends explicit treatment of four additional modifiers: evidence traceability, independent reviewability, reversibility and time to harm. Two systems may provide the same recommendation while presenting different risks if one gives the user a transparent evidence chain and the other provides only an opaque conclusion.",
+      "position_gist": "Supports the two-axis risk framework but recommends adding four explicit risk modifiers: evidence traceability, independent reviewability, reversibility, and time to harm.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "Patient-facing systems should not automatically be placed into a high-risk category solely because the user is not a clinician. The relevant regulatory question is what the output is capable of causing the patient to do and whether effective safeguards exist. Responsible patient-facing AI could improve symptom organisation, explanation of existing results, preparation for consultations and communication of longitudinal changes.",
+      "position_gist": "Patient-facing GenAI should not be presumed high-risk merely because the user is a layperson; risk should turn on what action the output could cause the patient to take and whether effective safeguards exist.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q2",
+        "q3"
+      ],
+      "source_passage": "Category\nA - Organisation\nB - Explanation\nC - Decision support\nD - Action direction\nTable 2. Proposed functional categories for patient-facing GenAI. Source: Sitora analysis.\nThis approach preserves patient empowerment while recognising that direct action guidance can create materially different risks from information organisation.",
+      "position_gist": "Proposes graded functional categories for patient-facing GenAI (organisation, explanation, decision support, action direction) because direct action guidance carries materially different risk than information organisation.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "Sitora recommends that they should never be hidden inside a single aggregate “accuracy” score. An AI that misses an urgent presentation and an AI that unnecessarily recommends a routine consultation have both erred, but the clinical consequences are not comparable.",
+      "position_gist": "Under-escalation and over-escalation should be reported separately rather than aggregated into a single accuracy score because their clinical consequences are not comparable.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "Performance reporting should therefore distinguish at least critical under-escalation, non-critical under-escalation, critical over-escalation and non-critical over-escalation. In safety-critical use cases, sensitivity to serious red flags should be evaluated separately from overall system accuracy.",
+      "position_gist": "Escalation performance should be reported in at least four severity-stratified categories, with red-flag sensitivity evaluated separately from overall accuracy in safety-critical uses.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "Escalation should be designed as a safety function rather than a generic classification score. False reassurance and unnecessary escalation can both cause harm, but their consequences differ. A serious under-escalation may warrant substantially greater weight than a low-consequence over-escalation.",
+      "position_gist": "Escalation should be treated as a designed safety function with severity-weighted evaluation, weighting serious under-escalation more heavily than low-consequence over-escalation.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q7"
+      ],
+      "source_passage": "Sitora supports this direction because exhaustive testing of every possible open-ended interaction is unrealistic. However, competency must attach to the complete deployed system, not merely the foundation model.\nThe same underlying model can perform differently when combined with different prompts, retrieval architectures, tool permissions, clinical rules, interfaces, memories and escalation policies. Strong performance by a foundation model on a medical benchmark therefore cannot, by itself, demonstrate the safety of a downstream medical device. The regulatory question should be whether the configured system can safely and effectively perform its claimed clinical function in representative conditions.",
+      "position_gist": "Supports the competency-based benchmarking-plus-clinical-confirmation framework, but competency must be assessed for the complete configured deployed system in representative conditions, since foundation-model benchmark performance alone cannot demonstrate device safety.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q11",
+        "q7"
+      ],
+      "source_passage": "3. Premarket competency assessment should include evidence fidelity and provenance, with clinical confirmation performed in the intended deployed configuration.",
+      "position_gist": "Clinical confirmation should be performed in the intended deployed configuration, and premarket competency assessment should include evidence fidelity and provenance.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "Sitora proposes a specific additional competency: Evidence Fidelity and Provenance. A model can possess correct medical knowledge while fabricating or misrepresenting a patient-specific fact. This is not the same failure as deficient clinical knowledge and should not be measured as though it were.\n• faithfully representing patient-supplied information;\n• accurately representing laboratory and measurement data;\n• preserving the source and temporal context of clinically important facts;\n• separating objective evidence from model inference;\n• avoiding invention of patient-specific facts;\n• identifying material contradictions or missing evidence; and\n• communicating uncertainty where evidence is incomplete.",
+      "position_gist": "Recommends adding 'Evidence Fidelity and Provenance' as a distinct benchmarking competency, separately measuring patient-specific factual integrity, source/temporal context preservation, separation of evidence from inference, and uncertainty communication.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q14"
+      ],
+      "source_passage": "Where clinician supervision forms part of the intended use, the human-AI configuration may be the appropriate unit of clinical performance evaluation. However, “human in the loop” is not a sufficient safety claim. Oversight is meaningful only if the human has sufficient source information, sees relevant uncertainty, has a realistic opportunity to review the output, can override it and is not pushed into automation bias by interface design or workflow pressure.",
+      "position_gist": "When clinician supervision is part of the intended use, the human-AI team should be the unit of performance evaluation, and the effectiveness of oversight (information sufficiency, review opportunity, override ability, freedom from automation bias) must be demonstrated rather than assumed.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q14",
+        "q9"
+      ],
+      "source_passage": "4. Evaluation should measure the performance of the human-AI team, including automation bias, usability, comprehension and the effectiveness of escalation pathways.",
+      "position_gist": "Evaluation should measure human-AI team performance including automation bias, usability, comprehension, and escalation pathway effectiveness.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "Sitora considers this potentially appropriate for selected lower-risk functions where outputs are reversible, human review is effective, the system can be rapidly rolled back, audit logging is comprehensive and autonomy is limited.\nA progressive deployment model could move through controlled technical validation, shadow-mode clinical evaluation, supervised deployment, broader monitored deployment and, only where separately justified, defined autonomous permissions. Greater flexibility should not be presumed for functions that are irreversible, immediately life-critical or otherwise high consequence.",
+      "position_gist": "Greater premarket uncertainty offset by postmarket monitoring may be appropriate only for lower-risk, reversible, effectively supervised, rapidly rollback-able functions with comprehensive audit logging, delivered via staged progressive deployment, and should not extend to irreversible or immediately life-critical functions.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Postmarket monitoring should combine periodic review with event-triggered reassessment.",
+      "position_gist": "Postmarket monitoring should combine periodic review with event-triggered reassessment.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "• hallucination or unsupported factual claims;\n• clinically significant omissions;\n• under-escalation and over-escalation;\n• inappropriate refusals or failure to refuse;\n• contradictions with objective evidence;\n• subgroup performance and longitudinal drift;\n• foundation-model, retrieval, prompt and orchestration changes;\n• tool-use failures and agent failures;\n• clinician overrides, near misses and confirmed incidents; and\n• signals of automation bias or workflow misuse.",
+      "position_gist": "Specifies a set of postmarket signals to monitor, including hallucinations, omissions, escalation errors, refusal behaviour, contradictions, subgroup drift, system-component changes, tool/agent failures, overrides and near misses, and automation bias.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q22",
+        "q24"
+      ],
+      "source_passage": "Event triggers for reassessment should include a foundation-model update, a material prompt or orchestration change, addition of an external tool, change to a clinical knowledge source, expansion to a new patient population or intended use, statistically significant performance deterioration or discovery of a new failure mode.",
+      "position_gist": "Revalidation should be event-triggered by defined material changes across the full system, including third-party foundation-model updates, prompt/orchestration changes, new tools, knowledge-source changes, population or intended-use expansion, performance deterioration, or new failure modes.",
+      "segment_id": "seg-016"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q22"
+      ],
+      "source_passage": "The lifecycle should therefore be treated as: Validate → Deploy → Observe → Detect → Investigate → Correct → Revalidate.",
+      "position_gist": "Proposes a continuous lifecycle loop of validate, deploy, observe, detect, investigate, correct, revalidate.",
+      "segment_id": "seg-017"
+    },
+    {
+      "question_ids": [
+        "q25"
+      ],
+      "source_passage": "Sitora supports the principle because downstream developers may retain responsibility for a regulated product while lacking complete information about the model on which that product depends.\nA useful master file could include a stable model and version identifier, architecture description, relevant data provenance, known limitations, healthcare-relevant failure modes, benchmark and subgroup results, safety controls, material update history, expected update cadence, deprecation policy and audit capabilities. The existence of such a file should not constitute general FDA approval of a model for medical use; responsibility for the specific device and intended use should remain with the downstream manufacturer.",
+      "position_gist": "Supports voluntary Foundation Model Master Files with specified content (version identifier, architecture, data provenance, limitations, failure modes, benchmark and subgroup results, safety controls, update history and cadence, deprecation policy, audit capabilities), while stressing they confer no FDA approval and downstream manufacturers retain responsibility.",
+      "segment_id": "seg-018"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Agentic AI introduces additional risk because systems can plan, invoke tools and execute multi-step actions with fewer opportunities for human review. Sitora recommends regulating these systems partly according to their authority to act rather than relying only on a technical definition of “agent” (FDA, 2026a).",
+      "position_gist": "Agentic systems should be regulated according to their authority to act rather than by a technical definition of 'agent'.",
+      "segment_id": "seg-019"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "For systems operating at higher authority levels, audit records should capture the objective, planned sequence, tools invoked, relevant inputs and outputs, validation checks, approval points, actions executed and resulting state changes. High-consequence or irreversible actions should ordinarily retain mandatory human checkpoints unless evidence demonstrates an acceptable benefit-risk profile for autonomous execution.",
+      "position_gist": "Higher-authority agentic systems should maintain detailed audit records of objectives, plans, tool calls, checks, approvals and state changes, and high-consequence or irreversible actions should ordinarily require mandatory human checkpoints absent evidence supporting autonomous execution.",
+      "segment_id": "seg-020"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q26"
+      ],
+      "source_passage": "7. Agentic systems should be regulated according to the authority they exercise, the reversibility of their actions, available safeguards and the opportunity for timely human intervention.",
+      "position_gist": "Agentic system regulation should be calibrated to exercised authority, action reversibility, available safeguards, and opportunity for timely human intervention.",
+      "segment_id": "seg-021"
+    },
+    {
+      "question_ids": [
+        "q7",
+        "q9"
+      ],
+      "source_passage": "Where validated thresholds, contraindications, hard exclusions or established red-flag logic exist, developers should consider implementing them independently from the generative model. This is a defence-in-depth principle: a probabilistic model can contribute flexible reasoning without becoming the sole mechanism responsible for predictable safety-critical checks.",
+      "position_gist": "Recommends implementing validated thresholds, contraindications and red-flag logic as deterministic controls independent of the generative model as a defence-in-depth safeguard.",
+      "segment_id": "seg-022"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "Clinically material outputs should be checked for unsupported claims, contradictions, missing evidence and improper conversion of inference into fact. The goal is not to suggest that every generated sentence can always be mathematically “proven”, but to create sufficient traceability that clinicians, patients and auditors can determine the evidence basis for important claims.",
+      "position_gist": "Clinically material outputs should undergo verification for unsupported claims, contradictions and missing evidence, with sufficient traceability for clinicians, patients and auditors to determine the evidence basis of claims.",
+      "segment_id": "seg-023"
+    },
+    {
+      "question_ids": [
+        "q25"
+      ],
+      "source_passage": "a stable model and version identifier, architecture description, relevant data provenance, known limitations, healthcare-relevant failure modes, benchmark and subgroup results, safety controls, material update history, expected update cadence, deprecation policy and audit capabilities. The existence of such a file should not constitute general FDA approval of a model for medical use; responsibility for the specific device and intended use should remain with the downstream manufacturer.",
+      "position_gist": "Foundation Model MAFs should contain specified content (stable model/version identifier, architecture, data provenance, known limitations, healthcare-relevant failure modes, benchmark and subgroup results, safety controls, update history and cadence, deprecation policy, audit capabilities), and their existence should not imply FDA approval of the model, with responsibility remaining with the downstream device manufacturer.",
+      "segment_id": "seg-024"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q2"
+      ],
+      "source_passage": "Clinical source evidence and generated interpretation should remain distinguishable throughout the product lifecycle.  This  principle  improves  auditability,  clinician  review,  patient  understanding  and  incident investigation. A safe interface should be able to distinguish patient report, objective measurement, deterministic rule, AI interpretation and final clinical decision.",
+      "position_gist": "Clinical source evidence and AI-generated interpretation should remain distinguishable across the lifecycle, with interfaces separating patient report, objective measurement, deterministic rule, AI interpretation and clinical decision, to support auditability and review.",
+      "segment_id": "seg-025"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "GenAI should not be forced into safety-critical tasks for which deterministic logic is more appropriate. Equally, deterministic rules should not be used where flexible contextual reasoning provides genuine value. The architecture should use each approach for the problem it is best suited to solve. This is consistent with defence-in-depth and lifecycle risk management, and it helps prevent a single probabilistic component from becoming the only line of protection against foreseeable harm.",
+      "position_gist": "Deterministic safety logic should be used for safety-critical tasks alongside generative components so that a single probabilistic component is never the sole safeguard against foreseeable harm.",
+      "segment_id": "seg-026"
+    },
+    {
+      "question_ids": [
+        "q23",
+        "q24"
+      ],
+      "source_passage": "Third-party foundation models create a distinctive regulatory issue: an application's behaviour can materially change even when the downstream developer has changed no application code. Model-provider updates, safety tuning, refusal policies or inference infrastructure can alter outputs. A clinically relevant behavioural change should therefore be capable of triggering evaluation even where the application repository is unchanged.",
+      "position_gist": "Change control should be triggered by clinically relevant behavioural change (including changes originating from third-party model providers) and not only by changes to application code.",
+      "segment_id": "seg-027"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q23",
+        "q24"
+      ],
+      "source_passage": "Sitora recommends that regulated systems maintain a controlled model registry recording provider, model identifier, validated version, validation date, validation dataset or protocol, approved clinical functions, known limitations, deployment date and retirement date. A material model change should pass through detection, quarantine, evaluation, validation, approval and controlled deployment. This complements the intent of PCCPs, which seek to make planned AI modifications transparent and controlled (FDA, 2025b).",
+      "position_gist": "Manufacturers should maintain a controlled model registry with specified fields and route material model changes through a detection, quarantine, evaluation, validation, approval and controlled deployment process, complementing PCCPs.",
+      "segment_id": "seg-028"
+    },
+    {
+      "question_ids": [
+        "q13",
+        "q14",
+        "q19",
+        "q6",
+        "q9"
+      ],
+      "source_passage": "A regulatory submission for a future GenAI-enabled medical device will need measurable evidence. Sitora should therefore design validation around failure modes rather than relying on a single accuracy metric.\nDomain\nEvidence fidelity\nOmission\nContradiction\nEscalation\nOver-escalation\nCalibration\nRobustness\n... Subgroups\nModel change\nHuman-AI team",
+      "position_gist": "Validation should be organized around failure-mode domains (evidence fidelity, omission, contradiction, under- and over-escalation, calibration, robustness, subgroups, model change, human-AI team) rather than a single accuracy metric.",
+      "segment_id": "seg-029"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "source_passage": "A credible GenAI medical-device programme requires governance that can react quickly to change. Technical validation alone is insufficient if the organisation cannot identify model changes, triage incidents, control deployments and preserve audit trails. The operating model should therefore include named responsibility for model approval, safety monitoring, incident review, clinical governance and rollback authority.",
+      "position_gist": "Postmarket governance should include named organizational responsibility for model approval, safety monitoring, incident review, clinical governance and rollback authority, since technical validation alone is insufficient.",
+      "segment_id": "seg-030"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q22"
+      ],
+      "source_passage": "Trigger\nFoundation model version change\nNew external tool or retrieval source\nPrompt/orchestration change\nNew patient population or intended use\nSafety signal / incident\nPerformance drift\nTable 6. Event-triggered change-control model.",
+      "position_gist": "Change control and reassessment should be event-triggered by defined events: foundation model version change, new external tool or retrieval source, prompt/orchestration change, new population or intended use, safety signals/incidents, and performance drift.",
+      "segment_id": "seg-031"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "source_passage": "The central challenge is not simply hallucination in isolation, but the combination of non-deterministic outputs, open-ended tasks, limited visibility into upstream models, human reliance and systems that can increasingly take action. A framework that evaluates only model-level benchmark accuracy would therefore miss important sources of risk.",
+      "position_gist": "Evaluation limited to model-level benchmark accuracy is inadequate because key risks arise from non-determinism, open-ended tasks, upstream model opacity, human reliance and action-taking capability.",
+      "segment_id": "seg-032"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "A further challenge is proportionality. Regulation that treats all patient-facing or generative functions as equally high risk could suppress useful low-risk tools, while under-regulation could expose patients to confident but unreviewable errors. The FDA's activity/consequence approach, enhanced with traceability, reversibility, reviewability and time-to-harm, offers a plausible route to proportional control.",
+      "position_gist": "The two-axis activity/consequence risk framework is a plausible basis for proportional regulation but should be augmented with traceability, reversibility, reviewability and time-to-harm dimensions.",
+      "segment_id": "seg-033"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q22",
+        "q26",
+        "q9"
+      ],
+      "source_passage": "Sitora therefore recommends a regulatory and design framework built around seven layers: source evidence, deterministic safety controls, generative intelligence, verification and provenance, risk-weighted escalation, human clinical authority and lifecycle monitoring. Within that framework, Evidence Fidelity and Provenance should become an explicit GenAI competency, risk metrics should reflect the clinical severity of errors, human oversight should be assessed for practical effectiveness, model behaviour changes should trigger controlled revalidation, and agentic systems should face progressively stronger requirements as their authority to act increases.",
+      "position_gist": "FDA should adopt a seven-layer framework in which Evidence Fidelity and Provenance is an explicit GenAI competency, risk metrics reflect clinical severity of errors, human oversight is assessed for practical effectiveness, behavioural model changes trigger controlled revalidation, and agentic requirements scale with authority to act.",
+      "segment_id": "seg-034"
+    },
+    {
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "source_passage": "There are limitations. A layered architecture does not itself prove clinical safety. Deterministic rules can be wrong or incomplete; provenance systems can give false reassurance; clinicians can over-rely on AI even when evidence is visible; postmarket monitoring can fail to detect rare harms; and a third-party foundation-model provider may not provide sufficient technical transparency. These issues reinforce the need for empirical validation rather than weakening the case for architectural controls.",
+      "position_gist": "Architectural controls and postmarket monitoring are not substitutes for empirical validation, since postmarket monitoring can miss rare harms, clinicians may over-rely on AI, and third-party model providers may not be sufficiently transparent.",
+      "segment_id": "seg-035"
+    }
+  ]
+}

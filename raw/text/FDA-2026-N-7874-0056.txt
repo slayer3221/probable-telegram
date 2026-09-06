@@ -1,0 +1,267 @@
+Please see attached comment.
+
+[Attachment: Comment from Manuj Agarwal]
+PUBLIC COMMENT  |  FDA-2026-N-7874
+Page 1
+PUBLIC COMMENT
+Considerations for the Regulation of Generative AI-Enabled Medical Devices
+Docket: FDA-2026-N-7874
+Submitted by: Manuj Agarwal, MD
+Professional background: Board-certified radiation oncologist; Founder, Blue Wellth
+Capacity: Individual comment; views expressed are my own
+Date: September 3, 2026
+Questions addressed: 4, 9, 14, 16, 19, 21, and 26
+To the Food and Drug Administration:
+Thank you for the opportunity to comment on the Center for Devices and Radiological Health discussion
+paper regarding generative artificial intelligence-enabled medical devices. I am a board-certified
+radiation oncologist with more than ten years of experience across academic and community oncology.
+My clinical work requires the integration of pathology, imaging, longitudinal laboratory data, treatment
+history, toxicity, function, and patient preferences. I have also advised clinical AI development involving
+toxicity grading, validation, safety guardrails, and workflow integration. I submit this comment in my
+individual capacity.
+My central recommendation is that clinical AI competency be assessed as task-specific and
+consequence-sensitive. A fluent output is not evidence of safe clinical judgment. In specialty care, a
+response may be coherent and medically plausible yet unsafe because it overlooks a prior treatment,
+applies the wrong clinical constraint, fails to recognize an exception, or does not know when the case
+has moved beyond its competence. The regulatory framework should therefore evaluate whether a
+device can perform a defined clinical task safely in its intended workflow, including whether it
+recognizes uncertainty, abstains appropriately, escalates to the correct expertise, and remains reliable
+after deployment.
+Executive summary of recommendations
+•Add independent reviewability and error detectability to the risk assessment.
+•Test the final deployed device on representative tasks, decision boundaries, and failure modes.
+•Use specialist comparators for specialty functions, even when the intended user is a generalist.
+•Evaluate both device-alone and human-device team performance; test, rather than presume,
+oversight.
+•Require independent, specialty-matched adjudication for high-consequence functions.
+•Combine periodic postmarket review with reassessment triggered by changes, sentinel failures,
+or drift.
+•For agentic systems, define autonomy boundaries, human checkpoints, least-privilege access,
+and auditability.
+
+PUBLIC COMMENT  |  FDA-2026-N-7874
+Page 2
+Question 4: Generalist versus specialist use
+The distinction between generalist and specialist physicians should inform risk when safe use depends
+on recognizing a specialty-specific error. The relevant question is not simply whether the user is a
+licensed healthcare professional. It is whether the intended user can independently evaluate the
+device's output, identify important omissions or contradictions, and prevent harm before the output
+influences care.
+Radiation oncology illustrates this problem. A generated recommendation about treatment may appear
+reasonable while using an inappropriate fractionation schedule, overlooking a previous radiation course,
+failing to account for cumulative dose in re-irradiation, or applying an organ-at-risk constraint outside
+the setting in which it is valid. These are not necessarily obvious factual errors. They may be plausible
+statements whose danger is visible only when the output is reconciled with the full treatment history,
+disease setting, anatomy, treatment intent, and competing constraints.
+For functions that extend specialty knowledge to generalist users, FDA should consider three features in
+addition to the proposed activity and consequence axes: whether the error is independently detectable
+by the intended user; whether the action is reversible before harm occurs; and whether timely specialist
+escalation is realistically available. A disclaimer or a generic instruction to consult a specialist is not an
+adequate safeguard when the output is specific, personalized, and likely to influence action.
+Risk may be mitigated by a narrow intended use; visible source provenance; explicit identification of
+missing data; calibrated uncertainty; reliable abstention; specialty-specific escalation criteria; and
+workflow controls that prevent a high-consequence recommendation from becoming an order without
+appropriate review. Where safe interpretation depends on specialist knowledge, the device should be
+benchmarked and clinically confirmed by qualified specialists even when the intended end user is a
+generalist.
+Question 9: Benchmarking structure
+The proposed benchmarking structure is a useful starting point if it evaluates the final user-facing device
+in the configuration in which it will be deployed. Benchmarking should not be treated as a proxy for
+clinical confirmation, and performance on public or static assets should not be assumed to predict safety
+in real workflows.
+In addition to clinical knowledge, analytic capability, safety behavior, communication, and
+generalizability, I recommend that FDA explicitly include the following elements:
+•Clinically meaningful failure modes: errors should be categorized by potential consequence, not
+only by whether an answer matches a reference response.
+•Decision-boundary testing: cases should concentrate on situations in which a small change in
+history, stage, prior therapy, comorbidity, or patient goal should change the recommended
+action.
+•Scope maintenance, abstention, and escalation: the device should recognize missing or
+conflicting data and avoid unwarranted specificity.
+•Traceability: when the function relies on clinical evidence or patient data, the device should
+identify the source and allow the user to inspect the basis for the output.
+
+PUBLIC COMMENT  |  FDA-2026-N-7874
+Page 3
+•Multi-turn and workflow robustness: evaluation should include realistic conversational
+trajectories, corrected information, interruptions, copied-forward errors, and user pressure to
+provide an answer outside scope.
+•Human-factors performance: testing should examine whether presentation, confidence, speed,
+or workflow placement causes automation bias or makes appropriate review less likely.
+Aggregate accuracy alone is insufficient for a high-consequence function. Acceptance criteria should
+include ceilings for critical errors, failures to abstain, and failures to escalate, even when overall
+performance is high. Test assets should include sequestered and rotating cases, external datasets,
+clinically representative edge cases, and cases accrued after the evaluation protocol is fixed. Sponsor-
+developed assets may be appropriate for specialized tasks, but the protocol, case-selection logic, scoring
+rules, and adjudication process should be independently reviewed.
+Question 14: Comparators and acceptance criteria
+The comparator should be selected according to the clinical task and intended workflow. If a device
+performs a function that ordinarily requires specialty expertise, a qualified specialist panel should define
+the reference standard. A median generalist comparator may describe current practice, but it should not
+define acceptable safety for a specialty task. Similarly, median clinician performance should not be used
+when it would normalize avoidable high-consequence errors.
+For many clinician-facing devices, the most informative evaluation would include four conditions: the
+device operating alone; the intended user operating without the device; the intended user working with
+the device; and an independent specialist reference panel. This design separates device capability from
+the real-world value and risks of the human-device team. It can also identify a device that performs well
+in isolation but degrades team performance by creating false reassurance, anchoring, or additional work
+that is difficult to verify.
+When human review is part of the intended use, human-device team performance should be a principal
+basis for evaluation, but device-alone testing should still be required to characterize latent failure modes
+and the burden placed on the reviewer. Oversight should not be credited as a risk control unless
+evaluation shows that intended users can detect representative errors within the actual time,
+information, and workflow constraints of use.
+Acceptance criteria should be prespecified and stratified by clinical consequence and case complexity.
+They should address not only whether a final answer is acceptable, but also whether the device omitted
+decisive information, recommended unnecessary or delayed care, expressed unjustified certainty, or
+failed to recognize that specialist input was required.
+Question 16: Independent third-party participation
+Qualified independent third parties should have a role in protocol review, benchmark governance,
+clinical adjudication, and review of serious or disputed errors for moderate- and high-consequence
+functions. Independence is especially important when outputs are open-ended, sponsor-developed test
+assets are used, or scoring requires clinical judgment.
+Clinical adjudicators should have training and recent experience matched to the device's function,
+intended population, and care setting. For specialty functions, relevant board certification or equivalent
+
+PUBLIC COMMENT  |  FDA-2026-N-7874
+Page 4
+specialty expertise should generally be expected. Panels should include more than one practice
+environment when care patterns or resource availability may affect the standard. Independence criteria
+should address financial relationships, participation in device development, access to sponsor-selected
+information, and the sponsor's ability to exclude unfavorable cases or adjudicators.
+Third-party participation should remain proportionate to risk. FDA could support modular methods,
+reusable evaluation protocols, and transparent qualification standards so that independent assessment
+does not become a barrier available only to large sponsors. The goal should be credible separation
+between product development and clinical judgment, not an exclusive certification market.
+Questions 19 and 21: Postmarket monitoring and stakeholder roles
+Postmarket monitoring should combine periodic review with trigger-based reassessment. A fixed
+cadence is necessary but not sufficient because GenAI-enabled devices can change through updates to
+the foundation model, prompt architecture, retrieval sources, user interface, guardrails, or connected
+tools even when the product's name and intended use remain unchanged.
+Triggering events should include a material model or workflow change; deployment to a new care
+setting or patient population; a sentinel adverse event or near miss; a meaningful increase in clinician
+overrides, user complaints, or escalation failures; evidence of subgroup performance degradation; and
+changes to external data sources or tools on which the device relies. Sampling should be enriched for
+high-consequence outputs, edge cases, disagreements between users and the device, and situations in
+which the device did not abstain or escalate.
+Monitoring should track clinically meaningful outcomes and process failures, not only lexical similarity or
+generalized accuracy. Relevant measures may include incorrect action, delay in appropriate care,
+unnecessary escalation, omission of decisive information, contraindicated recommendations, failure to
+recognize missing data, failure to abstain, and differential performance across clinically relevant
+subgroups. Near misses are particularly important because clinician interception may prevent patient
+harm while revealing a dangerous device behavior.
+Clinicians, institutions, professional societies, and standards-setting bodies can contribute without
+diffusing manufacturer accountability. Clinicians can report structured failure modes and near misses.
+Healthcare institutions can monitor local workflow performance, maintain appropriate logs, and assess
+whether the device is being used outside its intended context. Professional societies can help define
+specialty-specific failure taxonomies, representative cases, and minimum evaluation standards.
+Manufacturers, however, should remain responsible for funding and operating the monitoring program,
+investigating signals, notifying users, correcting the product, and reporting to FDA as required.
+Reporting mechanisms should be low-friction and should preserve the clinical context needed to
+interpret an event. Manufacturers should provide users and institutions with understandable summaries
+of material performance changes, known limitations, monitoring findings, and corrective actions. Shared
+responsibility should improve signal detection; it should not become a reason that no party owns the
+response.
+
+PUBLIC COMMENT  |  FDA-2026-N-7874
+Page 5
+Question 26: Agentic GenAI-enabled devices
+Agentic systems require evaluation of the entire action chain, not only the quality of individual outputs.
+Risk can compound across planning, tool selection, data retrieval, interpretation, and execution. A small
+error early in the sequence may propagate into a high-consequence action while appearing internally
+consistent at each step.
+For each agentic function, the sponsor should define an explicit autonomy boundary: which actions the
+device may initiate; which tools and data sources it may access; the maximum sequence length or scope;
+stop conditions; actions that are reversible; and actions that require affirmative human authorization.
+High-consequence or irreversible actions should have hard human checkpoints that cannot be bypassed
+by conversational wording or passive user inattention.
+Premarket evaluation should test the device under tool failure, incorrect tool output, conflicting patient
+data, stale retrieval sources, prompt injection, ambiguous instructions, user correction, and human
+nonresponse. Acceptance criteria should address least-privilege access, separation of credentials,
+reliable confirmation of patient and task context, complete audit logs, replayability, rollback or
+containment, and graceful degradation when a component becomes unavailable.
+Postmarket oversight should be more frequent when an agent can act rather than merely recommend,
+and reassessment should be triggered by changes to any material component in the action chain. A
+supervisory model may assist monitoring, but it should not be treated as independent validation unless
+its own performance, failure modes, and dependence on shared models or data are evaluated.
+Conclusion
+CDRH's proposed competency-based approach is promising if competency is defined at the level of the
+intended clinical task and tested in the workflow in which the output will be used. The framework
+should distinguish fluency from judgment, average performance from consequential failure, and
+nominal human oversight from demonstrated effective review.
+The governing principle should be straightforward: the more an AI-enabled device directs or takes
+clinical action, and the harder its errors are for the intended user to detect before harm occurs, the
+stronger the specialty-matched evidence, independent adjudication, human-factor testing, and
+postmarket monitoring should be.
+Thank you for considering these comments.
+Manuj Agarwal, MD
+Board-certified radiation oncologist | Founder, Blue Wellth
+Submitted in an individual capacity
+Reference
+U.S. Food and Drug Administration. Considerations for the Regulation of Generative AI-Enabled Medical Devices:
+Discussion Paper and Request for Feedback. August 18, 2026. FDA discussion paper
+
+[Attachment: Comment from Manuj Agarwal]
+PUBLIC COMMENT
+Considerations for the Regulation of Generative AI-Enabled Medical Devices
+Docket: FDA-2026-N-7874
+Submitted by: Manuj Agarwal, MD
+Professional background: Board-certified radiation oncologist; Founder, Blue Wellth
+Capacity: Individual comment; views expressed are my own
+Date: September 3, 2026
+Questions addressed: 4, 9, 14, 16, 19, 21, and 26
+To the Food and Drug Administration:
+Thank you for the opportunity to comment on the Center for Devices and Radiological Health discussion paper regarding generative artificial intelligence-enabled medical devices. I am a board-certified radiation oncologist with more than ten years of experience across academic and community oncology. My clinical work requires the integration of pathology, imaging, longitudinal laboratory data, treatment history, toxicity, function, and patient preferences. I have also advised clinical AI development involving toxicity grading, validation, safety guardrails, and workflow integration. I submit this comment in my individual capacity.
+My central recommendation is that clinical AI competency be assessed as task-specific and consequence-sensitive. A fluent output is not evidence of safe clinical judgment. In specialty care, a response may be coherent and medically plausible yet unsafe because it overlooks a prior treatment, applies the wrong clinical constraint, fails to recognize an exception, or does not know when the case has moved beyond its competence. The regulatory framework should therefore evaluate whether a device can perform a defined clinical task safely in its intended workflow, including whether it recognizes uncertainty, abstains appropriately, escalates to the correct expertise, and remains reliable after deployment.
+Executive summary of recommendations
+Add independent reviewability and error detectability to the risk assessment.
+Test the final deployed device on representative tasks, decision boundaries, and failure modes.
+Use specialist comparators for specialty functions, even when the intended user is a generalist.
+Evaluate both device-alone and human-device team performance; test, rather than presume, oversight.
+Require independent, specialty-matched adjudication for high-consequence functions.
+Combine periodic postmarket review with reassessment triggered by changes, sentinel failures, or drift.
+For agentic systems, define autonomy boundaries, human checkpoints, least-privilege access, and auditability.
+Question 4: Generalist versus specialist use
+The distinction between generalist and specialist physicians should inform risk when safe use depends on recognizing a specialty-specific error. The relevant question is not simply whether the user is a licensed healthcare professional. It is whether the intended user can independently evaluate the device's output, identify important omissions or contradictions, and prevent harm before the output influences care.
+Radiation oncology illustrates this problem. A generated recommendation about treatment may appear reasonable while using an inappropriate fractionation schedule, overlooking a previous radiation course, failing to account for cumulative dose in re-irradiation, or applying an organ-at-risk constraint outside the setting in which it is valid. These are not necessarily obvious factual errors. They may be plausible statements whose danger is visible only when the output is reconciled with the full treatment history, disease setting, anatomy, treatment intent, and competing constraints.
+For functions that extend specialty knowledge to generalist users, FDA should consider three features in addition to the proposed activity and consequence axes: whether the error is independently detectable by the intended user; whether the action is reversible before harm occurs; and whether timely specialist escalation is realistically available. A disclaimer or a generic instruction to consult a specialist is not an adequate safeguard when the output is specific, personalized, and likely to influence action.
+Risk may be mitigated by a narrow intended use; visible source provenance; explicit identification of missing data; calibrated uncertainty; reliable abstention; specialty-specific escalation criteria; and workflow controls that prevent a high-consequence recommendation from becoming an order without appropriate review. Where safe interpretation depends on specialist knowledge, the device should be benchmarked and clinically confirmed by qualified specialists even when the intended end user is a generalist.
+Question 9: Benchmarking structure
+The proposed benchmarking structure is a useful starting point if it evaluates the final user-facing device in the configuration in which it will be deployed. Benchmarking should not be treated as a proxy for clinical confirmation, and performance on public or static assets should not be assumed to predict safety in real workflows.
+In addition to clinical knowledge, analytic capability, safety behavior, communication, and generalizability, I recommend that FDA explicitly include the following elements:
+Clinically meaningful failure modes: errors should be categorized by potential consequence, not only by whether an answer matches a reference response.
+Decision-boundary testing: cases should concentrate on situations in which a small change in history, stage, prior therapy, comorbidity, or patient goal should change the recommended action.
+Scope maintenance, abstention, and escalation: the device should recognize missing or conflicting data and avoid unwarranted specificity.
+Traceability: when the function relies on clinical evidence or patient data, the device should identify the source and allow the user to inspect the basis for the output.
+Multi-turn and workflow robustness: evaluation should include realistic conversational trajectories, corrected information, interruptions, copied-forward errors, and user pressure to provide an answer outside scope.
+Human-factors performance: testing should examine whether presentation, confidence, speed, or workflow placement causes automation bias or makes appropriate review less likely.
+Aggregate accuracy alone is insufficient for a high-consequence function. Acceptance criteria should include ceilings for critical errors, failures to abstain, and failures to escalate, even when overall performance is high. Test assets should include sequestered and rotating cases, external datasets, clinically representative edge cases, and cases accrued after the evaluation protocol is fixed. Sponsor-developed assets may be appropriate for specialized tasks, but the protocol, case-selection logic, scoring rules, and adjudication process should be independently reviewed.
+Question 14: Comparators and acceptance criteria
+The comparator should be selected according to the clinical task and intended workflow. If a device performs a function that ordinarily requires specialty expertise, a qualified specialist panel should define the reference standard. A median generalist comparator may describe current practice, but it should not define acceptable safety for a specialty task. Similarly, median clinician performance should not be used when it would normalize avoidable high-consequence errors.
+For many clinician-facing devices, the most informative evaluation would include four conditions: the device operating alone; the intended user operating without the device; the intended user working with the device; and an independent specialist reference panel. This design separates device capability from the real-world value and risks of the human-device team. It can also identify a device that performs well in isolation but degrades team performance by creating false reassurance, anchoring, or additional work that is difficult to verify.
+When human review is part of the intended use, human-device team performance should be a principal basis for evaluation, but device-alone testing should still be required to characterize latent failure modes and the burden placed on the reviewer. Oversight should not be credited as a risk control unless evaluation shows that intended users can detect representative errors within the actual time, information, and workflow constraints of use.
+Acceptance criteria should be prespecified and stratified by clinical consequence and case complexity. They should address not only whether a final answer is acceptable, but also whether the device omitted decisive information, recommended unnecessary or delayed care, expressed unjustified certainty, or failed to recognize that specialist input was required.
+Question 16: Independent third-party participation
+Qualified independent third parties should have a role in protocol review, benchmark governance, clinical adjudication, and review of serious or disputed errors for moderate- and high-consequence functions. Independence is especially important when outputs are open-ended, sponsor-developed test assets are used, or scoring requires clinical judgment.
+Clinical adjudicators should have training and recent experience matched to the device's function, intended population, and care setting. For specialty functions, relevant board certification or equivalent specialty expertise should generally be expected. Panels should include more than one practice environment when care patterns or resource availability may affect the standard. Independence criteria should address financial relationships, participation in device development, access to sponsor-selected information, and the sponsor's ability to exclude unfavorable cases or adjudicators.
+Third-party participation should remain proportionate to risk. FDA could support modular methods, reusable evaluation protocols, and transparent qualification standards so that independent assessment does not become a barrier available only to large sponsors. The goal should be credible separation between product development and clinical judgment, not an exclusive certification market.
+Questions 19 and 21: Postmarket monitoring and stakeholder roles
+Postmarket monitoring should combine periodic review with trigger-based reassessment. A fixed cadence is necessary but not sufficient because GenAI-enabled devices can change through updates to the foundation model, prompt architecture, retrieval sources, user interface, guardrails, or connected tools even when the product's name and intended use remain unchanged.
+Triggering events should include a material model or workflow change; deployment to a new care setting or patient population; a sentinel adverse event or near miss; a meaningful increase in clinician overrides, user complaints, or escalation failures; evidence of subgroup performance degradation; and changes to external data sources or tools on which the device relies. Sampling should be enriched for high-consequence outputs, edge cases, disagreements between users and the device, and situations in which the device did not abstain or escalate.
+Monitoring should track clinically meaningful outcomes and process failures, not only lexical similarity or generalized accuracy. Relevant measures may include incorrect action, delay in appropriate care, unnecessary escalation, omission of decisive information, contraindicated recommendations, failure to recognize missing data, failure to abstain, and differential performance across clinically relevant subgroups. Near misses are particularly important because clinician interception may prevent patient harm while revealing a dangerous device behavior.
+Clinicians, institutions, professional societies, and standards-setting bodies can contribute without diffusing manufacturer accountability. Clinicians can report structured failure modes and near misses. Healthcare institutions can monitor local workflow performance, maintain appropriate logs, and assess whether the device is being used outside its intended context. Professional societies can help define specialty-specific failure taxonomies, representative cases, and minimum evaluation standards. Manufacturers, however, should remain responsible for funding and operating the monitoring program, investigating signals, notifying users, correcting the product, and reporting to FDA as required.
+Reporting mechanisms should be low-friction and should preserve the clinical context needed to interpret an event. Manufacturers should provide users and institutions with understandable summaries of material performance changes, known limitations, monitoring findings, and corrective actions. Shared responsibility should improve signal detection; it should not become a reason that no party owns the response.
+Question 26: Agentic GenAI-enabled devices
+Agentic systems require evaluation of the entire action chain, not only the quality of individual outputs. Risk can compound across planning, tool selection, data retrieval, interpretation, and execution. A small error early in the sequence may propagate into a high-consequence action while appearing internally consistent at each step.
+For each agentic function, the sponsor should define an explicit autonomy boundary: which actions the device may initiate; which tools and data sources it may access; the maximum sequence length or scope; stop conditions; actions that are reversible; and actions that require affirmative human authorization. High-consequence or irreversible actions should have hard human checkpoints that cannot be bypassed by conversational wording or passive user inattention.
+Premarket evaluation should test the device under tool failure, incorrect tool output, conflicting patient data, stale retrieval sources, prompt injection, ambiguous instructions, user correction, and human nonresponse. Acceptance criteria should address least-privilege access, separation of credentials, reliable confirmation of patient and task context, complete audit logs, replayability, rollback or containment, and graceful degradation when a component becomes unavailable.
+Postmarket oversight should be more frequent when an agent can act rather than merely recommend, and reassessment should be triggered by changes to any material component in the action chain. A supervisory model may assist monitoring, but it should not be treated as independent validation unless its own performance, failure modes, and dependence on shared models or data are evaluated.
+Conclusion
+CDRH's proposed competency-based approach is promising if competency is defined at the level of the intended clinical task and tested in the workflow in which the output will be used. The framework should distinguish fluency from judgment, average performance from consequential failure, and nominal human oversight from demonstrated effective review.
+The governing principle should be straightforward: the more an AI-enabled device directs or takes clinical action, and the harder its errors are for the intended user to detect before harm occurs, the stronger the specialty-matched evidence, independent adjudication, human-factor testing, and postmarket monitoring should be.
+Thank you for considering these comments.
+Manuj Agarwal, MD
+Board-certified radiation oncologist | Founder, Blue Wellth
+Submitted in an individual capacity
+Reference
+U.S. Food and Drug Administration. Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and Request for Feedback. August 18, 2026. FDA discussion paper

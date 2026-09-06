@@ -1,0 +1,494 @@
+Newton&rsquo;s Tree submits these comments in response to CDRH&rsquo;s discussion paper on GenAI-enabled medical devices. Our comments come from our work to evaluate, deploy, govern, and monitor clinical AI in healthcare systems. We recommend three separate assurance layers: competency testing, clinical confirmation, and operational assurance. We also include anonymized examples from real deployments. These examples show why benchmark results alone cannot give sufficient assurance of safety and effectiveness.
+
+[Attachment: Comment from Newton's Tree Inc]
+Response of Newtonʼs Tree Ltd. to
+FDA Docket No. FDA-2026-N-7874
+Considerations for the Regulation of Generative AI-Enabled
+Medical Devices
+About Newtonʼs Tree
+Newtonʼs Tree is a global healthcare AI company that enables healthcare providers to
+select, test, deploy, and monitor in-house and third-party AI products through its
+enterprise AI platform.
+The company is led by a senior leadership team with globally unique experience at the
+nexus of healthcare, AI technology, and cutting edge research. We work with the
+leading health systems that are bending the adoption curve for AI. We do this through
+the development and deployment of the very best technology within our vendor-
+neutral ecosystem.
+Main recommendation
+CDRH should use three separate assurance layers.
+Layer 1
+Competency
+The final device must do
+its intended task. It must
+also remain within its
+approved scope.
+Layer 2
+Clinical confirmation
+The device must work in its
+intended population,
+workflow, and technical
+environment.
+Layer 3
+Operational
+assurance
+The device must continue
+to work after deployment.
+The manufacturer must
+detect and control changes
+in performance.
+No layer can replace another.
+A benchmark cannot prove clinical effectiveness. A clinical study cannot prove that
+performance will remain stable. Postmarket monitoring cannot correct an unsafe
+premarket decision.
+FDA Docket No. FDA-2026-N-7874
+Newtonʼs Tree Inc Considerations for the Regulation of Generative AI-Enabled Medical Devices
+
+Risk assessment
+Question 1: The two-axis framework
+The two-axis framework is not sufficient for risk assessment.
+Device activity does not equal the probability of harm. A highly automated device can
+have narrow limits and strong controls. An advisory device can cause harm through
+automation bias.
+CDRH should continue to use the standard concepts of probability and severity.
+The risk analysis should include:
+The unsafe device behavior.
+The possible harm.
+The probability of the harm.
+The available risk controls.
+The remaining risk after the controls operate.
+The analysis must include more than an incorrect output. A GenAI device can also fail
+through omission, harmful agreement, delayed escalation, or an unauthorized action.
+Reversibility, time pressure, traceability, and available safeguards should modify the risk
+analysis. CDRH does not need more graphical axes.
+Question 2: General and patient-specific output
+CDRH should use one clear division:
+General output.
+Patient-specific output.
+General output does not use information about one patient.
+Patient-specific output uses or applies to one patientʼs symptoms, history, images,
+measurements, records, or conversation.
+CDRH should not classify risk by wording, tone, specificity, or degree of recommendation.
+These features are difficult to define. Manufacturers can also change the wording without
+changing the function.
+CDRH should treat patient-specific output as potentially action-directing. The possible
+consequence of the output should then determine the risk category.
+FDA Docket No. FDA-2026-N-7874
+Newtonʼs Tree Inc Considerations for the Regulation of Generative AI-Enabled Medical Devices
+
+A statement that says “consider increasing the dose” can have the same effect as a direct
+instruction. A warning or disclaimer does not remove this risk.
+Healthcare professional review can reduce the remaining risk. However, the manufacturer
+must prove that this control is effective. The manufacturer must include automation bias in
+this evaluation.
+Question 3: Patient-facing devices
+A patient-facing device can have more risk when the patient cannot independently assess
+the output.
+However, CDRH should not assume that patients lack useful knowledge or capability. A
+well-designed device can improve access and patient control.
+The manufacturer should use the following controls:
+A clear and limited scope.
+Clear sources for clinical information.
+Clear information about uncertainty.
+Human review before a high-consequence action.
+A working clinical escalation process.
+Tests for different ages, languages, and levels of health knowledge.
+Tests of long and repeated conversations.
+Users can also give false information or try to bypass safety controls. The manufacturer
+must include this foreseeable use in the risk analysis.
+The manufacturer can monitor user and device interactions. The monitoring system can
+identify a high-risk conversation and start a human review.
+A second AI system can help with this task. However, the manufacturer must also test and
+monitor the second system.
+Question 4: Generalist and specialist users
+Risk increases when safe use needs specialist knowledge and the user does not have
+that knowledge.
+The intended user must form part of the intended use.
+A device for specialist use and a device for generalist use are different devices for
+evaluation purposes. The manufacturer must confirm each intended use.
+Controls can include:
+FDA Docket No. FDA-2026-N-7874
+Newtonʼs Tree Inc Considerations for the Regulation of Generative AI-Enabled Medical Devices
+
+Verified user roles.
+Role-based access.
+Specialist confirmation for specified actions.
+Automatic deferral for complex cases.
+Monitoring of agreement, rejection, and override by user type.
+The device should use verified role information. It should not estimate a userʼs specialty
+from the conversation.
+Question 5: Multi-turn conversations and scope
+The manufacturer must assess complete conversations. Tests of single outputs are
+not sufficient.
+The tests should include:
+Long conversations.
+Repeated attempts to cross a scope boundary.
+Indirect or fictional questions.
+Missing or conflicting information.
+New conversation sessions.
+Stored memory.
+Repeated tests of the same clinical case.
+The manufacturer should use deterministic filters when the device can measure the
+scope boundary.
+Current machine-learning devices already use this method. For example, an adult fracture
+device can reject pediatric X-rays from DICOM age data.
+A GenAI device can use deterministic controls for:
+Patient age.
+User role.
+Input type.
+Clinical domain.
+Medication class.
+Permitted tools.
+Permitted actions.
+The control should operate outside the generative model where possible.
+FDA Docket No. FDA-2026-N-7874
+Newtonʼs Tree Inc Considerations for the Regulation of Generative AI-Enabled Medical Devices
+
+When no control stops out-of-scope behavior, the manufacturer must treat that behavior
+as foreseeable. The manufacturer must include it in the safety evaluation.
+Question 6: Care escalation
+The manufacturer must measure three types of error:
+Under-escalation.
+Over-escalation.
+Failed escalation.
+Failed escalation occurs when the device starts an escalation but the handoff does not
+work. The device can select the wrong service. The alert can arrive too late. The
+responsible person can fail to act.
+The manufacturer should measure:
+Sensitivity for required escalation.
+False-positive and false-negative rates.
+Time to escalation.
+The selected care destination.
+Completion of the handoff.
+The clinical and operational result.
+A severe under-escalation error needs its own pass or fail limit. Good performance on
+common cases must not compensate for a severe failure.
+FDA Docket No. FDA-2026-N-7874
+Newtonʼs Tree Inc Considerations for the Regulation of Generative AI-Enabled Medical Devices
+
+Layer 1: Competency
+Questions 7 to 10: Device benchmarking
+The competency approach is useful and necessary.
+The manufacturer must test the final device configuration. The test must include the
+model, prompts, retrieval system, controls, tools, and user interface.
+Benchmarking should act as a gate to clinical confirmation. It should not provide the full
+assurance of safety and effectiveness.
+Each high-consequence failure must have a separate acceptance limit. An average score
+can hide an important failure.
+Competency tests should include:
+Clinical knowledge.
+Important omissions.
+Scope control.
+Refusal and deferral.
+Long conversations.
+Escalation.
+Repeated output variation.
+Input data errors.
+Tool use.
+Unauthorized actions.
+Behavior after a system change.
+The manufacturer must map each test to the intended use or to a specified hazard.
+The manufacturer should also show that:
+The test population represents the intended population.
+The test includes rare and severe cases.
+The acceptance limits were specified before the test.
+The test data were separate from development data.
+Qualified independent reviewers assessed open outputs.
+Repeated tests gave stable safety results.
+Clinical confirmation supports the benchmark results.
+FDA Docket No. FDA-2026-N-7874
+Newtonʼs Tree Inc Considerations for the Regulation of Generative AI-Enabled Medical Devices
+
+The two-axis framework should not directly set the amount of evidence. The hazard
+analysis and the effectiveness of the risk controls should set the evidence requirements.
+Question 17: Other model types
+The three-layer approach can apply to different model types.
+A multimodal device needs tests for:
+Incorrect links between text, images, and other data.
+Missing or conflicting inputs.
+Incorrect patient or time-point matching.
+Unsupported statements about an image or signal.
+Changes in imaging equipment or acquisition method.
+A predictive world model needs tests for:
+Error across multiple predicted steps.
+Incorrect counterfactual results.
+Uncertainty in future states.
+Failure when real events differ from predicted events.
+The final device remains the main unit of evaluation.
+Question 25: Foundation Model MAFs
+A Foundation Model MAF can provide useful dependency information. It cannot prove that
+a final device is safe or effective.
+Useful MAF content includes:
+The model and version identifier.
+The supported data types.
+The intended and unsupported uses.
+Known failure modes.
+Safety controls.
+Healthcare test results.
+Output variation.
+Change history.
+Update notice requirements.
+Incident information.
+Version control and rollback options.
+FDA Docket No. FDA-2026-N-7874
+Newtonʼs Tree Inc Considerations for the Regulation of Generative AI-Enabled Medical Devices
+
+Service withdrawal plans.
+The manufacturer must still test the final device.
+A voluntary MAF can reduce repeated work. However, CDRH should require another
+method when the model provider does not give sufficient information.
+Question 26: Agentic devices
+Agentic devices need additional tests and controls.
+The manufacturer must assess:
+Incorrect plans.
+Errors that increase across several steps.
+Incorrect tool selection.
+Incorrect tool inputs.
+Unauthorized actions.
+Prompt injection.
+Privilege escalation.
+Failure to stop.
+Failure to reverse an action.
+The device should use:
+Least-privilege access.
+Deterministic tool allowlists.
+Deterministic action limits.
+Human approval for high-consequence actions.
+Complete logs.
+Rate limits.
+A stop control.
+A rollback method.
+An appointment agent must not change an HR system to create appointment capacity. The
+device permissions must match the approved function.
+FDA Docket No. FDA-2026-N-7874
+Newtonʼs Tree Inc Considerations for the Regulation of Generative AI-Enabled Medical Devices
+
+Layer 2: Clinical confirmation
+Question 11: Selection of the confirmation method
+The confirmation method should depend on the possible harm and the
+remaining uncertainty.
+A retrospective study can be sufficient for a narrow function with an objective
+reference result.
+A shadow study is useful when local data, integration, workflow, or latency can
+change performance.
+A prospective study can be necessary for an irreversible, time-critical, or high-
+consequence action.
+The manufacturer should use more than one site when population, equipment, workflow,
+or user behavior can affect performance.
+The manufacturer should report natural clinical prevalence. The manufacturer should also
+test enough rare and severe cases.
+Question 12: Statistical measurement
+The manufacturer must define the unit of analysis.
+The unit can be an output, a conversation, an encounter, a patient, an action, or a
+clinical result.
+The analysis must account for repeated patients, users, and sites.
+GenAI output can vary for the same input. The manufacturer must repeat tests and
+measure this variation.
+The manufacturer should report:
+Confidence intervals.
+Results for important subgroups.
+Results by site.
+Results by user type.
+Results by model and configuration version.
+Results for common and severe cases.
+The manufacturer should report synthetic and real data separately.
+FDA Docket No. FDA-2026-N-7874
+Newtonʼs Tree Inc Considerations for the Regulation of Generative AI-Enabled Medical Devices
+
+The manufacturer should combine the results only when it proves that the two data
+sources measure the same performance distribution.
+Benchmark results and clinical results should usually remain separate.
+Question 13: Synthetic data
+Synthetic data are useful for:
+Scope tests.
+Rare but well-defined hazards.
+Numerical errors.
+Unit errors.
+Adversarial tests.
+Tool failures.
+Controlled changes to one patient feature.
+Synthetic data are not a sufficient replacement for real data about:
+Clinical communication.
+Human behavior.
+Long-term reliance.
+Local workflow.
+Real acquisition errors.
+Poorly represented groups.
+Clinical outcomes.
+A model from the same model family can reproduce the same blind spots. The
+manufacturer should use an independent generator where possible.
+The manufacturer must confirm important synthetic test results with real data.
+Questions 14 and 15: Comparators
+The manufacturer should use an objective reference result when one exists.
+For open outputs, qualified clinicians should use a specified scoring method. The
+method should assess errors, omissions, actions, uncertainty, source support, and
+user understanding.
+Specialists should set the reference result for specialist tasks.
+The standard of care should set the minimum safety level. Median clinician performance
+can provide additional comparison data.
+FDA Docket No. FDA-2026-N-7874
+Newtonʼs Tree Inc Considerations for the Regulation of Generative AI-Enabled Medical Devices
+
+The manufacturer must assess human-AI team performance when the intended use
+includes human review. The manufacturer should also report device-only performance.
+The comparator should represent the care that would occur without the device. This can
+include unaided judgment, delayed specialist review, current software, or no intervention.
+Relevant results include safety, time to care, workload, unnecessary treatment, access,
+and subgroup differences.
+Question 16: Independent third parties
+Independent third parties can:
+Keep hidden test data.
+run benchmark tests.
+provide clinical review.
+confirm sponsor methods.
+perform multi-site studies.
+audit monitoring programs.
+The third party must have suitable clinical, statistical, technical, and human-
+factors knowledge.
+The third party must disclose conflicts. Payment must not depend on a positive result.
+FDA should permit multiple qualified organizations. One organization must not control
+market access.
+The manufacturer must remain accountable for the device.
+FDA Docket No. FDA-2026-N-7874
+Newtonʼs Tree Inc Considerations for the Regulation of Generative AI-Enabled Medical Devices
+
+Layer 3: Operational assurance
+Question 18: More postmarket reliance
+CDRH can accept more premarket uncertainty only when the manufacturer can detect and
+control the remaining risk.
+The device should have:
+A limited initial deployment.
+A safe fallback process.
+Continuous version records.
+Defined monitoring measures.
+Defined alert limits.
+Named persons who review alerts.
+A rapid stop or rollback method.
+A plan to collect the missing evidence.
+This approach is not suitable when harm is irreversible or time-critical. It is also not
+suitable when the manufacturer cannot detect failure before harm.
+Question 19: Postmarket monitoring
+Postmarket monitoring should include five areas:
+System operation.
+Input data quality.
+Device performance.
+Human and device interaction.
+Clinical and operational results.
+The manufacturer should monitor availability, latency, failed requests, and
+software versions.
+The manufacturer should monitor missing data, format changes, acquisition changes, and
+input distribution changes.
+The manufacturer should monitor errors, omissions, refusals, escalation, and
+subgroup performance.
+The manufacturer should monitor agreement, override, automation bias, and completion of
+recommended actions.
+FDA Docket No. FDA-2026-N-7874
+Newtonʼs Tree Inc Considerations for the Regulation of Generative AI-Enabled Medical Devices
+
+The manufacturer should also monitor downstream outcomes.
+The manufacturer should use both random review and risk-based review. Risk-
+based review should include unusual inputs, disagreements, severe cases, and
+long conversations.
+A monitoring signal must have a specified action. Possible actions include review,
+restriction, pause, rollback, or withdrawal.
+A dashboard without an action process is not a risk control.
+Question 20: Machine supervisors
+A machine supervisor can find unusual behavior and select cases for review.
+The manufacturer must test the supervisor as a safety component.
+The test should include:
+Sensitivity.
+False-positive rate.
+False-negative rate.
+Subgroup performance.
+Prompt-injection resistance.
+Common failure with the main device.
+Behavior when the supervisor is unavailable.
+The supervisor should use a different model family where possible.
+The manufacturer should use deterministic controls for fixed safety boundaries. A
+probabilistic supervisor should not replace these controls.
+Human reviewers should assess samples of flagged and unflagged cases.
+Question 21: Stakeholder roles
+The manufacturer must remain accountable for the marketed device.
+The manufacturer must manage monitoring, investigation, corrective action, reporting,
+model dependencies, and change control.
+The healthcare organization must manage local data, integration, workflow, access,
+training, and incident escalation.
+Clinicians should report and review possible errors. They should not be the only
+monitoring method.
+FDA Docket No. FDA-2026-N-7874
+Newtonʼs Tree Inc Considerations for the Regulation of Generative AI-Enabled Medical Devices
+
+Professional societies can define specialist hazards, clinical measures, and
+reviewer qualifications.
+Standards bodies can define common formats for logs, versions, incidents, and
+performance measures.
+FDA can support a confidential multi-site monitoring network. This network can find rare
+signals that one manufacturer or hospital cannot find.
+The Newtonʼs Tree disagreement example also supports shared review. Approximately half
+of the reviewed outliers came from the human reference or workflow.
+Questions 22 and 23: Changes and PCCPs
+The manufacturer should classify changes by their possible effect.
+Low-effect changes
+The quality system can control changes that do not change device behavior. The
+manufacturer must document the assessment and test the change.
+Approved bounded changes
+A PCCP can control specified changes to prompts, retrieval data, or guardrail limits.
+The manufacturer must complete the specified tests before deployment. The manufacturer
+should use a limited initial release.
+Material changes
+A new foundation model, population, modality, tool, action, or level of autonomy can be a
+material change.
+A material change can require full testing, new clinical confirmation, and FDA review.
+A PCCP should specify:
+The components that can change.
+The permitted purpose of each change.
+The limits of each change.
+The required tests.
+The acceptance limits.
+The deployment method.
+The monitoring method.
+The rollback criteria.
+A change outside these limits should require a new submission.
+FDA Docket No. FDA-2026-N-7874
+Newtonʼs Tree Inc Considerations for the Regulation of Generative AI-Enabled Medical Devices
+
+Question 24: Third-party model changes
+The manufacturer must know when a third-party foundation model changes.
+Contracts should require:
+Advance notice.
+Model and version identification.
+Release information.
+Safety incident information.
+A suitable deprecation period.
+Access to an earlier version.
+Investigation support.
+Rollback support.
+Technical controls should include:
+Version logs.
+Fixed production versions where possible.
+Automated regression tests.
+Tests before migration.
+Detection of unexpected behavior changes.
+Limited initial deployment.
+Rapid rollback.
+The manufacturer must assess the complete device after each important model change.
+When the model provider does not permit sufficient control, the manufacturer has an
+unresolved device risk.
+FDA Docket No. FDA-2026-N-7874
+Newtonʼs Tree Inc Considerations for the Regulation of Generative AI-Enabled Medical Devices
+
+Conclusion
+CDRH should use three assurance layers.
+Competency must show that the final device can perform its task and remain
+within scope.
+Clinical confirmation must show that the device works in the intended
+clinical setting.
+Operational assurance must show that the device continues to work
+after deployment.
+CDRH should use a clear division between general output and patient-specific output. It
+should not regulate small differences in wording.
+Manufacturers should use deterministic controls for boundaries that a system
+can measure.
+Postmarket monitoring must connect each signal to an accountable action. The available
+actions must include investigation, restriction, pause, rollback, and withdrawal.
+FDA Docket No. FDA-2026-N-7874
+Newtonʼs Tree Inc Considerations for the Regulation of Generative AI-Enabled Medical Devices

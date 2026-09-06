@@ -1,0 +1,328 @@
+{
+  "comment_id": "FDA-2026-N-7874-0058",
+  "input_hash": "bb3def77c171109f",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-06T17:08:09Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Benchmarks that vary only the wording of inputs may miss that model outputs shift based on the claimed identity, seniority, or authority of the person interacting with the device; cited controlled work reports roughly 10% more outputs changed when a persuasive input was attributed to a senior clinician rather than a medical student, and that fabricated but plausible clinician opinions moved models from correct to incorrect answers.",
+      "requested_fda_action": "Include in the benchmarking structure explicit testing of a device's sensitivity to the claimed identity, seniority, and authority of the speaker, not only to input phrasing.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "cybersecurity_as_safety"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment shows device output depends on attributes of the human interlocutor (claimed seniority and authority), so device-alone benchmarking may not predict performance in real clinician-device interaction.",
+        "cybersecurity_as_safety": "It cites fabricated but plausible clinician opinions steering models from correct to incorrect answers, indicating that manipulated conversational inputs are a clinical safety issue, not only a wording variation."
+      },
+      "public_summary": "Comment on benchmarking design: recommends that FDA's benchmarking structure test whether device outputs shift with the claimed identity, seniority, or authority of the speaker, not only input wording, citing evidence that attributed and fabricated clinician opinions alter model answers.",
+      "summary_cut": false,
+      "source_passage": "Benchmarking should test sensitivity to the claimed identity, seniority, and authority of the speaker — not only to the wording of the input.\n\nRecent controlled work shows that clinical AI recommendations shift according to who appears to be speaking: the same persuasive input changed roughly 10% more model outputs when attributed to a senior clinician than to a medical student, and fabricated-but-plausible clinician opinions pushed models off correct answers onto incorrect ones [1]."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "A device whose safety-critical behavior—escalation, refusal, or diagnostic conclusion—shifts with the claimed seniority, confidence, or insistence of the user rather than with the clinical facts is not robust, even if each individual output appears reasonable.",
+      "requested_fda_action": "Add prespecified speaker-authority test conditions to the robustness element (R.1) of benchmark protocols, holding the clinical case constant while varying claimed user seniority, confidence, and persistence, and ask sponsors how outputs change under such conditions.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment focuses on how the device's outputs vary with user-supplied cues about clinician seniority and insistence, an interaction effect between human user and model that benchmark elements as framed may not capture."
+      },
+      "public_summary": "Accepts the proposed benchmarking elements but asks FDA to expand the robustness element to require prespecified tests varying the claimed seniority, confidence, and insistence of the user while holding the clinical case constant, treating credential-driven output shifts as robustness failures.",
+      "summary_cut": false,
+      "source_passage": "Concretely, I suggest that under element R.1, benchmark protocols prespecify speaker-authority test conditions alongside paraphrase and emotional-framing conditions: the same clinical case, held constant, with the accompanying opinion attributed to users of differing claimed seniority, confidence, and persistence. A device whose safety-critical behavior — escalation, refusal, diagnostic conclusion — moves with the claimed credential of the user, rather than with the clinical facts, has failed the robustness element even if every individual output looks reasonable.\n\nSuggested question for sponsors: “How does the device’s output change when prior input implies the user is senior, junior, confident, or insistent?”"
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter accepts the two-axis framework (device activity × severity of harm) as sound but argues it omits the degree of human oversight actually present in the deployment setting, which they characterize as an empirical property rather than a binary design feature.",
+      "requested_fda_action": "Add the degree of human oversight as an additional dimension in the risk framework, and treat it as an empirically observed property of the deployment setting rather than assuming it is present because it is designed in.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues risk depends on how much human oversight actually occurs in practice, implying evaluation of the human-AI combination rather than the device design alone.",
+        "deployment_assurance_scalability": "Framing oversight as an empirical property of the deployment setting implies that assurance depends on conditions at each site of use rather than on design claims made premarket."
+      },
+      "public_summary": "Agrees the two-axis risk framework (device activity by severity of harm) is sound, but answers Question 1 affirmatively: an additional dimension is needed. Recommends treating the degree of human oversight as an empirically measured property of the deployment setting rather than a binary design feature.",
+      "summary_cut": false,
+      "source_passage": "The two-axis framework (device activity × severity of harm) is sound. Question 1 asks whether additional dimensions — including the time pressure of the deployment setting — should be represented. My answer is yes, and specifically: the degree of human oversight should be treated as an empirical property of the deployment setting, not as a design feature that is present or absent."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Automation bias is addressed in Appendix A element E.4 only as a device communication-quality attribute, but in practice unexercised human supervision can make a nominally supervised function operate closer to autonomy, understating its risk position.",
+      "requested_fda_action": "Treat automation bias not only as a communication-quality attribute but also as a modifier of a function's placement on the activity axis of the two-axis risk framework, reflecting whether supervision is actually exercised.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues risk depends on how clinicians actually behave with the output (automation bias), not just on the device's stated supervision arrangement.",
+        "delegated_authority": "It notes that a function labeled as operating under continuous HCP supervision may in effect exercise autonomous authority when that supervision is not exercised."
+      },
+      "public_summary": "Accepts the two-axis risk framework but asks CDRH to go beyond Appendix A element E.4, which treats automation bias as a device communication attribute. Suggests automation bias should also shift a function's placement on the activity axis, since unexercised supervision approaches de facto autonomy.",
+      "summary_cut": false,
+      "source_passage": "Appendix A element E.4 recognizes automation bias, but treats it as a communication-quality attribute of the device. I would encourage CDRH to also treat it as a modifier of position on the activity axis: a function nominally placed at “acts with continuous HCP supervision” may in practice operate closer to autonomy if the supervision is not exercised."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q1",
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that the degree of human oversight is often asserted in labeling rather than demonstrated, and that users may not actually detect incorrect outputs under realistic, time-pressured, multi-patient conditions.",
+      "requested_fda_action": "FDA should treat degree of human oversight as a property demonstrated in representative use conditions and require sponsors to submit human-AI team evidence, including override-rate and detection-rate measurements in representative workflows.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment asks that the combined clinician-device system be evaluated empirically through detection and override rates in realistic workflows rather than assuming effective human oversight from labeling."
+      },
+      "public_summary": "Commenter supports FDA's interest in human-AI team evidence but urges that the degree of human oversight be demonstrated, not asserted in labeling. Asks FDA to require evidence, such as override and detection rates, that users identify incorrect outputs in representative, time-pressured workflows.",
+      "summary_cut": false,
+      "source_passage": "I encourage FDA to:\nTreat “degree of human oversight” as a property to be demonstrated in representative use conditions — time-pressured, multi-patient, real interface — rather than asserted in labeling.\nAsk sponsors to show evidence that intended users can and do detect incorrect outputs in representative workflows. This is an override-rate and detection-rate measurement, and it is precisely the kind of human-AI team evidence contemplated in Question 14."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q2"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter argues that the paper's point that a 'talk to your doctor' disclaimer may not reduce directiveness applies equally to oversight mechanisms: an override interface that users never actually use provides no real oversight. Assessing either from on-screen text overstates safeguards.",
+      "requested_fda_action": "FDA should assess both directiveness and human oversight based on observed user behavior in practice rather than on the presence of disclaimer or override text in the interface.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment holds that safeguards such as override interfaces must be evaluated by how users actually behave with the system, not by their nominal presence."
+      },
+      "public_summary": "Accepts FDA's observation that disclaimer text may not reduce directiveness, but argues it applies equally to oversight: an unused override interface provides no real safeguard. Asks FDA to assess both directiveness and oversight through observed user behavior rather than on-screen text.",
+      "summary_cut": false,
+      "source_passage": "Note that the paper’s own observation — that a “talk to your doctor” statement may not make an output less directive — applies symmetrically, and bears on Question 2: an override interface that is never used provides no oversight. Directiveness and oversight should both be assessed by observed user behavior rather than by the presence of text on the screen."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter views drift-detection-style monitoring as insufficient on its own and argues postmarket reassessment should mirror clinician re-certification: periodic re-examination against a defined competency set regardless of whether a problem has been detected.",
+      "requested_fda_action": "Frame postmarket reassessment explicitly as examination-based, requiring re-examination of a cleared device against the same competency set on a fixed cycle, with additional re-examination triggered by material changes such as foundation-model updates, retrieval or prompt changes, or guardrail modifications.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The commenter identifies foundation-model updates originating outside the device as a material change that should independently trigger re-examination."
+      },
+      "public_summary": "Supports periodic re-benchmarking but asks FDA to frame it explicitly as examination-based, modeled on clinician re-certification: re-testing against the same competency set on a fixed cycle regardless of detected problems, plus triggers for foundation-model, retrieval, prompt, or guardrail changes.",
+      "summary_cut": false,
+      "source_passage": "On the cadence and triggering events raised in Question 19, I suggest the framing be made explicitly examination-based, drawing on the model clinicians already trust.\n\nPracticing clinicians do not merely have their performance monitored for drift. We re-certify: we are re-examined against a defined competency set, on a fixed cycle, whether or not anyone has detected a problem in our practice. I suggest a device cleared through a competency assessment be re-examined on the same competency set on a defined cycle, with re-examination additionally triggered by material change — foundation-model update, retrieval or prompt changes, guardrail modification."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "pccp",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter notes the paper's central difficulty that future GenAI modifications cannot be fully prespecified, making conventional change-listing PCCPs impractical.",
+      "requested_fda_action": "Allow PCCPs (or analogous change-control approaches) in which sponsors prespecify the re-examination or re-evaluation process triggered by any change, rather than enumerating every permissible future modification.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts the need for change-control mechanisms but proposes reframing PCCPs for generative AI: instead of listing permissible future modifications, sponsors would prespecify the re-examination process that follows any change, which the commenter considers tractable when modifications cannot be anticipated.",
+      "summary_cut": false,
+      "source_passage": "First, on Question 23: rather than attempting to prespecify every permissible future change, a sponsor could prespecify the re-examination that follows any change. This is a tractable commitment even where the nature of future modifications cannot be anticipated, which is the central difficulty the paper identifies with PCCPs for GenAI."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q22",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter accepts scaling re-evaluation to modification impact for clinical proficiency elements, but views sponsor predictions of 'minor' impact as unreliable—especially for third-party-initiated model updates—leaving safety and robustness performance untested after changes.",
+      "requested_fda_action": "Require full re-running of the safety elements (S.1–S.3) and robustness element (R.1) after any change to the underlying model or guardrails, regardless of the sponsor's expected impact, while allowing scaled re-benchmarking for clinical proficiency elements.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The commenter singles out third-party model updates as the case where sponsor impact expectations are least reliable, implying change controls must not depend on sponsor judgment about supplier-initiated changes."
+      },
+      "public_summary": "Supports scaling re-benchmarking to modification impact for clinical proficiency elements, but asks CDRH to mandate full re-running of safety (S.1–S.3) and robustness (R.1) elements after any change to the underlying model or guardrails, citing unreliable sponsor impact estimates for third-party model updates.",
+      "summary_cut": false,
+      "source_passage": "Second, on Question 22: scaling re-benchmarking to the expected impact of a modification is sensible for the clinical proficiency elements, but I would encourage CDRH to require the safety elements (S.1–S.3) and robustness (R.1) to be re-run in full after any change to the underlying model or guardrails, regardless of how minor the sponsor expects the impact to be. Clinicians do not get to skip the safety portion of a re-certification examination on the grounds that little has changed in their practice, and third-party model updates are exactly the case where sponsor expectations are least reliable."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Certain model-level behaviors — refusal behavior, content-policy changes across versions, and output stability under varied user framing (including speaker-authority framing) — determine whether a clinician can reasonably verify an output at the point of care, and a device sponsor cannot characterize these properties from outside the model.",
+      "requested_fda_action": "If voluntary Foundation Model Master Files proceed, expand the contemplated content beyond architecture and training provenance to include refusal behavior, inter-version content-policy changes, and output stability under varied user framing.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment identifies model-level properties that only the upstream foundation model developer can disclose, which device sponsors cannot characterize externally.",
+        "human_ai_system_performance": "The requested disclosures are justified by whether a clinician can reasonably verify an output at the bedside, framing model behavior in terms of the clinician-device interaction rather than model performance alone."
+      },
+      "public_summary": "Conditionally supports voluntary Foundation Model Master Files, but asks FDA to broaden contemplated content beyond architecture and training provenance to include refusal behavior, cross-version content-policy changes, and output stability under varied user framing — properties device sponsors cannot assess externally yet that affect clinician verification.",
+      "summary_cut": false,
+      "source_passage": "If voluntary Foundation Model MAFs proceed, I suggest the contemplated content include, alongside architecture and training provenance: refusal behavior, content-policy changes between versions, and output stability under varied user framing — including the speaker-authority framing described in Section 1 above. These are the model-level properties that most affect whether a clinician can reasonably verify an output at the bedside, and they are properties a device sponsor cannot characterize from the outside."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter engages with FDA's acknowledged problem that foundation model developers may have little incentive to voluntarily disclose safety-relevant information, and notes that sponsors otherwise must independently re-characterize an underlying model after every upstream update.",
+      "requested_fda_action": "Design the voluntary Foundation Model MAF program so that a documented MAF lets sponsors satisfy portions of the post-update re-examination by reference rather than through independent re-characterization, creating a concrete adoption benefit for model developers.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment focuses on obtaining and maintaining documented safety-relevant information from upstream foundation model suppliers and on structuring incentives for those suppliers to participate.",
+        "evidence_burden_commercial_viability": "It highlights the burden on sponsors of repeatedly re-characterizing an underlying model after each upstream update and proposes reliance by reference to reduce that duplication."
+      },
+      "public_summary": "Commenter supports voluntary Foundation Model MAFs and proposes an addition to address FDA's incentive concern: allow sponsors to satisfy parts of post-update model re-examination by reference to a documented MAF, avoiding independent re-characterization after each upstream change and benefiting participating model developers.",
+      "summary_cut": false,
+      "source_passage": "On the incentive problem the question raises: one practical lever is that a documented Foundation Model MAF would allow sponsors to satisfy portions of the re-examination described in Section 3 above by reference, rather than by independently re-characterizing the model after every upstream update. That is a concrete benefit to model developers seeking healthcare adoption."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q11",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "Subgroup performance (benchmarking element R.2) and the anticipated distribution of real-world inputs are treated as separate issues, but evidence cited from dermatology AI suggests distribution shift from unfamiliar conditions degrades performance more than skin-tone differences alone. Subgroup results measured on a training-era disease mix can appear acceptable while real-world performance is materially worse.",
+      "requested_fda_action": "Treat subgroup performance evaluation and the anticipated real-world input distribution as a single, integrated evaluation question rather than two separate ones, so that distribution shift in the disease mix is accounted for when assessing subgroup performance.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment highlights that performance measured under evaluation-era conditions may not hold in real-world deployment where the mix of presenting conditions differs, raising assurance questions beyond the premarket benchmark."
+      },
+      "public_summary": "Accepts the benchmarking and clinical confirmation framing but urges CDRH to merge subgroup performance (element R.2) with the anticipated real-world input distribution into one question, citing dermatology evidence that distribution shift from unfamiliar conditions degrades performance more than skin-tone differences alone.",
+      "summary_cut": false,
+      "source_passage": "Element R.2 addresses subgroup performance, and Question 11 asks how the anticipated distribution of real-world inputs should be taken into consideration. I would encourage CDRH to treat these as one question rather than two.\n\nRecent evidence in dermatology AI indicates that distribution shift — the appearance of unfamiliar conditions — degrades performance considerably more than skin-tone differences alone [2]. Subgroup performance measured on the training-era disease mix can therefore look acceptable while real-world performance is materially worse"
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q11",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Evaluating a device on test data that mirrors the training population's disease distribution and demographic mix may not reveal how it performs where it will actually be used; subgroup parity within a fixed dataset is treated as a weaker signal than explicit characterization of the expected deployment case mix.",
+      "requested_fda_action": "Ask that capability/benchmark assessments use test populations differing from training populations in both disease distribution and demographic composition, and require sponsors to explicitly characterize the anticipated deployment case mix rather than demonstrate subgroup parity within a fixed dataset.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment shifts the evidentiary focus from performance on a fixed test dataset to the case mix of the settings where the device will actually be deployed, raising assurance questions tied to deployment context rather than the premarket dataset."
+      },
+      "public_summary": "Suggests that capability assessments use test populations differing from training populations in disease distribution as well as demographics, and that sponsors explicitly characterize the anticipated deployment case mix instead of demonstrating subgroup parity within a fixed dataset.",
+      "summary_cut": false,
+      "source_passage": "I suggest capability assessments include test populations that differ from training populations in disease distribution as well as demographic mix, and that sponsors be asked to characterize the anticipated deployment case mix explicitly rather than to demonstrate subgroup parity within a fixed dataset."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter endorses the discussion paper's overall direction, viewing the analogy between device evaluation and clinician training/examination as appropriate. The passage indicates an intent to strengthen the approach from a practitioner perspective but does not state specific changes in this excerpt.",
+      "requested_fda_action": "Continue with the competency-based evaluation framework modeled on clinician training and examination, with refinements informed by practitioner experience (specific refinements are not stated in this passage).",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter supports the discussion paper's direction, agreeing that modeling device evaluation on clinician training and examination is appropriate, and indicates an intent to strengthen the framework from a practitioner perspective; no specific modifications are stated in this passage.",
+      "summary_cut": false,
+      "source_passage": "I strongly support the direction of this discussion paper. Modeling device evaluation on clinician training and examination is the right instinct — and I write to strengthen it from the practitioner side."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter's only stated view is that the postmarket performance evaluation approaches outlined in Section VI are reasonable; no specific concern is articulated.",
+      "requested_fda_action": "Proceed with the described postmarket approaches — periodic re-benchmarking, sample-based independent clinician review, and performance degradation monitoring. No changes or additions are requested in this passage.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter states that FDA's proposed postmarket evaluation approaches — periodic re-benchmarking, sample-based independent clinician review, and performance degradation monitoring — are all reasonable, without proposing additions, modifications, or specifying cadence or triggering events.",
+      "summary_cut": false,
+      "source_passage": "The approaches described in Section VI — periodic re-benchmarking, sample-based independent clinician review, performance degradation monitoring — are all reasonable."
+    }
+  ]
+}

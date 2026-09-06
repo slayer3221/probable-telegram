@@ -1,0 +1,447 @@
+Sitora Healthcare Digital welcomes the FDA&#39;s discussion paper and the opportunity to contribute to the development of a proportionate regulatory approach for generative AI-enabled medical devices.<br/><br/>Our attached response addresses FDA Questions 1, 3, 6, 7, 9, 14, 18, 19, 25 and 26. Its central recommendation is that the unit of regulatory assessment should be the complete sociotechnical system, rather than the foundation model in isolation. This includes source evidence, deterministic safety controls, generative reasoning, retrieval and tools, verification and provenance, escalation logic, the user interface, human clinical authority and lifecycle monitoring.<br/><br/>Sitora recommends that:<br/><br/>1. The proposed activity-and-consequence risk framework should explicitly account for evidence traceability, independent reviewability, reversibility and time to harm.<br/>2. Omission, contradiction, under-escalation and over-escalation should be measured separately rather than hidden within a single aggregate accuracy score.<br/>3. Premarket competency assessment should include evidence fidelity and provenance, with clinical confirmation performed in the intended deployed configuration.<br/>4. Evaluation should measure the performance of the human-AI team, including automation bias, usability, comprehension and the effectiveness of escalation pathways.<br/>5. Postmarket monitoring and change control should be triggered by material changes across the full system, including foundation-model versions, prompts, retrieval sources, tools, population and intended use.<br/>6. Voluntary Foundation Model Device Master Files could improve downstream transparency while protecting confidential information.<br/>7. Agentic systems should be regulated according to the authority they exercise, the reversibility of their actions, available safeguards and the opportunity for timely human intervention.<br/><br/>The attached policy paper develops these recommendations and proposes a seven-layer clinical AI safety architecture. It is submitted as a stakeholder contribution and does not claim that Sitora currently operates an FDA-authorized medical device or that any Sitora product has FDA endorsement.
+
+[Attachment: Comment from Sitora Healthcare Digital]
+BUILDING CLINICAL AI THAT CAN
+BE INSPECTED, CONTROLLED AND
+TRUSTED
+A Harvard-style policy and technical response to the FDA discussion paper
+on generative AI-enabled medical devices
+Sitora Healthcare Digital
+United Kingdom
+Docket: FDA-2026-N-7874
+Version 1.0 | 25 August 2026
+Prepared as a stakeholder contribution to the U.S. Food and Drug Administration Center for Devices and
+Radiological Health consultation.
+Status note: The FDA publication considered in this report is a discussion paper and
+request for feedback. It is not draft or final guidance and does not itself establish
+regulatory expectations (FDA, 2026a).
+Sitora Healthcare Digital | FDA GenAI Medical Devices Response | 1
+
+Executive summary
+The U.S. Food and Drug Administration (FDA) opened a public discussion on 18 August 2026 concerning
+possible regulatory approaches for generative artificial intelligence (GenAI)-enabled medical devices. The
+discussion paper explores risk assessment, competency-based premarket evaluation, postmarket monitoring,
+foundation models and agentic AI, and invites stakeholder responses under docket FDA-2026-N-7874 by 19
+October 2026 (FDA, 2026a; FDA, 2026b).
+This report develops a Sitora Healthcare Digital response centred on a core proposition: the safety of clinical
+GenAI depends not only on the quality of the underlying foundation model, but on the architecture of the
+complete clinical system. Source evidence, deterministic safety controls, generative reasoning, verification,
+escalation, human authority and lifecycle monitoring should be deliberately separated so that clinically
+significant outputs remain traceable, reviewable and controllable.
+The report supports the FDA’s emerging competency-based and total-product-lifecycle direction while
+proposing four additions. First, Evidence Fidelity and Provenance should be treated as an explicit competency
+distinct from general clinical knowledge. Second, under-escalation and over-escalation should be measured
+separately using risk-weighted metrics. Third, the practical effectiveness of human oversight should be assessed
+rather than relying on the mere presence of a “human in the loop”. Fourth, agentic systems should be evaluated
+according to their authority to act, with progressively stronger evidence and control requirements as autonomy
+increases.
+The analysis is intended as a policy and technical contribution. It does not claim that Sitora currently operates
+an FDA-authorised medical device, and it does not treat the FDA discussion paper as binding guidance. The
+objective is to contribute a defensible framework that could inform future regulatory thinking while also
+providing a design blueprint for safer clinical AI systems.
+Key recommendations
+• Adopt a layered clinical AI safety architecture that keeps source evidence distinguishable from model-
+generated inference.
+• Add evidence fidelity and provenance to the explicit competency set for GenAI-enabled devices.
+• Evaluate the complete deployed system, not only the foundation model or benchmark score.
+• Measure under-escalation and over-escalation separately, with severity-sensitive weighting.
+• Assess the quality, timing and usability of human oversight and guard against automation bias.
+• Use event-triggered revalidation for material changes in model behaviour, orchestration, tools, knowledge
+sources or intended use.
+• Support Foundation Model Device Master Files while retaining downstream manufacturer responsibility.
+• Regulate agentic AI by authority to act, with graduated controls and audit requirements.
+Sitora Healthcare Digital | FDA GenAI Medical Devices Response | 2
+
+1. Introduction and regulatory context
+Generative AI is moving from general-purpose conversational tools into clinical workflows, patient-facing
+applications, documentation systems, decision support and increasingly agentic systems capable of executing
+multi-step tasks. This creates a regulatory problem that differs in important respects from conventional
+deterministic software and earlier generations of machine learning. GenAI systems can accept open-ended
+inputs, create variable outputs, combine multiple tasks, use external tools and change behaviour as foundation
+models, prompts, orchestration and knowledge sources evolve (FDA, 2026a).
+The FDA’s August 2026 discussion paper is therefore significant even though it is not guidance. It signals the
+questions the regulator believes must be resolved before a durable framework for GenAI-enabled medical
+devices can mature. The FDA identifies four broad areas: risk assessment; premarket evaluation; postmarket
+monitoring; and other issues including foundation models and agentic AI. The agency expressly invites
+manufacturers, clinicians, researchers, consumers and other stakeholders to respond, and states that respondents
+may address only those questions relevant to their expertise or organisational capacity (FDA, 2026a).
+This direction is consistent with the FDA’s wider movement toward total product lifecycle governance for AI-
+enabled devices. The January 2025 draft guidance on AI-enabled device software functions emphasises
+lifecycle risk management, while the final guidance on predetermined change control plans (PCCPs) seeks to
+enable controlled iterative change without losing reasonable assurance of safety and effectiveness (FDA,
+2025a; FDA, 2025b). The International Medical Device Regulators Forum’s 2025 Good Machine Learning
+Practice principles similarly emphasise representative data, clinically relevant testing, human-AI team
+performance and ongoing monitoring (IMDRF, 2025).
+The broader governance environment points in the same direction. WHO guidance stresses human autonomy,
+safety, transparency, accountability, inclusiveness and responsiveness across the AI lifecycle, while the NIST
+GenAI profile treats generative AI risk management as an ongoing organisational process rather than a single
+validation event (WHO, 2021; Autio et al., 2024).
+1.1 Purpose and scope
+This report converts the earlier Sitora analysis into a structured Harvard-style policy paper. It focuses on ten
+FDA discussion questions where Sitora can offer a coherent technical position: risk assessment, patient-facing
+systems,  escalation  errors,  competency-based evaluation,  benchmarking,  human-AI teams,  postmarket
+evidence, lifecycle monitoring, Foundation Model Device Master Files and agentic AI. It also develops three
+cross-cutting recommendations: separation of evidence from inference, deterministic safety alongside
+generative intelligence, and behaviour-based change control.
+1.2 Method
+The report uses a policy-analysis method based primarily on official regulatory and standards sources. The
+principal source is the FDA’s 2026 discussion paper and associated announcement. It is read alongside the
+Sitora Healthcare Digital | FDA GenAI Medical Devices Response | 3
+
+FDA’s AI lifecycle and PCCP materials, IMDRF Good Machine Learning Practice principles, FDA/Health
+Canada/MHRA transparency principles, WHO AI-for-health governance guidance and the NIST GenAI Risk
+Management Framework profile. Recommendations are then derived by applying these regulatory themes to
+clinical GenAI system design and the practical failure modes created by open-ended generation, third-party
+model dependence and increasing autonomy.
+2. Proposed clinical AI safety architecture
+The central recommendation is that a clinical GenAI system should not be treated as a single model. The unit of
+regulatory and safety analysis should be the complete socio-technical system: data sources, deterministic
+controls, the generative model, retrieval and tools, verification mechanisms, escalation logic, user interface,
+human oversight and post-deployment monitoring. This reflects the FDA’s emphasis on evaluating GenAI-
+enabled devices in representative deployed configurations and the GMLP principle that testing should
+demonstrate performance in clinically relevant conditions (FDA, 2026a; IMDRF, 2025).
+Sitora Healthcare Digital | FDA GenAI Medical Devices Response | 4
+
+Figure 1. Sitora Clinical AI Safety Architecture. Source: author-developed framework based on FDA (2026a), FDA (2025a), IMDRF
+(2025) and WHO (2021).
+2.1 Layer 1 - Source evidence
+Symptoms, observations, laboratory values, biomarkers, device measurements, medical records and other
+primary inputs should retain their original status and provenance. A generated summary should not silently
+convert an uncertain observation into an established fact. The system should preserve who or what supplied the
+Sitora Healthcare Digital | FDA GenAI Medical Devices Response | 5
+
+information, when it was supplied and, where relevant, the measurement or document from which it originated.
+2.2 Layer 2 - Deterministic safety controls
+Where validated thresholds, contraindications, hard exclusions or established red-flag logic exist, developers
+should consider implementing them independently from the generative model. This is a defence-in-depth
+principle: a probabilistic model can contribute flexible reasoning without becoming the sole mechanism
+responsible for predictable safety-critical checks.
+2.3 Layer 3 - Generative intelligence
+GenAI is particularly valuable for summarisation, longitudinal organisation, natural-language interaction,
+contextual synthesis and communication. Its flexibility is the reason to use it, but that flexibility also creates
+non-determinism and confabulation risk. The generative layer should therefore operate within clearly bounded
+functions and should not automatically absorb every safety-critical task merely because it is technically capable
+of doing so.
+2.4 Layer 4 - Verification and provenance
+Clinically material outputs should be checked for unsupported claims, contradictions, missing evidence and
+improper conversion of inference into fact. The goal is not to suggest that every generated sentence can always
+be mathematically “proven”, but to create sufficient traceability that clinicians, patients and auditors can
+determine the evidence basis for important claims.
+2.5 Layer 5 - Risk-weighted escalation
+Escalation should be designed as a safety function rather than a generic classification score. False reassurance
+and unnecessary escalation can both cause harm, but their consequences differ. A serious under-escalation may
+warrant substantially greater weight than a low-consequence over-escalation.
+2.6 Layer 6 - Human clinical authority
+Human oversight must be operational rather than nominal. The reviewer must have the information, time and
+interface necessary to challenge or override the system. This aligns with international GMLP and transparency
+principles that focus on the performance of the human-AI team and clear information for users (FDA, Health
+Canada and MHRA, 2024; IMDRF, 2025).
+2.7 Layer 7 - Lifecycle monitoring
+A validated GenAI system can still change after deployment because of model updates, prompt changes,
+retrieval changes, new tools, data drift or altered patient populations. Monitoring and revalidation are therefore
+part of the safety architecture rather than after-market administrative tasks. The FDA’s lifecycle and PCCP
+work already moves in this direction (FDA, 2025a; FDA, 2025b).
+Sitora Healthcare Digital | FDA GenAI Medical Devices Response | 6
+
+3. Response to selected FDA discussion questions
+3.1 Question 1 - Risk assessment
+The FDA asks whether a possible two-axis framework based on device activity and the consequence of relying
+on an incorrect output captures the principal dimensions of GenAI risk, while also raising factors such as
+reversibility, safeguards, time pressure and traceability (FDA, 2026a).
+Sitora supports the two-axis concept as a strong foundation but recommends explicit treatment of four
+additional modifiers: evidence traceability, independent reviewability, reversibility and time to harm. Two
+systems may provide the same recommendation while presenting different risks if one gives the user a
+transparent evidence chain and the other provides only an opaque conclusion.
+Risk modifier
+Evidence traceability
+Independent reviewability
+Reversibility
+Time to harm
+Table 1. Proposed modifiers to the FDA risk framework. Source: Sitora analysis based on FDA (2026a).
+3.2 Question 3 - Patient-facing GenAI
+Patient-facing systems should not automatically be placed into a high-risk category solely because the user is
+not a clinician. The relevant regulatory question is what the output is capable of causing the patient to do and
+whether effective safeguards exist. Responsible patient-facing AI could improve symptom organisation,
+explanation of existing results, preparation for consultations and communication of longitudinal changes.
+Category
+A - Organisation
+B - Explanation
+C - Decision support
+D - Action direction
+Table 2. Proposed functional categories for patient-facing GenAI. Source: Sitora analysis.
+This approach preserves patient empowerment while recognising that direct action guidance can create
+materially different risks from information organisation. WHO’s emphasis on human autonomy and transparent
+information provides a complementary ethical basis for this distinction (WHO, 2021).
+Sitora Healthcare Digital | FDA GenAI Medical Devices Response | 7
+
+3.3 Question 6 - Under-escalation and over-escalation
+The FDA recognises both under-escalation and over-escalation as clinically important failure modes (FDA,
+2026a). Sitora recommends that they should never be hidden inside a single aggregate “accuracy” score. An AI
+that misses an urgent presentation and an AI that unnecessarily recommends a routine consultation have both
+erred, but the clinical consequences are not comparable.
+Dimension
+Clinical severity
+Probability
+Urgency
+Reversibility
+Safeguards
+Resource burden
+Table 3. Risk-weighted escalation matrix. Source: Sitora analysis based on FDA (2026a).
+Performance reporting should therefore distinguish at least critical under-escalation, non-critical under-
+escalation, critical over-escalation and non-critical over-escalation. In safety-critical use cases, sensitivity to
+serious red flags should be evaluated separately from overall system accuracy.
+3.4 Question 7 - Competency-based premarket evaluation
+The FDA explores a competency-based approach that combines non-clinical device benchmarking with clinical
+confirmation (FDA, 2026a). Sitora supports this direction because exhaustive testing of every possible open-
+ended interaction is unrealistic. However, competency must attach to the complete deployed system, not merely
+the foundation model.
+The same underlying model can perform differently when combined with different prompts, retrieval
+architectures, tool permissions, clinical rules, interfaces, memories and escalation policies. Strong performance
+by a foundation model on a medical benchmark therefore cannot, by itself, demonstrate the safety of a
+downstream medical device. The regulatory question should be whether the configured system can safely and
+effectively perform its claimed clinical function in representative conditions. This is consistent with total
+product lifecycle principles and clinically relevant testing in GMLP (FDA, 2025a; IMDRF, 2025).
+3.5 Question 9 - Benchmarking: Evidence Fidelity and Provenance
+Sitora proposes a specific additional competency: Evidence Fidelity and Provenance. A model can possess
+correct medical knowledge while fabricating or misrepresenting a patient-specific fact. This is not the same
+failure as deficient clinical knowledge and should not be measured as though it were.
+• faithfully representing patient-supplied information;
+• accurately representing laboratory and measurement data;
+Sitora Healthcare Digital | FDA GenAI Medical Devices Response | 8
+
+• preserving the source and temporal context of clinically important facts;
+• separating objective evidence from model inference;
+• avoiding invention of patient-specific facts;
+• identifying material contradictions or missing evidence; and
+• communicating uncertainty where evidence is incomplete.
+A system might correctly know that gastrointestinal bleeding can be clinically significant while incorrectly
+asserting that a particular patient reported bleeding. Its general clinical knowledge would be correct while its
+representation of that patient’s evidence would be false. Patient-specific factual integrity should therefore be
+separately measured.
+3.6 Question 14 - Human comparators and human-AI teams
+Where clinician supervision forms part of the intended use, the human-AI configuration may be the appropriate
+unit of clinical performance evaluation. However, “human in the loop” is not a sufficient safety claim.
+Oversight is meaningful only if the human has sufficient source information, sees relevant uncertainty, has a
+realistic opportunity to review the output, can override it and is not pushed into automation bias by interface
+design or workflow pressure.
+This position aligns with the international GMLP principle that attention should be paid to human-AI team
+performance and the transparency principle that users need clear, essential information to make informed
+decisions (FDA, Health Canada and MHRA, 2024; IMDRF, 2025).
+3.7 Question 18 - Premarket uncertainty and postmarket evidence
+The FDA asks whether some additional premarket uncertainty might be acceptable where strong postmarket
+monitoring exists (FDA, 2026a). Sitora considers this potentially appropriate for selected lower-risk functions
+where outputs are reversible, human review is effective, the system can be rapidly rolled back, audit logging is
+comprehensive and autonomy is limited.
+A progressive deployment model could move through controlled technical validation, shadow-mode clinical
+evaluation, supervised deployment, broader monitored deployment and, only where separately justified, defined
+autonomous permissions. Greater flexibility should not be presumed for functions that are irreversible,
+immediately life-critical or otherwise high consequence.
+3.8 Question 19 - Postmarket monitoring
+Postmarket monitoring should combine periodic review with event-triggered reassessment. The FDA’s earlier
+public consultation on real-world performance specifically highlighted performance drift and changes in inputs
+and outputs, while its PCCP guidance provides a regulatory pathway for planned AI changes (FDA, 2025b;
+FDA, 2025c).
+• hallucination or unsupported factual claims;
+• clinically significant omissions;
+• under-escalation and over-escalation;
+Sitora Healthcare Digital | FDA GenAI Medical Devices Response | 9
+
+• inappropriate refusals or failure to refuse;
+• contradictions with objective evidence;
+• subgroup performance and longitudinal drift;
+• foundation-model, retrieval, prompt and orchestration changes;
+• tool-use failures and agent failures;
+• clinician overrides, near misses and confirmed incidents; and
+• signals of automation bias or workflow misuse.
+Event triggers for reassessment should include a foundation-model update, a material prompt or orchestration
+change, addition of an external tool, change to a clinical knowledge source, expansion to a new patient
+population or intended use, statistically significant performance deterioration or discovery of a new failure
+mode.
+The lifecycle should therefore be treated as: Validate → Deploy → Observe → Detect → Investigate →
+Correct → Revalidate.
+3.9 Question 25 - Foundation Model Device Master Files
+The FDA considers whether voluntary Foundation Model Device Master Files could allow confidential
+information about underlying models to support downstream regulatory submissions (FDA, 2026a). Sitora
+supports the principle because downstream developers may retain responsibility for a regulated product while
+lacking complete information about the model on which that product depends.
+A useful master file could include a stable model and version identifier, architecture description, relevant data
+provenance, known limitations, healthcare-relevant failure modes, benchmark and subgroup results, safety
+controls, material update history, expected update cadence, deprecation policy and audit capabilities. The
+existence of such a file should not constitute general FDA approval of a model for medical use; responsibility
+for the specific device and intended use should remain with the downstream manufacturer.
+3.10 Question 26 - Agentic AI
+Agentic AI introduces additional risk because systems can plan, invoke tools and execute multi-step actions
+with fewer opportunities for human review. Sitora recommends regulating these systems partly according to
+their authority to act rather than relying only on a technical definition of “agent” (FDA, 2026a).
+Sitora Healthcare Digital | FDA GenAI Medical Devices Response | 10
+
+Figure 2. Graduated authority model for agentic clinical AI. Source: Sitora analysis based on FDA (2026a).
+For systems operating at higher authority levels, audit records should capture the objective, planned sequence,
+tools invoked, relevant inputs and outputs, validation checks, approval points, actions executed and resulting
+state changes. High-consequence or irreversible actions should ordinarily retain mandatory human checkpoints
+unless evidence demonstrates an acceptable benefit-risk profile for autonomous execution.
+Sitora Healthcare Digital | FDA GenAI Medical Devices Response | 11
+
+4. Cross-cutting policy recommendations
+4.1 Separate evidence from inference
+Clinical source evidence and generated interpretation should remain distinguishable throughout the product
+lifecycle.  This  principle  improves  auditability,  clinician  review,  patient  understanding  and  incident
+investigation. A safe interface should be able to distinguish patient report, objective measurement, deterministic
+rule, AI interpretation and final clinical decision.
+Information type
+Patient report
+Objective result
+Established rule
+AI interpretation
+Clinical decision
+Table 4. Recommended separation of clinical information types. Source: Sitora analysis.
+4.2 Deterministic safety should coexist with generative intelligence
+GenAI should not be forced into safety-critical tasks for which deterministic logic is more appropriate. Equally,
+deterministic rules should not be used where flexible contextual reasoning provides genuine value. The
+architecture should use each approach for the problem it is best suited to solve. This is consistent with defence-
+in-depth and lifecycle risk management, and it helps prevent a single probabilistic component from becoming
+the only line of protection against foreseeable harm.
+4.3 Regulate behaviour change, not only code change
+Third-party foundation models create a distinctive regulatory issue: an application’s behaviour can materially
+change even when the downstream developer has changed no application code. Model-provider updates, safety
+tuning, refusal policies or inference infrastructure can alter outputs. A clinically relevant behavioural change
+should therefore be capable of triggering evaluation even where the application repository is unchanged.
+Sitora recommends that regulated systems maintain a controlled model registry recording provider, model
+identifier, validated version, validation date, validation dataset or protocol, approved clinical functions, known
+limitations, deployment date and retirement date. A material model change should pass through detection,
+quarantine, evaluation, validation, approval and controlled deployment. This complements the intent of PCCPs,
+which seek to make planned AI modifications transparent and controlled (FDA, 2025b).
+Sitora Healthcare Digital | FDA GenAI Medical Devices Response | 12
+
+5. Implications for Sitora system design
+The policy analysis has direct architectural implications for Sitora’s healthcare concepts. Sitora should continue
+to position AI as an early-detection, evidence-organisation and decision-support layer rather than the final
+diagnostic authority. The practical objective is to combine symptoms, duration, bowel-pattern changes,
+biomarker trends, diet and lifestyle changes, weight, wearable information, prior results and red-flag features
+into a clear longitudinal clinical summary while preserving the clinician’s authority over diagnosis and
+consequential intervention.
+For a future Sitora GI implementation, the following design controls should be treated as first-order
+requirements rather than later compliance additions:
+• Immutable or auditable storage of primary observations and biomarker results with provenance.
+• Separate presentation of Gut Function, Gut Biology and Gut Change information so that wellness-style
+summaries cannot obscure clinical alerts.
+• Deterministic red-flag and threshold logic for safety-critical features where clinically defensible rules exist.
+• Explicit labelling of generated interpretation and uncertainty.
+• Evidence-linked clinical summaries that allow a reviewer to inspect the basis of a claim.
+• Independent testing for hallucination, contradiction, omission, under-escalation and over-escalation.
+• A model registry and controlled promotion process for foundation-model updates.
+• Human approval before clinically consequential actions during early deployment stages.
+• Post-deployment logging that supports incident investigation, clinician override analysis and revalidation.
+These controls should not be represented as evidence of current regulatory compliance. They are design
+principles derived from the emerging regulatory direction and should be validated against the final intended
+use, jurisdiction and applicable medical-device classification before deployment.
+6. Proposed validation framework
+A regulatory submission for a future GenAI-enabled medical device will need measurable evidence. Sitora
+should therefore design validation around failure modes rather than relying on a single accuracy metric.
+Domain
+Evidence fidelity
+Omission
+Contradiction
+Escalation
+Over-escalation
+Calibration
+Robustness
+Sitora Healthcare Digital | FDA GenAI Medical Devices Response | 13
+
+Subgroups
+Model change
+Human-AI team
+Table 5. Proposed validation domains for clinical GenAI. Source: Sitora analysis informed by FDA (2026a), FDA (2025a), IMDRF
+(2025) and NIST (Autio et al., 2024).
+7. Governance and postmarket operating model
+A credible GenAI medical-device programme requires governance that can react quickly to change. Technical
+validation alone is insufficient if the organisation cannot identify model changes, triage incidents, control
+deployments and preserve audit trails. The operating model should therefore include named responsibility for
+model approval, safety monitoring, incident review, clinical governance and rollback authority.
+Trigger
+Foundation model version change
+New external tool or retrieval source
+Prompt/orchestration change
+New patient population or intended use
+Safety signal / incident
+Performance drift
+Table 6. Event-triggered change-control model. Source: Sitora analysis based on total-product-lifecycle and PCCP principles (FDA,
+2025a; FDA, 2025b).
+8. Discussion
+The FDA’s 2026 paper is notable because it treats GenAI regulation as a systems problem. The central
+challenge is not simply hallucination in isolation, but the combination of non-deterministic outputs, open-ended
+tasks, limited visibility into upstream models, human reliance and systems that can increasingly take action. A
+framework that evaluates only model-level benchmark accuracy would therefore miss important sources of risk.
+The Sitora architecture attempts to make those risks governable by separating functions that are often collapsed
+together. Evidence provenance addresses factual integrity. Deterministic controls provide a predictable safety
+backstop. Generative reasoning contributes flexible synthesis. Verification tests the relationship between output
+and evidence. Risk-weighted escalation recognises that not all errors are equally harmful. Human authority
+provides accountability at consequential decision points. Lifecycle monitoring recognises that validated
+behaviour can change after deployment.
+There are limitations. A layered architecture does not itself prove clinical safety. Deterministic rules can be
+wrong or incomplete; provenance systems can give false reassurance; clinicians can over-rely on AI even when
+evidence is visible; postmarket monitoring can fail to detect rare harms; and a third-party foundation-model
+Sitora Healthcare Digital | FDA GenAI Medical Devices Response | 14
+
+provider may not provide sufficient technical transparency. These issues reinforce the need for empirical
+validation rather than weakening the case for architectural controls.
+A further challenge is proportionality. Regulation that treats all patient-facing or generative functions as equally
+high risk could suppress useful low-risk tools, while under-regulation could expose patients to confident but
+unreviewable errors. The FDA’s activity/consequence approach, enhanced with traceability, reversibility,
+reviewability and time-to-harm, offers a plausible route to proportional control.
+9. Conclusion
+Generative AI can become a valuable component of healthcare infrastructure, but trust will depend on whether
+clinically important outputs can be inspected, challenged and controlled. The central regulatory objective
+should not be to eliminate probabilistic behaviour, which is intrinsic to GenAI, but to make its risks observable,
+measurable, bounded and accountable.
+Sitora therefore recommends a regulatory and design framework built around seven layers: source evidence,
+deterministic safety controls, generative intelligence, verification and provenance, risk-weighted escalation,
+human clinical authority and lifecycle monitoring. Within that framework, Evidence Fidelity and Provenance
+should become an explicit GenAI competency, risk metrics should reflect the clinical severity of errors, human
+oversight should be assessed for practical effectiveness, model behaviour changes should trigger controlled
+revalidation, and agentic systems should face progressively stronger requirements as their authority to act
+increases.
+These proposals are intended to support the FDA’s consultation rather than predict the content of future
+guidance. They also provide a practical design direction for Sitora: build clinical AI as an evidence and
+decision-support infrastructure in which objective information, safety rules, generative inference and clinical
+authority remain distinct. If that separation is designed from the outset, future regulatory evidence can be
+generated around a system whose safety properties are visible rather than retrofitted after deployment.
+Sitora Healthcare Digital | FDA GenAI Medical Devices Response | 15
+
+References
+Autio, C., Schwartz, R., Dunietz, J., Jain, S., Stanley, M., Tabassi, E., Hall, P. and Roberts, K. (2024) Artificial Intelligence
+Risk Management Framework: Generative Artificial Intelligence Profile. NIST AI 600-1. Gaithersburg, MD: National
+Institute of Standards and Technology. Available at: https://doi.org/10.6028/NIST.AI.600-1 (Accessed: 25 August
+2026).
+FDA (2025a) Artificial Intelligence-Enabled Device Software Functions: Lifecycle Management and Marketing
+Submission Recommendations. Draft Guidance for Industry and Food and Drug Administration Staff, January 2025.
+Silver Spring, MD: U.S. Food and Drug Administration. Available at:
+https://www.fda.gov/regulatory-information/search-fda-guidance-documents/artificial-intelligence-enabled-device-
+software-functions-lifecycle-management-and-marketing (Accessed: 25 August 2026).
+FDA (2025b) Marketing Submission Recommendations for a Predetermined Change Control Plan for Artificial
+Intelligence-Enabled Device Software Functions. Guidance for Industry and Food and Drug Administration Staff,
+August 2025. Silver Spring, MD: U.S. Food and Drug Administration. Available at: https://www.fda.gov/regulatory-
+information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-
+plan-artificial-intelligence (Accessed: 25 August 2026).
+FDA (2025c) Request for Public Comment: Measuring and Evaluating Artificial Intelligence-enabled Medical Device
+Performance in the Real-World. Silver Spring, MD: U.S. Food and Drug Administration. Available at:
+https://www.fda.gov/medical-devices/digital-health-center-excellence/request-public-comment-measuring-and-
+evaluating-artificial-intelligence-enabled-medical-device (Accessed: 25 August 2026).
+FDA (2026a) Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and Request
+for Feedback. Silver Spring, MD: U.S. Food and Drug Administration, Center for Devices and Radiological Health.
+Available at: https://www.fda.gov/medical-devices/digital-health-center-excellence/considerations-regulation-
+generative-ai-enabled-medical-devices-discussion-paper-and-request (Accessed: 25 August 2026).
+FDA (2026b) ‘FDA Seeks Public Feedback to Inform Regulatory Approach for Generative AI-Enabled Medical Devices’,
+18 August. Silver Spring, MD: U.S. Food and Drug Administration. Available at:
+https://www.fda.gov/news-events/press-announcements/fda-seeks-public-feedback-inform-regulatory-approach-
+generative-ai-enabled-medical-devices (Accessed: 25 August 2026).
+FDA, Health Canada and MHRA (2024) Transparency for Machine Learning-Enabled Medical Devices: Guiding
+Principles. Available at: https://www.fda.gov/medical-devices/software-medical-device-samd/transparency-machine-
+learning-enabled-medical-devices-guiding-principles (Accessed: 25 August 2026).
+IMDRF (2025) Good Machine Learning Practice for Medical Device Development: Guiding Principles. IMDRF/AIML
+WG/N88 FINAL:2025. International Medical Device Regulators Forum, 29 January. Available at:
+https://www.imdrf.org/documents/good-machine-learning-practice-medical-device-development-guiding-principles
+(Accessed: 25 August 2026).
+WHO (2021) Ethics and Governance of Artificial Intelligence for Health: WHO Guidance. Geneva: World Health
+Organization. Available at: https://www.who.int/publications/i/item/9789240029200 (Accessed: 25 August 2026).
+Sitora Healthcare Digital | FDA GenAI Medical Devices Response | 16
