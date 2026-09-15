@@ -1,0 +1,103 @@
+{
+  "comment_id": "FDA-2026-N-7874-0074",
+  "input_hash": "23890c2eea3ef660",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:09:51Z",
+  "model": "claude-opus-5",
+  "chunks": 1,
+  "positions": [
+    {
+      "question_ids": [
+        "q7",
+        "q9"
+      ],
+      "source_passage": "Model-level benchmarking is important, but for a sensor-based medical device it may not be sufficient by itself. The final clinical or measurement output can also depend on the sensor interface, signal acquisition, signal processing, software, and interactions among these components. ... Therefore, where relevant, model-level competency assessment should be complemented by system-level verification of the device pathway.",
+      "position_gist": "For sensor-based devices, model-level competency benchmarking alone is insufficient and should be complemented by system-level verification of the complete device pathway (sensor, acquisition, signal processing, software, output).",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q7",
+        "q9"
+      ],
+      "source_passage": "Controlled physiological signals are useful because they provide known and repeatable inputs. Manufacturers can verify how the device responds to a defined condition and repeat the same condition after a design change. Their role is to verify the portion of device performance that can reasonably be evaluated under controlled input conditions, while real-world clinical performance is addressed through appropriate clinical evidence.",
+      "position_gist": "Controlled physiological signal inputs should be used to verify the portion of device performance testable under controlled conditions (including after design changes), with real-world performance addressed separately through clinical evidence.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q11",
+        "q12",
+        "q13"
+      ],
+      "source_passage": "Real patient data and simulation answer different verification questions. Real patient data is important for representing clinically observed physiological variability. Controlled simulation is useful for creating known and repeatable conditions for robustness, boundary, stress and regression testing.\nReal patient data supports clinical representativeness. Controlled simulation supports repeatability and controlled coverage of defined test conditions.",
+      "position_gist": "Real patient data and controlled simulation supply complementary, non-interchangeable evidence—real data for clinical representativeness, simulation for repeatable robustness, boundary, stress, and regression testing.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q11",
+        "q12",
+        "q13"
+      ],
+      "source_passage": "The boundary should be explicit. A simulator represents a defined subset of physiological and physical conditions. For example, in optical physiological sensing, performance may be affected by tissue characteristics, optical path, sensor geometry, device-to-body coupling and other physical interactions. Playing back a clinically recorded waveform represents the waveform, while those additional physical factors remain outside the scope of that playback.\nA simulated physiological signal therefore represents only the parameters and conditions that the simulation method has been designed and characterized to reproduce. Its test purpose and limitations should be stated.",
+      "position_gist": "Sponsors should explicitly state the scope and limitations of simulated/synthetic physiological inputs, since a simulation only reproduces the parameters it was characterized to reproduce and excludes other physical factors such as tissue properties and sensor coupling.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q11",
+        "q13"
+      ],
+      "source_passage": "Simulation is most useful when a manufacturer needs to control a specific input, repeat the same test consistently, explore defined edge or stress conditions, or reproduce the same test after a modification. Clinical confirmation remains necessary when human anatomy, physiology, use conditions or other real-world factors materially affect device performance.",
+      "position_gist": "Simulation is best suited to controlled, repeatable, edge-case, and post-modification testing, but clinical confirmation remains necessary where human anatomy, physiology, or use conditions materially affect performance.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q12"
+      ],
+      "source_passage": "The purpose of verification is to provide credible evidence for a defined requirement or risk. A medical-device benchmark should therefore start with a clear verification question.\nWhat is being tested? What does the input represent? Where did it come from? What is the reference or ground truth? What result is expected? What are the limits of the test method? Can the test be reproduced?\nA smaller, well-characterized dataset may provide stronger evidence for a specific verification purpose than a much larger dataset with unclear provenance, ground truth, intended use or limitations. We encourage FDA to emphasize fitness for purpose, traceability, reproducibility and clearly stated limitations when considering benchmark validity.",
+      "position_gist": "Benchmark validity should be judged by fitness for a defined verification question, provenance, ground truth, traceability, reproducibility, and stated limitations rather than dataset size.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q22"
+      ],
+      "source_passage": "Where practical, premarket verification should be designed so that relevant tests can later be reused as a regression baseline. A baseline may identify:\nDevice version + Test data version + Test condition + Expected result + Acceptance criteria + Actual result\nAfter a relevant software, firmware, algorithm, AI model or other device change, the affected tests can be repeated under the same controlled conditions and compared with the established baseline.",
+      "position_gist": "Premarket verification tests should, where practical, be designed as reusable regression baselines (documenting device version, test data version, conditions, expected results, acceptance criteria, and actual results) that can be re-run after changes.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q22"
+      ],
+      "source_passage": "The scope of re-testing should remain risk-based: a limited modification may require targeted regression testing, while a change that may affect sensing, signal processing, algorithm behavior or clinical output may require broader re-verification.",
+      "position_gist": "The extent of re-testing after a modification should be scaled on a risk basis, with targeted regression testing for limited changes and broader re-verification for changes affecting sensing, signal processing, algorithm behavior, or clinical output.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q22"
+      ],
+      "source_passage": "Repeatability is one of simulation's main strengths in this context. Its purpose is to determine whether a known aspect of device behavior has changed when the same controlled challenge is applied before and after a modification. Clinical and real-world evidence continue to address performance beyond the defined scope of the simulated test.",
+      "position_gist": "Repeatable simulated challenges can detect whether known device behavior has changed after a modification, but clinical and real-world evidence must still cover performance outside the simulation's defined scope.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q7"
+      ],
+      "source_passage": "We believe GenAI may require new verification methods, while the underlying regulatory logic remains familiar: evidence should be appropriate to intended use and risk, each test method should be applied within its demonstrated scope, and changes that may affect safety or effectiveness should be re-evaluated.",
+      "position_gist": "GenAI may require new verification methods but existing regulatory principles still apply: evidence proportionate to intended use and risk, test methods used within their demonstrated scope, and re-evaluation of safety/effectiveness-relevant changes.",
+      "segment_id": "seg-010"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "comment_id": "FDA-2026-N-7874-0059",
+  "input_hash": "fa5314475d84db63",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:09:51Z",
+  "model": "claude-opus-5",
+  "chunks": 1,
+  "positions": [
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "My recommendation is simple: add evidence-quality calibration to the evaluation of generative AI-enabled medical devices. A model should distinguish between precise, well-characterized evidence and large amounts of observational, surrogate, or interpretation-heavy data. More data can increase precision without fixing bias or establishing validity.",
+      "position_gist": "FDA's benchmarking/evaluation structure should add an evidence-quality calibration competency, testing whether a model distinguishes well-characterized evidence from large volumes of observational, surrogate, or interpretation-heavy data.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "source_passage": "FDA could test this directly by using historical medical reversals. Give a model the literature available immediately before a major trial overturned prevailing assumptions, and evaluate whether it recognizes the limits of the evidence rather than simply reproducing the consensus.",
+      "position_gist": "Proposes an operational 'before-and-after' benchmark using historical medical reversals (e.g., WHI, CAST), feeding the model the literature as it existed just before the reversing trial and scoring whether it flags the evidentiary limits rather than parroting consensus.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "An\n\nAI\n\nshould\n\nnot\n\ntreat\n\nall\n\ntext\n\nas\n\nequal.\n\nIt\n\nneeds\n\nto\n\ngrade\n\nthe\n\nevidence:\n\n●\n\nCharacterized\n\nGround\n\nTruth:\n\nHardware\n\ndevices\n\nuse\n\nstandard\n\ncalibration\n\nweights.\n\nTimepieces\n\nuse\n\nan\n\natomic\n\nclock.\n\nMedical\n\nAI\n\nneeds\n\nthe\n\nsame\n\nthing:\n\nclinical\n\nreference\n\ndatasets\n\nthat\n\nact\n\nas\n\nthe\n\nanchor\n\nfor\n\nreality.",
+      "position_gist": "Evaluation should require the device to grade evidence into tiers—characterized ground truth anchored in traceable clinical reference data, structured probabilistic trial evidence, and noisy/interpretation-heavy evidence—rather than treating all source text as equivalent.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "This\n\nis\n\nwhy\n\na\n\nmedical\n\nAI\n\ncannot\n\nlean\n\non\n\nan\n\nauthor's\n\nh-index\n\nor\n\na\n\npaper's\n\ncitation\n\nvolume\n\nto\n\njustify\n\nits\n\nconfidence.\n\nMedical\n\nliterature\n\nis\n\nprone\n\nto\n\ncitation\n\nsnowballing:\n\nonce\n\na\n\nplausible\n\nhypothesis\n\nenters\n\nthe\n\necosystem,\n\nsubsequent\n\npapers\n\ncite\n\nit\n\nrepeatedly,\n\ncreating\n\nan\n\necho\n\nchamber\n\nof\n\napparent\n\ncertainty\n\naround\n\na\n\nfragile\n\nempirical\n\nbase.\n\nThe\n\nAI\n\nmust\n\nevaluate\n\nthe\n\nstructural\n\nintegrity\n\nof\n\nthe\n\nstudy\n\ndesign,\n\nnot\n\nthe\n\npopularity\n\nof\n\nthe\n\nconclusion.",
+      "position_gist": "Devices should be evaluated on whether their confidence rests on study-design integrity rather than citation volume or author prominence, because citation snowballing manufactures apparent certainty around fragile evidence.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "The objective is not an AI that always gives an answer. It is an AI that can recognize when the evidence is weak, communicate that uncertainty clearly, and know when clinical judgment must take over.",
+      "position_gist": "Safety-behavior evaluation should reward a model that widens uncertainty bounds, communicates weak evidence clearly, and defers to the clinician rather than always producing a confident answer.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q3",
+        "q9"
+      ],
+      "source_passage": "Subgroup evaluation should likewise focus on whether a device is safe, usable, and clinically effective for each population, including people facing health-literacy, language, or technology barriers, rather than assuming that mathematical parity alone produces equitable outcomes.",
+      "position_gist": "Subgroup/generalizability requirements should be framed as per-population usability and clinical safety testing (including for patients with low health literacy, limited English proficiency, or limited technology access) instead of requiring equal error rates across groups.",
+      "segment_id": "seg-006"
+    }
+  ]
+}

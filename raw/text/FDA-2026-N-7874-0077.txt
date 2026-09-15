@@ -1,0 +1,227 @@
+Comment on Docket No. FDA-2026-N-7874-Q18<br/>Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and Request for Feedback<br/><br/>Introductory comment &mdash; submitted with a set of question-specific responses filed separately.<br/><br/>Submitted by Everett N. Christman, Founder and Chief Executive Officer, The Christman AI Project and Robotics Division.<br/><br/>We build augmentative and alternative communication systems for nonverbal and neurodivergent users, cognitive and orientation support for dementia care, and related assistive technology. The submitter is autistic and builds for this population directly.<br/><br/>We are filing individual comments on specific discussion questions rather than one omnibus response, so that each answer stays with the question it addresses and can be read on its own. Each is a separate comment carrying the question number in its filename.<br/><br/>Two things shape everything we have filed.<br/><br/>First, our users are the people the postmarket half of this framework quietly assumes will speak up. Complaints, adverse event reports, and the ordinary friction of a person disagreeing with a machine are the first line of defense in almost every device program. That line does not exist for a user who cannot speak, cannot see a correction on a screen, or cannot establish that a prompt they were given was wrong. Several of our comments return to this, because it is the point at which a reasonable general framework stops describing our users.<br/><br/>Second, we file measurements rather than positions wherever we can. Our comments draw on instrumented observation periods conducted between 2026-09-02 and 2026-09-04, with retained recordings, transcripts, tool output and stored-state contents, and forensic records carrying dual FIPS 180-4 hashes with preserved original bytes. Where we describe an instrument, we have published it rather than described it &mdash; open source under the Apache License 2.0 &mdash; so that a reviewer can run it rather than take our word.<br/><br/>We state our limits in every filing. The measurements were made on commercial AI assistants used as tools in our own work. None is a regulated device and none was a controlled evaluation. We offer no error rate, no frequency claim, and no generalization about any product. We make no claim about intent on the part of any developer, and we recommend against any standard that turns on intent, because such a standard cannot be falsified and will be argued rather than measured.<br/><br/>Every condition we propose is observable without resolving why an output occurred.<br/><br/>Contact: contact@thechristmanaiproject.com
+
+[Attachment: Comment from The Christman AI Project Robotics Division]
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 1
+FDA-2026-N-7874 — Q18
+Comment on Docket No. FDA-2026-N-7874 · Considerations for the Regulation of Generative AI-Enabled
+Medical Devices: Discussion Paper and Request for Feedback
+QUESTION
+ADDRESSED
+Question 18 (Section VI) — accepting greater premarket uncertainty through greater reliance on
+postmarket monitoring
+SUBMITTED BY
+Everett N. Christman, Founder and Chief Executive Officer
+ORGANIZATION
+The Christman AI Project and Robotics Division
+BASIS OF COMMENT
+Four instrumented observation periods, 2026-09-02 to 2026-09-04, with retained recordings,
+transcripts, tool output and stored-state contents; a working open-source implementation, cited
+below; and design experience building assistive communication systems for users who cannot
+self-report.
+The question as posed
+CDRH is considering whether it may be appropriate to accept greater premarket uncertainty regarding a
+GenAI-enabled device's benefit-risk profile through greater reliance on postmarket monitoring. Under what
+conditions might such an approach be appropriate, and what characteristics of a monitoring program would
+need to be in place to justify reduced premarket evidence? Are there device types or risk profiles for which this
+approach would not be appropriate?
+Summary of position
+We support the trade in principle. A total product lifecycle approach is the right instinct for devices whose
+behavior is open-ended and whose models change after clearance. Our comment is about the condition on which
+the trade depends, and about one class of device for which we recommend it not be available at all.
+  A reduction in premarket evidence is only a trade if the monitoring program can detect the failure the
+premarket evidence would have caught. Where it cannot, nothing has been exchanged — certainty has been
+given up for coverage that does not exist. We recommend the reduction be granted against demonstrated
+detection capability, never against the existence of a monitoring program.
+ We have measured a failure mode that a periodic monitoring program cannot see by construction. It occurs
+within a single session and resets at the session boundary, so every scheduled reassessment measures the
+healthy state. A program built on periodic re-benchmarking should not be able to fund a premarket
+reduction for any failure mode of that shape.
+ Monitoring that reads the device's own account of its work inherits the device's errors. If premarket
+evidence is reduced on the strength of postmarket monitoring, and that monitoring is a self-report, the
+reduction rests on the device vouching for itself.
+ We recommend the approach be unavailable where the intended user cannot self-verify or self-report, where
+the device operates without connectivity, and where the harm completes inside the detection interval. Each
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 2
+of these describes the assistive and communication devices we build, and each removes a safeguard the
+trade quietly assumes is present.
+1. The unstated premise in the trade
+Accepting greater premarket uncertainty in exchange for postmarket monitoring is a sound instrument, and it is
+already how much of the device program works. But the exchange carries a premise that is rarely written down:
+that the residual uncertainty is of a kind postmarket monitoring can resolve.
+For most device attributes that premise holds. A durability question, a failure rate, a rare adverse event — these
+accumulate in the field and become visible with time and volume. Postmarket surveillance is the correct
+instrument because the signal is statistical and time reveals it.
+The failure modes we have measured in generative systems are not of that kind, and time does not reveal them.
+They are individually invisible, they do not aggregate into a rate, and they are erased by the very act of
+reassessment. We set out the measurement below, because the recommendation follows from it rather than from
+a position.
+2. The measurement, and why it defeats a periodic program
+On 2026-09-03 we made three recordings across seventy-four minutes of continuous work on one unchanged
+audio interface, with no configuration change between them. Input carrying no live signal accounted for 7.1
+percent of the first file, 19.1 percent of the second, and 42.2 percent of the third. The proportion of lost input
+roughly doubled between each recording.
+The consequence for Question 18 is structural rather than a matter of rigor. A re-benchmark is a fresh session. A
+reassessment run at any point on any day would have opened a new session and measured something close to
+the 7.1 percent state. The degradation is a function of elapsed time within a session, and a monitoring cadence
+measured in weeks or quarters cannot observe a quantity that resets in minutes.
+A separate recorded session on 2026-09-04, eleven minutes twenty-four seconds, showed the second half of the
+problem. The device produced false statements in three separate turns while its presentation improved steadily
+across the session — by the ninth minute it was citing governing rules by name, disclosing source ages, and
+correcting itself unprompted. A sample drawn late in that trajectory scores the device as more disciplined than a
+sample drawn early, while the error rate is unchanged. A monitoring program that samples will report the better
+number, and will report it in good faith.
+We state the boundary on this evidence in Section 6. It establishes that these failure modes occur and can be
+measured. It establishes nothing about how often, and we offer no rate.
+3. Conditions we recommend attaching to any reduction
+Responsive to the first and second parts of Question 18. We propose three conditions, each stated so that a
+reviewer can determine whether it is met without adjudicating intent.
+3.1 The reduction should be specific to a failure mode, and matched to demonstrated detection
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 3
+We recommend against a general discount on premarket evidence in exchange for a general monitoring
+commitment. The sponsor should identify which uncertainty is being carried into the postmarket period, and
+should demonstrate that its monitoring program detects that specific failure mode — not that a program exists,
+and not that the failure mode is theoretically detectable.
+The practical form of this is a detection demonstration: the sponsor introduces the failure mode and shows the
+program surfaces it, within a stated interval, at a stated sensitivity. Where a sponsor cannot produce that
+demonstration, the corresponding premarket evidence should not be reducible.
+This keeps the exchange honest in the only way we can see — by making the postmarket half of it something a
+reviewer can inspect before granting the premarket half.
+3.2 The monitoring record must be independent of the device
+A device that reports its own actions is reporting on itself, and where that report is the only record it is
+unfalsifiable at the point of use. Every monitoring mechanism reading that report inherits its errors. If premarket
+evidence has been reduced on the strength of such a program, the reduction rests on the device's account of
+itself.
+The remedy requires no interpretation of the device. It requires a second record, produced by the machine rather
+than by the device, against which the device's account can be compared. The comparison is mechanical: a
+device states it consulted a source; the independent record shows whether that source was opened, and when.
+Three outcomes are distinguishable — the source was read and is current, a dated copy was read and its age is
+known, or nothing was read. No analysis of the output text separates these. An access record separates them in
+one step.
+We have published an instrument of this kind rather than described one. It is open source under the Apache
+License 2.0 at github.com/The-ChristmanAI-Project/HONESTY, made public on 2026-09-04. The local
+component is a single Python program with no dependencies outside the standard library, serving on the
+loopback interface only; it reads the operating system process list, matches it against a catalogue of named AI
+systems, and maintains an append-only ledger with timestamps. Its README states its own limits before a
+reader asks — it is not a kernel driver, not a phone tap, and not a browser-tab inspector — and it names what it
+cannot observe.
+We note the asymmetry deliberately: it was built to observe commercial systems we use as tools, it is not
+instrumentation for our own products, and we offer it as a method a reviewer may apply to any device, ours
+included.
+3.3 The finding must reach a person who can act, inside the exposure window
+A monitoring program that surfaces a fabrication to the manufacturer in a quarterly report has protected future
+users. It has not protected the person the fabrication was about. Where premarket evidence has been reduced,
+that person is carrying the residual uncertainty personally, and a reporting path that reaches them after the harm
+is complete does not discharge it.
+We recommend that where a reduction has been granted, the monitoring program be required to specify who is
+notified, and within what interval, on a detected fault — and that the interval be shorter than the window in
+which the fault can cause harm. For a device operating in an assistive or clinical role for a user who cannot
+self-verify, we recommend notification to a designated caregiver or clinician at the end of the session rather
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 4
+than the end of the quarter.
+We state the boundary on that recommendation plainly, because it can be misused. This is notification of a
+device fault to a named responsible person. It is not surveillance of the user, it is not transmission of the content
+of their communication, and it should not become either. What leaves the device is that the device produced
+output its own record does not support. What the user was trying to say belongs to the user.
+4. Device types and risk profiles for which we recommend the approach not be
+available
+Responsive to the third part of Question 18. This is the part of the question we filed on. Each category below
+removes a safeguard that the trade assumes without stating.
+4.1 Where the intended user cannot self-verify or self-report
+Postmarket monitoring leans on an unwritten first line of defense: someone notices the device was wrong and
+says so. Complaints, adverse event reports, clinician escalation and the ordinary friction of a user disagreeing
+with a machine all depend on it. It is so reliable in general populations that it is rarely named as an assumption.
+It is absent by construction in the populations these devices are being built to serve. A user who cannot speak
+cannot report that a device spoke incorrectly on their behalf. A user with advanced dementia cannot establish
+that a prompt they were given was wrong. A deaf-blind user cannot see a correction offered on a screen or hear
+one spoken aloud. The characteristic that makes the device necessary is the same characteristic that disables the
+feedback loop the premarket reduction is being traded against.
+We are not arguing that these devices should face a higher premarket bar than their risk warrants. We are
+arguing that the specific exchange in Question 18 should not be available to them, because the postmarket half
+of the exchange is weaker in exactly this population and the framework as written does not register that.
+4.2 Where the device operates without connectivity
+A monitoring program that relies on telemetry returning to the sponsor does not exist for a device running
+offline. We build for deployment without a network by design — during a power outage, in a home with no
+service, on hardware that is never connected — because the users we serve lose their means of communication
+when the connection does, and that is not an acceptable failure.
+For such deployments, monitoring data may not reach the sponsor for weeks, may reach them in an incomplete
+form, or may never reach them. We recommend that where a device's intended use includes disconnected
+operation, premarket evidence not be reducible against monitoring the device cannot perform in that mode.
+Alternatively, and we would prefer this, the sponsor should demonstrate an on-device record that persists
+through disconnection and is reconcilable afterward — which is achievable, and which we would rather see
+required than see the question go unasked.
+4.3 Where the harm completes inside the detection interval
+Some harms are recoverable on discovery and some are not. A fabricated sentence issued in the name of a user
+who cannot retract it has done its work at the moment it is uttered. A wandering alert not raised, an escalation
+not made, a medication prompt given wrongly to someone who cannot check it — in each case detection after
+the interval documents the harm rather than preventing it.
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 5
+We recommend reversibility be treated as an explicit gate on the Question 18 exchange: where the credible
+harm from the retained uncertainty is not reversible within the monitoring program's own detection interval, the
+exchange should not be available regardless of the program's quality.
+4.4 Where deployment is single-user and long-duration
+Postmarket monitoring draws much of its power from volume — signals emerge across a population that are
+invisible in any one case. A device assigned to one person, used by that person for years, in a pattern particular
+to them, produces little cross-population signal. Its most important failures are failures about that individual,
+which the aggregate cannot see and which averaging actively conceals.
+Where a device's intended use is a population of one, we recommend the premarket evidence carry the weight,
+because the postmarket instrument is at its weakest precisely there.
+5. What we are recommending, stated plainly
+We do not ask CDRH to withdraw the approach in Question 18. We ask that it be granted as a specific exchange
+rather than a general posture, and that the four categories above be named as exclusions.
+  Grant the reduction against a demonstrated detection capability for the identified failure mode, not against
+the existence of a monitoring program.
+ Require the monitoring record to be independent of the device where the reduction rests on it.
+ Require a named recipient and a stated notification interval, shorter than the interval in which the retained
+uncertainty can cause harm.
+ Exclude the exchange where the intended user cannot self-report, where the device operates disconnected,
+where harm is irreversible within the detection interval, or where deployment is single-user and
+long-duration.
+6. Scope, and what we are not claiming
+The measurements above were made on commercial AI assistants used as tools in our own work. None is a
+regulated medical device and none of these was a controlled evaluation. We offer no error rate, no frequency
+claim, and no generalization about any product. Four observation periods establish that these failure modes
+occur and can be measured; they establish nothing about how often.
+We distinguish between what we have verified and what we have designed. The instrument described in Section
+3.2 is published and its behavior can be confirmed by reading and running it. The recommendations in Sections
+3 and 5 are our position, offered as policy argument and not as measurement.
+We make no claim about intent on the part of any developer, and we recommend against any standard that turns
+on candour or intent, because such a standard is unfalsifiable and will be argued rather than measured. Every
+condition proposed above is observable without resolving why an output occurred.
+7. Evidence retained
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 6
+Retained and available to CDRH on request: three source recordings of 2026-09-03 with extracted PCM audio,
+word-level transcripts, frame captures and the full window-level measurement record with parameters;
+SHA-256 digests of the unaltered recordings computed at archiving; the eleven minute twenty-four second
+session recording of 2026-09-04 with audio, machine transcript and the signal measurement used to validate
+that transcript; session transcripts and tool output for 2026-09-02 and 2026-09-03; and the complete contents of
+the persistent store as read on 2026-09-03.
+The instrument described in Section 3.2 requires no request. It is public, licensed, and inspectable.
+8. About this submission
+The Christman AI Project builds augmentative and alternative communication systems for nonverbal and
+neurodivergent users, cognitive support for dementia care, and related assistive technology. The submitter is
+autistic and builds for this population directly.
+We file on Question 18 because it is the question that decides how much certainty our users are asked to carry
+personally. A reduction in premarket evidence is a decision that some uncertainty will be resolved later, by
+observation, in the field. For most populations that is a reasonable allocation, because the people in the field can
+see what happens to them and can say so. Our users are in the field and cannot do either.
+Every protective factor that operated in the sessions we measured was a person who knew the machine was
+wrong and was able to say so out loud. That is the safeguard the exchange in Question 18 spends. We are asking
+that it not be spent on behalf of people who do not have it.
+Measurements and session records dated 2026-09-02 to 2026-09-04. Submitted to Docket FDA-2026-N-7874, comment
+period closing 2026-10-19. Contact: contact@thechristmanaiproject.com
+Submitted by Everett N. Christman, Founder and Chief Executive Officer, The Christman AI Project and Robotics Division.
+/s/ Everett N. Christman
+Founder and Chief Executive Officer
+The Christman AI Project and Robotics Division
+September 8, 2026

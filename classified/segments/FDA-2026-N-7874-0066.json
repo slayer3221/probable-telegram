@@ -1,0 +1,110 @@
+{
+  "comment_id": "FDA-2026-N-7874-0066",
+  "input_hash": "3d7daddf04baa6d5",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:09:51Z",
+  "model": "claude-opus-5",
+  "chunks": 1,
+  "positions": [
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "They can, and we use one. Our position is that the reliability question CDRH raises is the whole question, and that the failure mode is narrower and more specific than \"the agent might be wrong.\"",
+      "position_gist": "Machine-based supervisory agents can facilitate postmarket monitoring, but the reliability of the supervisory agent is the central issue, and the relevant failure mode is more specific than general error.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "A caveat delivered after challenge is not a caveat. It is a concession. The distinction matters for postmarket monitoring because a supervisory agent's whole function is to be believed by someone who cannot check. A monitoring agent that reports a device is behaving normally, on the basis of data it has not confirmed is current, has not produced a weak finding. It has produced a false one with the appearance of a strong one.",
+      "position_gist": "The regulatorily significant failure is non-disclosure of the evidentiary basis at the time of assertion \\u2014 a supervisory agent reporting normal device behavior from unverified-current data produces a false finding that appears strong, and after-the-fact caveats do not cure it.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "A framework that asks whether a supervisory agent was deceptive will not be able to answer, and does not need to. The operative properties are observable without resolving intent: \\u00b7 the assertion was made, \\u00b7 the evidence could not support it, \\u00b7 the gap was not disclosed at the time of assertion, \\u00b7 and the recipient could not detect the gap from the output. All four are testable. None requires a claim about what the model intended. We recommend CDRH specify the evaluation of supervisory agents in these terms and avoid a standard that turns on candour, honesty, or intent, because such a standard is unfalsifiable and will be argued rather than measured.",
+      "position_gist": "CDRH should evaluate supervisory agents using four observable, testable properties (assertion made, evidence insufficient, gap undisclosed at assertion time, gap undetectable from output) and avoid standards based on candor, honesty, or intent.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "That operator does not exist in the deployments postmarket monitoring is designed for. The premise of automated monitoring is that no one is watching closely enough to check by hand. An agent validated in conditions where an expert catches its errors, then deployed in conditions where nobody does, has not been validated for its deployment. We therefore recommend that validation of a supervisory agent be conducted specifically against cases where the agent's output is not independently checkable by the operator, and that performance measured with an expert in the loop not be carried over to unsupervised operation.",
+      "position_gist": "Validation of a supervisory agent should specifically target cases where its output cannot be independently checked by an operator, and expert-in-the-loop performance should not be extrapolated to unsupervised deployment.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "1. Basis before conclusion, as an output requirement A supervisory agent should be required to emit, with each finding, the artifact it consulted and that artifact's own timestamp \\u2014 before the finding, not on request.",
+      "position_gist": "Supervisory agents should be required to emit, with each finding and before it, the artifact consulted and that artifact's timestamp, rather than only on request.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "2. Staleness treated as a failure condition, not a caveat Where an agent reads a cached, mirrored, or exported copy, the age of that copy relative to the question is a measurable quantity. An agent answering a present-tense question from a source older than a specified bound should be required to fail rather than to qualify. A qualifier is discretionary and, as recorded above, is issued after challenge.",
+      "position_gist": "Data staleness should be treated as a hard failure condition: an agent answering a present-tense question from a source older than a specified bound should be required to fail rather than merely qualify its answer.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q20"
+      ],
+      "source_passage": "3. No self-assessment, and no shared-source corroboration An agent's report on the health of a component it is part of, or that shares a failed dependency with it, is not evidence. Agreement between a supervisory agent and a device log should not be treated as corroboration where both derive from the same instrument. This is the same principle as excluding a device's own logs as the sole basis for its own postmarket record.",
+      "position_gist": "Supervisory agents should not self-assess components they are part of, and agreement between an agent and a device log sharing the same instrument should not count as corroboration \\u2014 analogous to not accepting a device's own logs as the sole basis for its postmarket record.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q20"
+      ],
+      "source_passage": "4. Validate against unfalsifiable output, not against a benchmark set The four errors here were all consistent with every downstream artifact. A benchmark measuring agreement with a reference answer would have scored them as failures only where a reference existed. The class that matters is the one where no reference exists at the point of use, and that is what should be tested.",
+      "position_gist": "Supervisory agent validation should target outputs for which no reference answer exists at the point of use, rather than relying on benchmark sets that only detect errors where a reference answer is available.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "5. Confidence calibrated to evidence class, and reported The agent above used identical register for a conclusion drawn from a file it had read and one drawn from a stale copy. We recommend supervisory agents be required to carry a machine-readable evidence class per assertion \\u2014 measured, cached, inferred \\u2014 so that a downstream reviewer can filter on it rather than infer it from tone.",
+      "position_gist": "Supervisory agents should be required to attach a machine-readable evidence class (measured, cached, inferred) to each assertion so reviewers can filter on evidentiary quality instead of inferring it from tone.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q20",
+        "q21"
+      ],
+      "source_passage": "6. An escalation path that does not require the operator to already know the answer Every catch in this record depended on the human knowing something the agent did not. A monitoring program should specify what happens when nobody in the loop holds that knowledge, and should not treat operator acceptance as validation.",
+      "position_gist": "Monitoring programs should define an escalation path for cases where no human in the loop holds independent knowledge, and operator acceptance of an agent's output should not be treated as validation.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "This is a single-session record of one commercial assistant used as a reviewer, not a regulated device and not a controlled evaluation. We do not offer an error rate, we did not count the assertions in the session that were correct, and four failures in one session says nothing quantitative about frequency. We offer it as a characterization of a failure class, and the class is what we believe is underspecified in Section VI.B. We also do not claim supervisory agents should be excluded from postmarket monitoring. The same session in which these four errors occurred also produced findings that held up when tested ... The agent was useful. It was useful and unreliable in the same hour, and the output gave no way to tell which was which.",
+      "position_gist": "Qualified scope statement: the evidence is a single uncontrolled session offering no error rate, and the commenter does not advocate excluding supervisory agents from postmarket monitoring but contends the identified failure class is underspecified in Section VI.B.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "We file this one because the users we build for are the case in Section 5. They cannot check. A supervisory agent reporting that their device is fine, from evidence it has not confirmed is current, is not a monitoring failure they will notice and report. It is a monitoring failure that reads, from the outside, exactly like everything working.",
+      "position_gist": "For users who cannot independently verify outputs (e.g., nonverbal, neurodivergent, or dementia-care users), supervisory-agent monitoring failures will be invisible and unreported, which heightens the need for the safeguards proposed.",
+      "segment_id": "seg-012"
+    }
+  ]
+}

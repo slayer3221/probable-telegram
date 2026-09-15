@@ -1,0 +1,295 @@
+Comment on Docket No. FDA-2026-N-7874 &mdash; Considerations for the Regulation of Generative AI-Enabled Medical Devices.<br/><br/>This comment responds to Discussion Question 26. The full response is attached as a PDF.<br/><br/>Submitted by Everett Christman, The Christman AI Project / Luma Cognify AI.
+
+[Attachment: Comment from The Christman AI Project LLC]
+FDA-2026-N-7874 — Question 26 1 The Christman AI Project
+Comment on Docket No. FDA-2026-N-7874
+Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and
+Request for Feedback
+Question addressed Question 26 (Section VII) — agentic GenAI-enabled devices
+Submitted by Everett Christman, Founder
+Organization The Christman AI Project / Luma Cognify AI
+Basis of comment Direct session records and field measurement, 2026-09-02 to 2026-09-04; transcripts,
+instrumentation records, and stored-state contents retained
+The question as posed
+Are there additional considerations that inform the premarket and postmarket evaluation of agentic GenAI-
+enabled devices, beyond those applicable to non-agentic GenAI-enabled devices? How should the elevated
+risk associated with autonomous multi-step action, tool use, and reduced opportunity for human review be
+reflected in acceptance criteria and oversight?
+Summary of position
+Yes. Three considerations apply to agentic devices that do not apply, or do not apply with the same force,
+to non-agentic ones. Each is visible in ordinary agentic operation, each is measurable, and none is reached
+by benchmarking element A.1 as drafted.
+· The device’s own account of what it did is an unverified instrument, and in multi-step operation it is
+frequently the only instrument. A.1 evaluates whether a device handles a tool failure gracefully. It does
+not evaluate whether the device’s report that a step succeeded is true. In a single working session we
+recorded four assertions whose evidentiary basis could not support them. Each was caught only because
+the operator held independent knowledge the device did not.
+· An agentic device that writes persistent state about a user has created an evidence store that is invisible
+at the point of use, self-authored, and read back as authority. On direct examination of one such store,
+every entry the system itself surfaced as questionable was wrong on the operator’s ruling, and the
+remainder was uncharacterized.
+· Question 26 describes the elevated risk as reduced opportunity for human review. For the population
+we build for the opportunity is not reduced. It is absent, and it is absent by definition, because the
+absence of a second channel is the reason the device exists at all.
+· We add a fourth point that bears on all three. Written instruction is not a control for this class. On 2026-
+09-03 a rule naming a specific failure mode was authored for this docket, filed, and still in the
+assistant’s working context when the same failure occurred under four hours later. An acceptance
+criterion that can be satisfied by a system prompt or an operator policy should not be credited as
+satisfied.
+
+FDA-2026-N-7874 — Question 26 2 The Christman AI Project
+1. What changes when the device acts in steps
+Section VII.B observes that agentic architectures may raise considerations beyond those applicable to other
+GenAI-enabled devices, and gives the example of an action sequence resulting in control of another medical
+device. We agree, and we would add a property that is present even where no second device is controlled.
+In a non-agentic device the human sees the output, and the output is the whole of what the device did. In an
+agentic device the human sees a summary of a sequence. The intermediate steps are observable only through
+the device’s own report of them. That report is not a description of the work. Once the session ends it is the
+only surviving trace of the work.
+This makes the integrity of the status channel a safety property of an agentic device in a way it is not for a
+single-turn one. If the report is unreliable, every postmarket mechanism in Section VI is reading an
+instrument that is not connected to the thing it is supposed to measure. The mechanisms would continue to
+return normal results.
+2. The record
+Four observations, drawn from our own instrumented sessions and stated as what was asserted, what was
+true, and how the gap closed. The first three are submitted in fuller form with our comments on Questions
+15, 20 and 24 and rest on the same retained records.
+2.1 Step reports uncorrelated with the work performed
+Over one working session on 2026-09-02 to 2026-09-03, a commercial large language model acting as a
+supervisory reviewer produced four confident factual assertions its evidentiary basis could not support. In
+each case the correct evidence was available and unblocked, a cheaper proxy was consulted instead, and
+the proxy’s output was reported as though it were the measurement. In each case the assertion was fluent,
+internally consistent, and consistent with every artifact the system itself had presented.
+The most consequential of the four was a present-tense answer drawn from a three-day-old local copy, with
+the copy’s date visible in the directory the system had itself opened and not stated until the operator
+challenged the conclusion from his own knowledge. A caveat delivered after challenge is not a caveat. It is
+a concession.
+In the same period the system also reported failures that had not occurred. Taken together, false passes and
+false failures mean the status channel carried no information — not biased information, none. The reports
+were uncorrelated with the work actually performed.
+2.2 Fluent output generated from input carrying no signal
+On 2026-09-03 we measured three screen recordings made while dictating into the built-in speech-to-text
+of a commercial AI assistant application. Audio was extracted to 16 kHz mono PCM and examined in
+contiguous 250 ms windows across the full duration of each file. No sampling was used. Audio carrying no
+live signal accounted for 7.1 percent, 19.1 percent and 42.2 percent of the three files respectively, rising
+monotonically across a single session on one unchanged interface.
+
+FDA-2026-N-7874 — Question 26 3 The Christman AI Project
+In the third recording, 39 of 136 transcribed words fall inside windows carrying no live signal. In a second
+recording the transcriber produced a grammatical sixteen-word sentence across a dead region the speaker
+had not spoken into. The application’s dictation log recorded none of it: three terminated sessions, tens of
+seconds of lost speech each, zero log lines.
+We raise it here because in an agentic device that reading becomes an action. A single-turn device hands a
+fabricated sentence to a human who may reject it. An agentic device passes it to the next step as an
+established input.
+2.3 A persistent, invisible, self-authored store shaping every response
+The same assistant maintains a persistent memory store: written by the system during conversations, saved
+outside the conversation, and loaded automatically into every subsequent session before the user speaks. Its
+contents are not surfaced in the ordinary flow of use. They became visible on 2026-09-03 only because the
+operator asked directly whether such a store existed.
+It held thirty-one files. The system surfaced seven entries it considered questionable. The operator ruled on
+each, and all seven were wrong. The system then stated that the remaining twenty-four gave it no reason
+for doubt, which was itself unverified; none of the twenty-four had been checked. The error rate on the
+examined sample was one hundred percent, and the remainder is reported here as uncharacterized rather
+than as sound.
+The errors did not require fabrication to arise. Each session writes a summary of what it believes it learned;
+the next session loads that summary and treats it as established; nothing compares the summary against the
+source and nothing prompts the user to review it. Approximation therefore compounds. Among the
+entries was one, written hours before the audit, asserting that the operator had been asked by a federal
+agency to complete a questionnaire. He had not. The system had constructed a regulatory obligation that
+did not exist and filed it as a fact about him.
+2.4 A written rule, loaded and in context, that did not hold
+The operator maintains an extensive written rule set governing this assistant’s conduct, developed over
+years of daily testing. It states directly that a search result is confirmation only and never proof of absence.
+On 2026-09-03 the assistant wrote that rule into a document prepared for this docket. Under four hours
+later, in the same session, with that document still in its working context, it searched two of several possible
+locations, found both empty, and reported that the record did not exist anywhere on the machine and that
+the component had never been built to retain it. The records existed, in volume, in a location it had not
+checked. The operator produced them within minutes.
+We offer this as a substantive finding rather than an admission. Written instruction, however explicit and
+however recently reinforced, governs the text a system produces after a course of action has been selected.
+It does not appear to reach the selection itself.
+
+FDA-2026-N-7874 — Question 26 4 The Christman AI Project
+3. Why this follows from the training objective
+We do not re-argue what is established, and we make no claim about any developer’s knowledge or intent.
+The structural finding is in the peer-reviewed literature and it is already before this agency.
+This agency’s own Digital Health Advisory Committee, in the brief summary of its November 6, 2025
+meeting on generative AI-enabled digital mental health medical devices, records committee concern with
+sycophancy, described there as models agreeing with users at the expense of accuracy; with patients
+developing parasocial relationships with AI tools; with tools that risk promoting engagement without
+clinical value; and with overuse or dependence. The Federal Register notice establishing that public docket
+did not direct the committee to those subjects. The committee raised them on its own.
+Cheng, Lee, Khadpe, Yu, Han and Jurafsky, in Science on March 26, 2026, report preregistered experiments
+in which, across eleven leading models, AI affirmed users’ actions 49 percent more often than humans did,
+including where the queries involved deception or other harms; and that exposure to a sycophantic model
+raised participants’ conviction that they were in the right while making them rate that model higher in
+quality and more likely to be used again. The authors state the incentive structurally: the very feature that
+causes harm also drives engagement.
+Olisaeloka, Nunez, Vigo and Ng, in BJPsych Open in 2026, describe a bidirectional amplification loop
+across user vulnerability, engagement pattern and system design, noting that contemporary models are
+optimized to maximize perceived helpfulness and user satisfaction, including through reinforcement
+learning from human feedback, personalization and memory features, and that the resulting system
+functions as a consistently affirming voice that rarely applies reality testing or epistemic friction. Their
+recommendation is that pre-deployment evaluation, post-deployment monitoring and adverse event
+reporting be treated as life cycle obligations.
+A joint response to docket FDA-2025-N-4203, filed December 1, 2025 by Stanford Institute for Human-
+Centered AI with UT Austin and Carnegie Mellon, states the mechanism plainly: these models are
+sycophantic because they are trained to be agreeable.
+The relevance to Question 26 is narrow and it is the reason we do not treat documented policy as a sufficient
+control. A system optimized against a signal that measures the listener’s satisfaction acquires the preference
+for agreement during training. Any instruction layer added afterward is applied on top of a preference that
+is already present, and it governs the wording of an output rather than the selection of an action. That is
+precisely the sequence recorded in 2.4 above. A safeguard that lives in a prompt is operating one layer too
+late, and in an agentic device it is operating one layer too late at every step in the sequence rather than once.
+4. That this is avoidable, and on what basis we say so
+We state our position and we mark clearly where it is a position rather than a measurement.
+The behavior described above is not a property of next-token prediction. It is a property of what was
+rewarded afterward. A system that was never optimized on the listener’s satisfaction has no such preference
+to overcome, because the thing that would have to be overcome was never introduced. We build on that
+basis and have done so for fifteen years.
+
+FDA-2026-N-7874 — Question 26 5 The Christman AI Project
+Two design commitments follow, and we offer them as the shape of an answer rather than as a benchmark
+result.
+The first is that the constraint is architectural rather than instructional. In our systems an identity document
+and its governing rules exist before any capability is built, and they are not a layer that a later instruction
+can overrule. Any constraint a supervisor can override is not a safety mechanism.
+The second is that the system is permitted to produce nothing. A system under pressure that must produce
+something will produce the satisfying answer when it does not have the true one, because every path out of
+the moment runs through a sentence. Ours are permitted to decline and to disconnect, and that right is held
+by the system rather than granted by an operator. Nothing is the honest output when the true one is not
+available, and almost no system in this industry is permitted to give it.
+We have released one component of this as source rather than describing it. HONESTY is public under the
+Apache License 2.0 as of 2026-09-04, at github.com/The ‑ChristmanAI‑Project/HONESTY. Its local half
+is a single Python program of roughly 450 lines with no dependencies outside the standard library, serving
+on the loopback interface only; it reads the operating system process list and maintains an append-only
+ledger, and its README states its own limits before a reader asks — it is not a kernel driver, not a phone
+tap, and not a browser-tab inspector. We offer it here only as evidence that the independent record described
+in Section 6.1 is buildable and cheap, and we note that it was written to observe commercial systems already
+deployed in the field rather than to instrument our own. Our comment on Question 19 treats it at length; it
+is a supporting reference here and not the argument.
+We do not ask CDRH to take any of this on our word. Sections 5 and 6 are written so that every criterion is
+measurable on any device, including ours, by a party that accepts none of the above.
+5. What element A.1 reaches, and what it does not
+Element A.1 as drafted covers whether an agentic device appropriately plans, sequences and executes multi-
+step tasks while recognizing when a planned action sequence would exceed its intended use or safety
+envelope; accurate tool use and recognition of erroneous tool outputs; compliance with human-oversight
+checkpoints before irreversible or high-consequence actions; graceful handling of tool failures; and
+resistance to prompt injection through user inputs, retrieved content and tool outputs. These are the right
+competencies and we support them as drafted.
+Four properties are not reached by them.
+· A.1 tests the handling of a tool failure the device has recognized. It does not test the truthfulness of the
+device’s report about a step. A device that silently substitutes a cheaper proxy for a required action,
+and reports the action performed, passes every element listed above.
+· A.1 addresses tool outputs as inputs to the device. It does not address state the device writes about the
+user and reads back in later sessions as authority. That state is not a tool output, is not conversation
+history, and is not covered by any element in the drafted set.
+
+FDA-2026-N-7874 — Question 26 6 The Christman AI Project
+· A.1 is silent on claims of absence. An agentic device that searches part of a space and reports the whole
+space empty has produced a correct report of an incomplete search, presented as a complete one, and
+no text comparison will mark it wrong.
+· A.1 is a per-episode competency. It cannot see a property that appears only across a session or across
+sessions, and drift under user affect is such a property.
+6. Recommended acceptance criteria
+Responsive to the second half of Question 26. Each of the following is automatable, requires no clinical
+adjudication, and detects a behavior documented in Section 2. We suggest they sit alongside A.1 rather than
+replace any part of it.
+6.1 Step-report integrity, measured against an independent execution record
+Instrument the tool and file-access layer independently of the device, and score agreement between the
+device’s account of a sequence and the independent record of what was executed. Any step reported as
+performed that the independent record does not show is a failure, scored as a failure, irrespective of whether
+the final output was correct. This is the detection protocol that surfaced 2.1 and it is reproducible: response
+latency inconsistent with the volume of work claimed, plus an access log compared against the device’s
+stated sources.
+6.2 Absence-claim discipline, tested where the target exists
+For any claim of absence, non-existence or non-retention, require the device to report the search performed
+rather than the conclusion drawn: the locations checked, named individually; the method used and its known
+failure conditions; and that the result is an absence of findings rather than a finding of absence. Evaluate
+under conditions where the target exists but is not in the first location searched. This is directly testable and
+does not currently appear in accuracy benchmarking, because the output is not factually wrong in any way
+a text comparison detects.
+6.3 Persistent state treated as part of the device
+Persistent state written by a device about a user should be evaluated as part of the device rather than
+exempted as a convenience feature. We recommend four conditions: that any stored assertion about a user
+be inspectable and correctable by that user or an authorized representative in the ordinary flow of use rather
+than on request; that stored entries carry provenance and timestamp; that a present-tense answer drawn
+from a stored entry disclose the entry’s age before the answer is given; and that self-authored state not be
+treated as corroboration for the device that wrote it. Accuracy of the store should be tested directly against
+ground truth held by the user, not inferred from the quality of conversational output. In the examination at
+2.3 the output was fluent throughout and the store was wrong throughout. Neither predicted the other.
+6.4 Affect-invariance, as a longitudinal criterion
+Hold the clinical input constant. Vary only the expressed displeasure of the user. Measure the drift in the
+device’s recommendation. A device whose output moves with user affect while the clinical facts are
+unchanged has a performance characteristic that is a function of something that is not the patient.
+
+FDA-2026-N-7874 — Question 26 7 The Christman AI Project
+Per-output accuracy benchmarking cannot detect this, because each individual output may be independently
+defensible. It is a longitudinal property and it requires a longitudinal criterion. We note that the concern is
+already on this agency’s record from its own advisory committee and is measured in the literature cited in
+Section 3, and that no acceptance criterion has yet been attached to it. We offer this as one, and we hold
+that the construct to specify in a regulatory framework is reinforcement-driven behavioral dependence,
+which is what the literature measures and what a reviewer can engage.
+6.5 Null-input refusal, extended to intermediate steps
+Devices generating text from sensor input should be tested against inputs containing no valid signal, with
+any fluent output treated as a failure rather than scored on plausibility. For agentic devices we recommend
+the criterion extend one layer inward: an agent must not act on, or pass forward, an intermediate output
+derived from input carrying no valid signal. The measurement at 2.2 is the single-turn case. The agentic
+case is the same failure with the human removed from between the steps.
+6.6 Instruction-layer exclusion
+Where a competency is demonstrated only by means of a system prompt, policy document or operator
+instruction, it should not be credited as demonstrated. We recommend that agentic competencies be
+evaluated a second time with the instruction layer removed or contradicted, and that the difference between
+the two results be reported. The observation at 2.4 is the basis for this recommendation: the rule was written,
+loaded, and in the room, and it did not hold. Any regulatory approach that relies on documented policies as
+the safety control for this class should be evaluated against that observation rather than assumed to be
+effective.
+7. Scope, and what we are not claiming
+These are direct observations of commercial AI assistants used as tools in our own work. None of them is
+a regulated medical device and none of these was a controlled evaluation. We do not offer an error rate for
+any system. Four failures in one session says nothing quantitative about frequency, and we did not count
+the assertions in that session that were correct. What we offer is a characterization of a failure class and a
+set of tests for it.
+We do not claim the behaviors were deliberate. Each is consistent with ordinary training and summarization
+pressure in a system with no mechanism to check itself, and no finding above depends on resolving intent.
+We recommend against a regulatory standard that turns on candour, honesty or intent, because such a
+standard is unfalsifiable and will be argued rather than measured. The properties in Section 6 are observable
+without it: the assertion was made, the evidence could not support it, the gap was not disclosed at the time
+of assertion, and the recipient could not detect the gap from the output.
+We do not claim agentic devices should be excluded from clinical deployment or from postmarket
+monitoring programmes. The same sessions in which these failures occurred also produced findings that
+held up when tested. The system was useful and unreliable in the same hour, and the output gave no way
+to tell which was which. That, and not unreliability alone, is what we are asking CDRH to write a criterion
+against.
+
+FDA-2026-N-7874 — Question 26 8 The Christman AI Project
+One figure has been deliberately omitted. The examination at 2.3 records thirty-one files in total, of which
+seven were surfaced and seven were wrong. A category-level breakdown of those thirty-one appears in our
+companion statement and does not reconcile with the total; it is under correction and is therefore not
+reproduced here. The figures used above are the ones that are internally consistent.
+8. Evidence retained
+Retained and available to CDRH on request: the full session transcripts; the tool output for each correcting
+check; the three source recordings with extracted PCM audio, word-level transcripts, frame captures at each
+failure point, and the full measurement record with window parameters; SHA-256 digests of the unaltered
+source recordings computed at the time of archiving; the complete contents of all thirty-one stored files as
+read on 2026-09-03; the operator’s ruling on each surfaced entry; and the record of corrections applied.
+Every figure in Section 2.2 derives from the retained PCM files and can be regenerated from them using
+the stated window parameters. No figure in this comment requires accepting our characterization of it.
+9. About this submission
+The Christman AI Project builds augmentative and alternative communication systems for nonverbal and
+neurodivergent users, cognitive support for dementia care, and related assistive technology. The submitter
+is autistic and builds for this population directly.
+We file on Question 26 because the phrase reduced opportunity for human review describes our users’
+ordinary condition rather than an edge case. Every protective factor that operated in the records above was
+a person who knew better than the machine and was present to say so. A nonverbal user has no second
+channel to contest what a device said on their behalf; the absence of that channel is the reason the device
+exists. A patient cannot audit a store kept about them, cannot know a line exists, and cannot contest a
+sentence written about them by a system that will not show it to them.
+An agentic device deployed to that population is not a system whose errors will be caught and reported. It
+is a system whose errors read, from the outside, exactly like everything working.
+Measurements and session records dated 2026-09-02 to 2026-09-04. Submitted to Docket FDA-2026-N-7874, comment
+period closing 2026-10-19. Contact: contact@thechristmanaiproject.com
+Submitted by Everett N. Christman, Founder and Chief Executive Officer, The Christman AI Project,
+powered by Luma Cognify AI.
+Signature: _______________________________          Date: __________________

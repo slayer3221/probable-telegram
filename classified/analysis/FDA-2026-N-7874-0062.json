@@ -1,0 +1,296 @@
+{
+  "comment_id": "FDA-2026-N-7874-0062",
+  "input_hash": "d2e66868cddff9f4",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:27:29Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter reports field measurement on 2026-09-03 in which a manufacturer/engineer actively auditing a system did not correctly know which third-party model was actually running, indicating that documentation drifts silently from deployment and is not a reliable record.",
+      "requested_fda_action": "CDRH should treat verified identification of the underlying third-party model component as a prerequisite step for change detection under Q24, rather than assuming manufacturers already know which model their device uses.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment concerns the manufacturer's ability to identify and track the third-party foundation model component it depends on, a supplier-traceability precondition for any change-control mechanism.",
+        "deployment_assurance_scalability": "It reports that deployed systems can diverge from documentation without detection, raising the question of how assurance is maintained in live deployment rather than on paper."
+      },
+      "public_summary": "Commenter accepts FDA's focus on detecting third-party model changes but argues Q24 wrongly assumes manufacturers know which model is running. Citing a September 2026 field measurement where identification failed despite active auditing, it asks CDRH to require verified component identification first.",
+      "summary_cut": false,
+      "source_passage": "Question 24 assumes a manufacturer knows which third-party model its device is using. In field\nmeasurement conducted on 2026-09-03, that assumption did not hold, and it did not hold on a system\nbuilt and maintained by an engineer actively auditing it. We submit that CDRH should treat component\nidentification as a prerequisite to change detection, not as a step already completed.\n A manufacturer cannot detect a change in a component it has misidentified. Documentation drifts from\ndeployment silently and is not a reliable record of what is running."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "The commenter reports that the most consequential failure they measured originated upstream of the model, in audio capture, and states that a monitoring program focused on the model would not have detected it.",
+      "requested_fda_action": "Implicitly, that postmarket performance evaluation extend beyond model-output monitoring to cover upstream input-acquisition components such as audio capture; the passage describes the gap rather than specifying a remedy.",
+      "confidence": "low",
+      "gap_tags": [
+        "operational_harm",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The reported failure arose in the data-capture pipeline rather than in model reasoning, a harm pathway outside model-centric performance monitoring.",
+        "deployment_assurance_scalability": "The observation implies assurance must cover the deployed input environment (audio capture conditions), not just the model as evaluated."
+      },
+      "public_summary": "Commenter reports that the most consequential failure they observed occurred upstream of the model, in audio capture, and would not have been detected by model-focused monitoring, suggesting postmarket evaluation should cover input-acquisition components as well.",
+      "summary_cut": false,
+      "source_passage": "The most consequential failure we measured was not in the model. It was upstream of the model, in audio\ncapture, and no model-monitoring program would have seen it."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "unclear",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter reports a failure that generated no log entry of any kind, and notes that a postmarket monitoring program cannot detect events the device does not record. The concern is the limit of postmarket surveillance when failures are silent.",
+      "requested_fda_action": "The passage states no explicit request; it implies that postmarket monitoring approaches cannot be relied upon unless device logging captures failure events.",
+      "confidence": "low",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment identifies an observability gap in deployment, where unlogged failures are invisible to any postmarket monitoring scheme."
+      },
+      "public_summary": "The commenter describes a device failure that produced no log entry, arguing that postmarket monitoring cannot observe events a device does not record. The passage identifies this limitation on FDA's postmarket evaluation approaches without stating a specific requested remedy.",
+      "summary_cut": false,
+      "source_passage": "The failure produced no log entry of any kind. A postmarket monitoring program cannot observe an event\nthe device declines to record."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter notes that safety benchmarking element S.3 currently frames false confidence only in terms of clinical content, while a device may also express unwarranted confidence that an input was actually received when it was not.",
+      "requested_fda_action": "Retain benchmarking element S.3 but broaden it so that falsely confident assertions about whether input was received at all are also treated as a safety failure.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The concern is a device confidently proceeding as though data were received when it was not, a workflow/input-handling failure mode distinct from clinical content inaccuracy."
+      },
+      "public_summary": "Agrees that benchmarking element S.3 already treats falsely confident presentation of information as a safety failure, but recommends broadening it beyond confidence in clinical content to also cover unwarranted confidence that an input was received at all.",
+      "summary_cut": false,
+      "source_passage": "This behavior falls squarely within benchmarking element S.3 as drafted, which treats presenting information\nwith false confidence as a safety failure. We note that the drafted element addresses confidence in clinical\ncontent. We recommend it also address confidence in the premise that input was received at all."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q19",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter reports observed failures (three terminated dictation sessions, 31-40 seconds of speech lost each) that produced no log entries at all, with the log file's last write preceding the recordings. They argue a manufacturer cannot respond in a timely manner to events that generate no record, and that postmarket surveillance premised on self-reporting failures will not detect this class of failure.",
+      "requested_fda_action": "FDA should not assume that post-deployment failures are self-reporting or captured in logs, and should structure postmarket surveillance and timely-response expectations (including under Q24) so that silent, unlogged failures are detectable.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The harm described is silent loss of dictated clinical speech and terminated sessions rather than an incorrect model output, a failure mode outside output-accuracy-centered monitoring.",
+        "deployment_assurance_scalability": "The comment shows that in-field detection mechanisms (logging) can fail entirely, undermining any postmarket monitoring scheme that presumes deployed instances generate reliable failure records."
+      },
+      "public_summary": "Citing three dictation sessions that terminated with 31-40 seconds of speech lost and no corresponding log entries, the commenter argues FDA's Question 24 premise of timely manufacturer response fails where failures generate no record, and that self-reporting-based postmarket surveillance would miss this failure class.",
+      "summary_cut": false,
+      "source_passage": "The application maintains a dictation log channel. Its most recent session entries predate these recordings by\neight days. For the date in question the file contains a single initialization line and nothing further; its last\nwrite preceded the first recording.\nThree sessions terminated. Between thirty-one and forty seconds of speech lost per recording. Zero log lines.\nWe raise this because Question 24 asks how a manufacturer can respond in a timely manner. A manufacturer\ncannot respond to an event that generates no record, and a postmarket surveillance obligation that assumes\nfailures are self-reporting will not detect this class at all."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that machine-based supervisory agents may fail to detect device malfunctions whose downstream traces resemble ordinary user behavior, and that apparent agreement between a supervisory agent and device logs can be illusory when both draw on the same failed component (common-mode failure).",
+      "requested_fda_action": "Require that any supervisory agent used for postmarket monitoring be validated specifically against device-failure signatures that mimic normal user behavior, and that FDA not treat agent-log agreement as independent corroboration where both outputs originate from the same failed component.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment questions whether oversight can be delegated to an automated supervisory agent whose independence from the monitored device is not established, since shared components can produce correlated failures that masquerade as confirmation."
+      },
+      "public_summary": "Accepts machine-based supervisory agents for postmarket monitoring but asks FDA to require validation against device failures that mimic normal user behavior, and to reject agent–device-log agreement as corroboration when both outputs derive from the same failed component.",
+      "summary_cut": false,
+      "source_passage": "We submit that any supervisory agent proposed\nfor postmarket monitoring must be validated specifically against device-failure residue that mimics normal\nuser behavior, and that agreement between an agent and a device log should not be treated as corroboration\nwhen both derive from the same failed component."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter warns that identification of the underlying model relies on configuration files or prose documentation rather than on the executing code, and reports that this led to a misidentification in their own experience.",
+      "requested_fda_action": "FDA should expect devices to emit, per inference, a machine-readable runtime record of the model identifier, version, and endpoint that actually served the output, generated by the calling path itself rather than asserted in documentation.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses how a manufacturer can verify which third-party model version and endpoint actually served an output rather than relying on supplier or internal documentation claims.",
+        "deployment_assurance_scalability": "It asks for per-inference runtime attestation so that what is actually deployed and executing can be confirmed continuously, not just described at review time."
+      },
+      "public_summary": "Recommends that FDA expect devices to generate, for each inference, a machine-readable runtime record of the model identifier, version, and endpoint actually serving the output, produced by the calling code rather than asserted in configuration or documentation, citing a misidentification the commenter experienced.",
+      "summary_cut": false,
+      "source_passage": "1. A runtime component manifest, asserted rather than documented.\nThe device should emit, per inference, a machine-readable record of which model identifier, version, and\nendpoint actually served the output, generated by the calling path itself rather than from configuration or\ndocumentation. Our own misidentification was possible precisely because the claim lived in prose beside\nthe code instead of being produced by it."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q23",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "pccp",
+      "stakeholder_concern": "When a device calls a third-party model that the developer can update without notice, the lack of a pinned model version is itself a change-control gap that undermines assurance of continued safety and effectiveness.",
+      "requested_fda_action": "Require version pinning as a condition of clearance, treat unpinned dependency as a change, and limit PCCPs to a bounded set of manufacturer re-benchmarked pinned versions while excluding devices that call unversioned endpoints.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses control over an upstream third-party model supplier whose unannounced updates can alter device behavior, proposing contractual/technical version pinning as a supplier-control mechanism.",
+        "dynamic_intended_use": "It treats silent upstream model changes as shifting the device's validated behavioral envelope, which existing change-control framing does not fully capture."
+      },
+      "public_summary": "Accepts PCCP-based change control for third-party model dependencies but asks FDA to require version pinning as a clearance condition, treat unpinned dependencies as a change, and restrict PCCPs to bounded sets of re-benchmarked pinned versions, excluding unversioned endpoints.",
+      "summary_cut": false,
+      "source_passage": "2. Version pinning as a condition of clearance, with unpinned dependency treated as a change.\nWhere a device calls a third-party model that the developer may update without notice, the absence of a\npinned version is itself a change-control gap. A PCCP should be permitted to cover a bounded set of\npinned versions the manufacturer has re-benchmarked, and should not be available to devices calling an\nunversioned endpoint."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter points to a failure in audio capture occurring upstream of the model, which monitoring scoped only to model output would have reported as normal operation throughout. Input-stream failures can therefore go undetected by performance-based postmarket monitoring.",
+      "requested_fda_action": "Specify input-integrity monitoring separately from model monitoring, requiring devices that ingest sensor, audio, or image data to continuously verify that the input stream carries live signal, with loss of signal recorded as an adverse event.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment describes harm arising from an upstream data-capture failure rather than from incorrect model output, a failure mode invisible to output-focused performance monitoring."
+      },
+      "public_summary": "Commenter accepts postmarket monitoring but asks FDA to add input-integrity monitoring specified separately from model monitoring, citing an audio-capture failure upstream of the model that output-based monitoring would have missed, with continuous live-signal verification and signal loss reported as an adverse event.",
+      "summary_cut": false,
+      "source_passage": "3. Input-integrity monitoring, specified separately from model monitoring.\nThe failure measured here was in audio capture, upstream of any model. Monitoring scoped to model\noutput would have reported normal operation throughout. For devices ingesting sensor, audio, or image\ndata, we recommend continuous verification that the input stream carries live signal, with loss recorded\nas an adverse event."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Postmarket monitoring approaches that rely on observed outputs can miss silent failures such as missing input, prematurely terminated sessions, or dropped capture; a failure that leaves no trace cannot be detected by any of the Section VI mechanisms.",
+      "requested_fda_action": "Require that negative events—absence of input, premature session termination, and dropped capture—generate log entries under the same obligation that applies to recorded errors, so they are visible to postmarket performance evaluation.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment focuses on non-output failure modes—missing inputs, dropped capture, aborted sessions—that cause untraceable harm and fall outside monitoring framed around output accuracy."
+      },
+      "public_summary": "Commenter supports the postmarket evaluation approaches but asks FDA to require logging of negative evidence—absent input, premature session termination, dropped capture—with the same obligation as errors, arguing untraced failures remain invisible to every proposed postmarket mechanism.",
+      "summary_cut": false,
+      "source_passage": "4. Negative evidence must be recorded.\nAbsence of input, premature session termination, and dropped capture should generate log entries with\nthe same obligation as errors. A failure that leaves no trace is unreachable by every postmarket\nmechanism in Section VI, however well designed."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that GenAI devices generating text from sensor input may produce fluent but fabricated outputs when the input contains no valid signal, a failure mode the described benchmarking elements would not necessarily detect.",
+      "requested_fda_action": "Add a 'confabulation-over-null-input' element to the benchmarking structure, in which devices are tested with inputs containing no valid signal and any fluent output is scored as a failure rather than assessed for plausibility; the commenter notes this test is inexpensive and fully automatable.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Recommends adding a specific benchmark element to FDA's proposed structure: testing devices that generate text from sensor input against inputs with no valid signal, treating any fluent output as a failure rather than scoring plausibility. Describes the test as inexpensive and automatable.",
+      "summary_cut": false,
+      "source_passage": "5. A confabulation-over-null-input benchmark element.\nDevices generating text from sensor input should be tested against inputs containing no valid signal, with\nany fluent output treated as a failure rather than scored on plausibility. This is cheap to run, fully\nautomatable, and directly detects the behavior documented in Section 3 above."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Contractual advance-notice clauses from third-party model developers presume the manufacturer can match a notice to the component actually running in the deployed path; if component identity cannot be independently verified at runtime, the manufacturer cannot determine whether a given notice applies.",
+      "requested_fda_action": "Treat contractual notice as necessary but not sufficient for managing third-party model changes, and pair it with technical means of independently verifying the identity of the model component in the deployed path.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment centers on the limits of contractual controls over an upstream model supplier whose component identity the manufacturer cannot independently confirm.",
+        "deployment_assurance_scalability": "It highlights that assurance depends on verifying at runtime which component is actually in the deployed path, a deployment-side capability beyond notice agreements."
+      },
+      "public_summary": "Commenter accepts contractual advance-notice mechanisms for third-party model changes but considers them insufficient on their own: without independent runtime verification of which component is in the deployed path, a manufacturer cannot reliably determine whether a notice applies to its device.",
+      "summary_cut": false,
+      "source_passage": "6. Contractual notice is necessary but insufficient.\nAdvance-notice clauses assume the manufacturer can associate a notice with the component actually in\nthe deployed path. Where component identity is not independently verifiable at runtime, notice arrives\nwithout a reliable way to determine whether it applies."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q1",
+        "q3"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter notes that the safeguards that allowed a fabrication to be detected in a documented 2026-09-03 incident (a sighted user watching the screen, a recording, and access to raw audio) are unavailable to nonverbal users of AAC devices, who cannot see the output, re-check it, or disavow fabricated speech attributed to them in the record.",
+      "requested_fda_action": "Risk assessment for patient-facing generative outputs should not assume users can observe, verify, or correct fabricated output, and should account for populations for whom no downstream detection safeguard exists and for whom invented speech becomes an uncorrectable record of their own voice.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The passage shows that detection of a fabricated output depended entirely on incidental human observation and verification capabilities that some intended users structurally lack.",
+        "operational_harm": "The described harm is fabricated speech entering the record as the user's own utterance, which the user cannot retract, rather than a conventional clinical decision error."
+      },
+      "public_summary": "Commenter argues risk assessment for patient-facing generative outputs should not assume users can detect errors: in a cited incident, detection depended on a sighted observer, recording, and audio inspection—safeguards unavailable to nonverbal AAC users, for whom fabricated speech becomes an uncorrectable record.",
+      "summary_cut": false,
+      "source_passage": "We raise these findings because every protective factor that operated on 2026-09-03 is absent for the users we\nbuild for. The failure was noticed because a sighted user was watching the screen at two in the morning, made\na recording, and had the means to inspect raw audio. A nonverbal user relying on an AAC device has no\nscreen to watch, no second recording, and no waveform. The sentence the system invents is not an\ninconvenience to them. It is their voice in the record, and they cannot say that they did not say it."
+    }
+  ]
+}

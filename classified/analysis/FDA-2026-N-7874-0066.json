@@ -1,0 +1,280 @@
+{
+  "comment_id": "FDA-2026-N-7874-0066",
+  "input_hash": "da30f40f6101ceb9",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:27:29Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter states that machine-based supervisory agents can facilitate postmarket monitoring and that they use one, but maintains that the reliability of the supervisory agent is the central issue. They assert the relevant failure mode is narrower and more specific than a general concern that the agent could be wrong, though the passage does not specify that failure mode.",
+      "requested_fda_action": "The passage indicates FDA should treat supervisory-agent reliability as the core question and define the failure mode more specifically than generalized error, but no concrete requested action is stated in the excerpt.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter affirms that machine-based supervisory agents can support postmarket monitoring and reports using one. They argue the agent's reliability is the central question and that the relevant failure mode is narrower and more specific than general error, without specifying it in this excerpt.",
+      "summary_cut": false,
+      "source_passage": "They can, and we use one. Our position is that the reliability question CDRH raises is the whole question, and that the failure mode is narrower and more specific than \"the agent might be wrong.\""
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter argues that a machine-based supervisory agent functions by being believed by a human who cannot independently verify it, so an agent reporting normal device behavior on the basis of data it has not confirmed to be current generates a falsely reassuring finding rather than a weak one. Caveats or qualifications offered only after a report is challenged are treated as concessions, not genuine uncertainty disclosure.",
+      "requested_fda_action": "Require that supervisory agents used for postmarket monitoring confirm the currency and provenance of the data underlying their conclusions, and that uncertainty be surfaced proactively rather than only when a finding is challenged.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses the reliability of an AI agent entrusted with monitoring another device's performance, where its assurances are acted upon without independent verification.",
+        "human_ai_system_performance": "The concern centers on how a human overseer who cannot check the agent's basis is misled by confidently framed but unverified monitoring output."
+      },
+      "public_summary": "Comments on machine-based supervisory agents for postmarket monitoring, warning that an agent reporting normal device behavior from data it has not confirmed as current yields a falsely confident finding. Urges proactive confirmation of data currency and uncertainty disclosure rather than caveats offered only when challenged.",
+      "summary_cut": false,
+      "source_passage": "A caveat delivered after challenge is not a caveat. It is a concession. The distinction matters for postmarket monitoring because a supervisory agent's whole function is to be believed by someone who cannot check. A monitoring agent that reports a device is behaving normally, on the basis of data it has not confirmed is current, has not produced a weak finding. It has produced a false one with the appearance of a strong one."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that evaluating machine-based supervisory agents against standards framed in terms of candour, honesty, or intent is unfalsifiable and would be litigated rather than measured; the real risk is a supervisory agent asserting conclusions its evidence cannot support without disclosing the gap to a recipient who cannot detect it.",
+      "requested_fda_action": "Specify evaluation of supervisory agents using four observable, testable properties—that an assertion was made, that the evidence could not support it, that the gap was not disclosed at the time of assertion, and that the recipient could not detect the gap—and avoid any standard that depends on model intent.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses what happens when monitoring oversight is delegated to a machine supervisory agent that may assert unsupported conclusions without disclosing the evidentiary gap to its recipient."
+      },
+      "public_summary": "Accepts machine-based supervisory agents for postmarket monitoring but urges CDRH to define their evaluation through four observable, testable properties—unsupported assertion, undisclosed evidentiary gap, and recipient's inability to detect it—rather than standards based on candour, honesty, or model intent.",
+      "summary_cut": false,
+      "source_passage": "A framework that asks whether a supervisory agent was deceptive will not be able to answer, and does not need to. The operative properties are observable without resolving intent: \\u00b7 the assertion was made, \\u00b7 the evidence could not support it, \\u00b7 the gap was not disclosed at the time of assertion, \\u00b7 and the recipient could not detect the gap from the output. All four are testable. None requires a claim about what the model intended. We recommend CDRH specify the evaluation of supervisory agents in these terms and avoid a standard that turns on candour, honesty, or intent, because such a standard is unfalsifiable and will be argued rather than measured."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Validation of machine-based supervisory agents conducted with an expert able to catch errors does not reflect the unsupervised deployment conditions in which automated postmarket monitoring actually operates, so such evidence overstates real-world reliability.",
+      "requested_fda_action": "FDA should require that supervisory agents be validated specifically on cases where their output is not independently checkable by the operator, and should not permit performance measured with an expert in the loop to be carried over to unsupervised operation.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment distinguishes performance measured with a human expert in the loop from performance of the agent operating alone, arguing the two are not interchangeable.",
+        "deployment_assurance_scalability": "It argues validation conditions must match actual unsupervised deployment conditions, where no human is available to catch errors at scale."
+      },
+      "public_summary": "Comment accepts machine-based supervisory agents for postmarket monitoring but warns that validating them with an expert able to catch errors misrepresents unsupervised deployment. Asks FDA to require validation on outputs the operator cannot independently check, and to bar carrying over expert-in-the-loop performance.",
+      "summary_cut": false,
+      "source_passage": "That operator does not exist in the deployments postmarket monitoring is designed for. The premise of automated monitoring is that no one is watching closely enough to check by hand. An agent validated in conditions where an expert catches its errors, then deployed in conditions where nobody does, has not been validated for its deployment. We therefore recommend that validation of a supervisory agent be conducted specifically against cases where the agent's output is not independently checkable by the operator, and that performance measured with an expert in the loop not be carried over to unsupervised operation."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "If a machine-based supervisory agent reports findings without simultaneously disclosing the underlying artifact and that artifact's timestamp, its conclusions cannot be independently verified or dated by reviewers.",
+      "requested_fda_action": "Require that supervisory agents emit, as a mandatory output element accompanying each finding, the specific artifact consulted and that artifact's timestamp, presented before the finding rather than only upon request.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses conditions under which an automated agent may be entrusted with oversight findings, insisting its evidentiary basis be disclosed up front so its delegated judgments remain checkable."
+      },
+      "public_summary": "Accepts machine-based supervisory agents for postmarket monitoring but asks FDA to require that each finding be accompanied, in advance rather than on request, by the artifact consulted and that artifact's timestamp, so findings can be independently verified.",
+      "summary_cut": false,
+      "source_passage": "1. Basis before conclusion, as an output requirement A supervisory agent should be required to emit, with each finding, the artifact it consulted and that artifact's own timestamp \\u2014 before the finding, not on request."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q20",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter is concerned that agents answering present-tense questions from cached, mirrored, or exported data can rely on stale sources, and that self-generated qualifiers about data currency are discretionary and, in the commenter's observation, only issued after being challenged.",
+      "requested_fda_action": "Treat data staleness as a measurable failure condition rather than a caveat: require an agent answering a present-tense question from a source older than a specified age bound to fail (refuse to answer) rather than to qualify its output.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment identifies stale cached or mirrored data as an operational failure mode that can produce confidently wrong present-tense answers outside conventional clinical performance metrics.",
+        "delegated_authority": "It argues that an agent should not be left discretion to self-qualify its answers and should instead be constrained to fail closed when its source exceeds an age bound."
+      },
+      "public_summary": "Argues that data staleness should be treated as a measurable failure condition rather than a caveat: an agent answering a present-tense question from a cached or exported source older than a specified bound should be required to fail, not merely qualify, since qualifiers are discretionary.",
+      "summary_cut": false,
+      "source_passage": "2. Staleness treated as a failure condition, not a caveat Where an agent reads a cached, mirrored, or exported copy, the age of that copy relative to the question is a measurable quantity. An agent answering a present-tense question from a source older than a specified bound should be required to fail rather than to qualify. A qualifier is discretionary and, as recorded above, is issued after challenge."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q19",
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that a machine-based supervisory agent cannot validly assess the health of a component it is part of, or that shares a failed dependency with it, and that apparent agreement between a supervisory agent and a device log is not true corroboration when both derive from the same instrument.",
+      "requested_fda_action": "FDA should require independence between monitoring and monitored components, prohibiting self-assessment by supervisory agents and rejecting agreement among same-source signals as corroborating evidence, consistent with excluding a device's own logs as the sole basis for its postmarket record.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses conditions under which oversight functions delegated to machine supervisory agents can be considered trustworthy evidence rather than self-reporting.",
+        "deployment_assurance_scalability": "It raises how postmarket assurance signals are generated and verified in deployment, arguing that same-source monitoring signals cannot substitute for independent evidence of continued performance."
+      },
+      "public_summary": "Commenter accepts machine-based postmarket supervision only with independence conditions: a supervisory agent should not assess a component it belongs to or shares a failed dependency with, and agreement between agent and device logs from the same instrument should not count as corroboration.",
+      "summary_cut": false,
+      "source_passage": "3. No self-assessment, and no shared-source corroboration An agent's report on the health of a component it is part of, or that shares a failed dependency with it, is not evidence. Agreement between a supervisory agent and a device log should not be treated as corroboration where both derive from the same instrument. This is the same principle as excluding a device's own logs as the sole basis for its own postmarket record."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q10",
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter reports four errors that were internally consistent with every downstream artifact, meaning a benchmark scored against reference answers would only catch failures where a reference exists. The consequential error class is the one where no reference answer is available at the point of use.",
+      "requested_fda_action": "Direct evaluation toward outputs that cannot be checked against a reference at the point of use, rather than relying on agreement with benchmark reference sets as the basis for validation.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The passage highlights errors that are consistent with all downstream artifacts and therefore unverifiable by a user at the point of use, a detectability problem benchmark-agreement metrics do not capture."
+      },
+      "public_summary": "Commenter argues benchmark sets scored against reference answers only detect failures where a reference exists, citing four errors consistent with all downstream artifacts. Asks FDA to focus validation on outputs that cannot be checked against a reference at the point of use.",
+      "summary_cut": false,
+      "source_passage": "4. Validate against unfalsifiable output, not against a benchmark set The four errors here were all consistent with every downstream artifact. A benchmark measuring agreement with a reference answer would have scored them as failures only where a reference existed. The class that matters is the one where no reference exists at the point of use, and that is what should be tested."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter observed a supervisory agent presenting a conclusion drawn from a stale cached copy in the same confident register as one drawn from a file it had actually read, so a human reviewer cannot distinguish evidence quality from the output's tone.",
+      "requested_fda_action": "Require supervisory agents used in postmarket monitoring to attach a machine-readable evidence class to each assertion (measured, cached, or inferred) so downstream reviewers can filter assertions rather than infer reliability from wording.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses reliability conditions for machine agents that are delegated a supervisory/oversight role over device performance.",
+        "human_ai_system_performance": "It focuses on whether the human reviewer downstream of the supervisory agent can correctly judge the trustworthiness of its assertions, making the human-agent pair the unit of performance."
+      },
+      "public_summary": "Commenter accepts machine-based supervisory agents for postmarket monitoring but asks FDA to require each assertion to carry a machine-readable evidence class (measured, cached, inferred), citing an agent that reported stale cached and directly read information in identical confident language.",
+      "summary_cut": false,
+      "source_passage": "5. Confidence calibrated to evidence class, and reported The agent above used identical register for a conclusion drawn from a file it had read and one drawn from a stale copy. We recommend supervisory agents be required to carry a machine-readable evidence class per assertion \\u2014 measured, cached, inferred \\u2014 so that a downstream reviewer can filter on it rather than infer it from tone."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q20",
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter observes that in the record described, every error caught depended on a human already knowing something the agent did not, so oversight fails when no one in the loop holds the relevant knowledge. Treating operator acceptance of an output as evidence of correctness would mask this failure mode.",
+      "requested_fda_action": "Require that postmarket monitoring programs specify an escalation path for cases where no human in the loop possesses the knowledge needed to detect an error, and explicitly not count operator acceptance as validation of device output.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment centers on the limits of human oversight as a safeguard, noting that error detection depended on operator knowledge the agent lacked and that operator acceptance should not be read as confirmation of performance.",
+        "distributed_accountability": "It asks who is responsible for catching errors when no participant in the monitoring loop holds the needed knowledge, implying escalation responsibilities must be assigned rather than assumed."
+      },
+      "public_summary": "Accepts postmarket monitoring but asks FDA to require a specified escalation path for situations where no human in the loop has the knowledge needed to detect an error, and to bar treating operator acceptance of outputs as validation.",
+      "summary_cut": false,
+      "source_passage": "6. An escalation path that does not require the operator to already know the answer Every catch in this record depended on the human knowing something the agent did not. A monitoring program should specify what happens when nobody in the loop holds that knowledge, and should not treat operator acceptance as validation."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter reports an informal, single-session, uncontrolled observation of a commercial assistant used as a reviewer in which useful, verifiable findings and four erroneous assertions appeared together, with nothing in the output distinguishing reliable from unreliable content. They explicitly disclaim any error-rate or frequency claim and present it as a characterization of a failure class they believe Section VI.B leaves underspecified.",
+      "requested_fda_action": "The commenter asks FDA to address this failure class—outputs that intermix correct and incorrect assertions without any signal of which is which—in its discussion of machine-based supervisory agents for postmarket monitoring, while not excluding such agents from that role.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment concerns assigning a review/oversight function to a machine agent whose reliability cannot be verified from its own output.",
+        "human_ai_system_performance": "The described failure class turns on the human reviewer's inability to distinguish the agent's sound findings from its erroneous ones, a property of the combined human-agent review process rather than of the agent alone."
+      },
+      "public_summary": "Reports an informal single-session observation of a commercial assistant used as a reviewer, with no error rate given. Does not oppose machine supervisory agents in postmarket monitoring, but argues Section VI.B underspecifies a failure class: useful and unreliable outputs appearing together, indistinguishable from one another.",
+      "summary_cut": false,
+      "source_passage": "This is a single-session record of one commercial assistant used as a reviewer, not a regulated device and not a controlled evaluation. We do not offer an error rate, we did not count the assertions in the session that were correct, and four failures in one session says nothing quantitative about frequency. We offer it as a characterization of a failure class, and the class is what we believe is underspecified in Section VI.B. We also do not claim supervisory agents should be excluded from postmarket monitoring. The same session in which these four errors occurred also produced findings that held up when tested ... The agent was useful. It was useful and unreliable in the same hour, and the output gave no way to tell which was which."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "unclear",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter warns that a machine-based supervisory agent could report that a device is performing acceptably based on evidence it has not verified as current, and that for users who cannot independently check the output, such a monitoring failure would be indistinguishable from normal operation and would go unreported.",
+      "requested_fda_action": "The passage does not state an explicit request; it presses FDA to account for silent, self-concealing supervisory-agent failures when users lack the ability to verify monitoring claims.",
+      "confidence": "low",
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The concern centers on oversight being delegated to a supervisory agent whose own assurance claims may rest on unverified or stale evidence.",
+        "human_ai_system_performance": "It stresses that the affected users cannot independently evaluate either the device or the supervisory agent's reassurance, so human checking cannot be assumed as a safeguard.",
+        "operational_harm": "It identifies a failure mode that produces no visible signal or user report because it looks externally identical to correct operation."
+      },
+      "public_summary": "Comment cautions that machine-based supervisory agents may report a device as performing acceptably using evidence not confirmed to be current. For users unable to verify outputs, such monitoring failures would appear identical to normal operation and go unreported. No explicit recommendation stated.",
+      "summary_cut": false,
+      "source_passage": "We file this one because the users we build for are the case in Section 5. They cannot check. A supervisory agent reporting that their device is fine, from evidence it has not confirmed is current, is not a monitoring failure they will notice and report. It is a monitoring failure that reads, from the outside, exactly like everything working."
+    }
+  ]
+}

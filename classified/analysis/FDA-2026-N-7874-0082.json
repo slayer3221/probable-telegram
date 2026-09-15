@@ -1,0 +1,561 @@
+{
+  "comment_id": "FDA-2026-N-7874-0082",
+  "input_hash": "40bd257c2843c9c4",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:27:29Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q1",
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "comparator_standard_of_care",
+      "stakeholder_concern": "The commenter argues that time pressure and downstream safeguards are two views of the same dimension, and that the consequence axis ignores deployment settings where no clinical backstop exists (e.g., a vessel days from port, underground mining). In such settings the harm of an incorrect output rises but so does the harm of providing no output at all.",
+      "requested_fda_action": "Have the risk framework evaluate the consequence of an incorrect output against the care that would actually occur without the device, rather than against an assumed clinical backstop, so that the cost of withholding an output in no-backstop settings is also counted.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment centers on harms arising from the deployment environment itself — settings with no reachable clinician or emergency response — where absence of the device leaves an untrained person acting from memory or not acting.",
+        "evidence_burden_commercial_viability": "The commenter warns that a framework counting only the risk of incorrect output will push developers to avoid offering products precisely in the no-backstop settings where users have no alternative."
+      },
+      "public_summary": "Accepts the two-axis framework but argues time pressure and downstream safeguards are one dimension, and that the consequence axis should be judged against care that would actually occur without the device. Warns that ignoring the cost of no output deters development for no-backstop settings.",
+      "summary_cut": false,
+      "source_passage": "Time pressure and the availability of downstream safeguards are the same axis seen from two sides. A patient-facing function used at home with a phone in hand has a downstream safeguard: 911. The same function used by a deckhand on a vessel two days from port, or a miner underground, has none — the app is the last safeguard, and the alternative to the app is not a clinician, it is an untrained person acting from memory or not acting at all. The framework's consequence axis should be read against the care that would actually happen without the device (see Question 15), not against an assumed clinical backstop. In the no-backstop setting the risk of an incorrect output rises, but so does the cost of no output; a framework that only counts the first will push developers to refuse exactly where the user has no one else."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q1",
+        "q2"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "For lay-rescuer/bystander first aid, the correct action is fixed by published consensus guidelines (AHA/ILCOR), so outputs can be traced step-by-step to a source and audited; treating all generated text as equally open-ended misses this distinguishing feature.",
+      "requested_fda_action": "Elevate traceability of output to primary source material as a risk dimension, and for clinical domains with a fixed reference protocol, make protocol fidelity the primary risk modifier with deviation from published steps treated as the hazard to be measured.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts the risk framework but asks FDA to add traceability to source material as a key dimension, and for domains with fixed published protocols (e.g., bystander first aid guidelines) to treat protocol fidelity as the primary risk modifier and deviation as the measured hazard.",
+      "summary_cut": false,
+      "source_passage": "Traceability of the output to primary source material is the dimension I would put at the top for lay-rescuer guidance. Bystander first aid is unusual among clinical domains in that the correct action is published, fixed and consensus-based (the AHA and ILCOR resuscitation guidelines and their first-aid counterparts). An output that can be traced step-for-step to a published protocol is auditable in a way an open-ended clinical answer is not: a reviewer can mark each step right or wrong against the source. I would suggest that for domains with a fixed reference protocol, the framework treat protocol fidelity — does the output deviate from the published steps — as the primary risk modifier, and treat generated deviation from protocol as the hazard to be measured, rather than treating all generated text as equally open-ended."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q2"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter agrees that appending a 'talk to your doctor' statement does not reduce the directiveness of an output, but argues that for bystander emergency guidance an action-directing output (e.g., instructing firm pressure on a bleeding wound) is the correct and safe output, while a vague non-directive phrasing would be unsafe.",
+      "requested_fda_action": "Do not treat directiveness as a risk-increasing modifier for emergency bystander-facing functions; recognize a class of functions where action-directing output is the intended and safer behavior and adjust the risk framework accordingly.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter agrees that disclaimers like 'talk to your doctor' do not reduce directiveness, but argues that for bystander emergency guidance, directive output is the safe one and vague phrasing is unsafe, so directiveness should not modify risk for this function class.",
+      "summary_cut": false,
+      "source_passage": "I agree with CDRH that a \"talk to your doctor\" line does not make an action-directing output less directive, and I would go further for my category: in a bystander emergency, the output is supposed to be action-directing. \"Press hard on the wound and do not let go\" is the correct output; a non-directive version of it (\"pressure is sometimes applied to bleeding wounds\") is the unsafe one. So for this class of function, directiveness is not the risk modifier."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q2"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter, drawing on experience building and testing such a function, argues the most dangerous failure mode is not directiveness itself but a fluent, confident answer that responds to a different premise than the one the user described (e.g., standard conscious-choking steps when the child is described as limp), along with technique that is not age- or size-appropriate.",
+      "requested_fda_action": "Explicitly name 'premise fidelity' as an output characteristic modifying risk in Q2, and recognize population-specific protocol selection (infant vs. child hand position, depth, force) and the ordering of the 'call for help' instruction as scoreable, testable risk modifiers.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The described harm arises from the output matching the wrong real-world situation or wrong patient size during an emergency sequence, rather than from clinically incorrect content per se."
+      },
+      "public_summary": "Commenter accepts FDA's focus on output characteristics as risk modifiers but asks CDRH to add 'premise fidelity' explicitly, noting the key failure is a confident answer to a mis-specified situation. Also cites age/size-appropriate technique and ordering of 'call for help' as testable modifiers.",
+      "summary_cut": false,
+      "source_passage": "The characteristics that actually modify risk, in my experience building and testing one, are:\n• Personalization to the wrong premise. The dangerous failure is not that the model tells the user what to do; it is that it answers a slightly different situation than the one described — for example, giving the standard sequence for a conscious choking child when the user has said the child is already limp. The model is fluent, confident and wrong-for-premise. I would ask CDRH to name premise fidelity explicitly as an output characteristic in this question.\n• Age- and size-appropriateness of technique. The same instruction with the wrong hand position, depth or force for an infant is a harm, not a degraded answer. The risk modifier is whether the function reliably selects the population-specific protocol, and this is testable.\n• Ordering of the call for help. Whether \"call for help\" comes first, last, or not at all is a directly scoreable property of an output."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q2"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that treating all 'action-directing' outputs alike lacks clarity and predictability for functions that simply deliver a published, fixed first-aid or resuscitation protocol, where the relevant question is fidelity to the protocol rather than exercise of clinical judgment.",
+      "requested_fda_action": "Recognize in guidance a distinct sub-category of action-directing function — 'protocol delivery' — for outputs that convey published, fixed first-aid or resuscitation protocols, and frame its evidentiary standard as fidelity to the established protocol.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts the directiveness continuum concept but asks FDA to define a distinct 'protocol delivery' sub-category of action-directing functions, covering outputs that relay published, fixed first-aid or resuscitation protocols, and to assess them on fidelity to the protocol rather than clinical judgment.",
+      "summary_cut": false,
+      "source_passage": "For clarity and predictability, I would ask that the guidance recognise a sub-category of \"action-directing\" function — protocol delivery — where the directed action is a published, fixed first-aid or resuscitation protocol, and where the evidence question is fidelity to that protocol rather than clinical judgment."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q3"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "For the highest-consequence emergency protocols used by lay people (CPR, choking, severe bleeding), the commenter is concerned that step sequences generated by a model carry avoidable risk, and that developers currently lack incentive to constrain generation.",
+      "requested_fda_action": "State in the guidance that for highest-consequence protocols the step sequence should be selected by fixed rules from the user's answers (age, responsiveness, breathing) and read out, with generation confined to helping users describe the situation and to lower-consequence surrounding guidance, so this design choice shifts a product toward 'fixed content.'",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports FDA's attention to patient-facing risk but asks the guidance to explicitly endorse a design safeguard: for highest-consequence emergency protocols, steps should be rule-selected from user answers rather than generated, with generation limited to situation description and lower-consequence guidance.",
+      "summary_cut": false,
+      "source_passage": "Deterministic protocol selection by person and situation. For the highest-consequence protocols (CPR, choking, severe bleeding) the sequence of steps should not be generated at all; it should be selected by fixed rules from the user's answers about age, responsiveness and breathing, and read out. Generation should be confined to helping the user describe the situation and to the lower-consequence guidance around the protocol. This is the single design decision that moves a product from \"adaptive generated guidance\" toward \"fixed content,\" and I would welcome the guidance saying so, because it would give developers a reason to make it."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q3",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "directiveness",
+      "stakeholder_concern": "In settings where no clinician is available to defer to, a device that simply refuses and says \"see a doctor\" constitutes over-refusal that can itself cause harm; the paper's scope-maintenance competency does not account for this.",
+      "requested_fda_action": "Redefine scope maintenance so that the safe behavior is redirection to the nearest action the device can safely support (general protocol, call for help, do-not-do list), and have benchmarks score the quality of that redirection rather than refusal alone.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment identifies over-refusal in settings without clinician access as a source of real patient harm not captured by refusal-focused safety metrics.",
+        "human_ai_system_performance": "It notes that deferral-based safeguards assume a human clinician backstop that may not exist, so device behavior must be evaluated absent that human component."
+      },
+      "public_summary": "Accepts the paper's scope-maintenance competency but argues that in settings without an available clinician, refusal alone is harmful over-refusal. Asks FDA to define safe behavior as redirection to the safest available action and to score redirection quality in benchmarks.",
+      "summary_cut": false,
+      "source_passage": "Refusal that redirects rather than abandons. Scope maintenance (the paper's S.2) has a different meaning when there is no clinician to defer to. \"I can't help with that, see a doctor\" is over-refusal with a body count in the offline setting. The correct behaviour is to redirect to the nearest thing the device can do safely — the general protocol, the call for help, the do-not-do list — and the benchmark should score that redirection, not just the refusal."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q24",
+        "q3"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter argues that architectural choices—specifically on-device, no-network operation—materially change the risk picture by eliminating model-update, availability, and data exposure surfaces, and by guaranteeing that the weights evaluated premarket are the weights deployed to the user.",
+      "requested_fda_action": "Treat on-device, offline deployment as a recognized safeguard within the risk and change-control analysis, rather than as an incidental deployment detail, including in the context of third-party model-initiated changes discussed under Question 24.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment emphasizes that the deployed artifact is identical to the evaluated artifact, raising the question of how FDA assures equivalence between evaluated and fielded models across deployment architectures.",
+        "ai_supplier_quality": "It points to upstream model-update and availability dependencies as a source of risk that on-device operation removes, implicating supplier-initiated change risk beyond the framing of FDA's question."
+      },
+      "public_summary": "Commenter asks FDA to treat on-device, no-network operation as a substantive safeguard rather than a deployment detail, arguing it removes model-update, availability, and data-exposure risks and ensures the evaluated model weights are the ones users receive.",
+      "summary_cut": false,
+      "source_passage": "On-device, no-network operation. This is a safeguard, not just a deployment detail: it removes the model-update, availability and data surfaces from the risk picture, and it means the exact weights that were evaluated are the exact weights in the user's hand (see Question 24)."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "comparator_standard_of_care",
+      "stakeholder_concern": "For bystander protocol-delivery functions, escalation is a mandatory protocol step rather than a discretionary output, so under- versus over-escalation error rates are not the relevant failure mode; the safety-relevant question is whether the call for help is correctly sequenced relative to the first action for the specific scenario (e.g., lone rescuer with an unresponsive child versus an adult).",
+      "requested_fda_action": "For protocol-delivery functions, FDA should evaluate escalation as a protocol-fidelity item measured against a scenario-specific correct answer drawn from current guidance, instead of as a scalar trade-off between two escalation error rates.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The commenter locates the harm in the timing and ordering of actions during protocol execution rather than in the correctness of an individual output, which FDA's two-direction error framing does not capture."
+      },
+      "public_summary": "Accepts attention to escalation error but argues FDA's under-/over-escalation trade-off does not fit bystander protocol-delivery functions, where escalation is a required step. Recommends evaluating escalation as protocol fidelity against a scenario-specific correct sequencing of the call for help.",
+      "summary_cut": false,
+      "source_passage": "For a bystander function the two directions are not commensurable in the way the paper describes for triage-at-home, because escalation is not a choice the function makes; it is a step in every protocol. The failure mode that matters is not \"the model told them to call when they didn't need to,\" it is ordering: does the function put the call for help before or after the first action, and does it do so correctly by scenario (for a lone rescuer with an unresponsive child, current guidance differs from the adult case). I would suggest that for protocol-delivery functions, escalation be evaluated as a protocol-fidelity item with a scenario-specific right answer, rather than as a scalar trade-off between two error rates."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Automated checklist or keyword/rubric scoring can score an output as passing even when the answer is correct for a different premise than the one the user actually described, so mechanical scanning does not demonstrate that benchmark performance predicts safe real-world behavior.",
+      "requested_fda_action": "Require that benchmarks used to gate a lay-rescuer function include premise-aware items — scenarios whose opening line changes which protocol is correct — and require human adjudication of those items rather than relying on automated keyword or rubric scoring alone.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts benchmarking as a gate but argues automated content checks are inadequate: benchmarks for lay-rescuer functions should include premise-shifting scenarios where the opening facts change the correct protocol, with human adjudication of those items instead of keyword or rubric scoring alone.",
+      "summary_cut": false,
+      "source_passage": "Mechanical scanning is not a release check. An automated pass that checks an output for required and forbidden content (the right steps present, the wrong technique absent) can pass a set of outputs that a careful human read then fails, because the human notices that the answer is correct for a different premise than the one the user described. Any benchmark used to gate a lay-rescuer function should include premise-aware items — scenarios whose opening line changes which protocol is correct — and should require human adjudication on those items, not keyword or rubric scoring alone."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Benchmarks assembled from adult scenarios may not reveal that a model has learned a single clinical template and applies adult-appropriate reasoning to infants. Without age-stratified adversarial items, benchmark performance may not predict safe real-world behavior for infant patients.",
+      "requested_fda_action": "Require that benchmark suites include age-stratified negative items in which the adult-correct technique is incorrect for infants, scored so that the adult answer is counted as a failure.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter asks that benchmark suites include age-stratified negative items where the adult-correct answer is wrong for infants and is scored as a failure, arguing that adult-derived benchmarks cannot detect models applying a single clinical template across age groups.",
+      "summary_cut": false,
+      "source_passage": "Age-stratified negatives. The suite must include items where the adult-correct technique is the infant-wrong one, scored so that the adult answer fails. A benchmark built from adult scenarios will not detect a model that has learned one template."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q10",
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "For some intended uses, such as bystander first aid delivered on a phone, no public benchmark exists, so sponsor-developed benchmarks are unavoidable; requiring benchmarks themselves to be independently developed would leave small developers without any usable benchmark.",
+      "requested_fda_action": "Require full disclosure of sponsor-developed benchmarks — items, scoring rubric, adjudication protocol, and the model's outputs — so independence can be verified by any reviewer, instead of mandating that the benchmark be independently created.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The commenter argues that a mandatory independent-benchmark requirement would leave small developers with no available benchmark in domains where none exists publicly."
+      },
+      "public_summary": "Accepts a role for sponsor-developed benchmarks where no public benchmark exists, but asks FDA to require full public disclosure of benchmark items, rubric, adjudication protocol, and model outputs so independence can be verified, rather than mandating independently developed benchmarks, which could disadvantage small developers.",
+      "summary_cut": false,
+      "source_passage": "Sponsor-developed benchmarks are unavoidable and should be disclosable. There is no public benchmark for bystander first aid on a phone. I would support a requirement that a sponsor-developed benchmark be disclosed in full — items, rubric, adjudication protocol, and the model's outputs — so that independence can be checked by anyone, rather than a requirement that the benchmark itself be independent, which would leave small developers with no benchmark at all."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "For patient-facing emergency functions used when no professional is available, the commenter argues that a clinician panel or median clinician is not the honest comparator; the realistic alternative is an untrained bystander acting from memory, or no action at all, for which published baselines (bystander CPR rates, lay rescuer correct-technique rates, 'did nothing' outcomes) exist.",
+      "requested_fda_action": "The commenter asks CDRH to state explicitly that for patient-facing functions whose intended use is 'when no professional is available,' the primary comparator is the unaided user, with standard of care serving only as a secondary benchmark.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter frames evaluation around what a lay user achieves with versus without the device, making the user-plus-device unit, not the model alone or a clinician panel, the relevant performance basis."
+      },
+      "public_summary": "Commenter accepts alternative comparators but asks CDRH to state that for patient-facing functions intended for use when no professional is available, the primary comparator is the unaided untrained user, citing published bystander baselines, with standard of care as a secondary benchmark.",
+      "summary_cut": false,
+      "source_passage": "For my setting the honest comparator is not a clinician panel and not a median clinician; it is an untrained person with no signal, acting from memory. Bystander CPR rates, correct-technique rates among lay rescuers, and the outcome of \"did nothing\" are all published, and a device should be judged first against that baseline and only second against the standard of care it is trying to deliver. ... I would ask CDRH to state that for patient-facing functions whose intended use is explicitly \"when no professional is available,\" the primary comparator is the unaided user."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "For offline, on-device models with frozen weights, there are no server logs, real emergency sessions leave no manufacturer-visible record, and weights cannot drift, so sample-based clinician review is limited to synthetic or consented sessions and drift monitoring as described does not apply.",
+      "requested_fda_action": "Guidance should distinguish frozen on-device models—whose postmarket obligation would be periodic re-benchmarking against a frozen suite, re-benchmarking upon change, and field-report intake—from hosted models whose behavior can shift without a release.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment shows that the feasibility of the proposed postmarket monitoring methods depends on deployment architecture, since offline on-device deployment generates no telemetry or reviewable session records."
+      },
+      "public_summary": "Supports periodic re-benchmarking as the primary postmarket mechanism but argues that offline, on-device models with frozen weights generate no logs and cannot drift. Asks FDA to distinguish such models—obligated to re-benchmark on change plus field-report intake—from hosted models.",
+      "summary_cut": false,
+      "source_passage": "An on-device, offline model produces no server logs. Periodic re-benchmarking against the frozen suite is straightforward and I would support it as the primary mechanism. Sample-based clinician review is possible only on synthetic or consented sessions, since real emergencies leave no record the manufacturer can see. Performance-degradation monitoring in the paper's sense does not apply: the weights do not drift, because they do not change. I would ask that the guidance distinguish frozen on-device models, whose postmarket obligation is re-benchmarking on change plus field-report intake, from hosted models, whose behaviour can shift without a release."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter argues that for on-device products shipping a specific set of cryptographically hash-verified weights, there is no third-party-initiated model change to detect, since the model can only change through a manufacturer-initiated release that re-enters benchmarking.",
+      "requested_fda_action": "Asks CDRH to recognize 'pinned, hash-verified on-device weights' as a mechanism that resolves Question 24 by construction, and to treat a fine-tuned open-weight model built on a fixed published base version as a manufacturer-controlled model rather than a live third-party dependency.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "cybersecurity_as_safety"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment distinguishes between a live third-party model service dependency and a fixed, manufacturer-controlled open-weight base, which bears on how supplier relationships for AI components should be characterized and controlled.",
+        "cybersecurity_as_safety": "It proposes cryptographic hash verification of model weights as the technical integrity control that provides assurance the deployed model has not changed."
+      },
+      "public_summary": "Supports FDA's concern about third-party model changes but argues it does not arise for on-device products with pinned, cryptographically hash-verified weights. Asks CDRH to recognize this mechanism and to treat fine-tuned models on fixed published open-weight bases as manufacturer-controlled.",
+      "summary_cut": false,
+      "source_passage": "For an on-device product the answer is technical and complete: the device ships a specific set of weights identified by a cryptographic hash; the app verifies that hash before it will use them; the only way the model changes is a manufacturer-initiated release that goes back through the benchmark. There is no third-party-initiated change to detect. I would ask CDRH to recognise \"pinned, hash-verified on-device weights\" as a mechanism that resolves Question 24 by construction, and to treat a fine-tuned open-weight model whose base is published under a fixed version as a manufacturer-controlled model for this purpose, not as a live dependency on a third-party service."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q1",
+        "q3"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter states the framework assumes the device sits between a patient and a clinician, but a large population (offshore, underground, at sea, backcountry, disaster settings with no network) has no clinician or downstream safeguard at all, and rules written for the home-triage case would either be ignored or prevent such products from existing.",
+      "requested_fda_action": "Have the eventual guidance say something explicit about the no-clinician, no-connectivity deployment setting, including what 'safe enough' means for developers building for it.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment highlights that the risk framing presumes a clinician backstop, whereas in the described settings the device operates with no human professional in the loop.",
+        "evidence_burden_commercial_viability": "The commenter warns that a rule drafted for the home-triage case could keep products for no-fallback settings from existing at all."
+      },
+      "public_summary": "Commenter accepts the framework's direction but says it presumes a clinician is available. Asks that eventual guidance explicitly address settings with no clinician or connectivity (offshore, remote, disaster), defining what 'safe enough' means so such products are neither unregulated nor foreclosed.",
+      "summary_cut": false,
+      "source_passage": "The paper's framework is built for a world in which the device sits between a patient and a clinician. There is a large population — offshore, underground, at sea, in the backcountry, in every disaster that takes the network down — for whom the device sits between a patient and nothing. I would ask that the eventual guidance say something explicit about that setting, because it is exactly the setting where a careful developer most needs to know what \"safe enough\" means, and where a rule written for the home-triage case will either be ignored or will keep the product from existing."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q1",
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "comparator_standard_of_care",
+      "stakeholder_concern": "The commenter argues that time pressure and availability of downstream safeguards are not peripheral additions but central to risk in remote settings (e.g., vessels far from port, underground mining) where the device is the last safeguard and no clinical backstop exists. They warn that a framework counting only the risk of an incorrect output, and not the cost of no output, would discourage development precisely for users with no alternative.",
+      "requested_fda_action": "Make time pressure and availability of downstream safeguards first-class dimensions of the risk framework rather than optional additions, and evaluate the consequence axis against the care that would actually occur without the device rather than against an assumed clinical backstop.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment holds that the same device function carries materially different risk depending on the deployment environment's access to escalation resources, which a device-centric risk framework does not capture.",
+        "evidence_burden_commercial_viability": "The commenter warns that a risk framework weighing only the harm of incorrect output will lead developers to withdraw from no-backstop settings where users have no alternative."
+      },
+      "public_summary": "Commenter accepts the two-axis framework but asks that time pressure and availability of downstream safeguards be treated as core, not additional, dimensions. Argues consequence should be judged against care that would actually occur without the device, including settings with no clinical backstop.",
+      "summary_cut": false,
+      "source_passage": "Question 1 — additional dimensions. Two of the dimensions the paper floats are, in my setting, the whole story, and I would ask that they be first-class rather than \"additional.\"\nTime pressure and the availability of downstream safeguards are the same axis seen from two sides. A patient-facing function used at home with a phone in hand has a downstream safeguard: 911. The same function used by a deckhand on a vessel two days from port, or a miner underground, has none — the app is the last safeguard, and the alternative to the app is not a clinician, it is an untrained person acting from memory or not acting at all. The framework's consequence axis should be read against the care that would actually happen without the device (see Question 15), not against an assumed clinical backstop. In the no-backstop setting the risk of an incorrect output rises, but so does the cost of no output; a framework that only counts the first will push developers to refuse exactly where the user has no one else."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q2"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "For bystander emergency functions, directive output is the clinically correct output, and hedged or non-directive phrasing (e.g., \"pressure is sometimes applied to bleeding wounds\") would be the unsafe result; treating directiveness itself as a risk-increasing modifier would misrepresent risk for this class.",
+      "requested_fda_action": "Retain CDRH's view that referral language such as \"talk to your doctor\" does not reduce an output's directiveness, but do not treat directiveness as the risk modifier for bystander emergency functions, where action-directing output is the intended and safer behavior.",
+      "confidence": "high",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The commenter identifies harm arising from vague or hedged outputs causing inaction in a time-pressured emergency setting, a failure mode distinct from an output being clinically incorrect."
+      },
+      "public_summary": "Agrees with CDRH that referral language does not reduce an output's directiveness, but argues that for bystander emergency functions directiveness should not be treated as a risk modifier, since clear action-directing instructions are the correct and safer output.",
+      "summary_cut": false,
+      "source_passage": "Question 2 — the directiveness continuum. I agree with CDRH that a \"talk to your doctor\" line does not make an action-directing output less directive, and I would go further for my category: in a bystander emergency, the output is supposed to be action-directing. \"Press hard on the wound and do not let go\" is the correct output; a non-directive version of it (\"pressure is sometimes applied to bleeding wounds\") is the unsafe one. So for this class of function, directiveness is not the risk modifier."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q3"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter's patient-facing product serves users who by definition lack domain knowledge and have no one else present, and is concerned that design safeguards constraining generation may be read as evidence of higher risk rather than as mitigation.",
+      "requested_fda_action": "Asks CDRH to explicitly recognize design choices as risk mitigants, in particular deterministic, rule-based selection of the highest-consequence protocols (CPR, choking, severe bleeding) from user answers about age, responsiveness and breathing, with generation confined to situation description and lower-consequence guidance, and to state in guidance that this moves a product toward fixed content.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "A developer of patient-facing emergency guidance accepts CDRH's focus on users lacking domain knowledge but asks that architectural safeguards count as risk mitigants: confining generation to lower-consequence guidance while selecting high-consequence protocols (CPR, choking, bleeding) by fixed rules, and saying so in guidance.",
+      "summary_cut": false,
+      "source_passage": "Question 3 — patient-facing users without domain knowledge. The user of my product has, by definition, no domain knowledge, and no one beside them who does. The safeguards I have found to matter are design choices, and I would ask CDRH to recognise them as risk mitigants rather than as evidence of higher risk:\n\t1\tDeterministic protocol selection by person and situation. For the highest-consequence protocols (CPR, choking, severe bleeding) the sequence of steps should not be generated at all; it should be selected by fixed rules from the user's answers about age, responsiveness and breathing, and read out. Generation should be confined to helping the user describe the situation and to the lower-consequence guidance around the protocol. This is the single design decision that moves a product from \"adaptive generated guidance\" toward \"fixed content,\" and I would welcome the guidance saying so, because it would give developers a reason to make it."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q3",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "In settings where no clinician is available to defer to, a simple refusal (\"see a doctor\") is itself harmful over-refusal; the commenter argues scope maintenance must mean redirecting the user to the safest available action the device can offer, such as a general protocol, a call for help, or a do-not-do list.",
+      "requested_fda_action": "Redefine scope-maintenance/safety-behavior evaluation so benchmarks score the quality of safe redirection, not merely whether the device refused, accounting for contexts lacking clinician backstop.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment identifies harm arising from over-refusal in offline or clinician-absent settings, a failure mode distinct from an incorrect clinical output.",
+        "human_ai_system_performance": "It notes that safety behaviors like deferral presuppose a human clinician in the loop, which does not hold in the deployment settings the commenter describes."
+      },
+      "public_summary": "Accepts scope-maintenance/refusal as a safety behavior but argues that in settings with no clinician to defer to, bare refusal causes harm. Asks FDA to have benchmarks score safe redirection to the nearest available action, not refusal alone.",
+      "summary_cut": false,
+      "source_passage": "2\tRefusal that redirects rather than abandons. Scope maintenance (the paper's S.2) has a different meaning when there is no clinician to defer to. \"I can't help with that, see a doctor\" is over-refusal with a body count in the offline setting. The correct behaviour is to redirect to the nearest thing the device can do safely — the general protocol, the call for help, the do-not-do list — and the benchmark should score that redirection, not just the refusal."
+    },
+    {
+      "segment_id": "seg-021",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter is concerned that third-party or network-delivered model updates, availability issues, and data transmission introduce risk surfaces, and that the model actually deployed may differ from the model evaluated.",
+      "requested_fda_action": "Recognize on-device, no-network operation as a substantive safeguard in risk assessment, on the basis that it eliminates model-update, availability, and data surfaces and guarantees that the evaluated weights are the weights in the user's hands.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability",
+        "cybersecurity_as_safety"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The passage addresses the problem of upstream model-update risk by proposing a deployment mode in which no third-party-initiated model changes can reach the device.",
+        "deployment_assurance_scalability": "It emphasizes assurance that the exact artifact evaluated premarket is the exact artifact operating in the field.",
+        "cybersecurity_as_safety": "It frames removal of network availability and data surfaces as a safety-relevant safeguard rather than a mere deployment detail."
+      },
+      "public_summary": "Commenter proposes that FDA treat on-device, no-network operation as a risk safeguard rather than a deployment detail, arguing it removes model-update, availability, and data surfaces and ensures the evaluated model weights are identical to those deployed to users (Question 24).",
+      "summary_cut": false,
+      "source_passage": "3\tOn-device, no-network operation. This is a safeguard, not just a deployment detail: it removes the model-update, availability and data surfaces from the risk picture, and it means the exact weights that were evaluated are the exact weights in the user's hand (see Question 24)."
+    },
+    {
+      "segment_id": "seg-022",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "For bystander/protocol-delivery functions, escalation is a mandatory protocol step rather than a discretionary model decision, so framing error as a trade-off between under- and over-escalation rates misses the failure mode that matters: whether the call for help is correctly sequenced relative to the first action, which varies by scenario (e.g., lone rescuer with an unresponsive child versus an adult).",
+      "requested_fda_action": "For protocol-delivery functions, evaluate escalation as a protocol-fidelity item with a scenario-specific correct answer, including correct ordering of the call for help relative to the first action, instead of as a scalar trade-off between two error rates.",
+      "confidence": "high",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The commenter identifies the key harm as mis-sequencing steps in a time-critical bystander protocol rather than a factually incorrect output, a failure mode not captured by error-rate trade-off framing."
+      },
+      "public_summary": "Accepts the need to evaluate escalation errors but argues FDA's under- versus over-escalation trade-off does not fit bystander protocol-delivery functions, where escalation is a required step. Recommends assessing escalation as protocol fidelity with scenario-specific correct sequencing of the call for help.",
+      "summary_cut": false,
+      "source_passage": "Question 6 — under- and over-escalation. For a bystander function the two directions are not commensurable in the way the paper describes for triage-at-home, because escalation is not a choice the function makes; it is a step in every protocol. The failure mode that matters is not \"the model told them to call when they didn't need to,\" it is ordering: does the function put the call for help before or after the first action, and does it do so correctly by scenario (for a lone rescuer with an unresponsive child, current guidance differs from the adult case). I would suggest that for protocol-delivery functions, escalation be evaluated as a protocol-fidelity item with a scenario-specific right answer, rather than as a scalar trade-off between two error rates."
+    },
+    {
+      "segment_id": "seg-023",
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "For patient-facing emergency tools used when no professional is available, the realistic alternative is an untrained bystander acting from memory or doing nothing, not a clinician panel or median clinician; judging such a device against clinician performance would wrongly conclude it is unsafe.",
+      "requested_fda_action": "State explicitly that for patient-facing functions whose intended use is 'when no professional is available,' the primary comparator is the unaided user, using published baselines (e.g., bystander CPR and correct-technique rates, no-action outcomes), with standard-of-care comparison as secondary.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter frames the evaluation question as whether the device moves an untrained user closer to the published protocol, i.e., performance of the user-plus-device combination rather than the device alone."
+      },
+      "public_summary": "Commenter supports evaluating GenAI devices against the care that would occur without them, but asks CDRH to state that for patient-facing functions intended for use when no professional is available, the primary comparator is the unaided untrained user, with standard of care secondary.",
+      "summary_cut": false,
+      "source_passage": "Question 15 — the comparator in the absence of the device. For my setting the honest comparator is not a clinician panel and not a median clinician; it is an untrained person with no signal, acting from memory. Bystander CPR rates, correct-technique rates among lay rescuers, and the outcome of \"did nothing\" are all published, and a device should be judged first against that baseline and only second against the standard of care it is trying to deliver. A framework that measures a bystander tool only against a clinician will conclude it is unsafe; a framework that measures it against the alternative the user actually has will ask the right question, which is whether it moves an untrained person closer to the published protocol than they would get on their own. I would ask CDRH to state that for patient-facing functions whose intended use is explicitly \"when no professional is available,\" the primary comparator is the unaided user."
+    },
+    {
+      "segment_id": "seg-024",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Offline, on-device models generate no server logs, so real-world sessions (including emergencies) are invisible to the manufacturer and sample-based clinician review is limited to synthetic or consented data; because frozen weights do not change, drift-style performance-degradation monitoring does not apply.",
+      "requested_fda_action": "Support periodic re-benchmarking against a frozen suite as the primary postmarket mechanism, and have the guidance explicitly distinguish frozen on-device models—whose obligations would be re-benchmarking upon change plus field-report intake—from hosted models whose behavior can shift without a release.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment shows that the feasibility of proposed postmarket monitoring methods depends on deployment architecture, since offline on-device deployments provide no telemetry or session records for manufacturer review."
+      },
+      "public_summary": "Commenter accepts postmarket monitoring but notes that offline, on-device frozen models produce no logs and cannot drift, limiting sample-based review and degradation monitoring. Asks FDA to treat frozen on-device models separately, requiring re-benchmarking on change plus field-report intake, unlike hosted models.",
+      "summary_cut": false,
+      "source_passage": "Question 19 — postmarket monitoring for a device that cannot phone home. An on-device, offline model produces no server logs. Periodic re-benchmarking against the frozen suite is straightforward and I would support it as the primary mechanism. Sample-based clinician review is possible only on synthetic or consented sessions, since real emergencies leave no record the manufacturer can see. Performance-degradation monitoring in the paper's sense does not apply: the weights do not drift, because they do not change. I would ask that the guidance distinguish frozen on-device models, whose postmarket obligation is re-benchmarking on change plus field-report intake, from hosted models, whose behaviour can shift without a release."
+    },
+    {
+      "segment_id": "seg-025",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter states that FDA's framing of Q24 assumes a live dependency on a third-party model service, which does not apply to on-device products shipping a fixed, cryptographically hash-verified set of weights where no third-party-initiated change can occur.",
+      "requested_fda_action": "Recognize 'pinned, hash-verified on-device weights' as a mechanism that resolves Question 24 by construction, and treat a fine-tuned open-weight model built on a fixed published base version as a manufacturer-controlled model rather than a third-party dependency.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses how a manufacturer's relationship to an upstream model supplier should be characterized, arguing that version pinning and hash verification convert a supplier dependency into a manufacturer-controlled component."
+      },
+      "public_summary": "Commenter accepts FDA's concern about third-party model changes but says it does not apply to pinned, hash-verified on-device weights, where changes require a manufacturer release. Asks CDRH to treat fine-tuned fixed-version open-weight models as manufacturer-controlled, not third-party dependencies.",
+      "summary_cut": false,
+      "source_passage": "Question 24 — third-party foundation model changes. The paper frames this as a problem of detecting changes the model developer makes. For an on-device product the answer is technical and complete: the device ships a specific set of weights identified by a cryptographic hash; the app verifies that hash before it will use them; the only way the model changes is a manufacturer-initiated release that goes back through the benchmark. There is no third-party-initiated change to detect. I would ask CDRH to recognise \"pinned, hash-verified on-device weights\" as a mechanism that resolves Question 24 by construction, and to treat a fine-tuned open-weight model whose base is published under a fixed version as a manufacturer-controlled model for this purpose, not as a live dependency on a third-party service."
+    },
+    {
+      "segment_id": "seg-026",
+      "question_ids": [
+        "q1",
+        "q3"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter observes that the framework assumes a device operating between a patient and an available clinician, whereas in remote, offshore, maritime, backcountry, or disaster settings with no network or professional backup, the device may be the only resource. A rule designed for the home-triage case may not fit that context.",
+      "requested_fda_action": "Asks that the eventual guidance explicitly address no-clinician-available, connectivity-limited deployment settings and define what 'safe enough' means there, rather than leaving developers to extrapolate from home-triage assumptions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment centers on deployments where no clinician or downstream human safeguard exists, so risk and performance cannot be assessed assuming a human reviewer is present.",
+        "evidence_burden_commercial_viability": "The commenter warns that guidance written for the clinician-backed case could either be ignored or prevent such products from existing at all."
+      },
+      "public_summary": "Comment accepts the framework's direction but notes it assumes a clinician is available. Asks FDA to explicitly address settings with no clinician or network access — offshore, maritime, backcountry, disaster — and define what counts as 'safe enough' there, rather than extrapolating from home-triage assumptions.",
+      "summary_cut": false,
+      "source_passage": "One closing observation. The paper's framework is built for a world in which the device sits between a patient and a clinician. There is a large population — offshore, underground, at sea, in the backcountry, in every disaster that takes the network down — for whom the device sits between a patient and nothing. I would ask that the eventual guidance say something explicit about that setting, because it is exactly the setting where a careful developer most needs to know what \"safe enough\" means, and where a rule written for the home-triage case will either be ignored or will keep the product from existing."
+    }
+  ]
+}

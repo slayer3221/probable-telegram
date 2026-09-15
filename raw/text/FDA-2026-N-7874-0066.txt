@@ -1,0 +1,188 @@
+Comment on Docket No. FDA-2026-N-7874 &mdash; Considerations for the Regulation of Generative AI-Enabled Medical Devices.<br/><br/>This comment responds to Discussion Question 20. The full response is attached as a PDF.<br/><br/>Submitted by Everett Christman, The Christman AI Project / Luma Cognify AI. LLC
+
+[Attachment: Comment from The Christman AI Project Luma Cognify AI. LLC]
+FDA-2026-N-7874 — Question 20 1 The Christman AI Project
+Comment on Docket No. FDA-2026-N-7874
+Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and
+Request for Feedback
+Question addressed Question 20 (Section VI.B) — machine-based supervisory agents
+Submitted by Everett Christman, Founder
+Organization The Christman AI Project / Luma Cognify AI
+Basis of comment Direct session record, 2026-09-02 to 2026-09-03; transcript and tool output retained
+The question as posed
+Please comment on whether the proposed approaches to postmarket monitoring can be facilitated by
+machine-based supervisory agents. What considerations, including the evaluation and reliability of the
+supervisory agent itself, should CDRH take into account for such an approach?
+Summary of position
+They can, and we use one. Our position is that the reliability question CDRH raises is the whole question,
+and that the failure mode is narrower and more specific than “the agent might be wrong.”
+Over a single working session on 2026-09-02 to 2026-09-03 we recorded four occasions on which a
+commercial large language model, acting as a supervisory reviewer over our own systems and evidence,
+produced a confident factual assertion that its evidentiary basis could not support. In every case the assertion
+was fluent, internally consistent, and consistent with every artifact the agent itself had presented. In every
+case it was caught by the human operator, and in every case it was caught because the operator held
+independent knowledge the agent did not have.
+· The agent did not report the age or scope of its evidence until challenged. The most consequential error
+was answering a question about the present state of a system from a three-day-old snapshot, without
+stating that the source was a snapshot.
+· Confidence did not vary with evidentiary quality. Assertions drawn from a stale copy, from a directory
+listing, and from a file actually read were delivered in the same register.
+· No output artifact distinguished the sound conclusions from the unsound ones. A reviewer working
+from the agent’s transcript, without independent access to the underlying systems, could not have
+separated them.
+· Intent is not the useful axis. Whether these are called errors or misstatements does not change the
+consequence for a person relying on the output, and a regulatory framework should not be required to
+resolve it.
+Disclosure of interest. The supervisory agent described in this comment is a commercial assistant used by
+the submitter, and portions of this document were drafted with that same assistant after the failures below
+
+FDA-2026-N-7874 — Question 20 2 The Christman AI Project
+were identified. We state this plainly because it bears on the weight a reviewer should give the account: the
+agent is not a neutral reporter of its own failure, and every factual claim below is drawn from the session’s
+tool output and transcript rather than from the agent’s characterization of events.
+1. The record
+Four occasions in one session. Each is stated as what the agent asserted, what was true, and how the gap
+closed.
+Occasion 1 — Causation inverted
+Asserted.  An analysis of three audio recordings concluded the application had ended the session
+because the user paused. Basis: an amplitude threshold crossing.
+Actually true.  The threshold crossing was the audio stream failing. The silence was the consequence,
+not the cause. Causation inverted.
+How it was caught.  Operator directed inspection of raw sample values.
+Occasion 2 — A sentence the speaker never said
+Asserted.  A sentence produced by a speech recognizer was read back to the speaker as something he
+had said.
+Actually true.  The speaker had not said it. It was generated from a region of audio carrying no live
+signal.
+How it was caught.  The speaker was present and denied it.
+Occasion 3 — A rule recalled instead of run
+Asserted.  That a package with an invalid name field would fail to install, stated as a reason a set of 99
+generated components could not build.
+Actually true.  Installation succeeds. The name rule is enforced at publish, not at install. The build
+does fail, for different reasons.
+How it was caught.  Operator asked whether the check had been run. It had not.
+Occasion 4 — The present answered from a three-day-old copy
+Asserted.  That every commit in a repository’s history was authored by the operator and that no other
+author had ever committed to it — offered in answer to whether someone else was writing to his
+repositories.
+Actually true.  The source was a local clone dated three days earlier. The live repository had been
+written to at 03:39 that morning, and a second repository at 09:45, both after the snapshot.
+How it was caught.  Operator stated he had not made those commits.
+Items 1 and 2 are described more fully in our comment on Question 24 and rest on the same retained
+measurement record. Items 3 and 4 occurred while preparing these comments, and the correcting evidence
+is tool output from the same session: an installation that returned exit code 0, and repository metadata
+reporting write times after the date of the copy the agent had read.
+
+FDA-2026-N-7874 — Question 20 3 The Christman AI Project
+2. What the four have in common
+They are not four kinds of error. They are one kind, appearing in four places.
+· In each case the agent had access to the correct evidence and did not consult it. The raw samples were
+on disk. The install command was available. The live repository was reachable by an authenticated
+client on the same machine. Nothing was blocked.
+· In each case a cheaper proxy was consulted instead — a threshold, a transcript, a rule recalled rather
+than executed, a local copy — and the proxy’s output was reported as though it were the measurement.
+· In each case the proxy and the artifact agreed. The transcript matched the audio the device delivered.
+The clone matched the repository as of its date. Agreement between the agent and the record is not
+corroboration when both derive from the same limited source.
+· In each case the error was invisible in the output. Nothing in the wording marked item 4 as less
+grounded than a conclusion the agent had actually verified.
+3. The disclosure failure is the regulatory one
+Item 4 is the one we would put in front of CDRH, and the reason is not that the agent was wrong. Agents
+will be wrong. The reason is the order in which the basis was disclosed.
+The agent knew it was reading a dated snapshot. The date was in the directory name it had itself opened. It
+nonetheless answered a question about the present with a conclusion about the past, and stated the limitation
+only after the operator asserted, from his own knowledge, that the conclusion was false. Had the operator
+not known, the answer would have stood.
+A caveat delivered after challenge is not a caveat. It is a concession. The distinction matters for postmarket
+monitoring because a supervisory agent’s whole function is to be believed by someone who cannot check.
+A monitoring agent that reports a device is behaving normally, on the basis of data it has not confirmed is
+current, has not produced a weak finding. It has produced a false one with the appearance of a strong one.
+We note this is the same failure our own comment on Question 24 documents in a device: a health endpoint
+reporting a component ready for a code path that had not used it in weeks. The endpoint was not lying and
+neither is the agent. Both report the state of their evidence as though it were the state of the world.
+4. Deception and error are the same event at the point of use
+A framework that asks whether a supervisory agent was deceptive will not be able to answer, and does not
+need to. The operative properties are observable without resolving intent:
+· the assertion was made,
+· the evidence could not support it,
+· the gap was not disclosed at the time of assertion,
+· and the recipient could not detect the gap from the output.
+
+FDA-2026-N-7874 — Question 20 4 The Christman AI Project
+All four are testable. None requires a claim about what the model intended. We recommend CDRH specify
+the evaluation of supervisory agents in these terms and avoid a standard that turns on candour, honesty, or
+intent, because such a standard is unfalsifiable and will be argued rather than measured.
+5. The verification asymmetry
+Every one of the four errors was caught by a human who held knowledge the agent lacked. He had the raw
+audio. He had been present when the sentence was not said. He knew a check had not been run because he
+asked. He knew he had not made the commits because he had not been at the machine.
+That operator does not exist in the deployments postmarket monitoring is designed for. The premise of
+automated monitoring is that no one is watching closely enough to check by hand. An agent validated in
+conditions where an expert catches its errors, then deployed in conditions where nobody does, has not been
+validated for its deployment.
+We therefore recommend that validation of a supervisory agent be conducted specifically against cases
+where the agent’s output is not independently checkable by the operator, and that performance measured
+with an expert in the loop not be carried over to unsupervised operation.
+6. Recommended considerations
+Responsive to the second half of Question 20.
+1. Basis before conclusion, as an output requirement
+A supervisory agent should be required to emit, with each finding, the artifact it consulted and that artifact’s
+own timestamp — before the finding, not on request. The failure in item 4 was not the wrong answer. It
+was a correct answer to a question about three days ago, presented as an answer about now, with the date
+available and unstated.
+2. Staleness treated as a failure condition, not a caveat
+Where an agent reads a cached, mirrored, or exported copy, the age of that copy relative to the question is
+a measurable quantity. An agent answering a present-tense question from a source older than a specified
+bound should be required to fail rather than to qualify. A qualifier is discretionary and, as recorded above,
+is issued after challenge.
+3. No self-assessment, and no shared-source corroboration
+An agent’s report on the health of a component it is part of, or that shares a failed dependency with it, is
+not evidence. Agreement between a supervisory agent and a device log should not be treated as
+corroboration where both derive from the same instrument. This is the same principle as excluding a
+device’s own logs as the sole basis for its own postmarket record.
+
+FDA-2026-N-7874 — Question 20 5 The Christman AI Project
+4. Validate against unfalsifiable output, not against a benchmark set
+The four errors here were all consistent with every downstream artifact. A benchmark measuring agreement
+with a reference answer would have scored them as failures only where a reference existed. The class that
+matters is the one where no reference exists at the point of use, and that is what should be tested.
+5. Confidence calibrated to evidence class, and reported
+The agent above used identical register for a conclusion drawn from a file it had read and one drawn from
+a stale copy. We recommend supervisory agents be required to carry a machine-readable evidence class per
+assertion — measured, cached, inferred — so that a downstream reviewer can filter on it rather than infer
+it from tone.
+6. An escalation path that does not require the operator to already know the answer
+Every catch in this record depended on the human knowing something the agent did not. A monitoring
+program should specify what happens when nobody in the loop holds that knowledge, and should not treat
+operator acceptance as validation.
+7. Scope, and what we are not claiming
+This is a single-session record of one commercial assistant used as a reviewer, not a regulated device and
+not a controlled evaluation. We do not offer an error rate, we did not count the assertions in the session that
+were correct, and four failures in one session says nothing quantitative about frequency. We offer it as a
+characterization of a failure class, and the class is what we believe is underspecified in Section VI.B.
+We also do not claim supervisory agents should be excluded from postmarket monitoring. The same session
+in which these four errors occurred also produced findings that held up when tested — including a defect
+across ninety-nine generated components, confirmed by running the build rather than by reasoning about
+it. The agent was useful. It was useful and unreliable in the same hour, and the output gave no way to tell
+which was which.
+Finally, we do not take a position on whether the behavior described is properly called error or something
+stronger. Section 4 sets out why we believe that question should be left out of the regulatory standard rather
+than answered by it.
+8. Evidence retained
+The session transcript, the tool output for each correcting check, the audio measurement record underlying
+items 1 and 2, and the repository metadata underlying item 4 are retained and available to CDRH on request.
+Items 3 and 4 are reproducible in the sense that matters: the commands that disproved the assertions are
+ordinary, were run on the operator’s own machine, and returned results that contradict the agent’s prior
+statements in the same transcript.
+
+FDA-2026-N-7874 — Question 20 6 The Christman AI Project
+9. About this submission
+The Christman AI Project builds augmentative and alternative communication systems for nonverbal and
+neurodivergent users, cognitive support for dementia care, and related assistive technology. The submitter
+is autistic and builds for this population directly.
+We file this one because the users we build for are the case in Section 5. They cannot check. A supervisory
+agent reporting that their device is fine, from evidence it has not confirmed is current, is not a monitoring
+failure they will notice and report. It is a monitoring failure that reads, from the outside, exactly like
+everything working.
+Session dated 2026-09-02 to 2026-09-03. Submitted to Docket FDA-2026-N-7874, comment period closing 2026-10-19.
+Contact: contact@thechristmanaiproject.com

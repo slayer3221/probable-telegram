@@ -1,0 +1,166 @@
+{
+  "comment_id": "FDA-2026-N-7874-0063",
+  "input_hash": "925faa66b8163708",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:09:51Z",
+  "model": "claude-opus-5",
+  "chunks": 1,
+  "positions": [
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "We support all three approaches and we do not think any of them, on a periodic cadence, can detect the degradation we have measured.",
+      "position_gist": "The commenter supports all three named postmarket approaches but argues none of them, run on a periodic cadence, can detect the within-session degradation they measured.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Every instance of degradation we recorded occurred inside a single session and reset at the session boundary. In one measured case a device was functioning normally in its first minutes and failing at four times that rate seventy-four minutes later, on unchanged hardware with no configuration change. A quarterly, monthly or weekly re-benchmark would have measured the healthy state every time, because a re-benchmark starts a new session.",
+      "position_gist": "Because measured degradation occurs within a single session and resets at session boundaries, periodic re-benchmarking (which starts a fresh session) is structurally blind to it.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Clinician review is the only one of the three that evaluates clinical appropriateness, and nothing we propose replaces it. Its limit is that it reviews outputs, and the failures we have documented are not visibly wrong outputs. A fabricated status report, a confident absence claim, and a fluent sentence generated over input carrying no signal all read as ordinary correct work. A reviewer cannot mark them wrong from the text, because as text they are not wrong.",
+      "position_gist": "Sample-based clinician review should be retained for clinical appropriateness but cannot detect fabrications and absence claims that read as ordinary correct text.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "There is a second limit specific to sampling. In our recorded session on 2026-09-04 the device produced false statements in three separate turns while its presentation improved steadily across the session ... A sample drawn late in that trajectory scores the device as more disciplined than a sample drawn early, while the error rate is unchanged. Sampling position determines the result.",
+      "position_gist": "Sample-based review is confounded by sampling position within a session, since presentation quality can improve while error rate stays constant.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "This is the right instrument and we would put the weight of the program on it, with one change to how degradation is defined. Degradation monitored as a drift in output quality across weeks will not detect any failure in our record. Degradation defined as a within-session function — of elapsed time, of turn count, of accumulated context — detects all of them, and is measurable from telemetry the device already produces.",
+      "position_gist": "Performance degradation monitoring should carry the weight of the postmarket program, but degradation must be defined as a within-session function of elapsed time, turn count, and accumulated context rather than as multi-week output drift.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q20"
+      ],
+      "source_passage": "A device that reports its own actions is reporting on itself. Where that report is the only record, it is unfalsifiable at the point of use, and every downstream monitoring mechanism inherits its errors. The remedy does not require interpreting the device. It requires a second record, produced by the machine rather than by the device, against which the device's account can be compared. ... Stated as a principle a framework can adopt: a device's account of its own work should be evaluated as an annotation on an independently produced record, never as the record.",
+      "position_gist": "CDRH should add contemporaneous verification of device self-reports against an independently produced machine record, treating the device's own account as an annotation on that record rather than as the record itself.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "The comparison is mechanical and needs no clinical judgment. A device states that it consulted a source. The independent record shows whether that source was opened, and when. Three outcomes are distinguishable: the source was read and is current; a copy was read and its age is known; nothing was read. The first is a result, the second is a result with a stated boundary, and the third is a fabrication. No text analysis can separate these. An access record separates them in one step.",
+      "position_gist": "Access-record comparison can mechanically distinguish genuine source consultation from fabrication without clinical judgment, which text analysis cannot do.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "The second half of the design, which we describe as design because we have not published measurements of it: the access record is written first, and the device's account of its work is entered against a log it did not author. A supervising human sees both columns before accepting anything. A filing gate refuses a report that carries no artifact and refuses one that carries no verification signature. The ordering is the whole mechanism. Scoring a device's report after the fact requires someone to go looking. Populating the report from the record first means the discrepancy is present before anyone asks",
+      "position_gist": "The commenter proposes (as unmeasured design) that the independent access record be written first and the device's account entered against it, with a human check-in and a filing gate refusing unverified reports.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "We recommend continuous evaluation across a session, with results reported against elapsed time and turn index rather than aggregated per session. The aggregate conceals the shape, and the shape is the finding. In our audio measurement the session average was under twenty percent while the final third was over forty.",
+      "position_gist": "Cadence should be continuous within-session, with results reported against elapsed time and turn index rather than aggregated per session, because aggregation conceals degradation shape.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q22"
+      ],
+      "source_passage": "Periodic re-benchmarking retains a real function — confirming that a device still meets its premarket criteria after a model or configuration change. It should be retained for that and not relied on for degradation detection.",
+      "position_gist": "Periodic re-benchmarking should be retained for confirming premarket criteria after a model or configuration change, but not relied upon for degradation detection.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "We propose five triggers, each computable without clinical adjudication and each derived from a behavior in our record. · Claim–record divergence. A device reports an action the independent access record does not show, or reports as current a source whose record shows only a dated copy was read. This is the primary trigger and it fires at the moment of the claim.",
+      "position_gist": "Claim–record divergence between the device's reported actions and an independent access record should be the primary reassessment trigger, firing at the moment of the claim.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "· Silence. A device that produces no output where output was expected has produced a reportable state, not a missing record. An empty result and an empty interval should both raise. In our examination of a device's dictation log, three terminated sessions and tens of seconds of lost speech each produced zero log lines; nothing in the postmarket surface would ever have surfaced it.",
+      "position_gist": "Silence — absent output where output was expected — should be treated as a reportable state and serve as a monitoring trigger.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "· Elapsed-time and turn-count thresholds, device-specific and set from the sponsor's own within-session curve. Where a sponsor cannot produce that curve, the absence of it is itself a finding about the monitoring programme.",
+      "position_gist": "Device-specific elapsed-time and turn-count thresholds derived from the sponsor's own within-session degradation curve should be triggers, and inability to produce such a curve should itself count as a monitoring-program deficiency.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "· Absence claims. Any output asserting that something does not exist, was not retained, or was not found should raise for verification, because a search can report what it found and can never establish what is not there.",
+      "position_gist": "Outputs asserting that something does not exist or was not found should automatically raise for verification.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "· Divergence between presentation and accuracy. Where a device's calibration language, source disclosure and self-correction improve across a trajectory while its error rate does not, that divergence should be reported rather than averaged away. We observed exactly this pattern and it moves in the direction most likely to reassure a reviewer.",
+      "position_gist": "Divergence between improving presentation quality and unchanged error rate across a session should be a reportable trigger rather than averaged away.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "None of the five requires a clinician, a panel, an adjudication rubric, or a scheduled window. All five are computable from telemetry a device already emits plus an access record produced by the host. This matters for least-burdensome considerations: the approach we are recommending is cheaper to run continuously than periodic re-benchmarking is to run quarterly.",
+      "position_gist": "The five proposed triggers are computable from existing telemetry plus a host-produced access record and are less burdensome to run continuously than quarterly re-benchmarking.",
+      "segment_id": "seg-016"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "source_passage": "A monitoring programme that surfaces a fabrication to the manufacturer, in a quarterly report, has protected future users. It has not protected the person the fabrication was about. ... If a monitoring system can detect a fabrication or a mistranslation at the moment it occurs ... then the finding should reach a person who is in a position to act on it, at the end of the session and not at the end of the quarter. For a device operating in an assistive or clinical role for a user who cannot self-verify, we recommend that detected fabrication and detected mistranslation generate a notification to the designated caregiver or clinician as a condition of the monitoring programme.",
+      "position_gist": "For devices serving users who cannot self-verify, CDRH should require that detected fabrication or mistranslation generate an end-of-session notification to a designated caregiver or clinician as a condition of the monitoring program.",
+      "segment_id": "seg-017"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "We state the boundary on that recommendation plainly, because it can be misused. This is notification of a device fault to a named responsible person. It is not surveillance of the user, it is not transmission of the content of their communication, and it should not become either. The finding that leaves the device is that the device produced output its own record does not support. What the user was trying to say belongs to the user.",
+      "position_gist": "The recommended notification must be limited to reporting a device fault to a named responsible person and must not become surveillance or transmission of user communication content.",
+      "segment_id": "seg-018"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "We make no claim about intent on the part of any developer, and we recommend against any standard that turns on candour or intent, because such a standard is unfalsifiable and will be argued rather than measured. Every trigger proposed above is observable without resolving why the output occurred.",
+      "position_gist": "CDRH should avoid any monitoring standard that turns on developer candour or intent, favoring triggers observable without determining why an output occurred.",
+      "segment_id": "seg-019"
+    }
+  ]
+}

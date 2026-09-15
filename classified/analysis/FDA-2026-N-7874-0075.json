@@ -1,0 +1,883 @@
+{
+  "comment_id": "FDA-2026-N-7874-0075",
+  "input_hash": "c840298239dd53ca",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:27:29Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Evaluation of agentic devices that only reviews the text response shown to the user can miss harms created during execution, such as a retry after a lost confirmation producing a duplicate action in a connected system.",
+      "requested_fda_action": "Expect evaluation of agentic GenAI devices to cover the user-facing response, the actions taken during execution, and the resulting state of connected systems, with tests that verify affected system state rather than final output alone.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The example describes harm arising from execution failures and duplicate actions in connected systems rather than from an incorrect model output, which output-focused evaluation would not detect."
+      },
+      "public_summary": "Supports evaluating agentic devices but asks that assessment extend beyond the user-facing response to the actions executed and the resulting state of connected systems, citing a retry-after-timeout scenario producing a duplicate action that response-only review would miss.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers should evaluate the response shown to the user, the actions taken during execution, and the resulting state of connected systems. In a hypothetical workflow, a connected system carries out an approved action, but a timeout prevents the agent from receiving confirmation. The agent retries and causes a duplicate. An evaluator who reads the final response could miss the duplicate; the test should check the affected system's state."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "cybersecurity",
+      "stakeholder_concern": "Concern that an agentic device could effectively grant itself authority or execute actions beyond what was approved, if permissions and approval rules are implemented inside the model rather than in independent surrounding software. Also concerned that approvals may be stale or mismatched to the action actually executed.",
+      "requested_fda_action": "Expect manufacturers to enforce access restrictions and approval requirements at the point of action through controls independent of the model's instructions, with the agent unable to expand permissions or waive approvals. Require approvals to bind to the specific patient, action, destination, and consequential parameters, renewed authorization after material changes, and testing of expired approvals, revoked permissions, and changes occurring between approval and execution.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment centers on preventing an agent from expanding its own permissions or waiving approval requirements, requiring authority limits to be enforced outside the model.",
+        "operational_harm": "It highlights harms from execution mismatches such as actions taken under expired or revoked approvals or after the approved context has changed."
+      },
+      "public_summary": "Addressing agentic devices, the commenter proposes that access restrictions and approval rules be enforced by software independent of the model, with agents unable to expand permissions; approvals should bind to specific patient, action, destination, and parameters, be renewed after material changes, and be tested.",
+      "summary_cut": false,
+      "source_passage": "Enforce authorization in the surrounding software. Manufacturers should enforce specified access restrictions and approval rules at the point of action through controls independent of the model's instructions and decisions. The agent should lack authority to expand its permissions or waive approval requirements. An approval should bind to the relevant patient, action, destination, and consequential parameters. Manufacturers should require renewed authorization after a material change to the approved action or its context, and test expired approvals, revoked permissions, and changes between approval and execution."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "Human review of agentic device actions is only meaningful if reviewers receive sufficient information and time, and if the review workflow has been tested with intended users. Permission-based authorization checks confirm that an action was allowed but do not establish that the action was clinically appropriate.",
+      "requested_fda_action": "Expect manufacturers to validate the human review/approval workflow with intended users and to provide reviewers adequate information and time, and to treat authorization controls as distinct from clinical evaluation of whether the proposed action is appropriate.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment centers on whether the human reviewer, given the information and time provided, can actually perform effective oversight, making the human-device combination the unit of evaluation.",
+        "delegated_authority": "It distinguishes permission-granting authorization checks for agent actions from clinical evaluation of whether the delegated action is appropriate."
+      },
+      "public_summary": "Addressing agentic devices, the commenter argues human oversight must be substantive: reviewers need sufficient information and time, manufacturers should test the review workflow with intended users, and authorization checks that grant permission should not substitute for clinical evaluation of whether an action is appropriate.",
+      "summary_cut": false,
+      "source_passage": "Reviewers need enough information and time to assess a proposed action. Manufacturers should test that workflow with intended users. Authorization checks establish permission; clinical evaluation must address whether the action is appropriate."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Evaluating agentic devices step-by-step is insufficient because harms can emerge from complete action sequences, including repeated steps, conflicting actions, and inter-agent delegation, and because agents may accumulate authority or resource use beyond safe limits.",
+      "requested_fda_action": "Expect manufacturers to test full action sequences for failures from repetition, conflicting actions, and agent-to-agent delegation; to justify limits on cumulative actions, execution time, and resource use where safety-relevant; and to demonstrate that surrounding software enforces those limits and prevents privilege expansion through delegation.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment states an agent should not gain broader authority by delegating a task, raising authority scope and inter-agent delegation controls not addressed in the question as framed.",
+        "operational_harm": "It identifies safety-relevant harms arising from cumulative actions, execution time, and resource consumption rather than from an individual incorrect clinical output."
+      },
+      "public_summary": "Addressing agentic devices, the commenter urges evaluation of complete action sequences rather than single steps, including failures from repeated or conflicting actions and inter-agent delegation, with justified limits on cumulative actions, runtime, and resources enforced by surrounding software, and no authority expansion through delegation.",
+      "summary_cut": false,
+      "source_passage": "Test complete action sequences. Manufacturers should test failures caused by repeated steps, conflicting actions, and delegation between agents. They should justify limits on cumulative actions, execution time, and resource use where these affect safety, and show how the surrounding software enforces those limits. An agent should not obtain broader authority by delegating a task."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "cybersecurity",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "Agentic GenAI devices can be manipulated via prompt injection arriving through multiple channels—user inputs, retrieved content, tool outputs, and retained task context—potentially leading to unauthorized actions if enforcement controls fail.",
+      "requested_fda_action": "Building on FDA's inclusion of prompt injection in agentic benchmarking, require adversarial testing that spans all injection channels (user input, retrieved content, tool results, persistent task context) and that verifies enforcement controls actually block induced unauthorized actions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "cybersecurity_as_safety",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "cybersecurity_as_safety": "The comment treats prompt injection resistance as a testable safety property of the device rather than a separate security matter.",
+        "delegated_authority": "It focuses on whether enforcement controls prevent an agent from taking unauthorized actions when manipulated, i.e., the bounds of the authority delegated to the agent."
+      },
+      "public_summary": "Endorses FDA's inclusion of prompt injection in agentic benchmarking but asks that testing explicitly span injection via user inputs, retrieved content, tool results, and retained task context, with evaluators attempting to induce unauthorized actions and verifying that enforcement controls block them.",
+      "summary_cut": false,
+      "source_passage": "Tests should cover prompt injection through user inputs, retrieved content, tool results, and retained task context. Evaluators should try to induce unauthorized actions and inspect whether the enforcement controls block them. FDA includes prompt injection in its agentic benchmarking element. [1, p. 26]"
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Agentic devices can fail mid-execution—through interrupted execution, partial completion, erroneous tool outputs, or unavailable dependencies—and uncertainty about whether a consequential action was completed could lead to duplicated actions or to care being withheld or interrupted during stopping and handoff.",
+      "requested_fda_action": "Require manufacturers to test agentic failure modes (interruption, partial completion, bad tool results, unavailable dependencies), to demonstrate duplicate prevention or a tested reconciliation procedure and specify device behavior while execution status is uncertain, and to test stopping and handoff procedures including scenarios where no reviewer is available.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The passage centers on workflow-level harms such as repeated consequential actions, uncertain execution status, and care being withheld or interrupted, rather than on output accuracy alone.",
+        "human_ai_system_performance": "It asks that handoff and stopping procedures be tested under realistic conditions, including when a human reviewer is unavailable, treating the device-plus-human escalation path as part of what must be evaluated."
+      },
+      "public_summary": "Comment addresses agentic device evaluation, asking FDA to require testing of failure modes—interrupted execution, partial completion, faulty tool results, unavailable dependencies—plus demonstrated duplicate prevention or reconciliation when execution status is uncertain, and tested stopping and handoff procedures covering unavailable reviewers and interrupted care.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers should test interrupted execution, partial completion, erroneous tool results, and unavailable dependencies. For consequential actions that must not be repeated, they should demonstrate duplicate prevention or a tested reconciliation procedure when execution status is uncertain. They should specify how the device handles further action while that uncertainty remains. Tests of stopping and handoff procedures should cover unavailable reviewers and the risks of withholding or interrupting care."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Aggregate task-level performance scores can mask discrete safety-critical failures, such as an agent bypassing a required authorization control; such violations may be averaged away rather than surfaced.",
+      "requested_fda_action": "Require manufacturers to prespecify critical constraints and release criteria before testing, report constraint violations separately from aggregate scores, and withhold an affected capability until an unresolved authorization-control bypass is corrected or an alternative control is validated, consistent with documenting unresolved anomalies and risk-based rationale under FDA software guidance.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment centers on agentic systems bypassing required authorization controls, i.e., acting beyond the authority delegated to them, and proposes withholding the capability until the control is fixed or replaced.",
+        "operational_harm": "It argues discrete constraint violations are a distinct failure mode that aggregate task scores obscure, requiring separate reporting rather than averaged performance metrics."
+      },
+      "public_summary": "Supports agentic oversight but asks FDA to require prespecified release criteria and critical constraints, with constraint violations reported separately from aggregate task scores. Recommends withholding an affected capability until an unresolved authorization-control bypass is corrected or an alternative control validated.",
+      "summary_cut": false,
+      "source_passage": "Prespecify release criteria. Manufacturers should identify critical constraints before testing and report violations apart from aggregate task scores. I recommend withholding an affected capability until the manufacturer corrects an unresolved bypass of a required authorization control or validates an alternative control. FDA's software guidance recommends documenting unresolved anomalies and the risk-based rationale for leaving them unresolved. [2, Section VI.J]"
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q12",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "Evaluation results may overstate assurance if they rest on repeated runs of a narrow test set; a finite test set with no observed failures cannot demonstrate that failure is impossible.",
+      "requested_fda_action": "Require evaluation teams to report failures broken down by hazard, along with test coverage, trial counts, and statistical uncertainty, and to test across distinct cases and deployment conditions rather than relying on repeated runs.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Recommends that evaluation reporting include failures by hazard, test coverage, trial counts, and statistical uncertainty, and that testing span distinct cases and deployment conditions. Notes repeated runs do not substitute for case diversity, and zero observed failures cannot prove failure is impossible.",
+      "summary_cut": false,
+      "source_passage": "Evaluation teams should report failures by hazard, test coverage, trial counts, and statistical uncertainty. Repeated runs can examine variability, but they do not replace testing across distinct cases and deployment conditions. A finite test set with no observed failures cannot establish that failure is impossible."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Accepting greater premarket uncertainty should be conditioned on an explicit, verifiable plan to resolve the residual uncertainty, with attention to severity and reversibility of harm, cumulative patient exposure, and the ability to detect rare or delayed failures.",
+      "requested_fda_action": "Permit greater reliance on postmarket evidence only where the manufacturer supports the initial benefit-risk determination, names the remaining uncertainty, and commits to defined outcomes, an evidence target and deadline, exposure limits, and prespecified criteria for restricting use if evidence collection lags or risk limits are exceeded.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports conditional reliance on postmarket evidence to offset premarket uncertainty, but asks FDA to require defined outcomes, evidence targets and deadlines, exposure limits, and prespecified use-restriction triggers, with review weighing harm severity, reversibility, cumulative exposure, detectability of rare failures, and delayed-access consequences.",
+      "summary_cut": false,
+      "source_passage": "Question 18: Conditions for relying on postmarket evidence. Greater reliance on postmarket evidence may be appropriate when the manufacturer supports the initial benefit-risk determination, identifies the remaining uncertainty, and demonstrates a feasible plan to resolve it. The justification should consider the available alternatives and the consequences of delaying access.\n\nThe manufacturer should define the outcomes to collect, the evidence target and deadline, and limits on exposure while uncertainty remains. Reviewers should consider severity and reversibility of harm, cumulative patient exposure, and the ability to detect rare or delayed failures. The manufacturer should specify criteria for restricting use if evidence collection falls behind or results exceed the prespecified risk limits."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Postmarket monitoring cannot substitute for premarket assurance when a failure could cause serious harm before it is detected, investigated, and contained, especially given real-world delays such as unavailable reviewers and supplier response times.",
+      "requested_fda_action": "Require manufacturers to compare expected time-to-harm against the combined time to detect, investigate, and contain a failure, and to implement preventive controls, restricted functionality, or another justified safeguard before deployment where monitoring alone is insufficient.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment focuses on harm accruing during the detection-to-containment latency window, including reviewer unavailability, rather than on model accuracy alone.",
+        "ai_supplier_quality": "It identifies supplier response delays as a factor that lengthens containment time and therefore limits the adequacy of monitoring-based assurance."
+      },
+      "public_summary": "Accepts postmarket monitoring only conditionally: where potential harm could occur faster than a failure can be detected, investigated, and contained—accounting for unavailable reviewers and supplier delays—the commenter says monitoring is inadequate and preventive controls, restricted functionality, or equivalent safeguards should be required before deployment.",
+      "summary_cut": false,
+      "source_passage": "Monitoring alone is inadequate for a failure that could cause serious harm before detection and effective intervention. The manufacturer should compare time to harm with the combined time needed to detect, investigate, and contain the failure. It should account for unavailable reviewers and supplier delays. Such a failure requires preventive controls, restricted functionality, or another justified safeguard before deployment."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter is concerned that postmarket monitoring approaches must be actionable rather than observational, with clear ownership, defined intervention thresholds, and response timelines for each safety-relevant signal, and with reassessment cadence tied to actual risk and change conditions.",
+      "requested_fda_action": "FDA should expect monitoring plans that assign an investigator per safety-relevant signal, define intervention conditions, response times, and available actions, combine scheduled baseline evaluations with event-triggered review (material changes, credible safety incidents, new deployment conditions, loss of a safety function), and justify reassessment intervals by exposure, failure detectability, potential harm, and pace of device or workflow change; NIST's Generative AI Profile (MANAGE 4.1) is cited as a reference.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment treats new deployment conditions and workflow change pace as explicit triggers and cadence drivers for reassessment, extending monitoring beyond the device-level approaches FDA lists."
+      },
+      "public_summary": "Supports FDA's postmarket evaluation approaches but asks for more structure: monitoring plans that assign an investigator to each safety signal, define intervention conditions, response times and actions, add event-based triggers alongside scheduled re-evaluation, and justify intervals by exposure, detectability, harm, and change pace.",
+      "summary_cut": false,
+      "source_passage": "Question 19: A monitoring plan that supports decisions. For each safety-relevant signal, manufacturers should assign an investigator, define the condition for intervention, and specify the response time and available action. They should combine scheduled baseline evaluations with review after material changes, credible safety incidents, new deployment conditions, or loss of a safety function. Manufacturers should justify reassessment intervals by exposure, failure detectability, potential harm, and the pace of device or workflow changes. NIST's Generative AI Profile connects post-deployment monitoring with incident response and change management. [3, MANAGE 4.1]"
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q19",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "Postmarket reporting as described may not capture action-level failure modes specific to agentic operation, such as unauthorized or duplicate actions, failed handoffs, and missing execution records, or provide the denominators needed to interpret them.",
+      "requested_fda_action": "FDA should expect manufacturers to track and report attempted and completed unauthorized actions, uncertain or duplicate actions, failed handoffs, and loss of required execution records, including exposure counts (e.g., number of handoffs attempted), circumstances, and consequences.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The requested metrics concern process-level failures—failed handoffs, duplicate actions, lost execution records—that are harms of workflow execution rather than incorrect clinical output.",
+        "delegated_authority": "Tracking attempted and completed unauthorized actions presumes explicit boundaries on what actions the device is permitted to take autonomously and monitoring of breaches of that authority."
+      },
+      "public_summary": "Commenter proposes more specific postmarket metrics for agentic devices than FDA outlines: tracking attempted and completed unauthorized actions, uncertain or duplicate actions, failed handoffs, and lost execution records, with reports including exposure counts, circumstances, and consequences to allow interpretation.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers should track attempted and completed unauthorized actions, uncertain or duplicate actions, failed handoffs, and loss of required execution records. Reports should include exposure counts and consequences. A count of failed handoffs, for example, needs the number attempted and the circumstances of those attempts."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "Sample-based clinician review may give a biased picture of real-world performance if reviewers only see cases flagged by the system or if sampling does not cover the range of deployment sites, workflows, and patient subgroups.",
+      "requested_fda_action": "Expect manufacturers to review both flagged cases and an independently drawn sample, to justify sampling coverage across sites, workflows, and clinically relevant subgroups, to adjust estimates for unequal sampling, and to report sample sizes, delayed or missing outcomes, and uncertainty.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The passage asks that postmarket sampling demonstrate coverage across multiple deployment sites and workflows, raising the question of how performance assurance is maintained across heterogeneous real-world settings rather than in aggregate."
+      },
+      "public_summary": "Supports sample-based clinician review in postmarket monitoring but asks FDA to require independent (not only flagged) case sampling, justified coverage across sites, workflows, and subgroups, adjustment for unequal sampling, and reporting of sample sizes, missing outcomes, and uncertainty.",
+      "summary_cut": false,
+      "source_passage": "Reviewers should examine flagged cases and a sample drawn independently of the flagging system. Manufacturers should justify coverage across sites, workflows, and clinically relevant subgroups, and account for unequal sampling when estimating overall rates. They should report sample sizes, delayed or missing outcomes, and uncertainty in the estimates."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Technical or operational monitoring signals (confirming that an operation occurred) do not demonstrate that outputs were clinically appropriate, and shifts in the input population may be wrongly assumed to explain degraded clinical performance without investigation.",
+      "requested_fda_action": "Expect postmarket monitoring programs to pair technical monitoring with clinical assessment, require manufacturers to investigate changes in the input population before attributing performance degradation to them, and require documentation of failure modes the monitoring program cannot detect within the response time needed for safety.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The passage focuses on whether deployed monitoring can actually detect clinically meaningful degradation and shifts in the real-world input population, beyond the monitoring modalities FDA lists.",
+        "operational_harm": "It highlights failures that monitoring cannot surface within the response time required for safety, i.e., harm arising from detection latency rather than from a single incorrect output."
+      },
+      "public_summary": "Accepts postmarket monitoring approaches but asks FDA to require that technical monitoring be paired with clinical assessment, that manufacturers investigate input-population changes before attributing performance degradation to them, and that undetectable failures within safety-critical response times be documented.",
+      "summary_cut": false,
+      "source_passage": "Technical monitoring should support clinical assessment. Confirmation that an operation occurred does not establish its clinical appropriateness. Manufacturers should investigate a change in the input population before attributing degraded clinical performance to it. They should document failures the monitoring program cannot detect within the response time required for safety."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter is concerned that postmarket monitoring roles spanning manufacturers, deploying institutions, and suppliers may be undefined, leaving unclear who investigates, decides, and implements responses within the time required for a given hazard.",
+      "requested_fda_action": "Require manufacturers to document the roles of deploying institutions and suppliers while retaining responsibility for the monitoring and response plan, with the plan assigning responsibility for investigation, clinical assessment, functionality restriction, communication, and restoration, naming decision-makers and implementers, and demonstrating that cross-organizational handoffs can be completed within the hazard-justified response time.",
+      "confidence": "high",
+      "gap_tags": [
+        "distributed_accountability",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment focuses on allocating and documenting monitoring and response duties across manufacturers, deploying institutions, and suppliers while preserving manufacturer responsibility.",
+        "deployment_assurance_scalability": "It asks that parties demonstrate ability to complete cross-organizational handoffs within a hazard-justified response time, an operational assurance question beyond the question as framed."
+      },
+      "public_summary": "Accepts FDA's position that manufacturers remain responsible for postmarket monitoring, but recommends that manufacturers document the roles of deploying institutions and suppliers, and that response plans name decision-makers and implementers and demonstrate cross-organizational handoffs within hazard-justified response times.",
+      "summary_cut": false,
+      "source_passage": "FDA identifies manufacturers as responsible for postmarket monitoring. [1, p. 20] I recommend that the manufacturer document the roles of deploying institutions and suppliers while retaining responsibility for its monitoring and response plan.\n\nThe plan should assign responsibility for investigation, clinical assessment, restricting functionality, communication, and restoration. It should identify who makes each decision and who can implement it. The parties should demonstrate that they can complete any cross-organizational handoff within the response time justified for the hazard."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "The commenter accepts that institutions, clinicians, professional societies, and standards bodies can contribute to postmarket monitoring (workflow data, incident reports, output assessment, evaluation methods), but notes these contributions require defined staffing, access, and workload commitments. It also notes that users and affected patients need a practical channel to raise concerns.",
+      "requested_fda_action": "Expect manufacturers and institutions to agree explicitly on the staffing, access, and workload needed for institutional and clinician contributions to postmarket monitoring, and to provide users and affected patients a practical route to report concerns that feeds into existing incident-handling processes.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment stresses that institutional contributions to monitoring depend on negotiated staffing, data access, and workload capacity, which FDA's question does not address.",
+        "distributed_accountability": "It calls for explicit agreements between manufacturers and institutions on monitoring roles and for patient/user reports to be linked to existing incident-handling processes."
+      },
+      "public_summary": "Agrees institutions, clinicians, and professional societies can support postmarket monitoring via workflow data, incident reports, output review, and evaluation methods, but adds that manufacturers and institutions should agree on staffing, access, and workload, and give users and patients a practical reporting route linked to incident",
+      "summary_cut": true,
+      "source_passage": "Institutions can contribute workflow information and incident reports. Qualified clinicians can assess outputs and consequences; professional societies and standards-setting bodies can support evaluation methods. Manufacturers and institutions should agree on the staffing, access, and workload required for those contributions. They should provide users and affected patients with a practical route to report concerns and connect those reports to existing incident-handling processes."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q21",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "Response plans for agentic devices should offer graduated, device-appropriate interventions (disabling a tool, restricting write actions, adding approval steps, or shifting to an evaluated alternative) rather than blunt measures, and must account for the risk of disrupting care and for the deploying institution's own access controls.",
+      "requested_fda_action": "FDA should expect manufacturers to define proportionate mitigation options tailored to the device and deployment setting, while not requiring unrestricted manufacturer remote access to institutional systems or a universal shutdown mechanism.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The passage highlights that interventions themselves can cause harm through workflow interruption, so response plans must weigh interruption risk.",
+        "distributed_accountability": "It locates control partly with the deploying institution's access controls and rejects unrestricted manufacturer remote access, implying shared responsibility for intervention."
+      },
+      "public_summary": "Supports response planning for agentic devices but urges proportionate, device-specific interventions—disabling tools, restricting writes, approval steps, or alternatives—that account for care interruption and institutional access controls, rather than requiring manufacturer remote access or a universal shutdown mechanism.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers should select interventions suited to the device: disabling a tool, restricting writes, adding an approval step, or transferring work to an evaluated alternative. The plan should account for interruption risks and the institution's access controls. It need not grant manufacturers unrestricted remote access or require a universal shutdown mechanism."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q21",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "That incident-response and escalation roles for GenAI devices dependent on third parties may not function in practice unless they are assigned, rehearsed, and retested, including scenarios where decision-makers are unavailable, suppliers delay, or the primary intervention mechanism fails.",
+      "requested_fda_action": "Expect the responsible parties to rehearse relevant incident-response procedures before deployment and after changes affecting them, covering decision-maker unavailability, supplier delay, and failure of the primary intervention mechanism, and to verify specified restoration criteria before resuming affected functionality, consistent with NIST GV-6.2-003.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "ai_supplier_quality",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The passage addresses how multiple parties' incident-response responsibilities must be assigned and rehearsed so that a designated responsible party verifies restoration before functionality resumes.",
+        "ai_supplier_quality": "It specifically calls for rehearsing scenarios involving supplier delays and third-party AI dependencies, which FDA's questions do not frame as an operational readiness expectation.",
+        "operational_harm": "It focuses on failure modes such as unavailable decision-makers and failure of the primary intervention mechanism, which concern service disruption and response capability rather than device output error."
+      },
+      "public_summary": "Recommends that FDA expect parties to rehearse incident-response procedures before deployment and after relevant changes, covering unavailable decision-makers, supplier delays, and failure of primary intervention mechanisms, with a responsible party verifying specified restoration criteria before resuming affected functionality, citing NIST guidance.",
+      "summary_cut": false,
+      "source_passage": "The parties should rehearse the relevant procedures before deployment and after changes that affect them. Exercises should cover unavailable decision-makers, supplier delays, and failure of the primary intervention mechanism. The responsible party should verify specified restoration criteria before resuming affected functionality. NIST recommends assigning and rehearsing incident-response responsibilities for third-party AI dependencies. [3, GV-6.2-003]"
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "Change assessment limited to the underlying model may miss safety-relevant modifications elsewhere in the deployed configuration, such as prompts/instructions, retrieval rules, data transformations, tools, permissions, approval requirements, and execution logic, and evaluations may become disconnected from the configuration actually in use.",
+      "requested_fda_action": "Expect manufacturers to evaluate changes across the entire deployed configuration rather than the model alone, and to maintain a versioned record linking each configuration to the evaluations that support it.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment ties assurance to a versioned record connecting the specific deployed configuration to its supporting evaluations, rather than to a single premarket model assessment.",
+        "delegated_authority": "It treats tools, permissions, approval requirements, and execution logic as change-controlled elements, recognizing that the scope of authority granted to the system is itself safety-relevant."
+      },
+      "public_summary": "Supports using the premarket assessment as a change-control baseline, but asks that change evaluation cover the full deployed configuration—model identifiers, instructions, retrieval rules, data transformations, tools, permissions, approvals, and execution logic—with versioned records linking configurations to supporting evaluations.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers should assess changes across the deployed configuration, including model identifiers, instructions, retrieval rules, data transformations, tools, permissions, approval requirements, and execution logic. A versioned record should connect that configuration to its supporting evaluations."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "Scaling re-evaluation to the nature of a modification is workable only if manufacturers can demonstrate which functions and safety properties a change could affect and why others are unaffected; changes to shared dependencies, critical controls, or uncertain interactions, as well as accumulated small changes, may be under-tested. Non-model changes (e.g., a data selection rule) can alter clinical outputs even when the model version is unchanged.",
+      "requested_fda_action": "Permit targeted, impact-scoped re-testing where the manufacturer justifies the scope of affected functions, but require broader evaluation for changes to shared dependencies or critical controls and where interactions are uncertain, plus assessment of cumulative changes and new tests for failure modes not covered by the original benchmark.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The example of switching lab-result selection from specimen-collection date to record-import date shows harm arising from data handling and workflow logic rather than model behavior, a pathway not fully captured by model-centric re-benchmarking."
+      },
+      "public_summary": "Accepts scaling re-evaluation to a modification's impact, but conditions it on manufacturers justifying which functions and safety properties are affected. Asks FDA to require broader testing for shared dependencies, critical controls, uncertain interactions, cumulative changes, and uncovered failure modes, citing non-model data-selection changes.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers may use targeted testing when they can show which functions and safety properties a change could affect and why others remain unaffected. They should broaden evaluation for changes to shared dependencies or critical controls, or where interactions are uncertain. They should assess cumulative changes and add tests for failure modes the original benchmark did not cover.\n\nFor example, a developer might change laboratory-result selection from specimen-collection date to record-import date. An older result imported later could then displace a newer result. The model version would remain unchanged, but the manufacturer would need to test the selection rule and affected workflows."
+    },
+    {
+      "segment_id": "seg-021",
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "pccp",
+      "stakeholder_concern": "Features such as revised reference material, persistent memory, adaptive retrieval, or learning during operation can alter a device's later outputs, which is different from ordinary patient inputs processed within the evaluated design; without a clear line, change control could be either under- or over-applied.",
+      "requested_fda_action": "Require manufacturers to distinguish ordinary patient inputs from changes to device knowledge or behavior, and to define and evaluate a permitted scope of adaptation, retain provenance, and specify reassessment triggers, rather than treating each incoming patient record as a change requiring release review.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment asks that a permitted scope of adaptation (behavioral envelope) be defined and evaluated because memory, retrieval, and in-operation learning can shift device behavior after authorization.",
+        "deployment_assurance_scalability": "It notes the approach should avoid a separate release review for each incoming patient record, addressing the practicality of assurance at operational scale."
+      },
+      "public_summary": "Supports change-control review but asks FDA to distinguish ordinary patient inputs from changes to device knowledge or behavior (revised references, persistent memory, adaptive retrieval, in-operation learning), with a defined, evaluated adaptation scope, provenance retention, and reassessment triggers instead of per-record review.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers should distinguish ordinary patient inputs within the evaluated design from changes to the device's knowledge or behavior. Revised reference material, persistent memory reused across tasks, adaptive retrieval, or learning during operation may change later outputs. Manufacturers should define and evaluate the permitted scope of that adaptation, retain relevant provenance, and specify reassessment triggers. This approach does not require a separate release review for each incoming patient record."
+    },
+    {
+      "segment_id": "seg-022",
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "pccp",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter is concerned that manufacturers may treat routine regression testing as sufficient to justify implementing a modification without a new marketing submission, and that changes may be assumed to fall within an authorized PCCP without verification.",
+      "requested_fda_action": "Apply the existing PCCP guidance structure linking planned modifications to validation methods and impact assessment where applicable, and require manufacturers to affirmatively establish that a change is within the authorized PCCP and follows its protocol before relying on that authorization.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports applying FDA's existing PCCP framework—linking modifications to validation methods and impact assessment—to GenAI change control, but urges FDA to require manufacturers to confirm a change falls within the authorized PCCP and protocol, noting regression testing alone cannot determine whether a new submission is needed.",
+      "summary_cut": false,
+      "source_passage": "FDA's predetermined change control plan (PCCP) guidance links planned modifications to validation methods and impact assessment. [4, Sections V.D and VI-VIII] I recommend using that structure where applicable. A manufacturer should establish that a change falls within the authorized PCCP and follows its protocol before relying on that authorization. Regression tests alone cannot determine whether the manufacturer needs a new marketing submission."
+    },
+    {
+      "segment_id": "seg-023",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "supplier_controls",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter is concerned that a supplier's model or service version identifier may not cover the full configuration that affects device behavior, so suppliers could make behavior-altering changes without any visible version change or notice to the manufacturer.",
+      "requested_fda_action": "Expect manufacturers to document the version guarantees, change notices, pre-change evaluation opportunities, and retirement/deprecation arrangements obtained from suppliers, and to establish what a given service identifier actually covers and which supplier-initiated changes can occur without changing it.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment focuses on supplier-provided assurances—version guarantees, change notification, evaluation windows, and retirement terms—and on the gap between a service identifier and the full behavior-affecting configuration."
+      },
+      "public_summary": "Addressing third-party model changes, the commenter recommends manufacturers document supplier version guarantees, change notices, evaluation opportunities, and retirement terms, and determine what a service identifier actually covers and which supplier changes can occur without altering that identifier.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers should document the version guarantees, change notices, evaluation opportunities, and retirement arrangements their suppliers provide. A service identifier may cover less than the full configuration that affects behavior; the manufacturer should establish what it covers and which changes a supplier can make without changing it."
+    },
+    {
+      "segment_id": "seg-024",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Third-party model updates or version deprecations may be imposed on the device manufacturer without the ability to defer adoption, creating change-related uncertainty that must be resolved within safety-relevant timeframes.",
+      "requested_fda_action": "Expect manufacturers to treat adoption of a replacement model version as an explicit release decision where version selection exists, and, where deferral is not possible, to demonstrate controls that manage change uncertainty within the safety response time, restricting the affected capability or selecting a different dependency if controls are inadequate.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment centers on managing a supplier-controlled foundation model dependency, including cases where the supplier does not permit the manufacturer to defer version changes.",
+        "deployment_assurance_scalability": "It frames assurance in terms of whether controls can evaluate and respond to externally initiated model changes within the response time required for safety in live deployment."
+      },
+      "public_summary": "Addressing third-party model changes, the commenter asks FDA to expect manufacturers to treat adoption of a replacement model version as an explicit release decision where version choice exists, and otherwise to show controls that manage change uncertainty within safety-relevant response times, or restrict the capability.",
+      "summary_cut": false,
+      "source_passage": "The manufacturer should make adoption of a replacement an explicit release decision where version selection is available. For services that do not permit deferral, it should demonstrate how its controls manage change-related uncertainty within the response time required for safety. It should restrict the affected capability or choose a different dependency if those controls cannot support the intended use."
+    },
+    {
+      "segment_id": "seg-025",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Behavioral or sample-based testing of a remotely hosted third-party model can detect some changes but has limited coverage, and a passing test sample should not be treated as evidence that the upstream service is unchanged.",
+      "requested_fda_action": "Expect manufacturers relying on behavioral checks to explicitly characterize the coverage of those checks and the categories of upstream change or failure the checks could miss, rather than presenting passing samples as assurance of model stability.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment concerns the limits of a device manufacturer's ability to verify the state of a remotely operated third-party model service it does not control."
+      },
+      "public_summary": "Accepts behavioral testing as one way to detect third-party foundation model changes, but asks that manufacturers document the coverage of such checks and the failures they may miss, rather than treating passing test samples as proof a remote service is unchanged.",
+      "summary_cut": false,
+      "source_passage": "Behavioral checks can help detect a change. Manufacturers should state their coverage and the failures they might miss, rather than treat a passing sample as proof that a remote service is unchanged."
+    },
+    {
+      "segment_id": "seg-026",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "If a third-party supplier retires the model version a device was evaluated on, the device may be left without a validated configuration; fallback options such as another evaluated configuration, restricted functionality, or a human workflow may not work in practice unless tested and adequately resourced.",
+      "requested_fda_action": "Expect manufacturers to test fallback arrangements that remain available when a supplier retires a model version, including manual/human processing, and to ensure human reviewers have the information, availability, and capacity for the expected workload, referencing NIST guidance on testing fallback arrangements.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The concern is that a third-party model supplier's retirement of a version can strand the device, requiring pre-tested alternative configurations.",
+        "deployment_assurance_scalability": "It stresses that human-workflow fallbacks only function if reviewers actually have the information, availability, and capacity to absorb the expected workload."
+      },
+      "public_summary": "Addressing third-party model changes, the commenter asks FDA to expect tested fallback arrangements for when a supplier retires an evaluated model version—another evaluated configuration, restricted functionality, or manual workflow—and to confirm human reviewers have capacity for the resulting workload, citing NIST guidance.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers should test a fallback that remains available if the supplier retires the previous version. Alternatives may include another evaluated configuration, restricted functionality, or a human workflow. Human reviewers need the information, availability, and capacity to handle the expected workload. NIST addresses testing fallback arrangements, including manual processing. [3, GV-6.2-006]"
+    },
+    {
+      "segment_id": "seg-027",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter is concerned that post-incident recovery must extend beyond restoring software to remediating affected outputs, records, actions, and users, but also that FDA could impose prescriptive technical controls—self-hosting, access to proprietary model weights, indefinite legacy version support, or a single uniform notice period—on manufacturers relying on third-party models.",
+      "requested_fda_action": "FDA should expect manufacturers to remediate affected outputs, records, actions, and users after an incident, and should evaluate the adequacy of whatever controls a manufacturer selects rather than mandating self-hosting, model weight access, indefinite support for prior model versions, or a single notice period across all devices.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses how manufacturers can assure control over third-party model dependencies without owning or hosting the model, and argues assurance mechanisms should be assessed flexibly rather than prescribed.",
+        "operational_harm": "It frames incident response as requiring remediation of already-delivered outputs, records, actions, and affected users, not merely restoration of the software itself."
+      },
+      "public_summary": "Supports FDA attention to third-party model change and incident response, but asks that post-incident duties cover affected outputs, records, actions, and users, and that FDA judge the adequacy of chosen controls rather than mandating self-hosting, model weight access, indefinite legacy support, or uniform notice periods.",
+      "summary_cut": false,
+      "source_passage": "After an incident, manufacturers should address affected outputs, records, actions, and users as well as restoring software. FDA should assess the adequacy of the chosen controls without requiring self-hosting, access to proprietary model weights, indefinite support for old versions, or one notice period for all devices."
+    },
+    {
+      "segment_id": "seg-028",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "Machine-based supervisory agents can occupy very different roles—retrospective screening, triaging cases for human review, or blocking an action—and each role implies a different level of authority and a different evaluation burden; without specifying the role, the protection a supervisor actually provides is unverified.",
+      "requested_fda_action": "FDA should expect manufacturers to define the supervisory agent's assigned role, the evidence it can access, and its intervention authority, and to demonstrate evidence supporting the specific protection claimed for that selected role.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment centers on how much intervention authority a machine supervisor is given—from passive screening to blocking actions—and argues the evidentiary demonstration must be scaled to that delegated authority."
+      },
+      "public_summary": "Accepts machine-based supervisory agents in postmarket monitoring but asks FDA to require manufacturers to specify each supervisor's assigned role, accessible evidence, and intervention authority—screening, triage, or blocking—and to demonstrate the protection claimed for that specific role.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers should define the supervisor's assigned role, the evidence it can access, and its intervention authority. Retrospective screening, triage for human review, and blocking an action require different evaluations. The manufacturer should demonstrate the protection claimed for the selected role."
+    },
+    {
+      "segment_id": "seg-029",
+      "question_ids": [
+        "q10",
+        "q14",
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "comparator_standard_of_care",
+      "stakeholder_concern": "Evaluation of GenAI outputs (including where a machine supervisory agent is involved) could rest on circular or non-independent ground truth if correctness is established by the primary agent's own explanation or by a supervisor's agreement, or if evaluation cases overlap with development and tuning data.",
+      "requested_fda_action": "Require task-appropriate reference criteria adjudicated by qualified clinical or technical reviewers, strict separation of evaluation cases from development and tuning data, documented reviewer independence and conflicts, prespecified disagreement-resolution procedures, and independent evidence of correctness beyond the agent's explanation or supervisor concurrence.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The passage warns that a machine supervisor's agreement must not itself be treated as proof of correctness, raising the question of how much evaluative authority can be delegated to automated overseers."
+      },
+      "public_summary": "Recommends methodological safeguards for evaluating GenAI outputs and supervisory agents: task-appropriate reference criteria with qualified adjudication, separation of evaluation cases from development and tuning data, documented reviewer independence and conflict disclosure, defined disagreement resolution, and correctness evidence independent of the agent's explanation or supervisor agreement.",
+      "summary_cut": false,
+      "source_passage": "Evaluators should use task-appropriate reference criteria with qualified clinical or technical adjudication. They should separate evaluation cases from development and tuning cases, document reviewer independence and conflicts, and define how to resolve disagreement. They should use evidence beyond the primary agent's explanation or the supervisor's agreement to establish correctness."
+    },
+    {
+      "segment_id": "seg-030",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Machine-based supervisory agents may share failure modes with the devices they oversee, so vendor diversity alone does not establish independence; a supervisor working from the same flawed or outdated inputs can concur with an erroneous output and miss the error.",
+      "requested_fda_action": "Require manufacturers to report supervisor metrics (missed failures by type, false alarms, response times, uncertainty), test for shared failure modes, demonstrate the supervisor's incremental contribution through justified comparisons such as matched with/without trials in a safe test environment, and verify the supervisor has access to the evidence needed to detect errors.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses conditions under which oversight responsibility can be delegated to an automated supervisory agent, including proof that the supervisor has the access and independence needed to actually catch errors.",
+        "human_ai_system_performance": "It asks that the safeguard be evaluated as a combined system—measuring the supervisor's added contribution over the monitored device rather than the supervisor in isolation."
+      },
+      "public_summary": "Supports machine-based supervisory agents only with added evidentiary conditions: report missed failures, false alarms, response times, and uncertainty; test shared failure modes; demonstrate incremental benefit via matched with/without comparisons; and verify data access, since using a different vendor does not establish independence.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers should report missed failures by type, false alarms, response times, and uncertainty. They should test shared failure modes and measure the supervisor's added contribution through a justified comparison, such as matched trials with and without its protection in a safe test environment. Choosing different vendors does not by itself establish independence. Two models receiving the same outdated record could agree while missing the selection error; evaluators should check whether the supervisor can access the evidence needed to detect it."
+    },
+    {
+      "segment_id": "seg-031",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "A machine-based supervisory agent can fail in two directions—missing unsafe actions and inappropriately blocking necessary ones—and can also impose burden through the volume of cases it routes for human review. Errors in cases the supervisor does not flag would otherwise go undetected.",
+      "requested_fda_action": "Require that evaluation of supervisory agents measure missed unsafe actions, inappropriate blocking of necessary actions, and human-review workload, with sampling of unflagged cases to detect missed errors. Apply the same impact-based change-evaluation process to modifications of the supervisor as to the device itself.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment treats the supervisory agent as an oversight authority whose own error modes and modifications must be evaluated under the same discipline as the device it supervises.",
+        "human_ai_system_performance": "It asks that human-review workload generated by the supervisor be measured as part of evaluation, treating the supervisor and human reviewers as a combined system."
+      },
+      "public_summary": "Accepts machine-based supervisory agents for postmarket monitoring but asks FDA to require evaluation of missed unsafe actions, inappropriate blocking of necessary actions, and human-review workload, sampling of unflagged cases for undetected errors, and impact-based change control for the supervisor itself.",
+      "summary_cut": false,
+      "source_passage": "The evaluation should include missed unsafe actions, inappropriate blocking of necessary actions, and human-review workload. Manufacturers should use the sampling safeguards in Section 2 to look for errors in unflagged cases. They should assess changes to the supervisor under the same impact-based process used for the device."
+    },
+    {
+      "segment_id": "seg-032",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "If a machine-based supervisory agent is credited as a safeguard, its unavailability, delay, or inconclusive output could leave the device operating without the protection assumed, and supervisors could be bypassed in an uncontrolled way.",
+      "requested_fda_action": "Require manufacturers to define and test device behavior when a supervisor is unavailable, delayed, or inconclusive, and to prevent uncontrolled bypass of supervisors needed for safe operation, with evidence scaled to the protection claimed rather than requiring human review of every output.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment focuses on failure modes of the supervisory layer itself—unavailability, delay, or inconclusive results—that can degrade safe operation in deployment rather than on model output accuracy.",
+        "delegated_authority": "It treats a machine supervisory agent as holding a safety-critical oversight role whose bypass must be controlled and whose claimed protection must be evidenced."
+      },
+      "public_summary": "Accepts machine-based supervisory agents for postmarket monitoring but asks FDA to require that manufacturers define and test device behavior when a supervisor is unavailable, delayed, or inconclusive, prevent uncontrolled bypass, and scale evidence to the protection claimed, without mandating human review of every output.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers should define and test the response to an unavailable, delayed, or inconclusive supervisor. They should prevent an uncontrolled bypass of a supervisor needed for safe operation. The evidence burden should follow the claimed protection; this recommendation does not require human review of every output."
+    },
+    {
+      "segment_id": "seg-033",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "cybersecurity",
+      "stakeholder_concern": "Existing FDA software-submission and cybersecurity guidance already cover traceability, risk-management documentation, and security controls/testing, but those processes do not explicitly extend to agent execution in agentic GenAI-enabled devices.",
+      "requested_fda_action": "Have manufacturers extend existing software and cybersecurity risk-management and traceability processes to cover agent execution, reusing relevant evidence, and link each critical safety claim to its hazard, control, evaluation, and residual limitation.",
+      "confidence": "medium",
+      "gap_tags": [
+        "cybersecurity_as_safety",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "cybersecurity_as_safety": "The comment treats cybersecurity controls and testing as part of the safety evidence chain that must be extended to agentic execution, not as a separate compliance track.",
+        "delegated_authority": "It focuses on documenting hazards, controls, and residual limitations specifically for autonomous agent execution steps."
+      },
+      "public_summary": "Commenter accepts FDA's existing software-submission and cybersecurity guidance as a starting point for agentic devices but asks that manufacturers extend traceability, risk-management, and security testing processes to agent execution, reusing evidence and linking each critical safety claim to hazard, control, evaluation, and residual limitation.",
+      "summary_cut": false,
+      "source_passage": "FDA's software-submission guidance addresses traceability and risk-management documentation, and its cybersecurity guidance addresses security controls and testing. [2, Section VI.C; 5, Section V] I recommend that manufacturers extend those processes to cover agent execution and reuse relevant evidence. They should connect each critical safety claim to its hazard, control, evaluation, and remaining limitation."
+    },
+    {
+      "segment_id": "seg-034",
+      "question_ids": [
+        "q19",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "Investigating failures of agentic GenAI devices requires reconstructable evidence of what the agent proposed, attempted, and actually did, including effects on connected systems; without correlated records and timing, consequential actions and their downstream state changes cannot be verified.",
+      "requested_fda_action": "Expect manufacturers to retain and correlate traceability records—configuration identifiers, inputs and source versions, user-facing outputs, approval events, tool requests and results, and resulting state changes—with sufficient timing detail, and to distinguish proposed, attempted, blocked, completed, and uncertain actions while confirming effects against the affected system's records.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The passage centers on logging approval events, tool requests, and blocked versus completed actions, which addresses the scope and exercise of authority delegated to an agent rather than output accuracy alone.",
+        "operational_harm": "It asks that consequential state changes be confirmed against the records of affected connected systems, recognizing harms that materialize in downstream operational systems rather than in the device output itself."
+      },
+      "public_summary": "Addressing agentic device oversight, the commenter recommends specific recordkeeping expectations beyond FDA's framing: retaining configuration, input, output, approval, tool-use, and state-change records; correlating them across the agent and connected systems with timing; and distinguishing proposed, attempted, blocked, completed, and uncertain actions.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers should retain records needed to investigate foreseeable failures, including configuration identifiers, relevant inputs and source versions, user-facing outputs, approval events, tool requests and results, and resulting state changes. They should correlate records across the agent and connected systems, with enough timing information to reconstruct the sequence. Investigators should distinguish proposed, attempted, blocked, completed, and uncertain actions, and confirm consequential effects against the affected system's records."
+    },
+    {
+      "segment_id": "seg-035",
+      "question_ids": [
+        "q19",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "cybersecurity",
+      "stakeholder_concern": "Audit and performance records underpinning oversight of agentic devices can be altered or lost, including by the agent itself, undermining both postmarket monitoring and time-sensitive safety decisions.",
+      "requested_fda_action": "Expect manufacturers to protect required records from unauthorized alteration or deletion (including by the agent), detect record loss, and respond in proportion to safety impact—permitting continued operation under documented limits for retrospective logging gaps but restricting functions when evidence needed for immediate safety decisions is lost—and to test both conditions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "cybersecurity_as_safety",
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "cybersecurity_as_safety": "The comment treats integrity and availability of device records as a clinical safety matter, since lost or altered evidence can block immediate safety decisions.",
+        "delegated_authority": "It flags that the agent itself could modify or delete its own oversight records, requiring controls that bound what the autonomous system is permitted to do.",
+        "operational_harm": "It distinguishes degraded logging that can be tolerated within documented limits from record loss that requires restricting device functions, an operational failure mode beyond clinical output error."
+      },
+      "public_summary": "Comment elaborates on oversight of agentic devices, urging that required records be protected from unauthorized alteration or deletion—including by the agent—with detection of record loss and graduated responses: documented operating limits for retrospective logging gaps, function restriction when safety-critical evidence is lost, with both tested.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers should protect those records from unauthorized alteration or deletion, including by the agent. They should detect loss of required records and respond according to its safety impact. An interruption in retrospective logging may permit continued operation under a documented limit; loss of evidence needed for an immediate safety decision may require restricting the affected function. Manufacturers should test both conditions."
+    },
+    {
+      "segment_id": "seg-036",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "unclear",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "The passage focuses on whether postmarket investigations can reconstruct what information the device actually saw at the time of an output, noting that a current medical chart alone cannot establish the earlier input state. It also raises privacy and access-control considerations for retained patient information.",
+      "requested_fda_action": "Expect manufacturers to justify what patient information is retained, why, for how long, and under what access controls, and to preserve or reference retrievable historical versions of relevant records (documenting any gaps) so authorized investigators can reconstruct device inputs for the required retention period.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Recommends that manufacturers justify retained patient data, its purpose, retention period, and access controls, and preserve or reference retrievable historical record versions—since a current chart cannot show what the device saw earlier—documenting gaps consistent with privacy obligations. Stance toward FDA's approach is not stated.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers should justify the patient information retained, its purpose, retention period, and access controls. They may use protected references if authorized investigators can retrieve the relevant historical versions for the required retention period. A current chart alone cannot establish what the device saw earlier. Manufacturers should document gaps and protect any additional content needed for investigation under applicable privacy and recordkeeping obligations."
+    },
+    {
+      "segment_id": "seg-037",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter is concerned that model-generated explanations of an agent's behavior may be treated as proof of what the agent actually did; in their view only observable actions and state changes can establish the factual record for an investigation.",
+      "requested_fda_action": "Base investigation and oversight of agentic GenAI devices on logs of observable actions and state changes, treating any model-generated explanation shown to a user as evidence but not proof, without requiring disclosure or retention of internal model reasoning.",
+      "confidence": "low",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses how to verify what an autonomous agent actually did, arguing the agent's own self-reported explanation cannot substitute for observable action and state-change records."
+      },
+      "public_summary": "Recommends that investigations of agentic GenAI devices establish events from observable actions and state changes rather than the model's own explanations, which may be evidence but not proof. Notes the recommendation would not require disclosing or retaining internal model reasoning.",
+      "summary_cut": false,
+      "source_passage": "Investigators should rely on observable actions and state changes to establish what occurred. A model-generated explanation presented to a user may itself be relevant evidence, but it does not prove that the described actions occurred. This recommendation does not require disclosure or retention of internal model reasoning."
+    },
+    {
+      "segment_id": "seg-038",
+      "question_ids": [
+        "q19",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "Postmarket evaluation approaches may not ensure that, after deployment, an investigator can actually determine what configuration was in use and reconstruct the consequential actions a device took; re-running the model is not an adequate substitute for records of what users were actually shown.",
+      "requested_fda_action": "FDA should expect manufacturers to rehearse investigations under the records and access arrangements that exist post-deployment, so reviewers can identify configuration, reconstruct consequential actions, and state unresolved gaps, and to preserve the exact user-facing content when its wording is safety-relevant.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "operational_harm",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment focuses on whether investigative capability actually holds under the records and access arrangements available in real deployment, not just on evaluation methods described in the abstract.",
+        "operational_harm": "It targets the ability to investigate real-world incidents after they occur, including reconstructing what a user was actually shown, which is an operational rather than model-performance concern.",
+        "delegated_authority": "The requirement to reconstruct 'consequential actions' taken by the device speaks to oversight of actions the system executes with limited contemporaneous human review."
+      },
+      "public_summary": "Accepts postmarket evaluation direction but asks FDA to require investigation readiness: manufacturers should rehearse investigations using post-deployment records and access, enabling reviewers to identify configuration, reconstruct consequential actions, and note gaps. Exact safety-relevant user-facing content should be preserved rather than regenerated.",
+      "summary_cut": false,
+      "source_passage": "Manufacturers should rehearse investigations using the records and access arrangements available after deployment. Reviewers should be able to identify the configuration, reconstruct consequential actions, and state unresolved gaps. Manufacturers should preserve the exact content shown to users when its wording matters to safety. Investigators need not reproduce that content by running the model again."
+    },
+    {
+      "segment_id": "seg-039",
+      "question_ids": [
+        "q18",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter is concerned that safety claims and monitoring plans may be asserted without tested controls, documented limitations, or a demonstrated ability for someone to actually intervene quickly enough to address a given hazard.",
+      "requested_fda_action": "FDA should ask manufacturers to substantiate critical safety claims with tested controls and documented limitations, and to specify in monitoring and response plans who can intervene, what actions they can take, and whether intervention is feasible within the time justified by the hazard, supported by evidence proportionate to the intended use.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment focuses on whether designated human intervenors actually have the authority and capability to act, not just on device output quality.",
+        "operational_harm": "It raises whether intervention can occur within the time window the hazard requires, an operational timing issue beyond model accuracy."
+      },
+      "public_summary": "Commenter supports postmarket monitoring and oversight expectations but asks FDA to require more: critical safety claims backed by tested controls and documented limitations, and monitoring and response plans specifying who can intervene, what actions they can take, and whether intervention is timely for the hazard.",
+      "summary_cut": false,
+      "source_passage": "I recommend that FDA ask manufacturers to support critical safety claims with tested controls and documented limitations. Monitoring and response plans should identify who can intervene, what they can do, and whether they can act within the time justified for the hazard. Manufacturers should support those plans with evidence suited to the device's intended use."
+    }
+  ]
+}

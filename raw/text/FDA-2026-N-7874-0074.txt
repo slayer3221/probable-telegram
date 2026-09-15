@@ -1,0 +1,95 @@
+WhaleTeq Co., Ltd. appreciates the opportunity to comment on FDA&rsquo;s discussion paper on generative AI-enabled medical devices (Docket No. FDA-2026-N-7874).<br/><br/>Based on our experience in physiological signal testing and medical device verification, we would like to highlight four practical considerations for sensor-based and measurement-oriented AI-enabled medical devices:<br/><br/>1. Verification should cover not only the AI model, but also the relevant complete device pathway.<br/>2. Real patient data and controlled simulation provide different but complementary verification evidence.<br/>3. The value of a benchmark should be based on its credibility, traceability, and intended test purpose rather than dataset size alone.<br/>4. Premarket benchmarks should, where practical, be designed so they can later serve as post-change regression baselines.<br/><br/>Our main view is that GenAI may increase the scale, variability, and frequency of verification, but the underlying regulatory principles remain the same: evidence should be appropriate to intended use and risk, each test method should be applied within its demonstrated limits, and relevant device changes should trigger risk-based re-verification.<br/><br/>Please see the attached document for our full comments, including the rationale, limitations of physiological simulation, and our responses to the relevant FDA discussion questions.
+
+[Attachment: Comment from WhaleTeq Co., Ltd]
+WhaleTeq Co., Ltd. | Docket No. FDA-2026-N-7874
+September 8, 2026
+Comments on Considerations for the Regulation of
+Generative AI-Enabled Medical Devices
+Submitted by WhaleTeq Co., Ltd.
+Docket No. FDA-2026-N-7874
+WhaleTeq Co., Ltd. appreciates the opportunity to comment on FDA's discussion paper on generative AI-enabled
+medical devices. WhaleTeq develops technologies for physiological signal testing and medical device verification.
+Our work primarily covers four layers: Simulator System; Clinical Data / Software-Defined Bio-signal (SDB);
+Verification / Regression Software; and Customized Integration.
+Our comments focus on sensor-based and measurement-oriented AI-enabled medical devices. We believe GenAI
+may require new verification methods, while the underlying regulatory logic remains familiar: evidence should be
+appropriate to intended use and risk, each test method should be applied within its demonstrated scope, and
+changes that may affect safety or effectiveness should be re-evaluated.
+1. Verification should cover the model and the complete device pathway
+Relevant to Questions 7 and 9
+Model-level benchmarking is important, but for a sensor-based medical device it may not be sufficient by itself.
+The final clinical or measurement output can also depend on the sensor interface, signal acquisition, signal
+processing, software, and interactions among these components.
+Physiological input -> Sensor -> Signal processing -> Algorithm / AI -> Device output
+The regulatory objective is to establish reasonable assurance that the medical device performs safely and
+effectively for its intended use. Therefore, where relevant, model-level competency assessment should be
+complemented by system-level verification of the device pathway.
+Controlled physiological signals are useful because they provide known and repeatable inputs. Manufacturers can
+verify how the device responds to a defined condition and repeat the same condition after a design change. Their
+role is to verify the portion of device performance that can reasonably be evaluated under controlled input
+conditions, while real-world clinical performance is addressed through appropriate clinical evidence.
+2. Real patient data and simulation provide complementary verification evidence
+Relevant to Questions 10, 11, 12 and 13
+Real patient data and simulation answer different verification questions. Real patient data is important for
+representing clinically observed physiological variability. Controlled simulation is useful for creating known and
+repeatable conditions for robustness, boundary, stress and regression testing.
+Real patient data supports clinical representativeness. Controlled simulation supports repeatability and
+controlled coverage of defined test conditions.
+The boundary should be explicit. A simulator represents a defined subset of physiological and physical conditions.
+For example, in optical physiological sensing, performance may be affected by tissue characteristics, optical path,
+sensor geometry, device-to-body coupling and other physical interactions. Playing back a clinically recorded
+waveform represents the waveform, while those additional physical factors remain outside the scope of that
+playback.
+A simulated physiological signal therefore represents only the parameters and conditions that the simulation
+method has been designed and characterized to reproduce. Its test purpose and limitations should be stated.
+Simulation is most useful when a manufacturer needs to control a specific input, repeat the same test
+consistently, explore defined edge or stress conditions, or reproduce the same test after a modification. Clinical
+confirmation remains necessary when human anatomy, physiology, use conditions or other real-world factors
+materially affect device performance.
+
+WhaleTeq Co., Ltd. | Docket No. FDA-2026-N-7874
+September 8, 2026
+3. Benchmark value should be based on credibility and intended test purpose
+Relevant to Questions 10 and 12
+The purpose of verification is to provide credible evidence for a defined requirement or risk. A medical-device
+benchmark should therefore start with a clear verification question.
+What is being tested? What does the input represent? Where did it come from? What is the reference or
+ground truth? What result is expected? What are the limits of the test method? Can the test be
+reproduced?
+A smaller, well-characterized dataset may provide stronger evidence for a specific verification purpose than a
+much larger dataset with unclear provenance, ground truth, intended use or limitations. We encourage FDA to
+emphasize fitness for purpose, traceability, reproducibility and clearly stated limitations when considering
+benchmark validity.
+4. Premarket benchmarks should be designed as reusable post-change regression baselines
+Relevant to Questions 19 and 22
+AI-enabled devices may change more frequently than traditional medical devices, but the underlying change-
+control question is the same: what changed, what could be affected, and what evidence is needed to show that
+the device remains safe and effective?
+Where practical, premarket verification should be designed so that relevant tests can later be reused as a
+regression baseline. A baseline may identify:
+Device version + Test data version + Test condition + Expected result + Acceptance criteria + Actual
+result
+After a relevant software, firmware, algorithm, AI model or other device change, the affected tests can be
+repeated under the same controlled conditions and compared with the established baseline. The scope of re-
+testing should remain risk-based: a limited modification may require targeted regression testing, while a change
+that may affect sensing, signal processing, algorithm behavior or clinical output may require broader re-
+verification.
+Repeatability is one of simulation's main strengths in this context. Its purpose is to determine whether a known
+aspect of device behavior has changed when the same controlled challenge is applied before and after a
+modification. Clinical and real-world evidence continue to address performance beyond the defined scope of the
+simulated test.
+Conclusion
+We believe GenAI increases the scale, variability and frequency of verification, while the fundamental principles
+remain the same: verification should cover the relevant device pathway; each test method should be used within
+its demonstrated boundary; evidence should be fit for its intended verification purpose; and device changes
+should trigger risk-based re-verification where appropriate.
+For sensor-based AI-enabled devices, reusable verification infrastructure can support these principles through
+four complementary capabilities:
+Controlled physiological signal generation -> Clinical and software-defined test content -> Verification
+and regression testing -> Device-specific integration
+This infrastructure complements clinical confirmation. Its role is to make the controllable and repeatable portion of
+device verification broader, more systematic and easier to reproduce throughout the product life cycle.
+WhaleTeq appreciates FDA's consideration of these comments.
+Respectfully submitted,
+WhaleTeq Co., Ltd.
+Taiwan

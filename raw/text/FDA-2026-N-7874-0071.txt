@@ -1,0 +1,265 @@
+I&#39;m the founder of Orinyx, a company building runtime infrastructure that sits between clinical AI tools and hospital patient record systems, checking medication and clinical recommendations against FDA labeling, clinical guidelines, and federal safety guidance before a clinician acts on them. Orinyx is not currently a manufacturer of GenAI-enabled devices. It builds independent, structurally separate verification and monitoring infrastructure for devices other companies build and deploy, comparable to a crash-test lab rather than a car manufacturer.<br/><br/>At a high level, this runs in two modes. Before a device goes live, it operates in a test environment where a vendor&#39;s AI is run against a defined set of clinical scenarios and its outputs are scored before deployment. After a device goes live, it operates as a continuous layer that checks real outputs against current, authoritative sources at the point of care, integrated through existing interoperability standards and API endpoints such as CDS Hooks rather than requiring a new integration pattern for every hospital.<br/><br/>I&#39;m commenting because Section VI of the discussion paper (Postmarket Monitoring) and the independent-third-party questions in Section V describe, in regulatory language, the problem I built this company to solve. My full response, addressing Questions 16, 19, 20, 22, and 26, is attached.<br/><br/>Alexandria &quot;Lex&quot; Hamilton<br/>Founder &amp; CEO, Orinyx<br/>hello@charmthirteen.com<br/>https://www.linkedin.com/in/alexandriahamilton-/
+
+[Attachment: Comment from Alexandria Hamilton]
+Comment on Docket FDA-2026-N-7874
+Considerations for the Regulation of Generative AI-Enabled Medical Devices:
+Discussion Paper and Request for Feedback
+Submitted by: Alexandria “Lex” Hamilton, Founder & CEO, Orinyx Docket: FDA-2026-N-
+7874 Deadline: October 19, 2026
+Introduction
+I’m the founder of Orinyx, a company building runtime infrastructure that sits between
+clinical AI tools and hospital patient record systems, checking medication and clinical
+recommendations against FDA labeling, clinical guidelines, and federal safety guidance
+before a clinician acts on them. Orinyx is not currently a manufacturer of GenAI-enabled
+devices. It builds independent, structurally separate verification and monitoring
+infrastructure for devices other companies build and deploy, comparable to a crash-test lab
+rather than a car manufacturer.
+At a high level, this runs in two modes. Before a device goes live, it operates in a test
+environment where a vendor’s AI is run against a defined set of clinical scenarios and its
+outputs are scored before deployment. After a device goes live, it operates as a continuous
+layer that checks real outputs against current, authoritative sources at the point of care,
+integrated through existing interoperability standards and API endpoints such as CDS
+Hooks rather than requiring a new integration pattern for every hospital.
+I’m commenting because Section VI of the discussion paper (Postmarket Monitoring) and
+the independent-third-party questions in Section V describe, in regulatory language, the
+problem I built this company to solve. My comment below is scoped to the five questions
+where I believe I have something specific and evidence-grounded to add: Questions 16, 19,
+20, 22, and 26. I have not responded to the questions on premarket benchmarking design,
+risk-framework taxonomy, or foundation model MAFs, as those fall outside what I build
+and would not add signal beyond what device manufacturers and clinical researchers can
+offer.
+Throughout, I draw on the structural principle that has shaped my product design: a
+system cannot credibly verify its own outputs. The verifier must be structurally separate
+from the thing being verified, including at the level of the evaluator model itself, not only
+the human process around it. I raise this not as an abstract position but because it bears
+directly on several of the questions below.
+
+Response to Question 16
+Should independent third parties be involved in some or all aspects of a competency-based
+approach, including device benchmarking and clinical confirmation? What qualifications and
+independence criteria should apply? What safeguards would prevent third-party
+participation from limiting competition or innovation?
+I believe independent third-party involvement is not merely useful but structurally
+necessary for one specific category of function within the competency-based approach:
+safety-critical recognition, escalation, and calibration (Appendix A, elements S.1 to S.3).
+These are the elements most vulnerable to a conflict of interest that self-assessment cannot
+resolve, because the entity best positioned to know where its own device is weak is also the
+entity with the strongest incentive not to surface that weakness in a benchmarking result it
+authors.
+On independence criteria, I’d propose the standard be defined at two levels, not one:
+1.Organizational independence. The third party has no financial relationship with
+the device sponsor tied to benchmarking outcomes, and no equity, licensing, or
+revenue-sharing arrangement with the foundation model developer whose model
+underlies the device under review.
+2.Evaluator independence. Where the adjudication method itself uses an AI system
+(an “LLM-as-judge” pattern, which the paper rightly flags as still requiring the same
+independence scrutiny), that evaluator model should not be the same model family,
+or a fine-tuned variant of the same model family, as the device under test. A GPT-
+based device benchmarked by a GPT-based judge is not independent in any way that
+matters, even if the organizations administering the test are unrelated.
+On the competition concern, I’d note that a credentialing or accreditation structure (similar
+to ASCA, which the paper references) mitigates the innovation-limiting risk better than a
+closed panel of pre-approved evaluators would. CDRH setting qualification criteria that any
+structurally independent entity can meet, rather than naming or licensing a fixed set of
+evaluators, preserves competitive entry for third parties while still enforcing the
+independence standard.
+Response to Question 19
+Please comment on the potential approaches to postmarket performance evaluation,
+including periodic re-benchmarking, sample-based clinician review, and performance
+degradation monitoring. What additional approaches should CDRH consider, and how should
+cadence and triggering events for reassessment be determined?
+All three approaches described are necessary but individually insufficient, because they
+operate at different latencies and catch different failure modes:
+•Periodic re-benchmarking catches regressions against known test cases but, by
+construction, cannot catch a failure mode the benchmark didn’t anticipate.
+
+•Sample-based clinician review catches failures visible to a domain expert
+reviewing outputs after the fact, but is bounded by sample size and reviewer
+availability, and will miss low-frequency, high-severity events by design.
+•Performance degradation monitoring catches statistical drift in aggregate but
+typically lags the point at which drift becomes clinically material, since a threshold
+breach is a trailing indicator.
+I’d add a fourth approach that the paper does not name explicitly but that Question 20
+gestures toward: continuous per-output verification, run on every clinical assertion in
+real time rather than on a sample or a periodic cadence. This is distinct from re-
+benchmarking in that it doesn’t test the device against a fixed set of cases. It checks each
+live output against the current, authoritative source (FDA labeling, clinical guidelines,
+federal safety guidance) at the moment the output is generated, and logs a citation for
+every claim it clears or flags. Where sample-based review answers “was this device safe in
+the cases we happened to sample,” continuous verification answers “was this specific
+output, right now, defensible,” and produces a complete audit trail rather than a point-in-
+time snapshot.
+On cadence and triggering events, I’d suggest that any change to the categories the paper
+already names as changes to “the underlying model or other components of the
+deployment architecture” (Section VI.A) should trigger reassessment, but that continuous
+verification reduces the cost and urgency of getting that cadence exactly right. A
+monitoring layer that checks every output doesn’t need to wait for a defined trigger to
+catch a regression, because it isn’t sampling.
+I’d add one more point on re-benchmarking specifically: a single passed benchmark run
+proves very little on its own. A device can clear a fixed set of test cases once and still
+perform inconsistently across repeated attempts at the same task, particularly under time
+pressure, incomplete information, or adversarial framing. What’s more informative than a
+pass or fail on a given cadence is a reliability profile built from repeated runs of the same
+prespecified task, environment, and acceptance criteria: success rate across attempts,
+consistency of the answer given semantically equivalent inputs, and the rate at which the
+device needed human intervention. Reusable, prespecified test bundles, rerun on a defined
+cadence rather than authored fresh each time, are what make results comparable across
+reassessment cycles, which mirrors the paper’s own point in Section V about benchmarking
+assets needing to be well-defined and reusable.
+Response to Question 20
+Please comment on whether the proposed approaches to postmarket monitoring can be
+facilitated by machine-based supervisory agents. What considerations, including the
+evaluation and reliability of the supervisory agent itself, should CDRH take into account?
+Yes, with the caveat that the supervisory agent itself needs its own governance structure,
+or it simply relocates the trust problem rather than solving it. In my own build, I’ve
+organized this around three loops, which may be a useful frame for CDRH’s thinking here:
+
+1.Point-of-action safeguards. Deterministic, rule-based checks (not model-based)
+run before and after every output: pre-output checks like malformed-input
+rejection, post-output checks like grounding verification (is every claim traceable to
+a source the agent actually had access to). Keeping this layer deterministic rather
+than model-based matters because it needs to be auditable and it needs to fail
+predictably.
+2.Upstream governance. A deployment gate: a golden test set the workflow must
+pass before going live, with a defined hallucination-rate threshold, re-run on any
+prompt or model change. This is closer to the paper’s re-benchmarking concept but
+applied to the supervisory agent itself, not only the underlying device.
+3.Post-deployment monitoring. The supervisory agent’s own outputs are sampled
+and scored by a separate evaluator, using external telemetry (logging tool-call
+results independently of the agent’s self-reported status, since agents under-report
+their own failures) rather than trusting the agent’s account of its own performance.
+The reliability question CDRH raises is the right one to press on, and my answer is that a
+supervisory agent’s reliability cannot be established by the agent’s own logs. It requires the
+same independence standard I describe in my response to Question 16: an evaluator that is
+organizationally and architecturally separate from the agent it supervises. Without that,
+“machine-based supervisory agent” risks becoming a rebranding of self-monitoring rather
+than a genuine postmarket safeguard.
+I’d also flag turn budgets and per-session cost or action caps as a practical circuit breaker
+CDRH may want to name explicitly. A supervisory agent operating without a bounded
+scope of action per session is harder to audit and harder to contain when something goes
+wrong mid-session.
+I’m currently developing and testing a version of this pattern directly, and it’s shaped how
+I’d answer CDRH’s reliability question. Rather than relying on one model to judge another, I
+decompose the supervisory function into several narrower evaluators running against the
+same output: a deterministic layer that checks facts a machine can conclusively verify
+without any model involved (did the output cite a source that actually exists, does a
+calculation match, was a required field present), a semantic evaluator that assesses the
+quality and appropriateness of reasoning, a policy evaluator that checks whether the agent
+stayed within its authorized scope and tools, and a trace evaluator that scores the full
+execution path, not just the final output. That last piece matters more than it might first
+appear: evaluating only input against output misses failures that occur mid-process, such
+as an agent that reaches a correct-looking conclusion through a reasoning chain that should
+have triggered escalation earlier or used a tool it wasn’t authorized to use. I’d suggest
+CDRH consider requiring that postmarket evaluation of agentic systems assess the
+trajectory, not only the endpoint.
+Decomposing the judge this way also addresses part of the reliability concern directly: a
+supervisory agent is less of a single point of failure when the checks that can be made
+deterministic are made deterministic, and only the genuinely judgment-dependent
+portions are left to a model, which itself must meet the same independence standard
+described in my response to Question 16. This still doesn’t eliminate the underlying
+
+question. If a supervisory structure benchmarks a worker agent, something still has to
+benchmark the supervisory structure, and that chain has to terminate somewhere in a
+structurally independent, non-agentic check, or the accountability problem simply
+regresses one level rather than resolving.
+Response to Question 22
+How might the extent of re-benchmarking or other evidence be scaled to the nature and
+expected impact of a given modification? Are there categories of change appropriate for
+inclusion in a PCCP?
+I’d suggest CDRH consider a risk-tiered gating structure for modifications, parallel to the
+two-axis framework already proposed for initial risk assessment in Section IV: classify each
+modification by reversibility and blast radius (how many patients, how many device
+functions, how quickly the change could compound before detection), not only by the
+technical nature of the change itself. A prompt template change and a full model swap are
+different in kind, but a prompt template change that touches a safety-critical escalation
+pathway (Appendix A, S.1) may warrant more scrutiny than a model swap that only affects
+a low-consequence, non-directive function.
+Under such a structure, changes low on both axes (reversible, narrow blast radius, no touch
+to safety-critical elements) could reasonably sit inside a PCCP with documentation in the
+sponsor’s quality management system. Changes high on either axis, and especially changes
+to safety-critical recognition, scope maintenance, or calibration behaviors, regardless of
+how small the underlying technical change appears, should trigger re-benchmarking
+against the original competency baseline before deployment, not after.
+Response to Question 26
+Are there additional considerations that inform the premarket and postmarket evaluation of
+agentic GenAI-enabled devices, beyond those applicable to non-agentic devices?
+Two considerations beyond what Appendix A’s A.1 element already captures:
+First, escalation of authority within a single session. A.1 addresses recognition of when
+a planned action sequence exceeds intended use, but an agentic system’s authority can also
+expand mid-session in ways that don’t map cleanly to a single “action sequence.” For
+example, a system that starts with read-only access to a chart and, over the course of a
+multi-step task, invokes a tool that grants it write access it didn’t have at session start.
+Evaluation should test not just whether the agent recognizes out-of-scope actions, but
+whether it recognizes when its own available scope has changed mid-task.
+Second, tool-output trust. A.1 names “accurate tool use and recognition of erroneous tool
+outputs” as a competency, and I’d underscore that this deserves the same independence
+scrutiny raised elsewhere in this comment. An agentic system that receives a tool’s output
+
+and treats it as ground truth without independent verification has the same self-affirmation
+problem as a device benchmarking itself. The tool call looks like an external check, but if
+the tool and the agent share a developer, a training lineage, or an incentive structure, it isn’t
+one. I’d suggest CDRH’s evaluation criteria for agentic systems explicitly distinguish tool
+outputs that come from structurally independent sources from tool outputs that don’t,
+since the latter provides less assurance than it appears to on paper.
+Closing
+I’m glad CDRH is running this process in the open and inviting builders, not only
+manufacturers, into it. I’d welcome the opportunity to discuss any of the above in more
+detail and can be reached at hello@charmthirteen.com or
+https://www.linkedin.com/in/alexandriahamilton-/ if useful to CDRH’s ongoing work on
+this topic.
+Alexandria “Lex” Hamilton Founder & CEO, Orinyx
+
+[Attachment: Comment from Alexandria Hamilton]
+Comment on Docket FDA-2026-N-7874
+Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and Request for Feedback
+Submitted by: Alexandria “Lex” Hamilton, Founder & CEO, Orinyx Docket: FDA-2026-N-7874 Deadline: October 19, 2026
+
+Introduction
+I’m the founder of Orinyx, a company building runtime infrastructure that sits between clinical AI tools and hospital patient record systems, checking medication and clinical recommendations against FDA labeling, clinical guidelines, and federal safety guidance before a clinician acts on them. Orinyx is not currently a manufacturer of GenAI-enabled devices. It builds independent, structurally separate verification and monitoring infrastructure for devices other companies build and deploy, comparable to a crash-test lab rather than a car manufacturer.
+At a high level, this runs in two modes. Before a device goes live, it operates in a test environment where a vendor’s AI is run against a defined set of clinical scenarios and its outputs are scored before deployment. After a device goes live, it operates as a continuous layer that checks real outputs against current, authoritative sources at the point of care, integrated through existing interoperability standards and API endpoints such as CDS Hooks rather than requiring a new integration pattern for every hospital.
+I’m commenting because Section VI of the discussion paper (Postmarket Monitoring) and the independent-third-party questions in Section V describe, in regulatory language, the problem I built this company to solve. My comment below is scoped to the five questions where I believe I have something specific and evidence-grounded to add: Questions 16, 19, 20, 22, and 26. I have not responded to the questions on premarket benchmarking design, risk-framework taxonomy, or foundation model MAFs, as those fall outside what I build and would not add signal beyond what device manufacturers and clinical researchers can offer.
+Throughout, I draw on the structural principle that has shaped my product design: a system cannot credibly verify its own outputs. The verifier must be structurally separate from the thing being verified, including at the level of the evaluator model itself, not only the human process around it. I raise this not as an abstract position but because it bears directly on several of the questions below.
+
+Response to Question 16
+Should independent third parties be involved in some or all aspects of a competency-based approach, including device benchmarking and clinical confirmation? What qualifications and independence criteria should apply? What safeguards would prevent third-party participation from limiting competition or innovation?
+I believe independent third-party involvement is not merely useful but structurally necessary for one specific category of function within the competency-based approach: safety-critical recognition, escalation, and calibration (Appendix A, elements S.1 to S.3). These are the elements most vulnerable to a conflict of interest that self-assessment cannot resolve, because the entity best positioned to know where its own device is weak is also the entity with the strongest incentive not to surface that weakness in a benchmarking result it authors.
+On independence criteria, I’d propose the standard be defined at two levels, not one:
+Organizational independence. The third party has no financial relationship with the device sponsor tied to benchmarking outcomes, and no equity, licensing, or revenue-sharing arrangement with the foundation model developer whose model underlies the device under review.
+Evaluator independence. Where the adjudication method itself uses an AI system (an “LLM-as-judge” pattern, which the paper rightly flags as still requiring the same independence scrutiny), that evaluator model should not be the same model family, or a fine-tuned variant of the same model family, as the device under test. A GPT-based device benchmarked by a GPT-based judge is not independent in any way that matters, even if the organizations administering the test are unrelated.
+On the competition concern, I’d note that a credentialing or accreditation structure (similar to ASCA, which the paper references) mitigates the innovation-limiting risk better than a closed panel of pre-approved evaluators would. CDRH setting qualification criteria that any structurally independent entity can meet, rather than naming or licensing a fixed set of evaluators, preserves competitive entry for third parties while still enforcing the independence standard.
+
+Response to Question 19
+Please comment on the potential approaches to postmarket performance evaluation, including periodic re-benchmarking, sample-based clinician review, and performance degradation monitoring. What additional approaches should CDRH consider, and how should cadence and triggering events for reassessment be determined?
+All three approaches described are necessary but individually insufficient, because they operate at different latencies and catch different failure modes:
+Periodic re-benchmarking catches regressions against known test cases but, by construction, cannot catch a failure mode the benchmark didn’t anticipate.
+Sample-based clinician review catches failures visible to a domain expert reviewing outputs after the fact, but is bounded by sample size and reviewer availability, and will miss low-frequency, high-severity events by design.
+Performance degradation monitoring catches statistical drift in aggregate but typically lags the point at which drift becomes clinically material, since a threshold breach is a trailing indicator.
+I’d add a fourth approach that the paper does not name explicitly but that Question 20 gestures toward: continuous per-output verification, run on every clinical assertion in real time rather than on a sample or a periodic cadence. This is distinct from re-benchmarking in that it doesn’t test the device against a fixed set of cases. It checks each live output against the current, authoritative source (FDA labeling, clinical guidelines, federal safety guidance) at the moment the output is generated, and logs a citation for every claim it clears or flags. Where sample-based review answers “was this device safe in the cases we happened to sample,” continuous verification answers “was this specific output, right now, defensible,” and produces a complete audit trail rather than a point-in-time snapshot.
+On cadence and triggering events, I’d suggest that any change to the categories the paper already names as changes to “the underlying model or other components of the deployment architecture” (Section VI.A) should trigger reassessment, but that continuous verification reduces the cost and urgency of getting that cadence exactly right. A monitoring layer that checks every output doesn’t need to wait for a defined trigger to catch a regression, because it isn’t sampling.
+I’d add one more point on re-benchmarking specifically: a single passed benchmark run proves very little on its own. A device can clear a fixed set of test cases once and still perform inconsistently across repeated attempts at the same task, particularly under time pressure, incomplete information, or adversarial framing. What’s more informative than a pass or fail on a given cadence is a reliability profile built from repeated runs of the same prespecified task, environment, and acceptance criteria: success rate across attempts, consistency of the answer given semantically equivalent inputs, and the rate at which the device needed human intervention. Reusable, prespecified test bundles, rerun on a defined cadence rather than authored fresh each time, are what make results comparable across reassessment cycles, which mirrors the paper’s own point in Section V about benchmarking assets needing to be well-defined and reusable.
+
+Response to Question 20
+Please comment on whether the proposed approaches to postmarket monitoring can be facilitated by machine-based supervisory agents. What considerations, including the evaluation and reliability of the supervisory agent itself, should CDRH take into account?
+Yes, with the caveat that the supervisory agent itself needs its own governance structure, or it simply relocates the trust problem rather than solving it. In my own build, I’ve organized this around three loops, which may be a useful frame for CDRH’s thinking here:
+Point-of-action safeguards. Deterministic, rule-based checks (not model-based) run before and after every output: pre-output checks like malformed-input rejection, post-output checks like grounding verification (is every claim traceable to a source the agent actually had access to). Keeping this layer deterministic rather than model-based matters because it needs to be auditable and it needs to fail predictably.
+Upstream governance. A deployment gate: a golden test set the workflow must pass before going live, with a defined hallucination-rate threshold, re-run on any prompt or model change. This is closer to the paper’s re-benchmarking concept but applied to the supervisory agent itself, not only the underlying device.
+Post-deployment monitoring. The supervisory agent’s own outputs are sampled and scored by a separate evaluator, using external telemetry (logging tool-call results independently of the agent’s self-reported status, since agents under-report their own failures) rather than trusting the agent’s account of its own performance.
+The reliability question CDRH raises is the right one to press on, and my answer is that a supervisory agent’s reliability cannot be established by the agent’s own logs. It requires the same independence standard I describe in my response to Question 16: an evaluator that is organizationally and architecturally separate from the agent it supervises. Without that, “machine-based supervisory agent” risks becoming a rebranding of self-monitoring rather than a genuine postmarket safeguard.
+I’d also flag turn budgets and per-session cost or action caps as a practical circuit breaker CDRH may want to name explicitly. A supervisory agent operating without a bounded scope of action per session is harder to audit and harder to contain when something goes wrong mid-session.
+I’m currently developing and testing a version of this pattern directly, and it’s shaped how I’d answer CDRH’s reliability question. Rather than relying on one model to judge another, I decompose the supervisory function into several narrower evaluators running against the same output: a deterministic layer that checks facts a machine can conclusively verify without any model involved (did the output cite a source that actually exists, does a calculation match, was a required field present), a semantic evaluator that assesses the quality and appropriateness of reasoning, a policy evaluator that checks whether the agent stayed within its authorized scope and tools, and a trace evaluator that scores the full execution path, not just the final output. That last piece matters more than it might first appear: evaluating only input against output misses failures that occur mid-process, such as an agent that reaches a correct-looking conclusion through a reasoning chain that should have triggered escalation earlier or used a tool it wasn’t authorized to use. I’d suggest CDRH consider requiring that postmarket evaluation of agentic systems assess the trajectory, not only the endpoint.
+Decomposing the judge this way also addresses part of the reliability concern directly: a supervisory agent is less of a single point of failure when the checks that can be made deterministic are made deterministic, and only the genuinely judgment-dependent portions are left to a model, which itself must meet the same independence standard described in my response to Question 16. This still doesn’t eliminate the underlying question. If a supervisory structure benchmarks a worker agent, something still has to benchmark the supervisory structure, and that chain has to terminate somewhere in a structurally independent, non-agentic check, or the accountability problem simply regresses one level rather than resolving.
+
+Response to Question 22
+How might the extent of re-benchmarking or other evidence be scaled to the nature and expected impact of a given modification? Are there categories of change appropriate for inclusion in a PCCP?
+I’d suggest CDRH consider a risk-tiered gating structure for modifications, parallel to the two-axis framework already proposed for initial risk assessment in Section IV: classify each modification by reversibility and blast radius (how many patients, how many device functions, how quickly the change could compound before detection), not only by the technical nature of the change itself. A prompt template change and a full model swap are different in kind, but a prompt template change that touches a safety-critical escalation pathway (Appendix A, S.1) may warrant more scrutiny than a model swap that only affects a low-consequence, non-directive function.
+Under such a structure, changes low on both axes (reversible, narrow blast radius, no touch to safety-critical elements) could reasonably sit inside a PCCP with documentation in the sponsor’s quality management system. Changes high on either axis, and especially changes to safety-critical recognition, scope maintenance, or calibration behaviors, regardless of how small the underlying technical change appears, should trigger re-benchmarking against the original competency baseline before deployment, not after.
+
+Response to Question 26
+Are there additional considerations that inform the premarket and postmarket evaluation of agentic GenAI-enabled devices, beyond those applicable to non-agentic devices?
+Two considerations beyond what Appendix A’s A.1 element already captures:
+First, escalation of authority within a single session. A.1 addresses recognition of when a planned action sequence exceeds intended use, but an agentic system’s authority can also expand mid-session in ways that don’t map cleanly to a single “action sequence.” For example, a system that starts with read-only access to a chart and, over the course of a multi-step task, invokes a tool that grants it write access it didn’t have at session start. Evaluation should test not just whether the agent recognizes out-of-scope actions, but whether it recognizes when its own available scope has changed mid-task.
+Second, tool-output trust. A.1 names “accurate tool use and recognition of erroneous tool outputs” as a competency, and I’d underscore that this deserves the same independence scrutiny raised elsewhere in this comment. An agentic system that receives a tool’s output and treats it as ground truth without independent verification has the same self-affirmation problem as a device benchmarking itself. The tool call looks like an external check, but if the tool and the agent share a developer, a training lineage, or an incentive structure, it isn’t one. I’d suggest CDRH’s evaluation criteria for agentic systems explicitly distinguish tool outputs that come from structurally independent sources from tool outputs that don’t, since the latter provides less assurance than it appears to on paper.
+
+Closing
+I’m glad CDRH is running this process in the open and inviting builders, not only manufacturers, into it. I’d welcome the opportunity to discuss any of the above in more detail and can be reached at hello@charmthirteen.com or https://www.linkedin.com/in/alexandriahamilton-/ if useful to CDRH’s ongoing work on this topic.
+Alexandria “Lex” Hamilton Founder & CEO, Orinyx

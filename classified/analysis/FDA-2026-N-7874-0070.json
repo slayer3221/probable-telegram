@@ -1,0 +1,103 @@
+{
+  "comment_id": "FDA-2026-N-7874-0070",
+  "input_hash": "c39f20f3e6dfa0f5",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:27:29Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "The commenter holds that when an accountable clinician will see the device output, evaluation must measure the combined human-AI team rather than the model alone, and that such measurement is impossible unless the output's position in the clinical workflow is specified as part of the evaluation.",
+      "requested_fda_action": "FDA should make human-AI team performance the basis of evaluation in all cases where an accountable clinician views the output, and require that the workflow placement of the output be fixed and treated as part of what is being evaluated.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues performance must be assessed for the clinician-device combination rather than the device in isolation whenever an accountable clinician sees the output.",
+        "dynamic_intended_use": "It treats the output's position in the workflow as something that must be fixed and evaluated, effectively making deployment context part of the evaluated use envelope."
+      },
+      "public_summary": "Responding on comparators, the commenter argues human-AI team performance should be the evaluation basis whenever an accountable clinician sees the output, and that such measurement requires fixing the output's position in the workflow as part of what is evaluated.",
+      "summary_cut": false,
+      "source_passage": "My answer is that human-AI team performance should be the basis for evaluation whenever a clinician who remains accountable for the resulting decision will see the device output, and that team performance cannot be measured at all unless the position of the output in the workflow is fixed as part of what is being evaluated."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "Whether a genuine human-AI team exists depends on where in the workflow the output appears and whether the clinician records an independent assessment first; treating these as site-level deployment choices leaves the evaluated configuration undefined.",
+      "requested_fda_action": "Treat the workflow position of the output as part of the device under evaluation rather than a deployment variable, and require it to be specified in the intended use with the same precision as the output itself, including timing of display and whether an independent clinical assessment is recorded beforehand.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues that whether a human-AI team exists at all depends on display timing and independent clinician assessment, which determines whether team performance can meaningfully be evaluated.",
+        "deployment_assurance_scalability": "It contends that workflow integration details, often left to deploying sites, must instead be fixed in the device's evaluated specification."
+      },
+      "public_summary": "For clinician-facing GenAI outputs, workflow position—when the output appears and whether an independent clinical assessment is recorded first—determines whether a human-AI team exists; it should therefore be specified in the intended use and evaluated as part of the device, not treated as a deployment variable.",
+      "summary_cut": false,
+      "source_passage": "For a GenAI-enabled device whose output is read by a clinician who retains responsibility for the decision, the workflow position of that output should be treated as part of the device under evaluation rather than as a deployment variable, and specified in the intended use with the same precision as the output itself. Two things determine whether a human-AI team exists in the first place: the point at which the output is displayed to the clinician, and whether an independent clinical assessment is recorded before it is displayed."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "comparator_standard_of_care",
+      "stakeholder_concern": "Human-AI team performance is not a well-defined measure because the same device and clinicians produce different results depending on the workflow ordering (e.g., when the AI output is shown relative to clinician judgment), creating a gap between the ordering a sponsor tests and the ordering sites actually deploy.",
+      "requested_fda_action": "Where team performance is proposed as the evaluation basis, FDA should require sponsors to specify which interaction ordering was tested and whether that ordering is technically enforced by the device or only recommended in labeling.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues team performance is indeterminate unless the human-device interaction sequence is specified and controlled.",
+        "deployment_assurance_scalability": "It notes sponsors may test the best-performing ordering while deployment sites use a different, faster one, so tested performance may not hold in real settings."
+      },
+      "public_summary": "Argues human-AI team performance is not well-defined until interaction ordering is specified, since results vary by ordering and sponsors may test one sequence while sites deploy another. Asks FDA to require disclosure of the tested ordering and whether the device enforces it.",
+      "summary_cut": false,
+      "source_passage": "Until those are fixed, human-AI team performance is not a well-defined quantity, because the same device and the same clinicians will yield different team performance under different orderings, and a sponsor could reasonably test the ordering that performs best while sites deploy the one that is fastest. Where team performance is proposed as the evaluation basis, it would be worth asking which ordering was tested, and whether that ordering is enforced by the device or merely recommended in labeling."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q21",
+        "q26"
+      ],
+      "position": "unclear",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "The passage raises an unresolved question of who, as an identified person, is accountable for a device output in workflows where no clinician assessment occurs before the output, citing IDx-DR labeling as leaving this open.",
+      "requested_fda_action": "The passage does not state a specific requested action; it implies FDA should clarify how accountability for device outputs is assigned when no clinician review precedes the output.",
+      "confidence": "low",
+      "gap_tags": [
+        "distributed_accountability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The passage asks which identified person bears accountability for an output, indicating that responsibility allocation is unresolved in existing labeling.",
+        "delegated_authority": "It highlights workflows in which the device's output is issued without any preceding clinician assessment, raising the question of authority exercised without human review."
+      },
+      "public_summary": "Brief passage noting that, in workflows where no clinician assessment precedes a device output (citing IDx-DR labeling), it remains unresolved which identified person is accountable for that output. No explicit position on FDA's proposals is stated.",
+      "summary_cut": false,
+      "source_passage": "A third question follows from those and is the one the IDx-DR labeling leaves open, namely which identified person is accountable for the output in a workflow where no clinician assessment precedes it."
+    }
+  ]
+}

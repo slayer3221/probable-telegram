@@ -1,0 +1,123 @@
+{
+  "comment_id": "FDA-2026-N-7874-0059",
+  "input_hash": "77f9d53017f603bd",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:27:29Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that evaluation of generative AI-enabled devices does not assess whether a model differentiates precise, well-characterized evidence from observational, surrogate, or interpretation-heavy data, noting that larger data volumes can improve precision without correcting bias or establishing validity.",
+      "requested_fda_action": "Add an evidence-quality calibration element to the competency-based evaluation/benchmarking of generative AI-enabled devices, testing whether the model appropriately weights evidence by quality rather than quantity.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts the benchmarking framework but says an element is missing: evaluation should test whether a model calibrates to evidence quality, distinguishing precise, well-characterized evidence from observational, surrogate, or interpretation-heavy data, since more data can raise precision without addressing bias or validity.",
+      "summary_cut": false,
+      "source_passage": "My recommendation is simple: add evidence-quality calibration to the evaluation of generative AI-enabled medical devices. A model should distinguish between precise, well-characterized evidence and large amounts of observational, surrogate, or interpretation-heavy data. More data can increase precision without fixing bias or establishing validity."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that models may simply reproduce prevailing clinical consensus rather than recognize the limits of the underlying evidence, and that standard benchmarks may not detect this.",
+      "requested_fda_action": "Add a benchmarking test built on historical medical reversals—supplying a model only the literature available immediately before a landmark trial overturned prevailing assumptions—and assess whether the model acknowledges evidentiary limits rather than echoing consensus.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Suggests supplementing FDA's benchmarking approach with tests based on historical medical reversals: give the model only pre-trial literature and assess whether it recognizes the limits of the available evidence rather than reproducing the prevailing consensus.",
+      "summary_cut": false,
+      "source_passage": "FDA could test this directly by using historical medical reversals. Give a model the literature available immediately before a major trial overturned prevailing assumptions, and evaluate whether it recognizes the limits of the evidence rather than simply reproducing the consensus."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "unclear",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter contends that a GenAI system should not treat all textual sources as equally authoritative and must grade the quality of evidence it relies on. Without a characterized reference anchor, benchmarking lacks a fixed standard for truth.",
+      "requested_fda_action": "Establish or require use of characterized clinical reference datasets that serve as calibrated ground-truth anchors for medical AI evaluation, analogous to calibration weights for hardware devices or atomic clocks for timepieces.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter argues generative AI should grade source text's evidentiary quality rather than treat all text equally, and calls for characterized clinical reference datasets as calibrated ground-truth anchors, analogous to calibration weights or atomic clocks. No explicit position on FDA's framework is stated.",
+      "summary_cut": false,
+      "source_passage": "An\n\nAI\n\nshould\n\nnot\n\ntreat\n\nall\n\ntext\n\nas\n\nequal.\n\nIt\n\nneeds\n\nto\n\ngrade\n\nthe\n\nevidence:\n\n●\n\nCharacterized\n\nGround\n\nTruth:\n\nHardware\n\ndevices\n\nuse\n\nstandard\n\ncalibration\n\nweights.\n\nTimepieces\n\nuse\n\nan\n\natomic\n\nclock.\n\nMedical\n\nAI\n\nneeds\n\nthe\n\nsame\n\nthing:\n\nclinical\n\nreference\n\ndatasets\n\nthat\n\nact\n\nas\n\nthe\n\nanchor\n\nfor\n\nreality."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter argues that a medical AI's expressed confidence should not rest on proxies such as an author's h-index or a paper's citation count, because medical literature is prone to 'citation snowballing' in which repeated citation creates an appearance of certainty around a fragile empirical base.",
+      "requested_fda_action": "The passage implies that evaluation of GenAI clinical knowledge and analytic capability should test whether the device appraises the structural integrity of underlying study designs rather than the popularity or citation volume of a conclusion.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Comment addressing evaluation of clinical knowledge and analytic capability argues that a medical AI's confidence should not rest on citation counts or author prestige, since citation snowballing can create false certainty; it should instead assess the structural integrity of study designs.",
+      "summary_cut": false,
+      "source_passage": "This\n\nis\n\nwhy\n\na\n\nmedical\n\nAI\n\ncannot\n\nlean\n\non\n\nan\n\nauthor's\n\nh-index\n\nor\n\na\n\npaper's\n\ncitation\n\nvolume\n\nto\n\njustify\n\nits\n\nconfidence.\n\nMedical\n\nliterature\n\nis\n\nprone\n\nto\n\ncitation\n\nsnowballing:\n\nonce\n\na\n\nplausible\n\nhypothesis\n\nenters\n\nthe\n\necosystem,\n\nsubsequent\n\npapers\n\ncite\n\nit\n\nrepeatedly,\n\ncreating\n\nan\n\necho\n\nchamber\n\nof\n\napparent\n\ncertainty\n\naround\n\na\n\nfragile\n\nempirical\n\nbase.\n\nThe\n\nAI\n\nmust\n\nevaluate\n\nthe\n\nstructural\n\nintegrity\n\nof\n\nthe\n\nstudy\n\ndesign,\n\nnot\n\nthe\n\npopularity\n\nof\n\nthe\n\nconclusion."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "unclear",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter emphasizes that a GenAI device should be able to recognize weak evidence, communicate uncertainty clearly, and defer to clinical judgment, rather than always producing an answer.",
+      "requested_fda_action": "The passage states an evaluation objective centered on uncertainty recognition, clear communication of uncertainty, and appropriate handoff to clinician judgment, but does not specify a concrete requested FDA action.",
+      "confidence": "low",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment frames performance in terms of the device knowing when to hand off to clinical judgment, which concerns the combined clinician-device interaction rather than model output alone."
+      },
+      "public_summary": "Brief statement of an evaluation objective: a GenAI device should recognize weak evidence, communicate uncertainty clearly, and know when to defer to clinical judgment, rather than always producing an answer. No explicit position on FDA's proposed benchmarking framework is stated.",
+      "summary_cut": false,
+      "source_passage": "The objective is not an AI that always gives an answer. It is an AI that can recognize when the evidence is weak, communicate that uncertainty clearly, and know when clinical judgment must take over."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q3",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Subgroup analyses that demonstrate only statistical or mathematical parity across groups may not show that a device is actually safe, usable, and clinically effective for populations facing health-literacy, language, or technology barriers.",
+      "requested_fda_action": "Frame subgroup evaluation around whether the device is safe, usable, and clinically effective for each population, including those with literacy, language, or technology barriers, rather than treating numerical performance parity as sufficient evidence of equitable outcomes.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment asks that evaluation address usability and real-world effectiveness for users with literacy, language, or technology barriers, not just model-level statistical performance."
+      },
+      "public_summary": "Supports subgroup evaluation but asks FDA to define it in terms of whether the device is safe, usable, and clinically effective for each population, including users facing health-literacy, language, or technology barriers, rather than relying on statistical parity alone.",
+      "summary_cut": false,
+      "source_passage": "Subgroup evaluation should likewise focus on whether a device is safe, usable, and clinically effective for each population, including people facing health-literacy, language, or technology barriers, rather than assuming that mathematical parity alone produces equitable outcomes."
+    }
+  ]
+}

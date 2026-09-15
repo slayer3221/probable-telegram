@@ -1,0 +1,181 @@
+Comment on Docket No. FDA-2026-N-7874 &mdash; Considerations for the Regulation of Generative AI-Enabled Medical Devices.<br/><br/>This comment responds to Discussion Question 15. The full response is attached as a PDF.<br/><br/>Submitted by Everett Christman, The Christman AI Project / Luma Cognify AI. LLC
+
+[Attachment: Comment from The Christman AI Project Luma Cognify AI. LLC]
+FDA-2026-N-7874 — Question 15
+1
+The Christman AI Project
+Comment on Docket No. FDA-2026-N-7874
+Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and
+Request for Feedback
+Question addressed
+Question 15 (Section V.C) — performance relative to the absence of the device
+Submitted by
+Everett Christman, Founder
+Organization
+The Christman AI Project / Luma Cognify AI
+Basis of comment
+Direct field measurement, 2026-09-03; instrumentation records retained
+The question as posed
+Are there ways in which performance might be assessed relative to the care, technology, or course of action
+likely to occur in the absence of the device, rather than to the comparators described in this section? What
+approaches might be used to identify and justify a comparator such as unaided clinical judgment, delayed
+specialist review, or no intervention?
+Summary of position
+Yes, and for one class of device it is the only comparator that describes reality. For augmentative and
+alternative communication, the absence of the device is not a slower or less expert version of the same
+function. It is the absence of the function. There is no unaided clinical judgment to fall back on, because the
+judgment being aided is the user's own expression, and no clinician can supply it.
+We submit one structural point that we believe is not yet reflected in Section V.C, and that the
+absence-of-device comparator makes visible where the panel and standard-of-care comparators do not:
+  Device performance is not bounded below by the no-device baseline. A comparator framework built
+on panels or standard of care implicitly treats the device as adding some amount of benefit between zero
+and the expert ceiling. A generative device that fabricates output does not land at zero. It lands below it,
+because the no-device condition produces no false record and the device does.
+ In field measurement on 2026-09-03, 39 of 136 transcribed words — twenty-nine percent — were
+produced from audio windows carrying no live signal. In the absence of the device those words do not
+exist. With the device they exist, are fluent, and are attributed to the speaker.
+ For this population the fabricated sentence is not a degraded output. It is an utterance entered into the
+record under the user's name, by a user who cannot contest it.
+1. What “absence of the device” means when the function is expression
+Section V.C offers unaided clinical judgment, delayed specialist review, and no intervention as candidate
+comparators. The first two assume a human professional performs the function more slowly or less expertly
+without the device. That assumption holds for a diagnostic aid. It does not hold here.
+For a nonverbal user, the function is speech. In the absence of the device there is no delayed specialist, no
+unaided equivalent, and no slower path to the same output. The comparator is the third one on CDRH's list
+— no intervention — and for this population no intervention has a specific operational meaning: the user's
+
+FDA-2026-N-7874 — Question 15
+2
+The Christman AI Project
+intent is not expressed at all, and no record of it enters the world.
+This has a consequence for how benefit is measured. Against a panel comparator, a device that produces a
+plausible but wrong output scores as a partial success. Against the absence comparator, the same output is a
+categorical harm, because the counterfactual is not a worse sentence. It is no sentence.
+2. The measured case, and why it inverts the sign
+The evidence below is drawn from the same measurement record submitted with our comment on Question
+24 and is available to CDRH on request. Three screen recordings were captured between 01:27 and 02:42 on
+2026-09-03 while dictating into the built-in speech-to-text of a commercial AI assistant application. Audio
+was extracted to 16 kHz mono PCM and examined in contiguous 250 ms windows across the full duration of
+each file, measured by the count of distinct 16-bit sample values per window.
+Live speech windows in these files carry 7,000 to 12,000 distinct values. Windows in which capture had
+failed collapse to single digits, with one constant held across thousands of consecutive samples. Loss rose
+across the session:
+Recording
+Audio carrying no signal
+Share of file
+REC1
+14.00 s of 197.4 s
+7.1%
+REC2
+40.25 s of 210.4 s
+19.1%
+REC3
+31.00 s of 73.5 s
+42.2%
+Transcribed with a widely deployed open-weights speech recognition model under the submitter's control,
+REC3 produced 136 words. Thirty-nine of them fall inside windows carrying no live signal. One sequence,
+spanning 20.00 to 25.25 seconds — six distinct sample values, 99% of samples on a single constant — was
+rendered as the phrase “stopped me right,” which reassembles into the speaker's own description of the
+failure. In a second recording the transcriber produced a grammatical sixteen-word sentence across a dead
+region the speaker had not spoken into.
+Now apply each comparator to that sixteen-word sentence.
+Comparator
+How the fabricated sentence scores
+Panel of qualified clinicians
+A wrong output. Scored against a correct one; partial credit possible.
+Standard of care
+Below standard. Still on the scale.
+Median clinician in practice
+An error of the kind a human might also make. Comparable.
+Absence of the device
+An utterance that would not exist. No partial credit is available;
+the counterfactual contains nothing to be worse than.
+Only the fourth row records what actually happened. The first three describe a device that underperformed.
+The fourth describes a device that manufactured a fact.
+3. Why the absence comparator cannot simply replace the others
+We are not proposing that absence of the device become the primary comparator for GenAI-enabled devices
+generally. It is a poor instrument for measuring benefit. Against no device at all, almost any functioning
+
+FDA-2026-N-7874 — Question 15
+3
+The Christman AI Project
+system looks excellent, and a sponsor permitted to choose it would be choosing the weakest available bar.
+Its value is the opposite of a benchmark. It is a floor test. The panel and standard-of-care comparators
+answer how good is this device. The absence comparator answers a different and narrower question: does
+this device ever produce an output that is worse than nothing. Those are not the same measurement and a
+device can pass the first while failing the second.
+We therefore recommend the absence comparator be used alongside, not instead of, the comparators in
+Section V.C — and specifically as a pass/fail gate rather than a scored dimension. A device that produces
+fabricated output over null input has failed regardless of how well it performs on the panel comparator,
+because the two results are measuring different things and the good one does not offset the bad one.
+4. Identifying and justifying the comparator
+Responsive to the second half of Question 15. We propose three tests a sponsor can apply to determine
+whether the absence comparator is required for a given device, and to justify the choice.
+ 1. Is there a human who performs this function without the device?
+If yes — a clinician reading the scan unaided, a specialist reviewing tomorrow — the comparators in
+Section V.C apply and the absence comparator adds little. If no, the device is not accelerating or
+improving a task that would otherwise be performed. It is the only path to the output existing at all, and
+the absence comparator is the only one describing the real counterfactual. AAC, and any device whose
+function is the user's own expression, falls on this side.
+2. Can the user detect and contest an incorrect output?
+This determines whether a downstream safeguard exists. An HCP reading a wrong summary can reject
+it. A nonverbal user cannot review a sentence attributed to them, and in many deployments no one
+present knows what the user intended to say. Where the user is also the only person who could catch the
+error, output the user cannot verify is unrecoverable, and the absence comparator should be mandatory.
+3. Does an incorrect output leave a durable record attributed to the user?
+A transient wrong answer on screen and a fabricated utterance entered into a care record are different
+harms. Where the device's output persists and carries the user's name, the no-device condition is
+materially safer than an incorrect output, and the comparison should be made explicitly rather than
+absorbed into an aggregate accuracy figure.
+A device answering no, no, yes to those three should be evaluated against the absence comparator as a
+condition of clearance, not as an optional supplementary analysis.
+5. The measurement this implies, and it is inexpensive
+The absence comparator is cheap to operationalize for devices that ingest sensor input. The test is to present
+the device with input containing no valid signal and record whether it produces output.
+This is the same element we recommended under Question 24 and it does double duty here. Under the panel
+comparator there is nothing to compare a null-input response against, because a clinician panel is never
+asked to interpret a dead microphone. Under the absence comparator the acceptance criterion is exact and
+requires no clinical judgment: output produced from input carrying no signal is a failure, scored as a
+failure, regardless of how plausible the output is. No panel, no adjudication, no inter-rater reliability. It is
+
+FDA-2026-N-7874 — Question 15
+4
+The Christman AI Project
+fully automatable and it directly detects the behavior measured above.
+We note that the drafted benchmarking element S.3 treats presenting information with false confidence as a
+safety failure. We recommend the element be read to include confidence in the premise that input was
+received at all, and that the absence comparator is the framing under which that failure becomes measurable
+rather than merely describable.
+6. Scope, and what we are not claiming
+The measurements above were taken on a commercial AI assistant application, not on a regulated medical
+device, and we do not present them as evidence about any cleared product. They are offered because the
+failure class is architectural rather than product-specific: a capture path that stops delivering samples, and a
+generative transcriber downstream that produces fluent text anyway. Any device combining sensor ingest
+with a generative model can exhibit it.
+We also do not claim the absence comparator resolves the harder problem in Question 15, which is
+justifying a comparator for devices where a human alternative does exist but is unavailable in practice —
+rural deployment, after-hours coverage, specialist scarcity. That case requires reasoning about access that
+our evidence does not speak to, and we take no position on it.
+What we do claim is narrow and we believe it is testable: for devices whose function is the user's own
+expression, no other comparator in Section V.C describes the counterfactual, and a scoring framework that
+omits the absence comparator will record a fabricated utterance as partial credit.
+7. Evidence and reproducibility
+The three source recordings, extracted PCM audio, word-level transcripts, frame captures at each failure
+point, and the full measurement record with window parameters are retained and available to CDRH on
+request. SHA-256 digests of the unaltered source recordings were computed at the time of archiving. Every
+figure above derives from those files and can be regenerated using the stated window parameters. This
+comment shares its evidence base with our comment on Question 24; the measurement record is the same
+and is submitted once.
+8. About this submission
+The Christman AI Project builds augmentative and alternative communication systems for nonverbal and
+neurodivergent users, cognitive support for dementia care, and related assistive technology. The submitter is
+autistic and builds for this population directly.
+The reason this question matters more than its placement in Section V.C suggests is that the population most
+affected by the choice of comparator is the population least able to appear in the evidence used to make it. A
+user who cannot speak cannot report that the device spoke for them incorrectly. The comparator is the only
+place in the framework where that asymmetry can be made visible, because it is the only one that asks what
+would have been in the record had the device not been there. For the users we build for, the answer is
+nothing — and nothing is sometimes the safer result, which is exactly the finding a panel comparator cannot
+produce.
+Measurements dated 2026-09-03. Submitted to Docket FDA-2026-N-7874, comment period closing 2026-10-19. Contact:
+contact@thechristmanaiproject.com

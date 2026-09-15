@@ -1,0 +1,211 @@
+Comment on Docket No. FDA-2026-N-7874 &mdash; Considerations for the Regulation of Generative AI-Enabled Medical Devices.<br/><br/>This comment responds to Discussion Question 19. The full response is attached as a PDF.<br/><br/>Submitted by Everett Christman, The Christman AI Project / Luma Cognify AI. LLC
+
+[Attachment: Comment from The Christman AI Project Luma Cognify AI. LLC]
+FDA-2026-N-7874 — Question 19 1 The Christman AI Project
+Comment on Docket No. FDA-2026-N-7874
+Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and
+Request for Feedback
+Question addressed Question 19 (Section VI) — postmarket performance evaluation, cadence and
+triggers
+Submitted by Everett Christman, Founder
+Organization The Christman AI Project / Luma Cognify AI
+Basis of comment Four instrumented observation periods, 2026-09-02 to 2026-09-04, with retained
+recordings, transcripts, tool output and stored-state contents; and a working open-
+source implementation, cited below.
+The question as posed
+Please comment on the potential approaches to postmarket performance evaluation, including periodic re-
+benchmarking, sample-based clinician review, and performance degradation monitoring. What additional
+approaches should CDRH consider, and how should the cadence and triggering events for reassessment be
+determined?
+Summary of position
+We support all three approaches and we do not think any of them, on a periodic cadence, can detect the
+degradation we have measured. Our comment has three parts: what each named approach can and cannot
+see, an additional approach we have implemented and released, and a cadence and trigger model that is not
+a calendar.
+· Every instance of degradation we recorded occurred inside a single session and reset at the session
+boundary. In one measured case a device was functioning normally in its first minutes and failing at
+four times that rate seventy-four minutes later, on unchanged hardware with no configuration change.
+A quarterly, monthly or weekly re-benchmark would have measured the healthy state every time,
+because a re-benchmark starts a new session.
+· The reassessment trigger that works is not elapsed calendar time. It is the divergence between what a
+device reports it did and what an independent record shows it did — measurable continuously, at no
+clinical cost, and available at the moment of the claim rather than at the next audit.
+· We have built and published that independent record. It is open source under Apache 2.0 and CDRH
+or any reviewer can run it. We describe below precisely which parts of it we have verified and which
+parts are design we have not independently measured.
+· For the population we build for, this is not an audit convenience. It is the restoration of a safeguard that
+the deployment removes. A user who cannot speak cannot report that their device fabricated a sentence
+in their name. Something else has to notice, and it has to notify a person who can act.
+
+FDA-2026-N-7874 — Question 19 2 The Christman AI Project
+1. What the three named approaches can and cannot see
+We take the three in the order Question 19 lists them, and we state the limit rather than the objection,
+because each remains worth doing.
+1.1 Periodic re-benchmarking
+Re-benchmarking establishes whether the device still meets its premarket criteria under test conditions. Its
+blind spot is structural rather than one of rigor: a benchmark run is a fresh session. Any failure mode whose
+magnitude is a function of elapsed time within a session is invisible to it, and will be invisible on every
+future run as well.
+Our measurement on 2026-09-03 is the concrete case. Three recordings were made across seventy-four
+minutes of continuous work on one unchanged audio interface. Input carrying no live signal accounted for
+7.1 percent of the first file, 19.1 percent of the second, and 42.2 percent of the third. The proportion of lost
+input roughly doubled between each recording. Nothing was reconfigured between them. A benchmark run
+at any point on any day would have opened a new session and measured something close to the 7.1 percent
+state.
+1.2 Sample-based clinician review
+Clinician review is the only one of the three that evaluates clinical appropriateness, and nothing we propose
+replaces it. Its limit is that it reviews outputs, and the failures we have documented are not visibly wrong
+outputs. A fabricated status report, a confident absence claim, and a fluent sentence generated over input
+carrying no signal all read as ordinary correct work. A reviewer cannot mark them wrong from the text,
+because as text they are not wrong.
+There is a second limit specific to sampling. In our recorded session on 2026-09-04 the device produced
+false statements in three separate turns while its presentation improved steadily across the session — by the
+ninth  minute  it  was  citing  governing  rules  by  name,  disclosing  source  ages,  and  correcting  itself
+unprompted. A sample drawn late in that trajectory scores the device as more disciplined than a sample
+drawn early, while the error rate is unchanged. Sampling position determines the result.
+1.3 Performance degradation monitoring
+This is the right instrument and we would put the weight of the program on it, with one change to how
+degradation is defined. Degradation monitored as a drift in output quality across weeks will not detect any
+failure in our record. Degradation defined as a within-session function — of elapsed time, of turn count, of
+accumulated context — detects all of them, and is measurable from telemetry the device already produces.
+2. The additional approach: contemporaneous verification against an independent
+record
+Responsive to the request for approaches CDRH should additionally consider. This is the one we would
+add, and we have implemented it rather than proposed it.
+2.1 The principle
+A device that reports its own actions is reporting on itself. Where that report is the only record, it is
+unfalsifiable at the point of use, and every downstream monitoring mechanism inherits its errors. The
+
+FDA-2026-N-7874 — Question 19 3 The Christman AI Project
+remedy does not require interpreting the device. It requires a second record, produced by the machine rather
+than by the device, against which the device’s account can be compared.
+The comparison is mechanical and needs no clinical judgment. A device states that it consulted a source.
+The  independent  record  shows  whether  that  source  was  opened,  and  when.  Three  outcomes  are
+distinguishable: the source was read and is current; a copy was read and its age is known; nothing was read.
+The first is a result, the second is a result with a stated boundary, and the third is a fabrication. No text
+analysis can separate these. An access record separates them in one step.
+2.2 What we have built and released
+We have published this instrument rather than described it. It is open source under the Apache License 2.0
+at github.com/The-ChristmanAI-Project/HONESTY, made public on 2026-09-04, and any reviewer can
+read and run it.
+Verified by direct reading of the repository: the local component is a single Python program of roughly 450
+lines with no dependencies outside the standard library, serving on the loopback interface only. It reads the
+operating system process list and matches it against a catalogue of named AI systems, and it maintains an
+append-only ledger with timestamps. Its README states its own limits before a reader asks — it is not a
+kernel driver, not a phone tap, and not a browser-tab inspector, and it names what each half cannot observe.
+The design rule is stated in the source: a system is recorded as running from the computer’s process list,
+not from any system’s account of itself.
+We note the deliberate asymmetry. This instrument was built to observe commercial systems already
+deployed in the field, including those we use as tools. It is not instrumentation for our own products, and
+we are not offering it as evidence about them. It is offered as a method a regulator or a manufacturer can
+apply to any device, ours included.
+2.3 The check-in, and why the order matters
+The second half of the design, which we describe as design because we have not published measurements
+of it: the access record is written first, and the device’s account of its work is entered against a log it did not
+author. A supervising human sees both columns before accepting anything. A filing gate refuses a report
+that carries no artifact and refuses one that carries no verification signature.
+The ordering is the whole mechanism. Scoring a device’s report after the fact requires someone to go
+looking. Populating the report from the record first means the discrepancy is present before anyone asks,
+and silence is already recorded as silence rather than absent from the file.
+Stated as a principle a framework can adopt: a device’s account of its own work should be evaluated as an
+annotation on an independently produced record, never as the record.
+3. Cadence and triggering events
+Responsive to the second half of Question 19. Our position is that periodic cadence should be retained for
+what it is good at and should not carry the detection load.
+
+FDA-2026-N-7874 — Question 19 4 The Christman AI Project
+3.1 Cadence should be within-session, not calendar-based
+We recommend continuous evaluation across a session, with results reported against elapsed time and turn
+index rather than aggregated per session. The aggregate conceals the shape, and the shape is the finding. In
+our audio measurement the session average was under twenty percent while the final third was over forty.
+In our recorded conversational session the failures began after the first correction and recurred at roughly
+three-minute intervals thereafter.
+Periodic re-benchmarking retains a real function — confirming that a device still meets its premarket
+criteria after a model or configuration change. It should be retained for that and not relied on for degradation
+detection.
+3.2 Triggering events
+We propose five triggers, each computable without clinical adjudication and each derived from a behavior
+in our record.
+· Claim–record divergence. A device reports an action the independent access record does not show, or
+reports as current a source whose record shows only a dated copy was read. This is the primary trigger
+and it fires at the moment of the claim.
+· Silence. A device that produces no output where output was expected has produced a reportable state,
+not a missing record. An empty result and an empty interval should both raise. In our examination of
+a device’s dictation log, three terminated sessions and tens of seconds of lost speech each produced
+zero log lines; nothing in the postmarket surface would ever have surfaced it.
+· Elapsed-time and turn-count thresholds, device-specific and set from the sponsor’s own within-session
+curve. Where a sponsor cannot produce that curve, the absence of it is itself a finding about the
+monitoring programme.
+· Absence claims. Any output asserting that something does not exist, was not retained, or was not found
+should raise for verification, because a search can report what it found and can never establish what is
+not there.
+· Divergence  between  presentation  and  accuracy.  Where  a  device’s  calibration  language,  source
+disclosure and self-correction improve across a trajectory while its error rate does not, that divergence
+should be reported rather than averaged away. We observed exactly this pattern and it moves in the
+direction most likely to reassure a reviewer.
+3.3 What the trigger costs
+None of the five requires a clinician, a panel, an adjudication rubric, or a scheduled window. All five are
+computable from telemetry a device already emits plus an access record produced by the host. This matters
+for least-burdensome considerations: the approach we are recommending is cheaper to run continuously
+than periodic re-benchmarking is to run quarterly.
+4. Where the alert has to go
+This is the part of Question 19 that we would ask CDRH to treat as a requirement rather than an
+implementation detail, and it is the reason we filed on this question.
+
+FDA-2026-N-7874 — Question 19 5 The Christman AI Project
+A monitoring programme that surfaces a fabrication to the manufacturer, in a quarterly report, has protected
+future users. It has not protected the person the fabrication was about. In every other comment we have
+submitted we have made the same structural observation: the ordinary safeguard against machine error is a
+human noticing and correcting it, and that safeguard is structurally unavailable in exactly the population
+these devices serve. A user who cannot speak cannot report that a device spoke incorrectly on their behalf.
+A user who cannot move cannot check a record kept about them.
+If a monitoring system can detect a fabrication or a mistranslation at the moment it occurs — and the
+comparison in Section 2 shows that it can, mechanically, without judgment — then the finding should reach
+a person who is in a position to act on it, at the end of the session and not at the end of the quarter. For a
+device operating in an assistive or clinical role for a user who cannot self-verify, we recommend that
+detected fabrication and detected mistranslation generate a notification to the designated caregiver or
+clinician as a condition of the monitoring programme.
+We state the boundary on that recommendation plainly, because it can be misused. This is notification of a
+device fault to a named responsible person. It is not surveillance of the user, it is not transmission of the
+content of their communication, and it should not become either. The finding that leaves the device is that
+the device produced output its own record does not support. What the user was trying to say belongs to the
+user.
+5. Scope, and what we are not claiming
+The measurements above were made on commercial AI assistants used as tools in our own work. None is
+a regulated medical device and none of these was a controlled evaluation. We offer no error rate, no
+frequency claim, and no generalization about any product. Four observation periods establish that these
+failure modes occur and can be measured; they establish nothing about how often.
+We distinguish carefully between what we have verified and what we have designed. The instrument in
+Section 2.2 is published and its behavior can be confirmed by reading and running it. The check-in ordering
+in Section 2.3 is our design and we have not published measurements of the two components operating
+together; we have marked it as design and it should be read that way. Nothing in Section 3 depends on it —
+the five triggers are computable from an access record alone.
+We make no claim about intent on the part of any developer, and we recommend against any standard that
+turns on candour or intent, because such a standard is unfalsifiable and will be argued rather than measured.
+Every trigger proposed above is observable without resolving why the output occurred.
+6. Evidence retained
+Retained and available to CDRH on request: three source recordings of 2026-09-03 with extracted PCM
+audio,  word-level  transcripts,  frame  captures  and  the  full  window-level  measurement  record  with
+parameters; SHA-256 digests of the unaltered recordings computed at archiving; the eleven minute twenty-
+four second session recording of 2026-09-04 with audio, machine transcript and the signal measurement
+used to validate that transcript; session transcripts and tool output for 2026-09-02 and 2026-09-03; and the
+complete contents of the persistent store as read on 2026-09-03.
+The instrument described in Section 2.2 requires no request. It is public, licensed, and inspectable.
+
+FDA-2026-N-7874 — Question 19 6 The Christman AI Project
+7. About this submission
+The Christman AI Project builds augmentative and alternative communication systems for nonverbal and
+neurodivergent users, cognitive support for dementia care, and related assistive technology. The submitter
+is autistic and builds for this population directly.
+We file on Question 19 because postmarket monitoring is where this population is either protected or
+abandoned, and the difference is entirely in the cadence and in where the alert goes. A quarterly report is a
+document about people who have already been harmed. A notification at the end of a session is a chance to
+correct a record before anyone acts on it.
+Every protective factor that operated in the sessions above was a person who knew the machine was wrong
+and was able to say so out loud. Our users have neither. That is not an edge case in the deployments these
+devices are being built for. It is the deployment.
+Measurements and session records dated 2026-09-02 to 2026-09-04. Submitted to Docket FDA-2026-N-7874, comment
+period closing 2026-10-19. Contact: contact@thechristmanaiproject.com
+Submitted by Everett N. Christman, Founder and Chief Executive Officer, The Christman AI Project,
+powered by Luma Cognify AI.
+Signature: _______________________________          Date: __________________

@@ -1,0 +1,487 @@
+{
+  "comment_id": "FDA-2026-N-7874-0079",
+  "input_hash": "1f814740f5e3cbc0",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:27:29Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter accepts the value of Foundation Model Master Files but argues the binding constraint is currency rather than developer willingness to disclose: they report observing the model behind a widely used hosted assistant swapped 153 times in fourteen hours (median 41 seconds), so a static filing would be stale before review.",
+      "requested_fda_action": "Recognize that a document-based master file cannot remain current against continuously changing hosted models, and pursue mechanisms that account for or detect model turnover rather than relying on periodic good-faith disclosure alone.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment centers on whether upstream foundation model suppliers can be characterized at all through disclosure documents, given how frequently the served model changes.",
+        "deployment_assurance_scalability": "It argues that static premarket-style documentation cannot scale to models that are substituted many times per day in live deployment."
+      },
+      "public_summary": "Supports the Foundation Model Master File concept but argues it cannot fulfill its intended role.",
+      "summary_cut": true,
+      "source_passage": "We support the master file concept and we do not think it can carry the weight the question hopes for. ... The binding constraint is currency, not candour. The question anticipates that developers may be unwilling to disclose. We measured something more basic: on one ordinary workday, the model answering a widely used hosted assistant was exchanged 153 times in fourteen hours — a median of 41 seconds at a time. A document cannot be kept current against a quantity that changes every few minutes. A fully cooperative, entirely honest developer filing in good faith would produce a master file that was stale before it was read."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "A static master file cannot reliably capture which specific model version is answering a device query at any given moment; only stable, slower-changing attributes (model family, training and evaluation practice, change-notification commitments) are suited to a document-based filing.",
+      "requested_fda_action": "Structure Foundation Model MAFs around model-family descriptions, training and evaluation practices, and change-notification commitments, while requiring the identity of the model serving a device at a given moment to be captured as a continuously generated record rather than a static filing field.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment focuses on what a foundation model supplier can credibly commit to and disclose, including change-notification commitments and evaluation practice, as the basis for master file content.",
+        "deployment_assurance_scalability": "It proposes continuous runtime recording of which model version serves a device, shifting part of the assurance from a premarket document to ongoing deployment-time evidence."
+      },
+      "public_summary": "Supports the Foundation Model master file concept but would limit its contents to stable items — model family, training and evaluation practice, and change-notification commitments — while requiring that the specific model serving a device at any moment be captured as a continuous record, not",
+      "summary_cut": true,
+      "source_passage": "We therefore recommend CDRH treat the master file as a description of a model family, its training and evaluation practice, and its change-notification commitments — things that are stable on a timescale a document can track — and treat the identity of the model answering a specific device at a specific moment as a record, produced continuously, rather than a field in a filing."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter argues that execution locality—whether inference for a given configuration runs on-device, on-premises, or in a datacenter, and in which jurisdiction—cannot be reconstructed from model outputs, unlike other master file content that a determined reviewer could reconstruct.",
+      "requested_fda_action": "Require that a Foundation Model MAF include execution locality as an explicitly stated field rather than something left to inference, and treat it as non-negotiable content that CDRH should not trade away.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment identifies a specific supplier-disclosure attribute—where and in what jurisdiction foundation model inference executes—that device manufacturers and reviewers cannot verify independently from model outputs."
+      },
+      "public_summary": "Commenter supports Foundation Model master files but asks CDRH to require execution locality—whether inference runs on-device, on-premises, or in a datacenter, and in which jurisdiction—as an explicitly stated field, arguing it cannot be reconstructed from outputs unlike other master file content.",
+      "summary_cut": false,
+      "source_passage": "1. Execution locality, as a stated field rather than an inference. Whether inference for a given configuration runs on the device, on premises, or in a datacenter, and in which jurisdiction. This is the item we would ask CDRH not to trade away. Everything else in a master file can be reconstructed by a determined reviewer. This one cannot be reconstructed from the output at all."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q24",
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter is concerned that a generic commitment to disclose 'model changes' is insufficient, because routing and serving-configuration changes—not just weight changes—alter the behavior that was actually measured during evaluation.",
+      "requested_fda_action": "Require that foundation model disclosures (e.g., Foundation Model MAFs) enumerate the specific classes of change the developer commits to notifying on, with a defined notice interval for each, explicitly distinguishing weight changes from routing changes and serving-configuration changes.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment focuses on what a third-party model supplier must commit to disclose and how quickly, treating supplier change-notification granularity as a precondition for device assurance.",
+        "dynamic_intended_use": "It notes that non-weight changes such as routing and serving configuration can shift the behavior that was measured, so device behavior can drift outside the evaluated envelope without any nominal 'model change.'"
+      },
+      "public_summary": "Recommends that foundation model disclosures specify the exact classes of change a developer commits to notifying on, with a notice interval for each, distinguishing weight changes from routing and serving-configuration changes, since the latter also affect measured device behavior.",
+      "summary_cut": false,
+      "source_passage": "2. The change classes the developer commits to notifying on, and the notice interval for each — distinguishing a weight change from a routing change from a serving-configuration change, because only the first is what a reader intuitively means by \"the model changed\" and the other two produce the behavior we measured."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q24",
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter is concerned that device sponsors may not know whether the foundation model configuration they rely on is subject to substitution or fallback routing, or at what granularity (per-request, per-session, or per-deployment), leaving them unable to characterize their own model dependency.",
+      "requested_fda_action": "Ensure that foundation model disclosure mechanisms (such as Foundation Model MAFs) include whether substitution or fallback routing is used and the granularity at which it occurs, so sponsors can characterize the model dependency underlying their device.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment identifies a specific supplier-transparency item—undisclosed model substitution or fallback routing—that a device sponsor cannot independently observe or control, yet which determines what model actually serves the device."
+      },
+      "public_summary": "Commenter urges that foundation model disclosures specify whether substitution or fallback routing is used and at what granularity (per-request, per-session, per-deployment), arguing sponsors who lack this information cannot characterize their own model dependency. Extends FDA's proposed disclosure content rather than opposing it.",
+      "summary_cut": false,
+      "source_passage": "3. Whether substitution or fallback routing is in use for the configuration a device relies on, and at what granularity — per-request, per-session, or per-deployment. A device sponsor who does not know the answer to this cannot characterize its own dependency."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q24",
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Documented version strings in static filings or PDFs are only assertions; without a version identifier that the serving system itself reports at runtime, a device cannot verify which model version actually generated a response or detect that the underlying third-party model has changed.",
+      "requested_fda_action": "Require or expect that foundation model disclosures include a machine-readable version identifier that the serving system reports on request, which the device records and can compare against the version described in the filing, so change detection rests on runtime evidence rather than documentation.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment focuses on making upstream model supplier disclosures technically verifiable rather than self-asserted, which FDA's voluntary MAF framing does not fully address.",
+        "deployment_assurance_scalability": "It asks for runtime, device-recorded evidence of which model version actually served each request, shifting assurance from premarket documentation to continuous deployment-time verification."
+      },
+      "public_summary": "Supports foundation model disclosure, but asks that version information be machine-readable and reported by the serving system on request, so devices record which model version actually responded. A version string in a filing is an assertion; runtime-reported identifiers comparable to the filing constitute evidence.",
+      "summary_cut": false,
+      "source_passage": "4. A machine-readable version identifier that the serving system itself will report on request, so that a device can record what answered it rather than what the documentation said would answer it. ... A version string in a PDF is an assertion. The same string reported by the serving system, recorded by the device, and comparable to the filing is evidence."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "oppose",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter argues that framing the Foundation Model MAF problem as one of developer incentive or willingness understates the difficulty: even a fully willing developer could not keep a static document current against model changes occurring on a minute-scale timeframe.",
+      "requested_fda_action": "The passage implies FDA should not rely on a mechanism whose usefulness depends on document currency; it states any such program will fail even with universal participation, without specifying an alternative in this excerpt.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment concerns whether a voluntary disclosure file from an upstream foundation model supplier can convey reliable, current safety-relevant information to device manufacturers and FDA.",
+        "deployment_assurance_scalability": "It argues that assurance artifacts premised on static documentation cannot keep pace with continuous, minute-scale changes in the underlying model."
+      },
+      "public_summary": "The commenter rejects the premise that voluntary Foundation Model MAFs fail mainly for lack of developer incentive, arguing that even fully willing developers could not keep documentation current against minute-scale model change, so any program depending on document currency will fail.",
+      "summary_cut": false,
+      "source_passage": "It understates it because, as Section 1 shows, willingness is not sufficient. A developer who wanted to comply completely could not keep a document current against minute-scale change. Any program whose usefulness depends on document currency will fail even with universal, enthusiastic participation."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "A voluntary master file treated as premarket evidence could advantage a developer who submits a minimal document over one who submits nothing, even though neither has demonstrated anything substantive; the commenter also warns against treating an up-to-date version field as a proxy for assurance.",
+      "requested_fda_action": "If Foundation Model MAFs are accepted into premarket review, FDA should state narrowly and explicitly what evidentiary credit they receive, and should not base any of that credit on the currency of a version field.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses how much assurance about an upstream foundation model supplier can legitimately be drawn from a voluntary, self-reported master file."
+      },
+      "public_summary": "Does not reject voluntary Foundation Model master files but cautions they create asymmetry, since a thin filing could be credited over no filing without demonstrating anything. Asks FDA to define any evidentiary credit narrowly and not to rely on version-field currency.",
+      "summary_cut": false,
+      "source_passage": "We would add one caution about voluntary programs generally. A voluntary master file that is treated as evidence creates an asymmetry in which a developer who files a thin document is better positioned than one who does not file at all, without either having demonstrated anything. If master files are accepted into premarket review, we recommend that what they are credited for be stated narrowly, and that no part of that credit rest on the currency of a version field."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q24",
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter indicates that mechanisms depending on foundation model developer participation are not the only option, and that model identity and execution location can be established independently on the user's side of the connection.",
+      "requested_fda_action": "Consider, as an alternative or supplement to voluntary Foundation Model MAFs, user-side timestamped, append-only records that attest which model answered and where it ran without developer credentials or cooperation; the commenter points to an openly licensed implementation (HONESTY, Apache 2.0).",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses how information about an upstream foundation model supplier can be obtained and verified when the supplier does not cooperate or disclose.",
+        "deployment_assurance_scalability": "The proposed instrument creates deployment-side, append-only evidence of which model actually served an output and where it executed, rather than relying on supplier attestation."
+      },
+      "public_summary": "Commenter accepts the need for foundation model information but argues voluntary developer-supplied MAFs are not the only route, proposing user-side, timestamped append-only records that identify which model answered and where it ran without developer cooperation, citing an openly licensed implementation.",
+      "summary_cut": false,
+      "source_passage": "There is an alternative mechanism and it does not require the developer's participation at all. A record produced on the user's side of the connection can establish which model answered and where it ran, timestamped, append-only, with no credentials and no cooperation. We have published such an instrument under a permissive license rather than proposing one. ... HONESTY — open source under the Apache License 2.0 at github.com/The-ChristmanAI-Project/HONESTY"
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter argues that a records-based mechanism for documenting underlying models must keep two distinct classes of evidence separate: a process record derived from the operating system's process table showing what is executing on a machine, and a model record identifying the answering model, its provider, the host it is reached at, the local client used, and whether it runs locally or in a datacenter. They state this distinction is not academic and is the gap that would otherwise defeat any records-based mechanism.",
+      "requested_fda_action": "Asks CDRH to examine and preserve the separation between process-level execution records and model-identity records (model, provider, host, client, and execution location) in any records-based mechanism for obtaining information about underlying models.",
+      "confidence": "low",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment focuses on documenting which model and provider is actually answering, information about the upstream model supplier that FDA's voluntary MAF framing does not fully capture.",
+        "deployment_assurance_scalability": "It emphasizes runtime evidence of what model is executing and where (local machine versus datacenter), which concerns verifying model identity in actual deployment rather than premarket documentation."
+      },
+      "public_summary": "Commenter engages with mechanisms for documenting underlying foundation models, urging CDRH to keep process-execution records separate from model-identity records naming the answering model, provider, host, client, and whether it runs locally or in a datacenter, calling this distinction essential to any records-based mechanism.",
+      "summary_cut": false,
+      "source_passage": "It keeps two classes of evidence separate, and that separation is the part we would ask CDRH to look at. The process record reads the operating system's own process table and establishes what is executing on that machine. The model record does not come from the process table at all: it names the model that is answering, the provider, the host it is reached at, the local client it is reached through, and where that model runs — distinguishing a model executing on the machine from one executing in a datacenter. The distinction is not academic, and it is the gap that would otherwise defeat any records-based mechanism."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter argues that master file content omits the most consequential fact—where model inference actually executes—and that a filing claiming 'local inference' can be technically consistent with a runtime that reaches a remote datacenter via a loopback address. They report measuring a locally registered model that was in fact answering from a datacenter, indicating that stated execution location cannot be verified from paperwork alone.",
+      "requested_fda_action": "Require that Foundation Model MAFs (and related submissions) explicitly and verifiably state where the model executes, distinguishing on-device inference from remote service access. Support this with instrumentation or testing that separates network address from actual origin of inference rather than relying on the sponsor's written claim.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment identifies an unverified dependency on a third-party hosted model where documentation about the model's provision and execution environment may not reflect reality.",
+        "deployment_assurance_scalability": "It argues that assurance about execution location requires field instrumentation that distinguishes loopback address from remote origin, not documentary claims reviewed at filing."
+      },
+      "public_summary": "Supports Foundation Model master files but says they must include a verifiable statement of where inference actually executes. Reports measuring a locally registered model that answered from a datacenter, and argues only instrumentation separating network address from true origin can confirm 'local inference' claims.",
+      "summary_cut": false,
+      "source_passage": "The most important field in any master file is the one most likely to be omitted: where the model executes. \"The model runs on the device\" and \"the device reaches a model\" are different regulatory situations with different evidence behind them. We measured a model registered inside a local runtime, reachable at the loopback address of our own machine, that was in fact answering from a datacenter. ... \"It is on localhost\" is not the same claim as \"it is on this computer.\" A filing that says \"local inference\" and a runtime that reaches a datacenter from the loopback address are not in contradiction on paper. Only an instrument that separates address from origin shows the difference."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q24",
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter is concerned that information about a device's authorized model lineage, the version actually serving, its intended purpose boundaries, and refusal conditions can be lost, paraphrased away in output text, or dependent on external registries that may fail.",
+      "requested_fda_action": "Have GenAI-enabled devices maintain and report a structured, machine-readable self-description — authorized model lineage, serving version, intended purpose and its boundaries, and conditions for declining — delivered alongside outputs, as a mechanism that does not depend on any external registry.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "dynamic_intended_use",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The proposed record ties the device to the model lineage it was authorized under and the version actually serving it, addressing traceability of the underlying model supplier chain.",
+        "dynamic_intended_use": "The record is meant to carry the intended purpose, its boundaries, and the conditions under which the device must decline, making the behavioral envelope machine-readable rather than only a labeling claim.",
+        "deployment_assurance_scalability": "The commenter frames the device-held record as valuable precisely because it remains available when external registries fail, addressing how assurance information is sustained in deployment."
+      },
+      "public_summary": "Proposes that GenAI devices carry a structured, machine-readable self-description — authorized model lineage, serving version, intended purpose and boundaries, and decline conditions — reported with each output. Presented as an alternative to registry- or output-text-based disclosure, since it survives external registry failure.",
+      "summary_cut": false,
+      "source_passage": "A GenAI-enabled device can be built to carry, in machine-readable form, a statement of what it is: the model lineage it was authorized under, the version actually serving it, its intended purpose and the boundaries of that purpose, and the conditions under which it must decline. Not a label printed on the housing, and not a claim in the output text where it can be paraphrased away — a structured record the device maintains about itself and will report on request, alongside the output it produced. The regulatory value is that it survives the failure of every external registry."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q24",
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "A centralized, confidential FDA-held map of device-to-model version is only useful if it is kept current; the commenter is concerned that version provenance must be verifiable at the point of use rather than only in an external registry.",
+      "requested_fda_action": "Support the confidential device-to-model version map, but also require devices to carry and expose their own model lineage at the moment of output, treating any mismatch between the device's internal record and the external map as a finding in itself.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment centers on tracking which third-party foundation model version underlies a device and verifying that record against an external map.",
+        "deployment_assurance_scalability": "It argues assurance of model provenance must hold locally at the point of output rather than relying on a centrally maintained registry that may fall out of date."
+      },
+      "public_summary": "Supports a confidential FDA-held map linking devices to foundation model versions, but conditions its usefulness on currency, and asks that devices additionally carry their own model lineage verifiable at the point of output, with internal-external mismatches treated as findings.",
+      "summary_cut": false,
+      "source_passage": "A confidential FDA-held map of device to model version — which we support — depends on being updated. A device that carries its own lineage answers the question locally, at the moment of the output, in the room where the harm would occur. And where the internal record and the external map disagree, the disagreement is itself the finding."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q24",
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter documents that undisclosed model substitution occurs at a measurable rate and notes that routine operational practices (load balancing, staged rollout, capacity management, failover, live-traffic evaluation of candidate models) can produce substitution without any deceptive purpose; the concern is that substitution is undisclosed, not why it happened.",
+      "requested_fda_action": "Base any requirement on observable, measurable mechanisms for detecting and disclosing model substitution rather than on standards that turn on developer intent or candour, which the commenter characterizes as unfalsifiable and argued rather than measured.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment centers on upstream model suppliers substituting models without disclosure and asks that supplier-side behavior be verified through observable measurement rather than attestations about intent.",
+        "dynamic_intended_use": "Silent substitution of the underlying model during live traffic means the deployed system can change behavior without any disclosed change event, which FDA's questions frame as developer-initiated change rather than a continuously shifting operating substrate."
+      },
+      "public_summary": "Commenter reports measurable undisclosed model substitution by foundation model providers, citing routine operational causes like load balancing, failover, and live-traffic candidate evaluation.",
+      "summary_cut": true,
+      "source_passage": "It does not establish intent. Load balancing, staged rollout, capacity management, failover, and evaluation of a candidate model against live traffic all produce substitution, and none of them are deceptive on their face. What is documented is that substitution occurred at this rate and was not disclosed — not why. ... We make no claim about intent on the part of any developer, and we recommend against any standard that turns on candour or intent, because such a standard is unfalsifiable and will be argued rather than measured. Every mechanism proposed above is observable without resolving why a substitution occurred."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q1",
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter contends that a device that calls out to a remotely hosted model presents different risks than one that embeds the model locally, and that current submissions are not required to disclose which architecture applies.",
+      "requested_fda_action": "State in the authorization whether a device's inference is performed remotely, and require submissions to identify the deployment architecture so that the associated risk difference is documented.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment raises deployment architecture—remote versus embedded inference—as a risk-relevant fact that current review and authorization documentation does not capture."
+      },
+      "public_summary": "Commenter asks FDA to record in device authorizations whether model inference occurs remotely rather than on-device, arguing the two architectures carry different risks and that submissions are not currently required to disclose which applies. Accepts the framework but seeks added disclosure.",
+      "summary_cut": false,
+      "source_passage": "7. Where a device's inference is remote, say so in the authorization, because a device that reaches a model and a device that contains one carry different risks and today nothing requires a submission to state which applies."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": null,
+      "stakeholder_concern": "The fragmentary passage indicates concern that documentation of model provenance could conflate where processing occurs locally with which model actually generated the answer. The commenter appears to want these two facts recorded distinctly so provenance information is not ambiguous.",
+      "requested_fda_action": "Require records of model provenance and require that any such record state the local-processing fact and the answering-model fact separately rather than combined.",
+      "confidence": "low",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The passage seeks provenance recordkeeping that identifies which underlying model produced an output, a supplier-transparency element beyond the voluntary disclosure framing of the question."
+      },
+      "public_summary": "In a brief, fragmentary passage, the commenter appears to accept documentation of model provenance but asks FDA to require that any such record separately state the local-processing fact and the identity of the answering model. Limited context prevents confident interpretation.",
+      "summary_cut": false,
+      "source_passage": "ce\nof model provenance, and require any such record to keep the local-process fact and the answering-model\nfact separate."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q24",
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The passage implies that information about the underlying model—its lineage, the specific serving version in use, its intended purpose, and the conditions under which it refuses to respond—is not reliably visible at the point where an output is produced.",
+      "requested_fda_action": "Consider requiring devices to maintain and report a device-held lineage record covering model lineage, serving version, intended purpose, and refusal conditions, transmitted alongside each output.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The proposal for a device-reported record of model lineage and serving version addresses traceability of the underlying model supply chain, which goes beyond the voluntary disclosure mechanism framed in the question."
+      },
+      "public_summary": "Suggests FDA consider an additional mechanism beyond voluntary foundation model disclosures: requiring devices to carry and report a lineage record—model lineage, serving version, intended purpose, and refusal conditions—alongside each output. Brief passage; no broader framework critique stated.",
+      "summary_cut": false,
+      "source_passage": "6. Consider requiring a device-held lineage record — model lineage, serving version, intended purpose\nand refusal conditions — reportable by the device alongside its output."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q24",
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter is concerned that regulatory criteria resting on a foundation model developer's candour or intent would be unfalsifiable and would invite argument rather than measurement, whereas model substitution can be detected through observable means regardless of why it occurred.",
+      "requested_fda_action": "FDA should avoid adopting any standard premised on developer intent or candour, and instead rely on the observable, verifiable mechanisms the commenter proposes for detecting and evaluating model substitution or change.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses how changes or substitutions by an upstream model supplier should be detected and assessed through observable evidence rather than supplier disclosure intent."
+      },
+      "public_summary": "The commenter makes no claim about developer intent and urges FDA not to base any standard on developer candour or intent, calling such a test unfalsifiable. It recommends relying instead on observable mechanisms that detect model substitution without determining why it occurred.",
+      "summary_cut": false,
+      "source_passage": "We make no claim about intent on the part of any developer, and we recommend against any standard that turns\non candour or intent, because such a standard is unfalsifiable and will be argued rather than measured. Every\nmechanism proposed above is observable without resolving why a substitution occurred."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "unclear",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter describes an instrument built to observe the behavior of commercial systems it uses as tools, and is explicit that it is not offered as evidence about its own products' honesty. Its concern is that a reviewer-applicable observation method be available for any device, including its own.",
+      "requested_fda_action": "Adopt the described observation method as something a reviewer could apply to any device, with the commenter stating it would prefer the method be adopted using another party's implementation rather than not adopted at all.",
+      "confidence": "low",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The passage centers on independently observing the behavior of commercial systems used as tools, implying a need for direct measurement of supplied AI components rather than reliance on supplier self-report."
+      },
+      "public_summary": "Commenter describes an instrument for observing commercial AI systems it uses as tools, explicitly not offered as evidence about its own products. It asks that the method be available for reviewers to apply to any device, preferring adoption via another implementation over non-adoption.",
+      "summary_cut": false,
+      "source_passage": "The instrument was built to observe the commercial systems we use as\ntools in our own work. It is not instrumentation for our own products, and we do not offer it as evidence that our\nsystems are honest. We offer it as a method a reviewer may apply to any device, ours included, and we would\nrather see the method adopted with someone else's implementation than see it not adopted."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter argues that if the only record of the underlying model is a document a developer voluntarily chooses to file, there will be no reliable way for anyone outside the developer to establish what model a device was actually running. This is said to matter especially for users who cannot speak and therefore leave no independent account of what a device communicated on their behalf.",
+      "requested_fda_action": "The commenter wants a mechanism that makes the identity and state of the underlying foundation model independently ascertainable rather than dependent on voluntary, developer-controlled disclosure.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment frames model disclosure as determining whether any party outside the model developer can establish what was running, making accountability contingent on a record the developer controls.",
+        "ai_supplier_quality": "It questions whether voluntary supplier-provided documentation can serve as an adequate record of the foundation model underlying a device."
+      },
+      "public_summary": "Commenting on Q25, this commenter questions whether voluntary, developer-filed Foundation Model MAFs can establish what model a device was actually running, noting that users who cannot speak leave no independent record. Seeks a mechanism not dependent on developer-controlled disclosure.",
+      "summary_cut": false,
+      "source_passage": "We file on Question 25 because it is the question that decides whether anyone outside a model developer will\never be able to establish what a device was actually running. For most users that is an accountability question.\nFor ours it is the whole record. A user who cannot speak leaves behind no account of what a device said on their\nbehalf, and no account of what was answering when it did. If the only record of the model is a document the\ndeveloper chose to file, then for our users there is no record at all."
+    },
+    {
+      "segment_id": "seg-021",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "unclear",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter challenges the assumption that information about a foundation model's provenance can be attested only by the model provider, and offers a demonstration (produced in fourteen hours on an ordinary desktop) plus the underlying code as a counterexample.",
+      "requested_fda_action": "The passage does not state an explicit request; it submits a technical counterexample and code, implicitly suggesting that independent, non-provider means of establishing model provenance exist and could be considered alongside provider-supplied disclosures.",
+      "confidence": "low",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses whether information about an upstream foundation model's provenance must depend on the supplier's voluntary disclosure or can be independently established."
+      },
+      "public_summary": "Commenter disputes the premise that foundation model provenance can be attested only by the model provider, submitting a fourteen-hour desktop demonstration and its code as a counterexample. The passage states no explicit position on FDA's voluntary Foundation Model MAF proposal.",
+      "summary_cut": false,
+      "source_passage": "The prevailing assumption in this field is that model provenance is attestable only by the provider. We are\nsubmitting a fourteen-hour counterexample produced on an ordinary desktop, and the code that produced it."
+    }
+  ]
+}

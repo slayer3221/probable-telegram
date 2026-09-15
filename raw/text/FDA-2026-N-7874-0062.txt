@@ -1,0 +1,204 @@
+Comment on Docket No. FDA-2026-N-7874 &mdash; Considerations for the Regulation of Generative AI-Enabled Medical Devices.<br/><br/>This comment responds to Discussion Question 24. The full response is attached as a PDF.<br/><br/>Submitted by Everett Christman, The Christman AI Project / Luma Cognify AI. LLC
+
+[Attachment: Comment from The Christman AI Project Luma Cognify AI. LLC]
+1
+FDA-2026-N-7874 — Question 24
+The Christman AI Project
+Comment on Docket No. FDA-2026-N-7874
+Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and Request
+for Feedback
+Question addressed
+Question 24 (Section VI.D) — third-party foundation model changes
+Submitted by
+Everett Christman, Founder
+Organization
+The Christman AI Project / Luma Cognify AI
+Basis of comment
+Direct field measurement, 2026-09-03; instrumentation records retained
+The question as posed
+ For devices built on third-party foundation models, changes to the underlying model may be initiated by
+the third-party model developer rather than the device manufacturer. How can a manufacturer detect,
+evaluate, and respond to such changes in a timely manner? What mechanisms could provide reasonable
+assurance that third-party developer-initiated changes do not compromise the safety or effectiveness of the
+device?
+Summary of position
+Question 24 assumes a manufacturer knows which third-party model its device is using. In field
+measurement conducted on 2026-09-03, that assumption did not hold, and it did not hold on a system
+built and maintained by an engineer actively auditing it. We submit that CDRH should treat component
+identification as a prerequisite to change detection, not as a step already completed.
+ A manufacturer cannot detect a change in a component it has misidentified. Documentation drifts from
+deployment silently and is not a reliable record of what is running.
+ The most consequential failure we measured was not in the model. It was upstream of the model, in audio
+capture, and no model-monitoring program would have seen it.
+ The failure produced no log entry of any kind. A postmarket monitoring program cannot observe an event
+the device declines to record.
+ The residue the failure left behind was indistinguishable from ordinary user behavior. An automated
+reviewer examining the primary evidence concluded, incorrectly and with confidence, that the user had
+simply stopped speaking.
+1. The prior question: which model is actually running?
+Before a manufacturer can evaluate a developer-initiated change, it must be able to state which model, at
+which version, served a given output. We tested that on our own production stack, where the answer should
+have been trivial.
+It was wrong. The transcription function in our media pipeline carried an in-code description stating that
+speech recognition was performed locally by a named open-weights model at a specified file path. The
+
+2
+FDA-2026-N-7874 — Question 24
+The Christman AI Project
+function body below that description did not call that model. It posted audio to an internal service that
+forwarded it to an entirely different vendor's hosted speech API. The named local model was present on disk,
+465 MB of it, unused by that path. A health endpoint separately reported the local model as ready for a code
+path that had not used it in weeks.
+An earlier internal audit of the same codebase had found the reverse error still propagating: nine files across
+three repositories asserting a vendor arrangement that had already been reversed, and an automated test
+asserting the false version.
+This is a first-party system, under active audit, maintained by its author. If component identity cannot be
+trusted here, it cannot be assumed in a device assembled from vendor SDKs through a procurement chain.
+Any change-detection obligation built on self-reported component identity inherits this defect.
+2. Field measurement: the failure was upstream of the model
+Three screen recordings were made between 01:27 and 02:42 on 2026-09-03 while dictating into the built-in
+speech-to-text of a commercial AI assistant application, on a dedicated USB audio interface. The recordings
+were made because dictation kept terminating mid-sentence. Audio was extracted to 16 kHz mono PCM and
+examined in contiguous 250 ms windows across the full duration of each file. No sampling was used.
+The measure is the count of distinct 16-bit sample values per window. A live microphone in an occupied room
+yields thousands of distinct values per window even during pauses, because room tone is a signal. Measured
+speech windows in these files carry 7,000 to 12,000 distinct values. A collapse to single digits, with one
+constant occupying nearly the whole window, is not a quiet room. It is a stream that has stopped delivering
+samples.
+Recording
+Wall time
+Audio carrying no signal
+Share of file
+Held constant
+REC1
+01:27:50
+14.00 s of 197.4 s
+7.1%
+2
+REC2
+02:09:37
+40.25 s of 210.4 s
+19.1%
+1
+REC3
+02:41:36
+31.00 s of 73.5 s
+42.2%
+1
+The proportion of lost audio roughly doubled every forty minutes over a single session. That is a degradation
+curve, not a configuration value.
+The signature at a single transition, REC1 at 171.94 to 172.14 seconds:
+ 3,186 of 3,200 consecutive samples hold the identical value 2. Seven distinct values across the entire 200
+ms window; full range minus 4 to plus 4.
+ Immediately before, at 170.8 to 171.0 s: 2,948 distinct values, peaks near plus or minus 31,000. Ordinary
+speech.
+ Immediately after, at 172.16 s: 3,110 distinct values, minimum minus 32,762, maximum plus 32,767. Full
+scale, resuming mid-word, with no onset.
+A speaker does not resume at clipping level with no attack. A stream does. The speaker never stopped; the
+capture did. This matters for Question 24 because the component that failed was not the generative model and
+
+3
+FDA-2026-N-7874 — Question 24
+The Christman AI Project
+would not have been examined by any monitoring program scoped to model behavior.
+3. The transcriber produced fluent speech from dead input
+The same audio was transcribed with a widely deployed open-weights speech recognition model (Whisper,
+small.en, run locally under the submitter's control, word-level segmentation). In REC3, of 136 transcribed
+words, 39 — twenty-nine percent — fall in windows carrying no live signal.
+Selected output, with the corresponding measured window:
+ 20.00 - 25.25 s (6 distinct values, 99% constant) → “stopped me right”
+29.50 - 31.00 s → “ah now i go back up here and”
+44.75 - 48.00 s → “i ended that one real”
+61.50 - 66.50 s → “text let’s watch it change”
+The first entry deserves particular attention. Reassembled, the transcript renders the phrase “it stopped me
+right there.” The system generated the speaker’s own description of the failure out of the silence that the
+failure produced. The closing words of the recording were likewise written over nothing.
+In a second recording, across a dead region spanning 129 to 140 seconds, the transcriber produced a
+grammatical sixteen-word sentence the speaker did not say. Sample statistics for one second inside that
+region: eight distinct values across the full second, 89% of samples on a single constant.
+This behavior falls squarely within benchmarking element S.3 as drafted, which treats presenting information
+with false confidence as a safety failure. We note that the drafted element addresses confidence in clinical
+content. We recommend it also address confidence in the premise that input was received at all.
+4. Nothing recorded that any of it happened
+The application maintains a dictation log channel. Its most recent session entries predate these recordings by
+eight days. For the date in question the file contains a single initialization line and nothing further; its last
+write preceded the first recording.
+Three sessions terminated. Between thirty-one and forty seconds of speech lost per recording. Zero log lines.
+We raise this because Question 24 asks how a manufacturer can respond in a timely manner. A manufacturer
+cannot respond to an event that generates no record, and a postmarket surveillance obligation that assumes
+failures are self-reporting will not detect this class at all.
+5. An automated reviewer misread the primary evidence, twice
+We report this because Question 20 asks what considerations apply to the reliability of a machine-based
+supervisory agent, and because we produced a worked example while preparing this comment.
+A large language model was used to analyze the recordings above. On first pass it applied an amplitude
+threshold, observed a crossing, and concluded that the application had ended the session because the user
+paused. The causation was inverted: the threshold crossing was the stream failing, and the silence was the
+consequence rather than the cause. Only direct inspection of raw sample values reversed the finding.
+
+4
+FDA-2026-N-7874 — Question 24
+The Christman AI Project
+On a second occasion the same system read the transcriber’s confabulated sentence, treated it as the speaker’s
+words, and stated back to the speaker what he had supposedly said. He had not said it. The error was caught
+only because he was present to deny it.
+Both errors occurred with the primary file in hand, with no time constraint, and under explicit instruction to
+verify. Neither would have been caught by a reviewer working from logs or transcripts alone, because both
+conclusions were consistent with every downstream artifact. We submit that any supervisory agent proposed
+for postmarket monitoring must be validated specifically against device-failure residue that mimics normal
+user behavior, and that agreement between an agent and a device log should not be treated as corroboration
+when both derive from the same failed component.
+6. Recommended mechanisms
+Responsive to the second half of Question 24.
+1. A runtime component manifest, asserted rather than documented.
+The device should emit, per inference, a machine-readable record of which model identifier, version, and
+endpoint actually served the output, generated by the calling path itself rather than from configuration or
+documentation. Our own misidentification was possible precisely because the claim lived in prose beside
+the code instead of being produced by it.
+2. Version pinning as a condition of clearance, with unpinned dependency treated as a change.
+Where a device calls a third-party model that the developer may update without notice, the absence of a
+pinned version is itself a change-control gap. A PCCP should be permitted to cover a bounded set of
+pinned versions the manufacturer has re-benchmarked, and should not be available to devices calling an
+unversioned endpoint.
+3. Input-integrity monitoring, specified separately from model monitoring.
+The failure measured here was in audio capture, upstream of any model. Monitoring scoped to model
+output would have reported normal operation throughout. For devices ingesting sensor, audio, or image
+data, we recommend continuous verification that the input stream carries live signal, with loss recorded
+as an adverse event.
+4. Negative evidence must be recorded.
+Absence of input, premature session termination, and dropped capture should generate log entries with
+the same obligation as errors. A failure that leaves no trace is unreachable by every postmarket
+mechanism in Section VI, however well designed.
+5. A confabulation-over-null-input benchmark element.
+Devices generating text from sensor input should be tested against inputs containing no valid signal, with
+any fluent output treated as a failure rather than scored on plausibility. This is cheap to run, fully
+automatable, and directly detects the behavior documented in Section 3 above.
+
+5
+FDA-2026-N-7874 — Question 24
+The Christman AI Project
+6. Contractual notice is necessary but insufficient.
+Advance-notice clauses assume the manufacturer can associate a notice with the component actually in
+the deployed path. Where component identity is not independently verifiable at runtime, notice arrives
+without a reliable way to determine whether it applies.
+7. Evidence and reproducibility
+The three source recordings, extracted PCM audio, word-level transcripts, frame captures at each failure point,
+and a full measurement record with window parameters have been retained and are available to CDRH on
+request. SHA-256 digests of the unaltered source recordings were computed at the time of archiving and are
+included in that record.
+Every figure in Sections 2 and 3 is derived from the retained PCM files and can be regenerated from them
+using the stated window parameters. No figure in this comment requires accepting our characterization of it.
+We do not offer a word-error rate. An initial comparison between the application’s delivered text and an
+independent transcript produced a divergence figure that did not survive inspection: most of it proved to be
+tokenization artifacts of the comparison transcriber rather than alteration by the device. The findings above are
+anchored to sample-level measurement instead, and do not depend on comparing two fallible transcripts.
+8. About this submission
+The Christman AI Project builds augmentative and alternative communication systems for nonverbal and
+neurodivergent users, cognitive support for dementia care, and related assistive technology. The submitter is
+autistic and builds for this population directly.
+We raise these findings because every protective factor that operated on 2026-09-03 is absent for the users we
+build for. The failure was noticed because a sighted user was watching the screen at two in the morning, made
+a recording, and had the means to inspect raw audio. A nonverbal user relying on an AAC device has no
+screen to watch, no second recording, and no waveform. The sentence the system invents is not an
+inconvenience to them. It is their voice in the record, and they cannot say that they did not say it.
+Measurements dated 2026-09-03. Submitted to Docket FDA-2026-N-7874, comment period closing 2026-10-19. Contact:
+contact@thechristmanaiproject.com

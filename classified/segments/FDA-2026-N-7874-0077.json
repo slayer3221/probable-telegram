@@ -1,0 +1,128 @@
+{
+  "comment_id": "FDA-2026-N-7874-0077",
+  "input_hash": "6acfd92c92fd252d",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:09:51Z",
+  "model": "claude-opus-5",
+  "chunks": 1,
+  "positions": [
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "We make no claim about intent on the part of any developer, and we recommend against any standard that turns on candour or intent, because such a standard is unfalsifiable and will be argued rather than measured. Every condition proposed above is observable without resolving why an output occurred.",
+      "position_gist": "Recommends against any regulatory standard that turns on developer candour or intent, favoring conditions that are observable without determining why an output occurred.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "We support the trade in principle. A total product lifecycle approach is the right instinct for devices whose behavior is open-ended and whose models change after clearance. Our comment is about the condition on which the trade depends, and about one class of device for which we recommend it not be available at all.\n  A reduction in premarket evidence is only a trade if the monitoring program can detect the failure the premarket evidence would have caught. Where it cannot, nothing has been exchanged — certainty has been given up for coverage that does not exist. We recommend the reduction be granted against demonstrated detection capability, never against the existence of a monitoring program.",
+      "position_gist": "Supports trading premarket uncertainty for postmarket monitoring in principle, but only where the monitoring program is shown to detect the specific failure the premarket evidence would have caught, not merely where a monitoring program exists.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "We recommend against a general discount on premarket evidence in exchange for a general monitoring commitment. The sponsor should identify which uncertainty is being carried into the postmarket period, and should demonstrate that its monitoring program detects that specific failure mode — not that a program exists, and not that the failure mode is theoretically detectable.\n\nThe practical form of this is a detection demonstration: the sponsor introduces the failure mode and shows the program surfaces it, within a stated interval, at a stated sensitivity. Where a sponsor cannot produce that demonstration, the corresponding premarket evidence should not be reducible.",
+      "position_gist": "Recommends requiring a sponsor 'detection demonstration' — introducing the identified failure mode and showing the monitoring program surfaces it within a stated interval and sensitivity — as a precondition for any failure-mode-specific premarket evidence reduction.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "source_passage": "On 2026-09-03 we made three recordings across seventy-four minutes of continuous work on one unchanged audio interface, with no configuration change between them. Input carrying no live signal accounted for 7.1 percent of the first file, 19.1 percent of the second, and 42.2 percent of the third. The proportion of lost input roughly doubled between each recording.\n\nThe consequence for Question 18 is structural rather than a matter of rigor. A re-benchmark is a fresh session. A reassessment run at any point on any day would have opened a new session and measured something close to the 7.1 percent state. The degradation is a function of elapsed time within a session, and a monitoring cadence measured in weeks or quarters cannot observe a quantity that resets in minutes.",
+      "position_gist": "Reports measured within-session degradation that resets at session boundaries and argues that periodic re-benchmarking cannot detect failure modes of that shape, so such programs should not support a premarket evidence reduction for them.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "source_passage": "A separate recorded session on 2026-09-04, eleven minutes twenty-four seconds, showed the second half of the problem. The device produced false statements in three separate turns while its presentation improved steadily across the session — by the ninth minute it was citing governing rules by name, disclosing source ages, and correcting itself unprompted. A sample drawn late in that trajectory scores the device as more disciplined than a sample drawn early, while the error rate is unchanged. A monitoring program that samples will report the better number, and will report it in good faith.",
+      "position_gist": "Warns that sample-based postmarket review can be biased by within-session improvement in presentation while the underlying error rate is unchanged, so sampling position within a session affects the reported result.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q18",
+        "q20"
+      ],
+      "source_passage": "A device that reports its own actions is reporting on itself, and where that report is the only record it is unfalsifiable at the point of use. Every monitoring mechanism reading that report inherits its errors. If premarket evidence has been reduced on the strength of such a program, the reduction rests on the device's account of itself.\n\nThe remedy requires no interpretation of the device. It requires a second record, produced by the machine rather than by the device, against which the device's account can be compared. The comparison is mechanical: a device states it consulted a source; the independent record shows whether that source was opened, and when.",
+      "position_gist": "Recommends that where a premarket reduction rests on postmarket monitoring, the monitoring record be independent of the device — a machine-produced second record (e.g., an access ledger) against which the device's self-report can be mechanically compared.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "We have published an instrument of this kind rather than described one. It is open source under the Apache License 2.0 at github.com/The-ChristmanAI-Project/HONESTY, made public on 2026-09-04. The local component is a single Python program with no dependencies outside the standard library, serving on the loopback interface only; it reads the operating system process list, matches it against a catalogue of named AI systems, and maintains an append-only ledger with timestamps. Its README states its own limits before a reader asks — it is not a kernel driver, not a phone tap, and not a browser-tab inspector — and it names what it cannot observe.",
+      "position_gist": "Offers a published open-source, append-only access-ledger instrument as an inspectable example of independent machine-produced monitoring that reviewers could apply to any device.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q18",
+        "q21"
+      ],
+      "source_passage": "We recommend that where a reduction has been granted, the monitoring program be required to specify who is notified, and within what interval, on a detected fault — and that the interval be shorter than the window in which the fault can cause harm. For a device operating in an assistive or clinical role for a user who cannot self-verify, we recommend notification to a designated caregiver or clinician at the end of the session rather than the end of the quarter.",
+      "position_gist": "Recommends requiring a named notification recipient and a stated notification interval shorter than the harm window, with end-of-session notification to a designated caregiver or clinician for users who cannot self-verify.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q18",
+        "q21"
+      ],
+      "source_passage": "We state the boundary on that recommendation plainly, because it can be misused. This is notification of a device fault to a named responsible person. It is not surveillance of the user, it is not transmission of the content of their communication, and it should not become either. What leaves the device is that the device produced output its own record does not support. What the user was trying to say belongs to the user.",
+      "position_gist": "Qualifies the notification recommendation: only device-fault information should be transmitted, not user communication content, to avoid turning monitoring into surveillance of the user.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "It is absent by construction in the populations these devices are being built to serve. A user who cannot speak cannot report that a device spoke incorrectly on their behalf. A user with advanced dementia cannot establish that a prompt they were given was wrong. A deaf-blind user cannot see a correction offered on a screen or hear one spoken aloud. The characteristic that makes the device necessary is the same characteristic that disables the feedback loop the premarket reduction is being traded against.\n\nWe are not arguing that these devices should face a higher premarket bar than their risk warrants. We are arguing that the specific exchange in Question 18 should not be available to them, because the postmarket half of the exchange is weaker in exactly this population and the framework as written does not register that.",
+      "position_gist": "Recommends that the premarket-for-postmarket trade be unavailable where the intended user cannot self-verify or self-report, because complaint- and feedback-based surveillance does not function for that population.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "For such deployments, monitoring data may not reach the sponsor for weeks, may reach them in an incomplete form, or may never reach them. We recommend that where a device's intended use includes disconnected operation, premarket evidence not be reducible against monitoring the device cannot perform in that mode. Alternatively, and we would prefer this, the sponsor should demonstrate an on-device record that persists through disconnection and is reconcilable afterward — which is achievable, and which we would rather see required than see the question go unasked.",
+      "position_gist": "Recommends that premarket evidence not be reducible for devices intended to operate without connectivity, unless the sponsor demonstrates an on-device record that persists through disconnection and can be reconciled later.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "We recommend reversibility be treated as an explicit gate on the Question 18 exchange: where the credible harm from the retained uncertainty is not reversible within the monitoring program's own detection interval, the exchange should not be available regardless of the program's quality.",
+      "position_gist": "Recommends reversibility be an explicit gate: the premarket reduction should be unavailable where credible harm is irreversible within the monitoring program's detection interval.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "Postmarket monitoring draws much of its power from volume — signals emerge across a population that are invisible in any one case. A device assigned to one person, used by that person for years, in a pattern particular to them, produces little cross-population signal. Its most important failures are failures about that individual, which the aggregate cannot see and which averaging actively conceals.\n\nWhere a device's intended use is a population of one, we recommend the premarket evidence carry the weight, because the postmarket instrument is at its weakest precisely there.",
+      "position_gist": "Recommends excluding single-user, long-duration deployments from the trade because aggregate postmarket signal is weakest there and premarket evidence should carry the weight.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "We do not ask CDRH to withdraw the approach in Question 18. We ask that it be granted as a specific exchange rather than a general posture, and that the four categories above be named as exclusions.",
+      "position_gist": "Summary position: retain the Question 18 approach but grant it only as a failure-mode-specific exchange with four named exclusion categories.",
+      "segment_id": "seg-014"
+    }
+  ]
+}

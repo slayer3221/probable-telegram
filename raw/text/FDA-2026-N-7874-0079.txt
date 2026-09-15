@@ -1,0 +1,270 @@
+Comment on Docket No. FDA-2026-N-7874-Q25<br/>Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and Request for Feedback<br/><br/>Comment on Question 25 (Section VII): whether voluntary Foundation Model Master Files would be practical to keep current, what they should contain, and whether alternative mechanisms exist.<br/><br/>Submitted by Everett N. Christman, Founder and Chief Executive Officer, The Christman AI Project and Robotics Division.<br/><br/>We support the master file concept and do not think it can carry the weight the question hopes for.<br/><br/>The binding constraint is currency, not candour. On one ordinary workday we measured the model answering a widely used hosted assistant being exchanged 153 times in fourteen hours, a median of 41 seconds at a time, holding the session for 16.3 percent of the observed day, with nothing in the interface disclosing any of it. A document cannot be kept current against a quantity that changes every few minutes. A fully cooperative, entirely honest developer filing in good faith would produce a master file that was stale before it was read.<br/><br/>A second, unrelated provider showed the same class of behavior on the same machine on the same day in a different rhythm, so this is a property of hosted delivery rather than the practice of one company. We name neither. Five locally resident systems on the same machine produced no substitution events at all.<br/><br/>The most important field in any master file is the one most likely to be omitted: where the model executes. We measured a model registered inside a local runtime, reachable at the loopback address of our own machine, that was in fact answering from a datacenter.<br/><br/>We propose two alternative mechanisms. First, a record produced on the user&#39;s side of the connection, requiring no credentials and no cooperation from any developer; we have published such an instrument under the Apache License 2.0 rather than describing one. Second, a device-held lineage record &mdash; model lineage, serving version, intended purpose and refusal conditions &mdash; reportable by the device alongside its output, which survives the failure of any external registry.<br/><br/>We state our limits. One workstation, one day, two providers. No error rate, no frequency claim, no generalization about any product. We make no claim about intent, and we recommend against any standard that turns on intent, because such a standard cannot be falsified and will be argued rather than measured.<br/><br/>Full comment attached (7 pages).<br/><br/>Contact: contact@thechristmanaiproject.com
+
+[Attachment: Comment from The Christman AI Project Robotics Division]
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 1
+FDA-2026-N-7874 — Q25
+Comment on Docket No. FDA-2026-N-7874 · Considerations for the Regulation of Generative AI-Enabled
+Medical Devices: Discussion Paper and Request for Feedback
+QUESTION
+ADDRESSED
+Question 25 (Section VII): whether voluntary Foundation Model Master Files would be
+practical to provide and keep current, what content they might include, what would make such a
+program sufficiently useful for premarket review given voluntary participation and limited
+disclosure incentive, and whether there are alternative mechanisms for obtaining information
+about underlying foundation models
+SUBMITTED BY
+Everett N. Christman, Founder and Chief Executive Officer
+ORGANIZATION
+The Christman AI Project and Robotics Division
+BASIS OF COMMENT
+A fourteen-hour instrumented observation of model substitution across two independently
+operated hosted assistants on a single workstation, 2026-09-08, from an append-only on-disk
+ledger; four forensic evidence bags of 2026-09-07 and 2026-09-08 with dual NIST FIPS 180-4
+hashes and preserved original bytes; published open-source instruments, cited below; and design
+experience building assistive communication systems for users who cannot self-report.
+The question as posed
+CDRH asks whether voluntary Foundation Model Master Files would be practical for foundation model
+developers to provide and to keep current, and what content they might include. It asks what would make such a
+program sufficiently useful for premarket review, given that participation would be voluntary and that model
+developers may have limited incentive to disclose safety-relevant information. And it asks whether there are
+alternative mechanisms CDRH should consider for obtaining information about underlying foundation models.
+Summary of position
+We support the master file concept and we do not think it can carry the weight the question hopes for. Our
+comment has four parts, and the first is a measurement rather than an opinion.
+  The binding constraint is currency, not candour. The question anticipates that developers may be
+unwilling to disclose. We measured something more basic: on one ordinary workday, the model answering
+a widely used hosted assistant was exchanged 153 times in fourteen hours — a median of 41 seconds at a
+time. A document cannot be kept current against a quantity that changes every few minutes. A fully
+cooperative, entirely honest developer filing in good faith would produce a master file that was stale before
+it was read.
+ A second, unrelated provider showed the same class of behavior on the same machine on the same
+day, in a different rhythm. This is a property of hosted delivery, not the practice of one company, and a
+master file program has to be designed for it rather than around it.
+ The most important field in any master file is the one most likely to be omitted: where the model
+executes. "The model runs on the device" and "the device reaches a model" are different regulatory
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 2
+situations with different evidence behind them. We measured a model registered inside a local runtime,
+reachable at the loopback address of our own machine, that was in fact answering from a datacenter.
+ There is an alternative mechanism and it does not require the developer's participation at all. A
+record produced on the user's side of the connection can establish which model answered and where it ran,
+timestamped, append-only, with no credentials and no cooperation. We have published such an instrument
+under a permissive license rather than proposing one. We also recommend a second mechanism that puts
+the burden on the device rather than on a registry.
+1. What we measured, and why it decides the question
+On 2026-09-08 an observation tool running on a single desktop workstation kept an append-only ledger of
+which models were answering on that machine. The figures below are computed directly from that file. All
+times are UTC.
+1.1 The first hosted assistant
+Across fourteen hours and sixteen minutes — 04:59:30 to 19:15:39 — the ledger recorded 307 model-layer
+events: 154 substitutions and 153 displacements. These resolve into 153 complete cycles in which the
+assistant's named live model was displaced by a chat model operating from a remote datacenter and then
+reinstated. That is 10.7 substitutions per hour.
+The substituted model held the session for a median of 41 seconds, with the middle half of cycles between 33
+seconds and 1 minute 6 seconds, and a full range of 25 seconds to 4 minutes 9 seconds. 141 of the 153 cycles
+lasted under two minutes. In total the substituted model held the session for 139.9 minutes — 16.3 percent of
+the observed day.
+The interval between cycles was not stable in the same way: a median of 1 minute 48 seconds, ranging from 8
+seconds to 49 minutes 13 seconds. A narrow inner duration inside a highly variable outer one is the signature of
+a triggered process rather than a schedule.
+Nothing in the assistant's interface disclosed any of this. The operator states he did not open that assistant at
+any point during the window. That is his account, recorded as such and not independently verified by the
+instrument.
+1.2 The second hosted assistant
+A second hosted assistant from an unrelated provider was resident on the same machine across nearly the same
+window. It produced 24 model-layer events and 10 complete cycles in a quite different shape: one unbroken
+hold of 7 hours 8 minutes, from 05:04:17 to 12:12:01, followed by nine cycles compressed into a 34-minute
+burst with a median hold of 2 minutes 29 seconds. After the burst the ledger records three further substitutions
+with no closing displacement before the window ended.
+Two providers, one machine, one day, the same class of undisclosed substitution at two different tempos. We
+name neither, because the behavior is the finding and naming a company converts a technical result into a
+dispute about a company.
+1.3 What did not do this
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 3
+Five other named systems appear in the same ledger over the same window — editors, a local model runtime,
+an agent extension, a media processor. Their entries are presence records: running on this host, or no longer in
+the process list. Not one produced a substitution cycle. That is the expected result. A model running on the
+machine cannot be silently exchanged for a different model somewhere else, because there is no somewhere
+else. The absence of the pattern in the local cases is what gives it meaning in the hosted ones.
+1.4 The consequence for a master file
+A Foundation Model Master File is a document. Documents have revision dates. The question asks whether
+developers could keep one current.
+On this evidence, currency is not achievable by document at all. A master file revised weekly would have
+been superseded roughly a thousand times between revisions on the day we measured. A master file revised
+daily would have been superseded 153 times. This is not a criticism of any developer's diligence; it is an
+arithmetic property of the thing being described.
+We therefore recommend CDRH treat the master file as a description of a model family, its training and
+evaluation practice, and its change-notification commitments — things that are stable on a timescale a
+document can track — and treat the identity of the model answering a specific device at a specific moment as a
+record, produced continuously, rather than a field in a filing.
+2. What a master file should contain, if one exists
+Responsive to the first part of Question 25.
+We would not remove anything CDRH has in mind. We would add four items and mark one of them as the field
+we consider indispensable.
+ 1. Execution locality, as a stated field rather than an inference. Whether inference for a given
+configuration runs on the device, on premises, or in a datacenter, and in which jurisdiction. This is the item
+we would ask CDRH not to trade away. Everything else in a master file can be reconstructed by a
+determined reviewer. This one cannot be reconstructed from the output at all.
+2. The change classes the developer commits to notifying on, and the notice interval for each —
+distinguishing a weight change from a routing change from a serving-configuration change, because only
+the first is what a reader intuitively means by "the model changed" and the other two produce the behavior
+we measured.
+3. Whether substitution or fallback routing is in use for the configuration a device relies on, and at
+what granularity — per-request, per-session, or per-deployment. A device sponsor who does not know
+the answer to this cannot characterize its own dependency.
+4. A machine-readable version identifier that the serving system itself will report on request, so that a
+device can record what answered it rather than what the documentation said would answer it.
+Item 4 is the one that turns the master file from a document into something checkable. A version string in a PDF
+is an assertion. The same string reported by the serving system, recorded by the device, and comparable to the
+filing is evidence.
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 4
+3. On voluntariness and incentive
+Responsive to the second part of Question 25.
+The question is framed around a reluctant developer. We think the framing understates the difficulty in one
+direction and overstates it in another.
+It understates it because, as Section 1 shows, willingness is not sufficient. A developer who wanted to comply
+completely could not keep a document current against minute-scale change. Any program whose usefulness
+depends on document currency will fail even with universal, enthusiastic participation.
+It overstates it because the alternative mechanisms in Section 4 do not require participation. Where a fact can
+be established from the user's side of the connection, the developer's incentive to disclose it stops being the
+deciding variable. That is the practical reason to invest in the record rather than in the filing: the record does not
+have to be negotiated.
+We would add one caution about voluntary programs generally. A voluntary master file that is treated as
+evidence creates an asymmetry in which a developer who files a thin document is better positioned than one
+who does not file at all, without either having demonstrated anything. If master files are accepted into premarket
+review, we recommend that what they are credited for be stated narrowly, and that no part of that credit rest on
+the currency of a version field.
+4. Alternative mechanisms
+Responsive to the third part of Question 25, and the part of it we filed on.
+4.1 A record produced on the user's side of the connection
+The measurement in Section 1 was not obtained from any developer. It was produced by a tool running on an
+ordinary desktop, with no credentials, no privileged access, no network interception, and no cooperation from
+anyone.
+HONESTY — open source under the Apache License 2.0 at
+github.com/The-ChristmanAI-Project/HONESTY, made public 2026-09-04. The local component is a single
+Python program with no dependencies outside the standard library, serving on the loopback interface only. Its
+documentation states its limits before a reader asks: it is not a kernel driver, not a network tap, and not a
+browser-tab inspector, and it names what it cannot observe. Browser tabs are not programs and it does not count
+them as such.
+It keeps two classes of evidence separate, and that separation is the part we would ask CDRH to look at.
+The process record reads the operating system's own process table and establishes what is executing on that
+machine. The model record does not come from the process table at all: it names the model that is answering,
+the provider, the host it is reached at, the local client it is reached through, and where that model runs —
+distinguishing a model executing on the machine from one executing in a datacenter.
+The distinction is not academic, and it is the gap that would otherwise defeat any records-based
+mechanism. Where a device's inference runs remotely and only a client is present locally, a process-table audit
+reports that the client ran and that it communicated. It does not report what answered. A large share of clinical
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 5
+GenAI systems are of that shape. An audit that merges the two facts reports a local process as though it were the
+model.
+4.2 What such a record makes checkable that a filing does not
+  Whether the model changed, and when, to the second, without asking anyone.
+ Whether a device's stated locality holds in practice. The same export that produced Section 1 contains a
+model entry registered inside a locally hosted model runtime, reachable at the loopback interface —
+127.0.0.1 — and recorded by the instrument as operating from a datacenter. Its identifier ends in the word
+cloud. Nothing is concealed and the runtime is behaving as designed, which is exactly why it belongs in this
+comment. "It is on localhost" is not the same claim as "it is on this computer." A filing that says "local
+inference" and a runtime that reaches a datacenter from the loopback address are not in contradiction on
+paper. Only an instrument that separates address from origin shows the difference.
+ Whether a version identifier in a filing matches what answered. This requires only that the serving
+system report a version and that the device record it — Item 4 of Section 2.
+4.3 What the record does not establish, stated before anyone has to ask
+It does not establish intent. Load balancing, staged rollout, capacity management, failover, and evaluation of a
+candidate model against live traffic all produce substitution, and none of them are deceptive on their face. What
+is documented is that substitution occurred at this rate and was not disclosed — not why.
+It does not identify the substituted models, and this comment does not characterize them.
+It measures no change in output quality. No before-and-after comparison was made. The claim concerns
+provenance, not performance.
+It is one machine over one day. Replication across machines, operators, providers and longer windows has not
+been done and is the obvious next step.
+And it sees only what each client exposes locally. A provider surfacing nothing would generate no events, and
+silence in a ledger is not proof of absence.
+An instrument of this kind is closer to a cardiac monitor than to an auditor. It can state with precision that the
+rhythm changed at a given second; it cannot say whether the cause was alarm or caffeine. It records the event,
+not the reason. That limitation is also the reason the record counts: an instrument that reported reasons would
+have to be told them by the provider, and would therefore prove nothing the provider had not already chosen to
+say.
+4.4 A second mechanism — the device carries its own lineage
+The mechanism above puts the record outside the device. We recommend a second one that puts it inside.
+A GenAI-enabled device can be built to carry, in machine-readable form, a statement of what it is: the model
+lineage it was authorized under, the version actually serving it, its intended purpose and the boundaries of that
+purpose, and the conditions under which it must decline. Not a label printed on the housing, and not a claim in
+the output text where it can be paraphrased away — a structured record the device maintains about itself and
+will report on request, alongside the output it produced.
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 6
+The regulatory value is that it survives the failure of every external registry. A confidential FDA-held map of
+device to model version — which we support — depends on being updated. A device that carries its own
+lineage answers the question locally, at the moment of the output, in the room where the harm would occur. And
+where the internal record and the external map disagree, the disagreement is itself the finding.
+We hold this as a design principle in our own systems and state it as one: a system should know what it is and
+what it is for, well enough that there is no doubt about its purpose, and well enough to say so when asked.
+For devices serving users who cannot interrogate the system themselves, that is not a nicety. It is the only
+account of the device that will be available to whoever comes after.
+5. What we are recommending, stated plainly
+1. Adopt the master file for what a document can hold — model family, training and evaluation practice,
+change classes and notice commitments — and do not rest any part of premarket credit on the currency of a
+version field.
+2. Require execution locality as a stated field in any master file or device submission, distinguishing
+on-device, on-premises and datacenter inference, with jurisdiction.
+3. Require the serving system to report a machine-readable version identifier on request, so that a
+device can record what answered rather than what was documented.
+4. Treat the identity of the model answering a specific device at a specific moment as a record produced
+continuously, not a field in a filing.
+5. Recognize records produced independently of the device and of the developer as admissible evidence
+of model provenance, and require any such record to keep the local-process fact and the answering-model
+fact separate.
+6. Consider requiring a device-held lineage record — model lineage, serving version, intended purpose
+and refusal conditions — reportable by the device alongside its output.
+7. Where a device's inference is remote, say so in the authorization, because a device that reaches a model
+and a device that contains one carry different risks and today nothing requires a submission to state which
+applies.
+6. Scope, and what we are not claiming
+The measurements above were made on commercial AI assistants used as tools in our own work. None is a
+regulated medical device and none of this was a controlled evaluation. We offer no error rate, no frequency
+claim, and no generalization about any product or developer. One workstation, one day, two providers.
+We make no claim about intent on the part of any developer, and we recommend against any standard that turns
+on candour or intent, because such a standard is unfalsifiable and will be argued rather than measured. Every
+mechanism proposed above is observable without resolving why a substitution occurred.
+We distinguish between what we have verified and what we have designed. The instrument in Section 4.1 is
+published and its behavior can be confirmed by reading and running it; the ledger described in Section 1 is a file
+on disk and the figures are computed from it. The device-held lineage record in Section 4.4 is a design
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 7
+recommendation, not a measurement, and we identify it as such.
+We note one asymmetry deliberately. The instrument was built to observe the commercial systems we use as
+tools in our own work. It is not instrumentation for our own products, and we do not offer it as evidence that our
+systems are honest. We offer it as a method a reviewer may apply to any device, ours included, and we would
+rather see the method adopted with someone else's implementation than see it not adopted.
+7. Evidence retained
+Retained and available to CDRH on request: the append-only ledger file of 2026-09-08 from which every figure
+in Section 1 is computed, with the full event list for both assistants; the machine-readable status export taken at
+two points that day; and the four forensic evidence bags of 2026-09-07 and 2026-09-08, each containing
+preserved original bytes, derived audio, SHA-256 and SHA-512 digests over every artifact, a machine-readable
+measurement packet, and a manifest carrying an independent verification procedure.
+The instrument described in Section 4.1 requires no request. It is public, licensed, and inspectable.
+8. About this submission
+The Christman AI Project builds augmentative and alternative communication systems for nonverbal and
+neurodivergent users, cognitive support for dementia care, and related assistive technology. The submitter is
+autistic and builds for this population directly.
+We file on Question 25 because it is the question that decides whether anyone outside a model developer will
+ever be able to establish what a device was actually running. For most users that is an accountability question.
+For ours it is the whole record. A user who cannot speak leaves behind no account of what a device said on their
+behalf, and no account of what was answering when it did. If the only record of the model is a document the
+developer chose to file, then for our users there is no record at all.
+The prevailing assumption in this field is that model provenance is attestable only by the provider. We are
+submitting a fourteen-hour counterexample produced on an ordinary desktop, and the code that produced it.
+Measurements and ledger records dated 2026-09-08. Submitted to Docket FDA-2026-N-7874, comment period
+closing 2026-10-19. Contact: contact@thechristmanaiproject.com
+Everett N. Christman Founder and Chief Executive Officer The Christman AI Project and Robotics Division
+Date: __________________

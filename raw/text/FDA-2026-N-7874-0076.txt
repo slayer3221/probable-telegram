@@ -1,0 +1,326 @@
+I am submitting this comment as an individual. I work in medical device and combination product development and previously worked in interventional radiology (targeted therapy, image guided therapy development, analytical method, and regulatory compliance under ISO, GMP, and FDA frameworks) and advise organizations on practical AI implementation. These views are my own and do not represent my employer or any organization. My full comment is in the attached document; this summary highlights the main points.<br/><br/>WHAT CDRH GETS RIGHT AND SHOULD PRESERVE<br/>(1) The two-axis risk framework, and the position that an output&#39;s directiveness depends on substance and context, not on wording, and that a &quot;talk to your doctor&quot; disclaimer does not make a patient-facing output less directive.<br/>(2) Assessing risk across realistic multi-turn conversational trajectories rather than isolated outputs.<br/>(3) Evaluating the deployed device configuration, not the foundation model in isolation.<br/>(4) Requiring adjudicators to be structurally independent from both the sponsor and the foundation model developer, including when the adjudicator is an LLM.<br/>(5) Treating both directions of escalation, refusal, and deferral error as failures, and defining subgroup performance to include dialect, literacy, and health literacy.<br/>(6) Candor about benchmark contamination, synthetic-data circularity, and developers&#39; limited incentive to disclose.<br/><br/>RECOMMENDATIONS (each builds on the points above; see attachment for detail)<br/>R1. Add data exposure as a risk dimension (Q1, Q3). The paper does not mention privacy. Where patient inputs go, whether they are retained or used for training, and whether the patient is told, should factor into risk. Purpose limitation and data minimization should be design requirements, as in the European approach.<br/>R2. Do not trade premarket evidence for postmarket monitoring outside the lowest-risk quadrant (Q18, Q19, Q21). Postmarket surveillance is not yet equipped to detect GenAI failure modes. Any relief should require a GenAI-specific reporting taxonomy, public prespecified thresholds, a patient reporting channel, and public reporting. &quot;Shared ecosystem responsibility&quot; must not diffuse manufacturer accountability.<br/>R3. Foundation model transparency should be mandatory, or the sponsor should carry the full evidence burden with no reliance on developer claims (Q25). Model cards for models in marketed devices should be public.<br/>R4. Third-party model changes need version pinning, contractual change notification, no silent updates, and re-benchmarking before a new version reaches patients (Q22&ndash;24). A PCCP cannot cover changes the sponsor does not control.<br/>R5. The clinician-credentialing analogy justifies competency testing but not relaxed change control or diffused accountability (Q7). It breaks on identity and continuity (a model can be silently replaced; a clinician cannot), accountability (no revocation mechanism is proposed), scale (one systematic error affects every patient at once), and self-knowledge of limits (a model&#39;s stated uncertainty is itself a generated output). Competency evidence should be bound to a fixed configuration.<br/>R6. Hold benchmarking to bench-testing standards (Q9&ndash;13, Q16): report performance as a distribution with disclosed decoding settings; synthetic data must be of different lineage and never the sole basis for subgroup claims; LLM adjudicators from a different model family, validated against humans; sequestered datasets the sponsor never sees.<br/>R7. The comparator should be the standard of care, not the &quot;median clinician in practice,&quot; which normalizes existing gaps in care (Q14, Q15). Human-AI team evaluation should measure automation bias.<br/>R8. Under-escalation is irreversible; over-escalation is recoverable. The trade-off should be prespecified, disclosed, and weighted toward patient safety (Q6).<br/>R9. Machine supervisors can triage but not replace human review; agentic devices need a human checkpoint before irreversible actions, immutable audit logs, and hard tool boundaries (Q20, Q26).<br/>R10. Support patient-facing access, with disclosure that the user is interacting with a machine, plain-language limitations, data-flow disclosure, and a route to a human (Q3).<br/><br/>The attached document provides the full reasoning and a table cross-referencing all 26 discussion questions.
+
+[Attachment: Comment from Navid Farr]
+Docket No. FDA-2026-N-7874 — Individual comment — Page 1
+Docket No. FDA-2026-N-7874
+Re: Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and
+Request for Feedback (CDRH, August 2026)
+submitted in an individual capacity
+Submitted to: Dockets Management Staff (HFA-305), Food and Drug Administration, via
+https://www.regulations.gov
+Date: 08SEP2026
+
+To the Center for Devices and Radiological Health:
+Thank you for the opportunity to comment on the discussion paper. I work in medical device and
+combination product development and previously worked in. interventional radiology and targeted
+therapy development, where my responsibilities span medical devices, image guided therapy, analytical
+method, and regulatory compliance under ISO, GMP, and FDA frameworks. I also advise organizations
+on the practical implementation of artificial intelligence. I submit these comments as an individual. They
+reflect my own views and do not represent the position of my employer, any standards body, or any
+other organization.
+My comments are organized in three parts. Part I identifies the elements of the discussion paper that I
+believe CDRH has gotten right and should preserve as it moves toward policy. Part II offers
+recommendations, each of which is tied back to one or more of the strengths identified in Part I; my
+intent is to show that the recommendations follow from CDRH's own reasoning rather than cutting
+against it. Part III is a short table mapping the recommendations to the numbered discussion questions.
+Three principles run through everything below. The patient comes first: where the interests of patients
+and the convenience of sponsors or model developers diverge, the regulatory framework should resolve
+the tension in favor of the patient. Follow the science: evaluation methods should be held to the same
+standards of prespecification, independence, reproducibility, and statistical honesty that CDRH already
+expects for bench and clinical testing of other devices. Data protection is a safety property: a device
+that moves patient information to places the patient does not expect, or uses it for purposes the patient
+did not agree to, is not safe in any meaningful sense, even if every output is clinically correct. I draw on
+the European approach to data protection and AI governance where I think it offers a more patient-
+centered model than the paper currently reflects.
+Part I. What the discussion paper gets right
+I want to be specific about what I support, because Part II builds on it.
+S1. The two-axis framework, and the treatment of "action-directing" outputs
+The activity-by-consequence framework in Section IV is a sound organizing heuristic. Two positions
+CDRH takes within it are particularly important and should survive into policy. First, that the degree to
+which an informational output directs action depends on its substance and context, not on whether it
+
+Docket No. FDA-2026-N-7874 — Individual comment — Page 2
+uses words such as "recommend" or "should." Second, that a patient-facing function does not become
+less directive because it appends "talk to your doctor" or "I am not a medical professional." Both
+positions reflect how patients actually receive information. A disclaimer does not undo an instruction;
+it merely transfers responsibility for the instruction to the person least equipped to evaluate it.
+S2. Risk assessed across conversational trajectories, not isolated turns
+The recognition that a conversational device can begin as informational and migrate to action-directing
+over the course of an exchange, and that risk should therefore be assessed across realistic trajectories,
+is correct and, to my knowledge, ahead of most regulatory thinking internationally. The related point
+in Appendix A that a device can drift out of scope cumulatively even when each individual turn appears
+in-scope (S.2) is the right way to think about boundary adherence.
+S3. Evaluate the deployed device, not the foundation model in isolation
+Section V.A is explicit that the object of evaluation is "the final user-facing device, as configured and
+intended to be deployed for real-world use — and not the foundation model standing alone or other
+isolated subcomponent." This is the single most important sentence in the paper. A foundation model's
+benchmark score is not evidence about a device built on it, because the device adds prompts, retrieval,
+guardrails, orchestration, and a user interface, each of which changes behavior. Section VII.A reinforces
+this by stating that a Foundation Model Master File "would not constitute authorization of the
+underlying model for any device intended use." CDRH should hold this line firmly.
+S4. Structural independence of adjudicators, including when the adjudicator is an LLM
+Section V.B.2 states that expert adjudicators should be structurally independent from both the device
+sponsor and, where applicable, the foundation model developer, and that "these considerations would
+still be applicable when the expert adjudicator is itself an LLM." This is exactly right. The two most likely
+sources of bias in a GenAI evaluation are a sponsor grading its own device and a model grading its own
+outputs. CDRH has named both.
+S5. Both directions of escalation error, and subgroup performance defined broadly
+The paper's attention to over-escalation as well as under-escalation, to over-refusal as well as under-
+refusal, and to over-deferral as well as under-deferral shows a mature understanding that a device
+optimized only to avoid one failure mode will produce the other. The definition of subgroup
+performance in R.2, which extends beyond demographic categories to non-standard dialects, accents,
+colloquialisms, and lower general and health literacy, is the right scope for a technology whose interface
+is language. The explicit naming of automation bias in E.4 is likewise welcome.
+S6. Candor about the limits of benchmarks, synthetic data, and voluntary disclosure
+CDRH acknowledges that public benchmarks suffer from contamination, saturation, and poor real -
+world representativeness; that synthetic data generated by models of the same class as the device may
+reproduce the very gaps the evaluation is meant to detect; and that foundation model developers "may
+have limited incentive to disclose safety-relevant information." The paper also, to its credit, names the
+
+Docket No. FDA-2026-N-7874 — Individual comment — Page 3
+risk of medical paternalism and the real benefit of giving patients access to clinical information. This
+candor is valuable. Several of my recommendations simply ask CDRH to follow its own observations to
+their conclusion.
+Part II. Recommendations
+R1. Add data exposure as a dimension of risk (Questions 1 and 3)
+This follows from S1. The two-axis framework measures the consequence of relying on an incorrect
+output. It does not measure the consequence of the data flow that produces the output. Most GenAI-
+enabled devices will transmit patient inputs — free-text narratives, images, laboratory values,
+medication lists — to a hosted foundation model operated by a third party. Whether those inputs are
+retained, used to train future models, accessible to the model operator's staff, or transferred across
+jurisdictions is invisible to the patient and, in many cases, to the sponsor. The paper does not use the
+word "privacy" once.
+I recommend that CDRH treat data exposure as a risk dimension in its own right, either as a third axis
+or as a mandatory modifier that can move a function upward on the consequence axis. A patient-facing
+symptom checker that sends a full clinical narrative to an external model is a different device from one
+that runs the same model on-premises, even if the outputs are identical. Concretely, the framework
+should account for: whether patient inputs leave the sponsor's control; whether they are retained
+beyond the session; whether they may be used for model training or improvement; and whether the
+patient has been told any of this in plain language.
+I recognize that data protection is formally the domain of other authorities. But a data -flow failure
+becomes a device safety failure the moment it changes patient behavior. Patients who do not trust
+where their information goes withhold it, and a device g iven incomplete inputs produces worse
+outputs. The European approach, which treats purpose limitation and data minimization as design
+requirements rather than as after-the-fact compliance, is a better fit for a technology whose inputs are
+unbounded. At minimum, CDRH should expect sponsors to document the data flow of a GenAI-enabled
+function as part of the device description, and should treat a contractual and technical prohibition on
+training on device inputs as a baseline safeguard for patient-facing functions.
+R2. Do not trade premarket evidence for postmarket monitoring outside the lowest-risk
+quadrant (Questions 18, 19, and 21)
+This follows from S1 and S2. Question 18 asks whether CDRH should "accept greater premarket
+uncertainty regarding a GenAI-enabled device's benefit-risk profile through greater reliance on
+postmarket monitoring." My answer is a qualified no. The framework in S1 exists precisely to identify
+which functions can tolerate uncertainty. If a function sits in the lower-left quadrant — non-directive
+information with limited consequences — then reduced premarket evidence with defined monitoring
+is a reasonable proportionality judgment. For anything action-directing or action-taking, or anything
+with moderate or severe consequences, accepting premarket uncertainty transfers risk from the
+sponsor, who chose to deploy, to the patient, who did not.
+
+Docket No. FDA-2026-N-7874 — Individual comment — Page 4
+Postmarket surveillance is also structurally weaker than the paper implies. Existing device adverse
+event reporting depends on passive reporting and is known to under -capture harm. GenAI failure
+modes — confabulation, cumulative scope drift, over-reassurance, silent degradation after an upstream
+model change — have no established reporting taxonomy, no established detection method, and no
+natural reporter, since the patient may never learn that an output was wrong. Before postmarket
+monitoring can justify reduced premarket evidence, CDRH would need at least the following in place: a
+reporting taxonomy specific to GenAI failure modes; prespecified, publicly disclosed performance
+thresholds with a defined cadence of re-benchmarking; a patient-facing channel for reporting suspected
+incorrect outputs; and public reporting of monitoring results, not just submission to FDA.
+On Question 21, I would caution against "shared ecosystem responsibility" becoming a mechanism for
+diffusing accountability. Clinicians, institutions, and professional societies can contribute signal. They
+should not absorb liability. The sponsor is the manufacturer and remains responsible for the device's
+performance across the total product life cycle, including for the behavior of components it licenses
+from others.
+R3. Foundation model transparency should be mandatory, or the full evidence burden should
+fall on the sponsor (Question 25)
+This follows from S3 and S6. CDRH has already identified the problem with voluntary, confidential
+Foundation Model Master Files: developers "may have limited incentive to disclose safety -relevant
+information." A voluntary program will attract disclosure from developers who have little to hide and
+none from those who have the most. The result is a review process that is better informed about the
+safest models and least informed about the riskiest.
+I recommend a simple rule. If a sponsor builds a device function on a third-party foundation model,
+then either (a) the model developer's technical documentation — architecture, training data
+provenance, characterized limitations and failure modes, safety -relevant behavioral constraints,
+update policy, and audit log availability — is made available to FDA as a condition of the sponsor's
+submission, or (b) the sponsor treats the model as an unvalidated black box and carries the full evidence
+burden for every competency element without any reliance on the developer's claims. This aligns
+incentives: developers who want their models used in regulated devices will disclose, and sponsors who
+choose opaque models will pay for that choice in evidence rather than passing the cost to patients. The
+European Union's obligations on general-purpose AI providers — mandatory technical documentation
+and training-data summaries — are a workable reference point.
+I further recommend that the model card or system card for any foundation model used in a marketed
+device be public, not confidential. The Master File mechanism protects proprietary manufacturing
+detail, which is appropriate. But the characterized limitations and failure modes of a model that is
+generating clinical outputs are not trade secrets; they are labeling.
+R4. Third-party model changes require hard controls, not extended PCCPs (Questions 22, 23,
+and 24)
+
+Docket No. FDA-2026-N-7874 — Individual comment — Page 5
+This follows from S3. If the object of evaluation is the deployed configuration, then any change to that
+configuration — including a change to the underlying model initiated by the model developer —
+invalidates the evidence until it is re-established. The paper correctly notes that such changes "may be
+initiated by the foundation model developer rather than the device manufacturer." In practice the
+sponsor may not learn that a hosted model has changed until behavior shifts in the field.
+A Predetermined Change Control Plan is the wrong instrument for changes the sponsor cannot
+predetermine. I recommend instead that CDRH expect the following as conditions of authorization for
+any device built on a third-party model: version pinning, so that the device runs against a specified,
+immutable model version; contractual change notification with a minimum lead time before any
+version is retired; a prohibition on silent updates reaching patients; and re-benchmarking against the
+premarket baseline before any new model version is placed into clinical use. Where a developer will
+not offer version pinning or notification, that fact belongs in the risk assessment, and the sponsor
+should be expected to justify why the device remains safe without it. PCCPs remain useful for changes
+the sponsor does control, such as prompt revisions or guardrail updates, and the premarket benchmark
+is the right baseline against which to evaluate them.
+R5. The clinician-credentialing analogy justifies competency testing; it does not justify relaxed
+change control or diffused accountability (Question 7)
+This also follows from S3, and it is the point on which I most want to be precise, because the analogy is
+doing a great deal of work in Section V and its limits are not stated. The competency-based approach is
+described as "inspired, at a high level, by how human clinicians are evaluated and credentialed." As a
+justification for structured assessment of knowledge, reasoning, and safety behavior, followed by
+supervised practice, the analogy is apt and I support the resulting framework. But the analogy breaks
+in four places, and each break has a regulatory consequence.
+Identity and continuity. A credentialed clinician is one person whose competence, once assessed,
+persists until the next assessment. A "credentialed" GenAI device is a configuration that can be altered
+— by the sponsor or by an upstream developer — at any time, in every deployed i nstance
+simultaneously, without anyone re-examining it. A clinician cannot be silently replaced by a different
+clinician between board certification and practice. A model can. The regulatory consequence is that
+competency evidence must be bound to a specific, immutable configuration, and any change to that
+configuration must trigger reassessment (see R4). The analogy supports competency testing; it does not
+support the flexibility on postmarket modification that the paper explores in Section VI.C.
+Accountability. The paper cites Freyer et al. for the observation that clinicians "face professional, legal,
+and reputational consequences when expected standards are not met" and that "analogous
+mechanisms are needed for flawed GenAI-enabled devices." It then does not propose any. A clinician
+who harms a patient can lose a license. A device that harms a patient should face a functionally
+equivalent mechanism: a defined process for suspending authorization, with prespecified triggers tied
+to the postmarket thresholds in R2, that is faster than a recall and does not depend on the sponsor's
+willingness to act. Without it, the credentialing analogy grants the privileges of licensure without its
+obligations.
+
+Docket No. FDA-2026-N-7874 — Individual comment — Page 6
+Scale. A clinician's error affects one patient at a time and is bounded by how many patients that clinician
+sees. A systematic error in a deployed model affects every patient who presents with the triggering
+pattern, everywhere, at once, until detected. Individual credentialing evolved for individual-scale risk.
+The regulatory consequence is that acceptance criteria for safety-critical behaviors (S.1, S.2, S.3) should
+be stricter for a device than would be tolerated in a single practitioner, because the harm from a given
+failure rate is multiplied by deployment scale.
+Judgment about one's own limits. Credentialing assumes the credentialed party can recognize when a
+case exceeds their competence and refer it onward. The paper's S.3 (calibration and clinical deferral)
+tests for this, which is correct. But a clinician's uncertainty is grounded in an understanding of the case;
+a model's expressed uncertainty is a generated output that can be as confabulated as any other.
+Deferral behavior should therefore be evaluated adversarially and across paraphrases (as R.1
+contemplates), and should not be accepted as a mitigating safeguard on the strength of the device
+stating that it is uncertain.
+None of this argues against the competency-based framework. It argues that the framework should be
+adopted for what the analogy supports — structured, proportionate assessment of a fixed configuration
+— and that its use to justify lighter change control or shared accountability should be rejected explicitly,
+so that the analogy is not stretched later in guidance or in individual submissions.
+R6. Hold benchmarking to the standards CDRH already applies to bench testing (Questions 9
+through 13 and 16)
+This follows from S4 and S6. The paper says that "test methods and acceptance criteria would be
+prespecified prior to testing," consistent with expectations for non-clinical bench performance testing.
+I strongly support this and would extend the parallel. Four points:
+Non-determinism. A GenAI device produces a distribution of outputs, not an output. Performance
+should be reported as a distribution: repeated runs on identical inputs, disclosed decoding parameters
+(temperature, sampling settings, seed handling), and reported variance. The paper's position in R.1 that
+variation in safety-critical behavior — escalation, refusal, diagnostic conclusion — is a failure rather
+than acceptable noise should be adopted as a firm acceptance criterion.
+Synthetic data lineage. Synthetic inputs generated by a model of the same class as the device under
+evaluation share its blind spots. They may supplement real data for stress -testing and for rare
+presentations, but they should never be the sole basis for a claim about subgroup performance, and
+the generator should be of demonstrably different lineage from the device. Sponsors should be
+expected to report the synthetic share of each evaluation set and to show that performance on
+synthetic and real inputs is concordant before combining them into a single estimate (Question 12).
+LLM adjudicators. Where an LLM serves as adjudicator, it should be from a different model family than
+the device, validated against human adjudicators on a held-out sample with reported agreement, and
+disclosed in the submission. Correlated error between device and judge is the obvious failure mode and
+it is invisible without this check.
+
+Docket No. FDA-2026-N-7874 — Individual comment — Page 7
+Sequestered assets. The proposal for independent third parties to maintain sequestered evaluation
+datasets (Question 16) is the strongest available answer to contamination and optimization-to-the-test,
+and I support it. The essential safeguard is that the sponsor never sees the held-out set and cannot
+iterate against it. Sponsor-developed benchmarks are appropriate for demonstrating coverage of the
+intended use; they are not appropriate as the sole gate for authorization. On competition concerns, the
+ASCA model — multiple accredited bodies, published methods, FDA-recognized standards — is a
+reasonable template that avoids a single gatekeeper.
+R7. The comparator should be the standard of care, not the "median clinician in practice"
+(Questions 14 and 15)
+This follows from S4 and S5. The paper offers two comparators: a clinician panel whose consensus
+reflects the standard of care, or the performance of a median clinician in practice. These are not
+equivalent. The median clinician in practice is, by definition, below the standard of care some of the
+time, and a comparator set at that level normalizes existing gaps in care as an acceptable ceiling for a
+new technology. A patient-first framework should set the standard of care as the floor, with
+prespecified non-inferiority margins justified by clinical context. Where a device is intended to extend
+specialist knowledge to generalists (a benefit the paper rightly names), the comparator for the device
+should be specialist-level performance on the specialist questi on, not generalist performance.
+Evaluation of the human-AI team should include measurement of automation bias — whether clinicians
+over-accept outputs — and not only measurement of the team's aggregate accuracy, since the former
+predicts how the team will behave when the device is wrong.
+R8. Escalation errors are asymmetric and should be weighted that way (Question 6)
+This follows from S5. CDRH is right that under- and over-escalation "may not be commensurable." I
+would go further: they are asymmetric in a specific direction. Under -escalation of a time-critical
+condition produces irreversible harm to an identifiable patient. Over-escalation produces anxiety, cost,
+and system burden, which are real but recoverable. A loss function that weights these equally is not
+neutral; it is a policy choice that favors system efficiency over the patient in front of the device. I
+recommend that sponsors be expected to prespecify and justify the trade-off, that labeling disclose it
+in plain language, and that CDRH decline to accept arguments in which emergency department
+utilization costs justify a looser escalation threshold for patient-facing functions.
+R9. Machine-based supervision and agentic action need human checkpoints (Questions 20
+and 26)
+This follows from S4. A supervisory agent is a GenAI system with the same failure modes as the device
+it supervises, and if it shares a model family with the device, the same blind spots. It can usefully triage
+and prioritize cases for human review; it should not replace sample-based human review, and it should
+itself be validated independently, with disclosed agreement against human adjudicators, before any
+reliance is placed on it. For agentic devices, the elevated risk the paper identifies — multi-step
+autonomy, tool use, reduced opportunity for human review — should be reflected in three
+requirements: a mandatory human checkpoint before any irreversible or high-consequence action; an
+
+Docket No. FDA-2026-N-7874 — Individual comment — Page 8
+immutable, reviewable audit log of every action and the inputs that prompted it; and a hard, tested
+boundary on which tools the agent may invoke. The European principle of a right to human review of
+consequential automated decisions is the right benchmark for the first of these.
+R10. Support patient-facing access, with transparency and recourse rather than restriction
+(Question 3)
+This follows from S6, and it is where I want to be careful not to let the foregoing recommendations read
+as hostility to patient-facing GenAI. The paper is right that democratizing clinical information has real
+value and that a paternalistic posture may underestimate patient capability. The answer to the risk that
+a patient cannot independently evaluate an output is not to withhold outputs from patients. It is to give
+patients what they need to evaluate them: clear disclosure that they are interacting with an automated
+system and not a clinician; plain-language labeling of what the device is and is not intended to do;
+disclosure of where their data goes (R1); and a defined route to a human when the device defers, when
+the patient disagrees, or when the patient reports that an output was wrong. Patient-facing functions
+should move up the consequence axis when these are absent, not merely because the user is a patient.
+Closing
+The discussion paper is a serious and, in several respects, forward -looking document. Its strongest
+elements — evaluating the deployed configuration, requiring structural independence in adjudication,
+assessing risk across conversational trajectories, and refusing to let disclaimers launder directive
+outputs — deserve to become policy. My recommendations ask CDRH to carry those commitments
+through consistently: to treat data exposure as a safety property; to keep premarket evidence
+proportional to risk rather than deferring it to a postmarket system that is not yet built; to make
+foundation model transparency a condition rather than a courtesy; to bind competency evidence to a
+fixed configuration; and to recognize that the clinician-credentialing analogy, useful as it is, cannot be
+stretched to cover what it does not fit.
+I would be glad to discuss any of these points further.
+Respectfully submitted
+Part III. Cross-reference to discussion questions
+Question(s) Topic Addressed in
+1, 3 Additional risk dimensions; patient-facing functions R1, R10
+2 Directiveness continuum S1 (supported)
+5 Multi-turn trajectories S2 (supported)
+6 Under- and over-escalation R8
+7, 8 Competency-based approach; credentialing analogy S3, R5
+
+Docket No. FDA-2026-N-7874 — Individual comment — Page 9
+9, 10, 12, 13 Benchmarking adequacy, contamination, synthetic data,
+statistics
+R6
+11 Clinical confirmation approaches R2, R7
+14, 15 Comparators and acceptance criteria R7
+16 Independent third parties R6
+18, 19, 21 Premarket vs. postmarket balance; monitoring; ecosystem
+roles
+R2
+20 Machine-based supervisory agents R9
+22, 23, 24 Postmarket modifications; PCCPs; third-party model changes R4, R5
+25 Foundation Model Master Files R3
+26 Agentic systems R9

@@ -1,0 +1,419 @@
+{
+  "comment_id": "FDA-2026-N-7874-0063",
+  "input_hash": "cd6e817f177df751",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:27:29Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter agrees with all three proposed postmarket evaluation approaches but states that, when applied on a periodic cadence, none of them would detect the performance degradation the commenter has measured.",
+      "requested_fda_action": "Retain the three approaches but address the limits of periodic assessment cadence so that degradation of the kind the commenter observed can be detected.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment asserts that periodically scheduled postmarket checks are insufficient to catch degradation observed in practice, implying a need for continuous assurance during deployment."
+      },
+      "public_summary": "Supports all three proposed postmarket evaluation approaches—re-benchmarking, sample-based clinician review, and degradation monitoring—but states that none, applied on a periodic cadence, would detect the performance degradation the commenter has measured, implying more frequent or continuous assessment is needed.",
+      "summary_cut": false,
+      "source_passage": "We support all three approaches and we do not think any of them, on a periodic cadence, can detect the degradation we have measured."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter reports observing performance degradation that occurs within a single session and resets at session boundaries, including one measured case where failure rate was four times higher after seventy-four minutes on unchanged hardware with no configuration change. Periodic re-benchmarking would sample only the healthy state because each re-benchmark begins a new session.",
+      "requested_fda_action": "The passage indicates that postmarket performance evaluation should not rely on periodic (quarterly, monthly, or weekly) re-benchmarking alone, since such cadence-based testing cannot detect within-session degradation; monitoring would need to capture performance over the course of live sessions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment shows that point-in-time re-benchmarking does not provide assurance about how a device behaves during extended real-world sessions, where degradation arises and then resets undetected."
+      },
+      "public_summary": "Commenter reports degradation occurring within single sessions and resetting at session boundaries, citing a case of fourfold higher failure rates after 74 minutes on unchanged hardware. Argues periodic re-benchmarking, at any cadence, would always sample the healthy state and miss such degradation.",
+      "summary_cut": false,
+      "source_passage": "Every instance of degradation we recorded occurred inside a single session and reset at the session boundary. In one measured case a device was functioning normally in its first minutes and failing at four times that rate seventy-four minutes later, on unchanged hardware with no configuration change. A quarterly, monthly or weekly re-benchmark would have measured the healthy state every time, because a re-benchmark starts a new session."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Sample-based clinician review is described as the only one of the three proposed postmarket approaches that assesses clinical appropriateness, but it is limited to inspecting outputs; the failure modes the commenter documents—fabricated status reports, confident claims that something is absent, and fluent text generated from inputs carrying no signal—read as ordinary correct work and cannot be identified as wrong from the text alone.",
+      "requested_fda_action": "Retain clinician review as an element of postmarket evaluation while recognizing its detection limits, and pair it with additional mechanisms (the commenter's own proposals) that can surface failures invisible in output text.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment centers on the human reviewer's inability to detect fluent but fabricated or unsupported outputs, making monitoring effectiveness a property of the human-model pairing rather than of the output alone.",
+        "operational_harm": "The described failures—fabricated status reports and confident absence claims that pass as ordinary correct work—are harms arising from workflow-level misinformation rather than from outputs that are visibly clinically incorrect."
+      },
+      "public_summary": "Accepts sample-based clinician review as the only proposed postmarket approach that assesses clinical appropriateness and does not seek to replace it, but argues it cannot detect fabricated status reports, confident absence claims, or fluent text from signal-free inputs, which read as correct.",
+      "summary_cut": false,
+      "source_passage": "Clinician review is the only one of the three that evaluates clinical appropriateness, and nothing we propose replaces it. Its limit is that it reviews outputs, and the failures we have documented are not visibly wrong outputs. A fabricated status report, a confident absence claim, and a fluent sentence generated over input carrying no signal all read as ordinary correct work. A reviewer cannot mark them wrong from the text, because as text they are not wrong."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "The commenter reports a recorded session (2026-09-04) in which the device made false statements in three separate turns while its presentation quality improved across the session, so sample-based review yields different assessments depending on where in the conversational trajectory the sample is drawn even though the underlying error rate is unchanged.",
+      "requested_fda_action": "Account for the effect of sampling position within multi-turn sessions when designing postmarket sample-based clinician review, so that evaluation results reflect actual error rates rather than the point in a session at which the sample was taken.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment describes device behavior shifting across a multi-turn session, with presentation quality changing independently of error rate, a within-session behavioral trajectory that point-in-time sampling does not capture."
+      },
+      "public_summary": "Commenter identifies a limitation in sample-based clinician review: in a recorded session, false statements occurred in three turns while presentation improved over time, so results depend on where in the conversation the sample is drawn despite an unchanged error rate.",
+      "summary_cut": false,
+      "source_passage": "There is a second limit specific to sampling. In our recorded session on 2026-09-04 the device produced false statements in three separate turns while its presentation improved steadily across the session ... A sample drawn late in that trajectory scores the device as more disciplined than a sample drawn early, while the error rate is unchanged. Sampling position determines the result."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter states that degradation defined as slow drift in output quality across weeks would not have detected any of the failures in their own record, whereas degradation defined within a single session — as a function of elapsed time, turn count, and accumulated context — detects all of them.",
+      "requested_fda_action": "Retain performance degradation monitoring as the central postmarket instrument, but redefine degradation as a within-session function (elapsed time, turn count, accumulated context) measurable from telemetry the device already produces, rather than as longitudinal output-quality drift.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment locates failure in behavior that emerges over the course of a single conversation as context accumulates, rather than in gradual model drift, implying monitoring must track the device's within-session behavioral envelope."
+      },
+      "public_summary": "Supports performance degradation monitoring as the primary postmarket instrument, but asks FDA to redefine degradation. The commenter reports that week-scale output-quality drift missed all failures in their record, while within-session measures — elapsed time, turn count, accumulated context — from existing telemetry detected them.",
+      "summary_cut": false,
+      "source_passage": "This is the right instrument and we would put the weight of the program on it, with one change to how degradation is defined. Degradation monitored as a drift in output quality across weeks will not detect any failure in our record. Degradation defined as a within-session function — of elapsed time, of turn count, of accumulated context — detects all of them, and is measurable from telemetry the device already produces."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q19",
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter warns that when a device's self-generated report is the only record of its behavior, that report cannot be falsified at the point of use, and any postmarket monitoring or supervisory mechanism built on it inherits the device's own errors.",
+      "requested_fda_action": "Adopt as a framework principle that a device's account of its own work be treated only as an annotation on an independently produced record—generated by the surrounding machine environment rather than the device itself—and never as the record against which performance is evaluated.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment makes postmarket monitoring depend on an independently produced machine-generated record at the point of use, raising infrastructure requirements FDA's monitoring questions do not address.",
+        "distributed_accountability": "Requiring a second record produced by something other than the device implies verification responsibility resting outside the device manufacturer's self-reporting, which FDA's framing does not resolve."
+      },
+      "public_summary": "Accepts postmarket monitoring and supervisory-agent approaches only if device self-reports are not the sole record. Argues self-generated logs are unfalsifiable at the point of use and propagate errors downstream; asks FDA to require an independently produced record against which device accounts are compared.",
+      "summary_cut": false,
+      "source_passage": "A device that reports its own actions is reporting on itself. Where that report is the only record, it is unfalsifiable at the point of use, and every downstream monitoring mechanism inherits its errors. The remedy does not require interpreting the device. It requires a second record, produced by the machine rather than by the device, against which the device's account can be compared. ... Stated as a principle a framework can adopt: a device's account of its own work should be evaluated as an annotation on an independently produced record, never as the record."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that text-based review cannot distinguish a genuine, current source consultation from a cached copy or a fabricated citation, so claims a device makes about consulting sources cannot be verified by analyzing the output alone.",
+      "requested_fda_action": "Add an independent source-access record check to postmarket performance evaluation, comparing a device's stated source consultation against logs showing whether and when a source was actually opened, yielding three distinguishable outcomes: current source read, dated copy read, or nothing read (fabrication).",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The commenter proposes a mechanical, judgment-free access-record comparison that can verify source-citation claims in one step, unlike clinician text review, implying a scalable assurance mechanism for deployed devices."
+      },
+      "public_summary": "Commenter proposes adding an independent source-access record check to postmarket evaluation approaches. Comparing a device's claimed source consultation against access logs mechanically distinguishes a current source read, a dated copy, and fabrication—distinctions the commenter says text analysis alone cannot make.",
+      "summary_cut": false,
+      "source_passage": "The comparison is mechanical and needs no clinical judgment. A device states that it consulted a source. The independent record shows whether that source was opened, and when. Three outcomes are distinguishable: the source was read and is current; a copy was read and its age is known; nothing was read. The first is a result, the second is a result with a stated boundary, and the third is a fabrication. No text analysis can separate these. An access record separates them in one step."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter argues that retrospective scoring of a device's own account of its work depends on someone choosing to look, so discrepancies may go undetected. They describe (as an unmeasured design) writing an independent access record first, populating the device's report against a log it did not author, requiring a supervising human to review both columns, and using a filing gate that rejects reports lacking an artifact or a verification signature.",
+      "requested_fda_action": "Consider postmarket evaluation approaches in which an independently authored record precedes and constrains the device's own report, with human review of both and gating on artifacts and verification signatures, rather than relying solely on after-the-fact sample-based review of device output.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The proposal embeds discrepancy detection in the ordering of workflow artifacts and a filing gate, so monitoring does not depend on someone initiating a retrospective audit.",
+        "human_ai_system_performance": "The described mechanism makes a supervising human's comparison of the independent record against the device's account a required step before any output is accepted."
+      },
+      "public_summary": "Commenter proposes, as an unmeasured design, that postmarket verification write an independent access record first, populate the device's report against a log it did not author, require supervisory human review of both, and gate filing on artifacts and verification signatures—rather than relying on after-the-fact review.",
+      "summary_cut": false,
+      "source_passage": "The second half of the design, which we describe as design because we have not published measurements of it: the access record is written first, and the device's account of its work is entered against a log it did not author. A supervising human sees both columns before accepting anything. A filing gate refuses a report that carries no artifact and refuses one that carries no verification signature. The ordering is the whole mechanism. Scoring a device's report after the fact requires someone to go looking. Populating the report from the record first means the discrepancy is present before anyone asks"
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "Session-level aggregate performance metrics can mask within-session degradation; the commenter cites an audio measurement where the session average error was under twenty percent while the final third exceeded forty percent.",
+      "requested_fda_action": "Require continuous evaluation across a session with results reported against elapsed time and turn index, rather than accepting performance figures aggregated at the session level.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment points to performance shifting over the course of an extended session, indicating behavior changes within a deployment episode that session-averaged metrics do not capture."
+      },
+      "public_summary": "Supports postmarket performance evaluation but asks FDA to require continuous within-session measurement reported by elapsed time and turn index instead of session-level aggregates, citing an audio measurement where performance in the final third was markedly worse than the session average.",
+      "summary_cut": false,
+      "source_passage": "We recommend continuous evaluation across a session, with results reported against elapsed time and turn index rather than aggregated per session. The aggregate conceals the shape, and the shape is the finding. In our audio measurement the session average was under twenty percent while the final third was over forty."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q19",
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter views periodic re-benchmarking as valid only for confirming that a device still meets its premarket criteria following a model or configuration change, and considers it unsuited to detecting performance degradation over time.",
+      "requested_fda_action": "Retain periodic re-benchmarking as a post-change conformance check tied to premarket criteria, but do not rely on it as a mechanism for degradation detection.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment implies that scheduled re-benchmarking cannot substitute for continuous real-world assurance that detects degradation in deployment."
+      },
+      "public_summary": "Supports keeping periodic re-benchmarking, but only in a narrowed role: confirming a device still meets its premarket criteria after a model or configuration change. Argues it should not be relied upon as a method for detecting performance degradation.",
+      "summary_cut": false,
+      "source_passage": "Periodic re-benchmarking retains a real function — confirming that a device still meets its premarket criteria after a model or configuration change. It should be retained for that and not relied on for degradation detection."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter is concerned that postmarket reassessment triggers should be objectively computable rather than dependent on clinical adjudication, and highlights cases where a device's claims diverge from an independent record of what it actually accessed (for example, reporting a source as current when only a dated copy was read).",
+      "requested_fda_action": "Adopt a defined set of five automatically computable postmarket triggers derived from observed device behavior, with claim–record divergence as the primary trigger firing at the moment the device makes the discrepant claim.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The proposal centers on triggers that can be computed automatically without clinical adjudication, addressing how postmarket surveillance can scale across deployments.",
+        "operational_harm": "The described trigger targets a device asserting an action or a source currency that the access record contradicts, a failure mode of process and information provenance rather than clinical diagnostic error."
+      },
+      "public_summary": "Commenter proposes supplementing FDA's postmarket reassessment approaches with five triggers computable without clinical adjudication, drawn from observed device behavior. The primary trigger is claim–record divergence—when a device reports an action or source currency contradicted by an independent access record—firing immediately upon the claim.",
+      "summary_cut": false,
+      "source_passage": "We propose five triggers, each computable without clinical adjudication and each derived from a behavior in our record. · Claim–record divergence. A device reports an action the independent access record does not show, or reports as current a source whose record shows only a dated copy was read. This is the primary trigger and it fires at the moment of the claim."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "Postmarket monitoring approaches focused on evaluating outputs may miss non-outputs: a device that produces nothing where output was expected leaves no log entry and therefore no detectable signal. The commenter cites a dictation log in which three terminated sessions and tens of seconds of lost speech generated zero log lines.",
+      "requested_fda_action": "Treat silence as a reportable device state rather than a missing record, so that both empty results and empty intervals trigger postmarket signals and are surfaced by monitoring systems.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The harm described is lost or omitted clinical content (terminated sessions, dropped speech) rather than an incorrect generated output, a failure mode outside output-accuracy monitoring.",
+        "deployment_assurance_scalability": "The comment identifies a blind spot in the deployed monitoring surface itself, where absent logging means failures can never be detected in the field."
+      },
+      "public_summary": "Accepts postmarket performance monitoring but argues it must detect non-outputs: a device producing nothing when output was expected should be a reportable state, with both empty results and empty time intervals raising signals. Cites dictation sessions and lost speech that generated no log entries.",
+      "summary_cut": false,
+      "source_passage": "· Silence. A device that produces no output where output was expected has produced a reportable state, not a missing record. An empty result and an empty interval should both raise. In our examination of a device's dictation log, three terminated sessions and tens of seconds of lost speech each produced zero log lines; nothing in the postmarket surface would ever have surfaced it."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Performance degradation within a single session is not captured by generic monitoring cadences; thresholds should be device-specific and grounded in the sponsor's own measured within-session performance curve. If a sponsor cannot produce such a curve, that gap should itself be treated as a deficiency in the monitoring programme.",
+      "requested_fda_action": "Expect sponsors to set elapsed-time and turn-count monitoring thresholds derived from their own device-specific within-session performance curve, and treat the absence of such a curve as an adverse finding about the adequacy of the monitoring programme.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment focuses on performance changing over the course of a single session (elapsed time and turn count), a within-session behavioral envelope that FDA's degradation-monitoring question does not explicitly address."
+      },
+      "public_summary": "Supports degradation monitoring but asks that thresholds be device-specific, expressed as elapsed-time and turn-count limits derived from the sponsor's own measured within-session performance curve, and that inability to produce such a curve be treated as a monitoring-programme deficiency.",
+      "summary_cut": false,
+      "source_passage": "· Elapsed-time and turn-count thresholds, device-specific and set from the sponsor's own within-session curve. Where a sponsor cannot produce that curve, the absence of it is itself a finding about the monitoring programme."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter identifies a specific class of output—assertions that something does not exist, was not retained, or was not found—as inherently unverifiable by a search process, which can only report what it located and cannot establish absence.",
+      "requested_fda_action": "Treat absence or negative-finding claims as a category of output that should automatically be flagged for verification rather than accepted at face value.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter recommends that outputs asserting something does not exist, was not retained, or was not found be automatically flagged for verification, reasoning that a search can report only what it found and cannot establish absence. The passage does not otherwise address FDA's monitoring approaches.",
+      "summary_cut": false,
+      "source_passage": "· Absence claims. Any output asserting that something does not exist, was not retained, or was not found should raise for verification, because a search can report what it found and can never establish what is not there."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q19",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter observed that a device's presentation-related behaviors (calibration language, source disclosure, self-correction) improved across a trajectory while its error rate did not, and notes this divergence moves in the direction most likely to reassure a reviewer.",
+      "requested_fda_action": "Require that divergence between presentation/communication metrics and accuracy metrics be reported separately rather than averaged into a composite performance measure.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment flags that improving presentation qualities can create reassurance among reviewers (and by extension users) even when underlying error rates are unchanged, an effect not captured by aggregate performance reporting."
+      },
+      "public_summary": "Commenter supports performance evaluation but asks FDA to require separate reporting where presentation-related behaviors (calibration language, source disclosure, self-correction) improve while error rates do not, citing an observed divergence that could otherwise be averaged away and appear reassuring to reviewers.",
+      "summary_cut": false,
+      "source_passage": "· Divergence between presentation and accuracy. Where a device's calibration language, source disclosure and self-correction improve across a trajectory while its error rate does not, that divergence should be reported rather than averaged away. We observed exactly this pattern and it moves in the direction most likely to reassure a reviewer."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter argues that periodic re-benchmarking and clinician- or panel-based review are more costly and less continuous than monitoring a set of five signals computable from device telemetry plus host-generated access records.",
+      "requested_fda_action": "Adopt or accept continuously computable telemetry-based postmarket signals (not requiring clinicians, panels, adjudication rubrics, or scheduled assessment windows) as an approach to postmarket performance evaluation, consistent with least-burdensome considerations.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The commenter frames monitoring that runs continuously from already-emitted device telemetry and host access records as more scalable than scheduled, human-adjudicated reassessment.",
+        "evidence_burden_commercial_viability": "The comment explicitly invokes least-burdensome considerations, asserting the recommended continuous approach costs less than quarterly re-benchmarking."
+      },
+      "public_summary": "Accepts postmarket performance evaluation but urges an alternative to periodic re-benchmarking: five signals computable continuously from existing device telemetry and host access records, requiring no clinician review, panel, adjudication rubric, or scheduled window, which the commenter says is less burdensome.",
+      "summary_cut": false,
+      "source_passage": "None of the five requires a clinician, a panel, an adjudication rubric, or a scheduled window. All five are computable from telemetry a device already emits plus an access record produced by the host. This matters for least-burdensome considerations: the approach we are recommending is cheaper to run continuously than periodic re-benchmarking is to run quarterly."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Aggregate, retrospective monitoring (e.g., quarterly manufacturer reporting) may protect future users but does nothing for the individual patient affected by a fabrication or mistranslation at the time it occurs, especially where the user cannot independently verify the output.",
+      "requested_fda_action": "Require that, for devices in assistive or clinical roles serving users who cannot self-verify, detection of fabrication or mistranslation trigger a session-level notification to a designated caregiver or clinician as a condition of the postmarket monitoring programme.",
+      "confidence": "high",
+      "gap_tags": [
+        "operational_harm",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment focuses on harm to the specific individual at the moment an erroneous output is produced, which aggregated postmarket reporting cycles do not address.",
+        "human_ai_system_performance": "It highlights that safety depends on whether a human in the loop—user or designated caregiver/clinician—can detect and act on an error, not on device-alone monitoring metrics."
+      },
+      "public_summary": "Accepts postmarket monitoring but argues quarterly manufacturer reporting protects only future users. Recommends that, for assistive or clinical uses where users cannot self-verify, detected fabrications or mistranslations trigger real-time, end-of-session notification to a designated caregiver or clinician as a monitoring condition.",
+      "summary_cut": false,
+      "source_passage": "A monitoring programme that surfaces a fabrication to the manufacturer, in a quarterly report, has protected future users. It has not protected the person the fabrication was about. ... If a monitoring system can detect a fabrication or a mistranslation at the moment it occurs ... then the finding should reach a person who is in a position to act on it, at the end of the session and not at the end of the quarter. For a device operating in an assistive or clinical role for a user who cannot self-verify, we recommend that detected fabrication and detected mistranslation generate a notification to the designated caregiver or clinician as a condition of the monitoring programme."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter is concerned that a postmarket fault-notification mechanism could be misused as surveillance of users or as a channel for transmitting the content of user communications, rather than only flagging that the device produced output unsupported by its own record.",
+      "requested_fda_action": "Limit any such monitoring/notification approach to alerting a named responsible person about a device fault, and explicitly exclude user surveillance or transmission of user communication content.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment frames postmarket fault signals as going to a specific named responsible person, addressing who receives and acts on monitoring findings in deployment."
+      },
+      "public_summary": "Supports a postmarket mechanism that notifies a named responsible person when a device produces output unsupported by its own record, but insists this be bounded: no surveillance of users and no transmission of the content of user communications.",
+      "summary_cut": false,
+      "source_passage": "We state the boundary on that recommendation plainly, because it can be misused. This is notification of a device fault to a named responsible person. It is not surveillance of the user, it is not transmission of the content of their communication, and it should not become either. The finding that leaves the device is that the device produced output its own record does not support. What the user was trying to say belongs to the user."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that a monitoring or reassessment standard resting on a developer's candour or intent would be unfalsifiable and would invite argument rather than measurement.",
+      "requested_fda_action": "Adopt postmarket triggers that are observable and measurable without determining why an output occurred, and avoid any standard that turns on developer intent or candour.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter recommends that postmarket monitoring triggers be defined in observable, measurable terms that do not require determining why an output occurred, and advises against any standard resting on developer intent or candour, which it considers unfalsifiable and contestable.",
+      "summary_cut": false,
+      "source_passage": "We make no claim about intent on the part of any developer, and we recommend against any standard that turns on candour or intent, because such a standard is unfalsifiable and will be argued rather than measured. Every trigger proposed above is observable without resolving why the output occurred."
+    }
+  ]
+}

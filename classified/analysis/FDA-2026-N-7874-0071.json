@@ -1,0 +1,668 @@
+{
+  "comment_id": "FDA-2026-N-7874-0071",
+  "input_hash": "1675b7683043ae0d",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:27:29Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter argues that manufacturer self-assessment cannot resolve a conflict of interest for safety-critical recognition, escalation, and calibration elements (Appendix A, S.1-S.3), because the sponsor best positioned to identify its device's weaknesses has the strongest incentive not to surface them in benchmarks it authors.",
+      "requested_fda_action": "Require independent third-party involvement, rather than sponsor self-assessment, for the safety-critical recognition, escalation, and calibration elements (S.1-S.3) of the competency-based benchmarking approach.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports third-party participation in the competency-based approach but would make it mandatory for one category: safety-critical recognition, escalation, and calibration benchmarks (S.1-S.3), arguing sponsor-authored benchmarking of its own weaknesses creates a conflict self-assessment cannot resolve.",
+      "summary_cut": false,
+      "source_passage": "I believe independent third-party involvement is not merely useful but structurally necessary for one specific category of function within the competency-based approach: safety-critical recognition, escalation, and calibration (Appendix A, elements S.1 to S.3). These are the elements most vulnerable to a conflict of interest that self-assessment cannot resolve, because the entity best positioned to know where its own device is weak is also the entity with the strongest incentive not to surface that weakness in a benchmarking result it authors."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "Independence criteria defined only at the organizational level would miss correlation at the technical level: an LLM-as-judge drawn from the same model family as the device under test is not meaningfully independent, even if the administering organizations are unrelated.",
+      "requested_fda_action": "Define third-party independence at two levels: organizational independence (no outcome-linked financial ties to the sponsor, and no equity, licensing, or revenue-sharing ties to the underlying foundation model developer) and evaluator independence (the AI adjudicator must not be the same model family, or a fine-tuned variant of it, as the device under test).",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses conditions under which evaluative judgment is delegated to an AI adjudicator rather than a human, and when that delegation undermines the validity of the assessment.",
+        "ai_supplier_quality": "It treats shared foundation model lineage between device and evaluator, and financial ties to the model developer, as a source of correlated failure that independence criteria must address."
+      },
+      "public_summary": "Supports third-party involvement in benchmarking but asks FDA to define independence at two levels: organizational (no outcome-linked sponsor ties or equity/licensing ties to the foundation model developer) and evaluator (an AI judge must not share the device's model family or be a fine-tuned variant).",
+      "summary_cut": false,
+      "source_passage": "On independence criteria, I\\u2019d propose the standard be defined at two levels, not one:\n1.Organizational independence. The third party has no financial relationship with the device sponsor tied to benchmarking outcomes, and no equity, licensing, or revenue-sharing arrangement with the foundation model developer whose model underlies the device under review.\n2.Evaluator independence. Where the adjudication method itself uses an AI system (an \\u201cLLM-as-judge\\u201d pattern, which the paper rightly flags as still requiring the same independence scrutiny), that evaluator model should not be the same model family, or a fine-tuned variant of the same model family, as the device under test. A GPT-based device benchmarked by a GPT-based judge is not independent in any way that matters, even if the organizations administering the test are unrelated."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "A fixed, pre-approved or CDRH-licensed panel of third-party evaluators would pose a greater risk of limiting competition and innovation than an open credentialing or accreditation structure.",
+      "requested_fda_action": "Adopt an accreditation/credentialing model similar to ASCA in which CDRH publishes qualification and structural-independence criteria that any qualifying entity can meet, rather than naming or licensing a fixed set of evaluators.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment concerns how FDA should structure delegation of device evaluation to independent third parties, favoring open accreditation criteria over a closed set of designated evaluators."
+      },
+      "public_summary": "Supports independent third-party involvement in the competency-based approach but urges FDA to use an ASCA-like accreditation model with published qualification and independence criteria open to any structurally independent entity, rather than a fixed, pre-approved panel that could restrict competitive entry.",
+      "summary_cut": false,
+      "source_passage": "On the competition concern, I\\u2019d note that a credentialing or accreditation structure (similar to ASCA, which the paper references) mitigates the innovation-limiting risk better than a closed panel of pre-approved evaluators would. CDRH setting qualification criteria that any structurally independent entity can meet, rather than naming or licensing a fixed set of evaluators, preserves competitive entry for third parties while still enforcing the independence standard."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "Each of the three proposed postmarket approaches has structural blind spots: re-benchmarking cannot detect unanticipated failure modes, sample-based clinician review is limited by sample size and reviewer availability and will miss rare high-severity events, and degradation monitoring is a trailing indicator that lags clinical materiality.",
+      "requested_fda_action": "Treat the three approaches as necessary but individually insufficient and expect them to be layered, recognizing that they operate at different latencies and detect different failure modes.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment notes that sample-based clinician review is bounded by sample size and reviewer availability and that drift thresholds lag clinical materiality, raising practical limits on sustaining assurance after deployment."
+      },
+      "public_summary": "Comment accepts FDA's three postmarket approaches but argues each is individually insufficient: re-benchmarking misses unanticipated failure modes, clinician sample review is limited by sample size and reviewer availability and misses rare severe events, and degradation monitoring lags clinically material drift.",
+      "summary_cut": false,
+      "source_passage": "All three approaches described are necessary but individually insufficient, because they operate at different latencies and catch different failure modes:\n\\u2022Periodic re-benchmarking catches regressions against known test cases but, by construction, cannot catch a failure mode the benchmark didn\\u2019t anticipate.\n\\u2022Sample-based clinician review catches failures visible to a domain expert reviewing outputs after the fact, but is bounded by sample size and reviewer availability, and will miss low-frequency, high-severity events by design.\n\\u2022Performance degradation monitoring catches statistical drift in aggregate but typically lags the point at which drift becomes clinically material, since a threshold breach is a trailing indicator."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q19",
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter considers the paper's listed postmarket approaches—periodic re-benchmarking, sample-based clinician review, and degradation monitoring—incomplete because they test fixed case sets or samples rather than live outputs. They point to a gap in real-time, per-output checking against current authoritative sources.",
+      "requested_fda_action": "Add and recognize a fourth postmarket approach: continuous per-output verification that checks every clinical assertion in real time against current authoritative sources (FDA labeling, clinical guidelines, federal safety guidance) and logs a citation for each claim cleared or flagged.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment proposes runtime verification of every live output rather than periodic or sampled review, raising how assurance is maintained continuously at deployment scale."
+      },
+      "public_summary": "Commenter accepts the proposed postmarket approaches but asks FDA to add a fourth: continuous per-output verification checking each live clinical assertion in real time against current authoritative sources such as FDA labeling and clinical guidelines, logging citations for cleared or flagged claims.",
+      "summary_cut": false,
+      "source_passage": "I\\u2019d add a fourth approach that the paper does not name explicitly but that Question 20 gestures toward: continuous per-output verification, run on every clinical assertion in real time rather than on a sample or a periodic cadence. This is distinct from re-benchmarking in that it doesn\\u2019t test the device against a fixed set of cases. It checks each live output against the current, authoritative source (FDA labeling, clinical guidelines, federal safety guidance) at the moment the output is generated, and logs a citation for every claim it clears or flags."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Sampling-based postmarket review depends on getting reassessment cadence and triggers right, whereas a continuous monitoring layer that checks every output can detect regressions without waiting for a defined trigger.",
+      "requested_fda_action": "Treat changes to the underlying model or other deployment-architecture components (Section VI.A) as reassessment triggers, while recognizing that continuous output-level verification lowers the cost and urgency of precisely specifying reassessment cadence.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment proposes continuous verification of every output as an alternative to periodic, sample-based reassessment, raising how assurance is maintained at deployment scale rather than at fixed review intervals."
+      },
+      "public_summary": "Supports reassessment triggered by changes to the underlying model or deployment architecture, but argues that a continuous monitoring layer checking every output—rather than sampling—reduces the importance of precisely defining postmarket reassessment cadence and triggering events.",
+      "summary_cut": false,
+      "source_passage": "On cadence and triggering events, I\\u2019d suggest that any change to the categories the paper already names as changes to \\u201cthe underlying model or other components of the deployment architecture\\u201d (Section VI.A) should trigger reassessment, but that continuous verification reduces the cost and urgency of getting that cadence exactly right. A monitoring layer that checks every output doesn\\u2019t need to wait for a defined trigger to catch a regression, because it isn\\u2019t sampling."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "A single pass/fail benchmark run is seen as weak evidence because a device can clear fixed test cases once yet behave inconsistently across repeated attempts, especially under time pressure, incomplete information, or adversarial framing.",
+      "requested_fda_action": "Have postmarket re-benchmarking produce a reliability profile from repeated runs of the same prespecified task, environment, and acceptance criteria—reporting success rate across attempts, consistency across semantically equivalent inputs, and human intervention rate—using reusable, prespecified test bundles rerun on a defined cadence so results are comparable across reassessment cycles.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment argues that assurance must come from repeatable, prespecified test bundles rerun on a defined cadence so performance remains comparable over successive reassessment cycles, rather than one-off evaluations."
+      },
+      "public_summary": "Supports periodic re-benchmarking but argues a single pass/fail run proves little. Recommends reliability profiles from repeated runs of prespecified tasks and acceptance criteria—measuring success rate, consistency across semantically equivalent inputs, and human intervention rate—using reusable test bundles for cross-cycle comparability.",
+      "summary_cut": false,
+      "source_passage": "I\\u2019d add one more point on re-benchmarking specifically: a single passed benchmark run proves very little on its own. A device can clear a fixed set of test cases once and still perform inconsistently across repeated attempts at the same task, particularly under time pressure, incomplete information, or adversarial framing. What\\u2019s more informative than a pass or fail on a given cadence is a reliability profile built from repeated runs of the same prespecified task, environment, and acceptance criteria: success rate across attempts, consistency of the answer given semantically equivalent inputs, and the rate at which the device needed human intervention. Reusable, prespecified test bundles, rerun on a defined cadence rather than authored fresh each time, are what make results comparable across reassessment cycles"
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "A machine-based supervisory agent can support postmarket monitoring only if it is itself governed; otherwise it relocates rather than resolves the trust problem, particularly because agents under-report their own failures.",
+      "requested_fda_action": "Require layered governance of the supervisory agent itself: deterministic (non-model) pre- and post-output checks including grounding verification, a deployment gate with a golden test set and defined hallucination-rate threshold re-run on any prompt or model change, and post-deployment sampling of the supervisory agent's outputs scored by a separate evaluator using independent external telemetry.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment argues that delegating oversight to a machine supervisory agent requires independent verification of that agent, since agents misreport their own performance.",
+        "deployment_assurance_scalability": "It proposes a deployment gate with a golden test set and defined failure threshold re-run on every prompt or model change, extending re-benchmarking to the monitoring layer at deployment."
+      },
+      "public_summary": "Agrees machine-based supervisory agents can facilitate postmarket monitoring, but only if the agent is itself governed.",
+      "summary_cut": true,
+      "source_passage": "Yes, with the caveat that the supervisory agent itself needs its own governance structure, or it simply relocates the trust problem rather than solving it. In my own build, I\\u2019ve organized this around three loops, which may be a useful frame for CDRH\\u2019s thinking here:\n1.Point-of-action safeguards. Deterministic, rule-based checks (not model-based) run before and after every output: pre-output checks like malformed-input rejection, post-output checks like grounding verification (is every claim traceable to a source the agent actually had access to). Keeping this layer deterministic rather than model-based matters because it needs to be auditable and it needs to fail predictably.\n2.Upstream governance. A deployment gate: a golden test set the workflow must pass before going live, with a defined hallucination-rate threshold, re-run on any prompt or model change. This is closer to the paper\\u2019s re-benchmarking concept but applied to the supervisory agent itself, not only the underlying device.\n3.Post-deployment monitoring. The supervisory agent\\u2019s own outputs are sampled and scored by a separate evaluator, using external telemetry (logging tool-call results independently of the agent\\u2019s self-reported status, since agents under-report their own failures) rather than trusting the agent\\u2019s account of its own performance."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q16",
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter argues a machine-based supervisory agent's reliability cannot be demonstrated using the agent's own logs, and that without organizational and architectural separation between supervisor and supervised system, such monitoring amounts to self-monitoring rather than an independent postmarket safeguard.",
+      "requested_fda_action": "Apply an independence standard to supervisory agents consistent with the commenter's Question 16 response, requiring that the evaluating agent be organizationally and architecturally separate from the agent it supervises before its reliability is credited.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment concerns oversight responsibility being delegated to an automated supervisory agent whose own reliability cannot be self-verified.",
+        "distributed_accountability": "It raises who independently verifies monitoring performance when the supervising and supervised systems are not organizationally or architecturally separated."
+      },
+      "public_summary": "Accepts machine-based supervisory agents only with conditions: reliability cannot be established from the agent's own logs. Urges FDA to require an evaluator organizationally and architecturally separate from the supervised agent, warning that otherwise such monitoring is effectively self-monitoring rather than a genuine postmarket safeguard.",
+      "summary_cut": false,
+      "source_passage": "The reliability question CDRH raises is the right one to press on, and my answer is that a supervisory agent\\u2019s reliability cannot be established by the agent\\u2019s own logs. It requires the same independence standard I describe in my response to Question 16: an evaluator that is organizationally and architecturally separate from the agent it supervises. Without that, \\u201cmachine-based supervisory agent\\u201d risks becoming a rebranding of self-monitoring rather than a genuine postmarket safeguard."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q20",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "A supervisory agent that operates without a bounded scope of action within a session is difficult to audit and difficult to contain if a failure occurs mid-session.",
+      "requested_fda_action": "Explicitly name turn budgets and per-session cost or action caps as practical circuit breakers / bounded-scope controls for supervisory and agentic functions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment focuses on limiting the scope of action delegated to a machine supervisory agent within a session so its authority remains bounded and auditable.",
+        "operational_harm": "It raises the difficulty of containing harm mid-session when an agent's actions are not capped, an operational failure mode beyond output accuracy."
+      },
+      "public_summary": "Accepts machine supervisory agents in principle but asks CDRH to explicitly name bounded-scope controls—turn budgets and per-session cost or action caps—as circuit breakers, arguing unbounded agents are harder to audit and to contain if failures occur mid-session.",
+      "summary_cut": false,
+      "source_passage": "I\\u2019d also flag turn budgets and per-session cost or action caps as a practical circuit breaker CDRH may want to name explicitly. A supervisory agent operating without a bounded scope of action per session is harder to audit and harder to contain when something goes wrong mid-session."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q20",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "The commenter is concerned that using a single model to supervise another model is an inadequate basis for reliable oversight, and that evaluation limited to the final output misses errors in the agent's reasoning and execution path.",
+      "requested_fda_action": "Consider a decomposed supervisory architecture in which multiple narrow evaluators run against the same output: a deterministic non-model layer verifying conclusively checkable facts (citation existence, calculations, required fields), a semantic evaluator of reasoning quality, a policy evaluator confirming the agent stayed within authorized scope and tools, and a trace evaluator scoring the full execution path.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The proposed policy evaluator is framed around verifying that an agent remained within its authorized scope and permitted tools, an oversight dimension beyond output accuracy.",
+        "deployment_assurance_scalability": "The comment proposes automated, layered evaluation machinery as the practical means of continuously assuring device behavior in operation rather than relying on output-level model judgment."
+      },
+      "public_summary": "Commenter engages FDA's machine-based supervisory agent concept but argues against one model judging another, proposing instead layered narrow evaluators: deterministic fact checks without model involvement, semantic reasoning review, a policy check on authorized scope and tool use, and scoring of the full execution trace.",
+      "summary_cut": false,
+      "source_passage": "Rather than relying on one model to judge another, I decompose the supervisory function into several narrower evaluators running against the same output: a deterministic layer that checks facts a machine can conclusively verify without any model involved (did the output cite a source that actually exists, does a calculation match, was a required field present), a semantic evaluator that assesses the quality and appropriateness of reasoning, a policy evaluator that checks whether the agent stayed within its authorized scope and tools, and a trace evaluator that scores the full execution path, not just the final output."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q19",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter argues that evaluating agentic systems only by comparing inputs to final outputs misses mid-process failures, such as a reasoning chain that should have triggered earlier escalation or that used an unauthorized tool, even when the end output appears correct.",
+      "requested_fda_action": "CDRH should consider requiring that postmarket evaluation of agentic GenAI-enabled devices assess the full reasoning/action trajectory, not only the endpoint output.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment highlights agents acting outside authorized bounds, such as invoking a tool they were not permitted to use or failing to escalate when warranted.",
+        "operational_harm": "It identifies harms arising from the process itself—missed escalation and unauthorized actions—rather than from an incorrect final output."
+      },
+      "public_summary": "Commenter accepts postmarket evaluation of agentic systems but says endpoint-only assessment misses mid-process failures, such as missed escalation or unauthorized tool use behind correct-looking outputs. Asks CDRH to consider requiring trajectory-level, not just input-output, postmarket evaluation.",
+      "summary_cut": false,
+      "source_passage": "That last piece matters more than it might first appear: evaluating only input against output misses failures that occur mid-process, such as an agent that reaches a correct-looking conclusion through a reasoning chain that should have triggered escalation earlier or used a tool it wasn\\u2019t authorized to use. I\\u2019d suggest CDRH consider requiring that postmarket evaluation of agentic systems assess the trajectory, not only the endpoint."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "Using machine-based supervisory agents to monitor worker agents does not resolve the underlying validation question, because the supervisory structure itself must be benchmarked; otherwise the accountability problem simply regresses one level.",
+      "requested_fda_action": "Require that any chain of agentic supervision terminate in a structurally independent, non-agentic check rather than relying on agents supervising agents.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment concerns oversight authority being handed to machine supervisory agents and argues such delegation must ultimately rest on a non-agentic, independent check.",
+        "distributed_accountability": "It warns that layering supervisory agents displaces rather than resolves accountability, moving the unanswered assurance question up one level."
+      },
+      "public_summary": "Comment on machine-based supervisory agents for postmarket monitoring: such agents do not remove the need to validate the supervisor itself. The commenter asks that any supervision chain terminate in a structurally independent, non-agentic check, otherwise accountability concerns merely regress one level.",
+      "summary_cut": false,
+      "source_passage": "This still doesn\\u2019t eliminate the underlying\n\nquestion. If a supervisory structure benchmarks a worker agent, something still has to benchmark the supervisory structure, and that chain has to terminate somewhere in a structurally independent, non-agentic check, or the accountability problem simply regresses one level rather than resolving."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter is concerned that scaling re-evaluation of post-deployment modifications by the technical nature of the change alone (e.g., prompt template edit versus model swap) misses the safety consequence of where the change lands, including how reversible it is and how broadly and quickly it could propagate before detection.",
+      "requested_fda_action": "Adopt a risk-tiered gating structure for modifications that parallels the Section IV two-axis framework, classifying each change by reversibility and 'blast radius' (patients affected, functions touched, speed of compounding before detection) rather than only by the technical type of change.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment frames modification risk in terms of how many patients and functions a change reaches and how fast it compounds before detection, a deployment-scale assurance concern beyond the change-type categories in Q22."
+      },
+      "public_summary": "Accepts scaling re-evaluation of modifications to their expected impact, but argues the technical type of change is insufficient. Recommends a risk-tiered gating structure classifying each modification by reversibility and 'blast radius'—patients and functions affected and speed of compounding before detection—mirroring the two-axis risk framework.",
+      "summary_cut": false,
+      "source_passage": "I\\u2019d suggest CDRH consider a risk-tiered gating structure for modifications, parallel to the two-axis framework already proposed for initial risk assessment in Section IV: classify each modification by reversibility and blast radius (how many patients, how many device functions, how quickly the change could compound before detection), not only by the technical nature of the change itself. A prompt template change and a full model swap are different in kind, but a prompt template change that touches a safety-critical escalation pathway (Appendix A, S.1) may warrant more scrutiny than a model swap that only affects a low-consequence, non-directive function."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "pccp",
+      "stakeholder_concern": "The commenter is concerned that the technical size of a modification is a poor proxy for its safety impact, and that changes affecting safety-critical recognition, scope maintenance, or calibration behaviors could otherwise be absorbed into routine change management without re-verification.",
+      "requested_fda_action": "Scale re-evaluation using a two-axis structure based on reversibility and breadth of impact (\"blast radius\"): allow low-risk, reversible, narrow changes that do not touch safety-critical elements to be handled within a PCCP and documented in the quality management system, while requiring changes high on either axis — or touching safety-critical recognition, scope maintenance, or calibration behaviors — to be re-benchmarked against the original competency baseline before deployment.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The commenter singles out \"scope maintenance\" and calibration behaviors as safety-critical properties that must be re-verified after changes, treating the device's behavioral envelope rather than its technical configuration as the object of change control."
+      },
+      "public_summary": "Accepts scaling re-evaluation to modification impact but proposes a specific two-axis test: reversible, narrow changes not touching safety-critical elements may sit in a PCCP with QMS documentation, while changes affecting safety-critical recognition, scope maintenance, or calibration require re-benchmarking before deployment regardless of technical size.",
+      "summary_cut": false,
+      "source_passage": "Under such a structure, changes low on both axes (reversible, narrow blast radius, no touch to safety-critical elements) could reasonably sit inside a PCCP with documentation in the sponsor\\u2019s quality management system. Changes high on either axis, and especially changes to safety-critical recognition, scope maintenance, or calibration behaviors, regardless of how small the underlying technical change appears, should trigger re-benchmarking against the original competency baseline before deployment, not after."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "The commenter argues that the described competency (recognizing when a planned action sequence exceeds intended use) does not cover cases where an agent's own authority expands mid-session, such as invoking a tool that grants write access it lacked at session start.",
+      "requested_fda_action": "Extend evaluation expectations for agentic devices so they test not only recognition of out-of-scope actions but also whether the agent detects and responds to changes in its own available scope or authority during a task.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment centers on an agent acquiring expanded permissions (e.g., write access) mid-session beyond what it held at session start.",
+        "dynamic_intended_use": "It notes that an agentic system's effective operating scope can shift within a session in ways not captured by a fixed action-sequence or intended-use boundary."
+      },
+      "public_summary": "Accepts the proposed agentic competency framing but says it is incomplete: an agent's authority can expand mid-session, for example gaining write access via a tool. Asks FDA to require evaluation of whether agents recognize changes in their own available scope during a task.",
+      "summary_cut": false,
+      "source_passage": "First, escalation of authority within a single session. A.1 addresses recognition of when a planned action sequence exceeds intended use, but an agentic system\\u2019s authority can also expand mid-session in ways that don\\u2019t map cleanly to a single \\u201caction sequence.\\u201d For example, a system that starts with read-only access to a chart and, over the course of a multi-step task, invokes a tool that grants it write access it didn\\u2019t have at session start. Evaluation should test not just whether the agent recognizes out-of-scope actions, but whether it recognizes when its own available scope has changed mid-task."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "An agentic device that treats a tool's output as ground truth provides only the appearance of an external check; if the tool and the agent share a developer, training lineage, or incentive structure, the verification is not independent and mirrors the self-affirmation problem of a device benchmarking itself.",
+      "requested_fda_action": "Apply the same independence scrutiny to tool outputs as to benchmarking, and have CDRH's evaluation criteria for agentic systems explicitly distinguish tool outputs originating from structurally independent sources from those that do not, treating the latter as weaker assurance.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment raises shared developer, training lineage, or incentive structure between an agent and the tools it calls as a source of correlated failure that undermines apparent external verification."
+      },
+      "public_summary": "Accepts the listed agentic competency on tool use but asks CDRH to go further: evaluation criteria should distinguish tool outputs from structurally independent sources from those sharing a developer, training lineage, or incentives, which offer less assurance than they appear to.",
+      "summary_cut": false,
+      "source_passage": "Second, tool-output trust. A.1 names \\u201caccurate tool use and recognition of erroneous tool outputs\\u201d as a competency, and I\\u2019d underscore that this deserves the same independence scrutiny raised elsewhere in this comment. An agentic system that receives a tool\\u2019s output\n\nand treats it as ground truth without independent verification has the same self-affirmation problem as a device benchmarking itself. The tool call looks like an external check, but if the tool and the agent share a developer, a training lineage, or an incentive structure, it isn\\u2019t one. I\\u2019d suggest CDRH\\u2019s evaluation criteria for agentic systems explicitly distinguish tool outputs that come from structurally independent sources from tool outputs that don\\u2019t, since the latter provides less assurance than it appears to on paper."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q16",
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter asserts that no system can credibly verify its own outputs, so verification must be structurally separate from what is being verified. This separation must extend to the evaluator model itself, not merely to the human review process surrounding it.",
+      "requested_fda_action": "Require that verification and evaluation functions—whether third-party benchmarking/confirmation or machine-based supervisory agents—be structurally independent from the device or model being assessed, including independence at the level of the evaluator model, not only procedural or human-process separation.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment goes to whether evaluative authority can be delegated to a model that shares structure with the system under review, arguing the evaluator model itself must be separate."
+      },
+      "public_summary": "Argues that a system cannot credibly verify its own outputs, so any verification—including third-party assessment or machine supervisory agents—must be structurally separate from the device being evaluated, with independence applied to the evaluator model itself, not only surrounding human processes.",
+      "summary_cut": false,
+      "source_passage": "Throughout, I draw on the structural principle that has shaped my product design: a system cannot credibly verify its own outputs. The verifier must be structurally separate from the thing being verified, including at the level of the evaluator model itself, not only the human process around it."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q10",
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter argues that sponsors authoring their own benchmarks face a conflict of interest, since the party best positioned to identify a device's weaknesses has the least incentive to disclose them, and that nominal organizational separation is insufficient when the adjudicating system is an AI model of the same lineage as the device under test.",
+      "requested_fda_action": "Define third-party independence at two levels: organizational independence (no outcome-linked financial ties to the sponsor and no equity, licensing, or revenue-sharing arrangement with the underlying foundation model developer) and evaluator independence (an LLM-as-judge must not be the same model family or a fine-tuned variant of the model powering the device).",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment raises correlated dependence on a shared foundation model supplier—both through financial ties to model developers and through judge models drawn from the same model family as the device—as a source of undetected evaluation blind spots."
+      },
+      "public_summary": "Supports third-party involvement in benchmarking but asks FDA to specify independence at two levels: organizational (no outcome-linked financial ties to the sponsor or stakes in the underlying foundation model developer) and evaluator (an AI judge must not share the device model's family).",
+      "summary_cut": false,
+      "source_passage": "because the entity best positioned to know where its own device is weak is also the entity with the strongest incentive not to surface that weakness in a benchmarking result it authors.\nOn independence criteria, I’d propose the standard be defined at two levels, not one:\nOrganizational independence. The third party has no financial relationship with the device sponsor tied to benchmarking outcomes, and no equity, licensing, or revenue-sharing arrangement with the foundation model developer whose model underlies the device under review.\nEvaluator independence. Where the adjudication method itself uses an AI system (an “LLM-as-judge” pattern, which the paper rightly flags as still requiring the same independence scrutiny), that evaluator model should not be the same model family, or a fine-tuned variant of the same model family, as the device under test. A GPT-based device benchmarked by a GPT-based judge is not independent in any way that matters, even if the organizations administering the test are unrelated."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter is concerned that involving independent third parties through a fixed, pre-approved or FDA-licensed set of evaluators would limit competition and innovation, whereas an open accreditation model would not.",
+      "requested_fda_action": "CDRH should use a credentialing or accreditation structure (analogous to ASCA) that sets qualification and independence criteria any structurally independent entity can meet, rather than naming or licensing a closed panel of evaluators.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts third-party involvement in the competency-based approach but urges CDRH to use an open accreditation or credentialing structure with published qualification and independence criteria, rather than a fixed set of named or licensed evaluators, to preserve competitive entry.",
+      "summary_cut": false,
+      "source_passage": "On the competition concern, I’d note that a credentialing or accreditation structure (similar to ASCA, which the paper references) mitigates the innovation-limiting risk better than a closed panel of pre-approved evaluators would. CDRH setting qualification criteria that any structurally independent entity can meet, rather than naming or licensing a fixed set of evaluators, preserves competitive entry for third parties while still enforcing the independence standard."
+    },
+    {
+      "segment_id": "seg-021",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "Each of the three proposed postmarket approaches has structural blind spots: re-benchmarking cannot detect unanticipated failure modes, sample-based clinician review is bounded by sample size and will miss low-frequency high-severity events, and degradation monitoring is a trailing indicator that lags clinical materiality.",
+      "requested_fda_action": "Treat the three approaches as complementary layers that must be used together rather than as interchangeable options, recognizing their differing detection latencies and the failure modes each cannot catch.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment argues that available monitoring methods detect problems only at differing latencies and miss rare but severe events, raising the question of how ongoing assurance can be maintained in real deployment."
+      },
+      "public_summary": "Commenter accepts FDA's three postmarket approaches but argues each is individually insufficient: re-benchmarking misses unanticipated failures, clinician sample review misses rare severe events, and degradation monitoring is a trailing indicator. Urges treating them as complementary layers with different detection latencies.",
+      "summary_cut": false,
+      "source_passage": "All three approaches described are necessary but individually insufficient, because they operate at different latencies and catch different failure modes:\nPeriodic re-benchmarking catches regressions against known test cases but, by construction, cannot catch a failure mode the benchmark didn’t anticipate.\nSample-based clinician review catches failures visible to a domain expert reviewing outputs after the fact, but is bounded by sample size and reviewer availability, and will miss low-frequency, high-severity events by design.\nPerformance degradation monitoring catches statistical drift in aggregate but typically lags the point at which drift becomes clinically material, since a threshold breach is a trailing indicator."
+    },
+    {
+      "segment_id": "seg-022",
+      "question_ids": [
+        "q19",
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter views the paper's listed postmarket approaches (periodic re-benchmarking, sample-based clinician review, degradation monitoring) as incomplete because they test fixed case sets or samples rather than live outputs, and notes Question 20 only gestures toward an alternative.",
+      "requested_fda_action": "Recognize a fourth postmarket approach: continuous per-output verification that checks every clinical assertion in real time against current authoritative sources (FDA labeling, clinical guidelines, federal safety guidance) and logs a citation for each claim cleared or flagged.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment proposes assurance at the level of every live output in deployment, rather than periodic or sample-based checks, raising how monitoring scales to real-time operation."
+      },
+      "public_summary": "Accepts FDA's postmarket monitoring direction but says the listed approaches are incomplete. Proposes a fourth option: continuous, real-time verification of every clinical assertion against current authoritative sources (labeling, guidelines, federal safety guidance), with a logged citation for each claim cleared or flagged.",
+      "summary_cut": false,
+      "source_passage": "I’d add a fourth approach that the paper does not name explicitly but that Question 20 gestures toward: continuous per-output verification, run on every clinical assertion in real time rather than on a sample or a periodic cadence. This is distinct from re-benchmarking in that it doesn’t test the device against a fixed set of cases. It checks each live output against the current, authoritative source (FDA labeling, clinical guidelines, federal safety guidance) at the moment the output is generated, and logs a citation for every claim it clears or flags."
+    },
+    {
+      "segment_id": "seg-023",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Sampling-based postmarket review depends on getting reassessment cadence and triggers right, whereas regressions may occur between sampling intervals or outside defined triggers.",
+      "requested_fda_action": "Treat any change to the underlying model or other deployment-architecture components (Section VI.A) as a reassessment trigger, while recognizing that continuous output-level verification reduces the cost and urgency of precisely calibrating monitoring cadence.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment proposes a continuous monitoring layer that verifies every output rather than periodic sampling, raising how assurance is maintained at deployment scale between defined reassessment points."
+      },
+      "public_summary": "Supports reassessment triggered by changes to the underlying model or deployment architecture, as the paper describes, but argues that continuous verification checking every output—rather than sampling—would catch regressions without requiring precisely calibrated monitoring cadence or predefined triggers.",
+      "summary_cut": false,
+      "source_passage": "On cadence and triggering events, I’d suggest that any change to the categories the paper already names as changes to “the underlying model or other components of the deployment architecture” (Section VI.A) should trigger reassessment, but that continuous verification reduces the cost and urgency of getting that cadence exactly right. A monitoring layer that checks every output doesn’t need to wait for a defined trigger to catch a regression, because it isn’t sampling."
+    },
+    {
+      "segment_id": "seg-024",
+      "question_ids": [
+        "q19",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "A single pass/fail benchmark run is weak evidence because a device can clear fixed test cases once yet behave inconsistently on repeated attempts, especially under time pressure, incomplete information, or adversarial framing.",
+      "requested_fda_action": "Shift postmarket re-benchmarking from periodic pass/fail results toward a reliability profile built from repeated runs of the same prespecified task, environment, and acceptance criteria—reporting success rate across attempts, consistency across semantically equivalent inputs, and human intervention rate—using reusable, prespecified test bundles rerun on a defined cadence so results stay comparable across reassessment cycles.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment argues assurance must be repeatable and comparable over time through reusable, prespecified test bundles rerun on a defined cadence rather than freshly authored assessments.",
+        "human_ai_system_performance": "It proposes the rate at which the device required human intervention as a core reliability metric, treating human involvement as part of measured performance rather than the device alone."
+      },
+      "public_summary": "Supports postmarket re-benchmarking but argues single pass/fail runs prove little. Recommends reliability profiles from repeated runs of prespecified tasks—success rate across attempts, consistency under semantically equivalent inputs, and human intervention rate—using reusable test bundles rerun on a defined cadence for comparability.",
+      "summary_cut": false,
+      "source_passage": "I’d add one more point on re-benchmarking specifically: a single passed benchmark run proves very little on its own. A device can clear a fixed set of test cases once and still perform inconsistently across repeated attempts at the same task, particularly under time pressure, incomplete information, or adversarial framing. What’s more informative than a pass or fail on a given cadence is a reliability profile built from repeated runs of the same prespecified task, environment, and acceptance criteria: success rate across attempts, consistency of the answer given semantically equivalent inputs, and the rate at which the device needed human intervention. Reusable, prespecified test bundles, rerun on a defined cadence rather than authored fresh each time, are what make results comparable across reassessment cycles"
+    },
+    {
+      "segment_id": "seg-025",
+      "question_ids": [
+        "q16",
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter agrees that the reliability of a machine-based supervisory agent is the key question, but argues that such an agent cannot be validated through its own logs or outputs, which would amount to self-monitoring rather than an independent postmarket safeguard.",
+      "requested_fda_action": "Apply the same independence standard the commenter proposes for third-party involvement under Question 16: require that any evaluator of a supervisory agent be organizationally and architecturally separate from the agent it supervises.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses what assurance is needed when postmarket oversight is delegated to an automated supervisory agent, arguing that self-generated evidence cannot establish that agent's reliability."
+      },
+      "public_summary": "Accepts machine-based supervisory agents as a postmarket approach only if their reliability is established independently. Argues an agent's own logs cannot validate it, and urges FDA to require evaluators that are organizationally and architecturally separate from the supervised agent to avoid self-monitoring.",
+      "summary_cut": false,
+      "source_passage": "The reliability question CDRH raises is the right one to press on, and my answer is that a supervisory agent’s reliability cannot be established by the agent’s own logs. It requires the same independence standard I describe in my response to Question 16: an evaluator that is organizationally and architecturally separate from the agent it supervises. Without that, “machine-based supervisory agent” risks becoming a rebranding of self-monitoring rather than a genuine postmarket safeguard."
+    },
+    {
+      "segment_id": "seg-026",
+      "question_ids": [
+        "q20",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "A supervisory or agentic system that operates without a bounded scope of action within a session is difficult to audit and difficult to contain if a failure occurs mid-session.",
+      "requested_fda_action": "Explicitly name turn budgets and per-session cost or action caps as practical circuit breakers that bound an agent's scope of action per session.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment focuses on limiting how much autonomous action an agent may take within a session, i.e., bounding the authority delegated to a machine supervisor.",
+        "operational_harm": "The concern is auditability and containment when something goes wrong mid-session, a failure mode of unbounded runtime operation rather than of output accuracy."
+      },
+      "public_summary": "Accepts machine supervisory agents and agentic oversight in principle but asks CDRH to explicitly name turn budgets and per-session cost or action caps as circuit breakers, arguing unbounded per-session scope makes agents harder to audit and contain mid-session.",
+      "summary_cut": false,
+      "source_passage": "I’d also flag turn budgets and per-session cost or action caps as a practical circuit breaker CDRH may want to name explicitly. A supervisory agent operating without a bounded scope of action per session is harder to audit and harder to contain when something goes wrong mid-session."
+    },
+    {
+      "segment_id": "seg-027",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "Using machine-based supervisory agents to benchmark worker agents does not resolve the oversight question, because the supervisory structure itself must be benchmarked; without a defined endpoint the accountability problem regresses one level rather than being resolved.",
+      "requested_fda_action": "Require that any chain of agentic supervision terminate in a structurally independent, non-agentic check, so that machine-based monitoring is anchored to an independently verifiable evaluation.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment focuses on oversight functions being delegated to machine agents that themselves supervise other agents, raising the question of who or what validates the supervisor.",
+        "distributed_accountability": "It argues that layering supervisory agents merely displaces accountability up one level unless the chain terminates in an independent, non-agentic check."
+      },
+      "public_summary": "Comment accepts machine-based supervisory agents only with a condition FDA's question does not address: the chain of agents benchmarking agents must terminate in a structurally independent, non-agentic check, otherwise accountability is displaced one level rather than resolved.",
+      "summary_cut": false,
+      "source_passage": "This still doesn’t eliminate the underlying question. If a supervisory structure benchmarks a worker agent, something still has to benchmark the supervisory structure, and that chain has to terminate somewhere in a structurally independent, non-agentic check, or the accountability problem simply regresses one level rather than resolving."
+    },
+    {
+      "segment_id": "seg-028",
+      "question_ids": [
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "Classifying post-deployment modifications by their technical nature alone (e.g., prompt change versus model swap) may misallocate scrutiny, because a minor technical change touching a safety-critical pathway can carry more consequence than a major change to a low-consequence function.",
+      "requested_fda_action": "Adopt a risk-tiered gating structure for modifications that parallels the Section IV two-axis framework, classifying each change by reversibility and 'blast radius' (patients affected, functions affected, and how quickly effects could compound before detection) rather than only by the technical type of change.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment frames modification risk in terms of how widely and how quickly a change propagates across patients and functions before detection, a scale-and-detection-latency concern beyond the question's focus on change categories."
+      },
+      "public_summary": "Supports scaling re-evaluation to modification impact but asks FDA to gate changes using a risk tier based on reversibility and 'blast radius'—patients and functions affected and speed of compounding before detection—rather than the technical type of change alone.",
+      "summary_cut": false,
+      "source_passage": "I’d suggest CDRH consider a risk-tiered gating structure for modifications, parallel to the two-axis framework already proposed for initial risk assessment in Section IV: classify each modification by reversibility and blast radius (how many patients, how many device functions, how quickly the change could compound before detection), not only by the technical nature of the change itself. A prompt template change and a full model swap are different in kind, but a prompt template change that touches a safety-critical escalation pathway (Appendix A, S.1) may warrant more scrutiny than a model swap that only affects a low-consequence, non-directive function."
+    },
+    {
+      "segment_id": "seg-029",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "intended_use",
+      "stakeholder_concern": "The commenter argues that the proposed criterion (A.1) on recognizing when a planned action sequence exceeds intended use does not address cases where an agent's own authority expands mid-session, such as a system beginning with read-only chart access and later invoking a tool that grants write access.",
+      "requested_fda_action": "Extend evaluation expectations for agentic devices so they test not only recognition of out-of-scope actions but also whether the agent detects and responds when its own available scope or permissions change during a task.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment centers on an agent acquiring expanded permissions (e.g., write access via tool invocation) mid-session beyond what it held at session start.",
+        "dynamic_intended_use": "It highlights that an agentic system's operating envelope can shift within a single session rather than being fixed by a prespecified action sequence."
+      },
+      "public_summary": "Accepts the agentic evaluation criteria but asks FDA to go further: beyond testing whether an agent recognizes out-of-scope actions, evaluation should test whether it recognizes mid-session expansions of its own authority, such as gaining write access during a multi-step task.",
+      "summary_cut": false,
+      "source_passage": "First, escalation of authority within a single session. A.1 addresses recognition of when a planned action sequence exceeds intended use, but an agentic system’s authority can also expand mid-session in ways that don’t map cleanly to a single “action sequence.” For example, a system that starts with read-only access to a chart and, over the course of a multi-step task, invokes a tool that grants it write access it didn’t have at session start. Evaluation should test not just whether the agent recognizes out-of-scope actions, but whether it recognizes when its own available scope has changed mid-task."
+    },
+    {
+      "segment_id": "seg-030",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter argues that an agentic system treating tool outputs as ground truth without independent verification recreates the self-affirmation problem of a device benchmarking itself, particularly when the tool and agent share a developer, training lineage, or incentive structure, so an apparent external check provides less assurance than it appears.",
+      "requested_fda_action": "Retain 'accurate tool use and recognition of erroneous tool outputs' as a competency but apply independence scrutiny to it, and have CDRH's evaluation criteria for agentic systems explicitly distinguish tool outputs from structurally independent sources from those that are not.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment raises the provenance and independence of tool components supplying an agent, noting that shared developer, training lineage, or incentives undermine the assurance value of tool-based verification."
+      },
+      "public_summary": "Accepts the agentic competency on tool use but asks CDRH to apply independence scrutiny to tool outputs, distinguishing structurally independent sources from tools sharing a developer, training lineage, or incentives, which the commenter says offer weaker verification than they appear.",
+      "summary_cut": false,
+      "source_passage": "Second, tool-output trust. A.1 names “accurate tool use and recognition of erroneous tool outputs” as a competency, and I’d underscore that this deserves the same independence scrutiny raised elsewhere in this comment. An agentic system that receives a tool’s output and treats it as ground truth without independent verification has the same self-affirmation problem as a device benchmarking itself. The tool call looks like an external check, but if the tool and the agent share a developer, a training lineage, or an incentive structure, it isn’t one. I’d suggest CDRH’s evaluation criteria for agentic systems explicitly distinguish tool outputs that come from structurally independent sources from tool outputs that don’t, since the latter provides less assurance than it appears to on paper."
+    }
+  ]
+}

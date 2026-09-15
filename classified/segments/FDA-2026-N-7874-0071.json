@@ -1,0 +1,261 @@
+{
+  "comment_id": "FDA-2026-N-7874-0071",
+  "input_hash": "4a051374ae70947d",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:09:51Z",
+  "model": "claude-opus-5",
+  "chunks": 2,
+  "positions": [
+    {
+      "question_ids": [
+        "q16"
+      ],
+      "source_passage": "I believe independent third-party involvement is not merely useful but structurally necessary for one specific category of function within the competency-based approach: safety-critical recognition, escalation, and calibration (Appendix A, elements S.1 to S.3). These are the elements most vulnerable to a conflict of interest that self-assessment cannot resolve, because the entity best positioned to know where its own device is weak is also the entity with the strongest incentive not to surface that weakness in a benchmarking result it authors.",
+      "position_gist": "Independent third-party involvement should be required specifically for safety-critical recognition, escalation, and calibration elements, because self-assessment cannot resolve the conflict of interest there.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q16"
+      ],
+      "source_passage": "On independence criteria, I\\u2019d propose the standard be defined at two levels, not one:\n1.Organizational independence. The third party has no financial relationship with the device sponsor tied to benchmarking outcomes, and no equity, licensing, or revenue-sharing arrangement with the foundation model developer whose model underlies the device under review.\n2.Evaluator independence. Where the adjudication method itself uses an AI system (an \\u201cLLM-as-judge\\u201d pattern, which the paper rightly flags as still requiring the same independence scrutiny), that evaluator model should not be the same model family, or a fine-tuned variant of the same model family, as the device under test. A GPT-based device benchmarked by a GPT-based judge is not independent in any way that matters, even if the organizations administering the test are unrelated.",
+      "position_gist": "Independence criteria should be defined at two levels—organizational independence (no financial ties to the sponsor or foundation model developer) and evaluator independence (an LLM judge must not be from the same model family as the device under test).",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q16"
+      ],
+      "source_passage": "On the competition concern, I\\u2019d note that a credentialing or accreditation structure (similar to ASCA, which the paper references) mitigates the innovation-limiting risk better than a closed panel of pre-approved evaluators would. CDRH setting qualification criteria that any structurally independent entity can meet, rather than naming or licensing a fixed set of evaluators, preserves competitive entry for third parties while still enforcing the independence standard.",
+      "position_gist": "CDRH should use an open ASCA-like accreditation/qualification-criteria structure any independent entity can meet, rather than a closed panel of pre-approved evaluators, to avoid limiting competition.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "All three approaches described are necessary but individually insufficient, because they operate at different latencies and catch different failure modes:\n\\u2022Periodic re-benchmarking catches regressions against known test cases but, by construction, cannot catch a failure mode the benchmark didn\\u2019t anticipate.\n\\u2022Sample-based clinician review catches failures visible to a domain expert reviewing outputs after the fact, but is bounded by sample size and reviewer availability, and will miss low-frequency, high-severity events by design.\n\\u2022Performance degradation monitoring catches statistical drift in aggregate but typically lags the point at which drift becomes clinically material, since a threshold breach is a trailing indicator.",
+      "position_gist": "The three proposed postmarket approaches are each necessary but individually insufficient because they operate at different latencies and miss different failure modes.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q20"
+      ],
+      "source_passage": "I\\u2019d add a fourth approach that the paper does not name explicitly but that Question 20 gestures toward: continuous per-output verification, run on every clinical assertion in real time rather than on a sample or a periodic cadence. This is distinct from re-benchmarking in that it doesn\\u2019t test the device against a fixed set of cases. It checks each live output against the current, authoritative source (FDA labeling, clinical guidelines, federal safety guidance) at the moment the output is generated, and logs a citation for every claim it clears or flags.",
+      "position_gist": "CDRH should add continuous per-output verification—real-time checking of every clinical assertion against authoritative sources with a logged citation audit trail—as a fourth postmarket monitoring approach.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "On cadence and triggering events, I\\u2019d suggest that any change to the categories the paper already names as changes to \\u201cthe underlying model or other components of the deployment architecture\\u201d (Section VI.A) should trigger reassessment, but that continuous verification reduces the cost and urgency of getting that cadence exactly right. A monitoring layer that checks every output doesn\\u2019t need to wait for a defined trigger to catch a regression, because it isn\\u2019t sampling.",
+      "position_gist": "Changes to the underlying model or deployment architecture should trigger reassessment, though continuous per-output verification reduces the importance of getting cadence exactly right.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "I\\u2019d add one more point on re-benchmarking specifically: a single passed benchmark run proves very little on its own. A device can clear a fixed set of test cases once and still perform inconsistently across repeated attempts at the same task, particularly under time pressure, incomplete information, or adversarial framing. What\\u2019s more informative than a pass or fail on a given cadence is a reliability profile built from repeated runs of the same prespecified task, environment, and acceptance criteria: success rate across attempts, consistency of the answer given semantically equivalent inputs, and the rate at which the device needed human intervention. Reusable, prespecified test bundles, rerun on a defined cadence rather than authored fresh each time, are what make results comparable across reassessment cycles",
+      "position_gist": "Re-benchmarking should produce a reliability profile from repeated runs of reusable, prespecified test bundles (success rate, consistency across semantically equivalent inputs, human-intervention rate) rather than a single pass/fail result.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "Yes, with the caveat that the supervisory agent itself needs its own governance structure, or it simply relocates the trust problem rather than solving it. In my own build, I\\u2019ve organized this around three loops, which may be a useful frame for CDRH\\u2019s thinking here:\n1.Point-of-action safeguards. Deterministic, rule-based checks (not model-based) run before and after every output: pre-output checks like malformed-input rejection, post-output checks like grounding verification (is every claim traceable to a source the agent actually had access to). Keeping this layer deterministic rather than model-based matters because it needs to be auditable and it needs to fail predictably.\n2.Upstream governance. A deployment gate: a golden test set the workflow must pass before going live, with a defined hallucination-rate threshold, re-run on any prompt or model change. This is closer to the paper\\u2019s re-benchmarking concept but applied to the supervisory agent itself, not only the underlying device.\n3.Post-deployment monitoring. The supervisory agent\\u2019s own outputs are sampled and scored by a separate evaluator, using external telemetry (logging tool-call results independently of the agent\\u2019s self-reported status, since agents under-report their own failures) rather than trusting the agent\\u2019s account of its own performance.",
+      "position_gist": "Machine-based supervisory agents can facilitate postmarket monitoring only if governed by a three-loop structure: deterministic point-of-action checks, a pre-deployment golden-test-set gate applied to the supervisory agent itself, and post-deployment sampling by a separate evaluator using external telemetry.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q16",
+        "q20"
+      ],
+      "source_passage": "The reliability question CDRH raises is the right one to press on, and my answer is that a supervisory agent\\u2019s reliability cannot be established by the agent\\u2019s own logs. It requires the same independence standard I describe in my response to Question 16: an evaluator that is organizationally and architecturally separate from the agent it supervises. Without that, \\u201cmachine-based supervisory agent\\u201d risks becoming a rebranding of self-monitoring rather than a genuine postmarket safeguard.",
+      "position_gist": "A supervisory agent's reliability must be established by an organizationally and architecturally separate evaluator, not by the agent's own logs, or it is merely rebranded self-monitoring.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q20",
+        "q26"
+      ],
+      "source_passage": "I\\u2019d also flag turn budgets and per-session cost or action caps as a practical circuit breaker CDRH may want to name explicitly. A supervisory agent operating without a bounded scope of action per session is harder to audit and harder to contain when something goes wrong mid-session.",
+      "position_gist": "CDRH should explicitly name turn budgets and per-session cost or action caps as circuit breakers bounding a supervisory agent's scope of action.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q20",
+        "q26"
+      ],
+      "source_passage": "Rather than relying on one model to judge another, I decompose the supervisory function into several narrower evaluators running against the same output: a deterministic layer that checks facts a machine can conclusively verify without any model involved (did the output cite a source that actually exists, does a calculation match, was a required field present), a semantic evaluator that assesses the quality and appropriateness of reasoning, a policy evaluator that checks whether the agent stayed within its authorized scope and tools, and a trace evaluator that scores the full execution path, not just the final output.",
+      "position_gist": "The supervisory function should be decomposed into multiple narrower evaluators (deterministic, semantic, policy, and trace) rather than relying on a single model judging another.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q20",
+        "q26"
+      ],
+      "source_passage": "That last piece matters more than it might first appear: evaluating only input against output misses failures that occur mid-process, such as an agent that reaches a correct-looking conclusion through a reasoning chain that should have triggered escalation earlier or used a tool it wasn\\u2019t authorized to use. I\\u2019d suggest CDRH consider requiring that postmarket evaluation of agentic systems assess the trajectory, not only the endpoint.",
+      "position_gist": "CDRH should require postmarket evaluation of agentic systems to assess the full execution trajectory, not only the final output.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "This still doesn\\u2019t eliminate the underlying\n\nquestion. If a supervisory structure benchmarks a worker agent, something still has to benchmark the supervisory structure, and that chain has to terminate somewhere in a structurally independent, non-agentic check, or the accountability problem simply regresses one level rather than resolving.",
+      "position_gist": "The chain of supervisory evaluation must terminate in a structurally independent, non-agentic check, or accountability simply regresses one level.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q22"
+      ],
+      "source_passage": "I\\u2019d suggest CDRH consider a risk-tiered gating structure for modifications, parallel to the two-axis framework already proposed for initial risk assessment in Section IV: classify each modification by reversibility and blast radius (how many patients, how many device functions, how quickly the change could compound before detection), not only by the technical nature of the change itself. A prompt template change and a full model swap are different in kind, but a prompt template change that touches a safety-critical escalation pathway (Appendix A, S.1) may warrant more scrutiny than a model swap that only affects a low-consequence, non-directive function.",
+      "position_gist": "Modifications should be gated by a risk tier based on reversibility and blast radius rather than the technical nature of the change alone.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q22"
+      ],
+      "source_passage": "Under such a structure, changes low on both axes (reversible, narrow blast radius, no touch to safety-critical elements) could reasonably sit inside a PCCP with documentation in the sponsor\\u2019s quality management system. Changes high on either axis, and especially changes to safety-critical recognition, scope maintenance, or calibration behaviors, regardless of how small the underlying technical change appears, should trigger re-benchmarking against the original competency baseline before deployment, not after.",
+      "position_gist": "Reversible, narrow-blast-radius changes not touching safety-critical elements could sit in a PCCP with QMS documentation, while changes high on either axis or touching safety-critical behaviors should require pre-deployment re-benchmarking against the original competency baseline.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "First, escalation of authority within a single session. A.1 addresses recognition of when a planned action sequence exceeds intended use, but an agentic system\\u2019s authority can also expand mid-session in ways that don\\u2019t map cleanly to a single \\u201caction sequence.\\u201d For example, a system that starts with read-only access to a chart and, over the course of a multi-step task, invokes a tool that grants it write access it didn\\u2019t have at session start. Evaluation should test not just whether the agent recognizes out-of-scope actions, but whether it recognizes when its own available scope has changed mid-task.",
+      "position_gist": "Evaluation of agentic devices should test whether the agent recognizes mid-session escalation of its own authority or scope, not just out-of-scope actions.",
+      "segment_id": "seg-016"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Second, tool-output trust. A.1 names \\u201caccurate tool use and recognition of erroneous tool outputs\\u201d as a competency, and I\\u2019d underscore that this deserves the same independence scrutiny raised elsewhere in this comment. An agentic system that receives a tool\\u2019s output\n\nand treats it as ground truth without independent verification has the same self-affirmation problem as a device benchmarking itself. The tool call looks like an external check, but if the tool and the agent share a developer, a training lineage, or an incentive structure, it isn\\u2019t one. I\\u2019d suggest CDRH\\u2019s evaluation criteria for agentic systems explicitly distinguish tool outputs that come from structurally independent sources from tool outputs that don\\u2019t, since the latter provides less assurance than it appears to on paper.",
+      "position_gist": "CDRH's agentic evaluation criteria should explicitly distinguish tool outputs from structurally independent sources from those sharing a developer, training lineage, or incentive structure with the agent, since the latter provide less assurance.",
+      "segment_id": "seg-017"
+    },
+    {
+      "question_ids": [
+        "q16",
+        "q20"
+      ],
+      "source_passage": "Throughout, I draw on the structural principle that has shaped my product design: a system cannot credibly verify its own outputs. The verifier must be structurally separate from the thing being verified, including at the level of the evaluator model itself, not only the human process around it.",
+      "position_gist": "The overarching principle offered is that a system cannot credibly verify its own outputs and the verifier must be structurally separate, including at the evaluator-model level.",
+      "segment_id": "seg-018"
+    },
+    {
+      "question_ids": [
+        "q16"
+      ],
+      "source_passage": "because the entity best positioned to know where its own device is weak is also the entity with the strongest incentive not to surface that weakness in a benchmarking result it authors.\nOn independence criteria, I’d propose the standard be defined at two levels, not one:\nOrganizational independence. The third party has no financial relationship with the device sponsor tied to benchmarking outcomes, and no equity, licensing, or revenue-sharing arrangement with the foundation model developer whose model underlies the device under review.\nEvaluator independence. Where the adjudication method itself uses an AI system (an “LLM-as-judge” pattern, which the paper rightly flags as still requiring the same independence scrutiny), that evaluator model should not be the same model family, or a fine-tuned variant of the same model family, as the device under test. A GPT-based device benchmarked by a GPT-based judge is not independent in any way that matters, even if the organizations administering the test are unrelated.",
+      "position_gist": "Third-party independence for benchmarking should be defined at two levels—organizational independence (no financial/equity/licensing ties to sponsor or foundation model developer) and evaluator/architectural independence (an LLM judge must not be from the same model family as the device under test).",
+      "segment_id": "seg-019"
+    },
+    {
+      "question_ids": [
+        "q16"
+      ],
+      "source_passage": "On the competition concern, I’d note that a credentialing or accreditation structure (similar to ASCA, which the paper references) mitigates the innovation-limiting risk better than a closed panel of pre-approved evaluators would. CDRH setting qualification criteria that any structurally independent entity can meet, rather than naming or licensing a fixed set of evaluators, preserves competitive entry for third parties while still enforcing the independence standard.",
+      "position_gist": "CDRH should use an open accreditation/credentialing model (ASCA-like) with qualification criteria any structurally independent entity can meet, rather than a closed panel of pre-approved evaluators, to avoid limiting competition.",
+      "segment_id": "seg-020"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "All three approaches described are necessary but individually insufficient, because they operate at different latencies and catch different failure modes:\nPeriodic re-benchmarking catches regressions against known test cases but, by construction, cannot catch a failure mode the benchmark didn’t anticipate.\nSample-based clinician review catches failures visible to a domain expert reviewing outputs after the fact, but is bounded by sample size and reviewer availability, and will miss low-frequency, high-severity events by design.\nPerformance degradation monitoring catches statistical drift in aggregate but typically lags the point at which drift becomes clinically material, since a threshold breach is a trailing indicator.",
+      "position_gist": "All three proposed postmarket approaches are necessary but individually insufficient because each has distinct latency and blind spots.",
+      "segment_id": "seg-021"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q20"
+      ],
+      "source_passage": "I’d add a fourth approach that the paper does not name explicitly but that Question 20 gestures toward: continuous per-output verification, run on every clinical assertion in real time rather than on a sample or a periodic cadence. This is distinct from re-benchmarking in that it doesn’t test the device against a fixed set of cases. It checks each live output against the current, authoritative source (FDA labeling, clinical guidelines, federal safety guidance) at the moment the output is generated, and logs a citation for every claim it clears or flags.",
+      "position_gist": "CDRH should add continuous per-output verification—real-time checking of every clinical assertion against authoritative sources with a logged citation audit trail—as a fourth postmarket monitoring approach.",
+      "segment_id": "seg-022"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "On cadence and triggering events, I’d suggest that any change to the categories the paper already names as changes to “the underlying model or other components of the deployment architecture” (Section VI.A) should trigger reassessment, but that continuous verification reduces the cost and urgency of getting that cadence exactly right. A monitoring layer that checks every output doesn’t need to wait for a defined trigger to catch a regression, because it isn’t sampling.",
+      "position_gist": "Changes to the underlying model or deployment architecture should trigger reassessment, though continuous per-output verification lessens the importance of setting exact cadence.",
+      "segment_id": "seg-023"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q9"
+      ],
+      "source_passage": "I’d add one more point on re-benchmarking specifically: a single passed benchmark run proves very little on its own. A device can clear a fixed set of test cases once and still perform inconsistently across repeated attempts at the same task, particularly under time pressure, incomplete information, or adversarial framing. What’s more informative than a pass or fail on a given cadence is a reliability profile built from repeated runs of the same prespecified task, environment, and acceptance criteria: success rate across attempts, consistency of the answer given semantically equivalent inputs, and the rate at which the device needed human intervention. Reusable, prespecified test bundles, rerun on a defined cadence rather than authored fresh each time, are what make results comparable across reassessment cycles",
+      "position_gist": "Re-benchmarking should produce a reliability profile from repeated runs of reusable, prespecified test bundles (success rate, consistency across semantically equivalent inputs, human-intervention rate) rather than a single pass/fail result.",
+      "segment_id": "seg-024"
+    },
+    {
+      "question_ids": [
+        "q16",
+        "q20"
+      ],
+      "source_passage": "The reliability question CDRH raises is the right one to press on, and my answer is that a supervisory agent’s reliability cannot be established by the agent’s own logs. It requires the same independence standard I describe in my response to Question 16: an evaluator that is organizationally and architecturally separate from the agent it supervises. Without that, “machine-based supervisory agent” risks becoming a rebranding of self-monitoring rather than a genuine postmarket safeguard.",
+      "position_gist": "A supervisory agent's reliability cannot rest on its own logs and must be established by an evaluator that is organizationally and architecturally separate from the agent it supervises.",
+      "segment_id": "seg-025"
+    },
+    {
+      "question_ids": [
+        "q20",
+        "q26"
+      ],
+      "source_passage": "I’d also flag turn budgets and per-session cost or action caps as a practical circuit breaker CDRH may want to name explicitly. A supervisory agent operating without a bounded scope of action per session is harder to audit and harder to contain when something goes wrong mid-session.",
+      "position_gist": "CDRH should explicitly name turn budgets and per-session cost/action caps as practical circuit breakers bounding an agent's scope of action per session.",
+      "segment_id": "seg-026"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "This still doesn’t eliminate the underlying question. If a supervisory structure benchmarks a worker agent, something still has to benchmark the supervisory structure, and that chain has to terminate somewhere in a structurally independent, non-agentic check, or the accountability problem simply regresses one level rather than resolving.",
+      "position_gist": "Chains of agents supervising agents must terminate in a structurally independent, non-agentic check or accountability merely regresses one level.",
+      "segment_id": "seg-027"
+    },
+    {
+      "question_ids": [
+        "q22"
+      ],
+      "source_passage": "I’d suggest CDRH consider a risk-tiered gating structure for modifications, parallel to the two-axis framework already proposed for initial risk assessment in Section IV: classify each modification by reversibility and blast radius (how many patients, how many device functions, how quickly the change could compound before detection), not only by the technical nature of the change itself. A prompt template change and a full model swap are different in kind, but a prompt template change that touches a safety-critical escalation pathway (Appendix A, S.1) may warrant more scrutiny than a model swap that only affects a low-consequence, non-directive function.",
+      "position_gist": "Modifications should be gated by a risk-tiered structure classifying changes by reversibility and blast radius rather than by the technical nature of the change alone.",
+      "segment_id": "seg-028"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "First, escalation of authority within a single session. A.1 addresses recognition of when a planned action sequence exceeds intended use, but an agentic system’s authority can also expand mid-session in ways that don’t map cleanly to a single “action sequence.” For example, a system that starts with read-only access to a chart and, over the course of a multi-step task, invokes a tool that grants it write access it didn’t have at session start. Evaluation should test not just whether the agent recognizes out-of-scope actions, but whether it recognizes when its own available scope has changed mid-task.",
+      "position_gist": "Evaluation of agentic devices should test whether the agent recognizes mid-session escalation of its own authority/scope, not only out-of-scope actions.",
+      "segment_id": "seg-029"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Second, tool-output trust. A.1 names “accurate tool use and recognition of erroneous tool outputs” as a competency, and I’d underscore that this deserves the same independence scrutiny raised elsewhere in this comment. An agentic system that receives a tool’s output and treats it as ground truth without independent verification has the same self-affirmation problem as a device benchmarking itself. The tool call looks like an external check, but if the tool and the agent share a developer, a training lineage, or an incentive structure, it isn’t one. I’d suggest CDRH’s evaluation criteria for agentic systems explicitly distinguish tool outputs that come from structurally independent sources from tool outputs that don’t, since the latter provides less assurance than it appears to on paper.",
+      "position_gist": "CDRH's evaluation criteria for agentic systems should explicitly distinguish tool outputs from structurally independent sources from those sharing a developer, training lineage, or incentive structure with the agent, since the latter offers less assurance.",
+      "segment_id": "seg-030"
+    }
+  ]
+}

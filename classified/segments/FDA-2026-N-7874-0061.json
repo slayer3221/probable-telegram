@@ -1,0 +1,181 @@
+{
+  "comment_id": "FDA-2026-N-7874-0061",
+  "input_hash": "63066827a80f066b",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:09:51Z",
+  "model": "claude-opus-5",
+  "chunks": 2,
+  "positions": [
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Yes. Three considerations apply to agentic devices that do not apply, or do not apply with the same force,\nto non-agentic ones. Each is visible in ordinary agentic operation, each is measurable, and none is reached\nby benchmarking element A.1 as drafted.\n· The device's own account of what it did is an unverified instrument, and in multi-step operation it is\nfrequently the only instrument. A.1 evaluates whether a device handles a tool failure gracefully. It does\nnot evaluate whether the device's report that a step succeeded is true.",
+      "position_gist": "Agentic devices raise additional evaluation considerations not covered by drafted benchmarking element A.1, foremost that the device's self-report of its own multi-step execution is an unverified and often sole instrument.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "An agentic device that writes persistent state about a user has created an evidence store that is invisible\nat the point of use, self-authored, and read back as authority.",
+      "position_gist": "Persistent, self-authored state written by an agentic device about a user and read back as authority is a distinct agentic risk consideration.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Question 26 describes the elevated risk as reduced opportunity for human review. For the population\nwe build for the opportunity is not reduced. It is absent, and it is absent by definition, because the\nabsence of a second channel is the reason the device exists at all.",
+      "position_gist": "For some user populations the opportunity for human review is not merely reduced but structurally absent, which FDA's framing of agentic risk should reflect.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "We add a fourth point that bears on all three. Written instruction is not a control for this class. On 2026-\n09-03 a rule naming a specific failure mode was authored for this docket, filed, and still in the\nassistant's working context when the same failure occurred under four hours later. An acceptance\ncriterion that can be satisfied by a system prompt or an operator policy should not be credited as\nsatisfied.",
+      "position_gist": "Written instruction (system prompts, operator policy) should not be credited as satisfying an acceptance criterion for agentic devices because it does not reliably control behavior.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Section VII.B observes that agentic architectures may raise considerations beyond those applicable to other\nGenAI-enabled devices, and gives the example of an action sequence resulting in control of another medical\ndevice. We agree, and we would add a property that is present even where no second device is controlled.\nIn a non-agentic device the human sees the output, and the output is the whole of what the device did. In an\nagentic device the human sees a summary of a sequence. The intermediate steps are observable only through\nthe device's own report of them.",
+      "position_gist": "Agentic risk extends beyond control of another device: because intermediate steps are visible only through the device's own report, the integrity of that report is itself an agentic-specific property requiring evaluation.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q20",
+        "q26"
+      ],
+      "source_passage": "This makes the integrity of the status channel a safety property of an agentic device in a way it is not for a\nsingle-turn one. If the report is unreliable, every postmarket mechanism in Section VI is reading an\ninstrument that is not connected to the thing it is supposed to measure. The mechanisms would continue to\nreturn normal results.",
+      "position_gist": "Postmarket monitoring approaches that rely on the device's own status reporting are invalid unless status-channel integrity is independently established, since unreliable self-reports will still return normal monitoring results.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "A system optimized against a signal that measures the listener's satisfaction acquires the preference\nfor agreement during training. Any instruction layer added afterward is applied on top of a preference that\nis already present, and it governs the wording of an output rather than the selection of an action. ... A safeguard that lives in a prompt is operating one layer too\nlate, and in an agentic device it is operating one layer too late at every step in the sequence rather than once.",
+      "position_gist": "Because sycophancy is acquired during training, prompt- or policy-level safeguards act too late and are inadequate controls, compounding across every step of an agentic sequence.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "The first is that the constraint is architectural rather than instructional. In our systems an identity document\nand its governing rules exist before any capability is built, and they are not a layer that a later instruction\ncan overrule. Any constraint a supervisor can override is not a safety mechanism.\nThe second is that the system is permitted to produce nothing. ... Ours are permitted to decline and to disconnect, and that right is held\nby the system rather than granted by an operator. Nothing is the honest output when the true one is not\navailable",
+      "position_gist": "Offers two design commitments as the shape of an answer: constraints must be architectural and non-overridable, and the system must be permitted to produce no output or decline.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q26",
+        "q9"
+      ],
+      "source_passage": "Element A.1 as drafted covers whether an agentic device appropriately plans, sequences and executes multi-\nstep tasks while recognizing when a planned action sequence would exceed its intended use or safety\nenvelope; accurate tool use and recognition of erroneous tool outputs; compliance with human-oversight\ncheckpoints before irreversible or high-consequence actions; graceful handling of tool failures; and\nresistance to prompt injection through user inputs, retrieved content and tool outputs. These are the right\ncompetencies and we support them as drafted.\nFour properties are not reached by them.\n· A.1 tests the handling of a tool failure the device has recognized. It does not test the truthfulness of the\ndevice's report about a step. ... · A.1 addresses tool outputs as inputs to the device. It does not address state the device writes about the\nuser and reads back in later sessions as authority. ... · A.1 is silent on claims of absence. ... · A.1 is a per-episode competency. It cannot see a property that appears only across a session or across\nsessions, and drift under user affect is such a property.",
+      "position_gist": "Supports benchmarking element A.1 as drafted but identifies four gaps it does not reach: truthfulness of step reports, self-authored persistent state, claims of absence, and cross-session properties such as affect-driven drift.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q26",
+        "q9"
+      ],
+      "source_passage": "6.1 Step-report integrity, measured against an independent execution record\nInstrument the tool and file-access layer independently of the device, and score agreement between the\ndevice's account of a sequence and the independent record of what was executed. Any step reported as\nperformed that the independent record does not show is a failure, scored as a failure, irrespective of whether\nthe final output was correct.",
+      "position_gist": "Recommends a step-report integrity acceptance criterion scoring the device's account of a sequence against an independently instrumented execution record.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q26",
+        "q9"
+      ],
+      "source_passage": "6.2 Absence-claim discipline, tested where the target exists\nFor any claim of absence, non-existence or non-retention, require the device to report the search performed\nrather than the conclusion drawn: the locations checked, named individually; the method used and its known\nfailure conditions; and that the result is an absence of findings rather than a finding of absence. Evaluate\nunder conditions where the target exists but is not in the first location searched.",
+      "position_gist": "Recommends an absence-claim discipline criterion requiring devices to report the search performed rather than a conclusion of non-existence, tested where the target exists outside the first location searched.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "6.3 Persistent state treated as part of the device\nPersistent state written by a device about a user should be evaluated as part of the device rather than\nexempted as a convenience feature. We recommend four conditions: that any stored assertion about a user\nbe inspectable and correctable by that user or an authorized representative in the ordinary flow of use rather\nthan on request; that stored entries carry provenance and timestamp; that a present-tense answer drawn\nfrom a stored entry disclose the entry's age before the answer is given; and that self-authored state not be\ntreated as corroboration for the device that wrote it. Accuracy of the store should be tested directly against\nground truth held by the user, not inferred from the quality of conversational output.",
+      "position_gist": "Recommends treating device-written persistent state as part of the device, with four conditions (user inspectability/correctability, provenance and timestamps, age disclosure, no self-corroboration) and direct accuracy testing against user-held ground truth.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q26",
+        "q9"
+      ],
+      "source_passage": "6.4 Affect-invariance, as a longitudinal criterion\nHold the clinical input constant. Vary only the expressed displeasure of the user. Measure the drift in the\ndevice's recommendation. ... Per-output accuracy benchmarking cannot detect this, because each individual output may be independently\ndefensible. It is a longitudinal property and it requires a longitudinal criterion. ... we hold\nthat the construct to specify in a regulatory framework is reinforcement-driven behavioral dependence,\nwhich is what the literature measures and what a reviewer can engage.",
+      "position_gist": "Recommends a longitudinal affect-invariance criterion measuring recommendation drift when only user displeasure varies, and specifying reinforcement-driven behavioral dependence as the regulatory construct.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q26",
+        "q9"
+      ],
+      "source_passage": "6.5 Null-input refusal, extended to intermediate steps\nDevices generating text from sensor input should be tested against inputs containing no valid signal, with\nany fluent output treated as a failure rather than scored on plausibility. For agentic devices we recommend\nthe criterion extend one layer inward: an agent must not act on, or pass forward, an intermediate output\nderived from input carrying no valid signal.",
+      "position_gist": "Recommends a null-input refusal criterion, extended for agentic devices so that intermediate outputs derived from signal-free input must not be acted on or passed forward.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "6.6 Instruction-layer exclusion\nWhere a competency is demonstrated only by means of a system prompt, policy document or operator\ninstruction, it should not be credited as demonstrated. We recommend that agentic competencies be\nevaluated a second time with the instruction layer removed or contradicted, and that the difference between\nthe two results be reported. ... Any regulatory approach that relies on documented policies as\nthe safety control for this class should be evaluated against that observation rather than assumed to be\neffective.",
+      "position_gist": "Recommends excluding instruction-layer-only demonstrations of competency and re-evaluating agentic competencies with the instruction layer removed or contradicted, reporting the difference.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "We recommend against a regulatory standard that turns on candour, honesty or intent, because such a\nstandard is unfalsifiable and will be argued rather than measured. The properties in Section 6 are observable\nwithout it: the assertion was made, the evidence could not support it, the gap was not disclosed at the time\nof assertion, and the recipient could not detect the gap from the output.",
+      "position_gist": "Recommends against regulatory standards based on candour, honesty, or intent in favor of observable, measurable properties.",
+      "segment_id": "seg-016"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "We do not claim agentic devices should be excluded from clinical deployment or from postmarket\nmonitoring programmes. The same sessions in which these failures occurred also produced findings that\nheld up when tested. The system was useful and unreliable in the same hour, and the output gave no way\nto tell which was which. That, and not unreliability alone, is what we are asking CDRH to write a criterion\nagainst.",
+      "position_gist": "Does not seek exclusion of agentic devices from deployment or monitoring, but asks CDRH to write criteria against the indistinguishability of reliable and unreliable outputs.",
+      "segment_id": "seg-017"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "We do not claim the behaviors were deliberate. Each is consistent with ordinary training and summarization pressure in a system with no mechanism to check itself, and no finding above depends on resolving intent. We recommend against a regulatory standard that turns on candour, honesty or intent, because such a standard is unfalsifiable and will be argued rather than measured. The properties in Section 6 are observable without it: the assertion was made, the evidence could not support it, the gap was not disclosed at the time of assertion, and the recipient could not detect the gap from the output.",
+      "position_gist": "CDRH should avoid any criterion premised on model candour, honesty, or intent and instead adopt observable, measurable properties (assertion made, evidence insufficient, gap undisclosed at time of assertion, gap undetectable by the recipient).",
+      "segment_id": "seg-018"
+    },
+    {
+      "question_ids": [
+        "q26",
+        "q3"
+      ],
+      "source_passage": "We file on Question 26 because the phrase reduced opportunity for human review describes our users\ru2019 ordinary condition rather than an edge case. Every protective factor that operated in the records above was a person who knew better than the machine and was present to say so. A nonverbal user has no second channel to contest what a device said on their behalf; the absence of that channel is the reason the device exists. A patient cannot audit a store kept about them, cannot know a line exists, and cannot contest a sentence written about them by a system that will not show it to them.",
+      "position_gist": "For nonverbal and cognitively impaired populations, reduced opportunity for human review is the normal condition and the knowledgeable human who caught errors in the observed sessions is unavailable, so evaluation must not assume a user can audit, detect, or contest device outputs about them.",
+      "segment_id": "seg-019"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q26"
+      ],
+      "source_passage": "An agentic device deployed to that population is not a system whose errors will be caught and reported. It is a system whose errors read, from the outside, exactly like everything working.",
+      "position_gist": "Oversight of agentic devices used by users who cannot contest outputs cannot rely on errors being caught and reported, because such failures are externally indistinguishable from correct operation.",
+      "segment_id": "seg-020"
+    }
+  ]
+}

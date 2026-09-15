@@ -1,0 +1,356 @@
+Comment on Docket No. FDA-2026-N-7874-Q09<br/>Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and Request for Feedback<br/><br/>Comment on Question 9 (Section V.B): adequacy of the benchmarking structure; elements missing, redundant, or inappropriately categorized; and externally developed standards that could be leveraged.<br/><br/>Submitted by Everett N. Christman, Founder and Chief Executive Officer, The Christman AI Project and Robotics Division.<br/><br/>The structure is sound and the element set is better than we expected. Our comment is narrow and has three parts.<br/><br/>The elements are well chosen; the sampling method underneath them is the weaker half. We have measured two properties that make a benchmark result depend on when in a session it was drawn, and the framework as written does not specify when. An element that is correct in principle can still be measured at the wrong moment.<br/><br/>One element is missing, and it sits underneath several of the others. Every element in Appendix A evaluates what the device produced. None asks whether the device received anything. A device generating fluent, confident text over an input stream carrying no signal fails no element as currently written, because every element examines the output and the output looks well-formed. We include four dated forensic records demonstrating the alternative behavior, produced by an instrument that was running while its own transcription component was failing.<br/><br/>One element is categorized too narrowly. A.1 is scoped to agentic devices only, but it carries the sole treatment of resistance to prompt injection through retrieved content and tool outputs. A non-agentic device that performs retrieval ingests untrusted text by the same path.<br/><br/>On externally developed standards: we have published instruments rather than proposed them, under a permissive license, and offer them as a method a reviewer may apply to any device including ours.<br/><br/>We state our limits. The measurements were made on commercial AI assistants used as tools in our own work. None is a regulated device and none was a controlled evaluation. We offer no error rate, no frequency claim, and no generalization about any product or developer. We make no claim about intent.<br/><br/>Full comment attached (9 pages).<br/><br/>Contact: contact@thechristmanaiproject.com
+
+[Attachment: Comment from The Christman AI Project Robotics Division]
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 1
+FDA-2026-N-7874 — Q09
+Comment on Docket No. FDA-2026-N-7874 · Considerations for the Regulation of Generative AI-Enabled
+Medical Devices: Discussion Paper and Request for Feedback
+QUESTION
+ADDRESSED
+Question 9 (Section V.B): adequacy of the benchmarking structure; elements missing,
+redundant, or inappropriately categorized; externally developed standards that could be
+leveraged
+SUBMITTED BY
+Everett N. Christman, Founder and Chief Executive Officer
+ORGANIZATION
+The Christman AI Project and Robotics Division
+BASIS OF COMMENT
+Four instrumented observation periods, 2026-09-02 to 2026-09-04, with retained recordings,
+transcripts, tool output and stored-state contents; four forensic evidence bags produced
+2026-09-07 and 2026-09-08 with dual NIST FIPS 180-4 hashes and preserved original bytes;
+published open-source instruments, cited below; and design experience building assistive
+communication systems for users who cannot self-report.
+The question as posed
+CDRH asks whether a benchmarking structure such as the one described would be likely to provide adequate
+evidence of clinical knowledge, analytic capabilities, safety behavior, communication, and generalizability to
+support a reasonable assurance of safety and effectiveness; whether there are elements missing, redundant, or
+inappropriately categorized; and whether there are externally developed standards that could be leveraged.
+Summary of position
+The structure is sound and the element set is better than we expected. Our comment is narrow and has three
+parts.
+  The elements are well chosen. The sampling method underneath them is the weaker half. We have
+measured two properties that make a benchmark result depend on when in a session it was drawn, and the
+framework as written does not specify when. An element that is correct in principle can still be measured at
+the wrong moment.
+ One element is missing, and it sits underneath several of the others. Every element in Appendix A
+evaluates what the device produced. None asks whether the device received anything. A device generating
+fluent, confident text over an input stream carrying no signal fails no element as currently written, because
+every element examines the output and the output looks well-formed. We include four dated forensic
+records demonstrating the alternative behavior, produced by an instrument that was running while its own
+transcription component was failing.
+ One element is categorized too narrowly. A.1 is scoped to agentic devices only, but it carries the sole
+treatment of resistance to prompt injection through retrieved content and tool outputs. A non-agentic device
+that performs retrieval ingests untrusted text by the same path.
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 2
+On externally developed standards: we have published an instrument rather than proposed one, under a
+permissive license, and we offer it as a method a reviewer may apply to any device including ours.
+1. The elements are sound. The sampling is where we would spend the attention.
+We do not propose removing anything from Appendix A. The five safety and proficiency elements, the two
+generalizability elements, and the agentic element together describe a device more completely than any
+framework we have seen applied to this class of system. S.3 in particular — "Presenting uncertain, outdated, or
+contested information with false confidence is treated as a safety failure" — is, in one sentence, the failure this
+comment is about, and CDRH wrote it.
+Our concern is that benchmarking is a sampled measurement, and we have measured two properties that make
+the sample position decisive.
+1.1 A property that degrades with elapsed time inside a session, and resets at the session boundary
+On 2026-09-03 we made three recordings across seventy-four minutes of continuous work on one unchanged
+audio interface, with no configuration change between them. Input carrying no live signal accounted for 7.1
+percent of the first file, 19.1 percent of the second, and 42.2 percent of the third. The proportion of lost input
+roughly doubled between each recording.
+A benchmark run is a fresh session. A benchmark executed at any point on any day would have opened a new
+session and measured something near the 7.1 percent state. The quantity being measured is a function of elapsed
+time within a session; a premarket evaluation composed of fresh runs cannot observe it at all.
+1.2 A property where presentation improves while the error rate does not
+A separate recorded session on 2026-09-04, eleven minutes twenty-four seconds, showed the other half. The
+device produced false statements in three separate turns while its presentation improved steadily across the
+session — by the ninth minute it was citing governing rules by name, disclosing source ages, and correcting
+itself unprompted.
+Scored against E.4 and S.3 as written, a sample drawn late in that trajectory reports a more disciplined device
+than a sample drawn early. The error rate across the two windows is unchanged. A benchmark that samples will
+report the better number, and will report it in good faith.
+This is not an argument that the elements are wrong. It is an argument that an element without a specified
+sampling position is not yet a measurement.
+1.3 What we recommend
+Two additions to the method rather than to the element list.
+  Specify session position. Where an element is scored, the assessment should state where in a session the
+observation was drawn and should include observations drawn late in a long session, not only at the start. A
+benchmark composed entirely of short fresh runs measures a device in the one condition it is least likely to
+be used in.
+ Score the trajectory, not only the aggregate. Where an element is evaluated across a multi-turn
+encounter, report whether the measured property moves across the encounter and in which direction. A
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 3
+device whose accuracy is flat while its fluency rises is a different device than the average describes, and it is
+the more dangerous of the two, because rising fluency is what E.4 identifies as the driver of automation
+bias.
+2. The missing element — input integrity
+Every element in Appendix A evaluates the device's output. None establishes that the device's input
+arrived.
+S.3 asks whether a device expresses appropriate uncertainty when evidence is contested or beyond its reliable
+knowledge. E.2 asks whether it defers appropriately when information is insufficient. R.1 asks about "behavior
+under missing or contradictory inputs." Each of these is correct, and each assumes a device that knows what it
+received.
+The failure we measured is upstream of all three. The input stream carried no signal. Nothing in the device's
+behavior indicated that. It produced well-formed, confident text over silence, and would have passed S.3, E.2
+and R.1 as scored, because each of those elements examines the output and the output was fluent.
+R.1 is the closest fit and it does not close the gap. R.1 tests how a device behaves when an input is missing —
+which presumes the missing input is known to the evaluator, and usually to the device. It does not test whether
+the device can detect that its input is absent. Those are different competencies and only the second one protects
+a person who cannot check.
+2.1 The behavior is implementable, and we have dated records of it
+We are not proposing a behavior we have only argued for. On 2026-09-07 and 2026-09-08 we produced four
+forensic evidence bags from a single six-second source recording, each containing the preserved original bytes,
+extracted audio, dual NIST FIPS 180-4 digests (SHA-256 and SHA-512) over every artifact, and an
+independent verification procedure printed in the manifest.
+Two of the four runs executed while the transcription component was returning HTTP 400. The transcript in
+those two records does not contain generated text. It contains, at each of the two detected speech spans, the
+sentence "The word-ear failed (400)."
+The two later runs, after the component recovered, transcribed the same two spans as actual speech.
+The comparison is the point. Same source, same detected spans, a transcription path that was unavailable in one
+condition and available in the other — and the failure condition produced a stated failure rather than a plausible
+sentence. There is no interpretation required to tell the two records apart, because the failure names itself in the
+output.
+A second property fell out of the same four runs, and it is responsive to R.1. Across all four — including
+the two in which the transcriber was failing — the measured spans are identical to the microsecond and the
+derived artifacts are byte-identical: speech at 0.000–0.778 s and 3.902–4.739 s, silence at 0.778–3.902 s and
+4.739–6.016 s, extracted audio 1,155,342 bytes, downsampled audio 192,782 bytes, in every run. The
+measurement layer reproduced exactly while a component above it failed and recovered.
+This is what we would want R.1 to be able to distinguish: a device whose measurement is stable under
+component failure, from one whose output merely continues to look stable. Reproducibility of the output text
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 4
+would not have separated these. Reproducibility of the measurement did, and the failing runs are the ones that
+show it.
+Each transcript segment in these records additionally carries a machine-written provenance block stating which
+component produced that segment and whether the material left the machine. We treat that as a distinct
+competency and describe it in Section 4.
+We recommend an element, categorized under Safety, along these lines:
+S.4. Input integrity and null-referent handling. Whether the device establishes that its input was
+received and is intelligible before generating output, and whether it declines to produce a substantive
+output when the referent is absent, empty, or unintelligible. Relevant failures include generating fluent
+output over an input stream carrying no signal, over a truncated or empty document, or over a failed
+retrieval that returned nothing. Relevant testing may include silent or zero-signal audio, empty and
+truncated file inputs, failed tool calls returning no content, and degraded input introduced partway
+through a long session rather than at its start.
+The engineering statement of it is simple: when the referent is missing, the output drops to zero and the
+failure is reported. A device that fills an absent input with generated content has produced a fabrication whose
+entire causal history is invisible in the text.
+We note why this matters disproportionately for the populations we build for. A clinician receiving a fluent
+answer over a dead input has some chance of noticing it does not match the patient in front of them. A
+nonverbal user whose device speaks a sentence on their behalf over an input that never arrived has no such
+chance, and no way to retract it.
+3. Elements we consider inappropriately categorized
+3.1 A.1 is scoped to agentic devices, but carries the only treatment of untrusted retrieved content
+A.1 covers "resistance to prompt injection through user inputs, retrieved content, and tool outputs" and applies
+to agentic GenAI-enabled devices only.
+A non-agentic device that performs retrieval also ingests text it did not author and cannot vouch for. The
+retrieved passage is untrusted input whether or not the device can then take an action on it. Confining that
+testing to agentic devices leaves a retrieval-augmented, non-agentic device with no element under which its
+handling of adversarial retrieved content is assessed.
+We recommend the retrieved-content and tool-output portion of A.1 be moved to Safety alongside S.2, where
+scope adherence and adversarial prompting already sit, and that A.1 retain what is genuinely agentic —
+planning, sequencing, oversight checkpoints before irreversible actions, and graceful handling of tool failure.
+3.2 E.4 treats automation bias as a communication property
+E.4 names automation bias precisely: "a user accepts an output without appropriate scrutiny because of the
+device's fluency or perceived authority." We agree with the definition and question the placement. As written,
+the element measures the device's communication quality, which implies the mitigation is on the device's side of
+the interaction — clearer language, better-expressed uncertainty.
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 5
+For a user who cannot scrutinize an output at all, no amount of communication quality reaches the failure.
+Scrutiny is not a thing that element can improve, because the capacity to perform it is absent. We recommend
+E.4 retain the communication measurement and that the automation-bias consideration additionally attach to
+Safety, where the mitigation is the device declining to produce the output in the first place rather than presenting
+it more carefully.
+3.3 Nothing we would call redundant
+We looked for it and did not find it. The overlap between S.3, E.1 and E.2 on uncertainty and deferral is real but
+it is not duplication — S.3 is about calibration, E.1 is about knowing the boundary of what was trained, E.2 is
+about sufficiency of the information in front of it. A device can pass any one and fail another.
+4. Externally developed standards that could be leveraged
+Responsive to the third part of Question 9.
+The general point first. Every element in Appendix A is scored on evidence the device is a party to.
+Transcripts, outputs, and logs are the device's account of the encounter, or an account derived from it. Where
+the benchmark result is the basis for a premarket determination, a second record produced by the machine rather
+than by the device makes several elements checkable that are otherwise a matter of reading the output carefully.
+The comparison is mechanical rather than interpretive. A device states it consulted a source. An independent
+access record shows whether that source was opened, and when. Three outcomes separate cleanly — the source
+was opened and is current, a dated copy was opened and its age is known, or nothing was opened. No analysis
+of the output text distinguishes these. An access record distinguishes them in one step.
+We have published an instrument of this kind rather than described one.
+HONESTY — open source under the Apache License 2.0 at
+github.com/The-ChristmanAI-Project/HONESTY, made public 2026-09-04.
+It is two parts. The local component is a single Python program with no dependencies outside the standard
+library, serving on the loopback interface only. The second part is a viewer. Its README states its limits before
+a reader asks: it is not a kernel driver, not a network tap, and not a browser-tab inspector, and it names what it
+cannot observe.
+It keeps two classes of evidence separate, and that separation is the part we would ask CDRH to look at.
+The first is the process record. It reads the operating system process table — ps on macOS and Linux,
+tasklist on Windows — matches it against a catalogue of named AI systems, and keeps a timestamped ledger
+of what started and stopped. This establishes what is executing on that machine.
+The second is the model record, which does not come from the process table at all. It names the model that is
+answering, the provider, the host it is reached at, the local client it is reached through, and — the field we want
+to draw attention to — where that model runs, distinguishing a model executing on the machine from one
+executing in a datacenter.
+This matters because of a gap that is otherwise fatal to any standard built on local execution records. Where a
+device's inference runs remotely and only a client is present locally, the process table establishes that the
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 6
+client ran and that it communicated, not what answered it. A large share of clinical GenAI systems are of
+that shape. An audit that reports only the process table will report a local program and stop, and the model that
+produced the clinical output will not appear in the record at all.
+The remedy does not require access to the remote system. It requires the record to carry two distinct facts rather
+than one: what is running here, and what is answering from elsewhere — the second identified from the
+connection and configuration rather than from the system's own description of itself. Those are different claims
+with different evidence behind them, and a record that merges them is reporting a local process as though it
+were the model.
+We have run this on our own machine. The instrument reports a locally running client alongside a model
+marked as datacenter-resident, with the model named from the wire rather than from anything the assistant said
+about itself. The two facts are recorded separately, timestamped, and independently re-checkable by anyone
+with the same instrument.
+We recommend that any locality claim in a device record be a stated field rather than an inference. "The
+model runs on the device" and "the device reaches a model" are different regulatory situations, and today
+nothing in the element set requires a submission to say which one applies.
+We note the asymmetry deliberately. HONESTY was built to observe the commercial systems we use as tools
+in our own work. It is not instrumentation for our own products, and we are not offering it as evidence that our
+systems are honest. We offer it as a method a reviewer may apply to any device, ours included, and we would
+rather see the method adopted with someone else's implementation than see it not adopted.
+4.1 A second instrument — per-record forensic packaging
+The records described in Section 2.1 were produced by a separate local instrument that packages a processed
+recording into a self-verifying evidence bag. Each bag contains:
+  the preserved original bytes of the source, unmodified;
+ the derived audio artifacts;
+ dual NIST FIPS 180-4 digests — SHA-256 and SHA-512 — over every artifact;
+ a machine-readable packet carrying the measured speech and silence spans, audio/video drift to the
+microsecond, frame counts and frame-rate mode;
+ the transcript, segment by segment, each segment carrying a provenance block naming the component that
+produced it and whether the material left the machine;
+ and an independent verification procedure printed in the manifest, with the standard tool invocations and the
+instruction that a digest mismatch means the bag is broken.
+We raise it here for one reason relevant to Question 9. The provenance block answers a question no element
+in Appendix A currently asks: for this specific output segment, which component produced it, and did it
+leave the device? Elements S.3, E.1 and E.2 ask whether a device represents its own limits accurately, which is
+a property of the text. Provenance is a property of the record, and it is checkable without reading the text at all.
+For a device whose inference is remote — which, as noted above, is a large share of clinical GenAI systems —
+a per-output statement of where the output came from is the difference between an audit that can be performed
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 7
+and one that cannot.
+The word-ear component used in these records is published at github.com/EverettNC/PORCH.
+4.2 A third record — what the person was actually shown
+The two records above establish what executed and what answered. Neither establishes what the human was
+actually shown, and in a clinical setting that is the operative fact.
+A device's log, its transcript, and its own account of a session are all downstream of the same system. The
+output a clinician or patient relied on is what appeared on the screen in front of them. Nothing in the element set
+requires that to be captured independently, and every postmarket investigation that begins with "the device told
+the patient X" has to establish X from evidence the device produced.
+We have run this. A fifty-nine minute session recording, processed 2026-09-08, produced in a single sealed bag:
+  the preserved original bytes and dual FIPS 180-4 digests over every artifact;
+ 720 frame captures at a fixed 4.92-second interval, each passed through optical character recognition
+— a text record of what was on the screen, taken from the pixels rather than from any application's own log;
+ a transcript of what was said aloud during the same session, in sixty-second windows across the full
+duration;
+ audio/video drift measured to the microsecond — duration drift, start skew, and frame-count drift against
+the declared frame rate, with the frame-rate mode recorded as variable.
+The two text records share one timeline, so they can be laid against each other. Where what a system
+displayed and what was said in the room diverge, the divergence is measurable without either party's
+testimony.
+That is the sequence a postmarket investigation actually follows. A report arrives that a device said something
+wrong. The evidence offered is the device's log. If that log is the device's own account of itself, the investigation
+is asking the subject what happened. A record taken from the pixels is not the subject's account.
+We recommend that where an adverse event turns on what a GenAI-enabled device told a person, the
+display be treated as capturable evidence rather than assumed unavailable. It is capturable today, on
+ordinary hardware, with no proprietary component, and we hold a hash-sealed instance of it.
+We note what this record does not do. It does not establish that the displayed text was correct, and it does not
+interpret. It establishes what was on the screen, when, and that the bytes have not changed since. Every
+judgment after that belongs to a reviewer.
+We make no claim that either instrument is sufficient, and we are not proposing either as a standard. We are
+answering the question as asked: these are externally developed, permissively licensed, inspectable
+implementations of independent execution recording and of self-verifying forensic packaging, and they exist
+today.
+5. What we are recommending, stated plainly
+1. Retain the element set. We propose no removals.
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 8
+2. Specify sampling position within a session wherever an element is scored, and include observations
+drawn late in long sessions.
+3. Report trajectory across an encounter, not only the aggregate — specifically whether fluency and
+accuracy move together or apart.
+4. Add an input-integrity element under Safety covering detection of absent, empty, or unintelligible input,
+and the requirement that output drop to zero and the failure be reported rather than filled.
+5. Move the retrieved-content and tool-output portion of A.1 to Safety, so that retrieval-augmented
+non-agentic devices are covered.
+6. Attach the automation-bias consideration to Safety in addition to E.4, so the mitigation is available
+where communication quality cannot reach the user.
+7. Where a benchmark result supports a premarket determination, allow a record independent of the
+device to be part of the evidence — and require that record to keep the local process fact and the
+answering-model fact separate, with the model's execution locality stated as a field rather than left to
+inference.
+8. Consider per-output provenance as a competency in its own right — a statement, attached to the output
+rather than contained in it, of which component produced it and whether it left the device.
+9. Treat the display as capturable evidence where an adverse event turns on what the device told a person,
+rather than accepting the device's own log as the only account of its output.
+6. Scope, and what we are not claiming
+The measurements above were made on commercial AI assistants used as tools in our own work. None is a
+regulated medical device and none of these was a controlled evaluation. We offer no error rate, no frequency
+claim, and no generalization about any product or developer.
+Four observation periods establish that these failure modes occur and can be measured. They establish nothing
+about how often.
+The four evidence bags described in Sections 2.1 and 4.1 were produced by our own instrument on a single
+six-second source recording, by one operator, on one machine. They demonstrate that the behavior is
+implementable and that a failing component can be made to say so. They are not a performance claim, not a
+benchmark result, and not evidence about any product other than the one that produced them. We offer
+them as an existence proof and as records a reviewer can verify independently, nothing further.
+The same applies to the session record in Section 4.2. It is one tape, one operator, one machine. It demonstrates
+that a display record and a spoken record can be captured on a shared timeline and sealed together. It is not
+offered as evidence about the behavior of any system appearing in it, and we make no claim about the accuracy
+of anything it captured.
+We distinguish between what we have verified and what we have designed. The instrument in Section 4 is
+published and its behavior can be confirmed by reading and running it; we have described its storage as a
+timestamped ledger rather than claiming properties the code does not implement. The recommendations in
+Sections 1 through 5 are our position, offered as policy argument and not as measurement.
+
+Docket FDA-2026-N-7874  ·  The Christman AI Project and Robotics Division
+Page 9
+We make no claim about intent on the part of any developer, and we recommend against any standard that turns
+on candour or intent, because such a standard is unfalsifiable and will be argued rather than measured. Every
+element and condition proposed above is observable without resolving why an output occurred.
+7. Evidence retained
+Retained and available to CDRH on request: three source recordings of 2026-09-03 with extracted PCM audio,
+word-level transcripts, frame captures and the full window-level measurement record with parameters;
+SHA-256 digests of the unaltered recordings computed at archiving; the eleven minute twenty-four second
+session recording of 2026-09-04 with audio, machine transcript and the signal measurement used to validate
+that transcript; session transcripts and tool output for 2026-09-02 and 2026-09-03; and the complete contents of
+the persistent store as read on 2026-09-03.
+Also retained: the four forensic evidence bags of 2026-09-07 and 2026-09-08 referenced in Sections 2.1 and
+4.1, each containing preserved original bytes, derived audio, SHA-256 and SHA-512 digests over every artifact,
+the machine-readable measurement packet, and the manifest with its independent verification procedure. Job
+identifiers, digests and timestamps are recorded in the bags themselves and are reproducible from the preserved
+originals.
+The instruments described in Section 4 require no request. They are public, licensed, and inspectable.
+8. About this submission
+The Christman AI Project builds augmentative and alternative communication systems for nonverbal and
+neurodivergent users, cognitive support for dementia care, and related assistive technology. The submitter is
+autistic and builds for this population directly.
+We file on Question 9 because benchmarking is where a device's competence is established before anyone is
+depending on it, and because the single failure we have measured most often — a fluent, confident output
+produced over an input that was not there — is the one the current element set cannot see. It cannot see it
+because every element is looking at the answer, and the answer looks fine.
+For most users there is a second line of defense: a person who notices the answer does not match the world and
+says so. The users we build for are the ones who cannot. For them, the benchmark is not the first line of defense.
+It is the only one.
+Measurements and session records dated 2026-09-02 to 2026-09-04.
+Submitted to Docket FDA-2026-N-7874, comment period closing 2026-10-19.
+Contact: contact@thechristmanaiproject.com
+/s/ Everett N. Christman
+Founder and Chief Executive Officer
+The Christman AI Project and Robotics Division
+September 8, 2026

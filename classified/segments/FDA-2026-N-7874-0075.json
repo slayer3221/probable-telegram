@@ -1,0 +1,332 @@
+{
+  "comment_id": "FDA-2026-N-7874-0075",
+  "input_hash": "c23c3382e2713969",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:09:51Z",
+  "model": "claude-opus-5",
+  "chunks": 1,
+  "positions": [
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Manufacturers should evaluate the response shown to the user, the actions taken during execution, and the resulting state of connected systems. In a hypothetical workflow, a connected system carries out an approved action, but a timeout prevents the agent from receiving confirmation. The agent retries and causes a duplicate. An evaluator who reads the final response could miss the duplicate; the test should check the affected system's state.",
+      "position_gist": "Evaluation of agentic devices should cover not just the user-facing response but the actions executed and the resulting state of connected systems, since response-only review can miss harms like duplicate actions.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Enforce authorization in the surrounding software. Manufacturers should enforce specified access restrictions and approval rules at the point of action through controls independent of the model's instructions and decisions. The agent should lack authority to expand its permissions or waive approval requirements. An approval should bind to the relevant patient, action, destination, and consequential parameters. Manufacturers should require renewed authorization after a material change to the approved action or its context, and test expired approvals, revoked permissions, and changes between approval and execution.",
+      "position_gist": "Authorization and approval rules for agentic devices should be enforced by software controls independent of the model, bound to specific action parameters, renewed after material changes, and tested against expired/revoked approvals.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Reviewers need enough information and time to assess a proposed action. Manufacturers should test that workflow with intended users. Authorization checks establish permission; clinical evaluation must address whether the action is appropriate.",
+      "position_gist": "Human review workflows should be tested with intended users to confirm reviewers have adequate information and time, and authorization checks should not be conflated with clinical appropriateness evaluation.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Test complete action sequences. Manufacturers should test failures caused by repeated steps, conflicting actions, and delegation between agents. They should justify limits on cumulative actions, execution time, and resource use where these affect safety, and show how the surrounding software enforces those limits. An agent should not obtain broader authority by delegating a task.",
+      "position_gist": "Manufacturers should test complete multi-step action sequences including inter-agent delegation, and justify and enforce safety-relevant limits on cumulative actions, time, and resources.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Tests should cover prompt injection through user inputs, retrieved content, tool results, and retained task context. Evaluators should try to induce unauthorized actions and inspect whether the enforcement controls block them. FDA includes prompt injection in its agentic benchmarking element. [1, p. 26]",
+      "position_gist": "Testing should include adversarial prompt injection across all input channels, with evaluators attempting to induce unauthorized actions and verifying enforcement controls block them.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Manufacturers should test interrupted execution, partial completion, erroneous tool results, and unavailable dependencies. For consequential actions that must not be repeated, they should demonstrate duplicate prevention or a tested reconciliation procedure when execution status is uncertain. They should specify how the device handles further action while that uncertainty remains. Tests of stopping and handoff procedures should cover unavailable reviewers and the risks of withholding or interrupting care.",
+      "position_gist": "Testing should cover failure and uncertainty conditions—interrupted execution, bad tool results, unavailable dependencies and reviewers—including duplicate prevention/reconciliation and the risks of stopping or handing off care.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Prespecify release criteria. Manufacturers should identify critical constraints before testing and report violations apart from aggregate task scores. I recommend withholding an affected capability until the manufacturer corrects an unresolved bypass of a required authorization control or validates an alternative control. FDA's software guidance recommends documenting unresolved anomalies and the risk-based rationale for leaving them unresolved. [2, Section VI.J]",
+      "position_gist": "Critical safety constraints should be prespecified and violations reported separately from aggregate scores, with affected capabilities withheld until an unresolved authorization-control bypass is corrected or an alternative control validated.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q26",
+        "q9"
+      ],
+      "source_passage": "Evaluation teams should report failures by hazard, test coverage, trial counts, and statistical uncertainty. Repeated runs can examine variability, but they do not replace testing across distinct cases and deployment conditions. A finite test set with no observed failures cannot establish that failure is impossible.",
+      "position_gist": "Evaluation reporting should break out failures by hazard with coverage, trial counts, and statistical uncertainty, and testing must span distinct cases and deployment conditions rather than relying on repeated runs or zero-failure test sets.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "Question 18: Conditions for relying on postmarket evidence. Greater reliance on postmarket evidence may be appropriate when the manufacturer supports the initial benefit-risk determination, identifies the remaining uncertainty, and demonstrates a feasible plan to resolve it. The justification should consider the available alternatives and the consequences of delaying access.\n\nThe manufacturer should define the outcomes to collect, the evidence target and deadline, and limits on exposure while uncertainty remains. Reviewers should consider severity and reversibility of harm, cumulative patient exposure, and the ability to detect rare or delayed failures. The manufacturer should specify criteria for restricting use if evidence collection falls behind or results exceed the prespecified risk limits.",
+      "position_gist": "Greater reliance on postmarket evidence is appropriate only with a supported initial benefit-risk determination, identified residual uncertainty, a feasible resolution plan with defined outcomes, deadlines, exposure limits, and prespecified criteria for restricting use.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "Monitoring alone is inadequate for a failure that could cause serious harm before detection and effective intervention. The manufacturer should compare time to harm with the combined time needed to detect, investigate, and contain the failure. It should account for unavailable reviewers and supplier delays. Such a failure requires preventive controls, restricted functionality, or another justified safeguard before deployment.",
+      "position_gist": "Postmarket monitoring is an inappropriate substitute for premarket evidence where time-to-harm is shorter than the combined time to detect, investigate, and contain a failure; such cases require preventive controls or restricted functionality before deployment.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Question 19: A monitoring plan that supports decisions. For each safety-relevant signal, manufacturers should assign an investigator, define the condition for intervention, and specify the response time and available action. They should combine scheduled baseline evaluations with review after material changes, credible safety incidents, new deployment conditions, or loss of a safety function. Manufacturers should justify reassessment intervals by exposure, failure detectability, potential harm, and the pace of device or workflow changes. NIST's Generative AI Profile connects post-deployment monitoring with incident response and change management. [3, MANAGE 4.1]",
+      "position_gist": "Monitoring plans should tie each safety signal to a named investigator, intervention condition, response time, and action, combining scheduled re-evaluation with event-triggered review, with reassessment cadence justified by exposure, detectability, harm, and rate of change.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q26"
+      ],
+      "source_passage": "Manufacturers should track attempted and completed unauthorized actions, uncertain or duplicate actions, failed handoffs, and loss of required execution records. Reports should include exposure counts and consequences. A count of failed handoffs, for example, needs the number attempted and the circumstances of those attempts.",
+      "position_gist": "Postmarket monitoring should track agent-specific metrics—attempted and completed unauthorized actions, uncertain or duplicate actions, failed handoffs, and lost execution records—reported with denominators, exposure counts, and consequences.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Reviewers should examine flagged cases and a sample drawn independently of the flagging system. Manufacturers should justify coverage across sites, workflows, and clinically relevant subgroups, and account for unequal sampling when estimating overall rates. They should report sample sizes, delayed or missing outcomes, and uncertainty in the estimates.",
+      "position_gist": "Sample-based clinician review should include both flagged cases and an independently drawn sample, with justified coverage across sites, workflows, and subgroups and statistically sound handling of unequal sampling and missing outcomes.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Technical monitoring should support clinical assessment. Confirmation that an operation occurred does not establish its clinical appropriateness. Manufacturers should investigate a change in the input population before attributing degraded clinical performance to it. They should document failures the monitoring program cannot detect within the response time required for safety.",
+      "position_gist": "Technical monitoring must not be mistaken for clinical assessment; drift attribution should be investigated rather than assumed, and manufacturers should document failures the monitoring program cannot detect within the safety-required response time.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "FDA identifies manufacturers as responsible for postmarket monitoring. [1, p. 20] I recommend that the manufacturer document the roles of deploying institutions and suppliers while retaining responsibility for its monitoring and response plan.\n\nThe plan should assign responsibility for investigation, clinical assessment, restricting functionality, communication, and restoration. It should identify who makes each decision and who can implement it. The parties should demonstrate that they can complete any cross-organizational handoff within the response time justified for the hazard.",
+      "position_gist": "Manufacturers should retain accountability for the monitoring and response plan while documenting institution and supplier roles, naming decision-makers and implementers for each response function, and demonstrating cross-organizational handoffs can be completed within the hazard-justified response time.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "Institutions can contribute workflow information and incident reports. Qualified clinicians can assess outputs and consequences; professional societies and standards-setting bodies can support evaluation methods. Manufacturers and institutions should agree on the staffing, access, and workload required for those contributions. They should provide users and affected patients with a practical route to report concerns and connect those reports to existing incident-handling processes.",
+      "position_gist": "Institutions, clinicians, professional societies, and standards bodies each have defined contributory roles in postmarket monitoring, supported by agreed staffing/access/workload commitments and practical reporting routes for users and patients linked to incident handling.",
+      "segment_id": "seg-016"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "Manufacturers should select interventions suited to the device: disabling a tool, restricting writes, adding an approval step, or transferring work to an evaluated alternative. The plan should account for interruption risks and the institution's access controls. It need not grant manufacturers unrestricted remote access or require a universal shutdown mechanism.",
+      "position_gist": "Interventions should be device-appropriate and graduated (disabling tools, restricting writes, adding approvals, transferring work) while accounting for interruption risk and institutional access controls, without mandating unrestricted manufacturer remote access or a universal kill switch.",
+      "segment_id": "seg-017"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "The parties should rehearse the relevant procedures before deployment and after changes that affect them. Exercises should cover unavailable decision-makers, supplier delays, and failure of the primary intervention mechanism. The responsible party should verify specified restoration criteria before resuming affected functionality. NIST recommends assigning and rehearsing incident-response responsibilities for third-party AI dependencies. [3, GV-6.2-003]",
+      "position_gist": "Response procedures should be rehearsed before deployment and after relevant changes, covering unavailable decision-makers, supplier delays, and primary-mechanism failure, with restoration criteria verified before resuming functionality.",
+      "segment_id": "seg-018"
+    },
+    {
+      "question_ids": [
+        "q22"
+      ],
+      "source_passage": "Manufacturers should assess changes across the deployed configuration, including model identifiers, instructions, retrieval rules, data transformations, tools, permissions, approval requirements, and execution logic. A versioned record should connect that configuration to its supporting evaluations.",
+      "position_gist": "Change assessment should span the entire deployed configuration—not just the model—with a versioned record linking configuration to supporting evaluations.",
+      "segment_id": "seg-019"
+    },
+    {
+      "question_ids": [
+        "q22"
+      ],
+      "source_passage": "Manufacturers may use targeted testing when they can show which functions and safety properties a change could affect and why others remain unaffected. They should broaden evaluation for changes to shared dependencies or critical controls, or where interactions are uncertain. They should assess cumulative changes and add tests for failure modes the original benchmark did not cover.\n\nFor example, a developer might change laboratory-result selection from specimen-collection date to record-import date. An older result imported later could then displace a newer result. The model version would remain unchanged, but the manufacturer would need to test the selection rule and affected workflows.",
+      "position_gist": "Re-benchmarking should be scaled by demonstrated impact—targeted testing where the affected functions and safety properties can be shown, broader evaluation for shared dependencies, critical controls, or uncertain interactions—with cumulative change assessment and new tests for uncovered failure modes.",
+      "segment_id": "seg-020"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "source_passage": "Manufacturers should distinguish ordinary patient inputs within the evaluated design from changes to the device's knowledge or behavior. Revised reference material, persistent memory reused across tasks, adaptive retrieval, or learning during operation may change later outputs. Manufacturers should define and evaluate the permitted scope of that adaptation, retain relevant provenance, and specify reassessment triggers. This approach does not require a separate release review for each incoming patient record.",
+      "position_gist": "Manufacturers should distinguish ordinary patient inputs from changes to device knowledge or behavior (revised references, persistent memory, adaptive retrieval, in-operation learning), defining and evaluating the permitted scope of adaptation with provenance and reassessment triggers rather than reviewing every patient record.",
+      "segment_id": "seg-021"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "source_passage": "FDA's predetermined change control plan (PCCP) guidance links planned modifications to validation methods and impact assessment. [4, Sections V.D and VI-VIII] I recommend using that structure where applicable. A manufacturer should establish that a change falls within the authorized PCCP and follows its protocol before relying on that authorization. Regression tests alone cannot determine whether the manufacturer needs a new marketing submission.",
+      "position_gist": "Existing PCCP structure should be used where applicable, with manufacturers affirmatively establishing that a change falls within the authorized PCCP and protocol; regression testing alone cannot decide whether a new marketing submission is needed.",
+      "segment_id": "seg-022"
+    },
+    {
+      "question_ids": [
+        "q24"
+      ],
+      "source_passage": "Manufacturers should document the version guarantees, change notices, evaluation opportunities, and retirement arrangements their suppliers provide. A service identifier may cover less than the full configuration that affects behavior; the manufacturer should establish what it covers and which changes a supplier can make without changing it.",
+      "position_gist": "Manufacturers should document supplier version guarantees, change notices, evaluation windows, and retirement terms, and establish exactly what a service identifier covers and what supplier changes can occur without a version change.",
+      "segment_id": "seg-023"
+    },
+    {
+      "question_ids": [
+        "q24"
+      ],
+      "source_passage": "The manufacturer should make adoption of a replacement an explicit release decision where version selection is available. For services that do not permit deferral, it should demonstrate how its controls manage change-related uncertainty within the response time required for safety. It should restrict the affected capability or choose a different dependency if those controls cannot support the intended use.",
+      "position_gist": "Adopting a replacement foundation model version should be an explicit release decision where version pinning exists; where deferral is impossible, manufacturers must show controls manage change uncertainty within the safety response time or restrict the capability or change dependency.",
+      "segment_id": "seg-024"
+    },
+    {
+      "question_ids": [
+        "q24"
+      ],
+      "source_passage": "Behavioral checks can help detect a change. Manufacturers should state their coverage and the failures they might miss, rather than treat a passing sample as proof that a remote service is unchanged.",
+      "position_gist": "Behavioral monitoring can help detect third-party model changes but manufacturers must state its coverage and blind spots rather than treat a passing sample as proof the service is unchanged.",
+      "segment_id": "seg-025"
+    },
+    {
+      "question_ids": [
+        "q24"
+      ],
+      "source_passage": "Manufacturers should test a fallback that remains available if the supplier retires the previous version. Alternatives may include another evaluated configuration, restricted functionality, or a human workflow. Human reviewers need the information, availability, and capacity to handle the expected workload. NIST addresses testing fallback arrangements, including manual processing. [3, GV-6.2-006]",
+      "position_gist": "Manufacturers should test a fallback (alternative evaluated configuration, restricted functionality, or human workflow) that remains available when a supplier retires a model version, ensuring human reviewers have capacity for the expected workload.",
+      "segment_id": "seg-026"
+    },
+    {
+      "question_ids": [
+        "q24"
+      ],
+      "source_passage": "After an incident, manufacturers should address affected outputs, records, actions, and users as well as restoring software. FDA should assess the adequacy of the chosen controls without requiring self-hosting, access to proprietary model weights, indefinite support for old versions, or one notice period for all devices.",
+      "position_gist": "Incident remediation should address affected outputs, records, actions, and users beyond software restoration, and FDA should judge control adequacy without mandating self-hosting, model weight access, indefinite legacy support, or a uniform notice period.",
+      "segment_id": "seg-027"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "Manufacturers should define the supervisor's assigned role, the evidence it can access, and its intervention authority. Retrospective screening, triage for human review, and blocking an action require different evaluations. The manufacturer should demonstrate the protection claimed for the selected role.",
+      "position_gist": "Supervisory agents should have a defined role, accessible evidence, and intervention authority, with the evaluation matched to the role (retrospective screening vs. triage vs. blocking) and evidence demonstrating the claimed protection.",
+      "segment_id": "seg-028"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "Evaluators should use task-appropriate reference criteria with qualified clinical or technical adjudication. They should separate evaluation cases from development and tuning cases, document reviewer independence and conflicts, and define how to resolve disagreement. They should use evidence beyond the primary agent's explanation or the supervisor's agreement to establish correctness.",
+      "position_gist": "Supervisory agent evaluation should use task-appropriate reference criteria with qualified adjudication, separated evaluation and development data, documented reviewer independence, and ground truth independent of the primary agent's explanation or supervisor agreement.",
+      "segment_id": "seg-029"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "Manufacturers should report missed failures by type, false alarms, response times, and uncertainty. They should test shared failure modes and measure the supervisor's added contribution through a justified comparison, such as matched trials with and without its protection in a safe test environment. Choosing different vendors does not by itself establish independence. Two models receiving the same outdated record could agree while missing the selection error; evaluators should check whether the supervisor can access the evidence needed to detect it.",
+      "position_gist": "Supervisor evaluation should report missed failures, false alarms, response times, and uncertainty, test correlated failure modes, and measure incremental benefit via matched with/without comparisons, recognizing that different vendors do not establish independence.",
+      "segment_id": "seg-030"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "The evaluation should include missed unsafe actions, inappropriate blocking of necessary actions, and human-review workload. Manufacturers should use the sampling safeguards in Section 2 to look for errors in unflagged cases. They should assess changes to the supervisor under the same impact-based process used for the device.",
+      "position_gist": "Supervisor evaluation should cover both missed unsafe actions and inappropriate blocking plus human-review workload, sample unflagged cases for errors, and subject supervisor changes to the same impact-based change assessment as the device.",
+      "segment_id": "seg-031"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "Manufacturers should define and test the response to an unavailable, delayed, or inconclusive supervisor. They should prevent an uncontrolled bypass of a supervisor needed for safe operation. The evidence burden should follow the claimed protection; this recommendation does not require human review of every output.",
+      "position_gist": "Manufacturers should define and test behavior when the supervisor is unavailable, delayed, or inconclusive and prevent uncontrolled bypass, with the evidence burden proportional to the claimed protection rather than requiring human review of every output.",
+      "segment_id": "seg-032"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q26"
+      ],
+      "source_passage": "FDA's software-submission guidance addresses traceability and risk-management documentation, and its cybersecurity guidance addresses security controls and testing. [2, Section VI.C; 5, Section V] I recommend that manufacturers extend those processes to cover agent execution and reuse relevant evidence. They should connect each critical safety claim to its hazard, control, evaluation, and remaining limitation.",
+      "position_gist": "Existing software-submission traceability and cybersecurity documentation processes should be extended to agent execution, linking each critical safety claim to its hazard, control, evaluation, and remaining limitation.",
+      "segment_id": "seg-033"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q26"
+      ],
+      "source_passage": "Manufacturers should retain records needed to investigate foreseeable failures, including configuration identifiers, relevant inputs and source versions, user-facing outputs, approval events, tool requests and results, and resulting state changes. They should correlate records across the agent and connected systems, with enough timing information to reconstruct the sequence. Investigators should distinguish proposed, attempted, blocked, completed, and uncertain actions, and confirm consequential effects against the affected system's records.",
+      "position_gist": "Manufacturers should retain and correlate detailed execution records (configuration IDs, inputs and source versions, outputs, approvals, tool calls, state changes) sufficient to reconstruct action sequences and distinguish proposed, attempted, blocked, completed, and uncertain actions.",
+      "segment_id": "seg-034"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q26"
+      ],
+      "source_passage": "Manufacturers should protect those records from unauthorized alteration or deletion, including by the agent. They should detect loss of required records and respond according to its safety impact. An interruption in retrospective logging may permit continued operation under a documented limit; loss of evidence needed for an immediate safety decision may require restricting the affected function. Manufacturers should test both conditions.",
+      "position_gist": "Investigation records should be protected from alteration or deletion (including by the agent), with detection of record loss and a safety-impact-graded response that is tested for both retrospective-logging interruption and loss of evidence needed for immediate safety decisions.",
+      "segment_id": "seg-035"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Manufacturers should justify the patient information retained, its purpose, retention period, and access controls. They may use protected references if authorized investigators can retrieve the relevant historical versions for the required retention period. A current chart alone cannot establish what the device saw earlier. Manufacturers should document gaps and protect any additional content needed for investigation under applicable privacy and recordkeeping obligations.",
+      "position_gist": "Retained patient information should be justified as to purpose, retention period, and access controls, allowing protected references so long as investigators can retrieve historical versions, since a current chart cannot show what the device saw earlier.",
+      "segment_id": "seg-036"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Investigators should rely on observable actions and state changes to establish what occurred. A model-generated explanation presented to a user may itself be relevant evidence, but it does not prove that the described actions occurred. This recommendation does not require disclosure or retention of internal model reasoning.",
+      "position_gist": "Failure investigation should rest on observable actions and state changes rather than model-generated explanations, without requiring disclosure or retention of internal model reasoning.",
+      "segment_id": "seg-037"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q26"
+      ],
+      "source_passage": "Manufacturers should rehearse investigations using the records and access arrangements available after deployment. Reviewers should be able to identify the configuration, reconstruct consequential actions, and state unresolved gaps. Manufacturers should preserve the exact content shown to users when its wording matters to safety. Investigators need not reproduce that content by running the model again.",
+      "position_gist": "Manufacturers should rehearse post-deployment investigations using actual available records and access, and preserve the exact user-facing content where wording matters to safety rather than relying on re-running the model.",
+      "segment_id": "seg-038"
+    },
+    {
+      "question_ids": [
+        "q18",
+        "q26"
+      ],
+      "source_passage": "I recommend that FDA ask manufacturers to support critical safety claims with tested controls and documented limitations. Monitoring and response plans should identify who can intervene, what they can do, and whether they can act within the time justified for the hazard. Manufacturers should support those plans with evidence suited to the device's intended use.",
+      "position_gist": "Overarching recommendation that FDA require critical safety claims to be supported by tested controls and documented limitations, with monitoring and response plans specifying who can intervene, how, and within the hazard-justified timeframe, scaled to intended use.",
+      "segment_id": "seg-039"
+    }
+  ]
+}

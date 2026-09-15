@@ -1,0 +1,153 @@
+Comment on Docket No. FDA-2026-N-7874<br/>Re: Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and Request for Feedback (August 2026)<br/>Submitted by: Bhasker Sambar, M.Pharm.<br/>Sr. Manager, External R&amp;D and Technical Services<br/>Date: August 31, 2026<br/>These comments are submitted in my personal capacity and do not represent the views of my employer or of any professional society with which I am affiliated.<br/><br/>Due to the limitation of 5000 characters, I have uploaded the document with all my comments. Pls refer the attached. <br/><br/>Thanks,<br/>Bhasker Sambar<br/>
+
+[Attachment: Comment from Bhasker Sambar]
+Comment on Docket No. FDA-2026-N-7874
+Re: Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and
+Request for Feedback (August 2026)
+Submitted by: Bhasker Sambar, M.Pharm.
+Sr. Manager, External R&D and Technical Services
+Date: August 31, 2026
+These comments are submitted in my personal capacity and do not represent the views of my employer
+or of any professional society with which I am affiliated.
+
+Perspective
+My work is in sterile injectable drug product development, CMC regulatory authorship, and drug-device
+combination products, including prefilled syringes and autoinjectors, along with credibility assessment
+of computational and AI models used in pharmaceutical development.
+I raise that perspective because much of what the discussion paper proposes — benchmarking against
+prespecified acceptance criteria, risk-proportionate evidence, change control after authorization,
+reliance on third-party model information — has close analogues on the drug and biologic side that are
+already in routine use. Several are more mature than what the paper describes. Where CDRH builds new
+vocabulary for the same underlying mechanism, it creates real cost for the growing number of sponsors
+who work across both, particularly combination product sponsors.
+GenAI functions in combination products
+The paper does not explain how a GenAI-enabled software function should be handled when it is part
+of, or used with, a drug-device combination product under 21 CFR Part 4. One example is dose-guidance
+software used with a connected autoinjector. These products are already reaching the market, and
+CDER will often be the lead FDA center. Sponsors should not have to apply two different risk
+vocabularies to the same product: the competency-based approach in this paper and FDA’s credibility
+framework for AI used in drug and biological product decision-making.
+Recommendation. Explain how the competency-based approach applies when a GenAI-enabled
+function is part of a combination product led by a non-CDRH center, and use one shared risk vocabulary
+across FDA centers.
+Question 6 — Weighting under- and over-escalation
+Under-escalation and over-escalation create different kinds of harm, so they should not be reduced to
+one overall accuracy number. If only one number is reported, the system may be tuned toward the error
+that is easiest or cheapest to reduce. Sponsors should explain the trade-off clearly at the start, the same
+
+way analytical method validation makes key assumptions and acceptance criteria clear before testing
+begins.
+Recommendation. Ask sponsors to state, in advance, how they will weigh under-escalation and over-
+escalation, and why that weighting makes clinical sense. Performance should be shown across the trade-
+off, not as a single best number. Sponsors should also identify the operating point they chose and
+explain why it fits the setting where the device will be used.
+Question 8 — Aligning with existing credibility frameworks
+FDA already has useful language for this kind of risk assessment. CDRH guidance on computational
+modeling, which draws on ASME V&V 40, looks at model influence and decision consequence. CDER’s
+draft AI guidance uses the same terms. The discussion paper appears to describe the same basic idea,
+but with different words. Using different terms for the same concept will create confusion, especially for
+sponsors working with more than one FDA center.
+Recommendation. Use the existing terms “model influence” and “decision consequence,” or clearly
+state that the paper’s two axes mean the same thing. The resulting risk tier should then guide the level
+of evidence needed, including benchmarking, rigor, and clinical confirmation. This would give sponsors
+one risk assessment they can use for both premarket planning and postmarket change control.
+Question 9 — Completeness of the benchmarking elements
+The ten benchmarking elements are helpful and generally well designed. I would suggest closing two
+gaps.
+First, the paper should define the test article. Benchmarking only works if everyone knows exactly what
+is being tested. That means more than the model weights. It includes the model version, system prompt,
+settings such as temperature and top-p, retrieval index and snapshot date, guardrails, orchestration
+logic, tool definitions, and the user interface.
+This is especially important for GenAI. Reproducibility depends on the full configuration, not just the
+model. A sponsor could test at one setting, such as temperature zero, and then deploy at a different
+setting that changes the output. The CMC comparison is straightforward: an analytical method cannot
+be validated unless the instrument, column, reagents, and conditions are defined. The method and its
+conditions are validated together.
+Recommendation. Add a foundational element for “test article and configuration definition.” Sponsors
+should document the full configuration used for benchmarking and confirm that the marketed version
+matches it. Changes to key settings, guardrails, retrieval index, or system prompt should be treated like
+established conditions and should trigger appropriate reporting and re-benchmarking.
+Second, E.4 should connect to existing usability expectations. Communication quality, user
+understanding, and automation bias are already covered by IEC 62366-1 and FDA’s human factors
+guidance.
+
+Recommendation. Link E.4 to the existing human factors framework instead of creating a separate
+evaluation path. FDA should also clarify whether E.4 evidence can be generated as part of a human
+factors validation study.
+Question 10 — Construct validity, contamination, and saturation
+Contamination is the biggest concern. If a model was trained on public benchmark questions, it may
+score well because it has seen the answers before, not because it can reason through the task. Sponsors
+may not be able to tell, because they usually cannot see the full training data. Three controls can help
+now:
+– Provenance dating — compare each benchmark item’s publication date with the model’s training
+cutoff. Items that came before the cutoff should be treated as potentially contaminated unless the
+sponsor can show otherwise.
+– Canary items — include held-out questions designed so memorization gives a different answer
+than genuine reasoning, such as questions with changed numerical values.
+– Sequestered holdout — for higher-risk functions, include some testing on data the sponsor has not
+seen before.
+Sponsor-developed benchmarks should be allowed, and in many cases they will be necessary because
+public benchmarks may not match a narrow intended use. The safeguard should be a clear, prespecified
+benchmark plan, not a ban. Sponsors should explain how the benchmark was built before generating
+results, similar to a prospectively defined non-clinical protocol.
+Recommendation. Require provenance dating and canary items when public benchmarks are used to
+support a regulatory decision. For sponsor-developed benchmarks, require a prespecified construction
+plan. For higher-risk functions, require some evaluation using sequestered holdout data.
+Question 16 — Role of independent third parties
+The most useful third-party role is not certifying devices but qualifying and maintaining evaluation
+assets, since contamination and saturation are problems no individual sponsor can solve and that
+worsen over time. FDA already has a fit-for-purpose mechanism: the MDDT program qualifies a tool for
+a specified context of use, which is exactly what a benchmark is.
+Recommendation. Use MDDT to qualify benchmark suites for defined contexts of use, with an explicit
+re-qualification interval to address saturation and contamination drift, and require qualified benchmark
+holders to be structurally independent from both device sponsors and foundation model developers.
+This is lighter than third-party device certification, avoids the competition concerns raised in the
+question, and creates a shared public good.
+Questions 19 and 22 — Postmarket monitoring and scaling re-benchmarking
+The three proposed approaches are reasonable but under-specified in one respect: none says what
+triggers action. Drug manufacturing solved this with Stage 3 Continued Process Verification. A
+monitoring program is not credible unless it defines, before deployment, the parameters monitored, the
+
+sampling plan, the alert limit, the action limit, and the response at each. Monitoring without
+prespecified limits is data collection, not control.
+Recommendation. Require postmarket monitoring plans to specify, prior to authorization: monitored
+parameters drawn from the same benchmarking elements used premarket so results are comparable;
+the sampling plan for clinician-adjudicated review, including sample size and stratification across
+clinically relevant subgroups; prespecified alert and action limits with justification; and the defined
+response at each limit. Require the premarket benchmarking result to serve as the baseline for trending.
+On scaling re-benchmarking to the size of a change, the drug side handles this through established
+conditions and Post-Approval Change Management Protocols under ICH Q12: the sponsor defines which
+elements are established conditions and prospectively agrees the tests and acceptance criteria
+supporting a future change. That is functionally what a PCCP does, and the two should be described as
+siblings.
+Recommendation. Define change categories by the benchmarking elements a change could plausibly
+affect, not by the technical nature of the change. A guardrail modification touches S.1, S.2, and S.3 and
+should trigger re-benchmarking of those; a user interface change with no effect on output content
+touches E.4 alone. Allow sponsors to agree this mapping prospectively in a PCCP, so re-benchmarking
+scope is known before the change is made.
+Question 26 — Agentic systems
+The distinguishing feature of an agentic device is that errors compound across steps before any human
+sees them. Two expectations follow. First, any action in the agent's tool set that is irreversible or high-
+consequence should require an affirmative human confirmation step that cannot be satisfied by another
+model; this is a design expectation rather than a benchmarking outcome, because benchmarking cannot
+enumerate all trajectories. Second, postmarket investigation requires knowing what the agent did and
+why, and Part 11 audit trail expectations — attributable, contemporaneous, unalterable records of each
+step, tool call, and tool response — apply directly.
+Recommendation. Require an enumerated irreversible-action inventory with a documented human
+confirmation gate on each, and execution records sufficient to reconstruct any interaction after the fact,
+retained for a defined period.
+Closing
+The competency-based approach is a practical way to address a difficult evaluation problem, and I
+support the direction FDA is taking. My main recommendation is for CDRH to build on tools and
+terminology FDA already uses: model influence and decision consequence for risk, established
+conditions and change management protocols for postmarket changes, master file practices for third-
+party models, and clear alert and action limits for monitoring. Using familiar mechanisms would make
+implementation easier for sponsors, especially combination product sponsors working across FDA
+centers, without lowering the evidence expectations described in the paper.
+
+Thank you for the opportunity to comment. I would welcome the chance to participate in any future
+public meeting or workshop on this topic.
+Respectfully submitted,
+Bhasker Sambar, M.Pharm.
+Bashu1986@gmail.com
++1 484-250-4680

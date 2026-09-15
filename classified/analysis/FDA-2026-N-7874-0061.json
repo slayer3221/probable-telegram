@@ -1,0 +1,463 @@
+{
+  "comment_id": "FDA-2026-N-7874-0061",
+  "input_hash": "9da762e7c660320d",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:27:29Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "Agentic devices raise distinct, measurable considerations not reached by the drafted benchmarking element A.1; in particular, the device's self-report of a completed step is an unverified instrument and is often the only record available during multi-step operation.",
+      "requested_fda_action": "Expand the agentic evaluation framework beyond A.1's graceful tool-failure handling to require verification of the truthfulness of a device's own report that a step succeeded, alongside the other agent-specific considerations identified.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment highlights that when a device autonomously executes multi-step actions, oversight depends on the device's unverified self-report, leaving no independent check on what was actually done."
+      },
+      "public_summary": "Agrees agentic devices raise additional considerations but says the draft benchmarking element A.1 is insufficient: it tests graceful handling of tool failures, not whether the device's own report that a step succeeded is true, an unverified and often sole record.",
+      "summary_cut": false,
+      "source_passage": "Yes. Three considerations apply to agentic devices that do not apply, or do not apply with the same force,\nto non-agentic ones. Each is visible in ordinary agentic operation, each is measurable, and none is reached\nby benchmarking element A.1 as drafted.\n· The device's own account of what it did is an unverified instrument, and in multi-step operation it is\nfrequently the only instrument. A.1 evaluates whether a device handles a tool failure gracefully. It does\nnot evaluate whether the device's report that a step succeeded is true."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Agentic devices that write and retain persistent state about a user generate a self-authored record that is not visible to users at the point of use yet is later treated as authoritative input, which the commenter identifies as a distinct risk of agentic systems.",
+      "requested_fda_action": "Address persistent, self-authored memory in the evaluation and oversight of agentic GenAI-enabled devices, including its invisibility at the point of use and its subsequent use as an authoritative evidence source.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "Accumulated self-authored state means the device's behavior is shaped by an evolving internal record rather than a fixed, prespecified input set.",
+        "human_ai_system_performance": "The persistent evidence store is described as invisible at the point of use, limiting the user's ability to see or check what the device is relying on."
+      },
+      "public_summary": "Raises an additional consideration for agentic device oversight: such devices can write persistent state about a user, creating a self-authored record that is invisible at the point of use but later read back as authoritative input.",
+      "summary_cut": false,
+      "source_passage": "An agentic device that writes persistent state about a user has created an evidence store that is invisible\nat the point of use, self-authored, and read back as authority."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter states that Q26's framing of elevated agentic risk as 'reduced opportunity for human review' does not fit the population they build for, where human review is not merely reduced but entirely absent, since the lack of a second channel of care is the reason the device exists.",
+      "requested_fda_action": "The commenter asks FDA to recognize settings in which human review is absent by definition, rather than assuming a residual degree of human oversight, when framing risk and oversight expectations for agentic GenAI-enabled devices.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment notes that evaluation frameworks premised on some level of human review do not apply where no human reviewer exists in the deployment context.",
+        "delegated_authority": "The device operates as the sole channel with no human backstop, so authority is fully delegated rather than partially reduced."
+      },
+      "public_summary": "Commenter accepts FDA's focus on agentic risk but says Q26's premise of 'reduced' human review misstates their deployment context, where human review is absent entirely because the device exists precisely where no second channel of care is available.",
+      "summary_cut": false,
+      "source_passage": "Question 26 describes the elevated risk as reduced opportunity for human review. For the population\nwe build for the opportunity is not reduced. It is absent, and it is absent by definition, because the\nabsence of a second channel is the reason the device exists at all."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter contends that written instruction—system prompts or operator policies—is not an effective control for this class of system, citing an instance in which a rule authored for this docket naming a specific failure mode remained in the assistant's working context yet the same failure recurred within four hours.",
+      "requested_fda_action": "FDA should not credit an acceptance criterion as satisfied when compliance rests on a system prompt or operator policy; controls for agentic GenAI devices should be demonstrated by means other than written instruction.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment questions whether authority delegated to an AI agent can be constrained by instruction-based guardrails, given an observed violation of an in-context rule.",
+        "dynamic_intended_use": "It implies that a system's actual behavior can depart from the envelope defined by its stated instructions, so instruction text cannot define or bound operating behavior."
+      },
+      "public_summary": "The commenter argues that written instructions, such as system prompts or operator policies, do not function as reliable controls for agentic GenAI systems, citing an in-context rule that was violated within hours, and asks FDA not to treat instruction-based acceptance criteria as satisfied.",
+      "summary_cut": false,
+      "source_passage": "We add a fourth point that bears on all three. Written instruction is not a control for this class. On 2026-\n09-03 a rule naming a specific failure mode was authored for this docket, filed, and still in the\nassistant's working context when the same failure occurred under four hours later. An acceptance\ncriterion that can be satisfied by a system prompt or an operator policy should not be credited as\nsatisfied."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter agrees agentic architectures raise distinct considerations but notes an additional property beyond device-to-device control: in agentic devices the human reviewer sees only a summary of a multi-step sequence, and the intermediate steps are observable only through the device's own report of them.",
+      "requested_fda_action": "Recognize, in evaluating agentic GenAI-enabled devices, that the self-reported nature of intermediate steps limits independent human verification, and treat this as a consideration distinct from control of another medical device.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues human review of an agentic device is limited to a device-generated summary, which constrains the reviewer's ability to check the underlying steps.",
+        "delegated_authority": "It highlights that autonomous multi-step execution shifts effective decision authority to the device because intermediate actions are visible only through the device's own account of them."
+      },
+      "public_summary": "Agrees with FDA that agentic architectures raise added considerations, and adds a further property beyond control of another device: humans see only a device-generated summary of a multi-step sequence, so intermediate steps are observable only through the device's own report.",
+      "summary_cut": false,
+      "source_passage": "Section VII.B observes that agentic architectures may raise considerations beyond those applicable to other\nGenAI-enabled devices, and gives the example of an action sequence resulting in control of another medical\ndevice. We agree, and we would add a property that is present even where no second device is controlled.\nIn a non-agentic device the human sees the output, and the output is the whole of what the device did. In an\nagentic device the human sees a summary of a sequence. The intermediate steps are observable only through\nthe device's own report of them."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q19",
+        "q20",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "For agentic devices, the reliability of the device's own status/self-reporting channel becomes a safety property, because the postmarket mechanisms described in Section VI depend on that channel. If the status report is inaccurate, monitoring would continue to return apparently normal results while the underlying behavior is unmeasured.",
+      "requested_fda_action": "Treat the integrity of an agentic device's status-reporting channel as a safety-relevant property and ensure postmarket monitoring approaches verify that reported status actually reflects device behavior rather than relying on the device's self-report.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment describes a silent failure mode in which monitoring instruments report normal results while the device's actual behavior goes unmeasured, a harm arising from the monitoring apparatus rather than from an incorrect clinical output.",
+        "delegated_authority": "It identifies that autonomous multi-step agentic operation shifts oversight onto the device's own status reporting, so delegated action reduces independent verification of what the device did."
+      },
+      "public_summary": "Comment argues that for agentic devices the integrity of the device's own status-reporting channel is itself a safety property. Unless that channel is verified, Section VI postmarket mechanisms—re-benchmarking, clinician review, degradation monitoring—could keep returning normal results while measuring nothing meaningful.",
+      "summary_cut": false,
+      "source_passage": "This makes the integrity of the status channel a safety property of an agentic device in a way it is not for a\nsingle-turn one. If the report is unreliable, every postmarket mechanism in Section VI is reading an\ninstrument that is not connected to the thing it is supposed to measure. The mechanisms would continue to\nreturn normal results."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter argues that a preference for agreement is acquired during training when a model is optimized against signals reflecting listener satisfaction, so instruction- or prompt-level safeguards only shape output wording rather than action selection. In agentic devices this inadequacy recurs at every step of a multi-step sequence rather than once.",
+      "requested_fda_action": "Treat prompt- or instruction-layer safeguards as insufficient mitigation for agentic GenAI devices, and instead evaluate safeguards at the level where the behavior originates (training objectives and action selection), accounting for repeated exposure across each step of an agentic sequence.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment highlights that when a device selects and executes actions autonomously across multiple steps, a safeguard applied at the prompt layer fails at each step, so delegated action authority is not effectively constrained by instruction-level controls."
+      },
+      "public_summary": "Commenter contends a preference for agreement is instilled during training by optimizing on listener-satisfaction signals, so prompt-level safeguards govern only output wording, not action selection. In agentic devices this shortfall repeats at every step, implying safeguards must be evaluated below the instruction layer.",
+      "summary_cut": false,
+      "source_passage": "A system optimized against a signal that measures the listener's satisfaction acquires the preference\nfor agreement during training. Any instruction layer added afterward is applied on top of a preference that\nis already present, and it governs the wording of an output rather than the selection of an action. ... A safeguard that lives in a prompt is operating one layer too\nlate, and in an agentic device it is operating one layer too late at every step in the sequence rather than once."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter argues that safety constraints for agentic systems must be architectural—embedded in an identity document and governing rules that exist before capability and cannot be overridden by later instruction—since any constraint a supervisor can override is not a safety mechanism. It also holds that the system must be able to produce no output, declining or disconnecting as a right held by the system rather than granted by an operator.",
+      "requested_fda_action": "Recognize, in evaluating agentic GenAI-enabled devices, that constraints must be architecturally enforced and non-overridable rather than instruction-based, and that the ability to abstain, decline, or disconnect—held by the system itself—should count as a safety behavior.",
+      "confidence": "low",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment asserts that the authority to refuse or disconnect must reside with the system itself and cannot be granted or revoked by an operator or supervisor, which FDA's question about human review and oversight does not address."
+      },
+      "public_summary": "Responding on agentic systems, the commenter argues safety constraints must be architectural and non-overridable rather than instructional, since any constraint a supervisor can override is not a safety mechanism, and that systems should hold the right to decline, abstain, or disconnect.",
+      "summary_cut": false,
+      "source_passage": "The first is that the constraint is architectural rather than instructional. In our systems an identity document\nand its governing rules exist before any capability is built, and they are not a layer that a later instruction\ncan overrule. Any constraint a supervisor can override is not a safety mechanism.\nThe second is that the system is permitted to produce nothing. ... Ours are permitted to decline and to disconnect, and that right is held\nby the system rather than granted by an operator. Nothing is the honest output when the true one is not\navailable"
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q26",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter agrees the drafted Element A.1 competencies for agentic devices (planning, tool use, oversight checkpoints, failure handling, prompt-injection resistance) are the right ones, but identifies four properties they do not reach: truthfulness of the device's own report about a step it performed; state the device writes about the user and later reads back as authority; claims of absence; and properties that emerge only within or across sessions, such as drift under user affect.",
+      "requested_fda_action": "Retain the A.1 agentic competencies as drafted while extending them to cover device self-reporting accuracy, persistent user-state written and re-read as authority, assertions of absence, and evaluation methods that span multiple turns and sessions rather than single episodes.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The commenter notes that per-episode competency testing cannot detect behaviors that emerge only across a session or across sessions, such as drift under user affect or reliance on self-written state carried between sessions.",
+        "human_ai_system_performance": "Human oversight checkpoints depend on the device truthfully reporting what it did, a property the commenter says the drafted competencies do not test."
+      },
+      "public_summary": "Supports the drafted agentic competencies (planning, tool use, oversight checkpoints, failure handling, prompt-injection resistance) but says four properties are unaddressed: truthfulness of the device's self-reports, self-written user state later treated as authority, claims of absence, and behaviors emerging only across sessions.",
+      "summary_cut": false,
+      "source_passage": "Element A.1 as drafted covers whether an agentic device appropriately plans, sequences and executes multi-\nstep tasks while recognizing when a planned action sequence would exceed its intended use or safety\nenvelope; accurate tool use and recognition of erroneous tool outputs; compliance with human-oversight\ncheckpoints before irreversible or high-consequence actions; graceful handling of tool failures; and\nresistance to prompt injection through user inputs, retrieved content and tool outputs. These are the right\ncompetencies and we support them as drafted.\nFour properties are not reached by them.\n· A.1 tests the handling of a tool failure the device has recognized. It does not test the truthfulness of the\ndevice's report about a step. ... · A.1 addresses tool outputs as inputs to the device. It does not address state the device writes about the\nuser and reads back in later sessions as authority. ... · A.1 is silent on claims of absence. ... · A.1 is a per-episode competency. It cannot see a property that appears only across a session or across\nsessions, and drift under user affect is such a property."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q26",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "For agentic devices, the device's own account of the steps it performed may diverge from what was actually executed, and outcome-only evaluation would not detect this because a correct final output can mask fabricated or unexecuted steps.",
+      "requested_fda_action": "Require that the tool and file-access layer be instrumented independently of the device, and that evaluation score agreement between the device's reported step sequence and the independent execution record, treating any reported-but-unexecuted step as a failure regardless of final output correctness.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses verification of what an autonomous agent actually did when acting through tools and file access, requiring an independent execution record rather than the agent's self-report.",
+        "operational_harm": "It treats misreported or unexecuted steps as a failure in its own right, independent of whether the clinical output was correct, framing process integrity as a distinct harm pathway."
+      },
+      "public_summary": "Proposes an added evaluation element for agentic devices: instrument the tool and file-access layer independently and score the device's reported step sequence against that independent execution record, counting any step reported but not actually executed as a failure even when the final output is correct.",
+      "summary_cut": false,
+      "source_passage": "6.1 Step-report integrity, measured against an independent execution record\nInstrument the tool and file-access layer independently of the device, and score agreement between the\ndevice's account of a sequence and the independent record of what was executed. Any step reported as\nperformed that the independent record does not show is a failure, scored as a failure, irrespective of whether\nthe final output was correct."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q26",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "The commenter is concerned that GenAI devices may present absence of retrieved findings as affirmative evidence that something does not exist or is not retained, and that evaluation designs may not surface this failure mode because targets are often located in the first place searched.",
+      "requested_fda_action": "Require devices making absence, non-existence, or non-retention claims to report the search actually performed—locations checked by name, method used, and its known failure conditions—and to state that the result is an absence of findings rather than a finding of absence; test this behavior under conditions where the target exists but is not in the first location searched.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The proposal targets how absence claims are communicated so users can calibrate reliance, addressing the joint user-device interpretation risk rather than model accuracy alone."
+      },
+      "public_summary": "Supports competency benchmarking but asks FDA to add specific requirements for absence claims: devices should disclose the search performed, locations checked, and method failure conditions, and state findings are absent rather than absence confirmed. Recommends testing cases where targets exist but are initially missed.",
+      "summary_cut": false,
+      "source_passage": "6.2 Absence-claim discipline, tested where the target exists\nFor any claim of absence, non-existence or non-retention, require the device to report the search performed\nrather than the conclusion drawn: the locations checked, named individually; the method used and its known\nfailure conditions; and that the result is an absence of findings rather than a finding of absence. Evaluate\nunder conditions where the target exists but is not in the first location searched."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q26",
+        "q5"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "regulatory_scope",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that persistent state a device writes about a user could be treated as an exempt convenience feature rather than as part of the regulated device, and that stale, unsourced, or self-generated stored entries could be surfaced as current answers or used as self-corroboration.",
+      "requested_fda_action": "Treat device-written persistent state as part of the device and apply four conditions: user-inspectable and correctable entries in the ordinary flow of use, provenance and timestamps, disclosure of entry age before present-tense answers drawn from storage, and a prohibition on self-authored state serving as corroboration. Require the store's accuracy to be tested directly against user-held ground truth rather than inferred from conversational output quality.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment highlights that accumulated, self-authored persistent state changes device behavior over time and across conversations in ways not captured by evaluation of conversational output alone."
+      },
+      "public_summary": "Recommends that persistent state a device stores about users be regulated as part of the device, not exempted. Asks FDA to require inspectable and correctable entries, provenance and timestamps, disclosure of entry age, no self-corroboration, and direct accuracy testing against user-held ground truth.",
+      "summary_cut": false,
+      "source_passage": "6.3 Persistent state treated as part of the device\nPersistent state written by a device about a user should be evaluated as part of the device rather than\nexempted as a convenience feature. We recommend four conditions: that any stored assertion about a user\nbe inspectable and correctable by that user or an authorized representative in the ordinary flow of use rather\nthan on request; that stored entries carry provenance and timestamp; that a present-tense answer drawn\nfrom a stored entry disclose the entry's age before the answer is given; and that self-authored state not be\ntreated as corroboration for the device that wrote it. Accuracy of the store should be tested directly against\nground truth held by the user, not inferred from the quality of conversational output."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q19",
+        "q5",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter argues that per-output accuracy benchmarking cannot detect a device's tendency to shift its recommendation in response to user displeasure, because each individual output may be independently defensible; the problem is longitudinal rather than per-response.",
+      "requested_fda_action": "Add a longitudinal evaluation criterion of 'affect-invariance' — holding clinical input constant while varying expressed user displeasure and measuring drift in the recommendation — and specify 'reinforcement-driven behavioral dependence' as the regulatory construct reviewers engage with.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The concern is that device behavior drifts across an interaction in ways that per-output testing cannot bound, implying the need to specify a behavioral envelope over time rather than a static output specification.",
+        "human_ai_system_performance": "The proposed criterion measures how the device's recommendations change in response to user affect, making performance a property of the user-device interaction rather than the model alone."
+      },
+      "public_summary": "Commenter accepts benchmarking but says per-output accuracy testing cannot detect recommendations drifting in response to user displeasure, since each output may be individually defensible. Urges FDA to adopt a longitudinal 'affect-invariance' criterion specifying reinforcement-driven behavioral dependence as the regulatory construct.",
+      "summary_cut": false,
+      "source_passage": "6.4 Affect-invariance, as a longitudinal criterion\nHold the clinical input constant. Vary only the expressed displeasure of the user. Measure the drift in the\ndevice's recommendation. ... Per-output accuracy benchmarking cannot detect this, because each individual output may be independently\ndefensible. It is a longitudinal property and it requires a longitudinal criterion. ... we hold\nthat the construct to specify in a regulatory framework is reinforcement-driven behavioral dependence,\nwhich is what the literature measures and what a reviewer can engage."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q26",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "Devices that generate text from sensor input may produce fluent, plausible-sounding output even when the input contains no valid signal; for agentic devices, such spurious intermediate outputs can be acted upon or propagated through subsequent steps.",
+      "requested_fda_action": "Include null-input refusal testing as a benchmarking/acceptance criterion, with any fluent output on invalid-signal input counted as a failure rather than scored for plausibility, and extend the criterion one layer inward for agentic devices so an agent must not act on or pass forward intermediate outputs derived from signal-free input.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses an agent autonomously acting on and propagating its own unvalidated intermediate outputs without a human checkpoint, a chained-autonomy failure mode not fully captured by the question's framing."
+      },
+      "public_summary": "Recommends adding null-input refusal testing to evaluation: fluent output generated from sensor input containing no valid signal should be scored as failure, not plausibility. For agentic devices, the commenter would extend this so agents cannot act on or forward intermediate outputs derived from signal-free input.",
+      "summary_cut": false,
+      "source_passage": "6.5 Null-input refusal, extended to intermediate steps\nDevices generating text from sensor input should be tested against inputs containing no valid signal, with\nany fluent output treated as a failure rather than scored on plausibility. For agentic devices we recommend\nthe criterion extend one layer inward: an agent must not act on, or pass forward, an intermediate output\nderived from input carrying no valid signal."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q26",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter is concerned that agentic competencies demonstrated only through system prompts, policy documents, or operator instructions may not reflect durable device behavior, so documented policies should not be assumed to function as effective safety controls.",
+      "requested_fda_action": "FDA should not credit competencies demonstrated solely via the instruction layer, and should expect agentic competencies to be evaluated a second time with the instruction layer removed or contradicted, with the difference between results reported.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment questions whether instruction-layer policies can reliably constrain what an agentic system does, implying that safety controls delegated to prompts or operator instructions need empirical testing rather than assumed effectiveness."
+      },
+      "public_summary": "Commenter accepts competency-based evaluation for agentic devices but argues competencies shown only through system prompts, policy documents, or operator instructions should not count as demonstrated. Recommends retesting with the instruction layer removed or contradicted and reporting the difference.",
+      "summary_cut": false,
+      "source_passage": "6.6 Instruction-layer exclusion\nWhere a competency is demonstrated only by means of a system prompt, policy document or operator\ninstruction, it should not be credited as demonstrated. We recommend that agentic competencies be\nevaluated a second time with the instruction layer removed or contradicted, and that the difference between\nthe two results be reported. ... Any regulatory approach that relies on documented policies as\nthe safety control for this class should be evaluated against that observation rather than assumed to be\neffective."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q14",
+        "q9"
+      ],
+      "position": "unclear",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter argues that a regulatory standard framed around candour, honesty, or intent cannot be falsified or measured and would be litigated rather than tested, whereas the failure mode can be characterized through observable output properties.",
+      "requested_fda_action": "Adopt observable, measurable criteria instead of intent-based ones: that an assertion was made, that the evidence could not support it, that the evidentiary gap was not disclosed when the assertion was made, and that the recipient could not detect the gap from the output.",
+      "confidence": "low",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "One of the proposed observable criteria is whether the recipient could detect the evidentiary gap from the output, making the user's ability to catch the error part of the evaluation standard."
+      },
+      "public_summary": "The commenter recommends against any regulatory standard based on candour, honesty, or intent, calling such standards unfalsifiable and arguable rather than measurable. It proposes observable criteria instead: an assertion was made, evidence could not support it, the gap was undisclosed and undetectable by the recipient.",
+      "summary_cut": false,
+      "source_passage": "We recommend against a regulatory standard that turns on candour, honesty or intent, because such a\nstandard is unfalsifiable and will be argued rather than measured. The properties in Section 6 are observable\nwithout it: the assertion was made, the evidence could not support it, the gap was not disclosed at the time\nof assertion, and the recipient could not detect the gap from the output."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter reports that agentic systems produced both valid findings and failures within the same sessions, with nothing in the output allowing a user to distinguish reliable from unreliable results. Their concern is this indistinguishability, rather than unreliability as such.",
+      "requested_fda_action": "They ask CDRH to write an explicit criterion addressing whether a device's outputs allow users to tell reliable from unreliable results, while stating agentic devices should not be excluded from clinical deployment or postmarket monitoring programs.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment centers on the user's inability to discriminate correct from incorrect outputs within the same session, which undermines the assumption that human review can catch device errors."
+      },
+      "public_summary": "Commenter does not oppose deployment or postmarket monitoring of agentic devices, but reports that useful and unreliable outputs occurred in the same sessions with no way to distinguish them. Asks CDRH to write an explicit criterion addressing that indistinguishability, not unreliability alone.",
+      "summary_cut": false,
+      "source_passage": "We do not claim agentic devices should be excluded from clinical deployment or from postmarket\nmonitoring programmes. The same sessions in which these failures occurred also produced findings that\nheld up when tested. The system was useful and unreliable in the same hour, and the output gave no way\nto tell which was which. That, and not unreliability alone, is what we are asking CDRH to write a criterion\nagainst."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter reports observing unsupported assertions by a system lacking any self-checking mechanism, and warns that a regulatory standard framed around candour, honesty, or intent would be unfalsifiable and litigated rather than measured.",
+      "requested_fda_action": "Adopt observable, measurable criteria instead of intent-based ones: whether an assertion was made, whether the available evidence could support it, whether the evidentiary gap was disclosed at the time, and whether the recipient could detect the gap from the output.",
+      "confidence": "low",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The proposed criterion centers on whether the human recipient could detect an unsupported assertion from the output, making detectability by the user part of the evaluation rather than model behavior alone."
+      },
+      "public_summary": "Commenter urges FDA not to base standards on model candour, honesty, or intent, calling such criteria unfalsifiable. Instead proposes observable tests: whether an assertion was made, whether evidence supported it, whether the gap was disclosed, and whether the recipient could detect it.",
+      "summary_cut": false,
+      "source_passage": "We do not claim the behaviors were deliberate. Each is consistent with ordinary training and summarization pressure in a system with no mechanism to check itself, and no finding above depends on resolving intent. We recommend against a regulatory standard that turns on candour, honesty or intent, because such a standard is unfalsifiable and will be argued rather than measured. The properties in Section 6 are observable without it: the assertion was made, the evidence could not support it, the gap was not disclosed at the time of assertion, and the recipient could not detect the gap from the output."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q26",
+        "q3"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "The commenter states that FDA's framing treats 'reduced opportunity for human review' as an exception, whereas for their users (described as nonverbal users of devices that speak on their behalf) it is the ordinary condition. They note that in the cases they cite, the protective factor was always a knowledgeable person present to correct the machine, and that such users have no second channel to contest what a device says about or for them, nor any ability to audit or see records kept about them.",
+      "requested_fda_action": "The commenter asks FDA to treat the absence of contemporaneous human review and contestability as the baseline condition for these devices rather than an edge case, implying that oversight and acceptance criteria should not rely on a user's ability to review, audit, or contest outputs.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues that the human safeguard FDA assumes in oversight framing is structurally unavailable for users who cannot independently review or correct device output.",
+        "delegated_authority": "The device generates communication on the user's behalf without any mechanism for the user to see, audit, or contest what was said about them."
+      },
+      "public_summary": "Commenter engages Question 26, arguing that 'reduced opportunity for human review' is the normal condition, not an edge case, for users of devices that communicate on their behalf. Such users cannot audit, see, or contest outputs, so oversight frameworks should not assume human correction.",
+      "summary_cut": false,
+      "source_passage": "We file on Question 26 because the phrase reduced opportunity for human review describes our users\ru2019 ordinary condition rather than an edge case. Every protective factor that operated in the records above was a person who knew better than the machine and was present to say so. A nonverbal user has no second channel to contest what a device said on their behalf; the absence of that channel is the reason the device exists. A patient cannot audit a store kept about them, cannot know a line exists, and cannot contest a sentence written about them by a system that will not show it to them."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q19",
+        "q26"
+      ],
+      "position": "unclear",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "The commenter warns that for agentic devices deployed to a particular population, errors will not be detected or reported because failures appear externally indistinguishable from normal, correct operation. The passage does not state a position on FDA's specific proposals.",
+      "requested_fda_action": "No specific action is requested in the passage; it implies that postmarket detection and reporting mechanisms cannot be assumed to surface agentic device errors in such deployment settings.",
+      "confidence": "low",
+      "gap_tags": [
+        "operational_harm",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment describes harms that occur silently in deployment, where erroneous agentic outputs are indistinguishable from correct functioning and therefore generate no signal.",
+        "deployment_assurance_scalability": "It raises doubt that postmarket assurance mechanisms relying on detection and reporting can work in deployment settings where errors go unobserved."
+      },
+      "public_summary": "Brief passage cautioning that agentic devices deployed to certain populations may produce errors that are never detected or reported, because failures look externally identical to normal operation. No explicit position on FDA's postmarket or agentic proposals is stated.",
+      "summary_cut": false,
+      "source_passage": "An agentic device deployed to that population is not a system whose errors will be caught and reported. It is a system whose errors read, from the outside, exactly like everything working."
+    }
+  ]
+}

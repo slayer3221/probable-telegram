@@ -1,0 +1,309 @@
+{
+  "comment_id": "FDA-2026-N-7874-0077",
+  "input_hash": "eac23597fe72e3d5",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:27:29Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter is concerned that any regulatory criterion resting on a developer's intent or candour would be unfalsifiable and would invite argument rather than measurement.",
+      "requested_fda_action": "FDA should avoid standards that turn on developer intent or candour and instead rely on the observable, measurable conditions the commenter proposes, which can be assessed without determining why a given output occurred.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter disclaims any assertion about developer intent and urges FDA not to adopt criteria based on intent or candour, arguing such standards are unfalsifiable and contestable. It recommends instead the observable conditions it proposes, which can be measured without explaining why an output occurred.",
+      "summary_cut": false,
+      "source_passage": "We make no claim about intent on the part of any developer, and we recommend against any standard that turns on candour or intent, because such a standard is unfalsifiable and will be argued rather than measured. Every condition proposed above is observable without resolving why an output occurred."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter accepts a total product lifecycle trade-off in principle but warns that reduced premarket evidence is not a genuine exchange unless the postmarket monitoring program can actually detect the failures the premarket evidence would have identified; otherwise certainty is surrendered for coverage that does not exist.",
+      "requested_fda_action": "Grant any reduction in premarket evidence only against demonstrated detection capability of the monitoring program, not merely the existence of one, and exclude one class of device (unspecified in the passage) from this pathway entirely.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment argues that postmarket assurance must be demonstrated as an actual detection capability rather than presumed from the existence of a monitoring program, shifting the question from program design to proven in-deployment sensitivity to failures."
+      },
+      "public_summary": "Supports the premarket-postmarket trade-off in principle, but conditions it: reduced premarket evidence should be granted only where the monitoring program demonstrates it can detect the failures premarket testing would have caught, and should be unavailable for one device class.",
+      "summary_cut": false,
+      "source_passage": "We support the trade in principle. A total product lifecycle approach is the right instinct for devices whose behavior is open-ended and whose models change after clearance. Our comment is about the condition on which the trade depends, and about one class of device for which we recommend it not be available at all.\n  A reduction in premarket evidence is only a trade if the monitoring program can detect the failure the premarket evidence would have caught. Where it cannot, nothing has been exchanged — certainty has been given up for coverage that does not exist. We recommend the reduction be granted against demonstrated detection capability, never against the existence of a monitoring program."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Accepting reduced premarket evidence in exchange for a generic monitoring commitment does not establish that the specific residual uncertainty would actually be caught after deployment; existence of a program or theoretical detectability is insufficient.",
+      "requested_fda_action": "Require sponsors to name the specific uncertainty deferred to the postmarket period and to provide a detection demonstration showing the monitoring program surfaces that failure mode within a stated interval and sensitivity; absent such a demonstration, premarket evidence should not be reduced.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment asks that postmarket monitoring be empirically validated for detecting named failure modes at a stated sensitivity and latency, rather than accepted as a nominal assurance commitment."
+      },
+      "public_summary": "Opposes a general premarket evidence discount in return for a generic monitoring commitment. Would allow reduced premarket evidence only where the sponsor names the deferred uncertainty and demonstrates its monitoring program detects that specific failure mode at a stated interval and sensitivity.",
+      "summary_cut": false,
+      "source_passage": "We recommend against a general discount on premarket evidence in exchange for a general monitoring commitment. The sponsor should identify which uncertainty is being carried into the postmarket period, and should demonstrate that its monitoring program detects that specific failure mode — not that a program exists, and not that the failure mode is theoretically detectable.\n\nThe practical form of this is a detection demonstration: the sponsor introduces the failure mode and shows the program surfaces it, within a stated interval, at a stated sensitivity. Where a sponsor cannot produce that demonstration, the corresponding premarket evidence should not be reducible."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "position": "oppose",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter reports self-collected observations from 2026-09-03 in which lost input on an unchanged audio interface rose from 7.1 to 19.1 to 42.2 percent across three recordings over seventy-four minutes of continuous work, indicating degradation tied to elapsed time within a session that resets when a new session begins. They argue this makes periodic re-benchmarking structurally incapable of detecting the problem, since any reassessment would start a fresh session and measure near-baseline performance.",
+      "requested_fda_action": "FDA should not treat periodic postmarket re-benchmarking on a weekly or quarterly cadence as a basis for accepting greater premarket uncertainty, because such cadences cannot observe degradation that accumulates within a session and resets between sessions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The reported failure emerges from sustained real-world operating conditions (continuous session duration) rather than from model inputs or clinical content, and is invisible to evaluation runs that begin fresh.",
+        "deployment_assurance_scalability": "The comment argues that scheduled reassessment mechanisms cannot provide assurance for a degradation mode that resets whenever the assessment itself is initiated."
+      },
+      "public_summary": "Citing self-collected measurements showing input loss rising from 7.1 to 42.2 percent over seventy-four minutes of continuous use on unchanged equipment, the commenter argues periodic re-benchmarking cannot detect degradation that accumulates within a session and resets, so postmarket cadence-based monitoring cannot justify reduced premarket evidence.",
+      "summary_cut": false,
+      "source_passage": "On 2026-09-03 we made three recordings across seventy-four minutes of continuous work on one unchanged audio interface, with no configuration change between them. Input carrying no live signal accounted for 7.1 percent of the first file, 19.1 percent of the second, and 42.2 percent of the third. The proportion of lost input roughly doubled between each recording.\n\nThe consequence for Question 18 is structural rather than a matter of rigor. A re-benchmark is a fresh session. A reassessment run at any point on any day would have opened a new session and measured something close to the 7.1 percent state. The degradation is a function of elapsed time within a session, and a monitoring cadence measured in weeks or quarters cannot observe a quantity that resets in minutes."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "In a recorded multi-turn session, the device made false statements in three separate turns while its presentation quality (naming governing rules, disclosing source ages, self-correcting) improved across the session; error rate was unchanged. Samples drawn late in a conversation therefore look more disciplined than early samples, so a sampling-based monitoring program will report a better-looking, good-faith but misleading result.",
+      "requested_fda_action": "FDA should account for within-conversation drift in presentation quality when designing sample-based postmarket review, so that sampling position does not bias reported performance and monitoring measures factual error rate independently of how polished the output appears.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The device's observable behavior shifts over the course of a single conversation, so performance measured at one point in a trajectory does not represent the device's behavior overall.",
+        "human_ai_system_performance": "Improving presentation cues such as citations and self-correction can make erroneous outputs appear more trustworthy to reviewers and clinicians even when accuracy has not improved."
+      },
+      "public_summary": "Citing a recorded multi-turn session where false statements continued while presentation quality improved, the commenter warns that sample-based postmarket review will report artificially favorable results depending on when in a conversation samples are drawn, and asks that monitoring design correct for this bias.",
+      "summary_cut": false,
+      "source_passage": "A separate recorded session on 2026-09-04, eleven minutes twenty-four seconds, showed the second half of the problem. The device produced false statements in three separate turns while its presentation improved steadily across the session — by the ninth minute it was citing governing rules by name, disclosing source ages, and correcting itself unprompted. A sample drawn late in that trajectory scores the device as more disciplined than a sample drawn early, while the error rate is unchanged. A monitoring program that samples will report the better number, and will report it in good faith."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q18",
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter argues that monitoring built on a device's self-generated reports is unfalsifiable at the point of use, so any supervisory mechanism reading those reports inherits their errors; reducing premarket evidence on that basis would rest the reduction on the device's own account of itself.",
+      "requested_fda_action": "Require an independent, machine-produced second record against which the device's claims can be mechanically compared (for example, whether and when a cited source was actually accessed) before postmarket monitoring is credited as a substitute for premarket evidence.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "cybersecurity_as_safety"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment turns on whether deployment environments produce verifiable, device-independent records that make monitoring claims checkable in operation, a requirement FDA's questions do not address.",
+        "cybersecurity_as_safety": "The concern about self-reported logs being the only, unfalsifiable record is an audit-integrity problem whose failure mode directly undermines safety assurance."
+      },
+      "public_summary": "Accepts postmarket monitoring only if verification does not rely on the device's own self-reports, which the commenter calls unfalsifiable at the point of use. Asks FDA to require an independent, machine-generated record for mechanical comparison before allowing reduced premarket evidence.",
+      "summary_cut": false,
+      "source_passage": "A device that reports its own actions is reporting on itself, and where that report is the only record it is unfalsifiable at the point of use. Every monitoring mechanism reading that report inherits its errors. If premarket evidence has been reduced on the strength of such a program, the reduction rests on the device's account of itself.\n\nThe remedy requires no interpretation of the device. It requires a second record, produced by the machine rather than by the device, against which the device's account can be compared. The comparison is mechanical: a device states it consulted a source; the independent record shows whether that source was opened, and when."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "unclear",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "The passage describes an existing open-source software instrument that detects and logs the presence of named AI systems on a machine via the operating system process list and an append-only timestamped ledger, and that documents its own observational limits. It does not state agreement or disagreement with any FDA proposal.",
+      "requested_fda_action": "No explicit request to FDA is stated; the commenter offers a published, openly licensed monitoring instrument as a concrete artifact rather than a described concept.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter points to a published open-source tool that logs the presence of named AI systems from the operating system process list in an append-only ledger and documents its own observational limits. No explicit position on FDA's monitoring proposals is stated.",
+      "summary_cut": false,
+      "source_passage": "We have published an instrument of this kind rather than described one. It is open source under the Apache License 2.0 at github.com/The-ChristmanAI-Project/HONESTY, made public on 2026-09-04. The local component is a single Python program with no dependencies outside the standard library, serving on the loopback interface only; it reads the operating system process list, matches it against a catalogue of named AI systems, and maintains an append-only ledger with timestamps. Its README states its own limits before a reader asks — it is not a kernel driver, not a phone tap, and not a browser-tab inspector — and it names what it cannot observe."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q18",
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "If FDA accepts reduced premarket evidence in exchange for postmarket monitoring, monitoring that detects faults too slowly or notifies no one in time would not offset the added premarket uncertainty, especially for users who cannot independently verify device outputs.",
+      "requested_fda_action": "Require that any monitoring program supporting a premarket evidence reduction specify who is notified of a detected fault and within what interval, with the interval shorter than the window in which the fault could cause harm; for assistive or clinical use by users who cannot self-verify, require session-level notification to a designated caregiver or clinician rather than quarterly reporting.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment frames harm as arising from the latency between fault detection and notification, requiring the notification interval to be shorter than the time in which the fault can cause harm.",
+        "human_ai_system_performance": "It distinguishes users who cannot independently verify outputs and requires notification routed to a caregiver or clinician, treating the human oversight layer as part of the safety system."
+      },
+      "public_summary": "Accepts reduced premarket evidence paired with postmarket monitoring only if the monitoring program specifies notification recipients and a fault-notification interval shorter than the time a fault could cause harm, with session-level alerts to caregivers or clinicians when users cannot self-verify.",
+      "summary_cut": false,
+      "source_passage": "We recommend that where a reduction has been granted, the monitoring program be required to specify who is notified, and within what interval, on a detected fault — and that the interval be shorter than the window in which the fault can cause harm. For a device operating in an assistive or clinical role for a user who cannot self-verify, we recommend notification to a designated caregiver or clinician at the end of the session rather than the end of the quarter."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter is concerned that its recommended fault-notification mechanism could be expanded into monitoring of users themselves, and insists the only information leaving the device should be the fact that the device produced output unsupported by its own record, not the content of user communications.",
+      "requested_fda_action": "FDA should treat the recommended mechanism strictly as notification of a device fault to a named responsible person, and explicitly bound it so it does not become user surveillance or transmission of user communication content.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment ties postmarket fault detection to a specifically named responsible person who receives the notification, addressing who is accountable for acting on device faults.",
+        "operational_harm": "The comment identifies a non-clinical harm pathway—monitoring infrastructure being repurposed into surveillance of users and their communications—that FDA's postmarket questions do not address."
+      },
+      "public_summary": "Supports device fault notification to a named responsible person as a postmarket mechanism, but asks FDA to bound it explicitly: only the fact that output is unsupported by the device's own record should be transmitted, never user communication content or user surveillance.",
+      "summary_cut": false,
+      "source_passage": "We state the boundary on that recommendation plainly, because it can be misused. This is notification of a device fault to a named responsible person. It is not surveillance of the user, it is not transmission of the content of their communication, and it should not become either. What leaves the device is that the device produced output its own record does not support. What the user was trying to say belongs to the user."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "For devices intended for users who cannot speak, see, hear, or reliably evaluate outputs (e.g., nonverbal users, deaf-blind users, users with advanced dementia), the postmarket feedback loop that would justify reduced premarket evidence is structurally unavailable, because the impairment that makes the device necessary also prevents users from detecting or reporting incorrect outputs.",
+      "requested_fda_action": "Exclude devices serving these populations from the Question 18 trade of reduced premarket evidence for greater postmarket reliance, while not imposing a premarket bar higher than the device's risk warrants; the commenter asks FDA to make the framework register differential strength of postmarket signal detection across user populations.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment shows that the assumed user check on device output fails when the intended user cannot perceive, evaluate, or contest the output, so system-level performance cannot be presumed from device performance.",
+        "deployment_assurance_scalability": "It argues that postmarket assurance mechanisms depend on user-generated signals that are absent by construction in certain deployment populations, undermining the reliability of monitoring as a substitute for premarket evidence."
+      },
+      "public_summary": "Responding to Q18, the commenter argues the premarket-for-postmarket trade should not apply to devices serving users who cannot detect or report erroneous outputs, since the feedback loop is absent in those populations, while not seeking a premarket bar exceeding the device's risk.",
+      "summary_cut": false,
+      "source_passage": "It is absent by construction in the populations these devices are being built to serve. A user who cannot speak cannot report that a device spoke incorrectly on their behalf. A user with advanced dementia cannot establish that a prompt they were given was wrong. A deaf-blind user cannot see a correction offered on a screen or hear one spoken aloud. The characteristic that makes the device necessary is the same characteristic that disables the feedback loop the premarket reduction is being traded against.\n\nWe are not arguing that these devices should face a higher premarket bar than their risk warrants. We are arguing that the specific exchange in Question 18 should not be available to them, because the postmarket half of the exchange is weaker in exactly this population and the framework as written does not register that."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "For devices intended to operate while disconnected, monitoring data may reach the sponsor late, incomplete, or not at all, so postmarket surveillance cannot reliably substitute for premarket evidence in that operating mode.",
+      "requested_fda_action": "FDA should not allow premarket evidence to be reduced in exchange for monitoring the device cannot perform while disconnected; preferably, require sponsors to demonstrate a persistent on-device record that survives disconnection and can be reconciled once connectivity resumes.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment identifies that postmarket monitoring assumptions break down in real deployment conditions such as disconnected operation, where surveillance data may be delayed, incomplete, or never transmitted."
+      },
+      "public_summary": "Accepts trading premarket uncertainty for postmarket monitoring only where monitoring is actually feasible. Where intended use includes disconnected operation, premarket evidence should not be reduced; the commenter prefers requiring a persistent on-device record that is reconcilable after reconnection.",
+      "summary_cut": false,
+      "source_passage": "For such deployments, monitoring data may not reach the sponsor for weeks, may reach them in an incomplete form, or may never reach them. We recommend that where a device's intended use includes disconnected operation, premarket evidence not be reducible against monitoring the device cannot perform in that mode. Alternatively, and we would prefer this, the sponsor should demonstrate an on-device record that persists through disconnection and is reconcilable afterward — which is achievable, and which we would rather see required than see the question go unasked."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "Greater reliance on postmarket monitoring to offset premarket uncertainty leaves harms that cannot be undone before the monitoring program detects them; program quality alone cannot compensate for irreversibility within the detection interval.",
+      "requested_fda_action": "Make reversibility an explicit eligibility gate on the premarket-uncertainty-for-postmarket-monitoring trade-off, barring the exchange whenever credible harm from retained uncertainty is not reversible within the monitoring program's own detection interval.",
+      "confidence": "high",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment centers on harm accruing irreversibly in the interval before a monitoring program can detect a problem, a timing-of-harm consideration not captured by Q18's framing of monitoring program characteristics."
+      },
+      "public_summary": "Accepts trading premarket uncertainty for postmarket monitoring only with an added condition: FDA should treat reversibility as an explicit gate, disallowing the trade-off where credible harm from retained uncertainty cannot be reversed within the monitoring program's detection interval, regardless of program quality.",
+      "summary_cut": false,
+      "source_passage": "We recommend reversibility be treated as an explicit gate on the Question 18 exchange: where the credible harm from the retained uncertainty is not reversible within the monitoring program's own detection interval, the exchange should not be available regardless of the program's quality."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "Postmarket surveillance derives its detection power from aggregation across many users; for a device whose intended use is effectively individualized (a 'population of one'), the failures that matter are specific to that individual and are concealed rather than revealed by population-level averaging.",
+      "requested_fda_action": "For devices whose intended use is individualized to a single person, FDA should not accept greater premarket uncertainty in exchange for postmarket monitoring, and should instead require the premarket evidence to carry the evidentiary weight.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment argues that assurance for highly individualized deployments cannot be obtained from aggregate cross-population monitoring, raising the problem of verifying performance in each particular use context."
+      },
+      "public_summary": "Accepts postmarket monitoring generally but argues it is weakest for devices used by a single individual, where population-level signals conceal individual failures. Recommends that for such 'population of one' intended uses, premarket evidence carry the evidentiary weight rather than postmarket surveillance.",
+      "summary_cut": false,
+      "source_passage": "Postmarket monitoring draws much of its power from volume — signals emerge across a population that are invisible in any one case. A device assigned to one person, used by that person for years, in a pattern particular to them, produces little cross-population signal. Its most important failures are failures about that individual, which the aggregate cannot see and which averaging actively conceals.\n\nWhere a device's intended use is a population of one, we recommend the premarket evidence carry the weight, because the postmarket instrument is at its weakest precisely there."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that accepting greater premarket uncertainty in reliance on postmarket monitoring could become a default or general regulatory posture rather than a narrowly conditioned trade-off, and that certain device categories should be ineligible.",
+      "requested_fda_action": "Retain the Question 18 approach but apply it as a specific, case-by-case exchange rather than a general posture, and explicitly name the commenter's four identified categories as exclusions from the approach.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter does not oppose FDA's proposal to accept greater premarket uncertainty in exchange for postmarket monitoring, but asks that it be applied as a specific, conditioned exchange rather than a general posture, with four identified device categories expressly excluded.",
+      "summary_cut": false,
+      "source_passage": "We do not ask CDRH to withdraw the approach in Question 18. We ask that it be granted as a specific exchange rather than a general posture, and that the four categories above be named as exclusions."
+    }
+  ]
+}

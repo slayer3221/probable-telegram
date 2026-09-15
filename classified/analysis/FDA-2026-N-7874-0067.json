@@ -1,0 +1,231 @@
+{
+  "comment_id": "FDA-2026-N-7874-0067",
+  "input_hash": "19c21ca5f010ed5b",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:27:29Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q7",
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "regulatory_scope",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The paper is silent on how the competency-based approach applies to GenAI functions in or used with drug-device combination products under 21 CFR Part 4 (e.g., dose-guidance software with a connected autoinjector), where CDER is often the lead center. Sponsors could be forced to apply two different risk vocabularies to the same product: this paper's competency-based approach and FDA's credibility framework for AI in drug and biological product decision-making.",
+      "requested_fda_action": "Explain how the competency-based approach applies when a GenAI-enabled function is part of a combination product led by a non-CDRH center, and adopt a single shared risk vocabulary across FDA centers.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts the competency-based approach but says the paper omits GenAI functions within drug-device combination products under Part 4, where CDER may lead. Asks FDA to clarify applicability in non-CDRH-led reviews and use one shared risk vocabulary across centers.",
+      "summary_cut": false,
+      "source_passage": "The paper does not explain how a GenAI-enabled software function should be handled when it is part of, or used with, a drug-device combination product under 21 CFR Part 4. One example is dose-guidance software used with a connected autoinjector. These products are already reaching the market, and CDER will often be the lead FDA center. Sponsors should not have to apply two different risk vocabularies to the same product: the competency-based approach in this paper and FDA's credibility framework for AI used in drug and biological product decision-making.\nRecommendation. Explain how the competency-based approach applies when a GenAI-enabled function is part of a combination product led by a non-CDRH center, and use one shared risk vocabulary across FDA centers."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "Collapsing under-escalation and over-escalation into a single accuracy figure hides that the two errors cause different kinds of harm, and may lead systems to be tuned toward whichever error is easiest or cheapest to reduce.",
+      "requested_fda_action": "Require sponsors to prespecify and justify how they weight under- versus over-escalation, report performance across the full trade-off rather than a single best number, and identify and justify the chosen operating point for the intended deployment setting.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Agrees both escalation error directions must be evaluated, but asks FDA to require sponsors to prespecify and clinically justify the weighting between under- and over-escalation, report performance across the trade-off curve rather than one accuracy number, and justify the selected operating point.",
+      "summary_cut": false,
+      "source_passage": "Under-escalation and over-escalation create different kinds of harm, so they should not be reduced to one overall accuracy number. If only one number is reported, the system may be tuned toward the error that is easiest or cheapest to reduce. Sponsors should explain the trade-off clearly at the start, the same way analytical method validation makes key assumptions and acceptance criteria clear before testing begins.\nRecommendation. Ask sponsors to state, in advance, how they will weigh under-escalation and over-escalation, and why that weighting makes clinical sense. Performance should be shown across the trade-off, not as a single best number. Sponsors should also identify the operating point they chose and explain why it fits the setting where the device will be used."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q1",
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter says the paper's two-axis risk framework appears to restate concepts already expressed as 'model influence' and 'decision consequence' in CDRH computational modeling guidance (drawing on ASME V&V 40) and CDER's draft AI guidance, and that using different words for the same concept will confuse sponsors working across multiple FDA centers.",
+      "requested_fda_action": "Adopt the existing terms 'model influence' and 'decision consequence,' or explicitly state that the paper's two axes are equivalent, and use the resulting risk tier to scale the required evidence (benchmarking, rigor, clinical confirmation) so one risk assessment serves both premarket planning and postmarket change control.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts the two-axis risk framework's basic concept but asks FDA to align terminology with existing CDRH/ASME V&V 40 and CDER language ('model influence,' 'decision consequence') or state equivalence, and to let the resulting risk tier scale evidence for both premarket and change control.",
+      "summary_cut": false,
+      "source_passage": "FDA already has useful language for this kind of risk assessment. CDRH guidance on computational modeling, which draws on ASME V&V 40, looks at model influence and decision consequence. CDER's draft AI guidance uses the same terms. The discussion paper appears to describe the same basic idea, but with different words. Using different terms for the same concept will create confusion, especially for sponsors working with more than one FDA center.\nRecommendation. Use the existing terms \"model influence\" and \"decision consequence,\" or clearly state that the paper's two axes mean the same thing. The resulting risk tier should then guide the level of evidence needed, including benchmarking, rigor, and clinical confirmation. This would give sponsors one risk assessment they can use for both premarket planning and postmarket change control."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q22",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Benchmarking results are only interpretable and reproducible if the complete test article is defined, since a sponsor could benchmark at one configuration (e.g., temperature zero) and deploy at another that changes outputs.",
+      "requested_fda_action": "Add a foundational benchmarking element for 'test article and configuration definition' requiring documentation of model version, system prompt, decoding settings, retrieval index and snapshot date, guardrails, orchestration, tool definitions, and UI, with confirmation that the marketed version matches, and treat changes to key settings as triggering reporting and re-benchmarking.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment highlights the risk that the configuration tested in benchmarking differs from the configuration actually deployed, requiring verification that the marketed version matches the benchmarked one."
+      },
+      "public_summary": "Finds the ten benchmarking elements generally well designed, but notes a gap: FDA should add a foundational element defining the full test article/configuration (model version, prompts, decoding settings, retrieval index, guardrails, orchestration, interface), confirm the marketed version matches, and require re-benchmarking when key settings change.",
+      "summary_cut": false,
+      "source_passage": "The ten benchmarking elements are helpful and generally well designed. I would suggest closing two gaps.\nFirst, the paper should define the test article. Benchmarking only works if everyone knows exactly what is being tested. That means more than the model weights. It includes the model version, system prompt, settings such as temperature and top-p, retrieval index and snapshot date, guardrails, orchestration logic, tool definitions, and the user interface.\nThis is especially important for GenAI. Reproducibility depends on the full configuration, not just the model. A sponsor could test at one setting, such as temperature zero, and then deploy at a different setting that changes the output. The CMC comparison is straightforward: an analytical method cannot be validated unless the instrument, column, reagents, and conditions are defined. The method and its conditions are validated together.\nRecommendation. Add a foundational element for \"test article and configuration definition.\" Sponsors should document the full configuration used for benchmarking and confirm that the marketed version matches it. Changes to key settings, guardrails, retrieval index, or system prompt should be treated like established conditions and should trigger appropriate reporting and re-benchmarking."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter states that the communication competency element (E.4)—covering communication quality, user understanding, and automation bias—overlaps with existing usability expectations already addressed by IEC 62366-1 and FDA's human factors guidance, and cautions against creating a separate, parallel evaluation path.",
+      "requested_fda_action": "Link E.4 to the existing human factors framework rather than establishing a distinct evaluation pathway, and clarify whether E.4 evidence may be generated as part of a human factors validation study.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment focuses on user understanding and automation bias—how the clinician or user interacts with device output—rather than device performance alone, and ties this to established human factors validation."
+      },
+      "public_summary": "Accepts the communication benchmarking element but recommends FDA tie it to existing human factors expectations (IEC 62366-1 and FDA guidance) addressing communication quality, user understanding, and automation bias, rather than a separate evaluation path; asks whether human factors validation studies could supply this evidence.",
+      "summary_cut": false,
+      "source_passage": "Second, E.4 should connect to existing usability expectations. Communication quality, user understanding, and automation bias are already covered by IEC 62366-1 and FDA's human factors guidance.\n\nRecommendation. Link E.4 to the existing human factors framework instead of creating a separate evaluation path. FDA should also clarify whether E.4 evidence can be generated as part of a human factors validation study."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Benchmark contamination can make a model appear competent because it memorized publicly available test items rather than reasoned through the task, and sponsors often cannot verify this because they lack visibility into the full training data of the underlying model.",
+      "requested_fda_action": "Require provenance dating of benchmark items against the model's training cutoff and inclusion of canary items when public benchmarks support a regulatory decision; permit sponsor-developed benchmarks subject to a prespecified construction plan rather than a ban; and require some sequestered holdout evaluation for higher-risk functions.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment notes sponsors usually cannot inspect the underlying model's full training data, making contamination undetectable without upstream transparency and prompting proxy controls such as provenance dating and canary items."
+      },
+      "public_summary": "Supports benchmarking but urges explicit contamination controls: provenance dating of benchmark items against training cutoffs and canary items for public benchmarks, prespecified construction plans instead of prohibition for sponsor-developed benchmarks, and sequestered holdout testing for higher-risk functions, noting sponsors cannot inspect training data.",
+      "summary_cut": false,
+      "source_passage": "Contamination is the biggest concern. If a model was trained on public benchmark questions, it may score well because it has seen the answers before, not because it can reason through the task. Sponsors may not be able to tell, because they usually cannot see the full training data. Three controls can help now:\n– Provenance dating — compare each benchmark item's publication date with the model's training cutoff. Items that came before the cutoff should be treated as potentially contaminated unless the sponsor can show otherwise.\n– Canary items — include held-out questions designed so memorization gives a different answer than genuine reasoning, such as questions with changed numerical values.\n– Sequestered holdout — for higher-risk functions, include some testing on data the sponsor has not seen before.\nSponsor-developed benchmarks should be allowed, and in many cases they will be necessary because public benchmarks may not match a narrow intended use. The safeguard should be a clear, prespecified benchmark plan, not a ban. Sponsors should explain how the benchmark was built before generating results, similar to a prospectively defined non-clinical protocol.\nRecommendation. Require provenance dating and canary items when public benchmarks are used to support a regulatory decision. For sponsor-developed benchmarks, require a prespecified construction plan. For higher-risk functions, require some evaluation using sequestered holdout data."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q10",
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Benchmark contamination and saturation are shared, worsening problems that no individual sponsor can solve, and third-party device certification would be a heavier and more competition-limiting response than needed.",
+      "requested_fda_action": "Use the MDDT program to qualify benchmark suites for defined contexts of use, set an explicit re-qualification interval addressing saturation and contamination drift, and require qualified benchmark holders to be structurally independent of both device sponsors and foundation model developers.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The commenter frames MDDT benchmark qualification as a lighter alternative to third-party device certification that avoids competition concerns while creating a shared public good."
+      },
+      "public_summary": "Supports third-party involvement but would redirect it from device certification to qualifying evaluation assets: use FDA's MDDT program to qualify benchmark suites for defined contexts of use, with re-qualification intervals for contamination and saturation drift and structural independence from sponsors and model developers.",
+      "summary_cut": false,
+      "source_passage": "The most useful third-party role is not certifying devices but qualifying and maintaining evaluation assets, since contamination and saturation are problems no individual sponsor can solve and that worsen over time. FDA already has a fit-for-purpose mechanism: the MDDT program qualifies a tool for a specified context of use, which is exactly what a benchmark is.\nRecommendation. Use MDDT to qualify benchmark suites for defined contexts of use, with an explicit re-qualification interval to address saturation and contamination drift, and require qualified benchmark holders to be structurally independent from both device sponsors and foundation model developers. This is lighter than third-party device certification, avoids the competition concerns raised in the question, and creates a shared public good."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter views the three proposed postmarket approaches (re-benchmarking, sample-based clinician review, degradation monitoring) as reasonable but under-specified because none defines what triggers action; monitoring without prespecified limits is characterized as data collection rather than control.",
+      "requested_fda_action": "Require postmarket monitoring plans, prior to authorization, to specify monitored parameters drawn from the same premarket benchmarking elements, a sampling plan for clinician-adjudicated review with sample size and subgroup stratification, justified alert and action limits, and defined responses at each limit, with premarket benchmarking results as the trending baseline.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter finds FDA's three postmarket monitoring approaches reasonable but incomplete because none defines action triggers. Recommends requiring pre-authorization monitoring plans specifying monitored parameters aligned to premarket benchmarks, stratified clinician-review sampling plans, justified alert and action limits, defined responses, and premarket benchmarking as the trending baseline.",
+      "summary_cut": false,
+      "source_passage": "The three proposed approaches are reasonable but under-specified in one respect: none says what triggers action. Drug manufacturing solved this with Stage 3 Continued Process Verification. A monitoring program is not credible unless it defines, before deployment, the parameters monitored, the\n\nsampling plan, the alert limit, the action limit, and the response at each. Monitoring without prespecified limits is data collection, not control.\nRecommendation. Require postmarket monitoring plans to specify, prior to authorization: monitored parameters drawn from the same benchmarking elements used premarket so results are comparable; the sampling plan for clinician-adjudicated review, including sample size and stratification across clinically relevant subgroups; prespecified alert and action limits with justification; and the defined response at each limit. Require the premarket benchmarking result to serve as the baseline for trending."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "pccp",
+      "stakeholder_concern": "The commenter is concerned that scaling re-benchmarking by the technical nature of a modification is the wrong organizing principle, and notes that pharmaceutical regulation already handles analogous scaling through ICH Q12 established conditions and Post-Approval Change Management Protocols, which they view as functionally equivalent to PCCPs.",
+      "requested_fda_action": "Define change categories by which benchmarking elements a change could plausibly affect rather than by the technical nature of the change (e.g., guardrail changes trigger re-benchmarking of S.1-S.3; a UI change with no output-content effect touches only E.4), and allow sponsors to agree this mapping prospectively in a PCCP so re-benchmarking scope is known in advance. Describe PCCPs and ICH Q12 PACMPs as siblings.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts scaling re-benchmarking to modifications but urges FDA to define change categories by the benchmarking elements affected rather than a change's technical nature, with the mapping agreed prospectively in a PCCP, and to align PCCPs with ICH Q12 change-management protocols.",
+      "summary_cut": false,
+      "source_passage": "On scaling re-benchmarking to the size of a change, the drug side handles this through established conditions and Post-Approval Change Management Protocols under ICH Q12: the sponsor defines which elements are established conditions and prospectively agrees the tests and acceptance criteria supporting a future change. That is functionally what a PCCP does, and the two should be described as siblings.\nRecommendation. Define change categories by the benchmarking elements a change could plausibly affect, not by the technical nature of the change. A guardrail modification touches S.1, S.2, and S.3 and should trigger re-benchmarking of those; a user interface change with no effect on output content touches E.4 alone. Allow sponsors to agree this mapping prospectively in a PCCP, so re-benchmarking scope is known before the change is made."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "Because agentic devices compound errors across multiple steps before any human review, the commenter is concerned that benchmarking cannot enumerate all possible trajectories and that postmarket investigation is impossible without step-level execution records.",
+      "requested_fda_action": "Require manufacturers to enumerate irreversible or high-consequence actions in the agent's tool set, impose a documented affirmative human confirmation gate on each (not satisfiable by another model), and maintain Part 11-style attributable, contemporaneous, unalterable records of each step, tool call, and tool response sufficient to reconstruct interactions, retained for a defined period.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment insists that confirmation of irreversible or high-consequence agent actions must come from a human and cannot be delegated to another model, framing authority limits as a design expectation rather than a performance result.",
+        "distributed_accountability": "It ties postmarket investigation and accountability to reconstructable step-level execution records of agent actions and tool calls, an assurance need spanning the agent, its tools, and the deploying setting."
+      },
+      "public_summary": "Addressing agentic devices, the commenter argues benchmarking cannot cover all trajectories and asks FDA to require an enumerated inventory of irreversible or high-consequence actions, each gated by human confirmation that another model cannot supply, plus Part 11-style step-level execution records enabling post-hoc reconstruction.",
+      "summary_cut": false,
+      "source_passage": "The distinguishing feature of an agentic device is that errors compound across steps before any human sees them. Two expectations follow. First, any action in the agent's tool set that is irreversible or high-consequence should require an affirmative human confirmation step that cannot be satisfied by another model; this is a design expectation rather than a benchmarking outcome, because benchmarking cannot enumerate all trajectories. Second, postmarket investigation requires knowing what the agent did and why, and Part 11 audit trail expectations — attributable, contemporaneous, unalterable records of each step, tool call, and tool response — apply directly.\nRecommendation. Require an enumerated irreversible-action inventory with a documented human confirmation gate on each, and execution records sufficient to reconstruct any interaction after the fact, retained for a defined period."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q19",
+        "q23",
+        "q25",
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "The commenter views the competency-based approach as a practical response to a hard evaluation problem, but is concerned that new terminology and mechanisms would complicate implementation for sponsors, particularly combination product sponsors operating across FDA centers.",
+      "requested_fda_action": "Build the framework on existing FDA tools and vocabulary: model influence and decision consequence for risk characterization, established conditions and change management protocols for postmarket changes, master file practices for third-party models, and defined alert and action limits for monitoring, while keeping the paper's evidence expectations unchanged.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The commenter proposes applying existing master file practices to third-party foundation models as the mechanism for obtaining and maintaining information about upstream model suppliers."
+      },
+      "public_summary": "Supports the competency-based approach in principle but recommends FDA implement it through existing tools and terminology—model influence and decision consequence, established conditions and change management protocols, master files for third-party models, and alert/action limits—without lowering the paper's evidence expectations.",
+      "summary_cut": false,
+      "source_passage": "The competency-based approach is a practical way to address a difficult evaluation problem, and I support the direction FDA is taking. My main recommendation is for CDRH to build on tools and terminology FDA already uses: model influence and decision consequence for risk, established conditions and change management protocols for postmarket changes, master file practices for third-party models, and clear alert and action limits for monitoring. Using familiar mechanisms would make implementation easier for sponsors, especially combination product sponsors working across FDA centers, without lowering the evidence expectations described in the paper."
+    }
+  ]
+}

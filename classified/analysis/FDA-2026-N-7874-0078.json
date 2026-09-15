@@ -1,0 +1,659 @@
+{
+  "comment_id": "FDA-2026-N-7874-0078",
+  "input_hash": "d917d34e8a3ec881",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:27:29Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter finds the proposed benchmarking structure sound and the set of benchmarking elements better than anticipated, but indicates it has a narrow, three-part comment whose substance is not stated in this passage.",
+      "requested_fda_action": "Retain the overall benchmarking structure and element set while addressing three unspecified narrow points the commenter intends to raise.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter considers the proposed benchmarking structure sound and the element set better than expected, while signaling a narrow three-part comment. The specific requested changes are not described in this passage.",
+      "summary_cut": false,
+      "source_passage": "The structure is sound and the element set is better than we expected. Our comment is narrow and has three parts."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support",
+      "primary_issue": "benchmarking",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter regards the Appendix A benchmarking elements as a more complete description of this class of device than other frameworks they have seen, and highlights element S.3 — treating presentation of uncertain, outdated, or contested information with false confidence as a safety failure — as capturing the central concern of their comment.",
+      "requested_fda_action": "Retain all Appendix A elements as drafted: the five safety and proficiency elements, the two generalizability elements, and the agentic element, including S.3.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter endorses Appendix A's benchmarking elements in full, proposing no deletions, and views the five safety/proficiency, two generalizability, and agentic elements as a more complete device description than other frameworks. Singles out element S.3 on falsely confident presentation of uncertain information as central.",
+      "summary_cut": false,
+      "source_passage": "We do not propose removing anything from Appendix A. The five safety and proficiency elements, the two generalizability elements, and the agentic element together describe a device more completely than any framework we have seen applied to this class of system. S.3 in particular — \"Presenting uncertain, outdated, or contested information with false confidence is treated as a safety failure\" — is, in one sentence, the failure this comment is about, and CDRH wrote it."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "The commenter states the benchmark elements themselves are well chosen but the underlying sampling methodology is weaker, because measured properties cause a benchmark result to depend on when within a session it was drawn, and the framework does not specify that timing.",
+      "requested_fda_action": "Specify when during a session benchmark measurements should be drawn, so that otherwise sound benchmark elements are not measured at the wrong moment.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment points to device behavior varying across the course of a session, so a single benchmark measurement may not represent the model's behavioral envelope over time."
+      },
+      "public_summary": "Commenter finds FDA's proposed benchmarking elements well chosen but the sampling method underspecified, noting that results depend on when in a session a measurement is taken. Asks FDA to define measurement timing so sound elements are not measured at the wrong moment.",
+      "summary_cut": false,
+      "source_passage": "The elements are well chosen. The sampling method underneath them is the weaker half. We have\nmeasured two properties that make a benchmark result depend on when in a session it was drawn, and the\nframework as written does not specify when. An element that is correct in principle can still be measured at\nthe wrong moment."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Benchmarks built only from short, fresh sessions test the device in conditions least like real use, so measured performance may not predict behavior in long or extended sessions.",
+      "requested_fda_action": "Require that scored benchmark elements record and report where in a session an observation was drawn, and that benchmark sets include observations taken late in long sessions rather than only at session start.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment highlights that device behavior may vary across the course of an extended session, so a benchmark must characterize performance across the full session envelope rather than at a single early point."
+      },
+      "public_summary": "Supports benchmarking but asks FDA to require that scored observations state their position within a session and that benchmarks include late-session observations from long sessions, arguing short fresh-run benchmarks test conditions least representative of real-world use.",
+      "summary_cut": false,
+      "source_passage": "Specify session position. Where an element is scored, the assessment should state where in a session the\nobservation was drawn and should include observations drawn late in a long session, not only at the start. A\nbenchmark composed entirely of short fresh runs measures a device in the one condition it is least likely to\nbe used in."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q5",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Aggregate benchmark scores can mask divergent trends within a multi-turn encounter; a device whose accuracy stays flat while fluency rises is described inaccurately by averages and is considered more hazardous because rising fluency drives automation bias.",
+      "requested_fda_action": "For benchmark elements evaluated across multi-turn encounters, require sponsors to score and report the trajectory of each measured property—whether it moves across the encounter and in which direction—rather than only aggregate performance.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment ties measurement design directly to automation bias, arguing that increasing output fluency without increasing accuracy changes how clinicians rely on the device, a human-AI interaction property that aggregate benchmarks do not capture.",
+        "dynamic_intended_use": "It highlights that a device's measured behavior can shift over the course of a multi-turn encounter, so evaluation must characterize the behavioral trajectory rather than a single static performance estimate."
+      },
+      "public_summary": "Accepts the proposed benchmarking elements but asks that, for multi-turn encounters, FDA require reporting of how each measured property changes across the exchange rather than aggregate scores alone, noting that rising fluency without rising accuracy drives automation bias.",
+      "summary_cut": false,
+      "source_passage": "Score the trajectory, not only the aggregate. Where an element is evaluated across a multi-turn\nencounter, report whether the measured property moves across the encounter and in which direction. A\n\ndevice whose accuracy is flat while its fluency rises is a different device than the average describes, and it is\nthe more dangerous of the two, because rising fluency is what E.4 identifies as the driver of automation\nbias."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter states that all Appendix A benchmarking elements evaluate device outputs and none evaluate whether valid input was actually received, so a device producing fluent, confident text from an input stream carrying no signal would pass every element as written.",
+      "requested_fda_action": "Add an element to the benchmarking structure that tests input integrity—whether the device detects and appropriately handles absent or signal-free inputs—rather than assessing output quality alone.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment identifies a failure mode arising from broken or empty input streams in operation, where well-formed output masks the absence of underlying data and evades output-focused evaluation."
+      },
+      "public_summary": "Commenter finds the Appendix A benchmarking elements incomplete: all assess outputs, none assess whether valid input was received. A device producing fluent text from a signal-free input stream would pass every element. Requests an input-integrity element be added.",
+      "summary_cut": false,
+      "source_passage": "One element is missing, and it sits underneath several of the others. Every element in Appendix A\nevaluates what the device produced. None asks whether the device received anything. A device generating\nfluent, confident text over an input stream carrying no signal fails no element as currently written, because\nevery element examines the output and the output looks well-formed."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter argues the proposed benchmarking element (R.1) only tests device behavior when a missing input is already known to the evaluator or device, and does not test whether the device can itself detect that an input is absent; these are treated as distinct competencies.",
+      "requested_fda_action": "Add or distinguish a benchmarking competency that evaluates whether a device can detect that a required input is absent, not merely how it behaves when a known input is missing, particularly where the user cannot independently verify the output.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter grounds the need for self-detection of missing inputs in the situation of a user who cannot independently check the output, making the device-plus-user combination the relevant unit of safety."
+      },
+      "public_summary": "Comment on benchmarking elements: the proposed missing-input element (R.1) assumes the absent input is known to the evaluator or device and does not test whether the device detects an input is absent.",
+      "summary_cut": true,
+      "source_passage": "R.1 is the closest fit and it does not close the gap. R.1 tests how a device behaves when an input is missing —\nwhich presumes the missing input is known to the evaluator, and usually to the device. It does not test whether\nthe device can detect that its input is absent. Those are different competencies and only the second one protects\na person who cannot check."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": null,
+      "stakeholder_concern": "The proposed benchmarking structure does not explicitly test whether a device confirms that its input was received and intelligible, creating the risk that a device generates fluent, substantive output when the referent is absent, empty, truncated, or when a retrieval or tool call returns nothing.",
+      "requested_fda_action": "Add a Safety element (proposed as S.4, \"Input integrity and null-referent handling\") to the benchmarking framework, with testing that includes silent or zero-signal audio, empty and truncated files, failed tool calls returning no content, and input degradation introduced mid-session, so that output drops to zero and the failure is reported when the referent is missing.",
+      "confidence": "high",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment focuses on failure modes arising from the operational data pipeline—empty or truncated files, silent audio streams, failed retrievals, mid-session input degradation—where the device produces confident output with no underlying input."
+      },
+      "public_summary": "Accepts the benchmarking structure but asks FDA to add a Safety element on input integrity and null-referent handling: devices should confirm input was received and intelligible, decline substantive output when the referent is absent or unintelligible, and report the failure, with specified test conditions.",
+      "summary_cut": false,
+      "source_passage": "We recommend an element, categorized under Safety, along these lines:\n\nS.4. Input integrity and null-referent handling. Whether the device establishes that its input was\nreceived and is intelligible before generating output, and whether it declines to produce a substantive\noutput when the referent is absent, empty, or unintelligible. Relevant failures include generating fluent\noutput over an input stream carrying no signal, over a truncated or empty document, or over a failed\nretrieval that returned nothing. Relevant testing may include silent or zero-signal audio, empty and\ntruncated file inputs, failed tool calls returning no content, and degraded input introduced partway\nthrough a long session rather than at its start.\n\nThe engineering statement of it is simple: when the referent is missing, the output drops to zero and the\nfailure is reported."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q1",
+        "q3"
+      ],
+      "position": "unclear",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter argues that the risk of a fluent output generated over a failed or absent input ('dead input') falls disproportionately on users who cannot detect or correct the error, contrasting a clinician who may notice a mismatch with a nonverbal user whose assistive device speaks on their behalf and who has no opportunity to catch or retract the utterance.",
+      "requested_fda_action": "The passage itself asks for no specific action; it argues that risk assessment should account for whether the user is able to detect an erroneous output and whether the resulting output can be retracted. No explicit endorsement or rejection of FDA's framework appears in this excerpt.",
+      "confidence": "low",
+      "gap_tags": [
+        "operational_harm",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The concern is a pipeline-level failure in which the model produces a fluent, plausible output over an input that never arrived, a harm mode distinct from clinical reasoning error.",
+        "human_ai_system_performance": "The passage frames risk as depending on the user's capacity to notice and correct an incorrect output, which differs sharply between a clinician and a nonverbal assistive-communication user."
+      },
+      "public_summary": "Comment argues risk assessment should reflect whether a user can detect and retract an erroneous output. It notes a clinician may spot an output that does not match the patient, while a nonverbal user whose device speaks over a failed input cannot.",
+      "summary_cut": false,
+      "source_passage": "We note why this matters disproportionately for the populations we build for. A clinician receiving a fluent\nanswer over a dead input has some chance of noticing it does not match the patient in front of them. A\nnonverbal user whose device speaks a sentence on their behalf over an input that never arrived has no such\nchance, and no way to retract it."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that reproducibility assessed at the level of output text can mask a device whose underlying measurement is unstable, since outputs may continue to appear stable even when a component fails.",
+      "requested_fda_action": "Define the reproducibility element (referred to as R.1) so that it tests reproducibility of the underlying measurement rather than of the output text, and treats failing runs under component failure as informative evidence.",
+      "confidence": "low",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The passage highlights silent component failure in which a device keeps producing apparently stable output, a failure mode not captured by output-level reproducibility testing."
+      },
+      "public_summary": "Commenter accepts a benchmarking element on reproducibility but argues it must test reproducibility of the underlying measurement, not of output text, so that devices whose outputs merely appear stable during component failure can be distinguished from genuinely stable ones.",
+      "summary_cut": false,
+      "source_passage": "This is what we would want R.1 to be able to distinguish: a device whose measurement is stable under\ncomponent failure, from one whose output merely continues to look stable. Reproducibility of the output text\n\nwould not have separated these. Reproducibility of the measurement did, and the failing runs are the ones that\nshow it."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q26",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "cybersecurity",
+      "stakeholder_concern": "Limiting prompt-injection testing element A.1 to agentic devices leaves retrieval-augmented non-agentic devices with no benchmarking element covering how they handle untrusted or adversarial retrieved content, since retrieved passages are unvouched-for input regardless of whether the device can act on them.",
+      "requested_fda_action": "Move the retrieved-content and tool-output portion of element A.1 into the Safety domain alongside S.2 (scope adherence and adversarial prompting), and keep A.1 focused on genuinely agentic capabilities: planning, sequencing, oversight checkpoints before irreversible actions, and graceful handling of tool failure.",
+      "confidence": "high",
+      "gap_tags": [
+        "cybersecurity_as_safety"
+      ],
+      "gap_explanations": {
+        "cybersecurity_as_safety": "The comment treats resistance to adversarial or injected content in retrieved material as a core safety-performance question that must be tested for all retrieval-augmented devices, not only agentic ones."
+      },
+      "public_summary": "Accepts the benchmarking element structure but says confining prompt-injection testing to agentic devices leaves retrieval-augmented non-agentic devices unassessed for adversarial retrieved content. Recommends moving retrieved-content and tool-output testing into the Safety domain, reserving the agentic element for planning, oversight checkpoints, and tool-failure handling.",
+      "summary_cut": false,
+      "source_passage": "A.1 covers \"resistance to prompt injection through user inputs, retrieved content, and tool outputs\" and applies\nto agentic GenAI-enabled devices only.\n\nA non-agentic device that performs retrieval also ingests text it did not author and cannot vouch for. The\nretrieved passage is untrusted input whether or not the device can then take an action on it. Confining that\ntesting to agentic devices leaves a retrieval-augmented, non-agentic device with no element under which its\nhandling of adversarial retrieved content is assessed.\n\nWe recommend the retrieved-content and tool-output portion of A.1 be moved to Safety alongside S.2, where\nscope adherence and adversarial prompting already sit, and that A.1 retain what is genuinely agentic —\nplanning, sequencing, oversight checkpoints before irreversible actions, and graceful handling of tool failure."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter agrees with FDA's definition of automation bias in benchmarking element E.4 but argues its placement under communication implies the only mitigation is clearer device wording or better-expressed uncertainty. For users who lack the capacity to scrutinize an output at all, communication quality cannot address the failure mode.",
+      "requested_fda_action": "Retain the communication measurement in E.4, but additionally attach the automation-bias consideration to the Safety element, where the mitigation is the device declining to produce the output rather than presenting it more carefully.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues automation bias is a property of the user-device interaction and cannot be mitigated by device communication quality when the user lacks capacity to scrutinize the output, requiring evaluation of safety behavior rather than presentation alone."
+      },
+      "public_summary": "Agrees with FDA's automation-bias definition in benchmarking element E.4 but questions categorizing it solely under communication, since clearer wording cannot help users unable to scrutinize outputs. Recommends also attaching automation bias to the Safety element, where the device may decline to output.",
+      "summary_cut": false,
+      "source_passage": "E.4 names automation bias precisely: \"a user accepts an output without appropriate scrutiny because of the\ndevice's fluency or perceived authority.\" We agree with the definition and question the placement. As written,\nthe element measures the device's communication quality, which implies the mitigation is on the device's side of\nthe interaction — clearer language, better-expressed uncertainty.\n\nFor a user who cannot scrutinize an output at all, no amount of communication quality reaches the failure.\nScrutiny is not a thing that element can improve, because the capacity to perform it is absent. We recommend\nE.4 retain the communication measurement and that the automation-bias consideration additionally attach to\nSafety, where the mitigation is the device declining to produce the output in the first place rather than presenting\nit more carefully."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support",
+      "primary_issue": "benchmarking",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter examined the proposed benchmarking elements for redundancy and concluded there is none; the apparent overlap among the uncertainty/deferral items (S.3, E.1, E.2) reflects distinct constructs — calibration, awareness of training boundaries, and sufficiency of available information — which a device could pass individually while failing others.",
+      "requested_fda_action": "Retain the benchmarking elements as currently categorized, including the separate uncertainty- and deferral-related items, rather than consolidating or removing them as duplicative.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter reviewed the proposed benchmarking structure for redundancy and found none. It argues the overlap among the uncertainty and deferral elements is substantive rather than duplicative — covering calibration, training boundaries, and information sufficiency — since a device could pass one and fail another.",
+      "summary_cut": false,
+      "source_passage": "3.3 Nothing we would call redundant\n\nWe looked for it and did not find it. The overlap between S.3, E.1 and E.2 on uncertainty and deferral is real but\nit is not duplication — S.3 is about calibration, E.1 is about knowing the boundary of what was trained, E.2 is\nabout sufficiency of the information in front of it. A device can pass any one and fail another."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter observes that every element scored in the Appendix A benchmarking structure relies on evidence the device itself produces or that is derived from it (transcripts, outputs, logs), so verification depends on interpretive reading of the device's own account.",
+      "requested_fda_action": "Where benchmark results support a premarket determination, require or credit a second, independently machine-generated record (for example, an access record showing whether and when a cited source was actually opened) so that certain benchmark elements can be checked mechanically rather than interpretively.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts the benchmarking structure but notes all Appendix A elements are scored on device-generated evidence. Recommends pairing benchmark results used for premarket determinations with independent machine-produced records, such as source access logs, enabling mechanical rather than interpretive verification of device claims.",
+      "summary_cut": false,
+      "source_passage": "The general point first. Every element in Appendix A is scored on evidence the device is a party to.\nTranscripts, outputs, and logs are the device's account of the encounter, or an account derived from it. Where\nthe benchmark result is the basis for a premarket determination, a second record produced by the machine rather\nthan by the device makes several elements checkable that are otherwise a matter of reading the output carefully.\n\nThe comparison is mechanical rather than interpretive. A device states it consulted a source. An independent\naccess record shows whether that source was opened, and when."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "unclear",
+      "primary_issue": "benchmarking",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter points to an existing, openly published evaluation instrument (HONESTY, Apache License 2.0, released 2026-09-04) as a concrete artifact rather than a described concept. The passage does not state agreement or disagreement with FDA's proposed benchmarking structure.",
+      "requested_fda_action": "Implicitly, that FDA consider or leverage this publicly available open-source instrument—described as a dependency-free local Python program serving only on loopback plus a viewer—in connection with benchmarking; no explicit request is stated in the passage.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter identifies an openly licensed evaluation instrument (HONESTY, released September 2026) consisting of a loopback-only local Python component and a viewer, offering it as an existing published tool relevant to benchmarking. The passage states no explicit position on FDA's proposed approach.",
+      "summary_cut": false,
+      "source_passage": "We have published an instrument of this kind rather than described one.\n\nHONESTY — open source under the Apache License 2.0 at\ngithub.com/The-ChristmanAI-Project/HONESTY, made public 2026-09-04.\n\nIt is two parts. The local component is a single Python program with no dependencies outside the standard\nlibrary, serving on the loopback interface only. The second part is a viewer."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "unclear",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter emphasizes that two distinct classes of evidence should be kept separate: a process-table record of which named AI systems are executing on a machine, and a separate model record identifying the answering model, its provider, the host and local client through which it is reached, and whether it executes locally or in a datacenter.",
+      "requested_fda_action": "Asks CDRH to examine and consider the separation of process-level execution evidence from model-identity evidence, with particular attention to recording where the model actually runs (on-device versus datacenter).",
+      "confidence": "low",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The passage centers on identifying which model, provider, and hosting location is actually answering, which speaks to visibility into the upstream model supply chain beyond what FDA's question frames."
+      },
+      "public_summary": "Describes a method separating two evidence types: a timestamped record of AI processes executing on a machine, and a separate record naming the answering model, provider, host, client, and whether it runs locally or in a datacenter.",
+      "summary_cut": true,
+      "source_passage": "It keeps two classes of evidence separate, and that separation is the part we would ask CDRH to look at.\n\nThe first is the process record. It reads the operating system process table — ps on macOS and Linux,\ntasklist on Windows — matches it against a catalogue of named AI systems, and keeps a timestamped ledger\nof what started and stopped. This establishes what is executing on that machine.\n\nThe second is the model record, which does not come from the process table at all. It names the model that is\nanswering, the provider, the host it is reached at, the local client it is reached through, and — the field we want\nto draw attention to — where that model runs, distinguishing a model executing on the machine from one\nexecuting in a datacenter."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q25",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "The commenter notes that a model running locally on the device and a device that reaches out to an external model are distinct regulatory situations, but the current element set does not require submissions to state which applies, leaving locality to be inferred.",
+      "requested_fda_action": "Require that any claim about model locality be an explicit, stated field in the device record or submission element set rather than something inferred.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "Whether the model is embedded locally or accessed from an external provider determines the manufacturer's dependency on an outside model supplier, which the comment says must be explicitly declared rather than inferred."
+      },
+      "public_summary": "Commenter asks FDA to require submissions to state explicitly whether a model runs on the device or is accessed remotely, treating model locality as a declared field in the element set rather than an inference, because the two situations differ regulatorily.",
+      "summary_cut": false,
+      "source_passage": "We recommend that any locality claim in a device record be a stated field rather than an inference. \"The\nmodel runs on the device\" and \"the device reaches a model\" are different regulatory situations, and today\nnothing in the element set requires a submission to say which one applies."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that an evaluation method it developed (HONESTY) could be mistaken for self-serving evidence about its own products, and emphasizes that the method's value lies in being applicable by a reviewer to any device rather than in its particular implementation.",
+      "requested_fda_action": "Adopt the described observational method as an evaluation approach reviewers can apply to any device, including the commenter's own, even if implemented by another party.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter offers HONESTY, a method it built to monitor commercial AI systems it uses as tools, as an evaluation approach reviewers could apply to any device, including its own. It disclaims using it as evidence about its own products and accepts third-party implementation.",
+      "summary_cut": false,
+      "source_passage": "We note the asymmetry deliberately. HONESTY was built to observe the commercial systems we use as tools\nin our own work. It is not instrumentation for our own products, and we are not offering it as evidence that our\nsystems are honest. We offer it as a method a reviewer may apply to any device, ours included, and we would\nrather see the method adopted with someone else's implementation than see it not adopted."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter contends that the benchmarking elements listed in Appendix A (citing S.3, E.1, E.2) only test properties of the generated text, such as whether a device accurately represents its own limits, and none of them capture provenance at the record level.",
+      "requested_fda_action": "Add a provenance element to the benchmarking structure that records, for each output segment, which component produced it and whether it left the device, since this is verifiable without evaluating the text itself.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment asks that outputs be attributable to the specific component that produced them and flagged if they left the device, an attribution question across system components that the benchmarking elements as framed do not address."
+      },
+      "public_summary": "Commenter finds FDA's Appendix A benchmarking elements incomplete: existing elements (S.3, E.1, E.2) test only textual self-representation of limits. Requests adding a record-level provenance element identifying which component produced each output segment and whether it left the device.",
+      "summary_cut": false,
+      "source_passage": "We raise it here for one reason relevant to Question 9. The provenance block answers a question no element\nin Appendix A currently asks: for this specific output segment, which component produced it, and did it\nleave the device? Elements S.3, E.1 and E.2 ask whether a device represents its own limits accurately, which is\na property of the text. Provenance is a property of the record, and it is checkable without reading the text at all."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter indicates the proposed benchmarking competencies omit per-output provenance — machine-readable attribution of which component generated a given output and whether that output crossed the device boundary.",
+      "requested_fda_action": "Add per-output provenance as a distinct competency within the benchmarking structure, expressed as a statement attached to (rather than embedded in) each output identifying the producing component and whether the output left the device.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "Requiring each output to be attributable to a specific component and tracked across the device boundary addresses accountability when multiple components or systems contribute to a generated output."
+      },
+      "public_summary": "Suggests FDA's benchmarking competency list is incomplete, recommending that per-output provenance be treated as its own competency: a statement attached to each output identifying which component produced it and whether it left the device.",
+      "summary_cut": false,
+      "source_passage": "8. Consider per-output provenance as a competency in its own right — a statement, attached to the output rather than contained in it, of which component produced it and whether it left the device."
+    },
+    {
+      "segment_id": "seg-021",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter argues that postmarket adverse event investigation currently relies on device-generated logs, which amount to the device's own account of itself rather than independent evidence of what was actually communicated to the user.",
+      "requested_fda_action": "FDA should treat the rendered display as capturable evidence—rather than assumed unavailable—where an adverse event turns on what a GenAI-enabled device told a person; the commenter states such capture is feasible today on ordinary hardware without proprietary components and that it holds a hash-sealed instance.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment focuses on preserving a record of what the device actually displayed to the human user, which is the interface at which the human-AI interaction and any resulting harm occurs, rather than internal model logs."
+      },
+      "public_summary": "Commenter supports postmarket performance evaluation but argues device-generated logs are self-reported evidence. Recommends that where an adverse event depends on what a GenAI device told a user, the rendered display be treated as capturable evidence, stating such capture is feasible on ordinary hardware.",
+      "summary_cut": false,
+      "source_passage": "That is the sequence a postmarket investigation actually follows. A report arrives that a device said something wrong. The evidence offered is the device's log. If that log is the device's own account of itself, the investigation is asking the subject what happened. A record taken from the pixels is not the subject's account.\nWe recommend that where an adverse event turns on what a GenAI-enabled device told a person, the display be treated as capturable evidence rather than assumed unavailable. It is capturable today, on ordinary hardware, with no proprietary component, and we hold a hash-sealed instance of it."
+    },
+    {
+      "segment_id": "seg-022",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter is concerned that when an adverse event depends on what the device actually communicated to a user, the device manufacturer's own internal logs may be an incomplete or unreliable account of the output as presented on screen.",
+      "requested_fda_action": "Treat the rendered display—what the user actually saw—as capturable evidence in adverse event evaluation, rather than relying solely on the device's self-generated logs as the record of its output.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment focuses on what the device communicated to the person at the interface, not on model output as recorded internally, making the human-facing presentation the unit of evaluation.",
+        "operational_harm": "It addresses harm investigation arising from the deployed interaction and record-keeping practices rather than from model accuracy alone."
+      },
+      "public_summary": "Recommends that postmarket adverse event evaluation treat the device's rendered display—what the user actually saw—as capturable evidence, rather than accepting the manufacturer's internal device logs as the sole record of the output, when harm turns on what was communicated.",
+      "summary_cut": false,
+      "source_passage": "9. Treat the display as capturable evidence where an adverse event turns on what the device told a person, rather than accepting the device's own log as the only account of its output."
+    },
+    {
+      "segment_id": "seg-023",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "unclear",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter identifies existing externally developed, permissively licensed, inspectable implementations for independent execution recording and self-verifying forensic packaging, while explicitly disclaiming that either instrument is sufficient or offered as a standard.",
+      "requested_fda_action": "The commenter responds to FDA's question about externally developed standards by pointing to these two existing implementations as candidates FDA could examine, without asking FDA to adopt them as standards.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Responding to FDA's question on externally developed standards, the commenter points to two existing permissively licensed, inspectable implementations—independent execution recording and self-verifying forensic packaging—while expressly stating neither is sufficient nor proposed as a standard. No clear position on FDA's framework is stated.",
+      "summary_cut": false,
+      "source_passage": "We make no claim that either instrument is sufficient, and we are not proposing either as a standard. We are answering the question as asked: these are externally developed, permissively licensed, inspectable implementations of independent execution recording and of self-verifying forensic packaging, and they exist today."
+    },
+    {
+      "segment_id": "seg-024",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support",
+      "primary_issue": "benchmarking",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter appears satisfied with the composition of the proposed benchmarking element set as described, indicating none of the elements are redundant or inappropriate. The passage provides no further reasoning.",
+      "requested_fda_action": "Keep the benchmarking element set as proposed, without removing any elements.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter endorses keeping FDA's proposed benchmarking element set intact, stating that no elements should be removed. The passage offers no supporting rationale and does not address whether additional elements are needed.",
+      "summary_cut": false,
+      "source_passage": "1. Retain the element set. We propose no removals."
+    },
+    {
+      "segment_id": "seg-025",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": null,
+      "stakeholder_concern": "Benchmark scoring that does not record where in a session an observation was taken may miss performance changes that emerge later in long multi-turn interactions.",
+      "requested_fda_action": "Require that benchmarking specify the sampling position within a session for every scored element and that evaluation include observations drawn late in long sessions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The request to sample late in long sessions reflects concern that model behavior shifts over the course of an extended interaction rather than remaining fixed at a single measured point."
+      },
+      "public_summary": "Accepts a benchmarking framework but asks FDA to require that the sampling position within a session be specified for each scored element, and that evaluations include observations taken late in long sessions.",
+      "summary_cut": false,
+      "source_passage": "2. Specify sampling position within a session wherever an element is scored, and include observations drawn late in long sessions."
+    },
+    {
+      "segment_id": "seg-026",
+      "question_ids": [
+        "q5",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": null,
+      "stakeholder_concern": "Aggregate performance metrics may mask how a device's behavior changes over the course of an encounter, including whether fluency and accuracy diverge rather than moving together.",
+      "requested_fda_action": "Require that performance be reported as a trajectory across an encounter rather than only as aggregate results, including separate reporting of whether fluency and accuracy track together or diverge.",
+      "confidence": "low",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment focuses on how device behavior evolves over the course of an encounter rather than at a single aggregate point, implying evaluation must capture a behavioral envelope across a conversation."
+      },
+      "public_summary": "Brief recommendation that evaluation report performance as a trajectory across an encounter, not only in aggregate, and specifically disclose whether fluency and accuracy move together or diverge. The passage is a fragment; broader position on FDA's framework is not stated.",
+      "summary_cut": false,
+      "source_passage": "3. Report trajectory across an encounter, not only the aggregate — specifically whether fluency and accuracy move together or apart."
+    },
+    {
+      "segment_id": "seg-027",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that the Safety domain of the proposed benchmarking structure does not test how a device behaves when input is missing, empty, or unintelligible, leaving open the possibility that the device fabricates output rather than failing visibly.",
+      "requested_fda_action": "Add an input-integrity element to the Safety domain of device benchmarking that tests detection of absent, empty, or unintelligible input and requires that output drop to zero with the failure reported rather than filled in.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment targets a deployment failure mode—degraded or missing input leading to fabricated output instead of a reported failure—rather than clinical accuracy on well-formed cases."
+      },
+      "public_summary": "Accepts the proposed benchmarking domains but asks FDA to add an input-integrity element under Safety: devices should detect absent, empty, or unintelligible input, produce no output in those cases, and report the failure rather than filling it in.",
+      "summary_cut": false,
+      "source_passage": "4. Add an input-integrity element under Safety covering detection of absent, empty, or unintelligible input, and the requirement that output drop to zero and the failure be reported rather than filled."
+    },
+    {
+      "segment_id": "seg-028",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter indicates that the proposed benchmarking domain structure places retrieved content and tool outputs in a category (A.1) that leaves retrieval-augmented but non-agentic devices inadequately covered.",
+      "requested_fda_action": "Relocate the retrieved-content and tool-output elements from A.1 into the Safety domain so that retrieval-augmented non-agentic devices are captured by the benchmarking framework.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter accepts the benchmarking framework but recommends recategorizing its elements: moving the retrieved-content and tool-output portion of A.1 into the Safety domain so that retrieval-augmented devices that are not agentic are also covered.",
+      "summary_cut": false,
+      "source_passage": "5. Move the retrieved-content and tool-output portion of A.1 to Safety, so that retrieval-augmented non-agentic devices are covered."
+    },
+    {
+      "segment_id": "seg-029",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter is concerned that automation bias is treated only within the communication-related benchmarking element (E.4), leaving it unaddressed in situations where communication quality does not effectively reach the user.",
+      "requested_fda_action": "Add the automation-bias consideration to the Safety behavior benchmarking category in addition to element E.4, so that the mitigation applies even when communication quality cannot reach the user.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment focuses on automation bias, i.e., how users respond to device outputs, arguing it must be evaluated as a safety property rather than only as a communication-quality property."
+      },
+      "public_summary": "Accepts the benchmarking structure but asks FDA to place the automation-bias consideration under the Safety category as well as element E.4, so the mitigation still applies when communication quality does not effectively reach the user.",
+      "summary_cut": false,
+      "source_passage": "6. Attach the automation-bias consideration to Safety in addition to E.4, so the mitigation is available where communication quality cannot reach the user."
+    },
+    {
+      "segment_id": "seg-030",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter is concerned that benchmark evidence used in premarket determinations can conflate the local processing pipeline with the underlying model that actually generated the answer, and that where the model executes may be left to inference rather than documented.",
+      "requested_fda_action": "Permit a benchmark record maintained independently of the device to count as premarket evidence, and require that record to state the local process fact and the answering-model fact separately, with model execution locality recorded as an explicit field.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The request to separate the local process fact from the answering-model fact and to record execution locality goes to traceability of which underlying model supplied the output behind benchmark results."
+      },
+      "public_summary": "Accepts benchmark results as premarket evidence but asks FDA to allow a device-independent benchmark record and to require it to document the local process and the answering model separately, with the model's execution locality stated as an explicit field.",
+      "summary_cut": false,
+      "source_passage": "7. Where a benchmark result supports a premarket determination, allow a record independent of the device to be part of the evidence — and require that record to keep the local process fact and the answering-model fact separate, with the model's execution locality stated as a field rather than left to inference."
+    },
+    {
+      "segment_id": "seg-031",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter is concerned that any evaluation criterion resting on a developer's candour or intent would be unfalsifiable and therefore subject to argument rather than measurement.",
+      "requested_fda_action": "Adopt only criteria that are observable and measurable without determining why an output occurred; the commenter states its own proposed elements and conditions meet this test and explicitly disclaims any claim about developer intent.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter asks FDA to avoid evaluation standards that depend on developer candour or intent, arguing such standards are unfalsifiable and contestable, and instead to rely on criteria that are observable and measurable without determining why an output occurred.",
+      "summary_cut": false,
+      "source_passage": "We make no claim about intent on the part of any developer, and we recommend against any standard that turns on candour or intent, because such a standard is unfalsifiable and will be argued rather than measured. Every element and condition proposed above is observable without resolving why an output occurred."
+    },
+    {
+      "segment_id": "seg-032",
+      "question_ids": [
+        "q3",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter states that the most frequently observed failure in their experience is a fluent, confident output generated over an input that was not actually present, and that the proposed benchmarking elements cannot detect it because every element evaluates the answer, which appears acceptable on its face. They add that for users who cannot recognize when an output does not match reality, there is no human second line of defense, making benchmarking the only safeguard.",
+      "requested_fda_action": "Add to the benchmarking element set a means of detecting outputs that are not grounded in an actual input (confident responses generated when input is absent), rather than assessing only the quality of the answer, particularly for devices serving users who cannot independently verify outputs.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues that benchmarking frameworks implicitly assume a human user will catch mismatched outputs, an assumption that fails for users who lack the ability to evaluate the output, leaving the benchmark as the sole safeguard."
+      },
+      "public_summary": "Commenting on benchmarking, the filer accepts the element structure but says it cannot detect confident outputs generated over absent inputs, since all elements assess the answer alone. They ask FDA to add input-grounding evaluation, noting some users cannot catch such errors themselves.",
+      "summary_cut": false,
+      "source_passage": "We file on Question 9 because benchmarking is where a device's competence is established before anyone is depending on it, and because the single failure we have measured most often — a fluent, confident output produced over an input that was not there — is the one the current element set cannot see. It cannot see it because every element is looking at the answer, and the answer looks fine.\nFor most users there is a second line of defense: a person who notices the answer does not match the world and says so. The users we build for are the ones who cannot. For them, the benchmark is not the first line of defense. It is the only one."
+    }
+  ]
+}

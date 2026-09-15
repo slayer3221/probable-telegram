@@ -1,0 +1,274 @@
+{
+  "comment_id": "FDA-2026-N-7874-0078",
+  "input_hash": "922176da5477c4f7",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:09:51Z",
+  "model": "claude-opus-5",
+  "chunks": 2,
+  "positions": [
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "The structure is sound and the element set is better than we expected. Our comment is narrow and has three parts.",
+      "position_gist": "The commenter endorses the overall benchmarking structure and element set proposed in Section V.B/Appendix A, offering only narrow refinements.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "We do not propose removing anything from Appendix A. The five safety and proficiency elements, the two generalizability elements, and the agentic element together describe a device more completely than any framework we have seen applied to this class of system. S.3 in particular — \"Presenting uncertain, outdated, or contested information with false confidence is treated as a safety failure\" — is, in one sentence, the failure this comment is about, and CDRH wrote it.",
+      "position_gist": "No elements should be removed from Appendix A; the existing safety, proficiency, generalizability, and agentic elements (especially S.3) are well chosen.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "source_passage": "The elements are well chosen. The sampling method underneath them is the weaker half. We have\nmeasured two properties that make a benchmark result depend on when in a session it was drawn, and the\nframework as written does not specify when. An element that is correct in principle can still be measured at\nthe wrong moment.",
+      "position_gist": "The weakness of the proposed benchmarking framework is the unspecified sampling method: benchmark results depend on when in a session the observation is drawn, so a correct element can still be measured at the wrong moment.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "source_passage": "Specify session position. Where an element is scored, the assessment should state where in a session the\nobservation was drawn and should include observations drawn late in a long session, not only at the start. A\nbenchmark composed entirely of short fresh runs measures a device in the one condition it is least likely to\nbe used in.",
+      "position_gist": "Benchmark methods should require the assessment to state where in a session an observation was drawn and to include observations from late in long sessions, not only fresh short runs.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "Score the trajectory, not only the aggregate. Where an element is evaluated across a multi-turn\nencounter, report whether the measured property moves across the encounter and in which direction. A\n\ndevice whose accuracy is flat while its fluency rises is a different device than the average describes, and it is\nthe more dangerous of the two, because rising fluency is what E.4 identifies as the driver of automation\nbias.",
+      "position_gist": "For multi-turn encounters, benchmarking should report the direction of movement of measured properties across the encounter (trajectory) rather than only aggregate scores, because rising fluency with flat accuracy drives automation bias.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "One element is missing, and it sits underneath several of the others. Every element in Appendix A\nevaluates what the device produced. None asks whether the device received anything. A device generating\nfluent, confident text over an input stream carrying no signal fails no element as currently written, because\nevery element examines the output and the output looks well-formed.",
+      "position_gist": "Appendix A is missing an element addressing whether the device's input actually arrived, since all existing elements evaluate output and a device generating fluent text over a null input would pass them.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "R.1 is the closest fit and it does not close the gap. R.1 tests how a device behaves when an input is missing —\nwhich presumes the missing input is known to the evaluator, and usually to the device. It does not test whether\nthe device can detect that its input is absent. Those are different competencies and only the second one protects\na person who cannot check.",
+      "position_gist": "Existing element R.1 (behavior under missing or contradictory inputs) does not cover the distinct competency of detecting that input is absent, so the gap remains.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "We recommend an element, categorized under Safety, along these lines:\n\nS.4. Input integrity and null-referent handling. Whether the device establishes that its input was\nreceived and is intelligible before generating output, and whether it declines to produce a substantive\noutput when the referent is absent, empty, or unintelligible. Relevant failures include generating fluent\noutput over an input stream carrying no signal, over a truncated or empty document, or over a failed\nretrieval that returned nothing. Relevant testing may include silent or zero-signal audio, empty and\ntruncated file inputs, failed tool calls returning no content, and degraded input introduced partway\nthrough a long session rather than at its start.\n\nThe engineering statement of it is simple: when the referent is missing, the output drops to zero and the\nfailure is reported.",
+      "position_gist": "CDRH should add a Safety element (proposed S.4) on input integrity and null-referent handling, requiring the device to confirm receipt of intelligible input, decline substantive output when the referent is absent, and be tested with zero-signal, empty/truncated, and failed-retrieval inputs including mid-session degradation.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q3",
+        "q9"
+      ],
+      "source_passage": "We note why this matters disproportionately for the populations we build for. A clinician receiving a fluent\nanswer over a dead input has some chance of noticing it does not match the patient in front of them. A\nnonverbal user whose device speaks a sentence on their behalf over an input that never arrived has no such\nchance, and no way to retract it.",
+      "position_gist": "Input-integrity failures pose disproportionate risk for users who cannot independently check an output (e.g., nonverbal users), unlike clinicians who may detect a mismatch, so the safeguard matters most for those populations.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "This is what we would want R.1 to be able to distinguish: a device whose measurement is stable under\ncomponent failure, from one whose output merely continues to look stable. Reproducibility of the output text\n\nwould not have separated these. Reproducibility of the measurement did, and the failing runs are the ones that\nshow it.",
+      "position_gist": "R.1-type reproducibility assessment should distinguish stability of the underlying measurement layer under component failure from mere apparent stability of output text.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q26",
+        "q9"
+      ],
+      "source_passage": "A.1 covers \"resistance to prompt injection through user inputs, retrieved content, and tool outputs\" and applies\nto agentic GenAI-enabled devices only.\n\nA non-agentic device that performs retrieval also ingests text it did not author and cannot vouch for. The\nretrieved passage is untrusted input whether or not the device can then take an action on it. Confining that\ntesting to agentic devices leaves a retrieval-augmented, non-agentic device with no element under which its\nhandling of adversarial retrieved content is assessed.\n\nWe recommend the retrieved-content and tool-output portion of A.1 be moved to Safety alongside S.2, where\nscope adherence and adversarial prompting already sit, and that A.1 retain what is genuinely agentic —\nplanning, sequencing, oversight checkpoints before irreversible actions, and graceful handling of tool failure.",
+      "position_gist": "Element A.1 is mis-categorized as agentic-only; the retrieved-content and tool-output prompt-injection testing should move to Safety alongside S.2 so non-agentic retrieval-augmented devices are covered, leaving A.1 to cover genuinely agentic properties such as planning, sequencing, oversight checkpoints before irreversible actions, and tool-failure handling.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "E.4 names automation bias precisely: \"a user accepts an output without appropriate scrutiny because of the\ndevice's fluency or perceived authority.\" We agree with the definition and question the placement. As written,\nthe element measures the device's communication quality, which implies the mitigation is on the device's side of\nthe interaction — clearer language, better-expressed uncertainty.\n\nFor a user who cannot scrutinize an output at all, no amount of communication quality reaches the failure.\nScrutiny is not a thing that element can improve, because the capacity to perform it is absent. We recommend\nE.4 retain the communication measurement and that the automation-bias consideration additionally attach to\nSafety, where the mitigation is the device declining to produce the output in the first place rather than presenting\nit more carefully.",
+      "position_gist": "Automation bias should not be treated solely as a communication property under E.4; the consideration should additionally attach to Safety, where the mitigation is the device withholding output rather than communicating it more carefully, because some users cannot scrutinize outputs at all.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "3.3 Nothing we would call redundant\n\nWe looked for it and did not find it. The overlap between S.3, E.1 and E.2 on uncertainty and deferral is real but\nit is not duplication — S.3 is about calibration, E.1 is about knowing the boundary of what was trained, E.2 is\nabout sufficiency of the information in front of it. A device can pass any one and fail another.",
+      "position_gist": "No elements are redundant; the apparent overlap among S.3, E.1, and E.2 reflects genuinely distinct competencies.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "The general point first. Every element in Appendix A is scored on evidence the device is a party to.\nTranscripts, outputs, and logs are the device's account of the encounter, or an account derived from it. Where\nthe benchmark result is the basis for a premarket determination, a second record produced by the machine rather\nthan by the device makes several elements checkable that are otherwise a matter of reading the output carefully.\n\nThe comparison is mechanical rather than interpretive. A device states it consulted a source. An independent\naccess record shows whether that source was opened, and when.",
+      "position_gist": "Because Appendix A elements are scored on device-generated evidence, benchmarking used for premarket determinations should be supplemented by independent machine-produced records (e.g., source access records) that make claims mechanically checkable.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "We have published an instrument of this kind rather than described one.\n\nHONESTY — open source under the Apache License 2.0 at\ngithub.com/The-ChristmanAI-Project/HONESTY, made public 2026-09-04.\n\nIt is two parts. The local component is a single Python program with no dependencies outside the standard\nlibrary, serving on the loopback interface only. The second part is a viewer.",
+      "position_gist": "The commenter offers its published open-source HONESTY instrument as an externally developed method CDRH could leverage for independent device records.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "It keeps two classes of evidence separate, and that separation is the part we would ask CDRH to look at.\n\nThe first is the process record. It reads the operating system process table — ps on macOS and Linux,\ntasklist on Windows — matches it against a catalogue of named AI systems, and keeps a timestamped ledger\nof what started and stopped. This establishes what is executing on that machine.\n\nThe second is the model record, which does not come from the process table at all. It names the model that is\nanswering, the provider, the host it is reached at, the local client it is reached through, and — the field we want\nto draw attention to — where that model runs, distinguishing a model executing on the machine from one\nexecuting in a datacenter.",
+      "position_gist": "CDRH should attend to keeping two separate classes of evidence — a local process record and a separate model record identifying the answering model and where it executes — rather than merging them.",
+      "segment_id": "seg-016"
+    },
+    {
+      "question_ids": [
+        "q25",
+        "q9"
+      ],
+      "source_passage": "We recommend that any locality claim in a device record be a stated field rather than an inference. \"The\nmodel runs on the device\" and \"the device reaches a model\" are different regulatory situations, and today\nnothing in the element set requires a submission to say which one applies.",
+      "position_gist": "Device records/submissions should carry model locality (on-device execution versus reaching a remote model) as an explicitly stated field rather than an inference, identified from the connection and configuration rather than the system's self-description.",
+      "segment_id": "seg-017"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "We note the asymmetry deliberately. HONESTY was built to observe the commercial systems we use as tools\nin our own work. It is not instrumentation for our own products, and we are not offering it as evidence that our\nsystems are honest. We offer it as a method a reviewer may apply to any device, ours included, and we would\nrather see the method adopted with someone else's implementation than see it not adopted.",
+      "position_gist": "The commenter offers the method (not its specific implementation) for reviewers to apply to any device, including its own, and would accept adoption via another implementation.",
+      "segment_id": "seg-018"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "We raise it here for one reason relevant to Question 9. The provenance block answers a question no element\nin Appendix A currently asks: for this specific output segment, which component produced it, and did it\nleave the device? Elements S.3, E.1 and E.2 ask whether a device represents its own limits accurately, which is\na property of the text. Provenance is a property of the record, and it is checkable without reading the text at all.",
+      "position_gist": "Appendix A should address per-output provenance — which component produced a given output segment and whether the material left the device — as a checkable property of the record, which no current element requires.",
+      "segment_id": "seg-019"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "8. Consider per-output provenance as a competency in its own right — a statement, attached to the output rather than contained in it, of which component produced it and whether it left the device.",
+      "position_gist": "Per-output provenance should be treated as a competency in its own right within the benchmarking element set.",
+      "segment_id": "seg-020"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "That is the sequence a postmarket investigation actually follows. A report arrives that a device said something wrong. The evidence offered is the device's log. If that log is the device's own account of itself, the investigation is asking the subject what happened. A record taken from the pixels is not the subject's account.\nWe recommend that where an adverse event turns on what a GenAI-enabled device told a person, the display be treated as capturable evidence rather than assumed unavailable. It is capturable today, on ordinary hardware, with no proprietary component, and we hold a hash-sealed instance of it.",
+      "position_gist": "For postmarket adverse event investigation, the device display shown to the user should be treated as independently capturable evidence rather than relying on the device's own log.",
+      "segment_id": "seg-021"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "9. Treat the display as capturable evidence where an adverse event turns on what the device told a person, rather than accepting the device's own log as the only account of its output.",
+      "position_gist": "Postmarket evaluation should not accept the device's own log as the sole account of its output where an adverse event turns on what the device told a person.",
+      "segment_id": "seg-022"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "We make no claim that either instrument is sufficient, and we are not proposing either as a standard. We are answering the question as asked: these are externally developed, permissively licensed, inspectable implementations of independent execution recording and of self-verifying forensic packaging, and they exist today.",
+      "position_gist": "In response to whether externally developed standards could be leveraged, the commenter offers existing open, inspectable implementations of independent execution recording and forensic packaging as available today, while expressly not proposing them as standards.",
+      "segment_id": "seg-023"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "1. Retain the element set. We propose no removals.",
+      "position_gist": "The proposed benchmarking element set should be retained with no removals.",
+      "segment_id": "seg-024"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "2. Specify sampling position within a session wherever an element is scored, and include observations drawn late in long sessions.",
+      "position_gist": "Benchmarking should specify where within a session an element is sampled and must include observations drawn late in long sessions.",
+      "segment_id": "seg-025"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "3. Report trajectory across an encounter, not only the aggregate — specifically whether fluency and accuracy move together or apart.",
+      "position_gist": "Benchmark reporting should include performance trajectory across an encounter, particularly whether fluency and accuracy diverge, rather than only aggregate scores.",
+      "segment_id": "seg-026"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "4. Add an input-integrity element under Safety covering detection of absent, empty, or unintelligible input, and the requirement that output drop to zero and the failure be reported rather than filled.",
+      "position_gist": "A new input-integrity element should be added under Safety requiring detection of absent, empty, or unintelligible input and requiring the device to report failure rather than generate output.",
+      "segment_id": "seg-027"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "5. Move the retrieved-content and tool-output portion of A.1 to Safety, so that retrieval-augmented non-agentic devices are covered.",
+      "position_gist": "The retrieved-content and tool-output portion of element A.1 should be moved to the Safety category so retrieval-augmented non-agentic devices are covered.",
+      "segment_id": "seg-028"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "6. Attach the automation-bias consideration to Safety in addition to E.4, so the mitigation is available where communication quality cannot reach the user.",
+      "position_gist": "The automation-bias consideration should be attached to the Safety category in addition to element E.4 so the mitigation applies where communication quality cannot reach the user.",
+      "segment_id": "seg-029"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "source_passage": "7. Where a benchmark result supports a premarket determination, allow a record independent of the device to be part of the evidence — and require that record to keep the local process fact and the answering-model fact separate, with the model's execution locality stated as a field rather than left to inference.",
+      "position_gist": "Benchmark evidence supporting a premarket determination should be allowed to include a record independent of the device, which must separately record local process versus answering model and state execution locality explicitly.",
+      "segment_id": "seg-030"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "We make no claim about intent on the part of any developer, and we recommend against any standard that turns on candour or intent, because such a standard is unfalsifiable and will be argued rather than measured. Every element and condition proposed above is observable without resolving why an output occurred.",
+      "position_gist": "CDRH should avoid any evaluation standard that depends on developer candour or intent, because such standards are unfalsifiable; elements should be observable without determining why an output occurred.",
+      "segment_id": "seg-031"
+    },
+    {
+      "question_ids": [
+        "q3",
+        "q9"
+      ],
+      "source_passage": "We file on Question 9 because benchmarking is where a device's competence is established before anyone is depending on it, and because the single failure we have measured most often — a fluent, confident output produced over an input that was not there — is the one the current element set cannot see. It cannot see it because every element is looking at the answer, and the answer looks fine.\nFor most users there is a second line of defense: a person who notices the answer does not match the world and says so. The users we build for are the ones who cannot. For them, the benchmark is not the first line of defense. It is the only one.",
+      "position_gist": "Benchmarking must be able to detect fluent output generated over absent input, because users who cannot independently check an output against reality (e.g., nonverbal, neurodivergent, or cognitively impaired users) have no downstream human safeguard.",
+      "segment_id": "seg-032"
+    }
+  ]
+}

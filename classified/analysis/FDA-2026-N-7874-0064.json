@@ -1,0 +1,187 @@
+{
+  "comment_id": "FDA-2026-N-7874-0064",
+  "input_hash": "c29d6d91bbd0b629",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:27:29Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q15"
+      ],
+      "position": "support",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "For augmentative and alternative communication devices, the commenter states there is no unaided clinical judgment comparator because without the device the communicative function is absent entirely, not merely slower or less expert; the aided judgment is the user's own expression, which no clinician can supply.",
+      "requested_fda_action": "Recognize and accept a 'no intervention'/absence-of-function comparator as the only comparator reflecting reality for augmentative and alternative communication devices when evaluating performance.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports FDA's consideration of comparators reflecting care absent the device, arguing that for augmentative and alternative communication devices the only realistic comparator is absence of the function itself, since no clinician can substitute for the user's own expression.",
+      "summary_cut": false,
+      "source_passage": "Yes, and for one class of device it is the only comparator that describes reality. For augmentative and alternative communication, the absence of the device is not a slower or less expert version of the same function. It is the absence of the function. There is no unaided clinical judgment to fall back on, because the judgment being aided is the user's own expression, and no clinician can supply it."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter argues that comparator frameworks anchored to clinician panels or standard of care implicitly assume device performance falls somewhere between zero and an expert ceiling, which understates the possibility of net-negative performance. Fabricated generative output is said to fall below the no-device baseline because the absence of the device produces no false record while the device introduces one.",
+      "requested_fda_action": "Comparator selection and acceptance criteria should explicitly account for performance that is worse than the no-device condition, recognizing fabricated output as a harm beyond simple failure to add benefit rather than treating zero benefit as the floor.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment identifies the creation of a false record as a distinct harm that persists beyond output accuracy and is not captured by benefit-relative comparator framing."
+      },
+      "public_summary": "Commenter contends FDA's comparator framing (clinician panels or standard of care) wrongly treats zero added benefit as the performance floor. Because fabricated generative output creates a false record that the no-device condition would not, performance can fall below baseline and comparators should reflect this.",
+      "summary_cut": false,
+      "source_passage": "Device performance is not bounded below by the no-device baseline. A comparator framework built on panels or standard of care implicitly treats the device as adding some amount of benefit between zero and the expert ceiling. A generative device that fabricates output does not land at zero. It lands below it, because the no-device condition produces no false record and the device does."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The choice of comparator changes how a plausible but incorrect device output is scored: against a clinician panel it registers as a partial success, whereas against an absence (no-device) counterfactual it constitutes a categorical harm because no statement would otherwise have been made.",
+      "requested_fda_action": "Account for the absence/no-intervention counterfactual when selecting comparators and acceptance criteria, rather than defaulting to clinician-panel comparison that can score erroneous outputs as partial credit.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Argues comparator choice materially changes harm assessment: a plausible but wrong output earns partial credit against a clinician panel but is a categorical harm when the counterfactual is no output at all, and urges FDA to reflect absence comparators.",
+      "summary_cut": false,
+      "source_passage": "Against a panel comparator, a device that produces a plausible but wrong output scores as a partial success. Against the absence comparator, the same output is a categorical harm, because the counterfactual is not a worse sentence. It is no sentence."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q15"
+      ],
+      "position": "oppose",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter argues that comparing a GenAI-enabled device to the absence of the device is a weak measure of benefit, because nearly any functioning system outperforms no device at all, and allowing sponsors to select this comparator would let them choose the least demanding standard.",
+      "requested_fda_action": "Do not adopt absence of the device (no intervention) as the general or primary comparator for GenAI-enabled devices, and do not leave that choice to sponsor discretion.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter opposes making absence of the device the general comparator for GenAI-enabled devices, arguing it is a weak measure of benefit since almost any functioning system outperforms no device, and sponsor-selected use of it would set the lowest bar.",
+      "summary_cut": false,
+      "source_passage": "We are not proposing that absence of the device become the primary comparator for GenAI-enabled devices generally. It is a poor instrument for measuring benefit. Against no device at all, almost any functioning system looks excellent, and a sponsor permitted to choose it would be choosing the weakest available bar."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that treating the 'absence of device' comparator as a substitute for, or as a scored element alongside, the Section V.C comparators would allow strong panel-comparator performance to mask a fundamental failure, such as fabricated output generated from null input, since the two measures capture different things and cannot offset one another.",
+      "requested_fda_action": "FDA should retain the Section V.C comparators and add the absence comparator as a supplementary criterion, applied as a pass/fail gate rather than a scored performance dimension, so that fabrication over null input constitutes outright failure.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports using an 'absence of device' comparator, but only in addition to the comparators in Section V.C and as a pass/fail gate rather than a scored dimension, arguing fabricated output from null input should mean failure regardless of panel-comparator performance.",
+      "summary_cut": false,
+      "source_passage": "We therefore recommend the absence comparator be used alongside, not instead of, the comparators in Section V.C \\u2014 and specifically as a pass/fail gate rather than a scored dimension. A device that produces fabricated output over null input has failed regardless of how well it performs on the panel comparator, because the two results are measuring different things and the good one does not offset the bad one."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that comparison against the care or course of action that would occur in the device's absence may be treated as optional, particularly where no human performs the function, the user cannot detect or contest an incorrect output, and the error leaves a durable record attributed to the user.",
+      "requested_fda_action": "Adopt a three-test screen (is there a human performing the function without the device; can the user detect and contest an incorrect output; does an incorrect output leave a durable record attributed to the user) and require the absence comparator as a condition of clearance—not an optional supplementary analysis—when the answers are no, no, yes.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "One of the proposed tests turns on whether the user can actually detect and contest an incorrect output, making the combined human-device system, not the model alone, the basis for choosing a comparator.",
+        "operational_harm": "The third test focuses on whether an incorrect output leaves a durable record attributed to the user, a downstream documentation harm not captured by clinical-outcome comparators."
+      },
+      "public_summary": "Commenter accepts comparison against care in the device's absence and proposes a three-part test—no human performs the function, users cannot detect or contest errors, and errors leave a durable record attributed to the user—making the absence comparator mandatory for clearance rather than optional.",
+      "summary_cut": false,
+      "source_passage": "We propose three tests a sponsor can apply to determine whether the absence comparator is required for a given device, and to justify the choice.\n 1. Is there a human who performs this function without the device? ... 2. Can the user detect and contest an incorrect output? ... 3. Does an incorrect output leave a durable record attributed to the user? ... A device answering no, no, yes to those three should be evaluated against the absence comparator as a condition of clearance, not as an optional supplementary analysis."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q14",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "comparator_standard_of_care",
+      "stakeholder_concern": "Comparators that depend on clinician panels require adjudication and inter-rater reliability work, whereas a device's tendency to generate output from input containing no valid signal can be detected with an exact, objective criterion.",
+      "requested_fda_action": "Incorporate an 'absence comparator' test into device benchmarking for devices that ingest sensor input: present input carrying no valid signal and score any output as a failure regardless of plausibility, using a fully automatable acceptance criterion rather than panel adjudication.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Proposes adding an \"absence comparator\" benchmark for sensor-input devices: feeding input with no valid signal and scoring any output as failure regardless of plausibility. Presented as cheap, exact, and fully automatable, avoiding clinician panels, adjudication, and inter-rater reliability requirements.",
+      "summary_cut": false,
+      "source_passage": "The absence comparator is cheap to operationalize for devices that ingest sensor input. The test is to present the device with input containing no valid signal and record whether it produces output. ... Under the absence comparator the acceptance criterion is exact and requires no clinical judgment: output produced from input carrying no signal is a failure, scored as a failure, regardless of how plausible the output is. No panel, no adjudication, no inter-rater reliability. It is fully automatable and it directly detects the behavior measured above."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "comparator_standard_of_care",
+      "stakeholder_concern": "The commenter is concerned that the safety-behavior benchmarking element (S.3), which treats presenting information with false confidence as a safety failure, may be read too narrowly to cover only confidence in content, omitting unwarranted confidence that an input was actually received at all.",
+      "requested_fda_action": "Clarify that benchmarking element S.3 encompasses false confidence in the premise that input was received, and use an absence comparator as the framing that makes this failure mode measurable rather than only descriptive.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment highlights a failure mode arising from missing or unreceived inputs, where the device proceeds with apparent confidence, which is an operational/data-flow failure rather than a clinical reasoning error."
+      },
+      "public_summary": "Accepts the proposed safety-behavior benchmarking element on false confidence but asks FDA to clarify that it also covers unwarranted confidence that an input was received at all, and to frame that failure using an absence comparator so it is measurable.",
+      "summary_cut": false,
+      "source_passage": "We note that the drafted benchmarking element S.3 treats presenting information with false confidence as a safety failure. We recommend the element be read to include confidence in the premise that input was received at all, and that the absence comparator is the framing under which that failure becomes measurable rather than merely describable."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q3"
+      ],
+      "position": "unclear",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter argues that for a user population that cannot contest or correct an output, a fabricated statement is not merely a degraded or inaccurate output but becomes an utterance attributed to the user and entered into the record under the user's name.",
+      "requested_fda_action": "The passage implies that risk assessment for patient-facing generative outputs should account for harms arising from unverifiable, attributed statements when the user lacks the ability to evaluate or contest them, but the passage does not state a specific requested action.",
+      "confidence": "low",
+      "gap_tags": [
+        "operational_harm",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The described harm is that a fabricated output is recorded and attributed to the user, a downstream consequence distinct from clinical inaccuracy of the output itself.",
+        "human_ai_system_performance": "The concern turns on a user who cannot contest or correct the output, so device-alone accuracy measures do not capture the performance of the combined user-device system."
+      },
+      "public_summary": "Commenter states that for users who cannot contest an output, a fabricated statement is not simply a degraded result but becomes an utterance entered into the record under the user's name, suggesting risk framing should reflect this attribution harm. No explicit position stated.",
+      "summary_cut": false,
+      "source_passage": "For this population the fabricated sentence is not a degraded output. It is an utterance entered into the record under the user's name, by a user who cannot contest it."
+    }
+  ]
+}

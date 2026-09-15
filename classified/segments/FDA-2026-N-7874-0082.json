@@ -1,0 +1,228 @@
+{
+  "comment_id": "FDA-2026-N-7874-0082",
+  "input_hash": "805e3d34784a54e4",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-15T01:09:51Z",
+  "model": "claude-opus-5",
+  "chunks": 2,
+  "positions": [
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "Time pressure and the availability of downstream safeguards are the same axis seen from two sides. A patient-facing function used at home with a phone in hand has a downstream safeguard: 911. The same function used by a deckhand on a vessel two days from port, or a miner underground, has none — the app is the last safeguard, and the alternative to the app is not a clinician, it is an untrained person acting from memory or not acting at all. The framework's consequence axis should be read against the care that would actually happen without the device (see Question 15), not against an assumed clinical backstop. In the no-backstop setting the risk of an incorrect output rises, but so does the cost of no output; a framework that only counts the first will push developers to refuse exactly where the user has no one else.",
+      "position_gist": "Time pressure and availability of downstream safeguards should be first-class dimensions of the risk framework, and the consequence axis should be judged against the care that would actually occur without the device rather than an assumed clinical backstop, since counting only the risk of incorrect output while ignoring the cost of no output drives over-refusal in no-backstop settings.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q2"
+      ],
+      "source_passage": "Traceability of the output to primary source material is the dimension I would put at the top for lay-rescuer guidance. Bystander first aid is unusual among clinical domains in that the correct action is published, fixed and consensus-based (the AHA and ILCOR resuscitation guidelines and their first-aid counterparts). An output that can be traced step-for-step to a published protocol is auditable in a way an open-ended clinical answer is not: a reviewer can mark each step right or wrong against the source. I would suggest that for domains with a fixed reference protocol, the framework treat protocol fidelity — does the output deviate from the published steps — as the primary risk modifier, and treat generated deviation from protocol as the hazard to be measured, rather than treating all generated text as equally open-ended.",
+      "position_gist": "For domains with a fixed published reference protocol, traceability should be a top risk dimension and protocol fidelity (deviation from published steps) should be the primary risk modifier rather than treating all generated text as equally open-ended.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q2"
+      ],
+      "source_passage": "I agree with CDRH that a \"talk to your doctor\" line does not make an action-directing output less directive, and I would go further for my category: in a bystander emergency, the output is supposed to be action-directing. \"Press hard on the wound and do not let go\" is the correct output; a non-directive version of it (\"pressure is sometimes applied to bleeding wounds\") is the unsafe one. So for this class of function, directiveness is not the risk modifier.",
+      "position_gist": "For bystander emergency functions directiveness is not the relevant risk modifier because action-directing output is the safe output and non-directive phrasing is the unsafe one.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q2"
+      ],
+      "source_passage": "The characteristics that actually modify risk, in my experience building and testing one, are:\n• Personalization to the wrong premise. The dangerous failure is not that the model tells the user what to do; it is that it answers a slightly different situation than the one described — for example, giving the standard sequence for a conscious choking child when the user has said the child is already limp. The model is fluent, confident and wrong-for-premise. I would ask CDRH to name premise fidelity explicitly as an output characteristic in this question.\n• Age- and size-appropriateness of technique. The same instruction with the wrong hand position, depth or force for an infant is a harm, not a degraded answer. The risk modifier is whether the function reliably selects the population-specific protocol, and this is testable.\n• Ordering of the call for help. Whether \"call for help\" comes first, last, or not at all is a directly scoreable property of an output.",
+      "position_gist": "CDRH should recognize premise fidelity, age/size-appropriateness of technique, and ordering of the call for help as the output characteristics that actually modify risk for this class of function.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q2"
+      ],
+      "source_passage": "For clarity and predictability, I would ask that the guidance recognise a sub-category of \"action-directing\" function — protocol delivery — where the directed action is a published, fixed first-aid or resuscitation protocol, and where the evidence question is fidelity to that protocol rather than clinical judgment.",
+      "position_gist": "The guidance should create a 'protocol delivery' sub-category of action-directing functions whose evidence question is fidelity to a published fixed protocol rather than clinical judgment.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "Deterministic protocol selection by person and situation. For the highest-consequence protocols (CPR, choking, severe bleeding) the sequence of steps should not be generated at all; it should be selected by fixed rules from the user's answers about age, responsiveness and breathing, and read out. Generation should be confined to helping the user describe the situation and to the lower-consequence guidance around the protocol. This is the single design decision that moves a product from \"adaptive generated guidance\" toward \"fixed content,\" and I would welcome the guidance saying so, because it would give developers a reason to make it.",
+      "position_gist": "CDRH should recognize deterministic, rule-based selection of high-consequence protocols with generation confined to lower-consequence guidance as a risk mitigant for patient-facing functions.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "Refusal that redirects rather than abandons. Scope maintenance (the paper's S.2) has a different meaning when there is no clinician to defer to. \"I can't help with that, see a doctor\" is over-refusal with a body count in the offline setting. The correct behaviour is to redirect to the nearest thing the device can do safely — the general protocol, the call for help, the do-not-do list — and the benchmark should score that redirection, not just the refusal.",
+      "position_gist": "Refusal behavior should redirect users to the nearest safe action rather than deferring to a nonexistent clinician, and benchmarks should score the quality of that redirection rather than refusal alone.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "On-device, no-network operation. This is a safeguard, not just a deployment detail: it removes the model-update, availability and data surfaces from the risk picture, and it means the exact weights that were evaluated are the exact weights in the user's hand (see Question 24).",
+      "position_gist": "Frozen on-device, no-network operation should be treated as a safeguard that mitigates risk because it removes update/availability/data surfaces and guarantees evaluated weights are the deployed weights.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "For a bystander function the two directions are not commensurable in the way the paper describes for triage-at-home, because escalation is not a choice the function makes; it is a step in every protocol. The failure mode that matters is not \"the model told them to call when they didn't need to,\" it is ordering: does the function put the call for help before or after the first action, and does it do so correctly by scenario (for a lone rescuer with an unresponsive child, current guidance differs from the adult case). I would suggest that for protocol-delivery functions, escalation be evaluated as a protocol-fidelity item with a scenario-specific right answer, rather than as a scalar trade-off between two error rates.",
+      "position_gist": "For protocol-delivery functions, escalation should be evaluated as a protocol-fidelity item with a scenario-specific correct ordering rather than as a scalar trade-off between under- and over-escalation rates.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q10"
+      ],
+      "source_passage": "Mechanical scanning is not a release check. An automated pass that checks an output for required and forbidden content (the right steps present, the wrong technique absent) can pass a set of outputs that a careful human read then fails, because the human notices that the answer is correct for a different premise than the one the user described. Any benchmark used to gate a lay-rescuer function should include premise-aware items — scenarios whose opening line changes which protocol is correct — and should require human adjudication on those items, not keyword or rubric scoring alone.",
+      "position_gist": "Benchmarks gating lay-rescuer functions should include premise-aware items with human adjudication rather than relying on automated keyword/rubric content scanning.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q13"
+      ],
+      "source_passage": "Age-stratified negatives. The suite must include items where the adult-correct technique is the infant-wrong one, scored so that the adult answer fails. A benchmark built from adult scenarios will not detect a model that has learned one template.",
+      "position_gist": "Benchmark suites must include age-stratified negative items so that adult-correct but infant-wrong answers fail, in order to detect single-template models.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q16"
+      ],
+      "source_passage": "Sponsor-developed benchmarks are unavoidable and should be disclosable. There is no public benchmark for bystander first aid on a phone. I would support a requirement that a sponsor-developed benchmark be disclosed in full — items, rubric, adjudication protocol, and the model's outputs — so that independence can be checked by anyone, rather than a requirement that the benchmark itself be independent, which would leave small developers with no benchmark at all.",
+      "position_gist": "Sponsor-developed benchmarks should be permitted but required to be fully disclosed (items, rubric, adjudication protocol, outputs) rather than required to be independently developed, which would burden small developers.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "source_passage": "For my setting the honest comparator is not a clinician panel and not a median clinician; it is an untrained person with no signal, acting from memory. Bystander CPR rates, correct-technique rates among lay rescuers, and the outcome of \"did nothing\" are all published, and a device should be judged first against that baseline and only second against the standard of care it is trying to deliver. ... I would ask CDRH to state that for patient-facing functions whose intended use is explicitly \"when no professional is available,\" the primary comparator is the unaided user.",
+      "position_gist": "For patient-facing functions intended for use when no professional is available, the primary performance comparator should be the unaided untrained user (using published bystander baseline rates), not a clinician panel or standard of care.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "An on-device, offline model produces no server logs. Periodic re-benchmarking against the frozen suite is straightforward and I would support it as the primary mechanism. Sample-based clinician review is possible only on synthetic or consented sessions, since real emergencies leave no record the manufacturer can see. Performance-degradation monitoring in the paper's sense does not apply: the weights do not drift, because they do not change. I would ask that the guidance distinguish frozen on-device models, whose postmarket obligation is re-benchmarking on change plus field-report intake, from hosted models, whose behaviour can shift without a release.",
+      "position_gist": "Guidance should distinguish frozen on-device offline models—whose postmarket obligation should be re-benchmarking on change plus field-report intake, with drift monitoring inapplicable and clinician review limited to synthetic/consented sessions—from hosted models that can shift without a release.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q24"
+      ],
+      "source_passage": "For an on-device product the answer is technical and complete: the device ships a specific set of weights identified by a cryptographic hash; the app verifies that hash before it will use them; the only way the model changes is a manufacturer-initiated release that goes back through the benchmark. There is no third-party-initiated change to detect. I would ask CDRH to recognise \"pinned, hash-verified on-device weights\" as a mechanism that resolves Question 24 by construction, and to treat a fine-tuned open-weight model whose base is published under a fixed version as a manufacturer-controlled model for this purpose, not as a live dependency on a third-party service.",
+      "position_gist": "CDRH should recognize pinned, hash-verified on-device weights as resolving third-party model change detection by construction, and treat fine-tuned open-weight models on a fixed base version as manufacturer-controlled rather than third-party dependencies.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q3"
+      ],
+      "source_passage": "The paper's framework is built for a world in which the device sits between a patient and a clinician. There is a large population — offshore, underground, at sea, in the backcountry, in every disaster that takes the network down — for whom the device sits between a patient and nothing. I would ask that the eventual guidance say something explicit about that setting, because it is exactly the setting where a careful developer most needs to know what \"safe enough\" means, and where a rule written for the home-triage case will either be ignored or will keep the product from existing.",
+      "position_gist": "The eventual guidance should explicitly address the no-clinician-reachable deployment setting, since rules written for the home-triage case will be ignored or prevent such products from existing.",
+      "segment_id": "seg-016"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q15"
+      ],
+      "source_passage": "Question 1 — additional dimensions. Two of the dimensions the paper floats are, in my setting, the whole story, and I would ask that they be first-class rather than \"additional.\"\nTime pressure and the availability of downstream safeguards are the same axis seen from two sides. A patient-facing function used at home with a phone in hand has a downstream safeguard: 911. The same function used by a deckhand on a vessel two days from port, or a miner underground, has none — the app is the last safeguard, and the alternative to the app is not a clinician, it is an untrained person acting from memory or not acting at all. The framework's consequence axis should be read against the care that would actually happen without the device (see Question 15), not against an assumed clinical backstop. In the no-backstop setting the risk of an incorrect output rises, but so does the cost of no output; a framework that only counts the first will push developers to refuse exactly where the user has no one else.",
+      "position_gist": "Time pressure and availability of downstream safeguards should be first-class dimensions of the risk framework, and the consequence axis should be assessed against the care that would actually occur without the device rather than an assumed clinical backstop, counting the cost of no output as well as the risk of an incorrect one.",
+      "segment_id": "seg-017"
+    },
+    {
+      "question_ids": [
+        "q2"
+      ],
+      "source_passage": "Question 2 — the directiveness continuum. I agree with CDRH that a \"talk to your doctor\" line does not make an action-directing output less directive, and I would go further for my category: in a bystander emergency, the output is supposed to be action-directing. \"Press hard on the wound and do not let go\" is the correct output; a non-directive version of it (\"pressure is sometimes applied to bleeding wounds\") is the unsafe one. So for this class of function, directiveness is not the risk modifier.",
+      "position_gist": "For bystander emergency functions, directiveness itself is not the risk modifier because action-directing output is the safe and correct output, and non-directive phrasing is the unsafe one.",
+      "segment_id": "seg-018"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "Question 3 — patient-facing users without domain knowledge. The user of my product has, by definition, no domain knowledge, and no one beside them who does. The safeguards I have found to matter are design choices, and I would ask CDRH to recognise them as risk mitigants rather than as evidence of higher risk:\n\t1\tDeterministic protocol selection by person and situation. For the highest-consequence protocols (CPR, choking, severe bleeding) the sequence of steps should not be generated at all; it should be selected by fixed rules from the user's answers about age, responsiveness and breathing, and read out. Generation should be confined to helping the user describe the situation and to the lower-consequence guidance around the protocol. This is the single design decision that moves a product from \"adaptive generated guidance\" toward \"fixed content,\" and I would welcome the guidance saying so, because it would give developers a reason to make it.",
+      "position_gist": "CDRH should recognize deterministic, rule-based selection of high-consequence protocols (with generation confined to lower-consequence support) as a risk mitigant for patient-facing users lacking domain knowledge.",
+      "segment_id": "seg-019"
+    },
+    {
+      "question_ids": [
+        "q3"
+      ],
+      "source_passage": "2\tRefusal that redirects rather than abandons. Scope maintenance (the paper's S.2) has a different meaning when there is no clinician to defer to. \"I can't help with that, see a doctor\" is over-refusal with a body count in the offline setting. The correct behaviour is to redirect to the nearest thing the device can do safely — the general protocol, the call for help, the do-not-do list — and the benchmark should score that redirection, not just the refusal.",
+      "position_gist": "In offline settings with no clinician to defer to, safe behavior is redirection to the nearest safe action rather than refusal, and benchmarks should score redirection rather than refusal alone.",
+      "segment_id": "seg-020"
+    },
+    {
+      "question_ids": [
+        "q24",
+        "q3"
+      ],
+      "source_passage": "3\tOn-device, no-network operation. This is a safeguard, not just a deployment detail: it removes the model-update, availability and data surfaces from the risk picture, and it means the exact weights that were evaluated are the exact weights in the user's hand (see Question 24).",
+      "position_gist": "On-device, no-network operation should be treated as a safeguard because it removes update, availability, and data risk surfaces and guarantees the evaluated weights are the deployed weights.",
+      "segment_id": "seg-021"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "Question 6 — under- and over-escalation. For a bystander function the two directions are not commensurable in the way the paper describes for triage-at-home, because escalation is not a choice the function makes; it is a step in every protocol. The failure mode that matters is not \"the model told them to call when they didn't need to,\" it is ordering: does the function put the call for help before or after the first action, and does it do so correctly by scenario (for a lone rescuer with an unresponsive child, current guidance differs from the adult case). I would suggest that for protocol-delivery functions, escalation be evaluated as a protocol-fidelity item with a scenario-specific right answer, rather than as a scalar trade-off between two error rates.",
+      "position_gist": "For protocol-delivery functions, escalation should be evaluated as a protocol-fidelity item with a scenario-specific correct ordering rather than as a scalar trade-off between under- and over-escalation error rates.",
+      "segment_id": "seg-022"
+    },
+    {
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "source_passage": "Question 15 — the comparator in the absence of the device. For my setting the honest comparator is not a clinician panel and not a median clinician; it is an untrained person with no signal, acting from memory. Bystander CPR rates, correct-technique rates among lay rescuers, and the outcome of \"did nothing\" are all published, and a device should be judged first against that baseline and only second against the standard of care it is trying to deliver. A framework that measures a bystander tool only against a clinician will conclude it is unsafe; a framework that measures it against the alternative the user actually has will ask the right question, which is whether it moves an untrained person closer to the published protocol than they would get on their own. I would ask CDRH to state that for patient-facing functions whose intended use is explicitly \"when no professional is available,\" the primary comparator is the unaided user.",
+      "position_gist": "For patient-facing functions intended for use when no professional is available, the primary performance comparator should be the unaided untrained user (using published bystander baseline rates), not a clinician panel or standard of care.",
+      "segment_id": "seg-023"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Question 19 — postmarket monitoring for a device that cannot phone home. An on-device, offline model produces no server logs. Periodic re-benchmarking against the frozen suite is straightforward and I would support it as the primary mechanism. Sample-based clinician review is possible only on synthetic or consented sessions, since real emergencies leave no record the manufacturer can see. Performance-degradation monitoring in the paper's sense does not apply: the weights do not drift, because they do not change. I would ask that the guidance distinguish frozen on-device models, whose postmarket obligation is re-benchmarking on change plus field-report intake, from hosted models, whose behaviour can shift without a release.",
+      "position_gist": "For frozen offline on-device models, periodic re-benchmarking on change plus field-report intake should be the postmarket obligation, since server-log-based degradation monitoring and sample-based clinician review of real sessions are infeasible; guidance should distinguish such models from hosted models.",
+      "segment_id": "seg-024"
+    },
+    {
+      "question_ids": [
+        "q24"
+      ],
+      "source_passage": "Question 24 — third-party foundation model changes. The paper frames this as a problem of detecting changes the model developer makes. For an on-device product the answer is technical and complete: the device ships a specific set of weights identified by a cryptographic hash; the app verifies that hash before it will use them; the only way the model changes is a manufacturer-initiated release that goes back through the benchmark. There is no third-party-initiated change to detect. I would ask CDRH to recognise \"pinned, hash-verified on-device weights\" as a mechanism that resolves Question 24 by construction, and to treat a fine-tuned open-weight model whose base is published under a fixed version as a manufacturer-controlled model for this purpose, not as a live dependency on a third-party service.",
+      "position_gist": "CDRH should recognize pinned, hash-verified on-device weights as a mechanism that eliminates third-party-initiated model change risk, and treat fine-tuned open-weight models based on a fixed published version as manufacturer-controlled rather than a third-party dependency.",
+      "segment_id": "seg-025"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q3"
+      ],
+      "source_passage": "One closing observation. The paper's framework is built for a world in which the device sits between a patient and a clinician. There is a large population — offshore, underground, at sea, in the backcountry, in every disaster that takes the network down — for whom the device sits between a patient and nothing. I would ask that the eventual guidance say something explicit about that setting, because it is exactly the setting where a careful developer most needs to know what \"safe enough\" means, and where a rule written for the home-triage case will either be ignored or will keep the product from existing.",
+      "position_gist": "The eventual guidance should explicitly address the no-clinician-available, offline deployment setting rather than assuming a device sits between patient and clinician, or rules written for home-triage will be ignored or block such products.",
+      "segment_id": "seg-026"
+    }
+  ]
+}
