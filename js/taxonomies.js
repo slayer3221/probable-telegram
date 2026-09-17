@@ -77,6 +77,18 @@ export const DISAGREEMENT_TOPICS = {
   degree_of_autonomy: 'Degree of autonomy',
 };
 
+// What an executive theme in editorial/executive-themes.json can affect.
+// Mirrors MATERIAL_THEME_AFFECTS in scripts/pipeline/taxonomies.py.
+export const THEME_AFFECTS = {
+  regulatory_scope: 'Regulatory scope',
+  evidence: 'Evidence & validation',
+  architecture: 'Product architecture',
+  postmarket: 'Postmarket monitoring',
+  foundation_models: 'Foundation model dependency',
+  commercialization: 'Commercialization & deployment',
+  diligence: 'Investor & acquirer diligence',
+};
+
 export const VAHANA_FIELDS = [
   ['alignment', 'Where there is alignment'],
   ['tension', 'Where there is tension'],
@@ -106,3 +118,4 @@ export const issueLabel = (id) => ISSUES[id] || null;
 export const gapLabel = (id) => GAPS[id] || null;
 export const responseTypeLabel = (id) => RESPONSE_TYPES[id] || null;
 export const disagreementTopicLabel = (id) => DISAGREEMENT_TOPICS[id] || id;
+export const affectsLabel = (id) => THEME_AFFECTS[id] || null;

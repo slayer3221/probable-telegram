@@ -1,0 +1,450 @@
+{
+  "note": "Curated Vahana Labs executive layer rendered at the top of the page under 'What could materially change?'. Routine ingestion never writes to this file. Themes are selected for consequence, not frequency: a single submission can carry a theme when its implication is significant. Every theme cites the position ids it draws on; commenter names and links to the underlying comments are derived from those ids at render time, and scripts/validate_data.py fails the build if a cited id no longer exists. Text in 'issue' describes what commenters said; 'why_it_matters' is editorial interpretation.",
+  "title": "What could materially change?",
+  "intro": "The five to eight themes in this docket most likely to change what falls inside FDA regulation, what evidence is needed, how products are built, what runs after launch, and how companies are bought and financed. Ranked by consequence, not by how often a point appears.",
+  "themes": [
+    {
+      "id": "wellness-boundary",
+      "headline": "Where a wellness feature becomes a medical device",
+      "issue": "Oura asks FDA to draw a bright line so that a non-directive GenAI explanation of a user's own wearable data, even one that names a possible condition, stays inside the general wellness policy and is treated the same whoever deploys it. Other commenters would draw the line elsewhere: Newton's Tree keys it to whether output is patient-specific regardless of wording, one health professional would treat action-directing output as higher risk regardless of disclaimers, and one manufacturer reports that directiveness in its own logs shifted with the user's mood.",
+      "why_it_matters": "Consumer health, wearable and telehealth products that add a conversational layer may or may not cross into device territory depending on how this line is drawn. Where it lands decides which products need a regulatory strategy at all, and whether a 'talk to your doctor' prompt counts as a mitigation or as evidence of directiveness.",
+      "affects": [
+        "regulatory_scope",
+        "commercialization",
+        "diligence"
+      ],
+      "question_ids": [
+        "q2",
+        "q3",
+        "q5"
+      ],
+      "evidence": [
+        "p-fda-2026-n-7874-0080-seg-006",
+        "p-fda-2026-n-7874-0080-seg-008",
+        "p-fda-2026-n-7874-0080-seg-007",
+        "p-fda-2026-n-7874-0003-seg-040",
+        "p-fda-2026-n-7874-0006-seg-004",
+        "p-fda-2026-n-7874-0045-seg-003",
+        "p-fda-2026-n-7874-0055-seg-004",
+        "p-fda-2026-n-7874-0038-seg-006",
+        "p-fda-2026-n-7874-0043-seg-003",
+        "p-fda-2026-n-7874-0065-seg-003"
+      ],
+      "disagreement": {
+        "exists": true,
+        "text": "Commenters do not agree on what should define the boundary.",
+        "sides": [
+          {
+            "label": "Key the line to directiveness and clinical specificity. Informational, non-directive output that points the user to a clinician stays low risk or outside device scope, and patient-facing delivery should not be an automatic uplift.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0080-seg-006",
+              "p-fda-2026-n-7874-0003-seg-040",
+              "p-fda-2026-n-7874-0006-seg-004",
+              "p-fda-2026-n-7874-0045-seg-003"
+            ]
+          },
+          {
+            "label": "Key the line to the output itself, not its wording. Patient-specific or action-directing output is potentially a device function regardless of disclaimers, patients cannot contextualize it, and directiveness can shift within a single conversation.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0055-seg-004",
+              "p-fda-2026-n-7874-0038-seg-006",
+              "p-fda-2026-n-7874-0043-seg-003",
+              "p-fda-2026-n-7874-0065-seg-003"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "foundation-model-supplier",
+      "headline": "Your foundation model supplier may be treated like a critical component supplier",
+      "issue": "Across Q1, Q22, Q24 and Q25, commenters ask FDA to treat dependence on a third-party model as a risk factor in its own right: version pinning with contractual change notice as a design control, a higher baseline risk class where the manufacturer has no visibility or notice rights, and provider-forced migrations handled as top-tier changes. Several doubt voluntary master files can work at all, because developers have little incentive to disclose weaknesses, documentation cannot keep pace with model change, and one manufacturer reports it could not confirm which model was actually running in its own system.",
+      "why_it_matters": "Base-model choice becomes an architecture, contracting and financing decision rather than a technical preference. Buyers and acquirers can ask for version pins, notice terms, a validated fallback model and a bill of materials for the AI stack, and smaller companies note they lack the bargaining power to get those terms from large model developers.",
+      "affects": [
+        "foundation_models",
+        "architecture",
+        "diligence",
+        "postmarket"
+      ],
+      "question_ids": [
+        "q1",
+        "q22",
+        "q24",
+        "q25"
+      ],
+      "evidence": [
+        "p-fda-2026-n-7874-0010-seg-026",
+        "p-fda-2026-n-7874-0003-seg-003",
+        "p-fda-2026-n-7874-0006-seg-013",
+        "p-fda-2026-n-7874-0076-seg-011",
+        "p-fda-2026-n-7874-0010-seg-062",
+        "p-fda-2026-n-7874-0017-seg-017",
+        "p-fda-2026-n-7874-0008-seg-002",
+        "p-fda-2026-n-7874-0079-seg-007",
+        "p-fda-2026-n-7874-0062-seg-001",
+        "p-fda-2026-n-7874-0035-seg-037",
+        "p-fda-2026-n-7874-0054-seg-027",
+        "p-fda-2026-n-7874-0027-seg-015",
+        "p-fda-2026-n-7874-0049-seg-049",
+        "p-fda-2026-n-7874-0030-seg-008",
+        "p-fda-2026-n-7874-0045-seg-024",
+        "p-fda-2026-n-7874-0003-seg-027",
+        "p-fda-2026-n-7874-0006-seg-014"
+      ],
+      "disagreement": {
+        "exists": true,
+        "text": "Commenters split on how binding supplier controls should be and on how to fix the disclosure gap.",
+        "sides": [
+          {
+            "label": "Make them mandatory. Inability to pin a version is a design deficiency, a provider-forced migration is a highest-tier change, a PCCP is the wrong instrument for changes the sponsor cannot predetermine, and disclosure should be required for device use.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0010-seg-026",
+              "p-fda-2026-n-7874-0010-seg-062",
+              "p-fda-2026-n-7874-0076-seg-011",
+              "p-fda-2026-n-7874-0045-seg-024"
+            ]
+          },
+          {
+            "label": "Keep them proportionate. Apply pinning or equivalent controls where technically and contractually feasible, aim for enough information to detect and respond rather than full control, handle like-for-like upgrades inside the quality system, and keep disclosure voluntary but tie a heavier evidence burden to its absence.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0049-seg-049",
+              "p-fda-2026-n-7874-0030-seg-008",
+              "p-fda-2026-n-7874-0006-seg-014",
+              "p-fda-2026-n-7874-0003-seg-027"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "continuous-postmarket-evidence",
+      "headline": "Postmarket monitoring becomes continuous evidence, not a lighter alternative to premarket proof",
+      "issue": "FDA asked whether more premarket uncertainty could be accepted in exchange for postmarket monitoring. Most commenters accept the trade only under enforceable conditions: prespecified triggers with automatic consequences, a demonstrated pathway from output to an observable outcome, detection faster than harm accumulates, and carve-outs for irreversible, autonomous or poorly observable functions. Several argue monitoring detects only what it was designed to detect, and one manufacturer reports within-session degradation that periodic re-benchmarking would never see.",
+      "why_it_matters": "Monitoring stops being a filing and becomes a product capability that runs every day: input and output telemetry, event-triggered reassessment, override and near-miss capture, and the ability to reconstruct which version produced an output. That is a recurring cost, a data-access negotiation with every site, and a diligence question about whether a sponsor can actually observe its own device in production.",
+      "affects": [
+        "postmarket",
+        "evidence",
+        "architecture",
+        "commercialization"
+      ],
+      "question_ids": [
+        "q18",
+        "q19",
+        "q21"
+      ],
+      "evidence": [
+        "p-fda-2026-n-7874-0013-seg-045",
+        "p-fda-2026-n-7874-0049-seg-034",
+        "p-fda-2026-n-7874-0017-seg-013",
+        "p-fda-2026-n-7874-0076-seg-008",
+        "p-fda-2026-n-7874-0033-seg-001",
+        "p-fda-2026-n-7874-0077-seg-004",
+        "p-fda-2026-n-7874-0008-seg-001",
+        "p-fda-2026-n-7874-0055-seg-027",
+        "p-fda-2026-n-7874-0063-seg-009",
+        "p-fda-2026-n-7874-0010-seg-045",
+        "p-fda-2026-n-7874-0045-seg-018",
+        "p-fda-2026-n-7874-0003-seg-022",
+        "p-fda-2026-n-7874-0051-seg-019",
+        "p-fda-2026-n-7874-0045-seg-028",
+        "p-fda-2026-n-7874-0031-seg-001",
+        "p-fda-2026-n-7874-0023-seg-001",
+        "p-fda-2026-n-7874-0010-seg-071",
+        "p-fda-2026-n-7874-0050-seg-004"
+      ],
+      "disagreement": {
+        "exists": true,
+        "text": "The docket splits on whether the trade should exist at all. Separately, commenters split on cadence: event-triggered reassessment only, versus a risk-tiered calendar floor with triggers layered on top.",
+        "sides": [
+          {
+            "label": "Give GenAI wide latitude. If a system beats the human standard of care it replaces, regulation should not make it harder to deploy, and market forces can carry much of the constraint.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0045-seg-028",
+              "p-fda-2026-n-7874-0031-seg-001"
+            ]
+          },
+          {
+            "label": "Accept reduced premarket evidence only for low-consequence, reversible, observable functions under enforceable monitoring conditions, exclude agentic devices, or reject the trade for a technology this new.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0013-seg-045",
+              "p-fda-2026-n-7874-0049-seg-034",
+              "p-fda-2026-n-7874-0017-seg-013",
+              "p-fda-2026-n-7874-0033-seg-001",
+              "p-fda-2026-n-7874-0010-seg-071",
+              "p-fda-2026-n-7874-0023-seg-001"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "refusal-escalation-competency",
+      "headline": "Knowing when to stop, hand off or escalate is treated as a core competency",
+      "issue": "Clinicians, manufacturers and consultants across Q6, Q7, Q9, Q19 and Q26 ask FDA to evaluate whether a device recognizes uncertainty, abstains, refuses out-of-scope tasks and escalates to the right expertise, with ceilings on failures to abstain or escalate even when overall accuracy is high. Red Kit pushes back that in settings with no clinician to defer to, a bare refusal 'has a body count', and asks that benchmarks score safe redirection rather than refusal alone.",
+      "why_it_matters": "Refusal and escalation logic moves from a guardrail setting to a specified, tested and monitored product behavior with its own acceptance criteria and its own error directions. Because fine-tuning, compression and upstream model updates change refusal behavior, it also becomes a change-control trigger and a question to put to the model supplier.",
+      "affects": [
+        "evidence",
+        "architecture",
+        "postmarket"
+      ],
+      "question_ids": [
+        "q6",
+        "q9",
+        "q19",
+        "q26"
+      ],
+      "evidence": [
+        "p-fda-2026-n-7874-0056-seg-001",
+        "p-fda-2026-n-7874-0056-seg-011",
+        "p-fda-2026-n-7874-0046-seg-004",
+        "p-fda-2026-n-7874-0025-seg-021",
+        "p-fda-2026-n-7874-0045-seg-009",
+        "p-fda-2026-n-7874-0035-seg-050",
+        "p-fda-2026-n-7874-0055-seg-013",
+        "p-fda-2026-n-7874-0003-seg-042",
+        "p-fda-2026-n-7874-0061-seg-008",
+        "p-fda-2026-n-7874-0082-seg-020",
+        "p-fda-2026-n-7874-0009-seg-009",
+        "p-fda-2026-n-7874-0026-seg-001",
+        "p-fda-2026-n-7874-0003-seg-043",
+        "p-fda-2026-n-7874-0043-seg-006",
+        "p-fda-2026-n-7874-0010-seg-008",
+        "p-fda-2026-n-7874-0027-seg-013",
+        "p-fda-2026-n-7874-0025-seg-046",
+        "p-fda-2026-n-7874-0017-seg-017"
+      ],
+      "disagreement": {
+        "exists": true,
+        "text": "Commenters disagree on which direction of error should weigh more, and on whether refusal is itself a safe behavior.",
+        "sides": [
+          {
+            "label": "Under-escalation is the more severe harm. Triage devices should be allowed to favor sensitivity, and a device that hands off to a human is demonstrating safety, not failing to be autonomous.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0026-seg-001",
+              "p-fda-2026-n-7874-0003-seg-043",
+              "p-fda-2026-n-7874-0046-seg-004"
+            ]
+          },
+          {
+            "label": "Over-escalation and over-refusal cause harms of their own: unnecessary treatment, alert fatigue, resource diversion, and abandonment of users with no clinician to turn to. Both directions need separate metrics and a stated, justified trade-off.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0043-seg-006",
+              "p-fda-2026-n-7874-0010-seg-008",
+              "p-fda-2026-n-7874-0082-seg-020",
+              "p-fda-2026-n-7874-0009-seg-009",
+              "p-fda-2026-n-7874-0035-seg-050"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "input-integrity",
+      "headline": "Sensor and input quality may count as part of AI performance",
+      "issue": "Commenters building sensor-, audio- and measurement-based products say FDA's benchmarking elements all examine outputs and none check whether valid input was received, so a device producing fluent text over a signal-free stream would pass every element. They ask for an input-integrity element, null-input tests scored as failures, system-level verification of the full sensor-to-output chain after service or model changes, and input-quality monitoring specified separately from model monitoring. Three of these submissions come from affiliated Christman AI Project entities; a clinical engineering professional, WhaleTeq, Newton's Tree, Sitora and an epidemiologist raise the same point independently.",
+      "why_it_matters": "For any product that reads a device, a microphone or a laboratory feed, the regulated unit may extend upstream of the model. That pulls hardware suppliers, signal processing and field service into the AI evidence package, and it favors architectures that can tell 'no signal' apart from 'nothing wrong'.",
+      "affects": [
+        "evidence",
+        "architecture",
+        "postmarket"
+      ],
+      "question_ids": [
+        "q9",
+        "q12",
+        "q19",
+        "q22"
+      ],
+      "evidence": [
+        "p-fda-2026-n-7874-0078-seg-006",
+        "p-fda-2026-n-7874-0078-seg-008",
+        "p-fda-2026-n-7874-0061-seg-014",
+        "p-fda-2026-n-7874-0062-seg-011",
+        "p-fda-2026-n-7874-0062-seg-009",
+        "p-fda-2026-n-7874-0032-seg-017",
+        "p-fda-2026-n-7874-0032-seg-022",
+        "p-fda-2026-n-7874-0074-seg-001",
+        "p-fda-2026-n-7874-0074-seg-004",
+        "p-fda-2026-n-7874-0051-seg-009",
+        "p-fda-2026-n-7874-0055-seg-027",
+        "p-fda-2026-n-7874-0054-seg-010",
+        "p-fda-2026-n-7874-0049-seg-002"
+      ],
+      "disagreement": {
+        "exists": false,
+        "text": "No commenter argues against this. The open question is placement: whether input integrity belongs in premarket benchmarking, in postmarket monitoring, or in both.",
+        "sides": []
+      }
+    },
+    {
+      "id": "agentic-authority",
+      "headline": "How much authority an agent may hold, and what counts as oversight",
+      "issue": "On Q26, nearly all commenters want agentic devices judged on action sequences, permission boundaries, rollback and fail-safe behavior rather than output quality, and several say a human being present is not the same as a human being in control. They split on the end state: staged autonomy that expands as competence is demonstrated, versus a named clinician approving every consequential or irreversible action before it happens.",
+      "why_it_matters": "The permission architecture, tool interfaces, action logs and fail-safe modes become part of the regulated product, and the more a product is allowed to do, the more there is to evidence. Which side FDA takes decides whether autonomous workflows are a roadmap item or a non-starter, with the highest stakes for closed-loop and implantable devices.",
+      "affects": [
+        "architecture",
+        "evidence",
+        "regulatory_scope",
+        "commercialization"
+      ],
+      "question_ids": [
+        "q26",
+        "q20",
+        "q18"
+      ],
+      "evidence": [
+        "p-fda-2026-n-7874-0052-seg-054",
+        "p-fda-2026-n-7874-0045-seg-035",
+        "p-fda-2026-n-7874-0045-seg-031",
+        "p-fda-2026-n-7874-0003-seg-030",
+        "p-fda-2026-n-7874-0047-seg-003",
+        "p-fda-2026-n-7874-0046-seg-006",
+        "p-fda-2026-n-7874-0005-seg-058",
+        "p-fda-2026-n-7874-0035-seg-038",
+        "p-fda-2026-n-7874-0003-seg-032",
+        "p-fda-2026-n-7874-0003-seg-029",
+        "p-fda-2026-n-7874-0061-seg-008",
+        "p-fda-2026-n-7874-0010-seg-071",
+        "p-fda-2026-n-7874-0010-seg-048"
+      ],
+      "disagreement": {
+        "exists": true,
+        "text": "The split is over whether autonomy can ever be earned.",
+        "sides": [
+          {
+            "label": "Yes, in stages. Authority expands as predefined competency and real-world performance thresholds are met, and contracts again if postmarket signals appear.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0052-seg-054",
+              "p-fda-2026-n-7874-0045-seg-035",
+              "p-fda-2026-n-7874-0045-seg-031"
+            ]
+          },
+          {
+            "label": "No. A named, licensed human must authorize each consequential or irreversible action before it executes, with AI limited to informing the decision.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0003-seg-030",
+              "p-fda-2026-n-7874-0047-seg-003",
+              "p-fda-2026-n-7874-0046-seg-006"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "comparator-evidence-bar",
+      "headline": "The comparator, not the trial design, may set the evidence bar",
+      "issue": "On Q14 and Q15 commenters split three ways on what a device must beat: the care a patient would otherwise receive, including no care; the 'median clinician in practice'; or an evidence-based standard with an absolute safety floor. Several reject the median clinician as unmeasured and as a bar that licenses poor performance where practice is poor, while access-focused sponsors argue that holding low-risk tools to a standard the delivery system itself does not meet 'protects no one'. Separately, one detailed submission would bar synthetic data from establishing performance rates at all.",
+      "why_it_matters": "The comparator decides how much evidence a program needs and which use cases can clear it. A counterfactual-care comparator opens access-expanding and underserved-market products; a safety-floor standard raises the cost of entry but protects specialty claims. An evidence plan should be read for which comparator it assumes and whether FDA is likely to accept it.",
+      "affects": [
+        "evidence",
+        "commercialization",
+        "diligence"
+      ],
+      "question_ids": [
+        "q14",
+        "q15",
+        "q11",
+        "q12",
+        "q13"
+      ],
+      "evidence": [
+        "p-fda-2026-n-7874-0006-seg-011",
+        "p-fda-2026-n-7874-0009-seg-017",
+        "p-fda-2026-n-7874-0045-seg-014",
+        "p-fda-2026-n-7874-0051-seg-016",
+        "p-fda-2026-n-7874-0017-seg-010",
+        "p-fda-2026-n-7874-0025-seg-010",
+        "p-fda-2026-n-7874-0003-seg-048",
+        "p-fda-2026-n-7874-0010-seg-034",
+        "p-fda-2026-n-7874-0076-seg-015",
+        "p-fda-2026-n-7874-0064-seg-004",
+        "p-fda-2026-n-7874-0010-seg-024",
+        "p-fda-2026-n-7874-0020-seg-011",
+        "p-fda-2026-n-7874-0010-seg-023",
+        "p-fda-2026-n-7874-0028-seg-016",
+        "p-fda-2026-n-7874-0049-seg-015",
+        "p-fda-2026-n-7874-0019-seg-030"
+      ],
+      "disagreement": {
+        "exists": true,
+        "text": "Commenters disagree on whether the real-world counterfactual can stand on its own.",
+        "sides": [
+          {
+            "label": "Compare the device to the care patients would actually receive without it, including delayed or no intervention. An idealized standard disadvantages the populations with the least access.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0006-seg-011",
+              "p-fda-2026-n-7874-0009-seg-017",
+              "p-fda-2026-n-7874-0045-seg-014",
+              "p-fda-2026-n-7874-0051-seg-016"
+            ]
+          },
+          {
+            "label": "A counterfactual or median-practice bar entrenches substandard care. Require an evidence-based standard or an absolute safety floor, and treat absence-of-device as the weakest possible bar.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0017-seg-010",
+              "p-fda-2026-n-7874-0025-seg-010",
+              "p-fda-2026-n-7874-0003-seg-048",
+              "p-fda-2026-n-7874-0010-seg-034",
+              "p-fda-2026-n-7874-0064-seg-004"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "small-company-burden",
+      "headline": "Compliance design could decide whether small companies can compete",
+      "issue": "Smaller sponsors and their advisers warn that several proposals would concentrate the market: a universal prospective-trial requirement, mandatory third-party assessment through a few accredited labs, benchmark independence rules that leave niche products with no benchmark, and supplier terms only large sponsors can negotiate. On the provider side, two commenters note that safety-net, rural and small provider organizations carry the same monitoring obligations as academic centers without the infrastructure to meet them.",
+      "why_it_matters": "The cost structure of compliance is itself a competitive variable. Fee scaling, an optional first-party pathway, disclosable sponsor benchmarks and manufacturer-side monitoring would keep entry open; the opposite settings favor incumbents and shift diligence toward whether a company can fund the evidence program at all.",
+      "affects": [
+        "commercialization",
+        "diligence",
+        "evidence",
+        "postmarket"
+      ],
+      "question_ids": [
+        "q11",
+        "q16",
+        "q21",
+        "q24"
+      ],
+      "evidence": [
+        "p-fda-2026-n-7874-0006-seg-009",
+        "p-fda-2026-n-7874-0006-seg-015",
+        "p-fda-2026-n-7874-0006-seg-013",
+        "p-fda-2026-n-7874-0003-seg-019",
+        "p-fda-2026-n-7874-0010-seg-040",
+        "p-fda-2026-n-7874-0082-seg-012",
+        "p-fda-2026-n-7874-0028-seg-018",
+        "p-fda-2026-n-7874-0009-seg-013",
+        "p-fda-2026-n-7874-0042-seg-011",
+        "p-fda-2026-n-7874-0050-seg-004",
+        "p-fda-2026-n-7874-0050-seg-007",
+        "p-fda-2026-n-7874-0047-seg-004",
+        "p-fda-2026-n-7874-0025-seg-028",
+        "p-fda-2026-n-7874-0043-seg-015",
+        "p-fda-2026-n-7874-0037-seg-004"
+      ],
+      "disagreement": {
+        "exists": true,
+        "text": "Commenters split on whether independent third-party review should be required at all.",
+        "sides": [
+          {
+            "label": "Require independent premarket testing and recurring audits, at least for high-impact systems. Manufacturer self-evaluation should not be the only evidence.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0047-seg-004",
+              "p-fda-2026-n-7874-0025-seg-028"
+            ]
+          },
+          {
+            "label": "Keep third-party review optional with a first-party route, or avoid a requirement entirely. Mandatory gates create chokepoints for smaller developers and a profit incentive to prolong testing.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0010-seg-040",
+              "p-fda-2026-n-7874-0043-seg-015",
+              "p-fda-2026-n-7874-0082-seg-012"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

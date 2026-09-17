@@ -1,23 +1,250 @@
 {
-  "note": "Curated definitions of the nine cross-cutting issues. Counts, stakeholder groups and representative examples are computed from commenter data at build time and written to data/gaps.json. Edit titles and explanations here only.",
+  "note": "Curated definitions of the nine cross-cutting issues. Counts, stakeholder groups and representative examples are computed from commenter data at build time and written to data/gaps.json. The 'synthesis' and 'disagreement' fields are editorial: they draw related comments together across several FDA questions and, where commenters materially disagree, name the sides and cite the position ids for each. The page reads them from this file directly; scripts/validate_data.py fails the build if a cited id no longer exists. Edit titles, explanations, synthesis and disagreement here only.",
   "gaps": [
-    {"id": "dynamic_intended_use", "title": "Dynamic intended use / behavioral envelope",
-     "explanation": "GenAI systems may move between informational, recommendatory, and action-directing behavior over the course of a conversation."},
-    {"id": "human_ai_system_performance", "title": "Human-AI system performance",
-     "explanation": "The clinically relevant unit of performance may often be the combined human-AI system rather than the model alone."},
-    {"id": "deployment_assurance_scalability", "title": "Deployment assurance & scalability",
-     "explanation": "The same product may perform differently across populations, workflows, EHR configurations, local data, users, and safeguards. FDA needs a clearer framework for what manufacturers establish globally and what deploying organizations must validate locally."},
-    {"id": "operational_harm", "title": "Operational harm",
-     "explanation": "Over-escalation, rework, unnecessary utilization, clinician burden, and workflow disruption may matter even where classic device harm is absent."},
-    {"id": "evidence_burden_commercial_viability", "title": "Evidence burden & commercial viability",
-     "explanation": "Continuous benchmarking and clinical validation can improve assurance, but regulatory obligations may become economically unscalable if they are not proportional to risk and product value."},
-    {"id": "ai_supplier_quality", "title": "AI supplier quality",
-     "explanation": "Foundation model companies function increasingly like critical suppliers whose changes can alter regulated product behavior."},
-    {"id": "cybersecurity_as_safety", "title": "Cybersecurity as clinical safety",
-     "explanation": "Prompt injection, tool manipulation, retrieval poisoning, and related vulnerabilities can become direct clinical hazards."},
-    {"id": "distributed_accountability", "title": "Distributed accountability",
-     "explanation": "Manufacturers, foundation-model developers, platform vendors, health systems, and clinicians may each control different parts of the safety system."},
-    {"id": "delegated_authority", "title": "Delegated authority",
-     "explanation": "Agentic systems raise a distinct question: what actions has the organization actually delegated to the AI, and how far can an error propagate before meaningful human intervention?"}
+    {
+      "id": "dynamic_intended_use",
+      "title": "Dynamic intended use / behavioral envelope",
+      "explanation": "GenAI systems may move between informational, recommendatory, and action-directing behavior over the course of a conversation.",
+      "synthesis": "Across Q2, Q5 and Q22, commenters converge on the conversation, not the turn, as the unit of risk. They ask for adversarial trajectory testing, a declared envelope of permitted behavior with defined refusal or escalation when a conversation drifts outside it, and classification by the highest-risk plausible turn. The unresolved part is whether the envelope can be written down at all.",
+      "disagreement": {
+        "exists": true,
+        "text": "Whether directiveness can be fixed in an intended-use statement.",
+        "sides": [
+          {
+            "label": "Yes. Anchor it with graded rubrics, authority tiers and worked examples, and constrain the interaction envelope technically.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0017-seg-002",
+              "p-fda-2026-n-7874-0051-seg-002",
+              "p-fda-2026-n-7874-0003-seg-042"
+            ]
+          },
+          {
+            "label": "Treat it differently. In one manufacturer's logs directiveness was a variable that moved with the user's displeasure, and another commenter would fold it into existing benefit-risk factors rather than a new taxonomy that will be litigated at the margins.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0065-seg-003",
+              "p-fda-2026-n-7874-0037-seg-005"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "human_ai_system_performance",
+      "title": "Human-AI system performance",
+      "explanation": "The clinically relevant unit of performance may often be the combined human-AI system rather than the model alone.",
+      "synthesis": "On Q1, Q3, Q9 and Q14, commenters ask that human oversight be demonstrated rather than asserted in labeling: override and detection rates under time pressure, automation-bias measurement, and team performance as the evaluation basis whenever an accountable clinician sees the output. The same logic cuts against crediting user category on its own: several say a credential is not a capability, and that patient-facing status should be a modifier rather than an automatic uplift.",
+      "disagreement": {
+        "exists": true,
+        "text": "Whether the user's identity should move the risk tier.",
+        "sides": [
+          {
+            "label": "Patient-facing or action-directing output is higher risk by default, because patients cannot contextualize or override it and disclaimers do not help.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0043-seg-003",
+              "p-fda-2026-n-7874-0038-seg-006",
+              "p-fda-2026-n-7874-0003-seg-040"
+            ]
+          },
+          {
+            "label": "Risk should follow consequence and demonstrated safeguards, not user identity. Competence varies within credentialed groups too, and the realistic alternative for many patients is unguided search, not a clinician.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0045-seg-003",
+              "p-fda-2026-n-7874-0006-seg-004",
+              "p-fda-2026-n-7874-0037-seg-007"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "deployment_assurance_scalability",
+      "title": "Deployment assurance & scalability",
+      "explanation": "The same product may perform differently across populations, workflows, EHR configurations, local data, users, and safeguards. FDA needs a clearer framework for what manufacturers establish globally and what deploying organizations must validate locally.",
+      "synthesis": "Commenters on Q18, Q19, Q21 and Q24 treat deployment as its own evidence problem: results reported by site, user type and configuration version; verification that the deployed artifact is the one that was evaluated; and an explicit split between what the manufacturer establishes and what a site can realistically observe. The practical constraint is capacity. Institution-side monitoring that assumes an academic medical center leaves safety-net, rural and small sites, and their patients, with less protection.",
+      "disagreement": {
+        "exists": true,
+        "text": "How much of the monitoring work deploying institutions should carry.",
+        "sides": [
+          {
+            "label": "Limit the institutional role to inventory, log retention and reporting. Evaluation stays with the manufacturer because site capacity varies widely and small providers cannot build audit infrastructure.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0050-seg-007",
+              "p-fda-2026-n-7874-0050-seg-004",
+              "p-fda-2026-n-7874-0042-seg-011"
+            ]
+          },
+          {
+            "label": "Institutions should validate locally, monitor workflow and protocol changes and own reporting pathways, with duties codified for each stakeholder class.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0017-seg-020",
+              "p-fda-2026-n-7874-0003-seg-024"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "operational_harm",
+      "title": "Operational harm",
+      "explanation": "Over-escalation, rework, unnecessary utilization, clinician burden, and workflow disruption may matter even where classic device harm is absent.",
+      "synthesis": "On Q1, Q6, Q19 and Q26, commenters describe harms that classic device metrics miss: unnecessary escalation, alert fatigue, resource diversion, care delay, extra work for clinicians, and what a device does when supervisory connectivity drops. They ask for both escalation error directions reported and gated separately, sponsors stating the trade-off they optimized for, and monitoring that captures near misses and delay rather than accuracy alone.",
+      "disagreement": {
+        "exists": true,
+        "text": "Which direction of escalation error deserves more weight.",
+        "sides": [
+          {
+            "label": "Under-escalation is the more severe harm. Triage devices should be allowed to prioritize sensitivity.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0026-seg-001",
+              "p-fda-2026-n-7874-0003-seg-043"
+            ]
+          },
+          {
+            "label": "Over-escalation causes errors of commission and diffuse system harms that postmarket mechanisms under-detect. No single ratio generalizes, so sponsors should state and justify theirs.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0043-seg-006",
+              "p-fda-2026-n-7874-0010-seg-008",
+              "p-fda-2026-n-7874-0009-seg-009"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "evidence_burden_commercial_viability",
+      "title": "Evidence burden & commercial viability",
+      "explanation": "Continuous benchmarking and clinical validation can improve assurance, but regulatory obligations may become economically unscalable if they are not proportional to risk and product value.",
+      "synthesis": "Commenters on Q8, Q11, Q16 and Q25 agree evidence should scale with risk and disagree on who sets the tier. Sponsors want presumptive tiers or a decision matrix so they can predict the bar before building; others say sponsor-selected confirmation invites downward pressure and should be replaced by FDA's risk mapping. Under both views cost structure is treated as a competition question: universal trials, mandatory third-party gates and fee schedules that do not scale with sponsor size are expected to favor incumbents.",
+      "disagreement": {
+        "exists": true,
+        "text": "Who chooses the level of clinical confirmation.",
+        "sides": [
+          {
+            "label": "FDA's risk mapping should dictate the required confirmation tier, with sponsors climbing an ordered ladder.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0010-seg-020",
+              "p-fda-2026-n-7874-0045-seg-011",
+              "p-fda-2026-n-7874-0020-seg-018"
+            ]
+          },
+          {
+            "label": "Keep sponsor selection with justification, supported by published default tiers or decision criteria keyed to the risk framework.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0028-seg-013",
+              "p-fda-2026-n-7874-0006-seg-008"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "ai_supplier_quality",
+      "title": "AI supplier quality",
+      "explanation": "Foundation model companies function increasingly like critical suppliers whose changes can alter regulated product behavior.",
+      "synthesis": "On Q19, Q22, Q24 and Q25 commenters ask FDA to treat a foundation-model provider as a supplier whose changes alter regulated behavior: version pinning with contractual notice, provider-forced migration as a top-tier change, behavior change without a code change as a re-evaluation trigger, and a sponsor-maintained bill of materials for the whole AI stack. Voluntary master files draw the sharpest doubt. Developers have little incentive to disclose weaknesses, documentation cannot track minute-scale change, and one sponsor could not confirm which model was running in its own system.",
+      "disagreement": {
+        "exists": true,
+        "text": "How binding supplier controls and disclosure should be.",
+        "sides": [
+          {
+            "label": "Mandatory. Inability to pin a version is a design deficiency, forced migrations are highest-tier changes, and disclosure should be required for device use.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0010-seg-026",
+              "p-fda-2026-n-7874-0010-seg-062",
+              "p-fda-2026-n-7874-0076-seg-011",
+              "p-fda-2026-n-7874-0045-seg-024"
+            ]
+          },
+          {
+            "label": "Proportionate. Pinning or equivalent controls where feasible, like-for-like upgrades inside the quality system, and voluntary disclosure with a heavier evidence burden when it is missing.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0049-seg-049",
+              "p-fda-2026-n-7874-0030-seg-008",
+              "p-fda-2026-n-7874-0006-seg-014",
+              "p-fda-2026-n-7874-0003-seg-027"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "cybersecurity_as_safety",
+      "title": "Cybersecurity as clinical safety",
+      "explanation": "Prompt injection, tool manipulation, retrieval poisoning, and related vulnerabilities can become direct clinical hazards.",
+      "synthesis": "Commenters on Q1, Q9 and Q26 treat prompt injection through retrieved documents or patient-supplied text, instruction override and tool manipulation as safety properties to benchmark, not IT controls to attest: a distinct adversarial-input element cross-referenced to CDRH cybersecurity expectations, resistance to indirect injection as an agentic acceptance criterion, and containment boundaries and agent-to-agent traffic as design questions. A minority treats existing privacy and security law as sufficient and questions the need for a new framework.",
+      "disagreement": {
+        "exists": true,
+        "text": "Whether adversarial behavior needs its own evaluation element.",
+        "sides": [
+          {
+            "label": "Yes. Adversarial input is a security property distinct from robustness, and containment and injection resistance belong in agentic acceptance criteria.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0010-seg-011",
+              "p-fda-2026-n-7874-0035-seg-038",
+              "p-fda-2026-n-7874-0037-seg-004"
+            ]
+          },
+          {
+            "label": "Existing HIPAA and Security Rule obligations already govern this. The question is enforcement of data protection, not a new framework.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0019-seg-027"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "distributed_accountability",
+      "title": "Distributed accountability",
+      "explanation": "Manufacturers, foundation-model developers, platform vendors, health systems, and clinicians may each control different parts of the safety system.",
+      "synthesis": "On Q19, Q21 and Q24, commenters ask FDA to name who owns what: manufacturers keep the monitoring program, complaint handling and corrective action; institutions inventory, retain logs and report, or in some views validate locally; foundation-model providers carry duties proportionate to their control. The sharpest warnings are about defaults. Responsibility should not fall to the clinician closest to the patient, and a framework that relies on parties reporting their own failures rests on an assumption recent AI incidents call into question.",
+      "disagreement": {
+        "exists": true,
+        "text": "Where the institutional share of responsibility should sit.",
+        "sides": [
+          {
+            "label": "Receiving and reporting only. Keep accountability with the manufacturer so every health system, not only the best resourced, can take part.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0050-seg-007",
+              "p-fda-2026-n-7874-0042-seg-011"
+            ]
+          },
+          {
+            "label": "Tiered duties for each party, with institutions responsible for local validation, credentialing, workflow integration and safety-signal response.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0017-seg-020",
+              "p-fda-2026-n-7874-0003-seg-024"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "delegated_authority",
+      "title": "Delegated authority",
+      "explanation": "Agentic systems raise a distinct question: what actions has the organization actually delegated to the AI, and how far can an error propagate before meaningful human intervention?",
+      "synthesis": "Across Q1, Q20 and Q26, commenters want to know what an organization has actually delegated to the system: a declared authority envelope of tools, actions and autonomy levels, human confirmation before irreversible actions, fail-safe modes when supervision drops, and measurement of whether a present human has the visibility, time and override capability to intervene. Supervisory agents get the same treatment: triage only, built on an independent model, with a human-adjudicated endpoint.",
+      "disagreement": {
+        "exists": true,
+        "text": "Whether autonomy can be earned.",
+        "sides": [
+          {
+            "label": "Staged authorization. Authority expands as competency and real-world thresholds are met, and contracts again on postmarket signals.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0052-seg-054",
+              "p-fda-2026-n-7874-0045-seg-035"
+            ]
+          },
+          {
+            "label": "Pre-action authorization by a named clinician for every consequential or irreversible action, with AI limited to informing.",
+            "position_ids": [
+              "p-fda-2026-n-7874-0003-seg-030",
+              "p-fda-2026-n-7874-0047-seg-003",
+              "p-fda-2026-n-7874-0046-seg-006"
+            ]
+          }
+        ]
+      }
+    }
   ]
 }
