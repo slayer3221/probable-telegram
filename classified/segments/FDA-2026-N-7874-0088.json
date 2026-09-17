@@ -1,0 +1,99 @@
+{
+  "comment_id": "FDA-2026-N-7874-0088",
+  "input_hash": "441caa0d6ae2bdae",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-17T13:05:17Z",
+  "model": "claude-opus-5",
+  "chunks": 1,
+  "positions": [
+    {
+      "question_ids": [
+        "q7",
+        "q9"
+      ],
+      "source_passage": "II. Position (Q7, Q9)\nDevice benchmarking plus risk-proportionate clinical confirmation is the right frame. The current sketch under-weights multi-turn information gathering (Appendix A, E.2) and run-to-run reliability (R.1).\nA sponsor can publish a high score on clinical knowledge (E.1) or on a single-turn safety item (S.1 / S.2) while the finished product, in conversation:\n  1. closes the history without asking the question that would change the differential,\n  2. asks the same question again after the answer is already in context,\n  3. gives a different diagnosis or plan when the identical transcript is replayed,\n  4. ignores a hard instruction (for example, \"do not print a normal range\"),\n  5. invents a fact that no regex over a fixed entity list will catch.",
+      "position_gist": "The commenter endorses the competency-based framework of benchmarking plus risk-proportionate clinical confirmation but argues the proposed benchmarking structure under-weights multi-turn information gathering (E.2) and run-to-run reliability (R.1), since high knowledge or single-turn safety scores can coexist with serious conversational failures.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "Those are product behaviors. They should be measured on the finished configuration (prompt + tools + whatever snapshot the vendor is serving)",
+      "position_gist": "Benchmarking should evaluate the finished device configuration (prompt, tools, and the served model snapshot) rather than the underlying model alone.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q5",
+        "q9"
+      ],
+      "source_passage": "I wrote a history-collection checklist and asked the model to judge whether the history was complete. The model often marked the list \"complete\" while omitting the question that actually matters for the case. ... - E.2 should be scored against a pre-specified, case-locked question family written before the run, not against the model's own \"is this complete?\" judgment. Self-evaluation is circular. ... Ask: For history-taking or intake functions, require a case-locked required-question list (including exposure, meds, red-flag negatives) and report recall of those questions separately from \"number of questions asked\" or self-rated completeness.",
+      "position_gist": "History-completeness competency (E.2) should be scored against a pre-specified, case-locked required-question list with reported recall, and model self-rated completeness should not be accepted because self-evaluation is circular.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q6"
+      ],
+      "source_passage": "- Missing a pathognomonic exposure question is an under-gathering error analogous to under-\nescalation in Q6: the conversation looks thorough and still drops the item that changes\nmanagement.",
+      "position_gist": "Failure to ask a pathognomonic question during history gathering should be treated as an 'under-gathering' error analogous to under-escalation, i.e., a directional error that must be characterized even when the interaction appears thorough.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q5",
+        "q9"
+      ],
+      "source_passage": "Some backends, given the entire prior transcript, still re-ask \"how long have you had this?\" Multi-turn risk in Q5 is not only drift from information to action. It is also a failure to read the state the device already collected. Repeated questions delay care, train users to ignore the agent, and are evidence that context is not actually being used.\nAsk: Benchmark multi-turn intake with an explicit \"already answered\" set. Score a repeat of a resolved question as a reliability miss, not as extra thoroughness.",
+      "position_gist": "Multi-turn risk assessment should cover failure to use already-collected context, and benchmarking should include an explicit 'already answered' item set scoring re-asked resolved questions as reliability misses.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "With the same chat context, replays sometimes produce different diagnoses and suggestions. That is a reproducibility failure (R.1), not a creativity feature, when the intended use is clinical intake or advice.\nAsk: For a fixed transcript and pinned decoding settings, require a repeated-run consistency metric on the action-relevant fields (working diagnosis family, next site of care, whether to test or treat). Do not treat lexical diversity of the prose as competence.",
+      "position_gist": "Benchmarking should require a same-transcript repeated-run consistency metric on action-relevant fields (diagnosis family, next site of care, test-or-treat) rather than crediting lexical variation.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q23",
+        "q9"
+      ],
+      "source_passage": "An instruction such as \"do not state the laboratory normal range on this report\" is still violated on some turns. That is not a knowledge error. It is failure to keep a deployment constraint in force. Sponsors will rely on exactly these constraints as \"guardrails\" in a PCCP.\nAsk: Include a small instruction-lock set in nonclinical benchmarking: pinned negatives (\"do not print X\") scored as pass/fail on the visible output. A guardrail that holds on the first turn and fails on the fifth is not a guardrail.",
+      "position_gist": "Nonclinical benchmarking should include an instruction-lock test set of pinned negative constraints scored pass/fail on visible output across multiple turns, because sponsors will rely on such constraints as PCCP guardrails.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q9"
+      ],
+      "source_passage": "Hallucinated facts can appear in any clause. Post-hoc rules that look for a fixed list (allergy, code status, drug name) miss most of them and also false-flag denials (\"no penicillin allergy\"). Source-traceability belongs in the risk picture (Q1). It cannot be reduced to a regex.\nAsk: For documentation and for history write-back, require (a) a source-conditioned check where a source exists, with denial-aware matching, and (b) clinician review of a sample of unconstrained sentences. Do not treat a clean regex report as evidence that hallucination is controlled.",
+      "position_gist": "Source traceability should be part of the risk framework, and hallucination should be treated as open-ended—requiring denial-aware source-conditioned checks plus sampled clinician review rather than fixed entity-list/regex checks.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q22",
+        "q24"
+      ],
+      "source_passage": "and re-measured when that snapshot or the prompt changes (Q22, Q24). ... 6. Re-run the above when the foundation-model identifier or prompt template changes (Q22, Q24).",
+      "position_gist": "The recommended measures should be re-run whenever the foundation-model identifier/snapshot or the prompt template changes, making such changes triggering events for reassessment.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q16"
+      ],
+      "source_passage": "7. Prefer shared item definitions plus a hidden holdout, with licensed review of decision gold only (Q10, Q16).",
+      "position_gist": "Benchmarking should use shared item definitions plus a hidden holdout set, with licensed clinician review reserved for decision gold standards.",
+      "segment_id": "seg-010"
+    }
+  ]
+}

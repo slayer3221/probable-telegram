@@ -1,0 +1,603 @@
+{
+  "comment_id": "FDA-2026-N-7874-0090",
+  "input_hash": "f940ee3647b9c84b",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-17T13:20:17Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter accepts shifting some evidence generation from premarket to postmarket in principle, but warns that the approach depends entirely on the quality of the monitoring program. A discontinuous, retrospectively assembled, or unverifiable postmarket record would eliminate rather than relocate the evidence burden.",
+      "requested_fda_action": "Condition any acceptance of greater premarket uncertainty on monitoring programs that produce continuous, contemporaneous, and verifiable postmarket performance records.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment centers on whether post-deployment monitoring can actually generate continuous and verifiable evidence in practice, a prerequisite the question does not address."
+      },
+      "public_summary": "Supports in principle FDA's willingness to accept greater premarket uncertainty in exchange for postmarket monitoring, but cautions that the shift is only valid if monitoring produces continuous and verifiable records; otherwise the evidence burden is eliminated rather than redistributed.",
+      "summary_cut": false,
+      "source_passage": "We support this direction in principle, with a caution: a premarket-to-postmarket evidence shift is only as sound as the monitoring program it relies on. If the postmarket record is discontinuous, retrospectively assembled, or unverifiable, the shift does not redistribute the evidence burden — it deletes it."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q18",
+        "q19",
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Deployment-period evidence cannot be reconstructed retrospectively; a monitoring program started only after a complaint, signal, or FDA inquiry lacks any baseline because the inputs, outputs, and context of the intervening period are lost. Re-benchmarking against the premarket assessment is only meaningful if the record since deployment is unbroken.",
+      "requested_fda_action": "If premarket evidence is reduced in reliance on postmarket monitoring, FDA should require that the postmarket record begin on the first day of deployment and connect directly to the premarket benchmarking baseline, maintaining continuous, unbroken monitoring to support later re-benchmarking.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment focuses on the practical requirement that continuous deployment-period data capture be in place from day one of use, since assurance evidence cannot be reconstructed after deployment begins."
+      },
+      "public_summary": "Accepts reduced premarket evidence in exchange for postmarket monitoring only if monitoring begins on the first day of deployment and links directly to the premarket benchmarking baseline, arguing deployment-period data cannot be reconstructed later and re-benchmarking requires an unbroken record.",
+      "summary_cut": false,
+      "source_passage": "1. Continuity from first deployment. Deployment-period evidence cannot be reconstructed after the fact. A monitoring program stood up in response to a complaint, a signal, or an FDA inquiry has no baseline: the inputs, outputs, and context of the intervening period are gone. If premarket evidence is reduced on the promise of postmarket evidence, the postmarket record must begin on the first day of deployment and connect directly to the premarket benchmarking baseline described in Section V.B. The Section VI.C concept of re-benchmarking against the premarket assessment only works if the intervening record is unbroken."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that if postmarket monitoring analyses are selected after data are collected, the program suffers the same analytic degrees-of-freedom problems that prespecification is meant to prevent, turning monitoring into a discretionary rather than evidentiary commitment.",
+      "requested_fda_action": "Apply the discussion paper's premarket prespecification principle to postmarket monitoring by requiring that analyses, thresholds, sampling frames, cadence, and triggering events be fixed before deployment.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts postmarket monitoring but urges FDA to extend its premarket prespecification principle to it: analyses, thresholds, sampling frames, cadence, and triggering events should be fixed before deployment, to avoid post hoc analytic discretion that would weaken monitoring's evidentiary value.",
+      "summary_cut": false,
+      "source_passage": "2. Prespecification. The discussion paper's own principle for premarket benchmarking — that test methods and acceptance criteria be prespecified prior to testing — should apply with equal force to postmarket monitoring. Analyses, thresholds, sampling frames, cadence, and triggering events should be fixed before deployment. A monitoring program whose analyses are chosen after the data exist invites the same analytic degrees-of-freedom problems that prespecification exists to prevent, and it converts monitoring from an evidentiary commitment into a discretionary exercise."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "If reduced premarket evidence is offset by postmarket monitoring, the monitoring record becomes load-bearing for continued marketing, and the commenter argues it should not rest on the sponsor's post-hoc attestation.",
+      "requested_fda_action": "Extend the discussion paper's independence expectations for expert adjudicators to monitoring infrastructure, and require monitoring records to be append-only, timestamped, and maintained under controls analogous to 21 CFR Part 11 so selective retention or retrospective revision is detectable.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment raises whether postmarket monitoring can actually be relied upon as assurance, pointing to the need for independently verifiable, tamper-evident monitoring infrastructure rather than sponsor self-reporting."
+      },
+      "public_summary": "Accepts trading premarket evidence for postmarket monitoring only if the monitoring record is independently verifiable. Asks FDA to extend its adjudicator-independence logic to monitoring infrastructure and require append-only, timestamped records under 21 CFR Part 11-like controls, making selective retention or revision detectable.",
+      "summary_cut": false,
+      "source_passage": "3. Independent verifiability. The discussion paper already expects expert adjudicators to be structurally independent from the device sponsor, including when the adjudicator is itself an LLM. We suggest extending that logic to monitoring infrastructure. Where reduced premarket evidence is compensated by postmarket monitoring, the monitoring record is load-bearing for the device's continued marketing — and a load-bearing record should not depend on the sponsor's post-hoc attestation. At minimum, monitoring records should be append-only, timestamped, and maintained under controls analogous to 21 CFR Part 11, such that selective retention or retrospective revision is detectable."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Monitoring that detects performance problems but lacks predefined responses amounts to observation rather than control, leaving threshold breaches open to case-by-case negotiation.",
+      "requested_fda_action": "Require that a postmarket monitoring program prespecify the consequences of a threshold breach, including escalation, feature restriction, rollback, user notification, and FDA notification.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts reliance on postmarket monitoring but argues it must include a prespecified consequence pathway. The commenter asks FDA to require advance specification of actions following a threshold breach—escalation, feature restriction, rollback, user notification, FDA notification—so breaches are not handled through negotiation.",
+      "summary_cut": false,
+      "source_passage": "4. A prespecified consequence pathway. Monitoring without defined consequences is observation, not control. The program should specify in advance what happens when a threshold is breached: escalation, feature restriction, rollback, user notification, FDA notification. Without this, threshold breaches become negotiations."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Reduced premarket evidence is only defensible when failure modes actually surface in collectable deployment data within a clinically acceptable window; where ground truth is delayed or structurally unavailable, monitoring cannot supply the evidence the reduced burden presumes. Harm from autonomous, high-consequence functions would be realized before monitoring could respond.",
+      "requested_fda_action": "Exclude functions that are high on both risk axes (autonomous action-taking with severe consequences of error) from premarket evidence reduction, and make 'detectability of failure in deployment data' an explicit eligibility criterion for any premarket-to-postmarket evidence shift.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment argues that eligibility for shifting evidence postmarket depends on whether degradation is actually observable in real deployment signals within a clinically usable timeframe, a monitoring-feasibility condition beyond how FDA framed the question."
+      },
+      "public_summary": "Accepts greater reliance on postmarket monitoring only with limits: no premarket evidence reduction for autonomous functions with severe error consequences, and an explicit eligibility criterion requiring that failure modes be detectable in deployment data within a clinically acceptable window.",
+      "summary_cut": false,
+      "source_passage": "Where the approach is not appropriate. Two boundaries seem principled to us. First, functions high on both axes of the Section IV framework — autonomous action-taking with severe consequences of error — should not have their premarket evidence reduced, because the harm from the uncertainty window is realized before monitoring can act. Second, and less obviously: devices whose degradation is not observable in collectable deployment signals. Postmarket monitoring can only compensate for premarket uncertainty when the relevant failure modes produce detectable signals in deployment data within a clinically acceptable window. Where ground truth is substantially delayed (e.g., outputs bearing on long-horizon outcomes) or structurally unavailable, the monitoring program cannot deliver the evidence the reduced premarket burden presumes, regardless of how well it is engineered. We encourage CDRH to make \"detectability of failure in deployment data\" an explicit eligibility criterion for any premarket-to-postmarket evidence shift."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "Each of the three postmarket approaches has a distinct blind spot: re-benchmarking is episodic, clinician review cannot scale to interaction volume, and degradation monitoring tracks proxies rather than adjudicated quality. A program relying on any single approach inherits that blind spot entirely.",
+      "requested_fda_action": "Treat periodic re-benchmarking, sample-based clinician review, and performance degradation monitoring as mandatory layers of one integrated monitoring program that cover each other's failure modes, rather than as a menu from which sponsors choose one.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment notes that clinician review capacity does not scale with interaction volume, so coverage of deployed performance cannot be achieved by sampling alone."
+      },
+      "public_summary": "Endorses all three proposed postmarket approaches but argues each has a distinct blind spot—episodic benchmarking, non-scalable clinician review, and proxy-based degradation monitoring. Urges CDRH to require them as layered components of a single program rather than allowing sponsors to select one.",
+      "summary_cut": false,
+      "source_passage": "1. The three proposed approaches are complements, not alternatives. Periodic re-benchmarking, sample-based clinician review, and degradation monitoring measure different things and fail in different ways. Re-benchmarking against the premarket baseline supplies comparability, the only apples-to-apples link back to the evidence that supported authorization; but it is episodic, and everything between two benchmark runs is invisible to it. Clinician review supplies depth, catching failure modes no predefined metric encodes; but it cannot supply coverage, because review capacity does not scale with interaction volume. Degradation monitoring supplies timeliness and coverage, seeing every interaction as it happens; but it observes proxies, not adjudicated truth, and a proxy can stay flat while quality falls. A program built on any one of the three inherits that approach's blind spot in full. We encourage CDRH to treat them as layers of a single program, each covering the others' failure modes, rather than as a menu from which sponsors select one."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q19",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "A purely calendar-based reassessment cadence is miscalibrated—too slow when input distributions shift abruptly (new scanner fleets, sites, or populations) and unnecessarily frequent for stable deployments; a degradation monitor that never alarms could equally indicate a stable device or a broken monitor.",
+      "requested_fda_action": "Adopt an event-driven reassessment cadence with prespecified, quantitatively thresholded triggers—detected input-distribution shift beyond a stated bound, any change to the device or a dependent component including changes outside the sponsor's control, and deployment volume milestones—plus a calendar-based maximum interval as a floor to periodically test monitoring signals against ground truth.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The commenter ties reassessment triggers to site, scanner-fleet, and population changes and to deployment volume milestones, framing each increment of scale as sampling new conditions of use.",
+        "ai_supplier_quality": "It treats changes to components the device depends on and originating outside the sponsor's control as events that should trigger re-evaluation."
+      },
+      "public_summary": "Supports postmarket re-benchmarking but argues cadence should be event-driven rather than calendar-only. Recommends prespecified quantitative triggers—input-distribution shift, changes to the device or dependent components including those outside sponsor control, and deployment volume milestones—with a calendar maximum interval as a floor to validate quiet monitoring signals.",
+      "summary_cut": false,
+      "source_passage": "2. Cadence should be event-driven with a calendar-based floor, not calendar-only. A fixed calendar cadence is miscalibrated in both directions: too slow for a device whose input distribution shifts abruptly (a new scanner fleet, a new site, a new patient population) and wastefully fast for a stable deployment. The events that should trigger evaluation are largely observable and prespecifiable: a detected shift in the input distribution beyond a stated bound; any change to the device or a component it depends on, including changes originating outside the sponsor's control; and deployment volume milestones, because the accumulating record is what gives an evaluation statistical power, and because each increment of scale samples new conditions of use. ... What calendar cadence should provide is the floor, not the schedule: a maximum interval between evaluations, so that a quiet monitoring signal is periodically tested against ground truth rather than trusted indefinitely. A degradation monitor that never alarms is consistent with both a stable device and a broken monitor; only a scheduled re-benchmark distinguishes the two. And consistent with our answer to Question 18, both the triggering events and the floor should be prespecified with quantitative thresholds."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter's concern is that no single postmarket method suffices: sample-based clinician review offers depth without coverage and periodic re-benchmarking offers comparability without timeliness, so high-volume, open-ended GenAI outputs cannot be adequately monitored without automated supervision.",
+      "requested_fda_action": "Recognize machine-based supervisory agents as feasible and, for high-interaction-volume open-ended devices, the only scalable monitoring method, while structuring them as the coverage layer of a layered program that retains clinician review and periodic re-benchmarking.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment frames automated supervision as necessary because manual review and periodic re-benchmarking cannot scale to the interaction volume and output openness of deployed GenAI devices.",
+        "delegated_authority": "It assigns ongoing monitoring coverage to machine supervisory agents rather than human reviewers, shifting part of the oversight function to automation."
+      },
+      "public_summary": "Considers machine-based supervisory agents feasible and, for high-volume open-ended GenAI devices, the only approach that scales, since clinician sampling lacks coverage and periodic re-benchmarking lacks timeliness. Urges FDA to treat such agents as a coverage layer complementing, not replacing, those methods.",
+      "summary_cut": false,
+      "source_passage": "Machine-based supervisory agents are feasible, and for GenAI-enabled devices with high interaction volumes and open-ended outputs, they are likely the only approach that scales: sample-based clinician review provides depth but cannot provide coverage, and periodic re-benchmarking provides comparability but cannot provide timeliness. We see supervisory agents as the coverage layer of a layered program, not a replacement for either."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "An unvalidated machine-based supervisory agent creates the appearance of oversight without actual assurance, and the monitor's own input distribution will drift like the device's.",
+      "requested_fda_action": "Treat the supervisory agent as an evaluative software function requiring premarket characterization against independent human adjudication on a representative validation set, with prespecified sensitivity and specificity for targeted failure modes at operating thresholds, and periodic re-confirmation against fresh human-adjudicated samples.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses what evidence is needed before oversight duties are handed to an automated monitor, warning that an unvalidated agent yields only nominal supervision."
+      },
+      "public_summary": "Accepts machine-based supervisory agents for postmarket monitoring only if the monitor is itself validated as an evaluative function: prespecified sensitivity and specificity for targeted failure modes against independent human adjudication on representative data, with periodic re-confirmation to address drift.",
+      "summary_cut": false,
+      "source_passage": "1. The supervisory agent is itself an evaluative software function and should be characterized like one. Before deployment, a supervisory agent's performance should be established against independent human adjudication on a representative validation set, producing known operating characteristics — sensitivity and specificity for the failure modes it is intended to flag, at the thresholds it will run at. An unvalidated monitor produces the appearance of oversight without its substance. These operating characteristics should be prespecified and periodically re-confirmed against fresh human-adjudicated samples, because the input distribution the monitor observes will drift just as the device's does."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "A machine supervisory agent built on the same foundation model, or a model of the same class trained on similar data, may share the monitored device's blind spots, so correlated failure would make coverage statistics overstate actual protection on exactly the inputs where oversight matters most.",
+      "requested_fda_action": "CDRH should treat correlated failure as the central design risk for supervisory agents and look for mitigations including architectural or vendor diversity between device and supervisor, challenge sets built from known device failure modes, and calibration of the supervisor against human adjudication focused on input regions where correlated failure is most plausible.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses conditions under which automated oversight functions can be trusted to substitute for human monitoring, warning that shared blind spots can make delegated supervision illusory.",
+        "ai_supplier_quality": "It proposes architectural or vendor diversity between the device model and the supervisory model, raising supplier-level provenance and model-lineage considerations not captured by the question as framed."
+      },
+      "public_summary": "Accepts machine-based supervisory agents in postmarket monitoring but identifies correlated failure as the central design risk when device and supervisor share a model class. Asks CDRH to look for architectural or vendor diversity, failure-mode challenge sets, and supervisor calibration against human adjudication.",
+      "summary_cut": false,
+      "source_passage": "2. Correlated failure is the central design risk. A supervisory agent built on the same foundation model as the device it monitors — or on a model of the same class, trained on similar data — may share the device's blind spots. Where device and monitor fail on the same inputs, coverage statistics overstate protection precisely where it matters. Mitigations CDRH could look for include architectural or vendor diversity between device and supervisor, challenge sets constructed from known device failure modes, and calibration of the supervisor against human adjudication concentrated in the input regions where correlated failure is most plausible."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "If a machine-based supervisory agent is optimized against the same objectives the sponsor seeks to maximize, or if its outputs pass through sponsor-controlled filtering before retention, it functions as an advisory tool rather than a genuine monitoring control and unfavorable findings could be selectively discarded.",
+      "requested_fda_action": "Extend the discussion paper's independence expectations for expert adjudicators (including LLM adjudicators) to supervisory agents, requiring both independence of judgment from sponsor-incentivized objectives and independence of the record through append-only, timestamped, tamper-evident logging.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses conditions under which oversight duties may be delegated to an automated supervisory agent, arguing such an agent only counts as a monitoring control if its judgment and records are structurally independent of the sponsor.",
+        "distributed_accountability": "It raises the concern that sponsor control over retention and filtering of supervisory-agent outputs undermines verifiable accountability for postmarket findings."
+      },
+      "public_summary": "Accepts machine-based supervisory agents for postmarket monitoring but asks FDA to extend its adjudicator-independence expectations to them, requiring agents not optimized against sponsor-favored objectives and append-only, timestamped logging so unfavorable findings cannot be selectively filtered or discarded.",
+      "summary_cut": false,
+      "source_passage": "3. Structural independence and tamper-evidence. The paper's independence expectation for expert adjudicators — explicitly including LLM adjudicators — should extend to supervisory agents. Independence here has two components: independence of the agent's judgment (it is not optimized against the same objective the sponsor is incentivized to maximize) and independence of the record (its outputs are logged append-only, with timestamps, such that unfavorable findings cannot be selectively discarded). A supervisory agent whose outputs pass through sponsor-controlled filtering before retention is an advisory tool, not a monitoring control."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "A machine-based supervisory agent is itself subject to drift; if its model version, prompts, thresholds, or sampling logic change without documentation, the measurement instrument shifts silently between baseline and follow-up, undermining the re-benchmarking concept in Section VI.C.",
+      "requested_fda_action": "Treat any update to a supervisory agent (model version, prompts, thresholds, sampling logic) as a documented modification to the monitoring program, with material changes triggering re-validation of the supervisor against human adjudication.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment focuses on oversight duties delegated to an automated supervisory agent and argues that the agent itself must be versioned and re-validated against human adjudication to remain trustworthy.",
+        "deployment_assurance_scalability": "It highlights that continued postmarket assurance depends on the stability and traceability of the monitoring instrument over time, not just the device under monitoring."
+      },
+      "public_summary": "Accepts machine-based supervisory agents for postmarket monitoring but asks FDA to require version control: changes to a supervisor's model, prompts, thresholds, or sampling logic should be documented as monitoring-program modifications, with material changes triggering re-validation against human adjudication to preserve valid re-benchmarking.",
+      "summary_cut": false,
+      "source_passage": "4. Version control of the supervisor. Any update to the supervisory agent — model version, prompts, thresholds, sampling logic — is a modification to the monitoring program and should be documented as such, with material changes triggering re-validation against human adjudication. Supervisor drift is as real as device drift, and an unversioned monitor cannot support the re-benchmarking concept in Section VI.C, because the measurement instrument itself has silently changed between baseline and follow-up."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q16",
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Without a standing qualification mechanism, the validity of machine-based supervisory monitoring methods would have to be re-established in every individual submission, creating unpredictability for sponsors and inconsistent review bases for CDRH.",
+      "requested_fda_action": "Use the Medical Device Development Tools (MDDT) program, or an analogous qualification mechanism, to qualify machine-based supervisory monitoring methodologies so their validity is established once and applied consistently across submissions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment concerns how the validity of machine-based supervisory agents performing oversight functions would itself be established and recognized, rather than assessed ad hoc per submission.",
+        "evidence_burden_commercial_viability": "It frames repeated per-submission justification of monitoring tool validity as an avoidable burden that a qualification pathway could reduce and make predictable."
+      },
+      "public_summary": "Supports machine-based supervisory monitoring but asks FDA to go further by qualifying such monitoring methodologies through the MDDT program or an analogous mechanism, so sponsors gain predictability and reviewers a consistent basis instead of re-establishing monitor validity in each submission.",
+      "summary_cut": false,
+      "source_passage": "5. A qualification pathway would accelerate sound adoption. The discussion paper's third-party section identifies the MDDT program as an existing mechanism for qualifying tools used in device development and evaluation. Qualifying supervisory monitoring methodologies through MDDT (or an analogous mechanism) would give sponsors a predictable way to adopt machine-based monitoring without each submission relitigating the monitor's validity, and would give CDRH review teams a consistent basis for evaluating monitoring claims."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q22",
+        "q23",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "pccp",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter argues that existing modification categories assume a retraining or conventional software change event, whereas a GenAI device's clinical behavior can shift materially through system prompts, retrieval corpora, guardrails, orchestration logic, or an underlying model version change — sometimes on a third party's schedule and without triggering change-control flags. Absent a category for such changes, sponsors and FDA would lack a prespecified agreement on the evidence required when they occur.",
+      "requested_fda_action": "Adapt PCCPs for GenAI-enabled devices so that modifications are categorized by the system component changed (e.g., system prompt, retrieval corpus/index, guardrails, orchestration logic, underlying model), rather than by taxonomies premised on retraining or conventional software changes.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment stresses that a one-sentence system prompt edit or retrieval-corpus update can alter output behavior across the entire indication without any formal software change, meaning the device's behavioral envelope shifts outside existing change categories.",
+        "ai_supplier_quality": "It highlights that an underlying model version change can replace the core of the device on a third party's schedule, a supplier-driven change not addressed by current modification taxonomies."
+      },
+      "public_summary": "Accepts PCCP-based change control but argues current modification taxonomies assume retraining or conventional software changes. Notes GenAI behavior can shift via prompts, retrieval corpora, guardrails, orchestration, or third-party model updates, and recommends PCCPs categorize modifications by the system component changed.",
+      "summary_cut": false,
+      "source_passage": "Every one of the assumptions that current categories encode is strained by GenAI-enabled devices. A GenAI system's clinical behavior is a property of a pipeline — system prompts, retrieval corpora and indexes, guardrails, orchestration logic, and one or more underlying models — and it can change materially through any of these components without any retraining event occurring, in some cases without any conventional \"software change\" a change-control system would flag. A one-sentence edit to a system prompt can alter output behavior across the entire indication; a retrieval-corpus update changes what the device grounds its answers in; an underlying model version change replaces the core of the device outright, on a third party's schedule. A modification taxonomy with no category for these changes does not prevent them — it merely guarantees that when they occur, the sponsor and the Agency lack a prespecified agreement on what evidence the change requires. We therefore suggest that PCCPs for GenAI-enabled devices categorize modifications by the system component changed"
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "pccp",
+      "stakeholder_concern": "Existing PCCP modification categories are built around discrete retraining events and do not reflect how GenAI-enabled systems actually change in practice.",
+      "requested_fda_action": "Redefine modification categories by the system component changed (prompt, retrieval corpus, guardrail, orchestration logic, underlying model version) and scale re-benchmarking by mapping each change class to the Appendix A benchmarking elements it could plausibly affect.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment highlights that GenAI system behavior shifts through continuous component-level changes rather than discrete retraining events, which current change-control categories do not capture."
+      },
+      "public_summary": "Accepts change-control review but argues FDA's PCCP modification categories, built around discrete retraining, fit GenAI poorly. Recommends defining categories by component changed (prompt, retrieval corpus, guardrail, orchestration logic, model version) and scaling re-benchmarking to the benchmarking elements each change class could affect.",
+      "summary_cut": false,
+      "source_passage": "Current PCCP modification categories (Q22/23) are shaped around discrete retraining events and map poorly to the ways GenAI-enabled systems actually change. Modification categories should be defined by the system component changed — prompt, retrieval corpus, guardrail, orchestration logic, underlying model version — and re-benchmarking scope should scale by mapping each change class to the Appendix A benchmarking elements it can plausibly affect."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "pccp",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "Without a prespecified structure, the scope of re-benchmarking triggered by post-deployment changes to GenAI systems would be negotiated after the fact; the commenter argues change classes specific to GenAI architecture (prompts, retrieval corpora, guardrails, orchestration, model version, adapter weights) map predictably onto distinct benchmarking elements.",
+      "requested_fda_action": "Have PCCPs categorize modifications by the system component changed and include a prespecified, impact-assessment-justified mapping from each change class to the benchmarking elements it could plausibly affect, with presumptive full re-benchmarking for underlying model version changes and a sponsor option to rebut presumptions with evidence.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The commenter treats a change in the underlying (potentially third-party) model version as effectively a new device core regardless of how contracts characterize it, requiring presumptive full re-benchmarking."
+      },
+      "public_summary": "Endorses using PCCPs to scale re-evaluation of GenAI changes, but asks FDA to require modification categories defined by system component (prompt, retrieval corpus, guardrails, orchestration, model version, adapter weights) with a prespecified, rebuttable mapping to affected benchmarking elements, and full re-benchmarking for model version changes.",
+      "summary_cut": false,
+      "source_passage": "We therefore suggest that PCCPs for GenAI-enabled devices categorize modifications by the system component changed — prompt or instruction set, retrieval corpus or index, guardrail configuration, orchestration logic, underlying model version, and fine-tuning or adapter weights — and that re-benchmarking scope be scaled by a prespecified mapping from each change class to the Appendix A benchmarking elements it can plausibly affect. A guardrail change can plausibly affect safety-relevant refusal and escalation behavior but not, say, retrieval faithfulness; it should trigger the safety-behavior elements of the benchmark and may leave others standing. A retrieval-corpus update can plausibly affect grounding, currency, and hallucination-related elements. A prompt change can affect instruction-following, output format, and clinical-content behavior broadly, and should presumptively trigger a wide subset. An underlying model version change can affect everything, and should presumptively trigger full re-benchmarking — it is a new device core, whatever the contract calls it. The mapping itself should be prespecified in the PCCP and justified in the impact assessment, exactly as current PCCPs trace each modification class to its test methods; this is not a new discipline but the existing one, extended to the components GenAI systems are actually made of. Sponsors would retain the ability to rebut the presumption with evidence, but the default evidence obligation for each change class would be agreed before the change occurs rather than negotiated after."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "If the premarket competency assessment is used as a baseline for evaluating post-deployment modifications, an unstable or insufficiently detailed baseline would make comparisons unreliable — a moving baseline measures its own drift rather than device change, and aggregate-only results cannot support scoped re-benchmarking of affected elements.",
+      "requested_fda_action": "FDA should require that re-benchmarking baselines be stable and versioned (pinned, documented benchmark datasets, prompts, adjudication instructions, and any LLM adjudicator versions) and reported at element level with retained subgroup results, converting the practice seen in at least one recent authorization into a standing expectation.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts using the premarket competency assessment as the baseline for evaluating modifications, but asks FDA to require that baselines be stable and versioned (datasets, prompts, adjudication instructions, adjudicator versions pinned) and reported at element and subgroup level so scoped re-benchmarking is comparable and auditable.",
+      "summary_cut": false,
+      "source_passage": "Two conditions follow for the re-benchmarking baseline. First, the baseline must be stable and versioned — benchmark datasets, prompts, adjudication instructions, and any LLM adjudicator versions pinned and documented — because a comparison against a moving baseline measures the movement of the baseline as much as the device; this is the same measurement-instrument point we raise for supervisory agents under Question 20. Second, the baseline should be granular enough to support the mapping: element-level results, retained per subgroup where subgroups were assessed, so that a scoped re-benchmark of the affected elements can be compared like-for-like. Adjacent-category practice already gestures in this direction — at least one recent authorization publishes its performance baseline, subgroup by subgroup, and designates it as the reference for all future evaluations under the plan, and subgroup analysis is increasingly required in modification validation across the records we reviewed. Extending that practice from a single publication to a standing expectation would cost sponsors little and would make scoped re-benchmarking auditable."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Commercial foundation-model platforms update models, change default behaviors, and deprecate versions on their own schedules, sometimes shipping behavioral changes without version-number changes, so a sponsor relying on platform notices is informed of rather than in control of its device's behavior.",
+      "requested_fda_action": "CDRH should evaluate sponsors' third-party model change-management plans against a layered set of mechanisms ranked in descending order of the assurance each mechanism can actually guarantee.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "dynamic_intended_use",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment centers on the inadequacy of upstream foundation-model supplier practices, including silent updates and version deprecation outside the sponsor's control.",
+        "dynamic_intended_use": "It highlights that device behavior can shift through supplier-initiated behavioral changes that occur without any version marker, altering the device's effective behavioral envelope.",
+        "distributed_accountability": "It notes that the sponsor is held responsible for device behavior it does not control, since change decisions rest with the platform developer."
+      },
+      "public_summary": "Agrees with FDA that third-party model changes are a real risk, noting platforms may alter behavior without version changes, leaving sponsors merely informed rather than in control. Asks CDRH to assess sponsor plans against layered mechanisms ranked by the assurance each provides.",
+      "summary_cut": false,
+      "source_passage": "The problem is real and it is not hypothetical: commercial foundation-model platforms update models, alter default behaviors, and deprecate versions on their own schedules, and some behavioral changes ship without any version-number change at all. A device sponsor who learns of such changes only from the platform's notices does not control their device's behavior; they are informed of it. We suggest CDRH evaluate sponsor plans against a layered set of mechanisms, in descending order of what each can guarantee:"
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Contractual notification mechanisms (advance notice, changelogs, deprecation windows) are a necessary floor but cannot reveal how a foundation-model update affects a specific clinical prompt pipeline on a specific input distribution, and they miss changes the platform did not consider worth announcing.",
+      "requested_fda_action": "Expect sponsors to have contractual notification obligations, but do not treat them as sufficient assurance; require mechanisms that detect and evaluate device-specific effects of third-party model changes beyond vendor-characterized, aggregate evaluations.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment argues that vendor-supplied notices and vendor-run aggregate evaluations are inadequate supplier controls because they do not characterize effects on a particular device's clinical pipeline.",
+        "deployment_assurance_scalability": "It implies sponsors need their own ongoing, device-specific detection and evaluation capability to catch unannounced or unpredicted behavioral changes after deployment."
+      },
+      "public_summary": "Accepts contractual notification from foundation-model vendors as a necessary minimum but argues it is insufficient: vendor notices and aggregate evaluations do not predict effects on a specific clinical prompt pipeline or input distribution, and miss unannounced changes. Device-specific detection and evaluation are needed.",
+      "summary_cut": false,
+      "source_passage": "1. Contractual notification is necessary but insufficient. Notification obligations — advance notice of model updates, changelogs, deprecation windows — are the floor, and sponsors should be expected to have them. But a notice describes the platform's intent, not the change's effect on a particular device function. Foundation-model updates are characterized by their vendors in aggregate terms, against the vendor's own evaluations; none of that predicts whether a specific clinical prompt pipeline, on a specific input distribution, behaves differently. Notification tells the sponsor to look. It does not tell them what they will find, and it catches nothing the platform did not consider worth announcing."
+    },
+    {
+      "segment_id": "seg-021",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Version pinning is described as the strongest single mitigation for third-party model changes because it converts an uncontrolled dependency into a controlled one, but its protection is incomplete: not all platforms offer true pinning, pinned versions are eventually retired (creating a forced migration), and platforms can alter behavior beneath a stable version label through safety-layer or serving-infrastructure changes.",
+      "requested_fda_action": "Recognize version pinning as a primary mechanism for managing third-party developer-initiated changes while stating its limits plainly, acknowledging that pinning narrows but does not close the exposure window and that version retirement and sub-label behavioral changes remain unaddressed.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment centers on the manufacturer's limited control over an upstream model supplier, including undisclosed behavioral changes made under a stable version label and platform-driven version retirement."
+      },
+      "public_summary": "Endorses version pinning as the strongest available mitigation for third-party model changes, but urges FDA to state its limits: not all platforms support true pinning, pinned versions are eventually retired forcing migration, and platforms may alter behavior beneath stable version labels.",
+      "summary_cut": false,
+      "source_passage": "2. Version pinning, where the platform allows it. Pinning the device to a specific model version converts an uncontrolled dependency into a controlled one and is the strongest single mitigation available. Its limits should be stated plainly: not all platforms offer true pinning; a pinned version is still retired eventually, converting a silent risk into a scheduled forced migration; and pinning does not cover behavioral changes the platform makes beneath a stable version label — safety-layer adjustments, serving-infrastructure changes — which are not unheard of. Pinning narrows the exposure window; it does not close it."
+    },
+    {
+      "segment_id": "seg-022",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Contractual notification from third-party model developers only conveys intent, and version pinning may be unavailable or imperfect, so a device manufacturer may not learn that the underlying foundation model has changed or how that change affects device behavior.",
+      "requested_fda_action": "Expect sponsors to maintain a direct detection mechanism: a prespecified, versioned, fixed 'canary' probe set exercising clinically consequential behaviors and known sensitivities, run against the production model on a defined cadence with outputs compared to a stored baseline, with cadence tightened around announced platform updates and deprecation migrations.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The passage treats the upstream foundation model as a supplied component whose changes cannot be assured through notification or contractual commitments alone and must be independently verified by the device manufacturer.",
+        "dynamic_intended_use": "It frames the regulatory problem as detecting silent shifts in the model's behavioral envelope relative to a stored baseline, rather than as a discrete, announced design change."
+      },
+      "public_summary": "Comment accepts contractual and PCCP mechanisms for third-party model changes but deems notification and version pinning insufficient.",
+      "summary_cut": true,
+      "source_passage": "3. Behavioral fingerprinting via a fixed canary set. Because notification describes intent and pinning can be unavailable or imperfect, the sponsor needs a mechanism that detects the effect of a model change directly. A fixed, versioned set of probe inputs — selected to exercise the device's clinically consequential behaviors and its known sensitivities — run against the production model on a defined cadence, with outputs compared against a stored baseline, functions as a behavioral fingerprint of the upstream dependency. A material divergence in canary outputs is evidence that the model underneath the device has changed, whether or not anyone announced it. The canary set should be prespecified, held fixed between deliberate revisions, and versioned like any other test asset, and its cadence should be tightened around known risk windows such as announced platform updates and deprecation migrations."
+    },
+    {
+      "segment_id": "seg-023",
+      "question_ids": [
+        "q19",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "Upstream foundation model changes may occur without notification, without honored version pinning, and with effects too subtle or input-dependent for canary test sets to detect, leaving the sponsor unable to schedule detection around undisclosed third-party events.",
+      "requested_fda_action": "Treat continuous performance-degradation monitoring over the device's actual outputs — with prespecified thresholds and a prespecified consequence pathway, running from first deployment rather than on a scheduled cadence — as the required backstop for detecting and attributing undisclosed upstream model changes.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment centers on the scenario where a third-party model developer gives no notification and pinning is unavailable or unhonored, leaving the device manufacturer to detect supplier-initiated changes after the fact.",
+        "deployment_assurance_scalability": "It proposes detecting upstream changes by observing unexplained behavioral shifts correlated in time across multiple deployments, implying assurance must operate continuously across the deployed fleet rather than at discrete review points."
+      },
+      "public_summary": "Endorses postmarket degradation monitoring but argues it must be continuous from first deployment, not scheduled, since undisclosed third-party foundation model changes can evade notification, version pinning, and canary sets; time-correlated output shifts across deployments would signal upstream change.",
+      "summary_cut": false,
+      "source_passage": "4. Continuous monitoring as the backstop. When notification is not given, pinning is not honored or not available, and a change's effects are too subtle or too input-dependent for a canary set to catch, the postmarket monitoring program described in our answers to Questions 18 and 19 is what remains — degradation monitoring over the device's actual outputs, with prespecified thresholds and a prespecified consequence pathway. An unexplained shift in monitored behavior, correlated in time across deployments, is the characteristic signature of an upstream model change, and a monitoring program designed with this failure mode in mind can attribute it quickly. This is one more reason monitoring must be continuous from first deployment: the sponsor cannot schedule detection around events a third party does not disclose."
+    },
+    {
+      "segment_id": "seg-024",
+      "question_ids": [
+        "q22",
+        "q23",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter is concerned that changes to an underlying third-party foundation model could receive weaker evidentiary treatment than equivalent changes a sponsor initiates itself, creating an inconsistency in change-control obligations.",
+      "requested_fda_action": "FDA should provide that a detected third-party model change be handled identically to a sponsor-initiated modification of the same scope under the PCCP/change-control frameworks in Questions 22 and 23, with the same evidence obligation regardless of who initiated it.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses how changes originating with an upstream foundation model supplier should trigger the same device-level evidence requirements as internal changes.",
+        "distributed_accountability": "It asserts the sponsor's evidence obligation is unaffected by whether the change was chosen or merely discovered, keeping accountability with the manufacturer despite the change originating elsewhere."
+      },
+      "public_summary": "Endorses the PCCP-based change-control direction but asks FDA to specify parity: a detected third-party foundation model change should carry the same evidence obligation as a sponsor-initiated modification of equivalent scope, regardless of who initiated it.",
+      "summary_cut": false,
+      "source_passage": "Finally, we suggest that a change detected by any of these mechanisms be treated identically to a sponsor-initiated modification of the same scope under the PCCP frameworks discussed in Questions 22 and 23: an underlying model change carries the same evidence obligation whether the sponsor chose it or discovered it."
+    },
+    {
+      "segment_id": "seg-025",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that shifting evidence generation from premarket to postmarket is only defensible if the monitoring program is genuinely continuous, prespecified, and verifiable by parties other than the sponsor, rather than resting on sponsor self-attestation.",
+      "requested_fda_action": "Condition any acceptance of greater premarket uncertainty on a monitoring program that operates continuously from first deployment, with analyses, thresholds, cadence, and consequences prespecified, and that is independently verifiable rather than based on sponsor attestation.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment ties reduced premarket evidence to continuous monitoring from the moment of first deployment and to independent verification, raising how assurance is maintained and checked in real-world deployment rather than only at review."
+      },
+      "public_summary": "Accepts shifting some evidence from premarket to postmarket, but only if the monitoring program is continuous from first deployment, with prespecified analyses, thresholds, cadence, and consequences, and is independently verifiable rather than reliant on sponsor attestation.",
+      "summary_cut": false,
+      "source_passage": "Our positions reduce to two: first, a premarket-to-postmarket evidence shift is sound only when the monitoring program that underwrites it is continuous from first deployment, prespecified in its analyses, thresholds, cadence, and consequences, and independently verifiable rather than dependent on sponsor attestation;"
+    },
+    {
+      "segment_id": "seg-026",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter views machine-based supervisory agents as a necessary monitoring coverage layer for high-volume devices with open-ended outputs, but is concerned that the supervisor itself could be unvalidated or unaccountable.",
+      "requested_fda_action": "Require supervisory agents to meet device-grade evidentiary standards, including characterized error rates, structural independence, tamper-evident records, and version control of the supervisor.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses delegation of postmarket oversight to an automated supervisory agent and insists the delegated supervisor be held to the same evidentiary discipline as a device.",
+        "deployment_assurance_scalability": "The commenter frames automated supervision as a necessary coverage layer because human review cannot scale to high-volume open-ended-output devices."
+      },
+      "public_summary": "Commenter agrees machine-based supervisory agents are a necessary monitoring layer for high-volume, open-ended-output devices, but conditions this on holding the supervisor to device-grade evidence standards: characterized error rates, structural independence, tamper-evident records, and version control of the supervisor itself.",
+      "summary_cut": false,
+      "source_passage": "second, machine-based supervisory agents are a necessary coverage layer for high-volume open-ended-output devices, but only if the supervisor is held to device-grade evidentiary discipline — characterized error rates, structural independence, tamper-evident records, and version control of the supervisor itself."
+    },
+    {
+      "segment_id": "seg-027",
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "pccp",
+      "secondary_issue": "regulatory_scope",
+      "stakeholder_concern": "The commenter observes that the practices contemplated by the framework already appear individually in the public record of authorized PCCPs, drawn largely from predominantly non-generative AI devices, but only in isolation rather than as consistent practice.",
+      "requested_fda_action": "Use the framework to make these already-emerging PCCP component practices the standard expectation — beginning with GenAI-enabled devices and, as the commenter urges elsewhere, extending to AI-enabled devices generally.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter notes that practices contemplated by the framework already appear in isolation across authorized PCCPs for largely non-generative AI devices, and urges FDA to make them standard expectations for GenAI-enabled devices and, more broadly, for AI-enabled devices generally.",
+      "summary_cut": false,
+      "source_passage": "The public record of authorized PCCPs — today, precedent from the adjacent, predominantly non-generative category — shows the component practices already emerging in isolation; the framework's task is to make them the norm — for GenAI-enabled devices first, and, as we urge in our introduction, for AI-enabled devices generally."
+    }
+  ]
+}

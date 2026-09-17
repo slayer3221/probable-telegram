@@ -1,0 +1,108 @@
+{
+  "comment_id": "FDA-2026-N-7874-0099",
+  "input_hash": "de4ca14114d6c54f",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-17T13:05:17Z",
+  "model": "claude-opus-5",
+  "chunks": 1,
+  "positions": [
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "The two-axis framework, the degree and independence of device activity against the consequence of relying on an incorrect output, correctly identifies the two variables that matter most. I would encourage CDRH to treat reversibility of the resulting action as an explicit gating factor in applying the two-axis framework rather than as an optional modifier.",
+      "position_gist": "The commenter endorses the two-axis framework but recommends that reversibility of the resulting action be treated as an explicit gating factor rather than an optional modifier.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q26"
+      ],
+      "source_passage": "The paper\\u2019s agentic AI discussion in Section VII.B implicitly recognizes this by identifying \\u201chuman-oversight checkpoints before irreversible or high-consequence actions\\u201d as a benchmarking consideration, but reversibility is not elevated to the same visible status as the two primary axes in Figure 1. I recommend that reversibility be evaluated explicitly before determining a function\\u2019s final risk position, particularly when an output may initiate an irreversible or high-consequence action.",
+      "position_gist": "Reversibility should be explicitly evaluated before a function's final risk position is set, especially where an output may initiate irreversible or high-consequence actions, rather than only appearing implicitly in the agentic AI benchmarking discussion.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q3",
+        "q4"
+      ],
+      "source_passage": "I strongly support the paper\\u2019s recognition that a human in the loop does not automatically reduce risk. In quality systems I have run and remediated, a recurring and dangerous failure mode is not the absence of human review, but the presence of a signature without genuine evaluation behind it.\\n\\nA reviewer may sign off on an AI-generated CAPA root cause narrative without independently evaluating the evidence and reasoning. Similarly, a clinician may accept an AI-generated recommendation because it is fluent and confidently stated, reflecting the paper\\u2019s concern about automation bias in Appendix A, E.4.",
+      "position_gist": "The commenter supports FDA's recognition that human-in-the-loop does not automatically mitigate risk, citing nominal sign-off and automation bias as recurring failure modes.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q3",
+        "q4"
+      ],
+      "source_passage": "I recommend that CDRH define human review as a risk-mitigating control only when the reviewer has the competence, source information, time, authority, and documented responsibility needed to independently evaluate the output. Evidence of human review should identify what the reviewer verified, what evidence was considered, and whether the reviewer accepted, modified, escalated, or rejected the output. A signature alone does not demonstrate that meaningful review occurred.",
+      "position_gist": "CDRH should credit human review as a risk-mitigating safeguard only when the reviewer has competence, source information, time, authority, and documented responsibility, with documentation of what was verified and the disposition of the output.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "I specifically support the paper\\u2019s position that manufacturer accountability must not be diffused across the ecosystem of clinicians, institutions, and third-party model developers. I also offer a caution based on operating experience.\\n\\nAcross quality system failures I have investigated or remediated involving an outsourced component, whether a contract manufacturer, supplier-provided subassembly, or software vendor, a recurring root cause has been an organization treating a vendor relationship as a transfer of responsibility rather than what it actually is: a transfer of work with retained accountability.",
+      "position_gist": "Manufacturer accountability should not be diffused across clinicians, institutions, or third-party developers; outsourcing transfers work but not accountability.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q24",
+        "q25"
+      ],
+      "source_passage": "A voluntary Foundation Model Device Master File could provide a useful mechanism for information-sharing. However, CDRH should extend its statement of sponsor responsibility explicitly across the total product lifecycle, particularly when a foundation model developer initiates a postmarket change. Reliance on a Foundation Model MAF should not shift responsibility for detecting, assessing, and controlling the effect of that change. A device manufacturer\\u2019s quality system must be designed and operated on the assumption that the manufacturer owns the outcome regardless of which layer of the technology stack originated the failure.",
+      "position_gist": "A voluntary Foundation Model MAF is a useful information-sharing mechanism, but CDRH should make clear that sponsor responsibility extends across the total product lifecycle and that reliance on an MAF does not shift responsibility for detecting, assessing, and controlling third-party-initiated model changes.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q23",
+        "q24"
+      ],
+      "source_passage": "I support the paper\\u2019s recognition that changes to a GenAI-enabled device can originate from sources beyond a traditional software update, including prompt changes, retrieval strategy changes, guardrail changes, orchestration logic changes, and passive model evolution. Based on direct quality system experience, these changes should be governed with the same risk-based discipline applied to other safety-relevant software and device changes, not treated as configuration adjustments outside the quality management system.",
+      "position_gist": "Non-code GenAI changes (prompts, retrieval, guardrails, orchestration, passive model evolution) should be governed with the same risk-based discipline as other safety-relevant device changes and kept inside the quality management system.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "source_passage": "A prompt that materially influences what a GenAI-enabled device tells a clinician or patient can function as an executable instruction governing device behavior. When a prompt, retrieval strategy, guardrail, or orchestration change can affect device output, intended-use boundaries, or risk controls, it should be treated as controlled configuration subject to documented impact assessment, review, approval, and verification.\\n\\nI recommend that CDRH state directly in future guidance that prompt, retrieval, and orchestration changes meeting this threshold are device changes subject to change control, not implementation details exempt from it. Treating them as categorically exempt would create the kind of undocumented and unassessed change that CAPA investigations repeatedly identify at the root of unexpected field performance.",
+      "position_gist": "CDRH should state in guidance that prompt, retrieval, guardrail, and orchestration changes that can affect device output, intended-use boundaries, or risk controls are device changes subject to documented impact assessment, review, approval, and verification, not exempt implementation details.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q18"
+      ],
+      "source_passage": "I support exploring greater reliance on postmarket monitoring in well-justified cases, but I caution against treating postmarket monitoring as a substitute for premarket rigor rather than a complement to it. In my experience, organizations that rely on postmarket detection because premarket evidence was incomplete may not detect problems until signals have accumulated or harm has already occurred.",
+      "position_gist": "Greater reliance on postmarket monitoring is acceptable in well-justified cases but should complement rather than substitute for premarket rigor, since postmarket detection can lag until harm occurs.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "source_passage": "Whatever conditions CDRH ultimately establishes for accepting greater premarket uncertainty should require, at minimum, a credible mechanism for detecting the specific failure modes that benchmarking did not rule out, not a general monitoring program applied uniformly regardless of the premarket evidence gaps associated with the device.\\n\\nAt minimum, the monitoring strategy should identify the failure modes associated with unresolved premarket uncertainty, the signals used to detect them, decision thresholds, escalation requirements, accountable owners, and criteria for intervention, rollback, or suspension.",
+      "position_gist": "Conditions for accepting greater premarket uncertainty should require a monitoring program targeted at the specific unresolved failure modes, specifying signals, decision thresholds, escalation, accountable owners, and criteria for intervention, rollback, or suspension.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q7"
+      ],
+      "source_passage": "The two-axis framework and competency-based evaluation approach are directionally sound.\\n\\nMy central recommendation is that CDRH make the decision criteria surrounding these controls explicit. Future guidance should clearly define when additional risk factors must be considered, what constitutes meaningful human review, how accountability is retained across third-party relationships, which non-code changes require change control, and what evidence demonstrates effective postmarket monitoring. In my experience, controls that remain implicit are applied inconsistently and are difficult to defend during an FDA inspection.",
+      "position_gist": "The commenter finds the two-axis risk framework and competency-based evaluation approach directionally sound and recommends CDRH make the underlying decision criteria explicit in future guidance because implicit controls are applied inconsistently and are hard to defend in inspections.",
+      "segment_id": "seg-011"
+    }
+  ]
+}

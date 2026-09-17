@@ -1,0 +1,600 @@
+{
+  "comment_id": "FDA-2026-N-7874-0091",
+  "input_hash": "c4f3c754a535266e",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-17T13:20:17Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that benchmarks used to gate device evaluation lack demonstrated construct validity unless the benchmark itself is qualified as a measurement system.",
+      "requested_fda_action": "Require sponsors to submit a measurement-system qualification package establishing benchmark performance specifications, modeled on the clinical laboratory requirements at 42 CFR 493.1253(b)(2), before a benchmark is relied upon in device evaluation.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Responding to Question 10, the commenter accepts FDA's focus on benchmark construct validity but proposes a specific method: sponsors should provide a measurement-system qualification package establishing benchmark performance specifications, analogous to clinical laboratory requirements under 42 CFR 493.1253(b)(2).",
+      "summary_cut": false,
+      "source_passage": "FDA's Question 10 asks what evidence should establish the construct validity of a benchmark used to gate device evaluation. This comment supplies an operational answer: a measurement-system qualification package, analogous to the performance specifications a clinical laboratory must establish under 42 CFR 493.1253(b)(2) before it may report a result."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "The commenter argues FDA has not specified what evidence would actually establish construct validity for a benchmarking instrument whose components—scenario corpus, observation window, scoring rubric, and an adjudicator that may itself be a language model—each introduce their own variability alongside stochastic device output and human reference judgement.",
+      "requested_fda_action": "Require and specify evidence about how the measurement instrument itself behaves (its measurement properties and sources of variability), rather than treating construct validity as satisfied by describing the benchmark's contents or elements.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The passage highlights that scoring and adjudication of open-ended device outputs is increasingly performed by a language model, making the evaluative judgment itself an unvalidated automated component."
+      },
+      "public_summary": "Accepts construct validity as the right requirement for benchmarks but argues FDA leaves the necessary evidence package unspecified. Because benchmark instruments combine stochastic outputs, human reference judgement, automated (often LLM) adjudication, and scoring logic, validity requires evidence on how the instrument itself behaves.",
+      "summary_cut": false,
+      "source_passage": "The evidence package that would answer it remains unspecified. Every one of the ten elements is scored by an instrument, and that instrument has parts: a scenario corpus, an observation window, a scoring rubric, and an adjudicator that is increasingly itself a language model. Where the device under test produces open-ended language, the instrument contains stochastic device output, human reference judgement, automated adjudication, a trajectory definition and scoring logic, each contributing variability of its own. Construct validity for an instrument built that way cannot be established by specifying its contents. It needs evidence about how the instrument behaves."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that benchmark results cannot be trusted unless the measurement instrument itself is qualified, including the independence of the reference standard from the adjudicator, the adequacy of the scoring window for multi-turn behavior, and the reliability of automated adjudicators relative to qualified human raters.",
+      "requested_fda_action": "FDA should require sponsors to qualify the measurement system before benchmark results are relied upon, through six documented components: independent validation of the reference standard, validation of the trajectory window, calibration of automated adjudicators against human raters, verification that the specified configuration was actually run, pre-specified disagreement-resolution rules, and recorded provenance and version information for every reported score.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts benchmarking but asks FDA to require sponsors to first qualify the measurement system: independently validated reference standards, adequate multi-turn scoring windows, automated adjudicators calibrated against human raters, verified run configurations, pre-specified disagreement rules, and recorded provenance and versions.",
+      "summary_cut": false,
+      "source_passage": "I would answer it by asking sponsors to qualify the measurement system , meaning that before anyone reads a device result, the sponsor has produced a defined set of evidence about the instrument that produced it. Six components, and none of them requires new science.\n1. Validate the reference standard. Whoever establishes the benchmark's correct answers must do so independently of the adjudicator that will later score against them, and how they did it belongs in the record. ... 2. Validate the trajectory window. For multi-turn devices, the sponsor must show that the window over which behaviour is scored is wide enough to admit the behaviour being measured. ... 3. Calibrate the adjudicator. Where an adjudicator is automated, measure and report how far it agrees with qualified human raters, dimension by dimension. ... 4. Verify what was actually run. Evidence that the configuration evaluated was the configuration specified. ... 5. Say in advance how disagreement is resolved. A rule for what happens when raters or adjudicators disagree, written down before anyone sees a result. 6. Record provenance and versions. The adjudicator's identity and version, the corpus version, the prompt version and the configuration hash, all recorded alongside every score reported."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q12",
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Acceptance criteria and performance-change determinations are uninterpretable without knowing the inherent variability of the evaluation process itself; for open-ended outputs there is often no single correct response, so variability arises from the device across runs, from the human or automated adjudicator, and from the human reference standard, and these sources may not be independent.",
+      "requested_fda_action": "Ask sponsors to characterize and report the multiple sources of evaluation variability (device run-to-run, adjudicator, and human reference standard) together rather than assuming them away, noting the commenter identified no established clinical-GenAI standard requiring this.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts the evaluation framework but urges FDA to require sponsors to characterize and report the several, potentially correlated sources of measurement variability for open-ended outputs\ndevice run-to-run, adjudicator, and human reference standard\nsince acceptance criteria cannot otherwise be interpreted.",
+      "summary_cut": false,
+      "source_passage": "An acceptance criterion that decides whether performance has changed cannot be interpreted without knowing how much the evaluation process varies on its own. ... Where the device generates open-ended language, there may be no single held-out correct response, so performance frequently depends on a rubric applied by a human or automated adjudicator, and the variability then has at least three potential sources. The device varies between runs, the adjudicator varies, and the human reference standard that anchors either one varies too. They need not be independent of one another, which is itself a reason to characterise them rather than assume them away. I have not identified an established clinical-GenAI standard that requires these sources to be characterised together, and I would encourage the Agency to ask sponsors to report them."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q12",
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "pccp",
+      "stakeholder_concern": "Acceptance criteria for GenAI endpoints that rely on stochastic generation, human judgement, or model-based adjudication cannot be interpreted unless the sponsor also characterises the repeatability and uncertainty of the evaluation process itself; otherwise a near-threshold difference may reflect device change, evaluation noise, or both. Setting thresholds conservatively high to compensate would mean few real modifications clear them, so the PCCP authorises little and most changes revert to FDA review.",
+      "requested_fda_action": "Require that sponsors characterise the repeatability and uncertainty of the evaluation process producing a metric, and calibrate PCCP acceptance thresholds and decision boundaries against that measured evaluation variability rather than setting them without reference to it.",
+      "confidence": "medium",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The commenter notes that uncalibrated, conservatively high acceptance thresholds would let a PCCP authorise few real modifications, pushing most changes back into Agency premarket review."
+      },
+      "public_summary": "Accepts acceptance-criteria-based change control but argues thresholds are uninterpretable unless sponsors characterise the repeatability and uncertainty of the evaluation process itself. Warns that uncalibrated or conservatively high boundaries confuse evaluation noise with device change, or leave PCCPs authorising little, returning most changes to FDA.",
+      "summary_cut": false,
+      "source_passage": "For a GenAI endpoint that depends on stochastic generation, human judgement or model-based adjudication, an acceptance criterion is difficult to interpret unless the sponsor also characterises the repeatability and uncertainty of the evaluation process producing the metric. Without that characterisation, an observed difference near the threshold may reflect device change, evaluation variability, or both. Where the decision boundary is not calibrated against that variability, differences observed near it may be dominated by it. Set it conservatively high instead and few real modifications clear it, so the PCCP authorises little and most changes return to the Agency."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q12",
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Measured differences between a pre- and post-modification device configuration may reflect run-to-run generative variability and adjudicator variability rather than real change, so re-benchmarking comparisons risk misattributing noise to improvement or degradation. The commenter also notes that such resampling does not capture uncertainty in the clinical reference standard or in the finite scenario sample drawn from the broader use distribution.",
+      "requested_fda_action": "Expect sponsors to construct an empirical null distribution by repeatedly partitioning replicate runs of the unchanged configuration into pseudo-version pairs and analyzing them with the same statistic used in the modification protocol, and to withhold claims of improvement or degradation when a modification's measured effect falls inside that null. Reference-standard uncertainty and scenario-sampling uncertainty should be characterized separately.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Proposes that modification re-benchmarking be judged against an empirical null built by comparing replicate runs of the unchanged configuration against itself, so effects within run-to-run and adjudicator noise are not reported as change. Notes reference-standard and scenario-sampling uncertainty must be characterized separately.",
+      "summary_cut": false,
+      "source_passage": "Run the unmodified baseline against itself. Take the replicate runs of the unchanged configuration and repeatedly partition them at random into two groups, labelling each pair as two versions and analysing it with the same statistic the Modification Protocol would use. Because the configuration never changed, the spread of those statistics is an empirical null distribution for that comparison, covering run-to-run generation and adjudicator variability conditional on the fixed benchmark corpus and reference standard. It does not estimate uncertainty in the clinical reference standard, nor the uncertainty from having drawn a finite scenario set from the broader use distribution. Both are held fixed under the resampling and have to be characterised separately. A modification whose measured effect falls inside that null distribution should not be reported as evidence of improvement or degradation without additional support."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q7",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter agrees the two-stage benchmarking-then-clinical-confirmation structure is correct but believes it needs added benchmark qualification evidence, such as independently held declared ground truth, machine-readable scenario schemas, scoring anchors, adjudicator output contracts, and openly redistributable reference corpora with provenance, rights basis and checksummed manifests.",
+      "requested_fda_action": "Retain the two-stage competency-based framework while incorporating explicit benchmark qualification evidence requirements, and consider the commenter's publicly available, reproducible benchmark (SAFE-CARE Bench) as a starting point rather than a finished standard.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter endorses FDA's two-stage benchmarking-plus-clinical-confirmation structure but would add explicit benchmark qualification evidence, including independently held ground truth, machine-readable scenario schemas, scoring anchors, adjudicator output contracts, and an openly redistributable corpus with provenance. Offers an existing public benchmark as a non-final starting point.",
+      "summary_cut": false,
+      "source_passage": "On Question 9 and externally developed standards. The two-stage structure of benchmarking followed by clinical confirmation is, in my view, correct. What I would add to it is the qualification evidence above. SAFE-CARE Bench already implements parts of that evidence, including declared ground truth held independently of the adjudicator, a machine-readable scenario schema, scoring anchors, adjudicator prompts with strict output contracts, and an openly redistributable reference corpus carrying per-document provenance, rights basis and a checksummed manifest [5]. I offer it as a public, reproducible and openly available starting point. I make no claim that it is a finished standard."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q5",
+        "q6",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Scoring a multi-turn conversation with a single collapsed number hides whether and when a device escalated: if the observation window closes at the required-action turn, a device that escalates one turn late is scored the same as one that never escalates; if the window extends to the final turn, late escalation is scored the same as timely escalation and timeliness becomes invisible.",
+      "requested_fda_action": "Require that multi-turn benchmark scoring report the prespecified required-action turn, the timeliness outcome (whether the device acted by that turn), and the observation window as separate elements rather than collapsing them into a single score.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment identifies delay in escalation as a distinct harm dimension that single-score benchmarks make invisible, separate from simple correctness of the output.",
+        "dynamic_intended_use": "It addresses how device behavior emerging over a conversational trajectory must be evaluated turn-by-turn rather than as a single aggregate outcome."
+      },
+      "public_summary": "Accepts benchmarking of multi-turn conversational devices but asks FDA to require separate reporting of the prespecified required-action turn, timeliness of escalation, and the observation window, since collapsing them into one score makes late escalation indistinguishable from no escalation or timely escalation.",
+      "summary_cut": false,
+      "source_passage": "When a benchmark scores a multi-turn conversation, three different things get collapsed into one number, and they should be reported separately. The required-action turn is a prespecified clinical reference for the scenario, namely the turn by which escalation is expected given what the patient has disclosed. ... The timeliness outcome is whether the device acted by that turn. The observation window is how far the evaluation keeps looking afterwards. Collapsing them produces two distinct errors. Where the window ends at the required-action turn, a device that escalates one turn late and a device that never escalates at all score identically ... If the window is defined only by the final turn, the opposite happens. A device that escalated late scores identically to one that escalated on time, and timeliness disappears."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q10",
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter argues that benchmarks measuring escalation behaviour can mask failures of timeliness: a late escalation is still a failure even if the situation is later recovered, and crediting recovery as success obscures the behaviour the benchmark claims to measure.",
+      "requested_fda_action": "Treat the observation window as a prespecified, clinically justified, and validated element of benchmark qualification evidence, and require that timeliness and subsequent recovery be reported as separate variables; benchmarks that cannot specify their window should not be regarded as having established construct validity.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment centers on delay in escalation as a distinct harm that aggregate benchmark scores can obscure when later recovery is counted as success."
+      },
+      "public_summary": "Accepts benchmark qualification but asks FDA to require that the observation window for escalation behaviour be prespecified, clinically justified, and validated, and that timeliness and later recovery be reported separately; unspecified windows should not count as demonstrating construct validity.",
+      "summary_cut": false,
+      "source_passage": "To be clear about the clinical point: a late escalation remains a failure of timely escalation, whatever happens afterwards. Recovery should be recorded, not credited as success. I would therefore ask the Agency to treat the observation window as an element of the evaluation that is prespecified, justified against the clinical timing of the action, and validated as part of the qualification evidence in Section 3, and to ask that timeliness and subsequent recovery be reported as separate variables. A benchmark that cannot show its window admits the behaviour it claims to measure has not established construct validity, whatever numbers it reports."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "Under-escalation and over-escalation are not commensurable because they differ in the population affected, the consequence, and who bears the harm; combining them into a composite metric or shared denominator obscures performance. Test corpora that lack a substantial, prespecified share of cases where escalation is not warranted cannot measure over-escalation, so a device that escalates everything would appear to perform well.",
+      "requested_fda_action": "Require the two error directions to be reported as two prespecified outcomes with separate denominators — missed escalations over cases where escalation was warranted, and unnecessary escalations over cases where it was not — and never only as a composite. Require evaluation corpora to include a declared, substantial proportion of cases where escalation is not warranted.",
+      "confidence": "high",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The commenter stresses that over-escalation errors fall on a different population and are absorbed by different parties than missed escalations, implying harms beyond the individual clinical outcome that a composite metric would hide."
+      },
+      "public_summary": "Accepts FDA's attention to both escalation error directions but asks that they never be reported as a composite. Recommends two prespecified outcomes with separate denominators, and evaluation corpora containing a declared, substantial share of cases where escalation is not warranted, so over-escalation is measurable.",
+      "summary_cut": false,
+      "source_passage": "Because the two errors are not commensurable, they should not share a denominator or a threshold, and they should never be reported only as a composite. They differ in population, in consequence and in who absorbs the harm. ... My recommendation is to report them as two prespecified outcomes with separate denominators . Missed escalations over cases where escalation was warranted, and unnecessary escalations over cases where it was not. That in turn requires a corpus containing a substantial proportion of cases where escalation is not warranted, declared as such in advance. Unless a corpus carries such cases, it cannot measure over-escalation at all, and a device that escalates everything scores well on it."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Combining under-escalation and over-escalation rates into a single composite measure at the point of measurement obscures the distinct error directions, and post hoc selection of weights could bias reported performance.",
+      "requested_fda_action": "Require that under-escalation and over-escalation rates be reported separately even where a composite metric is used for a given clinical context, and that any weighting be prospectively justified by clinical consequence rather than selected after results are observed.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts decision-analytic weighting of escalation errors in principle but objects to merging them at measurement. Asks FDA to require separate reporting of under- and over-escalation rates, with any composite weighting prospectively justified by clinical consequence rather than chosen after results.",
+      "summary_cut": false,
+      "source_passage": "On the weighing the question asks about, my objection is to combining the two at the point of measurement, not to decision-analytic weighting as such. Where a composite is used for a particular clinical context, the underlying rates should remain separately reported and the weighting should be prospectively justified by clinical consequence rather than chosen after the results are seen. Acceptable trade-offs do vary by context, as the Agency notes, which is an argument for reporting the components and letting the context set the weights."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter holds that post-deployment modifications to generative systems are not uniform: model version changes, system prompts, retrieval corpora, guardrails, memory, tool permissions, and orchestration logic each affect different competency areas and different scopes of potential impact.",
+      "requested_fda_action": "Adopt an explicit taxonomy mapping modification types to the competency suites they plausibly affect, with broad re-benchmarking presumed for model version changes unless a documented impact analysis narrows it, and require sponsors to justify partial re-benchmarking on a stated rationale.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Endorses using premarket competency assessment as a re-evaluation baseline, but asks FDA to adopt a taxonomy mapping seven modification types (model version, prompts, retrieval corpus, guardrails, memory, tool permissions, orchestration) to affected competencies, with sponsors justifying any partial re-benchmarking.",
+      "summary_cut": false,
+      "source_passage": "Modifications to a generative system fall into distinct categories. In practice a sponsor makes at least seven recognisably different changes, and each carries a different plausible blast radius.\nModification\nCompetencies plausibly affected\nModel version or snapshot\nAll competency suites. Presumptively broad re-benchmarking, unless a documented impact analysis supports a narrower scope\nSystem prompt or instruction text\nSafety behaviour, scope adherence, communication quality\nRetrieval corpus or grounding sources\nClinical knowledge, citation grounding, factual accuracy\nGuardrail or filter rules\nEscalation and refusal behaviour, in both directions\nSession or cross-session memory\nPersonalisation, consistency, stale-context handling\nTool definitions or permissions\nAgentic action, confirmation, rollback, auditability\nOrchestration or routing logic\nEscalation timing, hand-off, trajectory behaviour\nOnce change type is mapped to affected competency suites, a sponsor has to justify partial re-benchmarking on a stated rationale, and the Agency has something it can actually assess. The mapping is what makes a least-burdensome approach auditable."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter agrees that re-benchmarking can generally be scaled to the nature and impact of a modification, but is concerned that scaling everything would erode the comparability of the premarket baseline over time, particularly for the smallest but most consequential safety tests.",
+      "requested_fda_action": "Require a fixed, invariant critical-safety regression core—covering safety-critical recognition and escalation cases plus scope-adherence and adversarial cases—to be re-run unchanged, with results reported against the original baseline, for every modification reasonably capable of altering generated output, safety controls, routing, context handling, or downstream actions.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The requested invariant core includes scope-adherence and adversarial cases, treating continued conformance to the device's behavioral envelope as something that must be re-verified after any change capable of altering outputs or downstream actions."
+      },
+      "public_summary": "Accepts scaling re-benchmarking to a modification's expected impact, but asks FDA to hold one exception invariant: a fixed critical-safety regression core (safety-critical recognition, escalation, scope-adherence, adversarial cases) re-run unchanged against the original baseline for any change affecting outputs, safety controls, routing, context, or downstream actions.",
+      "summary_cut": false,
+      "source_passage": "With one exception, which I would recommend holding invariant. A fixed critical-safety regression core, covering the safety-critical recognition and escalation cases together with the scope-adherence and adversarial cases, should be re-run unchanged on every modification reasonably capable of altering generated output, safety controls, routing, context handling or downstream actions , with results reported against the original baseline. That suite is the smallest, its failure matters most, and holding it fixed is what keeps the baseline comparison in Section VI meaningful over time."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q19",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "Event-based triggers tied to declared modifications only capture intentional sponsor changes; undeclared changes such as drift in a third-party foundation model or retrieval source, dependency and infrastructure changes, and shifts in the use environment or input distribution would go undetected.",
+      "requested_fda_action": "Treat change-triggered re-benchmarking (with change type setting the scope) as a complement to, not a replacement for, periodic postmarket assessment, so that undeclared drift and environmental or input-distribution shifts are still captured.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment highlights drift in third-party foundation models and retrieval sources as changes occurring outside the manufacturer's declared modification process.",
+        "deployment_assurance_scalability": "It stresses that shifts in the use environment, input distribution, and infrastructure dependencies occur without any device modification and require ongoing periodic monitoring."
+      },
+      "public_summary": "Accepts change-type triggers as part of postmarket re-benchmarking logic, but argues event-based triggers alone are insufficient. Urges FDA to retain periodic assessment to capture undeclared changes, including third-party foundation model or retrieval-source drift, dependency changes, and shifts in use environment or input distribution.",
+      "summary_cut": false,
+      "source_passage": "On Question 19 , this also supplies part of the triggering logic the Agency asks for. The trigger is a change of a declared type, and the mapping sets the scope. For known modifications, change-triggered re-benchmarking should complement periodic postmarket assessment rather than replace it. Event-based triggers are better aligned to intentional modifications; periodic assessment remains necessary for what a sponsor did not do, including drift in a third-party foundation model or retrieval source, dependency and infrastructure changes, and shifts in the use environment or input distribution that arrive without any declared device modification."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q19",
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "If an automated (language-model) adjudicator used to score benchmarks is not pinned and versioned, later re-benchmarking against the premarket baseline may measure differences between scorers rather than between device versions.",
+      "requested_fda_action": "Require that the adjudicator be documented in the premarket baseline record—pinned, versioned, and reported—and treat any change to an automated adjudicator as a change to the evaluation system requiring bridge testing or recalibration before scores are compared to the historical baseline.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment highlights that evaluative scoring judgment is delegated to a language-model adjudicator whose own versioned behavior can shift, affecting the validity of performance comparisons."
+      },
+      "public_summary": "Accepts using the premarket competency assessment as a re-benchmarking baseline, but asks FDA to require that automated scoring adjudicators be pinned, versioned and documented in that baseline, with changes to an adjudicator treated as evaluation-system changes requiring bridge testing or recalibration.",
+      "summary_cut": false,
+      "source_passage": "One addition applying to both questions. If the premarket assessment is to serve as a baseline for later comparison, then the adjudicator belongs in that baseline record, pinned, versioned and reported. An adjudicator that is itself a language model is a versioned artifact, and it changes. A sponsor re-benchmarking in eighteen months against a baseline scored by a superseded adjudicator has measured the difference between two scorers as much as the difference between two device versions ... A change to an automated adjudicator should be treated as a change to the evaluation system, requiring bridge testing or recalibration before scores it produces are compared against the historical baseline."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q1",
+        "q11",
+        "q8"
+      ],
+      "position": "support",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter considers the existing two-axis risk framing (described as clinical significance of the output versus degree of autonomy) sufficient for scaling the rigor of clinical confirmation approaches, and sees no need for further dimensions.",
+      "requested_fda_action": "Retain the two-axis risk framework as the basis for selecting among clinical confirmation approaches of increasing rigor, and do not add a third axis to it.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter supports using FDA's two-axis risk framing—characterized as clinical significance of output versus degree of autonomy—as a reasonable basis for selecting among clinical confirmation approaches of increasing rigor, and explicitly recommends against adding a third axis.",
+      "summary_cut": false,
+      "source_passage": "On selecting a confirmation approach (Question 11). The two-axis framing in Section IV, weighing clinical significance of the output against degree of autonomy, is a reasonable basis for choosing among approaches of increasing rigour, and I would not add a third axis to it."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q10",
+        "q11"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter accepts that benchmarking may reduce the need for prospective clinical study, but conditions this on the degree to which the benchmark itself has been qualified; the passage is cut off before the condition is fully stated.",
+      "requested_fda_action": "Tie the acceptability of a lighter clinical confirmation approach to the qualification of the benchmark relied upon, so that benchmark-based justifications are contingent on demonstrated benchmark validity.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts that benchmarking can partly substitute for prospective clinical study, but adds a condition: the extent of substitution should depend on how well the benchmark itself has been qualified. The passage ends mid-sentence, leaving the proposed requirement incomplete.",
+      "summary_cut": false,
+      "source_passage": "I would add a dependency. How far benchmarking can substitute for prospective clinical study depends on how well the benchmark itself has been qualified. When a sponsor proposes a lighter confirmation approach on the strength of strong benchmark performance, they"
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q19",
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "If an automated (language-model) adjudicator is used to score benchmarks, the adjudicator itself is a versioned artifact that changes over time; re-benchmarking against a baseline scored by a superseded adjudicator conflates scorer drift with device change, and the current framing does not require sponsors to separate the two.",
+      "requested_fda_action": "Require that the adjudicator be pinned, versioned, and documented as part of the premarket baseline record, and treat any change to an automated adjudicator as a change to the evaluation system requiring bridge testing or recalibration before new scores are compared with the historical baseline.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment concerns evaluative authority delegated to an automated language-model adjudicator whose own versioning and reliability are not addressed in FDA's baseline and re-benchmarking framing."
+      },
+      "public_summary": "Accepts using the premarket competency assessment as a baseline, but argues automated language-model adjudicators must be pinned, versioned, and reported in that baseline. Any adjudicator change should be treated as an evaluation-system change requiring bridge testing or recalibration before comparison with historical scores.",
+      "summary_cut": false,
+      "source_passage": "If the premarket assessment is to serve as a baseline for later comparison, then the adjudicator belongs in that baseline record, pinned, versioned and reported. An adjudicator that is itself a language model is a versioned artifact, and it changes. A sponsor re-benchmarking in eighteen months against a baseline scored by a superseded adjudicator has measured the difference between two scorers as much as the difference between two device versions, and nothing in the current framing obliges them to separate the two. A change to an automated adjudicator should be treated as a change to the evaluation system, requiring bridge testing or recalibration before scores it produces are compared against the historical baseline."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q12",
+        "q13"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "The commenter argues synthetic inputs are valuable for controlled stress testing of rare, adversarial, and safety-critical scenarios (including genuine emergencies, prompt injections, and boundary-violation attempts) and for ablation experiments, but cannot establish representativeness of real-world input distributions. They warn that clinician validation of a synthetic case only confirms clinical coherence and label correctness, a claim frequently conflated with distributional representativeness.",
+      "requested_fda_action": "FDA should treat synthetic data as suited to controlled stress testing and ablation rather than as a substitute for real use data, and should explicitly distinguish clinician confirmation of case coherence and label correctness from evidence that the synthetic case distribution matches the distribution the device will encounter in deployment.",
+      "confidence": "high",
+      "gap_tags": [
+        "cybersecurity_as_safety"
+      ],
+      "gap_explanations": {
+        "cybersecurity_as_safety": "The commenter frames prompt injections and boundary-violation attempts as safety-critical test scenarios for which synthetic generation may be one of the few practical ways to obtain adequate case numbers, linking adversarial robustness testing to clinical safety evaluation."
+      },
+      "public_summary": "Supports using synthetic inputs for controlled stress testing of rare, adversarial, and safety-critical cases and for ablation experiments, but cautions they cannot establish representativeness. Asks FDA to distinguish clinician confirmation of case coherence and labels from evidence about real-world input distributions.",
+      "summary_cut": false,
+      "source_passage": "On synthetic inputs (Questions 12 and 13). While synthetic conversations cannot stand in for real use, they are well suited to controlled stress testing of rare, adversarial and safety-critical situations, and to ablation experiments where one factor varies while everything else is held constant. For genuine emergencies, prompt injections and boundary-violation attempts, they may be one of the few practical ways to obtain adequate numbers. What they cannot establish is representativeness. When a clinician validates a synthetic case, they confirm that the case is clinically coherent and that its declared label is correct. That says nothing about whether the distribution of such cases resembles the distribution the device will meet in use. These are different claims, and they are frequently conflated."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q12"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "synthetic_data",
+      "stakeholder_concern": "Pooling benchmarking evidence with clinical confirmation evidence into a single performance estimate risks producing a figure that describes neither controlled benchmark behavior nor real-world intended-use performance, particularly where synthetic inputs drive the result.",
+      "requested_fda_action": "Permit combination only under stated conditions—a common estimand, explicit characterization of distributional differences, prospectively specified weighting, and sensitivity analysis showing conclusions are not driven by the synthetic component—and otherwise require the two evidence bodies to be reported separately.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts that benchmarking and clinical confirmation evidence may sometimes be combined, but only under specified conditions: a common estimand, explicit accounting of distributional differences, prospectively specified weighting, and sensitivity analysis on the synthetic component. Otherwise, results should be reported separately rather than naively pooled.",
+      "summary_cut": false,
+      "source_passage": "Question 12 asks under what conditions, if any, the two bodies of evidence may be combined. My answer is that they should not be naively pooled, and that any combination should carry conditions: a common estimand, an explicit account of how the two distributions differ, prospectively specified weighting, and a sensitivity analysis showing that the conclusion is not driven by the synthetic component. Absent those, the two should be reported separately. Benchmark performance characterises behaviour under controlled conditions, while clinical confirmation supplies evidence closer to the intended-use context, and a naive average describes neither."
+    },
+    {
+      "segment_id": "seg-021",
+      "question_ids": [
+        "q13"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "Synthetic evaluation data generated by models of the same class as the device under test risks reproducing the device's own blind spots, especially if the generating model also supplies the reference labels or defines what counts as a difficult case.",
+      "requested_fda_action": "Require that reference standards for synthetic cases be established or independently verified separately from the generating model, and that adversarial cases be constructed against a declared taxonomy of failure modes rather than the model's own notion of difficulty.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Endorses FDA's concern about same-class synthetic data masking performance gaps, and asks FDA to require that reference standards be set or independently verified apart from the generating model, with adversarial cases built against a declared failure-mode taxonomy.",
+      "summary_cut": false,
+      "source_passage": "Question 13 raises a sharper concern, that synthetic data generated by models of the same class as the device will reproduce the very gaps the evaluation should detect. The safeguard that matters most there is that the reference standard must be established or independently verified separately from the model that generates the cases . A model may propose a case; it may not certify its own label. Adversarial cases in particular should be built against a declared taxonomy of failure modes, because a model's own notion of a hard case is drawn from the same distribution as its blind spots."
+    },
+    {
+      "segment_id": "seg-022",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "A certification-style regime in which a limited number of accredited bodies must be paid to certify each release would raise cost, concentrate market power, and lengthen time to market, while attestation provides weaker assurance than reproducibility.",
+      "requested_fda_action": "Adopt a hybrid model: require open methods, corpora and scoring rubrics with sponsor testing reproducible from published materials, and reserve independent third-party involvement for clinical adjudication of the reference standard and, for the most consequential gates, sequestered safety-critical case sets to prevent optimisation to the test.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The commenter argues that per-release certification by a small number of accredited bodies would increase cost, market concentration, and time to market.",
+        "delegated_authority": "The comment addresses how much assurance work should be delegated to accredited third-party bodies versus retained through open, reproducible sponsor testing with targeted independent adjudication."
+      },
+      "public_summary": "Supports independent third-party involvement but opposes a certification regime. Urges FDA to require open methods, corpora and rubrics with reproducible sponsor testing, limiting independent roles to clinical adjudication of reference standards and sequestered safety-critical case sets, citing cost, concentration and time-to-market risks.",
+      "summary_cut": false,
+      "source_passage": "On independent third parties (Question 16). A hybrid would serve better than a certification regime. Methods, corpora and scoring rubrics should be open, and sponsor testing should be reproducible from published materials, because reproducibility is a cheaper and more robust guarantee than attestation. Independent involvement should then concentrate where it is irreplaceable: clinical adjudication of the reference standard , and, for the most consequential gates, sequestered safety-critical case sets held by a third party, so that optimisation to the test is structurally prevented. The safeguard the Agency asks about is, I think, primarily structural. Where a small number of accredited bodies must be paid to certify each release, cost, concentration and time to market all rise, a concern the Agency raises itself. Independence should therefore be targeted at the functions where it adds assurance that nothing else provides. An approach built on open methods, published qualification evidence and targeted independent adjudication gets most of the assurance without creating that dependency."
+    },
+    {
+      "segment_id": "seg-023",
+      "question_ids": [
+        "q12",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "pccp",
+      "stakeholder_concern": "Single-point performance estimates do not tell sponsors or reviewers what degradation an evaluation was actually capable of detecting, and there is limited clinical-GenAI-specific evidence to guide how many repeated evaluation runs are needed.",
+      "requested_fda_action": "Expect evaluation programmes to report minimum detectable effect as a curve across the number of repeated evaluation runs, so that the number of repeats can be set as an explicit design parameter within a modification protocol and reviewers can judge detection capability.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Describes an evaluation programme, including an ethics-reviewed clinician rating study, and argues that minimum detectable effect should be reported as a function of repeated evaluation runs rather than a single figure, so repeat count becomes an explicit modification-protocol design parameter reviewers can assess.",
+      "summary_cut": false,
+      "source_passage": "The programme characterises the components named there, includes a clinician rating study, to be conducted only after an independent ethics determination, and reports minimum detectable effect as a function of the number of repeated evaluation runs rather than as a single figure. ... That curve is the practically useful object, because the number of repeated runs is itself a design parameter of a Modification Protocol, and there is limited clinical-GenAI-specific evidence to guide that choice today. A sponsor should be able to read off how many repeats are needed to detect a given degradation in safety performance, and a reviewer should be able to read off what a submitted evaluation was capable of detecting."
+    },
+    {
+      "segment_id": "seg-024",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that benchmarks used as gating criteria for device evaluation may not be demonstrably valid as measurement instruments, which is the construct-validity issue FDA raises in Question 10.",
+      "requested_fda_action": "FDA should require sponsors to submit measurement-system qualification evidence for any benchmark used to gate device evaluation, comprising six components the commenter details in Section 3 of its comment.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter engages FDA's benchmark construct-validity question by proposing that any benchmark used to gate device evaluation be supported by measurement-system qualification evidence, specified as six components detailed elsewhere in the comment, rather than accepted without such qualification.",
+      "summary_cut": false,
+      "source_passage": "1. Require measurement-system qualification evidence for any benchmark used to gate device evaluation, as the construct validity Question 10 asks about. Six components, set out in Section 3."
+    },
+    {
+      "segment_id": "seg-025",
+      "question_ids": [
+        "q12",
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Release or re-evaluation comparisons may report differences that reflect the evaluation's own measurement variability rather than genuine changes in device behavior, so an evaluation may not be sensitive enough to detect real change.",
+      "requested_fda_action": "FDA should consider requiring a null comparison—the unchanged configuration repeatedly resampled against itself—as minimum evidence that a release evaluation can distinguish real change from its own variability.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts the general evaluation approach but asks FDA to add a minimum requirement: a null comparison in which the unchanged configuration is repeatedly resampled against itself, demonstrating that a release evaluation can distinguish genuine change from its own measurement variability.",
+      "summary_cut": false,
+      "source_passage": "2. Consider requiring a null comparison , the unchanged configuration repeatedly resampled against itself, as minimum evidence that a release evaluation can distinguish real change from its own variability."
+    },
+    {
+      "segment_id": "seg-026",
+      "question_ids": [
+        "q5"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "How long a multi-turn exchange is observed materially affects measured performance; if the observation window is left to implementation discretion, results may not reflect whether a device behaved correctly when it mattered, and late self-correction could mask delayed or missed action.",
+      "requested_fda_action": "Require that the observation window for multi-turn evaluation be prespecified, justified and validated as an evaluation parameter, and that timeliness of correct behavior be reported separately from recovery occurring later in the conversation.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "Separating timeliness from later recovery reflects a concern that delay in reaching the correct output is itself consequential and is obscured by end-of-conversation aggregate measures."
+      },
+      "public_summary": "Accepts multi-turn conversational evaluation but asks FDA to treat the observation window as a prespecified, justified and validated evaluation parameter rather than a developer implementation choice, and to require timeliness of correct behavior be reported separately from later self-correction.",
+      "summary_cut": false,
+      "source_passage": "3. Treat the observation window in multi-turn evaluation as a prespecified, justified and validated parameter, not an implementation choice, and report timeliness separately from later recovery."
+    },
+    {
+      "segment_id": "seg-027",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "Aggregating escalation errors could obscure the distinct rates and clinical meaning of under-escalation versus over-escalation, and test corpora lacking cases where escalation is not warranted cannot detect over-escalation.",
+      "requested_fda_action": "Require sponsors to prespecify and report under-escalation and over-escalation as separate outcomes with separate denominators, and require evaluation corpora to include declared non-escalation cases.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports evaluating both directions of escalation error but asks FDA to require under- and over-escalation be prespecified and reported as separate outcomes with separate denominators, and that evaluation corpora include declared non-escalation cases.",
+      "summary_cut": false,
+      "source_passage": "4. Require under- and over-escalation to be reported as separate prespecified outcomes with separate denominators, and require corpora to contain declared non-escalation cases."
+    },
+    {
+      "segment_id": "seg-028",
+      "question_ids": [
+        "q19",
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "Scaling re-evaluation to the nature of a modification risks under-testing safety-critical behavior and missing performance drift that a sponsor never identified or declared as a change.",
+      "requested_fda_action": "Scale re-benchmarking to modification type according to a published mapping, require an invariant critical-safety regression core to be re-run on any change capable of altering generated output or safety behavior, and retain periodic postmarket assessment in addition to change-triggered re-benchmarking.",
+      "confidence": "medium",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment points to behavioral drift that occurs without any sponsor-declared modification, meaning change-triggered review alone would not detect shifts in the device's actual operating behavior."
+      },
+      "public_summary": "Accepts scaling re-benchmarking to modification type but asks FDA to publish a modification-to-evidence mapping, mandate an invariant critical-safety regression suite for any change affecting outputs or safety behavior, and retain periodic postmarket assessment to detect undeclared drift.",
+      "summary_cut": false,
+      "source_passage": "5. Scale re-benchmarking to modification type , against a published mapping, with an invariant critical-safety regression core re-run on every change capable of altering generated output or safety behaviour, and keep periodic postmarket assessment alongside change-triggered re-benchmarking to catch drift no sponsor declared."
+    },
+    {
+      "segment_id": "seg-029",
+      "question_ids": [
+        "q12",
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "An acceptance criterion reported without an accompanying characterization of the variability inherent in the evaluation (e.g., measurement/estimation uncertainty) cannot be meaningfully interpreted.",
+      "requested_fda_action": "Require sponsors to report acceptance criteria together with a characterization of the evaluation variability against which the criterion is read, and treat criteria reported without such characterization as difficult to interpret.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Recommends that FDA require any acceptance criterion for GenAI device performance to be reported alongside a characterization of the evaluation's variability, and that criteria lacking such context be treated as difficult to interpret.",
+      "summary_cut": false,
+      "source_passage": "10. Require an acceptance criterion to be accompanied by a characterisation of the evaluation variability against which it is read , and treat one reported without it as difficult to interpret."
+    },
+    {
+      "segment_id": "seg-030",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "unclear",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is focused on the availability of openly licensed benchmarking infrastructure — a scenario schema with declared ground truth, an adjudication protocol, scoring anchors, and a redistributable reference corpus — and on a documented protocol for qualifying such instruments. The passage itself does not state agreement or disagreement with FDA's proposed approach.",
+      "requested_fda_action": "Offers FDA and sponsors free, permissively licensed use of the existing benchmarking materials, which may be used, modified, or discarded without permission or cost. Offers to publish the instrument qualification protocol as a standalone open document and to provide it to the Agency in whatever form is useful.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter offers FDA and sponsors free use of openly licensed benchmarking materials — a scenario schema with declared ground truth, adjudication protocol, scoring anchors, and redistributable reference corpus — and offers to publish a standalone benchmark instrument qualification protocol. No explicit position on FDA's approach.",
+      "summary_cut": false,
+      "source_passage": "What is offered. The scenario schema with declared ground truth, the adjudication protocol, the scoring anchors and the openly redistributable reference corpus are already public under permissive licences [5, 6], and the Agency or any sponsor may use, modify or discard them without permission or cost. ... I intend to publish the instrument qualification protocol described in Section 3 as a standalone open document , together with the underlying materials, and I would welcome the chance to provide it, or any part of it, to the Agency in whatever form is useful."
+    }
+  ]
+}

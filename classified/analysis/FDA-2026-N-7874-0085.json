@@ -1,0 +1,231 @@
+{
+  "comment_id": "FDA-2026-N-7874-0085",
+  "input_hash": "684cf43cc32ec74a",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-17T13:20:17Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "unclear",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that standardized dataset documentation could be misread as evidence of benchmark validity, absence of contamination, representativeness, or device safety and effectiveness. The stated scope is that documentation (verified via VIDS for presence and structure) only makes such questions inspectable rather than answering them.",
+      "requested_fda_action": "The passage asks FDA to treat documentation verification narrowly, as a means of making benchmark validity, contamination, and representativeness questions inspectable, and not as certification of a dataset or as evidence supporting benchmark validity or device safety and effectiveness.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "A scoping caveat rather than a stated position: the commenter stresses that its dataset documentation verification approach (VIDS) confirms only that documentation exists and is structured, and should not be read as certifying datasets, establishing benchmark validity, ruling out contamination, or demonstrating device safety.",
+      "summary_cut": false,
+      "source_passage": "One limitation should be stated at the outset, because it defines both what this comment argues and\nwhat it does not. VIDS verifies that documentation is present and structured; it does not certify a\ndataset. Nothing in this comment should be read as suggesting that dataset documentation, standardized\nor otherwise, establishes benchmark validity, rules out contamination, demonstrates representativeness,\nor supports any conclusion about the safety or effectiveness of a device. Documentation makes those\nquestions inspectable. It does not answer them."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that questions about how well a device performs are being conflated with questions about what evaluation asset the performance was measured on, and that the latter cannot currently be answered reliably by reviewers, independent adjudicators, or the sponsor at later reassessment.",
+      "requested_fda_action": "Keep the two questions explicitly separate in the framework: retain the performance evaluation methods (benchmarking elements S.1-A.1, clinical confirmation, comparators) while adding a standardized documentation layer describing the evaluation asset that can be machine-checked for presence and structure, without treating that check as a safety or effectiveness judgment.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts the benchmarking and clinical confirmation approach but asks CDRH to separate performance evaluation from documentation of the evaluation asset itself, adding a standardized, machine-checkable documentation layer so assets remain identifiable to reviewers, third parties, and sponsors at later reassessment.",
+      "summary_cut": false,
+      "source_passage": "Wherever an evaluation relies on such an asset, two distinct questions arise:\n 1. How well does the device perform? This is the question the benchmarking elements (S.1\nthrough A.1), the clinical confirmation approaches, and the comparator discussion address.\n2. What exactly was the asset on which that performance was measured, and is that answerable by\na reviewer, an independent adjudicator, or the same sponsor at a later reassessment?\n\nThe second question is not a performance question. It is a documentation question, and the\ndocumentation supporting it can be standardized and machine-checked for presence and structure\nregardless of how CDRH ultimately resolves the first. PMS respectfully suggests that the framework\nwill be easier to operate, for sponsors, for review teams, and for any independent third parties, if the\ntwo questions are kept explicitly separate: performance evaluation methods can then evolve without\ndestabilizing the documentation layer, and the documentation layer can be checked mechanically\nwithout anyone mistaking that check for a judgment about device safety or effectiveness."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter states it does not offer a position on the construct-validity question itself, but observes that claims about contamination, representativeness, and construct validity cannot be assessed or reproduced when benchmark dataset provenance, composition, annotation methods, processing steps, partitioning, quality metrics, and version are undocumented or inconsistently documented.",
+      "requested_fda_action": "Whatever construct-validity evidence CDRH ultimately deems appropriate, require that benchmark datasets carry self-contained documentation enabling a reviewer to determine, without sponsor correspondence, data source and acquisition, represented population, annotation process and qualifications, processing steps, reproducible subject-level partitioning, quality documentation (e.g., inter-annotator agreement, class distribution), and the exact dataset version.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment treats externally supplied benchmark datasets as components whose provenance, annotation quality control, and version identity must be documented for a reviewer to rely on them, an input-quality concern beyond the question's framing of construct validity."
+      },
+      "public_summary": "Commenter takes no position on how construct validity should be defined, but argues benchmark claims about contamination and representativeness are unverifiable without dataset documentation. Asks FDA to require self-contained records of provenance, population, annotation process, processing, partitioning, quality metrics, and exact version.",
+      "summary_cut": false,
+      "source_passage": "PMS does not propose an answer to the construct-validity question itself. Our observation is narrower:\nassessing and reproducing claims about contamination, representativeness, and construct validity\nbecomes substantially more difficult when the provenance, composition, annotation methods,\ntransformations, and version of the underlying dataset are absent or inconsistently documented.\nWhatever construct-validity evidence CDRH ultimately considers appropriate, a reviewer examining it\nwill need to be able to determine, from the dataset's own documentation rather than from\ncorrespondence with the sponsor:\n  where the data came from and how it was acquired;\n what population the dataset represents, at least at the level of a subject registry;\n how reference annotations were produced: by whom, with what qualifications, using what tools\nand process, under what quality control;\n what conversions or other processing steps were applied between acquisition and the tested form;\n how any train/validation/test partitions were constructed, including whether partitioning was at the\nsubject level and whether it is reproducible;\n what quality documentation exists, including inter-annotator agreement and class distribution\nwhere applicable; and\n which exact version of the dataset was used, so that \"the benchmark\" names one identifiable\nartifact rather than a family of similar ones."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter cautions that documentation elements such as dataset identity, version, provenance, release history, composition, and annotation processes are informative inputs for examining benchmark validity but do not by themselves establish that a benchmark is valid, that a model was uncontaminated, or that sponsor-developed benchmarks are independent.",
+      "requested_fda_action": "Treat benchmark documentation and provenance records as supporting information for contamination, representativeness, and independence analyses rather than as evidence of benchmark validity, and require separate demonstration of validity itself.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Comment agrees documentation of benchmark identity, version, provenance, composition, and annotation processes is important for assessing contamination, representativeness, and sponsor-developed benchmark independence, but argues such records do not themselves establish benchmark validity and should not be treated as sufficient validity evidence.",
+      "summary_cut": false,
+      "source_passage": "None of these items establishes that a benchmark is valid. Each provides important information for\nexamining whether it is. A contamination analysis benefits from unambiguous dataset identity, version,\nprovenance, and release history; those records do not by themselves establish whether a model was\nexposed to the benchmark. A representativeness argument benefits from knowing composition; an\nindependence argument about sponsor-developed benchmarks (a concern Question 10 raises directly)\nbenefits from knowing who produced the annotations and under what process."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Construct-validity arguments for benchmarks may rest on an implicit or undescribed dataset, making the argument difficult to examine or verify.",
+      "requested_fda_action": "CDRH could require or encourage that whatever construct-validity evidence it deems appropriate be accompanied by structured, machine-checkable documentation of the benchmark dataset, so the validity argument can be assessed against an explicitly described artifact.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts CDRH's construct-validity focus for benchmarks but proposes a procedural addition: pairing whatever validity evidence FDA requires with structured, machine-checkable documentation of the benchmark dataset, so validity claims can be examined against an explicitly described artifact.",
+      "summary_cut": false,
+      "source_passage": "The practical recommendation for Question 10 is therefore procedural rather than substantive: whatever\nconstruct-validity evidence CDRH considers appropriate, CDRH could consider having such evidence\naccompanied by structured, machine-checkable documentation of the benchmark dataset itself, so that\nthe construct-validity argument is examinable against a described artifact rather than an implicit one."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q10",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Datasets used for benchmarking and clinical confirmation may be described inconsistently, making it difficult to verify basic information about provenance, composition, annotation, processing, partitions, quality documentation, and versioning.",
+      "requested_fda_action": "Consider adopting, as a concept, a standardized machine-checkable minimum documentation layer with structured fields for dataset metadata that can be automatically checked for presence and well-formedness, while leaving substantive judgments about dataset quality, representativeness, and device performance to the evaluation methods and reviewers described elsewhere in the paper.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts the paper's benchmarking and clinical confirmation framework but suggests FDA consider a standardized, machine-checkable minimum documentation layer for datasets, covering provenance, composition, annotation, processing, partitions, quality documentation, and version, kept separate from substantive quality or performance judgments.",
+      "summary_cut": false,
+      "source_passage": "PMS suggests that CDRH consider, as a concept, a standardized, machine-checkable minimum\ndocumentation layer for datasets used in benchmarking and clinical confirmation. Such a layer would\nspecify how a dataset describes its provenance, composition, annotation process, processing steps,\npartitions, quality documentation, and version, in structured fields that a program can check for\npresence and well-formedness. It would remain entirely separate from any judgment about dataset\nquality, representativeness, or device performance; those judgments stay with the evaluation methods\nand reviewers the rest of the paper describes."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter is concerned that a specific proposal (VIDS) not be mistaken for a recommended standard, and emphasizes that what matters is the underlying concept and its technical feasibility rather than any particular implementation. The passage does not describe the concept's substance.",
+      "requested_fda_action": "Consider the underlying concept, whether realized through VIDS, an evolution of it, an analogous approach for non-imaging data, or another consensus-based standard, rather than adopting VIDS itself.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter presents VIDS only to demonstrate technical feasibility, not for adoption. It asks FDA to consider the underlying concept, implemented through VIDS, an evolution of it, an analogous non-imaging approach, or another consensus-based standard. The passage does not detail the concept.",
+      "summary_cut": false,
+      "source_passage": "We offer VIDS here as evidence that the concept is technically implementable, not as a candidate for\nadoption. Whether through VIDS, an evolution of it, an analogous approach for non-imaging data, or\nanother consensus-based standard, the concept is what we recommend the Agency consider."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "When third parties hold sequestered evaluation datasets that sponsors cannot inspect, CDRH, the third party, and the sponsor all need a shared way to understand what the dataset contains, how reference annotations were produced, and which version was used, without exposing the data itself.",
+      "requested_fda_action": "Adopt a standardized, structured dataset documentation layer with machine-checkable presence rules for third-party evaluation assets, and treat dataset documentation as an early candidate for standards development since it is common infrastructure separable from unresolved performance-measurement questions.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses how parties can rely on evaluation results generated on assets held and described by independent third parties, requiring structured documentation to make that reliance verifiable across multiple third parties."
+      },
+      "public_summary": "Supports third-party roles in evaluation but asks FDA to add a standardized, structured dataset documentation layer with machine-checkable presence rules, so sequestered evaluation datasets can be described consistently to FDA, third parties, and sponsors without disclosing data content.",
+      "summary_cut": false,
+      "source_passage": "A standardized documentation layer would be particularly useful for the sequestered-dataset role.\nWhere sponsor access to the underlying evaluation data is restricted, the parties relying on the asset\n(CDRH, the third party, and the sponsor accepting results generated on it) would benefit from a shared,\nstructured way to describe what the dataset is, how its reference annotations were produced, and which\nversion was used for which evaluation, without disclosing the content itself. Structured documentation\nwith machine-checkable presence rules allows a third party to describe such an asset at a useful level of\ndetail while keeping the data itself withheld, and allows consistency of description across multiple third\nparties. The same applies to the standards-development role: dataset documentation is a natural early\ncandidate for consistency, because it is common infrastructure across many of the evaluation methods\nthe paper discusses and is separable from the harder, still-open questions about how device\nperformance itself should be measured."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q19",
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Re-benchmarking and premarket-baseline comparisons assume that 'the same benchmark' is stable, but evaluation datasets change for legitimate reasons (corrected labels, added subjects, revised exclusions), so a performance shift may reflect the device modification, the changed evaluation asset, or both.",
+      "requested_fda_action": "Require a structured documentation layer for evaluation assets, including a dataset version identifier, explicit subject-level partition membership, and where available a change log and persistent identifier, so reviewers can verify that baseline and follow-up benchmarking used the same asset or a documented successor.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts re-benchmarking and baseline-comparison change control but notes evaluation datasets change over time, confounding comparisons. Asks FDA to require dataset version identifiers, subject-level partition membership, change logs, and persistent identifiers so baseline asset identity is verifiable rather than assumed.",
+      "summary_cut": false,
+      "source_passage": "Both depend on a comparison of the form: device version A produced result X on the benchmark;\ndevice version B later produced result Y on \"the same benchmark.\" The comparison depends on clearly\nidentifying what \"the same benchmark\" means: same release, subjects, reference annotations,\nprocessing, partitions, and exclusions. Datasets change for legitimate reasons (corrected labels, added\nsubjects, revised exclusions), and without explicit version identity those changes silently confound the\ndevice comparison; a shift from X to Y may reflect the modification under review, a change in the\nevaluation asset, or both.\nStructured versioning is the documentation layer's contribution here. A documentation layer can\nsupport this through a required dataset version identifier, explicit subject-level partition membership,\nand, where available, a change log and persistent identifier. With those in place, a re-benchmarking\nresult can state precisely which evaluation artifact it used, and a reviewer can compare the recorded\nidentifiers and determine whether the baseline and follow-up records identify the same asset or a\ndocumented successor. This seems particularly relevant to the change categories Question 22 asks\nabout: the more a change-control framework relies on comparison against a premarket baseline, the\nmore the identity of the baseline asset itself needs to be a checkable fact rather than an assumption."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Reviewers cannot assess whether a benchmark evaluation covered a clinically relevant population without documentation of the evaluation dataset's composition; the commenter notes that Element R.2 as described extends well beyond composition to dialects, literacy levels, and interaction patterns, which dataset-level documentation would not address.",
+      "requested_fda_action": "Incorporate structured dataset composition documentation—such as a subject-level registry with fields including age and sex—as support for the composition portion of subgroup-performance analysis under Element R.2, while recognizing that other R.2 dimensions require separate approaches.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts the subgroup-performance benchmarking element but notes it cannot be reviewed without documented evaluation dataset composition, proposing a subject-level registry with structured fields such as age and sex, while acknowledging this addresses only composition, not dialect, literacy, or interaction dimensions.",
+      "summary_cut": false,
+      "source_passage": "Element R.2 (subgroup performance). Subgroup-performance analysis depends in part on\nsufficiently documented dataset composition: a reviewer cannot examine whether an evaluation\ncovered a clinically relevant population without documentation of what populations the evaluation data\ncontained. A subject-level registry that can include structured fields such as age and sex supports part\nof this need. We note that R.2 as described is considerably broader (dialects, literacy levels, interaction\npatterns), and we do not suggest that dataset-level documentation addresses those dimensions; it\naddresses the composition portion."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q12",
+        "q13"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "synthetic_data",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter notes that analyses combining synthetic and real patient data depend on explicit documentation of data origin, and observes that the current VIDS specification does not define such a field.",
+      "requested_fda_action": "CDRH should consider requiring an origin declaration at the dataset and, where appropriate, cohort or item level that distinguishes acquired, synthetic, simulated, phantom-derived, and mixed sources, and records the generation method for synthetic content.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts FDA's approach to synthetic data analyses but recommends adding explicit data-origin declarations at dataset and, where appropriate, cohort or item level—distinguishing acquired, synthetic, simulated, phantom-derived, and mixed sources with generation methods recorded—noting current VIDS specifications lack such a field.",
+      "summary_cut": false,
+      "source_passage": "Questions 12 and 13 (synthetic data). Where synthetically generated inputs supplement real patient\ndata, the analyses contemplated in Questions 12 and 13 benefit from explicit documentation of data\norigin. CDRH could consider an origin declaration at the dataset and, where appropriate, cohort or item\nlevel, distinguishing acquired, synthetic, simulated, phantom-derived, and mixed sources, with the\ngeneration method recorded for synthetic content. This is a concept-level recommendation; the current\nVIDS specification does not define such a field."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter observes that the training-data provenance information contemplated for voluntary Foundation Model Master Files presents a provenance-documentation question at the model level that parallels a documentation issue raised elsewhere in its comment.",
+      "requested_fda_action": "Apply a similarly structured approach to provenance documentation for foundation model training data within the voluntary Foundation Model MAF content, consistent with the structured treatment the commenter proposes for the analogous issue.",
+      "confidence": "low",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment focuses on documenting the provenance of a third-party foundation model's training data, an upstream supplier-level quality and transparency question rather than a device-level one."
+      },
+      "public_summary": "Brief note suggesting that the training-data provenance content contemplated for voluntary Foundation Model Master Files raises a parallel model-level provenance-documentation question, and may benefit from treatment structured similarly to the approach the commenter proposes elsewhere.",
+      "summary_cut": false,
+      "source_passage": "Finally, we note that the training-data provenance content contemplated for voluntary Foundation\nModel MAFs in Section VII.A raises an analogous provenance-documentation question at the model\nlevel, and may benefit from similarly structured treatment."
+    }
+  ]
+}

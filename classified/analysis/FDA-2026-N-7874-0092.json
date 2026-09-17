@@ -1,0 +1,714 @@
+{
+  "comment_id": "FDA-2026-N-7874-0092",
+  "input_hash": "a71f714d02976fd8",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-17T13:20:17Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter views sample-based clinician review as a strong postmarket mechanism but warns that a single fixed sampling rate would not track actual clinical risk across outputs.",
+      "requested_fda_action": "Combine random sampling to establish baseline error rates and surface unexpected failure patterns with risk-weighted review that intensifies when outputs are patient-specific, highly actionable, uncertain, contraindication-sensitive, or able to materially influence treatment or triage.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports sample-based clinician review as a postmarket mechanism but argues a fixed sampling rate misrepresents clinical risk. Recommends pairing random sampling for baseline error rates with risk-weighted review intensified for patient-specific, actionable, uncertain, contraindication-sensitive, or treatment- and triage-influencing outputs.",
+      "summary_cut": false,
+      "source_passage": "Periodic clinician review is a strong postmarket monitoring mechanism, but a single fixed sampling rate will not adequately reflect clinical risk. Random sampling can establish baseline error rates and reveal unexpected failure patterns. Risk-weighted review should increase oversight when outputs become patient-specific, highly actionable, uncertain, contraindication-sensitive, or capable of materially influencing treatment or triage."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q2",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter is concerned that GenAI outputs which authorize or materially shape consequential clinical actions could reach patients or be acted upon without a human checkpoint.",
+      "requested_fda_action": "FDA should expect pre-delivery human review for high-risk outputs and require explicit human sign-off before outputs that directly authorize or materially condition consequential clinical action take effect.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment focuses on limiting the degree to which a device output can authorize consequential clinical action without an explicit human authorizing step.",
+        "human_ai_system_performance": "It treats a mandatory human review/sign-off step as an integral safeguard, implying the device and reviewing human must be assessed as a combined system."
+      },
+      "public_summary": "Recommends that FDA require human checkpoints for higher-risk generative AI outputs: pre-delivery review for high-risk outputs, and explicit human sign-off before any output that directly authorizes or materially conditions consequential clinical action is acted upon.",
+      "summary_cut": false,
+      "source_passage": "High-risk outputs may require pre-delivery review. Outputs that directly authorize or materially condition consequential clinical action should require explicit human sign-off."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter is concerned that the status of human review of device outputs must be explicitly trackable rather than implicit, including whether an output was unreviewed, sampled, confirmed, corrected, in conflict, escalated, or signed off.",
+      "requested_fda_action": "Expect review status to be recorded in a form that is both visible and machine-readable, using discrete states such as unreviewed, sampled, reviewed-confirmed, reviewed-corrected, conflict-open, escalated, and signed off.",
+      "confidence": "low",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The proposed status states capture whether and how a human reviewed, confirmed, or corrected a device output, making the combined human-AI review process auditable rather than assumed."
+      },
+      "public_summary": "Commenter adds a specific element to postmarket review approaches: review status of device outputs should be visible and machine-readable, using discrete states such as unreviewed, sampled, reviewed-confirmed, reviewed-corrected, conflict-open, escalated, or signed off.",
+      "summary_cut": false,
+      "source_passage": "Review status should also remain visible and machine-readable, for example: unreviewed, sampled, reviewed-confirmed, reviewed-corrected, conflict-open, escalated, or signed off."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter accepts that clinicians, institutions, societies, and independent reviewers can add postmarket verification value, but only if responsibility is allocated according to who actually exercises control, so that manufacturer accountability is not diffused.",
+      "requested_fda_action": "Structure postmarket roles with an explicit responsibility map: manufacturers accountable for device architecture, risk-routing logic, review-state labeling, reviewer credential controls, change management, and audit infrastructure; deployers for selected clinical use, workflow integration, configured thresholds, and bypassing required review gates; clinician reviewers only for the scope actually reviewed or signed off.",
+      "confidence": "high",
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment proposes a control-based allocation of postmarket responsibility across manufacturer, deploying institution, and individual clinician reviewer, going beyond FDA's framing of preserving manufacturer accountability alone."
+      },
+      "public_summary": "Supports distributed postmarket verification roles for clinicians, institutions, societies, and independent reviewers, but only if responsibility tracks actual control: manufacturers for architecture, routing logic, labeling, credentialing, change management, audit; deployers for use selection, workflow, thresholds, review-gate bypass; reviewers only for scope actually signed off.",
+      "summary_cut": false,
+      "source_passage": "Clinicians, healthcare institutions, professional societies, and independent reviewers can provide valuable postmarket verification if responsibility remains tied to actual control. The manufacturer should remain responsible for device architecture, risk-routing logic, review-state labeling, reviewer credential controls, change management, and audit infrastructure. The deployer should remain responsible for the selected clinical use, local workflow integration, configured thresholds, and decisions to bypass required review gates. A clinician reviewer should be responsible only for the defined scope actually reviewed or signed off. This structure allows distributed professional review while preserving a clear responsibility anchor."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter is concerned that postmarket evaluation approaches must allow reconstruction, after a consequential event, of the full chain from evidence and patient context through AI output, professional review, corrections or disagreement, final release state, human sign-off, and downstream action.",
+      "requested_fda_action": "Add risk-scaled recordkeeping and traceability expectations to postmarket approaches: lightweight operational records for routine low-risk interactions, provenance, reviewer scope, corrections, unresolved conflicts and release authority for high-risk individualized advice, and full evidence preservation for critical outputs.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "human_ai_system_performance",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment focuses on reconstructing contributions of the device, reviewing professionals, and those authorizing release, implying accountability is spread across multiple actors after an adverse event.",
+        "human_ai_system_performance": "It treats the reviewable unit as the combined AI output plus professional review, correction, and disagreement rather than model output alone.",
+        "delegated_authority": "It calls for records of release authority and human sign-off, addressing who was authorized to approve outputs at each step."
+      },
+      "public_summary": "Supports postmarket evaluation but asks FDA to add risk-scaled traceability records enabling post-event reconstruction from evidence and patient context through AI output, clinician review, corrections, release state, sign-off, and downstream action—lightweight for routine use, full preservation for critical outputs.",
+      "summary_cut": false,
+      "source_passage": "When a consequential event occurs, regulators and manufacturers should be able to reconstruct the path from relevant evidence and patient context to AI output, professional review, correction or disagreement, final release state, human sign-off where required, and downstream action. Record density can scale with risk. Routine low-risk interactions may require lightweight operational records. High-risk individualized advice should preserve provenance, reviewer scope, corrections, unresolved conflicts, and release authority. Critical outputs should support full evidence preservation."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q22",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "The commenter is concerned that change-control triggers should turn on whether a modification materially alters the device's information inputs, the degree of authority it exercises, or its influence on clinical action, rather than on narrower technical categories.",
+      "requested_fda_action": "FDA should define re-evaluation triggers around materially altered information intake, exercised authority, or effect on clinical action, expressly including new foundation models, persistent memory, external clinical data sources, tool integrations, agent capabilities, reviewer thresholds, and downstream execution pathways.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment treats changes in the device's exercised authority, reviewer thresholds, and downstream execution pathways as triggers for re-evaluation, a dimension not explicit in FDA's modification-scaling question.",
+        "dynamic_intended_use": "Additions such as persistent memory, tool integration, or agent capability are framed as materially shifting the device's behavioral envelope and thus requiring reassessment."
+      },
+      "public_summary": "Commenter accepts the premarket baseline for re-evaluating modifications but proposes materiality criteria: re-evaluation should trigger when a change alters how the device receives information, exercises authority, or affects clinical action—including new foundation models, persistent memory, external data sources, tool or agent capabilities, reviewer thresholds, and",
+      "summary_cut": true,
+      "source_passage": "Reevaluation should be considered when changes materially alter how the device receives information, exercises authority, or affects clinical action. Relevant changes may include a new foundation model, persistent memory, external clinical data source, tool integration, agent capability, reviewer threshold, or downstream execution pathway."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter is concerned that in agentic systems the capacity to generate a recommendation can be conflated with the authority to act on it and the permission to execute a consequential action, which should remain separate.",
+      "requested_fda_action": "Treat recommendation generation, assigned authority, and execution permission as distinct, and require explicit human authorization gates plus traceable records for high-consequence transitions in agentic GenAI-enabled devices.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment argues that the authority to act and permission to execute consequential actions must be separated from output generation and gated by explicit human authorization with traceable records."
+      },
+      "public_summary": "Addressing agentic systems, the commenter urges FDA to keep recommendation generation, assigned authority, and permission to execute consequential actions distinct, and to require explicit human authorization gates and traceable records for high-consequence transitions.",
+      "summary_cut": false,
+      "source_passage": "This becomes particularly important for agentic systems. The ability to generate a recommendation, the authority assigned to that recommendation, and permission to execute a consequential action should remain distinct. High-consequence transitions should have explicit human authorization gates and traceable records."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q19",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter is concerned that human oversight of increasingly capable and agentic GenAI-enabled devices may be asserted generically rather than defined operationally, leaving unclear who reviews what, on what authority, at what risk threshold, and what record survives a failure.",
+      "requested_fda_action": "Require that human oversight for GenAI-enabled devices be specified concretely, identifying the object of review, the reviewer, the reviewer's authority, the risk threshold triggering review, and the evidence to be preserved when failures occur.",
+      "confidence": "low",
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The passage centers on defining under what authority and at what risk threshold a human reviewer acts over an increasingly agentic device, which FDA's questions do not frame explicitly.",
+        "human_ai_system_performance": "It treats oversight as a specified human review process integral to safe device operation rather than an assumed backstop."
+      },
+      "public_summary": "Commenter accepts human oversight as a safeguard for increasingly agentic GenAI devices but asks that it be specified operationally: what is reviewed, by whom, under what authority, at what risk threshold, and what evidence is preserved when failures occur.",
+      "summary_cut": false,
+      "source_passage": "As GenAI-enabled medical devices become more capable and agentic, effective human oversight should specify what is reviewed, by whom, under what authority, at what risk threshold, and with what evidence preserved when failure occurs."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter is concerned that monitoring of generative outputs should be tied to a structured, tiered release process rather than review alone, with the highest-consequence outputs never reaching a user or being executed without expert or explicit human approval.",
+      "requested_fda_action": "Consider a release workflow in which outputs are decomposed into source-linked or inferred claims and assigned a risk tier, with low-risk outputs released immediately into a random or periodic sampling pool, medium-risk outputs released provisionally with post-delivery review, high-risk outputs held pending expert review, and critical outputs requiring explicit human sign-off before release or execution.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The proposal would bar autonomous release or execution of critical outputs—such as patient-specific treatment steps or actions affecting rights and safety—without explicit human sign-off, setting limits on how much authority may be delegated to the system.",
+        "human_ai_system_performance": "Assurance is located in the combined workflow of claim decomposition, tiered gating, and expert or human review rather than in the model output alone.",
+        "deployment_assurance_scalability": "The described sampling pools, provisional release states, and review queues are operational deployment controls whose feasibility at scale is not addressed by FDA's postmarket evaluation question as framed."
+      },
+      "public_summary": "Proposes that postmarket evaluation be embedded in a tiered release workflow: outputs decomposed into sourced or inferred claims, low-risk released into sampling pools, medium-risk released provisionally with post-delivery review, high-risk held for expert review, and critical outputs requiring explicit human sign-off.",
+      "summary_cut": false,
+      "source_passage": "The core release workflow is straightforward. An AI output is first decomposed into claims linked to sources or marked as inferred. The system then assigns a risk tier. Low-risk outputs may be released immediately and entered into a random or periodic sampling pool. Medium-risk outputs may be released with a provisional state and post-delivery review. High-risk outputs should be held until expert review is complete. Critical outputs—those that trigger a legal filing, a patient-specific treatment step, a material financial execution, or a public decision affecting rights or safety—should require explicit human sign-off before release or execution."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Clinician review of GenAI outputs is often partial: a reviewer may be able to judge only some propositions in an output and some may fall outside the reviewer's licensed scope, so treating review as whole-answer endorsement can overstate the certainty conveyed by that review.",
+      "requested_fda_action": "Structure sample-based expert review at the level of individual claims rather than whole answers, allowing reviewers to confirm or correct specific propositions, flag unsupported claims, note omissions, and mark items outside their licensed scope, with review scope recorded explicitly.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment focuses on the limits of human reviewers' competence and licensed scope when validating AI outputs, an aspect of combined human-AI performance not captured by FDA's framing of clinician review as a monitoring technique."
+      },
+      "public_summary": "Supports sample-based clinician review in postmarket monitoring but argues it should be claim-directed rather than answer-directed: reviewers should confirm or correct specific propositions, flag unsupported claims or omissions, and mark items outside their licensed scope, with review scope recorded explicitly.",
+      "summary_cut": false,
+      "source_passage": "Expert review in EON is claim-directed, not merely answer-directed. The system should be able to ask a reviewer to confirm or correct a specific proposition, bracket a claim as unsupported, identify omitted considerations, or mark a recommendation as outside the reviewer's licensed scope. That matters because professional review is often partial. ... The system should therefore preserve review scope explicitly instead of overstating certainty."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter argues that sample-based clinician review of GenAI outputs is only meaningful as governance if each review transaction terminates in a defined, operationally consequential disposition; otherwise review degenerates into non-binding commentary.",
+      "requested_fda_action": "Require that postmarket review processes resolve into a limited set of explicit dispositions: confirmation without substantive change, correction and re-release as a superseding version, unresolved dispute escalated to a higher reviewer class or second panel, or blocking of release/execution for exceeding system scope or failing an evidence threshold.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The passage allocates decision authority across reviewer classes and panels, including the power to block an output from release or execution, which goes beyond FDA's framing of review as a monitoring activity."
+      },
+      "public_summary": "Accepts sample-based clinician review in postmarket monitoring but asks FDA to require defined outcomes for each review: confirmation, corrected superseding version, escalation to a higher reviewer class or second panel, or blocking release when scope or evidence thresholds fail.",
+      "summary_cut": false,
+      "source_passage": "There are only four operationally meaningful endings for a review transaction. The output may be confirmed without substantive change. It may be corrected and rereleased as a superseding version. It may remain disputed and be escalated to a higher reviewer class or second panel. Or it may be blocked from release or execution because it exceeds system scope or fails an evidence threshold. Anything less precise collapses review into commentary rather than governance."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "position": "unclear",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The passage specifies a minimum data model (source, claim, review task, verification, conflict, update event, sign-off, and immutable audit log records) that it treats as necessary for provenance, verification, conflict preservation, update history, and auditability. It notes the logging layer should support incident reconstruction, regulator requests, insurer review, and contractual evidence.",
+      "requested_fda_action": "The passage sets out a minimum record-level data schema, including immutable, checksummed audit log entries with actor, action, affected objects, and session/access context, as the basis for traceability and auditability. It does not state an explicit position on FDA's proposed postmarket approaches.",
+      "confidence": "low",
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The described logging layer is framed as evidence for multiple parties, including regulators, insurers, and contractual counterparties, implying accountability spread across actors beyond the manufacturer alone."
+      },
+      "public_summary": "Passage sets out a proposed minimum data model, including source, claim, verification, conflict, update, sign-off, and immutable audit log records, to support provenance, update history, and auditability for incident reconstruction, regulator requests, insurer review, and contractual evidence. No explicit stance on FDA's approach is stated.",
+      "summary_cut": false,
+      "source_passage": "The data model below is the minimum needed for provenance, verification, conflict preservation, update history, and auditability. ... SourceRecord ... ClaimRecord ... ReviewTask ... VerificationRecord ... ConflictRecord ... UpdateEvent ... SignOffRecord ... AuditLogEntry event_id, actor, action, affected object ids, session context, access context, immutable checksum, timestamp Platform logging layer Supports incident reconstruction, regulator requests, insurer review, and contractual evidence"
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "A fixed-percentage sampling rate is viewed as inadequate for detecting silent errors and concentrating review where harm is most likely; sampling should serve both quality-control and safety purposes.",
+      "requested_fda_action": "Endorse a two-channel postmarket sampling design combining random sampling as a baseline quality-control and representativeness mechanism with risk-weighted sampling keyed to domain, user context, uncertainty, and downstream action profile, treated as a dynamic control surface rather than a fixed percentage.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment frames ongoing review sampling as an adaptive control surface for sustaining assurance across live deployment volumes rather than a static compliance percentage."
+      },
+      "public_summary": "Supports sample-based postmarket clinician review but urges FDA to specify a two-channel design: random sampling as baseline quality control to estimate silent error rates, plus risk-weighted sampling targeting outputs with higher harm potential, with rates adjusted dynamically rather than fixed.",
+      "summary_cut": false,
+      "source_passage": "Sampling should follow two channels. Random sampling is the baseline quality-control mechanism. It estimates silent error rates, deters complacency, and produces a representative stream of review data. Risk-weighted sampling is the safety mechanism. It prioritizes outputs whose domain, user context, uncertainty, or downstream action profile make harm more likely or more severe. ... EON therefore treats sampling as a dynamic control surface, not a fixed percentage."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q16",
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter is concerned that expert/clinician review networks used for oversight could rely on inadequately verified reviewers, including reviewers with conflicts of interest or those reviewing outside their clinical domain or licensing jurisdiction.",
+      "requested_fda_action": "Require explicit, machine-checkable credentialing for reviewers in such a network—verifying identity, active licensure, specialty, jurisdiction, disciplinary history, conflicts of interest, confidentiality commitments, and completion of program-specific training on scope marking, evidence review, and audit obligations—and bind review eligibility to domain and jurisdiction.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The passage addresses how accountability is maintained when oversight is distributed to an external network of clinician reviewers, through conflict-of-interest disclosure, confidentiality commitments, and audit obligations.",
+        "delegated_authority": "It insists that delegated review authority be bounded by clinical domain and licensing jurisdiction so reviewers cannot silently sign off on practice they are not authorized to cover."
+      },
+      "public_summary": "Commenter accepts use of an expert review network for oversight but asks FDA to require explicit, machine-checkable reviewer credentialing—identity, active licensure, specialty, jurisdiction, disciplinary history, conflicts of interest, confidentiality, and program training—with review eligibility bound to clinical domain and jurisdiction.",
+      "summary_cut": false,
+      "source_passage": "Expert credentialing must be explicit and machine-checkable. At minimum, the network should verify identity, active license status where applicable, specialty, jurisdiction, disciplinary history if available, conflicts of interest, confidentiality commitments, and completion of EON-specific training on scope marking, evidence review, and audit obligations. Review eligibility should be bound to domain and jurisdiction; a clinician licensed in one jurisdiction should not silently sign off on practice that requires authorization in another."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q16",
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Sample-based clinician review can be undermined if reviewers see each other's judgments or if edits overwrite the original record, producing conformity-biased and untraceable review data.",
+      "requested_fda_action": "Specify that review workflows be blinded by default, checklist-structured, and time-bounded, with reviewers seeing the source-set, claim graph, uncertainty notation, and review state; require confirm/correct/reject/out-of-scope options and storage of edits as diffs attached to update events rather than overwriting initial records.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment focuses on how reviewer judgment is shaped by exposure to other reviewers' assessments and to the system's uncertainty notation, treating the human reviewer as part of the evaluated system rather than an independent measuring instrument."
+      },
+      "public_summary": "Accepts sample-based clinician review but proposes specific workflow requirements: blinded first-pass review to limit conformity pressure, checklists and time bounds, defined reviewer context, four response options (confirm, correct, reject, out of scope), and edits retained as versioned diffs rather than overwrites.",
+      "summary_cut": false,
+      "source_passage": "Review workflows should be blind by default for independent review, structured by checklist, and time-bounded. The reviewer should see the relevant source-set, the claim graph, the system's uncertainty notation, and the current review state, but should not see other reviewers' initial judgments until the first-pass review is closed. This reduces conformity pressure and creates cleaner disagreement data. Review forms should support at least four actions: confirm, correct, reject, and mark outside scope. Where the system allows text edits, those edits must be stored as diffs attached to UpdateEvent objects rather than overwriting the initial record."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter is concerned that clinician reviewers participating in third-party evaluation could sign off outside their competence or legal authority, and that reviewer independence and conflicts of interest may go unverified.",
+      "requested_fda_action": "Require verification of reviewer identity, active licensure, specialty, jurisdiction, disciplinary history, conflicts of interest, confidentiality commitments, and program-specific training on scope marking, evidence review, and audit obligations, and bind review eligibility to the reviewer's clinical domain and jurisdiction.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The passage addresses safeguards needed when evaluative sign-off authority is delegated to external clinician reviewers, including credentialing, conflict screening, and limits tied to domain and jurisdiction."
+      },
+      "public_summary": "Accepts third-party clinician review but asks FDA to require verified credentialing—identity, active licensure, specialty, jurisdiction, disciplinary history, conflict-of-interest and confidentiality checks, and program-specific training—and to limit each reviewer's sign-off to their clinical domain and licensed jurisdiction.",
+      "summary_cut": false,
+      "source_passage": "verify identity, active license status where applicable, specialty, jurisdiction, disciplinary history if available, conflicts of interest, confidentiality commitments, and completion of EON-specific training on scope marking, evidence review, and audit obligations. Review eligibility should be bound to domain and jurisdiction; a clinician licensed in one jurisdiction should not silently sign off on practice that requires authorization in another."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q16",
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that reviewer disagreement about material claims, risk categories, or recommendations could be smoothed over into an apparent consensus, causing safety-relevant signals to be lost rather than recorded and adjudicated.",
+      "requested_fda_action": "Require that reviewer-based evaluation preserve disagreement as data: automatic synthesis only for nonmaterial wording differences, while material disagreements trigger a documented ConflictRecord, a corresponding visible state, and preset escalation rules such as senior reviewer, a second panel, or domain-specific blocking.",
+      "confidence": "low",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The passage limits the authority of an automated system to synthesize reviewer outputs, reserving material disagreements for human escalation paths rather than algorithmic consensus."
+      },
+      "public_summary": "Commenter accepts reviewer-based evaluation but asks that disagreement be preserved as data: automated synthesis only for nonmaterial wording differences, while disputes over material claims, risk categories, or recommendations must create a conflict record, visible status, and preset escalation to senior or second-panel review.",
+      "summary_cut": false,
+      "source_passage": "Disagreement handling must preserve disagreement as data. If reviewers differ on a nonmaterial wording issue, the system may synthesize. If reviewers differ on a material claim, risk category, or recommendation, the system must open a ConflictRecord, mark the visible state accordingly, and escalate using preset rules. Escalation options include a senior reviewer, a second panel, or domain-specific blocking rules. The key requirement is that conflict not vanish in a consensus veneer."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q2",
+        "q26"
+      ],
+      "position": "unclear",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "directiveness",
+      "stakeholder_concern": "The commenter is concerned with identifying where a named human must formally sign off on AI-generated output, arguing that sign-off should be required only where an output authorizes or materially conditions an action with direct effects on health, legal rights, financial exposure, or public rights and safety.",
+      "requested_fda_action": "Define human sign-off thresholds narrowly, explicitly, and by domain, rather than requiring a named signatory for every professional output, and treat the sign-off record as the formal marker of the final accountable decision node.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses when authority may be exercised by an AI output without a named human signatory and where a human must remain the authorizing actor.",
+        "distributed_accountability": "It frames the sign-off record as the mechanism that identifies the final accountable decision node across an otherwise diffuse chain of automated and human steps."
+      },
+      "public_summary": "Argues human sign-off requirements should be narrow, explicit, and domain-specific rather than universal, triggered when an output authorizes or materially conditions actions affecting health, legal rights, financial exposure, or public safety, with the sign-off record identifying the final accountable decision node.",
+      "summary_cut": false,
+      "source_passage": "Human sign-off thresholds should be narrow, explicit, and domain-bound. Not every professional output requires a named human signatory. But some do. The threshold should be crossed when the output either authorizes or materially conditions an action with direct effects on health, legal rights, financial exposure, or public rights and safety. In those cases, the sign-off record is not a ceremonial step. It is the state transition that identifies the final accountable decision node."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q1",
+        "q19",
+        "q2"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The passage advances a four-tier risk scheme (low, medium, high, critical) keyed to output class and the consequence of error, in which each tier carries default human review modes, sampling rates, and sign-off thresholds; it distinguishes guidance without execution authority from individualized advice and from outputs that execute patient-specific or rights-affecting actions. It notes these ranges are design defaults rather than universal legal rules.",
+      "requested_fda_action": "Adopt a graduated risk tiering that pairs consequence-of-error with concrete oversight parameters, including pre- versus post-delivery review, defined sampling rates for lower tiers, and mandatory human sign-off before release or execution at the highest tier, while treating the specific numeric ranges as adaptable defaults rather than fixed requirements.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The framework defines risk mitigation in terms of the combined human-review configuration (review mode, sampling rate, second reviewer triggers) rather than the model output alone.",
+        "delegated_authority": "Tiers are differentiated by whether the system has execution authority, requiring explicit human sign-off before any patient-specific or rights-affecting action is taken."
+      },
+      "public_summary": "Proposes a four-tier risk scheme tied to consequence of an incorrect output, each tier carrying default human review modes, sampling rates (1-5% up to 100%), and sign-off thresholds, with mandatory pre-delivery sign-off where outputs execute actions. Ranges are presented as adaptable defaults, not fixed rules.",
+      "summary_cut": false,
+      "source_passage": "Risk tier Typical output class Review mode Default review rate Human sign-off threshold Insurer-relevant evidence Low General information, educational explanation, low-stakes summarization Random post-delivery sampling 1–5% None ... Medium Professional guidance without direct execution authority Mixed random and risk-weighted review; provisional release allowed 5–15% Required only when predefined triggers fire ... High Individualized advice with material risk if wrong Pre-delivery review by one qualified expert; second reviewer on trigger 50–100% depending on domain policy Usually required for release ... Critical Court filing, patient-specific treatment step, financial execution, public decision affecting rights or safety Mandatory pre-delivery review and explicit sign-off; escalation if conflict 100% Always required before release or execution ... These ranges are design defaults, not universal legal rules."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter argues that postmarket monitoring is only useful to third parties such as insurers if it produces stable, consistently reported variables — sampling rate, correction rate, credential coverage, conflict frequency, override frequency, time-to-correction, and record retention quality. Where such data are absent, the commenter states that insurance pricing becomes conservative or unavailable.",
+      "requested_fda_action": "Structure postmarket performance evaluation so that it yields standardized, retained, and auditable metrics of the types listed, building on emphasis on logging, retention, independent evaluation, and model validation. The commenter explicitly notes this is its own inference and that no regulator has endorsed a specific monitoring schedule.",
+      "confidence": "medium",
+      "gap_tags": [
+        "evidence_burden_commercial_viability",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment links the availability and quality of postmarket monitoring data directly to insurability and pricing, a commercial viability dimension outside FDA's framing of Q19.",
+        "human_ai_system_performance": "Several proposed metrics — override frequency, conflict frequency, and credential coverage — measure the clinician-device interaction rather than model performance alone."
+      },
+      "public_summary": "Comment accepts postmarket performance evaluation but urges that it generate standardized, retained metrics — sampling, correction and override rates, conflict frequency, credential coverage, time-to-correction, record retention — arguing absent data makes insurance pricing conservative or unavailable. Notes this is its own inference, not regulator-endorsed.",
+      "summary_cut": false,
+      "source_passage": "Underwriters do not need perfect safety. They need stable covariates: sampling rate, correction rate, credential coverage, conflict frequency, override frequency, time-to-correction, and record retention quality. Where those variables are absent, pricing becomes conservative or unavailable. Where they are present, insurability improves. That conclusion is an inference from the broader regulatory emphasis on logging, retention, independent evaluation, and model validation rather than an assertion that any regulator has already endorsed a specific EON schedule."
+    },
+    {
+      "segment_id": "seg-021",
+      "question_ids": [
+        "q1",
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter warns that maximal logging produces 'audit bloat' rather than accountability, and that records must be structured so that an incident can actually be reconstructed. They argue retention depth should scale with the risk tier of the output rather than being uniform.",
+      "requested_fda_action": "Adopt a tiered traceability expectation: lightweight metadata (model version, time, domain label, risk tier, review and release state) for routine low-risk outputs; fuller source, claim, review, verification, conflict, update and sign-off records for medium- and high-risk outputs; and a frozen 'incident bundle' (sources, memory state, claim graph, retrieval path, risk classification, expert reviews, release state, output, human sign-off, warnings, overrides, downstream actions) for critical or disputed cases.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment addresses how traceability and record-keeping infrastructure can be sustained at deployment scale without unstructured accumulation that defeats its own purpose.",
+        "distributed_accountability": "The proposed incident bundle ties together retrieval sources, expert reviews, human sign-offs, overrides, and downstream actions so responsibility across multiple actors can be reconstructed after an event."
+      },
+      "public_summary": "Proposes tiering traceability for generative AI devices to output risk rather than maximizing it: minimal metadata for routine low-risk outputs; fuller source, review and sign-off records for higher-risk outputs; and a frozen \"incident bundle\" for critical or disputed cases, warning undifferentiated logging creates audit bloat.",
+      "summary_cut": false,
+      "source_passage": "EON should not be misread as a demand for unlimited logging. More records do not automatically produce more accountability. Unstructured accumulation can create audit bloat... The goal is not maximal logging. The goal is reconstructable accountability. A serious EON deployment should therefore distinguish between ordinary retention and incident reconstruction. For routine low-risk outputs, lightweight metadata may be sufficient: model version, time, domain label, risk tier, review state, and release state. For medium- and high-risk outputs, the system should preserve source records, claim records, review tasks, verification records, conflict records, update events, sign-off records, and audit-log entries. For critical outputs or disputed incidents, the system should generate an incident bundle: a frozen package containing the relevant source objects, active memory state, claim graph, retrieval path, risk classification, expert reviews, conflict status, release state, user-visible output, human sign-off records, warnings, overrides, and downstream action history."
+    },
+    {
+      "segment_id": "seg-022",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "The commenter is concerned that responsibility for GenAI-related harm would otherwise be allocated as residual blame rather than by defined role, leaving unclear who answers for memory architecture, provenance, routing, review-state labeling, credentialing, logging, threshold settings, workflow integration, and bypassed review gates.",
+      "requested_fda_action": "Adopt a structured allocation of responsibility (described as EON) that assigns distinct, explicit obligations to the provider/developer, the deploying organization, the expert reviewer (limited to what was actually reviewed and signed off), and the end user.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The passage proposes dividing responsibility across provider, deployer, reviewer, and user roles, going beyond FDA's framing of preserving undiluted manufacturer accountability.",
+        "delegated_authority": "It limits the expert reviewer's responsibility to the scope actually reviewed and signed off, and flags decisions to bypass or disable required review gates as a distinct deployer responsibility."
+      },
+      "public_summary": "Commenter proposes a structured responsibility-allocation model rather than residual blame, assigning defined duties to the provider (architecture, provenance, logging, credentialing), the deployer (use case, thresholds, workflow, bypassing review gates), the expert reviewer (only the scope signed off), and the user.",
+      "summary_cut": false,
+      "source_passage": "EON matters because it changes loss allocation from residual blame to structured responsibility. The provider remains responsible for the memory architecture, provenance integrity, routing logic, review-state labeling, credential verification controls, and tamper-evident logging. The deployer remains responsible for the chosen use case, threshold configuration, user communications, integration into the workflow, and any decision to bypass or disable a required review gate. The expert reviewer becomes responsible only within the scope actually reviewed and signed off. The user remains responsible for concealed facts, unauthorized use, or disregard of warnings."
+    },
+    {
+      "segment_id": "seg-023",
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter is concerned that high-stakes deployments lack verifiable traceability and clearly allocated responsibility, including records of who reviewed what, which model and source versions were used, and who holds authority to override or release outputs.",
+      "requested_fda_action": "Establish minimum infrastructure expectations for high-stakes systems—tamper-evident audit logs, version-pinned sources and model identifiers, claim-level provenance, reviewer credential records, retention schedules, and explicit override/release authority rules—and expect contractual terms defining review states and tiers, reviewer service levels, incident notification, audit rights for enterprise customers and insurers, permitted downstream uses, and liability allocation for bypass or misuse.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The passage allocates responsibility across manufacturers, professional reviewers, enterprise customers, and insurers through contractual audit rights, incident notification, and explicit liability allocation for bypass or misuse.",
+        "delegated_authority": "It calls for explicit rules governing who may override or release outputs and for defined reviewed versus unreviewed states and mandatory review tiers."
+      },
+      "public_summary": "Recommends that high-stakes deployments meet minimum traceability requirements—tamper-evident audit logs, version-pinned models and sources, claim-level provenance, reviewer credential records, and explicit override/release authority—plus contractual terms defining review states and tiers, incident notification, audit rights, and liability allocation for bypass or misuse.",
+      "summary_cut": false,
+      "source_passage": "At minimum, an EON-enabled system intended for high-stakes deployment should have immutable or tamper-evident audit logs; version-pinned sources and model identifiers; claim-level provenance; reviewer credential records; contractually defined review states; signed incident-response procedures; retention schedules; and explicit authority rules for override and release. ... Contractual controls should be equally explicit. Professional AI agreements should define reviewed and unreviewed states; the limits of review scope; mandatory review tiers; reviewer service-level expectations; confidentiality and conflict rules; error-correction and incident-notification procedures; audit rights for enterprise customers and insurers; retention periods; permitted downstream uses; and liability allocation for bypass, misuse, or unauthorized execution."
+    },
+    {
+      "segment_id": "seg-024",
+      "question_ids": [
+        "q2",
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter is concerned that generative outputs in medicine may reach users without adequate safeguards distinguishing general information from patient-specific clinical recommendations, and without human review for higher-severity outputs such as treatment, dosing, contraindication-sensitive, or triage content.",
+      "requested_fda_action": "Establish a minimum compliance baseline for medical GenAI that includes clinician credential verification by specialty and jurisdiction, patient-data privacy controls, an explicit informational-versus-recommendation distinction, mandatory pre-delivery clinician review and sign-off for care-guiding or above-threshold triage outputs, and incident escalation for adverse-event patterns.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment conditions acceptable operation on mandatory pre-delivery clinician review and sign-off, treating the clinician-plus-model workflow rather than the model alone as the safeguarded unit.",
+        "delegated_authority": "It would limit how much decision authority a GenAI output may carry by requiring severity-threshold gating, credential verification, and human sign-off before care-guiding outputs are delivered."
+      },
+      "public_summary": "Proposes a minimum compliance baseline for medical GenAI: specialty- and jurisdiction-specific clinician credential verification, privacy controls, a clear informational-versus-recommendation distinction, mandatory pre-delivery review and sign-off for treatment, dosing, contraindication-sensitive, or higher-severity triage outputs, and adverse-event incident escalation.",
+      "summary_cut": false,
+      "source_passage": "In medicine, the minimum compliance posture should include clinician credential verification by specialty and jurisdiction; patient-data privacy controls; a clear distinction between informational content and patient-specific clinical recommendations; mandatory pre-delivery review for treatment recommendations, dose suggestions, contraindication-sensitive outputs, or triage decisions above a defined severity threshold; sign-off rules for outputs that would materially guide patient care; and incident escalation for adverse-event patterns."
+    },
+    {
+      "segment_id": "seg-025",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "unclear",
+      "primary_issue": "regulatory_scope",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "The commenter emphasizes that the existing clinical decision support guidance continues to serve an important function by distinguishing decision-support software that falls outside device regulation from functions that remain regulated devices, and that deploying providers must know which category a given function occupies rather than treating that determination as an afterthought.",
+      "requested_fda_action": "The passage implies FDA should preserve and continue to rely on the clarity provided by the current CDS guidance in distinguishing device from non-device decision-support functions; no specific change to the discussion paper is requested in the passage.",
+      "confidence": "low",
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The passage places an explicit obligation on the deploying provider to determine and know whether a decision-support function is a regulated device function, a responsibility situated outside the manufacturer-centric framing of FDA's questions."
+      },
+      "public_summary": "Commenter states the existing clinical decision support guidance remains important for distinguishing regulated device functions from non-device decision-support software, and that deploying providers must know which category a function falls into rather than treating classification as an afterthought. No explicit position on FDA's proposed framework.",
+      "summary_cut": false,
+      "source_passage": "FDA's current CDS guidance remains important because it clarifies that some decision-support software functions fall outside device regulation while others remain regulated device functions; in either case, the provider must know which class of function it is operating and should not treat that classification question as an afterthought."
+    },
+    {
+      "segment_id": "seg-026",
+      "question_ids": [
+        "q16",
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter points to financial-sector model risk management practice as a template, emphasizing that validation must be independent of the teams that develop and use a model, must cover inputs, processing, and reporting, and must continue after deployment. It also stresses calibrated human approval thresholds, drift monitoring, and documented overrides as minimum elements.",
+      "requested_fda_action": "Adopt a minimum assurance posture modeled on Federal Reserve/OCC model risk management guidance: independent validation of material models and workflows with separation between development and effective challenge, human approval thresholds for recommendations exceeding defined limits, ongoing drift monitoring, documented overrides, and constraint or suspension of use where significant deficiencies are identified.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment treats calibrated human approval thresholds and documented overrides as core assurance elements, framing safety as a property of the combined human-model workflow rather than the model alone.",
+        "delegated_authority": "It proposes that recommendations exceeding defined limits require explicit human approval, bounding how much decision authority may be delegated to the model."
+      },
+      "public_summary": "Citing Federal Reserve and OCC model risk management guidance, the commenter urges FDA to require a minimum assurance posture: validation independent of developers and users covering inputs, processing, and reporting; ongoing post-deployment drift monitoring; calibrated human approval thresholds; documented overrides; and constrained use until significant",
+      "summary_cut": true,
+      "source_passage": "In finance, the minimum compliance posture should include independent validation of material models or workflows; separation between development and effective challenge; calibrated human approval thresholds for recommendations that exceed monetary or suitability limits; ongoing monitoring for drift; and documented overrides. Federal Reserve and OCC supervisory guidance on model risk management is still the best concise statement of the principle: validation should cover inputs, processing, and reporting; it should be independent from development and use; it should continue after deployment; and significant deficiencies should block or tightly constrain use until resolved."
+    },
+    {
+      "segment_id": "seg-027",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter holds that a minimum compliance posture for AI used in public administration should include an AI impact assessment, testing in real-world context, evaluation by a reviewing authority independent of development, ongoing monitoring, added human oversight and fail-safes where decisions affect rights or safety, and centralized logging of waivers or exceptions, noting that OMB Memorandum M-24-10 already imposes these elements on covered federal AI uses.",
+      "requested_fda_action": "Incorporate independent evaluation by a reviewer not involved in development as part of a baseline set of controls, alongside impact assessment, real-world-context testing, ongoing monitoring, human oversight and fail-safes for rights- or safety-affecting decisions, and centralized logging of waivers, consistent with OMB M-24-10.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The commenter conditions acceptable use on additional human oversight and fail-safe mechanisms specifically where AI outputs bear on decisions affecting rights or safety."
+      },
+      "public_summary": "Commenter endorses independent evaluation by a reviewer not involved in development, but as part of a broader baseline: AI impact assessment, real-world-context testing, ongoing monitoring, extra human oversight and fail-safes for rights- or safety-affecting decisions, and centralized waiver logging, citing OMB M-24-10.",
+      "summary_cut": false,
+      "source_passage": "In public administration, the minimum compliance posture should include an AI impact assessment, real-world-context testing, independent evaluation by a reviewing authority not directly involved in development, ongoing monitoring, additional human oversight and fail-safes for decisions affecting rights or safety, and centralized logging of waivers or exceptions. OMB Memorandum M-24-10 already requires those elements for covered federal uses of AI."
+    },
+    {
+      "segment_id": "seg-028",
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter is concerned that deployment and monitoring should be staged and gated by measured performance rather than scaled immediately, with human review calibrated to output risk (random sampling for low-risk outputs, mandatory pre-delivery review for a defined high-risk subset).",
+      "requested_fda_action": "Adopt a milestone-based sequence in which a single-domain pilot with two defined review modes precedes multi-domain expansion, and permit expansion only after correction rates, reviewer disagreement rates, and latency targets stabilize, consistent with NIST, OMB, and SR 11-7 practices of governance, documentation, testing, independent review, and continuous monitoring before scale.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment conditions expansion from one domain to multi-domain operations on stabilized monitoring metrics, addressing how assurance is maintained as deployment scales rather than at a single authorization point.",
+        "human_ai_system_performance": "It treats human reviewer behavior—correction rates, reviewer disagreement, and pre-delivery review of high-risk outputs—as part of the monitored performance of the deployed system."
+      },
+      "public_summary": "Supports postmarket monitoring but urges a staged, milestone-based approach: a single-domain pilot using random sampling for low-risk outputs and mandatory pre-delivery review for a defined high-risk subset, with multi-domain expansion only after correction, reviewer disagreement, and latency metrics stabilize.",
+      "summary_cut": false,
+      "source_passage": "The third milestone is a pilot in one domain with two review modes only: random sampling for low-risk outputs and mandatory pre-delivery review for a strictly defined high-risk subset. ... The sixth milestone is expansion from one domain to multi-domain operations only after correction rates, reviewer disagreement rates, and latency targets stabilize. This sequence follows the same logic that NIST, OMB, and SR 11-7 all favor: governance, documentation, testing, independent review, and continuous monitoring before scale."
+    },
+    {
+      "segment_id": "seg-029",
+      "question_ids": [
+        "q16",
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "Expert human review of AI outputs is currently treated as an informal, undefined role; without governance it cannot be relied upon as meaningful oversight. The commenter is concerned that oversight claims lack traceability, defined scope, and clear override authority.",
+      "requested_fda_action": "Recognize traceable, risk-calibrated expert review as a valid form of effective human oversight where the system preserves logs, identifies review scope, and defines override authority, and rely on professional bodies to set minimum competency, conflict-of-interest, and jurisdiction rules so that 'expert reviewer' is a governed role.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment centers on defining override authority and the scope of what a human reviewer is authorized to decide when supervising AI outputs.",
+        "distributed_accountability": "It assigns professional bodies a role in setting competency, conflict, and jurisdiction rules for reviewers, spreading oversight responsibility beyond the manufacturer and FDA."
+      },
+      "public_summary": "Commenter urges FDA to accept traceable, risk-calibrated expert review as valid human oversight when logs, defined review scope, and override authority exist, and to have professional bodies set competency, conflict, and jurisdiction rules making 'expert reviewer' a formally governed role.",
+      "summary_cut": false,
+      "source_passage": "Regulators should recognize traceable, risk-calibrated expert review as a valid form of effective human oversight where the system preserves logs, identifies review scope, and defines override authority. ... Professional bodies should define minimum competency, conflict, and jurisdiction rules for AI oversight work, so that \"expert reviewer\" becomes a governed role rather than an informal label."
+    },
+    {
+      "segment_id": "seg-030",
+      "question_ids": [
+        "q1",
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "The commenter is concerned that high-risk professional AI outputs are presented as equivalent regardless of whether they have been reviewed, and that downstream actors lack access to records needed to reconstruct how an output was generated, reviewed, contested, updated, and approved.",
+      "requested_fda_action": "Expect providers of high-risk professional AI to expose machine-readable review states to downstream actors, and support procurement rules and enterprise contract terms that guarantee access to audit records sufficient to reconstruct source, review, conflict, update, and sign-off history.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment focuses on audit trails that let downstream actors trace source, review, conflict, and sign-off responsibility across multiple parties handling an AI output.",
+        "deployment_assurance_scalability": "It proposes procurement rules and enterprise contracts, rather than device-level review alone, as the mechanism for assuring traceability at deployment."
+      },
+      "public_summary": "Recommends FDA strengthen traceability and oversight beyond the discussion paper: high-risk professional AI providers should expose machine-readable review states rather than treating all outputs as equivalent, and procurement rules and enterprise contracts should guarantee access to audit records covering source, review, conflict, update, and sign-off",
+      "summary_cut": true,
+      "source_passage": "Providers of high-risk professional AI should expose machine-readable review states to downstream actors rather than presenting all outputs as equivalent. Procurement rules and enterprise contracts should require access to audit records sufficient to reconstruct source, review, conflict, update, and sign-off history."
+    },
+    {
+      "segment_id": "seg-031",
+      "question_ids": [
+        "q16",
+        "q21"
+      ],
+      "position": "unclear",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The passage's only discernible concern is that the role of 'expert reviewer' in AI oversight is currently an informal designation rather than one defined by explicit rules and accountability. The fragment does not state a position on FDA's overall framework.",
+      "requested_fda_action": "Establish rules or standards for AI oversight that formally define and govern the 'expert reviewer' role, rather than leaving it as an informal label.",
+      "confidence": "low",
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The passage asks that oversight reviewers be formally governed roles, implying accountability for AI oversight is currently spread across informally designated actors."
+      },
+      "public_summary": "Brief fragment calling for explicit rules governing AI oversight so that the 'expert reviewer' role is formally defined and accountable rather than an informal label. The passage does not state a position on FDA's broader framework.",
+      "summary_cut": false,
+      "source_passage": "rules for AI oversight work, so that \"expert reviewer\" becomes a governed role rather than an informal label."
+    }
+  ]
+}

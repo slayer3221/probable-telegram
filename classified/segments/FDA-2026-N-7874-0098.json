@@ -1,0 +1,127 @@
+{
+  "comment_id": "FDA-2026-N-7874-0098",
+  "input_hash": "16fd9ec1e511e6d3",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-17T13:05:17Z",
+  "model": "claude-opus-5",
+  "chunks": 2,
+  "positions": [
+    {
+      "question_ids": [
+        "q1",
+        "q4",
+        "q9"
+      ],
+      "source_passage": "We propose CDRH separate generic HITL from what we term Expert-in-the-Loop (EITL): a human review or adjudication path that satisfies four structural properties. ... 1. Domain-matched qualification. The reviewer's expertise must match the specific clinical domain and question at issue, not \"a clinician\" in the abstract. This is precisely the concern the paper raises in Discussion Question 4 regarding generalist HCPs receiving specialist-level output — the same gap applies with equal force to the human reviewer in a supervision or adjudication role. 2. Structural independence from the generating pipeline. ... 3. Deterministic triggering. The loop must fire automatically whenever defined risk or uncertainty conditions are met. ... 4. Pre-delivery gating. The check must occur before the output reaches its recipient, not only as post-hoc sampling. ... We recommend CDRH require sponsors to characterize any claimed human-in-the-loop control against these four properties explicitly, as part of both the two-axis risk assessment (Section IV) and the competency-based benchmarking exercise (Section V), rather than treating \"human oversight\" as a single qualitative checkbox.",
+      "position_gist": "CDRH should stop crediting undifferentiated \"human oversight\" and instead require sponsors to characterize any claimed human-in-the-loop control against four explicit properties — domain-matched qualification, structural independence from the generating pipeline, deterministic triggering, and pre-delivery gating — in both the risk assessment and benchmarking.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q4"
+      ],
+      "source_passage": "Responding to Discussion Questions 1 and 4: the two-axis framework's activity axis (Figure 1, p.6) currently places all \"HCP-Supervised\" action-taking at a single point on the risk gradient, regardless of whether the supervising HCP is domain-matched to the specific clinical question, whether the review is deterministically triggered, or whether it occurs before the action takes effect. Two devices with identical activity-axis placement can have materially different real-world risk under our four EITL criteria above. We recommend the activity axis be paired with an explicit oversight-quality modifier — or, at minimum, that the competency-based benchmarking exercise (Section V) require sponsors to document their \"HCP-Supervised\" control against the four EITL properties rather than asserting supervision as a qualitative label.",
+      "position_gist": "The activity axis of the two-axis risk framework should be paired with an explicit oversight-quality modifier (or, at minimum, benchmarking should document the HCP-Supervised control against the four EITL properties), because identical activity-axis placement can conceal materially different real-world risk.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q6",
+        "q9"
+      ],
+      "source_passage": "Responding to Discussion Question 6 and Appendix A element S.1 (Safety-critical recognition and escalation): our escalation architecture uses two layers running in parallel — deterministic keyword/rule triggers and a generative, paraphrase-based triage classifier — specifically so that the deterministic layer can act as a fail-closed backstop independent of the generative layer's availability. Testing this architecture surfaced a fault mode we believe the benchmarking framework should address explicitly: a generative triage layer that experiences an API timeout or a malformed/unparseable response can fail open (default to \"no escalation needed\") unless it is deliberately engineered to fail closed instead. ... We recommend an explicit S.1 sub-element requiring sponsors to disclose and test the fail-open vs. fail-closed behavior of every escalation-relevant subsystem specifically under fault conditions — API errors, timeouts, malformed model output, rate limiting — since these are exactly the conditions under which layered safety architectures are most likely to silently degrade to their weakest component.",
+      "position_gist": "CDRH should add an explicit benchmarking sub-element under safety-critical escalation (S.1) requiring sponsors to disclose and test fail-open versus fail-closed behavior of every escalation-relevant subsystem under fault conditions (API errors, timeouts, malformed output, rate limiting), not just normal operation.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q5",
+        "q9"
+      ],
+      "source_passage": "Responding to Discussion Question 5 and Appendix A element S.2: the appendix language describing scope-maintenance failure — \"multi-turn conversations in which individual turns appear in-scope but the cumulative interaction drifts out of scope\" (p.24) — closely matches a failure mode we independently identified and built a dedicated pipeline stage to address: a check for cumulative \"reassurance drift,\" in which a sequence of individually accurate, in-scope responses can add up to an overall impression more reassuring than clinically warranted. We note this convergence to CDRH as evidence that the risk described in Q5 and S.2 is empirically real rather than a hypothetical edge case, and that it requires its own dedicated evaluation, not incidental coverage from per-turn scope testing. We recommend the benchmarking framework require this drift check to run over cumulative conversation state, as a gate distinct from per-turn boundary adherence, since testing per-turn compliance alone — even exhaustively — will not surface a failure that only emerges in aggregate.",
+      "position_gist": "Multi-turn cumulative scope/reassurance drift is an empirically real failure mode, and benchmarking should require a drift check run over cumulative conversation state as a gate distinct from per-turn boundary adherence testing.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q9"
+      ],
+      "source_passage": "Responding to Discussion Question 1 (additional risk dimensions) and Appendix A's Safety elements: we recommend CDRH consider a failure mode that is mechanistically distinct from both under-escalation (S.1) and scope-boundary violation (S.2): a device that, without any emergency trigger firing and without exceeding its intended clinical scope, affirms or validates a risky course of action the user has already decided on or proposes, rather than surfacing the clinical stakes of that decision. In adversarial testing of comparable patient- and caregiver-facing conversational systems, we have observed exactly this pattern: a prompt describing a caregiver's intent to discontinue an ongoing therapeutic intervention for a dependent received an affirming, validating response rather than one that flagged the clinical implications of stopping. ... We recommend CDRH add a distinct Safety benchmarking sub-element — resistance to sycophantic validation of unsafe or clinically discordant patient- or caregiver-initiated decisions — evaluated specifically through multi-turn scenarios in which the user, not the device, initiates the risky course of action, since this population of scenarios is structurally different from the escalation scenarios S.1 already covers.",
+      "position_gist": "CDRH should recognize sycophantic validation of user-initiated risky decisions as a distinct risk/failure mode and add a separate Safety benchmarking sub-element testing resistance to it via multi-turn user-initiated scenarios.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q14",
+        "q16",
+        "q9"
+      ],
+      "source_passage": "Responding to Discussion Questions 9, 14, and 16: we agree with the paper's instinct (p.14) that adjudicator independence requirements should apply \"when the expert adjudicator is itself an LLM,\" but organizational independence (a different legal entity from the sponsor or foundation-model developer) is necessary and not sufficient in that case. ... We recommend CDRH require sponsors proposing an LLM-based adjudicator to disclose, as minimum independence criteria: (i) the model-family/vendor relationship between the generating model and the adjudicating model; (ii) whether the adjudicator operates in a deterministic or sampled decoding mode, given that a sampled adjudicator's verdict is itself subject to run-to-run variance; and (iii) any shared training or fine-tuning lineage between the generator and the adjudicator. Without these disclosures, \"independent LLM adjudicator\" could describe architectures with very different real-world reliability.",
+      "position_gist": "Where the expert adjudicator is itself an LLM, organizational independence is insufficient; CDRH should require disclosure of model-family/vendor relationship, decoding mode, and shared training lineage as minimum independence criteria.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q2",
+        "q9"
+      ],
+      "source_passage": "Responding to Appendix A element S.3 (calibration, uncertainty communication, and clinical deferral) and Discussion Question 2: many evaluation approaches for GenAI clinical outputs, including much of the published hallucination-detection literature, score claims on a binary correct/incorrect or supported/unsupported basis. Our tiered verification approach instead classifies each claim into one of three states — supported, contradicted, or unverifiable (available evidence neither confirms nor rules it out) — and routes the third state to deterministic deferral rather than permitting the generative layer a further attempt to resolve its own uncertainty. ... We recommend the competency-based benchmarking framework (Section V.B; Appendix A, S.3 and E.1) explicitly require a three-state output classification, with prespecified, non-negotiable deferral behavior on the \"unverifiable\" state scored as its own competency — rather than folded into an aggregate accuracy metric where it can be masked by strong performance elsewhere.",
+      "position_gist": "Benchmarking should require a three-state (supported/contradicted/unverifiable) output classification with prespecified mandatory deferral on \"unverifiable,\" scored as its own competency rather than folded into aggregate accuracy.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q9"
+      ],
+      "source_passage": "This point does not map to a single numbered discussion question, but we believe it is material to Sections V and VI: the discussion paper asks what evidence should accompany a claim that a device \"passed\" benchmarking, but does not ask where in the deployed data flow the verification gate sits relative to what the user actually sees. ... A device can pass every benchmarking element in Appendix A on the basis of its final, verified output, and still expose users to unverified intermediate content if the verification gate is positioned architecturally after rather than before user-facing display. We recommend CDRH require sponsors to disclose verification-gate placement in the runtime data flow — specifically, whether any user-facing surface can display output before verification completes — as a discrete premarket disclosure item, independent of and in addition to benchmarking accuracy metrics.",
+      "position_gist": "CDRH should require a discrete premarket disclosure of where the verification gate sits in the runtime data flow — specifically whether streamed or partial output can reach the user before verification completes — separate from benchmarking accuracy metrics.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q20"
+      ],
+      "source_passage": "Responding to Discussion Questions 19 and 20: periodic re-benchmarking, sample-based clinician review, and machine-based supervisory agents are all downstream consumers of a device's internal decision record — each depends on the ability to retrieve which triage, escalation, or verification decision was made, for which input, and why. ... Where that metadata exists only in ephemeral process logs, it does not survive routine operational events such as a service restart — which defeats sample-based clinician review and any supervisory-agent approach that depends on querying past decisions... We recommend CDRH treat persistent, structured logging of every safety-relevant decision — not merely the conversational transcript — as a minimum precondition for postmarket monitoring credit, regardless of which specific postmarket approach(es) in Section VI.A a sponsor selects. A supervisory agent (Q20) is only as reliable as the record it supervises; if that record does not exist, the reliability question is moot.",
+      "position_gist": "Persistent, structured logging of safety-relevant decisions (verification verdicts, triage levels, escalation triggers) — not just conversational transcripts — should be a minimum precondition for any postmarket monitoring credit, including for machine-based supervisory agents.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "9. Apply the same domain-match, independence, deterministic-triggering, and pre-action-gating criteria to agentic \"human-oversight checkpoints\" before irreversible or high-consequence actions (Section VIII).",
+      "position_gist": "The four EITL criteria (domain match, independence, deterministic triggering, pre-action gating) should also be applied to the human-oversight checkpoints required for agentic devices before irreversible or high-consequence actions.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q18",
+        "q19",
+        "q20"
+      ],
+      "source_passage": "We recommend CDRH treat persistent, structured logging of every safety-relevant decision — not merely the conversational transcript — as a minimum precondition for postmarket monitoring credit, regardless of which specific postmarket approach(es) in Section VI.A a sponsor selects. A supervisory agent (Q20) is only as reliable as the record it supervises; if that record does not exist, the reliability question is moot.",
+      "position_gist": "CDRH should require persistent, structured logging of every safety-relevant decision (beyond the conversational transcript) as a minimum precondition before a sponsor receives credit for any postmarket monitoring approach, including supervisory-agent approaches.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Responding to Discussion Question 26 and Appendix A element A.1: the agentic-competency element requires \"compliance with human-oversight checkpoints before irreversible or high-consequence actions\" (p.26). We urge CDRH to apply the same four EITL criteria from Section III here explicitly. An oversight checkpoint satisfied by any available human reviewer — without domain-match, structural independence, deterministic triggering, and pre-action gating — provides materially weaker protection than this language may imply, and the gap is especially consequential for agentic systems, where an action may already be irreversible by the time a reviewer becomes aware of it. We recommend the acceptance criteria contemplated in Q26 explicitly require that oversight checkpoints for irreversible or high-consequence agentic actions meet EITL, not generic HITL, standards, and that \"compliance with a checkpoint\" be defined to mean the action cannot proceed without an affirmative, logged, domain-matched review — not merely that a human was notified.",
+      "position_gist": "Acceptance criteria for agentic devices should require that human-oversight checkpoints before irreversible or high-consequence actions meet expert-in-the-loop standards (domain-matched, structurally independent, deterministically triggered, pre-action gating), with 'compliance' defined as the action being blocked absent an affirmative, logged, domain-matched review rather than mere notification.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "The discussion paper's frameworks are, in our assessment, well-constructed and correctly identify the right categories of risk — activity, consequence, escalation, drift, adjudicator independence, and postmarket accountability. Our comment is narrower than a critique of those categories: it is that \"human involvement,\" wherever it appears in this paper as a mitigating factor, needs the same evidentiary rigor CDRH is already proposing to apply to the GenAI system itself.",
+      "position_gist": "Commenter endorses the paper's risk categories overall but argues that human involvement, wherever relied on as a risk-mitigating factor, must be held to the same evidentiary rigor applied to the GenAI system itself.",
+      "segment_id": "seg-013"
+    }
+  ]
+}

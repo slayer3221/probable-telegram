@@ -1,0 +1,276 @@
+{
+  "comment_id": "FDA-2026-N-7874-0092",
+  "input_hash": "c3b1b1eeb72f72a3",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-17T13:05:17Z",
+  "model": "claude-opus-5",
+  "chunks": 3,
+  "positions": [
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Periodic clinician review is a strong postmarket monitoring mechanism, but a single fixed sampling rate will not adequately reflect clinical risk. Random sampling can establish baseline error rates and reveal unexpected failure patterns. Risk-weighted review should increase oversight when outputs become patient-specific, highly actionable, uncertain, contraindication-sensitive, or capable of materially influencing treatment or triage.",
+      "position_gist": "Sample-based clinician review should use two channels—random sampling for baseline error detection plus risk-weighted escalation keyed to patient-specificity, actionability, uncertainty, and clinical consequence—rather than a single fixed sampling rate.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q26"
+      ],
+      "source_passage": "High-risk outputs may require pre-delivery review. Outputs that directly authorize or materially condition consequential clinical action should require explicit human sign-off.",
+      "position_gist": "High-risk outputs should be reviewed before delivery, and outputs that authorize or materially condition consequential clinical action should require explicit human sign-off.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Review status should also remain visible and machine-readable, for example: unreviewed, sampled, reviewed-confirmed, reviewed-corrected, conflict-open, escalated, or signed off.",
+      "position_gist": "Review state should be exposed as a visible, machine-readable label (unreviewed, sampled, reviewed-confirmed, reviewed-corrected, conflict-open, escalated, signed off) accompanying every output.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "Clinicians, healthcare institutions, professional societies, and independent reviewers can provide valuable postmarket verification if responsibility remains tied to actual control. The manufacturer should remain responsible for device architecture, risk-routing logic, review-state labeling, reviewer credential controls, change management, and audit infrastructure. The deployer should remain responsible for the selected clinical use, local workflow integration, configured thresholds, and decisions to bypass required review gates. A clinician reviewer should be responsible only for the defined scope actually reviewed or signed off. This structure allows distributed professional review while preserving a clear responsibility anchor.",
+      "position_gist": "External clinicians, institutions, societies, and independent reviewers should contribute to postmarket verification under an explicit allocation in which manufacturers retain responsibility for architecture, risk routing, credential controls, change management and audit infrastructure, deployers for local use and threshold/bypass decisions, and reviewers only for the scope they actually reviewed.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "When a consequential event occurs, regulators and manufacturers should be able to reconstruct the path from relevant evidence and patient context to AI output, professional review, correction or disagreement, final release state, human sign-off where required, and downstream action. Record density can scale with risk. Routine low-risk interactions may require lightweight operational records. High-risk individualized advice should preserve provenance, reviewer scope, corrections, unresolved conflicts, and release authority. Critical outputs should support full evidence preservation.",
+      "position_gist": "Postmarket monitoring should be designed to enable incident reconstruction (evidence-to-output-to-review-to-action path), with record density scaled to risk from lightweight logs for low-risk interactions up to full evidence preservation for critical outputs.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q22",
+        "q24"
+      ],
+      "source_passage": "Reevaluation should be considered when changes materially alter how the device receives information, exercises authority, or affects clinical action. Relevant changes may include a new foundation model, persistent memory, external clinical data source, tool integration, agent capability, reviewer threshold, or downstream execution pathway.",
+      "position_gist": "Reassessment should be triggered and scaled by whether a modification materially alters how the device receives information, exercises authority, or affects clinical action—with examples including a new foundation model, persistent memory, new data sources, tool integration, agent capability, reviewer thresholds, or execution pathways.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "This becomes particularly important for agentic systems. The ability to generate a recommendation, the authority assigned to that recommendation, and permission to execute a consequential action should remain distinct. High-consequence transitions should have explicit human authorization gates and traceable records.",
+      "position_gist": "For agentic systems, generation of a recommendation, the authority assigned to it, and permission to execute consequential action should be kept architecturally distinct, with explicit human authorization gates and traceable records at high-consequence transitions.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q26"
+      ],
+      "source_passage": "As GenAI-enabled medical devices become more capable and agentic, effective human oversight should specify what is reviewed, by whom, under what authority, at what risk threshold, and with what evidence preserved when failure occurs.",
+      "position_gist": "Human oversight requirements for GenAI and agentic devices should be specified concretely: what is reviewed, by whom, under what authority, at what risk threshold, and what evidence is preserved on failure.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "The core release workflow is straightforward. An AI output is first decomposed into claims linked to sources or marked as inferred. The system then assigns a risk tier. Low-risk outputs may be released immediately and entered into a random or periodic sampling pool. Medium-risk outputs may be released with a provisional state and post-delivery review. High-risk outputs should be held until expert review is complete. Critical outputs—those that trigger a legal filing, a patient-specific treatment step, a material financial execution, or a public decision affecting rights or safety—should require explicit human sign-off before release or execution.",
+      "position_gist": "Outputs should be decomposed into sourced versus inferred claims and routed to a tiered review mode—immediate release with sampling for low risk, provisional release with post-delivery review for medium risk, pre-release expert review for high risk, and mandatory human sign-off before release or execution for critical outputs such as patient-specific treatment steps.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Expert review in EON is claim-directed, not merely answer-directed. The system should be able to ask a reviewer to confirm or correct a specific proposition, bracket a claim as unsupported, identify omitted considerations, or mark a recommendation as outside the reviewer's licensed scope. That matters because professional review is often partial. ... The system should therefore preserve review scope explicitly instead of overstating certainty.",
+      "position_gist": "Clinician review should be claim-directed and record partial review explicitly—allowing confirmation, correction, bracketing of unsupported claims, and marking items outside the reviewer's licensed scope—so review scope is preserved rather than certainty overstated.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "There are only four operationally meaningful endings for a review transaction. The output may be confirmed without substantive change. It may be corrected and rereleased as a superseding version. It may remain disputed and be escalated to a higher reviewer class or second panel. Or it may be blocked from release or execution because it exceeds system scope or fails an evidence threshold. Anything less precise collapses review into commentary rather than governance.",
+      "position_gist": "Review transactions should resolve into one of four defined states—confirmed, corrected/superseded, escalated as disputed, or blocked from release—so that oversight is governance rather than commentary.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "source_passage": "The data model below is the minimum needed for provenance, verification, conflict preservation, update history, and auditability. ... SourceRecord ... ClaimRecord ... ReviewTask ... VerificationRecord ... ConflictRecord ... UpdateEvent ... SignOffRecord ... AuditLogEntry event_id, actor, action, affected object ids, session context, access context, immutable checksum, timestamp Platform logging layer Supports incident reconstruction, regulator requests, insurer review, and contractual evidence",
+      "position_gist": "Expert oversight should be captured as structured, auditable data records (sources, claims, review tasks, verifications, conflicts, updates, sign-offs, and tamper-evident audit logs) sufficient to support incident reconstruction, regulator requests, and contractual evidence.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Sampling should follow two channels. Random sampling is the baseline quality-control mechanism. It estimates silent error rates, deters complacency, and produces a representative stream of review data. Risk-weighted sampling is the safety mechanism. It prioritizes outputs whose domain, user context, uncertainty, or downstream action profile make harm more likely or more severe. ... EON therefore treats sampling as a dynamic control surface, not a fixed percentage.",
+      "position_gist": "Postmarket sampling should be treated as a dynamic control surface combining random quality-control sampling with risk-weighted prioritization based on domain, user context, uncertainty, and downstream action profile, rather than a fixed percentage.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "Expert credentialing must be explicit and machine-checkable. At minimum, the network should verify identity, active license status where applicable, specialty, jurisdiction, disciplinary history if available, conflicts of interest, confidentiality commitments, and completion of EON-specific training on scope marking, evidence review, and audit obligations. Review eligibility should be bound to domain and jurisdiction; a clinician licensed in one jurisdiction should not silently sign off on practice that requires authorization in another.",
+      "position_gist": "Reviewer credentialing should be explicit and machine-checkable (identity, active license, specialty, jurisdiction, disciplinary history, conflicts of interest, confidentiality, oversight-specific training), with review eligibility bound to domain and jurisdiction.",
+      "segment_id": "seg-014"
+    },
+    {
+      "question_ids": [
+        "q16",
+        "q19"
+      ],
+      "source_passage": "Review workflows should be blind by default for independent review, structured by checklist, and time-bounded. The reviewer should see the relevant source-set, the claim graph, the system's uncertainty notation, and the current review state, but should not see other reviewers' initial judgments until the first-pass review is closed. This reduces conformity pressure and creates cleaner disagreement data. Review forms should support at least four actions: confirm, correct, reject, and mark outside scope. Where the system allows text edits, those edits must be stored as diffs attached to UpdateEvent objects rather than overwriting the initial record.",
+      "position_gist": "Clinician review workflows should be blinded by default, checklist-structured, time-bounded, support confirm/correct/reject/outside-scope actions, and store edits as versioned diffs rather than overwriting prior records.",
+      "segment_id": "seg-015"
+    },
+    {
+      "question_ids": [
+        "q16"
+      ],
+      "source_passage": "verify identity, active license status where applicable, specialty, jurisdiction, disciplinary history if available, conflicts of interest, confidentiality commitments, and completion of EON-specific training on scope marking, evidence review, and audit obligations. Review eligibility should be bound to domain and jurisdiction; a clinician licensed in one jurisdiction should not silently sign off on practice that requires authorization in another.",
+      "position_gist": "Independent expert reviewers should be credentialed through verification of identity, license status, specialty, jurisdiction, disciplinary history, conflicts of interest, and role-specific training, with review eligibility bound to the reviewer's domain and jurisdiction.",
+      "segment_id": "seg-016"
+    },
+    {
+      "question_ids": [
+        "q16",
+        "q19"
+      ],
+      "source_passage": "Disagreement handling must preserve disagreement as data. If reviewers differ on a nonmaterial wording issue, the system may synthesize. If reviewers differ on a material claim, risk category, or recommendation, the system must open a ConflictRecord, mark the visible state accordingly, and escalate using preset rules. Escalation options include a senior reviewer, a second panel, or domain-specific blocking rules. The key requirement is that conflict not vanish in a consensus veneer.",
+      "position_gist": "Reviewer disagreement on material claims should be recorded as a conflict record, surfaced in the output's visible state, and escalated by preset rules rather than being collapsed into apparent consensus.",
+      "segment_id": "seg-017"
+    },
+    {
+      "question_ids": [
+        "q2",
+        "q26"
+      ],
+      "source_passage": "Human sign-off thresholds should be narrow, explicit, and domain-bound. Not every professional output requires a named human signatory. But some do. The threshold should be crossed when the output either authorizes or materially conditions an action with direct effects on health, legal rights, financial exposure, or public rights and safety. In those cases, the sign-off record is not a ceremonial step. It is the state transition that identifies the final accountable decision node.",
+      "position_gist": "Mandatory named human sign-off should be triggered narrowly and explicitly when an output authorizes or materially conditions an action with direct effects on health, rights, financial exposure, or safety, with the sign-off recorded as the accountable decision point.",
+      "segment_id": "seg-018"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q19",
+        "q2"
+      ],
+      "source_passage": "Risk tier Typical output class Review mode Default review rate Human sign-off threshold Insurer-relevant evidence Low General information, educational explanation, low-stakes summarization Random post-delivery sampling 1–5% None ... Medium Professional guidance without direct execution authority Mixed random and risk-weighted review; provisional release allowed 5–15% Required only when predefined triggers fire ... High Individualized advice with material risk if wrong Pre-delivery review by one qualified expert; second reviewer on trigger 50–100% depending on domain policy Usually required for release ... Critical Court filing, patient-specific treatment step, financial execution, public decision affecting rights or safety Mandatory pre-delivery review and explicit sign-off; escalation if conflict 100% Always required before release or execution ... These ranges are design defaults, not universal legal rules.",
+      "position_gist": "Proposes a four-tier risk matrix keyed to output class (general information, professional guidance, individualized advice, action/execution) that scales review mode, sampling rate, and human sign-off requirements, offered as design defaults rather than fixed rules.",
+      "segment_id": "seg-019"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "Underwriters do not need perfect safety. They need stable covariates: sampling rate, correction rate, credential coverage, conflict frequency, override frequency, time-to-correction, and record retention quality. Where those variables are absent, pricing becomes conservative or unavailable. Where they are present, insurability improves. That conclusion is an inference from the broader regulatory emphasis on logging, retention, independent evaluation, and model validation rather than an assertion that any regulator has already endorsed a specific EON schedule.",
+      "position_gist": "Ongoing performance should be tracked through a stable set of operational metrics—sampling rate, correction rate, credential coverage, conflict and override frequency, time-to-correction, and retention quality—which the commenter acknowledges is an inference rather than an endorsed regulatory schedule.",
+      "segment_id": "seg-020"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q19"
+      ],
+      "source_passage": "EON should not be misread as a demand for unlimited logging. More records do not automatically produce more accountability. Unstructured accumulation can create audit bloat... The goal is not maximal logging. The goal is reconstructable accountability. A serious EON deployment should therefore distinguish between ordinary retention and incident reconstruction. For routine low-risk outputs, lightweight metadata may be sufficient: model version, time, domain label, risk tier, review state, and release state. For medium- and high-risk outputs, the system should preserve source records, claim records, review tasks, verification records, conflict records, update events, sign-off records, and audit-log entries. For critical outputs or disputed incidents, the system should generate an incident bundle: a frozen package containing the relevant source objects, active memory state, claim graph, retrieval path, risk classification, expert reviews, conflict status, release state, user-visible output, human sign-off records, warnings, overrides, and downstream action history.",
+      "position_gist": "Logging and retention should be risk-tiered and structured for reconstructability—lightweight metadata for low-risk outputs, full provenance and review records for higher-risk outputs, and frozen 'incident bundles' for critical or disputed cases—rather than maximal undifferentiated logging.",
+      "segment_id": "seg-021"
+    },
+    {
+      "question_ids": [
+        "q21"
+      ],
+      "source_passage": "EON matters because it changes loss allocation from residual blame to structured responsibility. The provider remains responsible for the memory architecture, provenance integrity, routing logic, review-state labeling, credential verification controls, and tamper-evident logging. The deployer remains responsible for the chosen use case, threshold configuration, user communications, integration into the workflow, and any decision to bypass or disable a required review gate. The expert reviewer becomes responsible only within the scope actually reviewed and signed off. The user remains responsible for concealed facts, unauthorized use, or disregard of warnings.",
+      "position_gist": "Responsibility should be explicitly layered across provider, deployer, expert reviewer (only within the scope actually reviewed), and end user, so that involving additional oversight actors does not blur accountability.",
+      "segment_id": "seg-022"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "source_passage": "At minimum, an EON-enabled system intended for high-stakes deployment should have immutable or tamper-evident audit logs; version-pinned sources and model identifiers; claim-level provenance; reviewer credential records; contractually defined review states; signed incident-response procedures; retention schedules; and explicit authority rules for override and release. ... Contractual controls should be equally explicit. Professional AI agreements should define reviewed and unreviewed states; the limits of review scope; mandatory review tiers; reviewer service-level expectations; confidentiality and conflict rules; error-correction and incident-notification procedures; audit rights for enterprise customers and insurers; retention periods; permitted downstream uses; and liability allocation for bypass, misuse, or unauthorized execution.",
+      "position_gist": "High-stakes deployments should maintain tamper-evident logs, version-pinned source and model identifiers, claim-level provenance, and reviewer credential records, with contracts defining review states, review scope limits, mandatory review tiers, incident notification, audit rights, retention, and liability allocation.",
+      "segment_id": "seg-023"
+    },
+    {
+      "question_ids": [
+        "q2",
+        "q6"
+      ],
+      "source_passage": "In medicine, the minimum compliance posture should include clinician credential verification by specialty and jurisdiction; patient-data privacy controls; a clear distinction between informational content and patient-specific clinical recommendations; mandatory pre-delivery review for treatment recommendations, dose suggestions, contraindication-sensitive outputs, or triage decisions above a defined severity threshold; sign-off rules for outputs that would materially guide patient care; and incident escalation for adverse-event patterns.",
+      "position_gist": "For medical deployments, the commenter recommends specialty- and jurisdiction-verified clinician reviewers, an explicit distinction between informational content and patient-specific recommendations, mandatory pre-delivery review for treatment, dosing, contraindication, or high-severity triage outputs, and incident escalation for adverse-event patterns.",
+      "segment_id": "seg-024"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "FDA's current CDS guidance remains important because it clarifies that some decision-support software functions fall outside device regulation while others remain regulated device functions; in either case, the provider must know which class of function it is operating and should not treat that classification question as an afterthought.",
+      "position_gist": "Developers should determine up front whether a decision-support function is a regulated device function under FDA's CDS guidance rather than treating classification as an afterthought.",
+      "segment_id": "seg-025"
+    },
+    {
+      "question_ids": [
+        "q16",
+        "q19"
+      ],
+      "source_passage": "In finance, the minimum compliance posture should include independent validation of material models or workflows; separation between development and effective challenge; calibrated human approval thresholds for recommendations that exceed monetary or suitability limits; ongoing monitoring for drift; and documented overrides. Federal Reserve and OCC supervisory guidance on model risk management is still the best concise statement of the principle: validation should cover inputs, processing, and reporting; it should be independent from development and use; it should continue after deployment; and significant deficiencies should block or tightly constrain use until resolved.",
+      "position_gist": "Drawing on SR 11-7 model risk management principles, validation should be independent of development and use, cover inputs/processing/reporting, continue after deployment, and significant deficiencies should block or constrain use until resolved.",
+      "segment_id": "seg-026"
+    },
+    {
+      "question_ids": [
+        "q16"
+      ],
+      "source_passage": "In public administration, the minimum compliance posture should include an AI impact assessment, real-world-context testing, independent evaluation by a reviewing authority not directly involved in development, ongoing monitoring, additional human oversight and fail-safes for decisions affecting rights or safety, and centralized logging of waivers or exceptions. OMB Memorandum M-24-10 already requires those elements for covered federal uses of AI.",
+      "position_gist": "Cites OMB M-24-10 as a model requiring impact assessment, real-world-context testing, evaluation independent of the development team, ongoing monitoring, and fail-safes for rights- or safety-affecting decisions.",
+      "segment_id": "seg-027"
+    },
+    {
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "source_passage": "The third milestone is a pilot in one domain with two review modes only: random sampling for low-risk outputs and mandatory pre-delivery review for a strictly defined high-risk subset. ... The sixth milestone is expansion from one domain to multi-domain operations only after correction rates, reviewer disagreement rates, and latency targets stabilize. This sequence follows the same logic that NIST, OMB, and SR 11-7 all favor: governance, documentation, testing, independent review, and continuous monitoring before scale.",
+      "position_gist": "Deployment should begin with a narrow single-domain pilot using sampling for low-risk and mandatory pre-delivery review for high-risk outputs, expanding scope only after correction, disagreement, and latency metrics stabilize.",
+      "segment_id": "seg-028"
+    },
+    {
+      "question_ids": [
+        "q16",
+        "q21"
+      ],
+      "source_passage": "Regulators should recognize traceable, risk-calibrated expert review as a valid form of effective human oversight where the system preserves logs, identifies review scope, and defines override authority. ... Professional bodies should define minimum competency, conflict, and jurisdiction rules for AI oversight work, so that \"expert reviewer\" becomes a governed role rather than an informal label.",
+      "position_gist": "Regulators should accept traceable, risk-calibrated expert review as effective human oversight when logs, review scope, and override authority are documented, and professional bodies should set competency, conflict, and jurisdiction standards making 'expert reviewer' a governed role.",
+      "segment_id": "seg-029"
+    },
+    {
+      "question_ids": [
+        "q1",
+        "q21"
+      ],
+      "source_passage": "Providers of high-risk professional AI should expose machine-readable review states to downstream actors rather than presenting all outputs as equivalent. Procurement rules and enterprise contracts should require access to audit records sufficient to reconstruct source, review, conflict, update, and sign-off history.",
+      "position_gist": "Outputs should carry machine-readable review-state labels visible to downstream users, and procurement contracts should guarantee access to audit records sufficient to reconstruct source, review, conflict, update, and sign-off history.",
+      "segment_id": "seg-030"
+    },
+    {
+      "question_ids": [
+        "q16",
+        "q21"
+      ],
+      "source_passage": "rules for AI oversight work, so that \"expert reviewer\" becomes a governed role rather than an informal label.",
+      "position_gist": "Expert/clinician review in AI oversight should be a formally governed role defined by explicit rules, not an informal designation.",
+      "segment_id": "seg-031"
+    }
+  ]
+}

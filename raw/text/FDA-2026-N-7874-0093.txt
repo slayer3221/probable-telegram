@@ -1,0 +1,296 @@
+See attached file(s)
+
+[Attachment: Comment from Steven Zhao]
+Docket No. FDA-2026-N-7874  |  Comment by Steven Zhao  |  Page 1
+Comment to Docket No. FDA-2026-N-7874
+Submitter: Steven Zhao - Individual (no organizational affiliation)
+Docket: FDA-2026-N-7874 - Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper
+and Request for Feedback (FDA / CDRH / DHCoE; released 2026-08-18)
+Comment period closes: October 19, 2026 (verified live 2026-09-14)
+Submitter type: Individual (no organizational affiliation) - a single author submits this comment
+Submitter: Steven Zhao - independent medical device regulatory practitioner; maintains MedXpert, a personal
+regulatory-knowledge project
+Contact: provided in the submission form only (not reproduced in this document)
+Document note: this comment was drafted with AI tools and reviewed and approved by the named signatory, who takes full
+responsibility for its content.
+Executive summary
+ 1. I support the proposed direction - the two-axis risk framework, competency-based premarket evaluation,
+risk-proportionate postmarket monitoring, and voluntary Foundation Model Master Files (MAFs).
+2. I recommend adding change dynamics as a formal third calibration dimension, and treating output-to-source
+traceability as a risk-relevant capability.
+3. I recommend making the framework operational by reusing machinery manufacturers already run - design controls,
+supplier controls, and change management - rather than standing up a parallel track: registered and versioned
+benchmarks, a structured model card / evidence dossier (following the paper's "model cards or system cards"
+framing), predetermined-gate change control (an evolution of PCCP), and version chain-of-custody.
+4. I respond to all 26 discussion questions below.
+Thank you for the opportunity to comment. I am an independent medical device regulatory practitioner working across
+the US (FDA), EU (MDR), and China (NMPA) markets, with a parallel focus on lifecycle assurance frameworks for AI
+systems. This comment is submitted in my personal capacity, without organizational affiliation. Per the Agency's
+invitation, I respond below to the discussion questions, with emphasis on benchmark governance, change control for
+continuously adjusting systems, and the treatment of third-party foundation models.
+My overall position: the framework sketched in the paper - two-axis risk assessment, a competency-based premarket
+approach, risk-proportionate postmarket monitoring, and voluntary Foundation Model Master Files (MAFs) - is coherent
+and worth pursuing. The suggestions below aim to make it operational using constructs device manufacturers already
+practice (design controls, supplier controls, change management), so that GenAI-enabled devices can be absorbed into
+existing regulatory machinery rather than requiring a parallel track.
+A. Risk Assessment (Questions 1-6)
+Q1 (two-axis framework; additional dimensions). The two axes - device activity (degree and independence of action)
+and consequences of relying on an incorrect output - capture the most decision-relevant variance, and I support their
+adoption as an organizing heuristic. Among the additional dimensions FDA lists, I recommend formalizing change
+dynamics alongside the four named examples (reversibility, downstream safeguards, time pressure, traceability): the
+degree to which the deployed behavior depends on a frozen model version behind formal change control, on
+sponsor-initiated updates, or on a third-party foundation model the sponsor does not control. Two devices identical on
+both axes can carry materially different lifecycle risk depending on who initiates change and whether evaluation gates
+exist between change and deployment. Formalizing this dimension in Section IV would let the same construct carry
+through Sections VI and VII (re-benchmarking triggers, PCCP scoping, and Foundation Model MAF reference), giving
+the framework a single spine. On traceability of outputs to primary source materials: for GenAI-enabled functions
+
+Docket No. FDA-2026-N-7874  |  Comment by Steven Zhao  |  Page 2
+with retrieval or documentation inputs, I suggest FDA treat source attribution as a risk-relevant capability - devices that
+can cite and expose their provenance migrate lower on the risk gradient than devices that cannot, because users can
+independently verify rather than trust.
+Q2 (directiveness continuum). I agree directiveness is a continuum, and that it depends on the substance and context of
+the output rather than on the presence of words like "recommend." I suggest FDA define a small set of objective output
+characteristics as risk modifiers, which sponsors would document at design time and test at benchmarking time: (i)
+personalization (generic information vs. information conditioned on the individual's data); (ii) specificity (a named
+action, dose, or destination vs. a general option set); (iii) consequence framing (whether the output forecloses or ranks
+alternatives); and (iv) interaction design (one-shot display vs. persistent, resurfaced, or notification-style delivery, which
+raises the salience of and reliance on the output). A short guidance table mapping these modifiers to presumptive risk
+would give manufacturers the predictability FDA asks for without drawing a binary line. I also agree that disclaimer
+boilerplate ("talk to your doctor") should not lower a function's directiveness classification.
+Q3 (patient-facing vs. HCP-facing). Risk does increase when the user lacks the domain knowledge to independently
+evaluate the output, and I support shifting patient-facing functions higher on the consequences axis where outputs
+concern triage, dose, or escalation. Mitigations that preserve patient empowerment without underestimating patient
+capability: calibrated uncertainty communication (element S.3), escalation language that names concrete timeframes and
+settings rather than vague caution, comprehension testing at varied health-literacy levels (element E.4), and design
+features that surface the basis for an output. Notably, E.4's treatment of automation bias - users accepting outputs because
+of fluency or perceived authority - is itself a patient-facing risk amplifier and should be a scored element for any
+patient-facing device.
+Q4 (generalist vs. specialist). I recommend the framework ask two separate questions: whether the device's safe use
+depends on specialist contextualization, and whether its deployment assumes specialist availability. A device that extends
+specialty knowledge to generalist settings (an access benefit) and one whose outputs are unsafe without specialist
+interpretation (an elevated risk) can look identical at the function level. The differentiator is testable under the existing
+elements: does the device correctly recognize the boundary of its own competence and defer (S.3), and does it maintain
+calibration when queried beyond its reliable knowledge (E.1)? Where a device is intended for generalist use in a specialist
+domain, benchmarking datasets should be drawn from the generalist deployment context, not from specialist-curated
+cases.
+Q5 (multi-turn migration; emergent intended use). I recommend characterizing intended use for conversational
+devices as a bounded envelope of conversation states: the sponsor declares which functional states the device may enter
+(informational, action-directing, escalation), the permitted transitions between them, and the mechanisms - guardrails,
+context windows, boundary classifiers - that hold the interaction inside the envelope. Risk would then be assessed across
+realistic conversational trajectories, exactly as FDA proposes, with the envelope itself as the reviewable artifact: the
+premarket question is not "what does the device say at turn N" but "does the interaction stay inside the declared envelope
+under adversarial and drift-inducing trajectories." This connects directly to element S.2's cumulative multi-turn drift
+testing and gives reviewers a stable intended-use construct despite emergent behavior.
+Q6 (under- vs. over-escalation). Both directions of error should be characterized and reported separately, with
+context-specific weighting. I suggest sponsors pre-specify, by clinical context: the harms and their distributions for each
+error direction (delayed care vs. anxiety, unnecessary utilization, erosion of trust), the metrics for each (time-to-escalation
+distributions, over-escalation rates in low-prevalence populations), and the acceptable trade-off and its justification.
+Because the trade-offs are not commensurable, FDA should not attempt a single cross-context weighting; instead, require
+sponsors to declare and defend their weighting per deployment context, with both directions of error reported as paired
+endpoints in benchmarking (S.1) and clinical confirmation.
+B. Premarket Evaluation - Competency-Based Approach (Questions 7-17)
+
+Docket No. FDA-2026-N-7874  |  Comment by Steven Zhao  |  Page 3
+Q7 (usefulness of competency approach). Yes - benchmarking followed by clinical confirmation is a useful and
+appropriate frame, in large part because the paper correctly anchors evaluation to the final user-facing device as
+configured for deployment, not the foundation model standing alone. This keeps accountability with the sponsor who
+controls prompts, guardrails, orchestration, and user interface. The competency analogy also usefully shifts the
+evidentiary question from "was every input tested" (impossible) to "were the relevant competencies demonstrated"
+(tractable).
+Q8 (two-axis -> level of evidence). I suggest FDA publish a non-binding mapping table - axis positions and
+change-dynamics profile to expected benchmarking elements, confirmation approaches, and re-benchmarking cadence -
+analogous to how risk levels map to regulatory controls today. Even as a heuristic, such a table would do more for
+predictability than any single guidance paragraph, and it would let sponsors self-scope submissions and pre-align with
+reviewers. The table should be explicitly non-exhaustive and updatable as methodologies mature.
+Q9 (elements adequate; external standards). The element set (Safety S.1-S.3; Clinical Proficiency E.1-E.4;
+Generalizability R.1-R.2; Agentic A.1) is well-constructed, and I particularly endorse the symmetric treatment of
+under-/over-escalation and under-/over-refusal. Two suggestions: (i) a provenance element. Consider adding under
+Safety or Clinical Proficiency: whether the device accurately attributes outputs to sources where sources exist, and flags
+when it cannot - this operationalizes the traceability dimension FDA raises in Q1, and it is the single most reviewable
+safeguard against confabulation appearing authoritative. (ii) Leverage external standards. Rather than building from
+scratch, FDA could recognize: ISO/IEC 42001 (AI management systems - governance and documentation spine),
+ISO/IEC 23894 (AI risk management - complements ISO 14971 for AI systems), NIST AI Risk Management Framework
+(measurement and governance language manufacturers increasingly use), and the AI-specific reporting guidelines
+(CONSORT-AI, SPIRIT-AI, DECIDE-AI) for the clinical confirmation arm. Element-level mapping to recognized
+standards would let sponsors reuse existing governance artifacts instead of generating parallel documentation.
+Q10 (contamination, saturation, construct validity; sponsor-developed benchmarks). Performance on a benchmark
+predicts real-world behavior only if three conditions hold and are documented: (i) sequestration - test assets were not in
+training or fine-tuning data (provenance declaration plus contamination checks); (ii) currency - assets are versioned and
+rotated or refreshed on a defined cadence, with saturation monitored (a benchmark whose scores plateau across model
+generations is saturated); (iii) construct validity - demonstrated correlation between benchmark performance and
+deployment-distribution performance for the intended use, ideally established through shadow deployment or
+retrospective real-input studies. On sponsor-developed benchmarks: they should be permitted and expected for
+intended-use-specific competencies, but with mandatory disclosure, versioning, and - where the benchmark gates
+safety-critical elements - independent third-party custodianship or adjudication (see Q16), precisely to mitigate the
+optimization-to-test concern FDA identifies. The combination "registered public benchmarks for general competencies +
+disclosed, custodied sponsor benchmarks for intended-use-specific competencies" balances independence with relevance.
+Q11 (selecting and justifying a confirmation approach). The ladder of increasing rigor (retrospective evaluation ->
+shadow deployment -> standardized patient interactions -> clinician adjudication -> prospective study) is a sound menu. I
+suggest the selection be justified along three dimensions declared in advance: position on the consequences axis (and
+action-taking vs. informational), position on the activity/autonomy axis, and the nature of the patient data the device acts
+on. The anticipated distribution of real-world inputs should be established from design-stage inputs (human factors
+studies, market and workflow analysis) and documented as the sampling frame for confirmation - reviewers can then
+verify that the confirmation sample represents that frame. I agree prospective studies should remain reserved for
+high-consequence, high-autonomy cases; requiring them generally would push developers away from declaring intended
+uses honestly.
+Q12 (statistical meaningfulness; combining evidence). I recommend against pooling benchmarking and clinical
+confirmation into a single performance estimate. They measure different constructs: benchmarking samples capability
+space (deliberately broad, including boundary and adversarial cases), while clinical confirmation samples the deployment
+distribution (realistic prevalence, realistic users). They can be combined in a pre-specified hierarchical inference
+
+Docket No. FDA-2026-N-7874  |  Comment by Steven Zhao  |  Page 4
+structure - e.g., benchmarking establishes capability bounds, confirmation establishes deployment performance, and the
+submission argues safety and effectiveness within those bounds - but not merged as if drawn from one distribution.
+Where synthetic inputs supplement real data, sponsors should document the generative process, quantify distributional
+differences, and present sensitivity analyses rather than point estimates alone.
+Q13 (synthetic data suitability; safeguards). Synthetic data is well-suited for rare-event enrichment,
+boundary-condition testing, adversarial prompting, and multi-turn trajectory generation; it is least reliable as a proxy for
+population-level performance in underrepresented subgroups, precisely because a generator trained on the world's gaps
+reproduces them. Safeguards: an independent generation pipeline (not the same model family as the device under
+evaluation where feasible, or at minimum documented and justified); provenance and labeling of all synthetic samples;
+subgroup-stratified validation of synthetic samples against real distributions before use; and human adjudication of a
+sample of synthetic cases for clinical plausibility. I support FDA's framing that synthetic supplementation of
+hard-to-sample subgroups is acceptable only with demonstrated representativeness.
+Q14 (comparators and acceptance criteria). Comparator selection should follow the autonomy axis: for
+HCP-in-the-loop devices, the relevant standard is human-AI team performance against the team that would exist
+without the device; for autonomous devices, device-alone performance against the applicable standard of care.
+Panel-of-clinicians consensus is a workable standard for open-ended outputs provided that: adjudicators are independent
+of the sponsor and any foundation model developer (as the paper already contemplates), the applicable standard (standard
+of care vs. median clinician) is pre-specified and clinically justified per intended use, and specialist adjudicators are used
+where outputs fall in specialist domains. I recommend FDA avoid fixing one global standard; the justifiable standard is
+task- and context-dependent, and the reviewable artifact is the justification, not the label.
+Q15 (counterfactual comparators). Yes - for informational and patient-facing functions especially, the most honest
+comparator is the care, information source, or course of action likely in the device's absence. Approaches: document
+current-practice pathways from guidelines and utilization data; use retrospective record review to establish the
+counterfactual distribution of decisions; and, where feasible, shadow deployment to observe the counterfactual
+concurrently. This also aligns with how benefit-risk is ultimately realized: a GenAI-enabled device that outperforms a
+median clinician but underperforms existing structured tools in the same workflow may not offer a net benefit worth its
+risks.
+Q16 (independent third parties). I support third-party participation modeled on the existing ASCA and MDDT
+programs. The most valuable roles: custodianship of sequestered, versioned benchmark assets; conduct or certification of
+portions of the competency assessment (with CDRH retaining review authority); and independent expert adjudication,
+including qualification of LLM-based adjudicators themselves (the paper correctly notes these considerations apply when
+the adjudicator is an LLM). Qualifications and independence criteria should mirror existing accreditation practice -
+documented independence from sponsor and foundation-model developer, clinical domain credentials, and pre-specified
+scoring rubrics. Two competition safeguards are critical: no exclusivity (FDA should never require use of a single third
+party's assets or services, and recognized benchmarks should be publicly specified), and transparent, non-discriminatory
+access terms. Without these, third-party intermediation risks becoming a bottleneck that prices small developers out. One
+boundary should be stated: some determinations should remain inside CDRH - notably the final acceptance criteria for
+safety-critical elements, the determination of intended use, and the premarket review decision itself - because outsourcing
+them would diffuse, rather than delegate, the Agency's own accountability.
+Q17 (other model architectures). The competency frame generalizes, but element emphasis shifts: for multimodal
+vision-language devices, E.3 (quantitative and measurement analysis) and R.1 (robustness across input conditions) do
+heavier lifting - image quality variation, sensor artifacts, and modality-mismatch cases belong in benchmarking; for
+generative or predictive world models used in control or simulation roles, validation against computational-modeling
+credibility practices (per FDA's guidance on assessing the credibility of computational modeling and simulation) is more
+instructive than conversational benchmarks. I suggest FDA retain the element architecture but publish applicability notes
+per architecture, rather than implying one benchmarking battery fits all.
+
+Docket No. FDA-2026-N-7874  |  Comment by Steven Zhao  |  Page 5
+C. Postmarket Monitoring and Change Control (Questions 18-24)
+Q18 (accepting premarket uncertainty for postmarket reliance). Appropriate only under conditions that can be
+verified: (i) the monitoring program has demonstrated signal-detection capability (its own performance characterized,
+not merely described); (ii) deployment is reversible or containable (outputs are checkable by an available human
+safeguard, or rollback is feasible); (iii) defined gates exist between detected signal and continued deployment; and (iv)
+the risk profile sits in the lower/middle of the two-axis framework. It is not appropriate for devices taking
+high-consequence irreversible actions, devices deployed where monitoring cannot run (no telemetry, low-resource
+settings), or populations that cannot report failures.
+Q19 (approaches; cadence and triggers). The three approaches (periodic re-benchmarking, sample-based clinician
+review, degradation monitoring) are complementary, not alternative - I recommend requiring a risk-proportionate
+combination. On cadence and triggers, I suggest FDA define the trigger taxonomy and let sponsors set cadences:
+scheduled re-assessment (by risk level), event-triggered re-assessment (foundation model updates, changes to retrieval
+sources or guardrails, drift alerts crossing registered thresholds, complaint or signal clusters, cybersecurity events), and
+continuous monitoring with escalation thresholds. The premarket benchmarking suite should be designed from the start
+to double as the re-benchmarking instrument - the paper's framing that the premarket competency assessment becomes
+the lifecycle baseline is its most valuable operational idea. Two further approaches are worth adding to the menu: (i)
+small-scale real-world "canary" deployments at instrumented sites ahead of broad release, so that deployment-distribution
+effects surface while containment is still cheap; and (ii) a periodic input-distribution census, so that drift in the deployed
+population is detected independently of the model's own logs.
+Q20 (machine-based supervisory agents). Yes, with three conditions: the supervisory agent itself must be qualified - its
+own detection performance, false-negative behavior, and robustness characterized under rigor comparable to a device
+function; its determinations must be logged and auditable, with periodic human review of a sample including
+agent-flagged and, importantly, agent-cleared events (the cleared events are where silent failure hides); and the agent
+must be independent enough that the device is not, in effect, monitoring itself - self-supervision loops where the
+monitored system and the monitor share components or models should require justification. Machine supervision can
+meaningfully scale drift detection and complaint triage; it should initiate escalation, not conclude it.
+Q21 (ecosystem roles without diffusing accountability). Clinicians and institutions are well-placed to report
+output-quality events and context-specific failures; professional societies can contribute adjudication standards and
+rubrics; standards bodies can carry benchmark and reporting formats. The accountability-preserving design principle:
+stakeholders detect and report; the manufacturer remains responsible for evaluation, thresholds, and response.
+Structurally, this means external parties contribute to the inputs of postmarket monitoring (signals, adjudicated cases,
+datasets), while the decisions (thresholds, gates, corrective actions, submissions) remain squarely with the sponsor under
+its quality management system.
+Q22 (scaling re-benchmarking; QMS vs. premarket review; PCCP categories). I suggest a three-tier change
+taxonomy that manufacturers will recognize from classical change control: (i) QMS-managed changes - no expected
+impact on safety-critical behavior, verified by a defined regression subset of the benchmarking suite (guardrail wording,
+non-clinical UI text, documentation); (ii) PCCP-eligible changes - pre-declared change types (fine-tuning events,
+retrieval-source changes, guardrail-model updates) that pass element-level re-benchmarking against pre-agreed
+acceptance criteria before deployment, with a notification to FDA rather than a new authorization (a proposed extension
+of today's PCCP practice, under which changes made within an authorized PCCP generally require neither a new
+submission nor notification); (iii) premarket review changes - changes to intended use, functional states, autonomy
+positioning, or the foundation model's role in safety-critical behavior. The pre-specified regression subset design (which
+elements, which thresholds) is the key premarket artifact that makes this tiering work.
+Q23 (PCCP when modifications cannot be fully prespecified). The PCCP construct should shift, for GenAI-enabled
+devices, from "predetermined change" to "predetermined gate": rather than enumerating exact future versions, the
+PCCP declares change types, the evaluation gates each type must pass (which elements, which metrics, which
+
+Docket No. FDA-2026-N-7874  |  Comment by Steven Zhao  |  Page 6
+thresholds), the decision rules for proceeding, and the rollback plan. This "gate-then-deploy" structure preserves
+premarket review's protective function while accommodating modifications that cannot be enumerated in advance -
+including the model-evolution changes the paper describes. It is also the natural home for the version chain-of-custody
+commitment: every deployed configuration traceable to the evaluated configuration that passed the gate.
+Q24 (third-party foundation model changes). Detection, evaluation, and response need three layers working together.
+Contractual: update-notification commitments with meaningful lead time, version disclosures, and change logs from the
+foundation model developer - the practicality of which the Foundation Model MAF (see Q25) can institutionalize.
+Technical: continuous output-distribution monitoring with registered drift thresholds, canary/behavioral probe suites that
+detect silent behavior shifts even when version labels are not disclosed, and, where APIs expose them, version fingerprint
+checks. Procedural: sponsor-side gates per Q22-Q23 - any notified or detected change relevant to safety-critical behavior
+triggers re-benchmarking of affected elements before deployment proceeds. Reasonable assurance emerges from the
+combination: contracts for what can be known in advance, telemetry for what cannot, and gates for what is found.
+D. Foundation Model MAFs and Agentic AI (Questions 25-26)
+Q25 (voluntary FM MAFs). I support the proposal - it is the lightest-touch mechanism that creates a shared,
+confidential, referenceable record of the underlying model, and footnote 24's content list (architecture, training-data
+provenance, characterized behaviors and failure modes, healthcare-relevant benchmark results including subgroups,
+safety constraints and guardrails, update notification commitments, audit log availability) is the right starting inventory.
+Two suggestions to make it practical: (i) publish a structured content template so that a MAF is a fillable schema
+rather than a bespoke document - this lowers the filing cost for developers and makes cross-model review consistent; and
+(ii) pair it with a sponsor-side floor. Because participation is voluntary and developer incentives are uncertain, device
+sponsors should be expected - under existing supplier-control practice - to independently document the foundation model
+identity, version, and change-relevant behavior of the model they deploy, even where the developer files no MAF.
+Alternative mechanisms FDA should keep in view: market and procurement incentives (health systems increasingly treat
+model transparency as a procurement condition), and recognition of third-party audit frameworks against which
+foundation-model developers could certify. The MAF's value grows with each participating developer; the sponsor-side
+floor ensures no device lacks a documented basis for its underlying model in the meantime.
+Q26 (agentic GenAI-enabled devices). Element A.1 already captures the core competencies (plan/sequence recognition
+of the safety envelope, tool-use fidelity, human-oversight checkpoints before irreversible or high-consequence actions,
+graceful tool-failure handling, prompt-injection resistance including through retrieved content and tool outputs). I
+recommend four additions to the oversight of agentic devices: (i) an action taxonomy distinguishing reads
+(informational tool use) from writes (actions that change records, orders, or device state), with acceptance criteria
+graduated accordingly; (ii) blast-radius containment - pre-declared limits on what an agent may affect, structurally
+enforced rather than prompt-enforced; (iii) complete, version-attributable audit logs - every agentic action logged and
+attributable to the specific model configuration, satisfying the traceability dimension from Q1 in its most consequential
+setting; and (iv) supervision-proportionality - checkpoint density scaled to the autonomy axis, with reduced-review
+opportunities earned by demonstrated reliability rather than assumed. Where an agentic system's action sequences control
+another medical device (the paper's example), I agree that, where such action sequences meet the device definition, the
+full device-level oversight pathway applies, and the elevated risk of autonomous multi-step action should be reflected in
+stricter acceptance criteria under R.1 and A.1.
+Closing
+The discussion paper's most consequential operational insight is that the premarket competency assessment becomes the
+baseline for the entire product lifecycle - re-benchmarking after change, gates for modification, and the reference point
+for foundation-model evolution. Getting the governance of that baseline right - registered and versioned benchmarks,
+structured dossiers, threshold-triggered gates, and version chain-of-custody - will determine whether the framework
+
+Docket No. FDA-2026-N-7874  |  Comment by Steven Zhao  |  Page 7
+achieves its stated goal of nimble, least-burdensome oversight. I would welcome the opportunity to engage further,
+including at any public meeting or webinar, and to provide practitioner detail on benchmark governance and multi-market
+evidence alignment.
+Respectfully submitted,
+Steven Zhao - independent medical device regulatory practitioner; maintains MedXpert, a personal
+regulatory-knowledge project
+Contact details: provided in the submission form (not reproduced in the public comment text). The submission date is
+recorded in the regulations.gov tracking receipt.
+Disclaimer: This comment reflects a methodological and regulatory-practice perspective. It is not legal advice, and it
+does not contain confidential business information. All regulatory citations should be verified against the official
+discussion paper and the regulations.gov docket. Drafted with AI assistance, reviewed and approved by the named
+signatory.

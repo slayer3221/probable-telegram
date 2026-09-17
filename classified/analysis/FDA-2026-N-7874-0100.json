@@ -1,0 +1,798 @@
+{
+  "comment_id": "FDA-2026-N-7874-0100",
+  "input_hash": "64d53825005e36ea",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-17T13:20:17Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter agrees that device activity and consequence-of-reliance are the right primary axes and that evidence should scale with grid position rather than technology label, but argues the framework omits two risk-relevant properties: whether an output's basis can be independently inspected and whether the resulting action can be reversed or intercepted before harm.",
+      "requested_fda_action": "Formally incorporate traceability to primary source material as a verifiable mitigating factor on the consequence axis, and incorporate reversibility of the resulting action as a modifier interacting with the activity axis to sharpen the supervised versus autonomous action-taking distinction.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment grounds risk mitigation in whether clinicians and local governance bodies can meaningfully inspect and catch errors before reliance, making risk a property of the human-device review loop rather than the model output alone.",
+        "operational_harm": "Reversibility examples such as routing suggestions intercepted by scheduling staff frame risk in terms of operational workflow consequences and their recoverability rather than direct clinical error."
+      },
+      "public_summary": "Clearstep supports the two-axis risk framework and its scaling of evidence to grid position, but asks FDA to formally add two modifiers: traceability to primary source material as a verifiable mitigating factor on the consequence axis, and reversibility of the resulting action alongside the activity",
+      "summary_cut": true,
+      "source_passage": "Clearstep supports the two-axis framework. Device activity and consequence-of-reliance are the correct primary dimensions, and the framework's implication, that evidence should scale with grid position rather than with technology label, is essential to least-burdensome regulation. We recommend that CDRH formally incorporate two of the candidate dimensions named in Question 1 as risk modifiers:\n•Traceability to primary source material. An output whose basis can be independently inspected (for example, a triage disposition traceable to a specific, validated clinical protocol and decision pathway, or a summary linked to the underlying chart excerpts) permits meaningful independent review by clinicians and local governance bodies, and materially reduces the consequence of an incorrect output because errors are detectable before reliance. Traceability is an engineerable property: manufacturers can design for it, sponsors can document it, and FDA can verify it. This consideration also aligns with the independent-review criterion referenced in the paper's discussion of clinical decision support. We recommend traceability be treated as a formal, verifiable mitigating factor on the consequences axis.\n•Reversibility of the resulting action. A function whose downstream action is easily reversed or intercepted (e.g., a routing suggestion reviewed by scheduling staff) presents a different risk than one whose consequences are immediate and difficult to unwind. Reversibility interacts naturally with the activity axis and would sharpen the distinction between supervised and autonomous action-taking."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q2"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "directiveness",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter agrees directiveness is a continuum judged by substance and context rather than trigger words or boilerplate disclaimers, but is concerned manufacturers lack clarity and predictability, and that treating directiveness as inherently risk-increasing could disfavor unambiguous outputs that are clinically safer in high-consequence situations.",
+      "requested_fda_action": "Publish worked examples along the directiveness continuum for common function types; assess directiveness at the level of characterized output classes (e.g., a bounded, prespecified disposition set mapped to validated clinical guidance) rather than sentence-by-sentence; and evaluate whether the degree of directiveness is clinically appropriate to the situation rather than disfavored per se.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The recommendation to characterize and evaluate a bounded, prespecified set of output classes once and then monitor for conformance frames directiveness as a definable behavioral envelope rather than a per-output attribute, which FDA's question does not address."
+      },
+      "public_summary": "Agrees directiveness is a continuum not determined by trigger words or boilerplate disclaimers. Asks CDRH to publish worked examples, assess directiveness at the level of prespecified output classes rather than sentence-by-sentence, and treat greater directiveness as potentially safer for high-consequence presentations rather than inherently disfavored.",
+      "summary_cut": false,
+      "source_passage": "We agree that directiveness is a continuum determined by the substance and context of an output, not solely by trigger words, and we agree that boilerplate statements such as \"talk to your doctor\" should not, by themselves, render an action-directing output non-directive. To give manufacturers clarity and predictability, we recommend that CDRH:\n• Publish worked examples along the continuum for common function types (the paper's four-step lisinopril illustration is a useful template), so manufacturers can deliberately design and document where each output class sits;\n• Assess directiveness at the level of the function's characterized output classes (e.g., a defined disposition set) rather than sentence-by-sentence, so that a bounded, prespecified set of dispositions, each mapped to validated clinical guidance, can be evaluated once and monitored for conformance; and\n• Recognize that for the highest-consequence presentations, greater directiveness is often the clinically safer design. An emergency disposition should be unambiguous. Risk assessment should therefore evaluate whether the degree of directiveness is clinically appropriate to the situation, rather than treating directiveness as inherently disfavored."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q3"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter is concerned that treating patient-facing clinical information functions as categorically higher risk would disadvantage tools that close access gaps for users whose realistic alternative is an unvetted internet search, a long nurse-line queue, or no action, and would embed medical parentalism the paper itself cautions against.",
+      "requested_fda_action": "Rather than shifting patient-facing functions upward on the consequences axis as a category, CDRH should assess them against demonstrated, verifiable safeguards—outputs anchored to validated clinical protocols with traceability, deterministic emergency escalation that cannot be suppressed by conversational drift, structured deferral to human care, and comprehension-validated communication across health-literacy levels—and, where present, not elevate risk classification based on patient-facing delivery alone.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The commenter's proposed safeguard that emergency escalation trigger regardless of conversational context and not be suppressible by conversational drift addresses behavior that emerges over multi-turn exchanges rather than a fixed intended use."
+      },
+      "public_summary": "Endorses the paper's balanced treatment of patient-facing tools but opposes any categorical presumption of higher risk. Recommends CDRH instead assess demonstrated safeguards—protocol-anchored traceable outputs, non-suppressible emergency escalation, structured deferral to human care, and comprehension-validated communication—and not elevate classification for patient-facing delivery alone.",
+      "summary_cut": false,
+      "source_passage": "We urge CDRH to preserve the balance the paper itself strikes. Patient-facing clinical information tools meaningfully expand access: they reach people at the moment of need, including the large population whose realistic alternative is not a clinician's assessment but an unvetted internet search, a long nurse-line queue, or no action at all. A categorical presumption that patient-facing functions are higher risk would penalize exactly the tools most capable of closing access gaps, and would embed the medical parentalism the paper cautions against.\nRather than a categorical shift on the consequences axis, we recommend CDRH evaluate patient-facing functions against the presence of specific, verifiable safeguards:\n• Outputs anchored to validated clinical protocols, with traceability available for independent and institutional review;\n• Deterministic escalation safety nets that trigger on emergency presentations regardless of conversational context, and that cannot be suppressed by conversational drift;\n• Structured deferral pathways that connect the user to human care (nurse line, scheduling, emergency services) rather than terminating the interaction; and\n• Communication validated for comprehension across health-literacy levels, consistent with the paper's element E.4.\nWhere these safeguards are present and demonstrated, patient-facing delivery should not, by itself, elevate a function's risk classification."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q14",
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "comparator_standard_of_care",
+      "stakeholder_concern": "Commenter states that under-escalation and over-escalation harms are not commensurable and that aggregate concordance metrics conceal directionality, with appropriate trade-offs varying by chief complaint, population, and care context. It also notes documented disagreement among qualified human raters on triage disposition, so error bounds should not assume a single correct answer.",
+      "requested_fda_action": "CDRH should require manufacturers to prespecify and clinically justify their escalation operating point (including deliberate asymmetry for high-severity presentations) against validated protocols and deployment context, and to report errors in both directions stratified by acuity. Acceptable error bounds should be benchmarked against documented human reference variability rather than a single presumed correct answer.",
+      "confidence": "high",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment asks that over-escalation be characterized against its own harms, including unnecessary utilization, patient anxiety, and erosion of trust, which extend beyond individual clinical error."
+      },
+      "public_summary": "Clearstep supports evaluating both under- and over-escalation, citing its real-world measurement, but asks CDRH to go further: require a prespecified, clinically justified operating point, error reporting stratified by acuity in both directions, and acceptable error bounds referenced to documented human rater variability.",
+      "summary_cut": false,
+      "source_passage": "Clearstep strongly supports assessing both under-escalation and over-escalation, and we speak to this from sustained real-world measurement. The two error directions are not commensurable: the marginal harm of a missed emergent presentation is categorically different from the marginal harm of an unnecessary urgent-care visit, and the appropriate trade-off varies by chief complaint, population, and care context. We recommend that CDRH:\n•Require a prespecified, clinically justified operating point. Manufacturers should state where their escalation function is intentionally positioned, including any deliberate asymmetry toward escalation for high-severity presentations, and justify that position against validated clinical protocols and the deployment context, rather than asserting safety from one direction of error alone.\n•Require reporting in both directions, stratified by acuity. Aggregate concordance conceals directionality. Under-escalation at high acuity is the paramount safety signal; over-escalation should be characterized against its own harms (unnecessary utilization, patient anxiety, erosion of trust) and evaluated for clinical justification at the acuity levels where it occurs.\n•Benchmark both directions against human reference variability. Published literature and our own evaluations show meaningful disagreement between qualified human raters on triage disposition. Acceptable error bounds for a device should be set with reference to that documented human baseline, not to an assumption of a single correct answer."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q11",
+        "q7",
+        "q8"
+      ],
+      "position": "support",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter is concerned that evidence expectations be proportionate to a device's position in the two-axis risk grid and that evaluation be conducted on the final user-facing device as configured for deployment.",
+      "requested_fda_action": "Adopt the competency-based framework of non-clinical benchmarking followed by clinical confirmation, and use the two-axis risk framework to scale the benchmarking elements exercised, the difficulty and adversarial depth of test conditions, and the level of clinical confirmation required.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Clearstep supports the competency-based approach of device benchmarking followed by clinical confirmation, assessed on the final user-facing device as deployed. It agrees the two-axis risk framework should scale evidence rigor, including benchmarking scope, adversarial test depth, and the level of clinical confirmation.",
+      "summary_cut": false,
+      "source_passage": "Clearstep supports the competency-based structure of non-clinical device benchmarking followed by clinical confirmation, evaluated on the final user-facing device as configured for deployment. We agree the two-axis framework should calibrate the rigor, scope, and amount of evidence: the benchmarking elements exercised, the difficulty and adversarial depth of test conditions, and the rung of clinical confirmation should all be functions of grid position."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q11"
+      ],
+      "position": "support",
+      "primary_issue": "clinical_validation",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter agrees that requiring a prospective clinical study in every case is unnecessary, noting that the paper's graduated set of confirmation methods reflects approaches already practiced in commercial deployments.",
+      "requested_fda_action": "Retain the flexible ladder of clinical confirmation approaches—retrospective evaluation, shadow deployment, standardized interactions, independent clinician adjudication of real cases, and prospective study—rather than mandating prospective studies universally.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter endorses FDA's position that clinical confirmation need not always require a prospective study, describing the paper's graduated options—retrospective evaluation, shadow deployment, standardized interactions, clinician adjudication of real cases, and prospective study—as practical and already used in current deployments.",
+      "summary_cut": false,
+      "source_passage": "We also support the paper's recognition that clinical confirmation need not mean a prospective clinical study in every case; the enumerated ladder of retrospective evaluation, shadow deployment, standardized interactions, independent clinician adjudication of real cases, and prospective study reflects methods that are practical and already in use in responsible commercial deployments today."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter finds the proposed benchmarking elements well chosen but argues the framework does not account for architecture: in hybrid systems where deterministic clinical logic governs safety-critical behaviors and generative components handle communication, properties like reproducibility, scope maintenance, and calibration can be verified by construction rather than only estimated statistically across samples.",
+      "requested_fda_action": "Explicitly recognize architectural risk controls when scoping benchmarking, allowing sponsors to demonstrate reproducibility (R.1), scope maintenance (S.2), and calibration (S.3) through architectural verification plus targeted testing instead of exclusively exhaustive sampling.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment argues that architectural constraints can verifiably bound a device's behavioral envelope—identical escalation behavior for semantically equivalent inputs and a prespecified disposition set—an approach to defining and evidencing behavioral limits not addressed by the benchmarking question as framed."
+      },
+      "public_summary": "Endorses the proposed benchmarking elements, including treating variation in safety-critical behaviors as failures, but asks FDA to recognize architectural risk controls: where deterministic logic governs escalation and disposition, sponsors should be able to show reproducibility, scope maintenance, and calibration through architectural verification plus targeted testing",
+      "summary_cut": true,
+      "source_passage": "The proposed elements (S.1–S.3, E.1–E.4, R.1–R.2, A.1) are well chosen, and we particularly endorse the treatment in R.1 of variation in safety-critical behaviors (escalation, refusal, and diagnostic conclusions) as failures, while tolerating variation in non-safety-critical phrasing. We recommend one addition to how the elements are applied: the framework should explicitly recognize architectural risk controls in scoping the benchmarking burden.\nGenAI-enabled devices differ fundamentally in where generative components sit. In hybrid, expert-encoded architectures, safety-critical behaviors are governed by deterministic clinical logic traceable to validated protocols; generative components handle communication and information elicitation. Such systems can guarantee, by construction and verifiably, that semantically equivalent inputs yield identical escalation and disposition behavior, that outputs remain within a bounded, prespecified disposition set, and that every recommendation is traceable to a protocol pathway. A purely generative system can only estimate those same properties statistically, across samples. Evaluation of R.1 (reproducibility), S.2 (scope maintenance), and S.3 (calibration) should permit sponsors to demonstrate these properties through architectural verification plus targeted testing, rather than exclusively through exhaustive sampling. This is not a lower bar; it is a different and often stronger form of evidence, and recognizing it would encourage the industry toward designs that place generative capability where variance is tolerable and deterministic logic where it is not."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "The commenter shares CDRH's concerns about benchmark contamination, saturation, and limited real-world representativeness, but is concerned that sponsor-developed benchmarks could be disfavored as a class even when they are better matched to a specific intended use than repurposed public assets.",
+      "requested_fda_action": "Permit and expect sponsors to establish benchmark construct validity through clinician-authored cases graded against validated protocols with documented rubrics and adjudicator qualifications, demonstrated correlation between benchmark results and independently adjudicated real-world performance in the same deployed configuration, and supplementation with sequestered third-party-held test sets where available; address independence through documentation, sequestration, and independent adjudication rather than exclusion of sponsor benchmarks.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Agrees with FDA's concerns about public benchmark contamination and representativeness, but argues sponsor-developed benchmarks should not be disfavored. Proposes construct validity be shown via documented clinician-authored cases, correlation with independently adjudicated real-world deployed performance, and sequestered third-party test sets where available.",
+      "summary_cut": false,
+      "source_passage": "We share CDRH's concern about contamination, saturation, and limited representativeness of public benchmarks. In our experience, the strongest evidence that a benchmark predicts real-world behavior is a demonstrated linkage between benchmark performance and independently adjudicated real-world performance in the same deployed configuration. We recommend that sponsors be permitted, and expected, to establish construct validity by:\n• Building benchmark assets from clinician-authored cases graded against validated clinical protocols, with authorship, grading rubrics, and adjudicator qualifications documented;\n• Demonstrating correlation between benchmark results and real-world concordance measured through independent clinician review of deployed interactions; and\n• Complementing sponsor-developed assets with sequestered, third-party-held test sets where available, to address optimization-to-the-test concerns.\nSponsor-developed benchmarks should not be disfavored per se: for a specific intended use, a well-documented sponsor benchmark tied to the device's clinical content and validated against real-world adjudication will often have higher construct validity than a public asset built for a different purpose. Independence concerns are better addressed through documentation, sequestration, and independent adjudication than through exclusion."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "Holding GenAI devices to an idealized consensus-panel standard that practicing clinicians do not consistently meet would set a bar disconnected from the care patients actually receive.",
+      "requested_fda_action": "Default the comparator for open-ended outputs to the median qualified clinician in practice, using consensus panels as a reference ceiling and for adjudicating disagreement, and require documented inter-rater variability among clinicians to be measured and reported alongside device performance.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports comparator-based evaluation of open-ended outputs but recommends defaulting to the median qualified clinician in practice rather than an idealized consensus panel, reserving panels as a reference ceiling and adjudication tool, with clinician inter-rater variability measured and reported alongside device performance.",
+      "summary_cut": false,
+      "source_passage": "For open-ended outputs where a single correct response does not exist, we recommend:\n•Default to the median qualified clinician in practice, not an idealized consensus panel. Consensus panels are valuable as a reference ceiling and for adjudicating disagreement, but requiring devices to exceed a consensus standard that practicing clinicians themselves do not consistently meet would hold devices to a bar unrelated to the care patients actually receive. Documented inter-rater variability among qualified clinicians on the same task should be measured and reported alongside device performance."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "For patient-facing access functions, the commenter argues the realistic alternative to the device is not clinician assessment but self-directed internet searching, long queue times, or inaction, so clinician-based comparators may not reflect the device's actual public-health effect.",
+      "requested_fda_action": "Permit counterfactual comparators where a sponsor can characterize the counterfactual with data (e.g., baseline disposition behavior of the intended population absent the device), and develop a methodological pathway for identifying and justifying such comparators.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Supports FDA's openness to alternative comparators but asks CDRH to go further by developing a methodological pathway for data-justified counterfactual comparators, noting that for patient-facing access functions the real alternative is often internet searching, waiting, or inaction rather than clinician assessment.",
+      "summary_cut": false,
+      "source_passage": "•Permit counterfactual comparators with justification (Question 15). For many patient-facing access functions, the realistic alternative to the device is not clinician assessment; it is self-directed internet searching, prolonged queue times, or inaction. Where a sponsor can characterize the counterfactual with data (for example, baseline disposition behavior of the intended population absent the device), evaluation against that counterfactual reflects the device's true public-health effect. We recommend CDRH develop a methodological pathway for identifying and justifying such comparators."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "comparator_standard_of_care",
+      "stakeholder_concern": "The basis of evaluation may not match how the device is actually used; evaluating a clinician-in-the-loop tool as if it operated alone (or vice versa) would misrepresent real performance.",
+      "requested_fda_action": "Tie the evaluation basis to the deployed workflow: human-AI team performance where a clinician is in the loop and device-alone performance where the device operates autonomously, with sponsors precisely characterizing the deployed autonomy level and applying both bases when a device family has multiple deployment modes.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment makes the clinician-plus-device combination, rather than the model alone, the required unit of evaluation whenever a human is in the loop.",
+        "dynamic_intended_use": "It notes a single device family may span multiple deployment modes and autonomy levels, requiring the evaluation basis to track the actual deployed configuration rather than one fixed characterization."
+      },
+      "public_summary": "Supports using human-AI team performance as the evaluation basis where a clinician is in the loop, and device-alone performance where the device runs autonomously. Asks FDA to require sponsors to specify deployed autonomy level, allowing both bases across a device family's deployment modes.",
+      "summary_cut": false,
+      "source_passage": "•Match the evaluation basis to the deployed workflow. Where the device operates with a clinician in the loop, human-AI team performance is the correct basis; where it operates autonomously, device-alone performance is. Sponsors should characterize the deployed autonomy level precisely, and evaluation should follow it. A single device family may warrant both bases across its deployment modes."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter supports third-party roles in sequestered evaluation datasets and independent expert adjudication as improving evidence quality and reviewer confidence, but warns that program design could narrow the market if certification becomes a fixed-cost barrier favoring incumbents, and that adjudicator independence must extend to foundation model developers and LLM-based adjudicators.",
+      "requested_fda_action": "Accredit multiple bodies per clinical domain with published criteria and transparent, capped fees; allow sponsors to self-assess against the same published methods subject to FDA review as an alternative to third-party certification; and apply independence criteria covering both the sponsor and any incorporated third-party foundation model developer, barring adjudicating LLMs that share a developer or lineage with the component under evaluation.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment argues that certification costs and single-provider accreditation could become a fixed-cost moat favoring incumbents, affecting which developers can viably reach market.",
+        "delegated_authority": "The comment addresses how authority delegated to accredited third parties—and to LLM adjudicators—should be structured, accredited, and constrained by independence and lineage criteria."
+      },
+      "public_summary": "Clearstep supports third-party roles in sequestered datasets and independent adjudication but asks FDA to accredit multiple bodies per domain with published criteria and capped fees, permit sponsor self-assessment against the same methods, and extend independence criteria to foundation model developers and LLM adjudicators.",
+      "summary_cut": false,
+      "source_passage": "Clearstep supports roles for qualified, independent third parties, particularly in maintaining sequestered evaluation datasets and providing independent expert adjudication, and we speak from experience, having voluntarily undergone independent third-party technical evaluation of our platform, including model architecture, confidence-threshold methodology, and clinical evaluation processes. Third-party involvement improves evidence quality and reviewer confidence. However, program design will determine whether it broadens or narrows the market. We recommend:\n• Multiple accredited bodies per clinical domain, with published accreditation criteria and transparent, capped fee schedules, so certification does not become a fixed-cost moat favoring incumbents;\n• A sponsor right to self-assess against the same published methods, subject to FDA review, as an alternative to third-party certification; and\n• Independence criteria covering both the device sponsor and, where a third-party foundation model is incorporated, that model's developer, including when the adjudicator is itself an LLM; in that case, the adjudicating model should not share a developer or lineage with the component under evaluation."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "For open-ended conversational devices, premarket testing cannot enumerate the possible input space, so real-world deployment is the only source of certain evidence; but reliance on postmarket monitoring is only justified if specific commitments are made in advance.",
+      "requested_fda_action": "Accept greater premarket uncertainty in exchange for prespecified postmarket monitoring commitments (sampling frames, cadences, analyses, thresholds, defined triggering events including underlying model or deployment architecture changes, independent clinician adjudication of sampled interactions, and escalation/corrective-action procedures), while keeping premarket evidence primary for high-consequence fully autonomous action-taking functions.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment conditions reduced premarket evidence on an operational monitoring infrastructure—sampling frames, cadences, independent clinician adjudication, and corrective-action procedures—sustained across real-world deployment.",
+        "dynamic_intended_use": "It argues that open-ended conversational devices have an input space that cannot be enumerated premarket and that changes to the underlying model or deployment architecture should trigger re-benchmarking against the premarket baseline."
+      },
+      "public_summary": "Clearstep supports accepting greater premarket uncertainty for open-ended conversational devices, since premarket testing cannot enumerate inputs, but only with prespecified monitoring plans, thresholds, defined re-benchmarking triggers including model changes, independent clinician adjudication, and corrective action. Premarket evidence should remain primary for high-consequence autonomous action-taking.",
+      "summary_cut": false,
+      "source_passage": "Clearstep strongly supports accepting greater premarket uncertainty in exchange for robust postmarket monitoring, for a reason the paper identifies: for open-ended conversational devices, no feasible premarket test can enumerate the input space, while real-world deployment generates exactly the evidence that premarket testing cannot. This approach is appropriate where the sponsor commits, in advance, to: a prespecified monitoring plan with defined sampling frames, cadences, analyses, and thresholds; defined triggering events (including changes to any underlying model or deployment architecture) that initiate re-benchmarking against the premarket baseline; independent clinician adjudication of sampled real-world interactions; and defined escalation and corrective-action procedures when thresholds are breached. It is less appropriate for fully autonomous action-taking functions at high consequence, where premarket evidence should remain primary."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "Based on years of operating a continuous postmarket review program across millions of patient interactions, the commenter states the paper's proposed postmarket approaches are practical at production scale, but that uniform sampling and fixed cadence would miss safety signals concentrated in high-acuity and atypical interactions. It also notes that changes in who reaches and completes interactions can shift effective performance without any change to the device.",
+      "requested_fda_action": "Recommends that sampled clinician review be stratified by acuity and interaction pattern rather than uniform, that review cadence scale with deployment volume and change frequency with defined off-cycle triggering events (model or content updates, new deployment contexts, detected drift), and that input-population drift be given explicit standing as a monitored postmarket signal.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment ties monitoring design to deployment volume, change frequency, and new deployment contexts, describing how assurance activities must scale across a large production footprint.",
+        "dynamic_intended_use": "It highlights that shifts in the input population who reach and complete interactions can change a device's effective performance without any modification to the device itself."
+      },
+      "public_summary": "Drawing on an existing continuous postmarket program, the commenter finds FDA's proposed postmarket approaches workable at scale but asks that clinician review sampling be stratified by acuity and interaction pattern, cadence scale with volume and change events, and input-population drift be explicitly monitored.",
+      "summary_cut": false,
+      "source_passage": "We can confirm from operating experience that the paper's proposed approaches are practical at production scale. Clearstep operates a continuous postmarket review program in which board-certified clinicians, with cross-specialty review to reduce adjudication bias, evaluate randomly sampled real-world interactions across triage acuity tiers on a recurring (weekly to bi-weekly) cadence, alongside automated regression evaluation of clinical content and monitoring for shifts in the input population and interaction patterns. This program has operated for years across a deployment footprint spanning millions of patient interactions. Our recommendations from that experience:\n• Sampling should be stratified by acuity and by interaction pattern, not uniform, because safety signal concentrates in high-acuity and atypical-trajectory interactions;\n• Cadence should scale with deployment volume and change frequency, with defined triggering events (model or content updates, new deployment contexts, detected input-population drift) initiating off-cycle review; and\n• Input-population drift deserves explicit standing as a monitored signal: changes in who reaches and completes interactions with a device can shift its effective performance without any change to the device itself."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter sees machine-based supervisory agents as a way to scale postmarket surveillance by triaging interactions for human review, but conditions that support on the supervisory agent itself meeting some requirement (the passage is cut off before the condition is stated).",
+      "requested_fda_action": "Permit machine-based supervisory agents in postmarket monitoring as a scaling layer that flags candidate interactions for human review, subject to conditions on the supervisory agent itself.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment frames supervisory agents as a 'scaling layer' needed to make surveillance of high-volume interactions feasible rather than as a standalone monitoring method.",
+        "delegated_authority": "It addresses delegating triage of monitoring to an automated agent, retaining humans only for flagged interactions, and conditions this on assurance about the agent itself."
+      },
+      "public_summary": "Supports use of machine-based supervisory agents for postmarket surveillance, but only as a scaling layer that flags candidate interactions for human review, and conditioned on the supervisory agent itself meeting requirements (condition not fully stated in the passage).",
+      "summary_cut": false,
+      "source_passage": "Regarding machine-based supervisory agents (Question 20), we support their use as a scaling layer for surveillance that flags candidate interactions for human review, provided the supervisory agent is itself"
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q23",
+        "q24"
+      ],
+      "position": "support",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "pccp",
+      "stakeholder_concern": "That changes initiated by third-party foundation model developers could affect device safety or effectiveness, but that this does not preclude manufacturer accountability if technical and contractual controls are in place.",
+      "requested_fda_action": "Recognize that manufacturers can be held accountable for third-party model changes by using architectural containment, version pinning with contractual notice, shadow-mode evaluation, and regression benchmarking as a promotion gate, and treat these mechanisms as suitable for inclusion in PCCPs.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment proposes supplier-facing controls—version pinning with contractual notice and regression testing gates—as the means of managing upstream foundation model suppliers.",
+        "distributed_accountability": "It directly asserts that accountability for changes originating outside the manufacturer's control can remain with the manufacturer if specified containment and evaluation mechanisms are used."
+      },
+      "public_summary": "Comment states manufacturers can and should remain accountable for third-party foundation model changes, using architectural containment, version pinning with contractual notice, shadow-mode evaluation, and regression benchmarking as a promotion gate, and identifies these mechanisms as well suited to PCCPs.",
+      "summary_cut": false,
+      "source_passage": "•Foundation model change control: Manufacturers can and should be accountable for third-party model changes through architectural containment, version pinning with contractual notice, shadow-mode evaluation, and regression benchmarking as a promotion gate, mechanisms well suited to Predetermined Change Control Plans (PCCPs)."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "Without explicit clarification, deploying institutions that participate in local validation, monitoring, or in-envelope configuration risk being treated as manufacturers or specification developers, creating a disincentive to contribute monitoring evidence and pressure on manufacturers to exclude them.",
+      "requested_fda_action": "State in future policy that an institution's participation in postmarket monitoring, local validation, or configuration within the manufacturer's prespecified validated envelope does not by itself confer manufacturer or specification developer status, while keeping monitoring plans, thresholds, and corrective-action duties with the sponsor.",
+      "confidence": "high",
+      "gap_tags": [
+        "distributed_accountability",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment addresses how regulatory roles and liability are allocated between deploying institutions and manufacturers when monitoring responsibilities are shared.",
+        "deployment_assurance_scalability": "It concerns local validation and site-level configuration within a manufacturer-defined validated envelope as the mechanism for generating real-world monitoring evidence."
+      },
+      "public_summary": "Supports encouraging health system, clinician, and society roles in postmarket monitoring, but asks FDA to clarify that local validation, monitoring, or in-envelope configuration does not by itself make an institution a manufacturer or specification developer, with sponsors retaining monitoring and corrective-action obligations.",
+      "summary_cut": false,
+      "source_passage": "Health systems, clinicians, and professional societies have essential roles in local validation, deployment\ngovernance, and monitoring, and CDRH should encourage that participation. We ask CDRH to address\none clarification directly in any future policy: a deploying healthcare institution's participation in\npostmarket monitoring, local validation, or configuration of a device within the manufacturer's\nprespecified, validated envelope should not, by itself, expose that institution to classification as a\nmanufacturer or specification developer. Absent that clarity, the institutions best positioned to\ncontribute monitoring evidence face a regulatory disincentive to do so, and manufacturers face pressure\nto exclude them, which is the opposite of the shared-ecosystem model the paper envisions.\nManufacturer accountability is preserved by keeping the monitoring plan, thresholds, and corrective-\naction obligations with the sponsor, with institutional contributions feeding that plan."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Commenter reports having lost an upstream AI vendor dependency when it was acquired and discontinued, and notes that foundation model developers do not consistently offer version pinning or minimum-notice terms today, leaving device manufacturers exposed to developer-initiated changes.",
+      "requested_fda_action": "FDA should recognize architectural containment of safety-critical clinical logic outside the third-party model as a primary change-control mitigation, and articulate version pinning with contractual deprecation notice and continued prior-version access, plus shadow-mode gating against a prespecified regression battery derived from premarket benchmarks, as expected practice.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment centers on the manufacturer's limited leverage over upstream foundation model suppliers, including vendor discontinuation and the absence of standard version-pinning or deprecation-notice terms.",
+        "deployment_assurance_scalability": "It proposes ongoing operational assurance mechanisms—shadow-mode evaluation against production traffic and prespecified regression batteries gating promotion—that extend beyond a one-time premarket change assessment."
+      },
+      "public_summary": "Clearstep accepts FDA's framing of third-party model change risk and, citing a past vendor discontinuation, asks FDA to expressly endorse three mechanisms: keeping safety-critical clinical logic outside the third-party model, version pinning with contractual deprecation notice and prior-version access, and shadow-mode regression gating before promotion.",
+      "summary_cut": false,
+      "source_passage": "Clearstep has direct experience with the most severe version of this risk: earlier in our history, an\nupstream AI vendor on which our product depended was acquired and its service discontinued, forcing a\ncomplete replacement of that dependency. That experience shaped an approach we believe generalizes\ninto the mechanisms CDRH seeks:\n•Architectural containment. Keep safety-critical clinical logic outside the third-party model, so that\nupstream changes affect communication quality rather than clinical dispositions. This converts an\nunbounded change-control problem into a bounded one and should be recognized as a primary\nmitigation in change-control review.\n•Version pinning with contractual notice. Sponsors should pin model versions and secure\ncontractual minimum-notice windows for deprecations, with continued access to prior versions\nduring revalidation. Foundation model developers do not consistently offer these terms today;\nFDA's articulation of them as expected practice would materially strengthen device manufacturers'\nability to obtain them.\n•Shadow-mode gating and regression benchmarking. New model versions should run in shadow\nmode against production traffic and a prespecified regression battery derived from the premarket\nbenchmarking baseline, with promotion to production gated on passing prespecified acceptance\ncriteria. Clearstep operates this pattern today."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q22",
+        "q23",
+        "q24"
+      ],
+      "position": "support",
+      "primary_issue": "pccp",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "Upstream foundation model version changes initiated by third-party developers need a timely adoption pathway that does not require a new premarket submission, while still being anchored to the device's premarket performance baseline.",
+      "requested_fda_action": "Treat foundation model version changes that pass a prespecified regression battery within a defined envelope as a category eligible for inclusion in a PCCP, using the premarket competency assessment as the reference standard.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses how changes originating with an upstream foundation model supplier can be absorbed and re-verified by the device manufacturer through prespecified regression testing.",
+        "dynamic_intended_use": "It frames acceptable model version change in terms of remaining within a 'defined envelope' of behavior measured against the premarket baseline rather than a fixed specification."
+      },
+      "public_summary": "Supports treating third-party foundation model version changes as a PCCP-eligible category, provided they pass a prespecified regression battery within a defined envelope, with the premarket competency baseline retained as the reference standard, allowing upstream updates without new submissions.",
+      "summary_cut": false,
+      "source_passage": "•PCCP coverage. Foundation model version changes that pass the prespecified regression battery\nwithin a defined envelope are a natural category for inclusion in a PCCP, enabling timely adoption\nof upstream improvements without a new submission while preserving the premarket baseline as\nthe reference standard."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Because MAF participation is voluntary and upstream developers have limited disclosure incentives, a de facto expectation of an MAF would advantage sponsors with privileged foundation-model relationships and disadvantage others; also, the entity actually controlling model versioning and deprecation is often a cloud platform intermediary rather than the original developer.",
+      "requested_fda_action": "Adopt voluntary Foundation Model MAFs, but state explicitly that absence of an MAF creates no presumption against a device and that sponsor-conducted characterization of the incorporated model on a defined battery, scoped to the model's role, is a fully sufficient substitute; and allow platform intermediaries that host and version foundation models to be eligible MAF holders.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment identifies cloud platform intermediaries as the practical holders of version-control and deprecation levers and the actual contractual counterparty for model access, a supplier layer not addressed in FDA's framing of model developers.",
+        "evidence_burden_commercial_viability": "The commenter warns that reliance on voluntary MAFs could create unequal review burdens favoring sponsors with privileged foundation-model relationships over those without."
+      },
+      "public_summary": "Clearstep supports voluntary Foundation Model MAFs as reference documentation reducing duplicative diligence, conditioned on two changes: lacking an MAF must not disadvantage a device, with sponsor-run model characterization scoped to the model's role accepted as fully sufficient; and cloud platform intermediaries should be eligible holders.",
+      "summary_cut": false,
+      "source_passage": "As a manufacturer that incorporates third-party foundation models in peripheral (non-safety-critical)\nroles, Clearstep supports voluntary Foundation Model MAFs: structured model and system\ndocumentation available to review teams on a reference basis would reduce duplicative diligence and\nimprove review consistency. Two design points are essential:\n• Because participation is voluntary and developer incentives are limited, the absence of an MAF\nmust create no presumption against a device. Sponsor-conducted characterization of the\nincorporated model on a defined battery, scoped to the model's role in the device, should be a\nfully sufficient substitute; otherwise the program would advantage sponsors with privileged\nfoundation-model relationships and disadvantage everyone else.\n• Platform intermediaries (cloud model platforms that host and version foundation models) should\nbe eligible MAF holders. They are frequently the actual contractual counterparty for model access,\nhold the version-control and deprecation levers, and may participate where an upstream\ndeveloper would not."
+    },
+    {
+      "segment_id": "seg-021",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "cybersecurity",
+      "stakeholder_concern": "The commenter wants the boundary excluding care coordination, documentation, outreach, and workflow-support agents from device oversight kept clear, warning that ambiguity would chill beneficial low-risk deployment, while noting agentic devices embedded in clinical systems ingest substantial third-party content and depend on tools that can fail.",
+      "requested_fda_action": "Preserve and clearly state the non-device boundary for agentic coordination/workflow functions, and add three elements to the A.1 acceptance criteria: non-bypassable human-oversight checkpoints verified in the deployed configuration before irreversible or high-consequence actions, prompt-injection resistance testing across all input surfaces (user input, retrieved/EHR content, tool outputs), and characterized failure envelopes showing safe degradation (deferral or human handoff) when tools error or are unavailable.",
+      "confidence": "high",
+      "gap_tags": [
+        "cybersecurity_as_safety",
+        "deployment_assurance_scalability",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "cybersecurity_as_safety": "The comment treats prompt-injection resistance across user, retrieved EHR, and tool-output surfaces as a required safety acceptance criterion for agentic devices, not merely a security control.",
+        "deployment_assurance_scalability": "It asks that human-oversight checkpoints be verified as non-bypassable in the actual deployed configuration rather than only documented in premarket materials.",
+        "operational_harm": "It raises harms arising from tool errors and dependency unavailability, requiring demonstrated degradation to a safe state instead of the system improvising around a failed dependency."
+      },
+      "public_summary": "Supports the paper's direction on agentic systems and urges FDA to keep care coordination, documentation, outreach, and workflow functions clearly outside device oversight.",
+      "summary_cut": true,
+      "source_passage": "We support the paper's recognition that agentic systems performing care coordination, clinical\ndocumentation, patient outreach, and workflow support may not be the focus of device oversight, and\nwe urge CDRH to preserve that boundary clearly: these functions are where autonomy delivers access\nand efficiency gains at low clinical risk, and ambiguity would chill beneficial deployment. For agentic\nfunctions that are devices, we recommend acceptance criteria and oversight reflect three additions to\nthe A.1 element:\n• Mandatory human-oversight checkpoints before irreversible or high-consequence actions, verified\nas non-bypassable in the deployed configuration rather than merely documented;\n• Prompt-injection resistance evaluated across all input surfaces (user input, retrieved content\nincluding EHR-derived content, and tool outputs), since agentic devices embedded in clinical\nsystems ingest substantial third-party content; and\n• Characterized failure envelopes for tool errors and unavailability, demonstrating that the system\ndegrades to a safe state (deferral or human handoff) rather than improvising around a failed\ndependency."
+    },
+    {
+      "segment_id": "seg-022",
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "position": "support",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that premarket evidence requirements should be balanced against what can be learned after deployment, and asserts that sample-based independent clinician review is workable because it already runs in production at scale.",
+      "requested_fda_action": "Accept greater premarket uncertainty for GenAI-enabled devices where robust, prespecified postmarket monitoring is in place, including sample-based independent clinician review of the kind CDRH describes.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The commenter points to an existing production-scale sample-based clinician review program as evidence that ongoing assurance can be operated at scale after deployment."
+      },
+      "public_summary": "Commenter strongly supports FDA accepting greater premarket uncertainty when paired with robust, prespecified postmarket monitoring, and cites its own production-scale, sample-based independent clinician review program as an example of the approach CDRH describes.",
+      "summary_cut": false,
+      "source_passage": "Postmarket rebalancing: We strongly support accepting greater premarket uncertainty in exchange for robust, prespecified postmarket monitoring, and we describe a sample-based independent clinician review program of the kind CDRH proposes that Clearstep already operates in production at scale."
+    },
+    {
+      "segment_id": "seg-023",
+      "question_ids": [
+        "q10",
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Concern that treating sponsor-developed benchmarks as inherently suspect would displace assets with higher construct validity for a specific intended use in favor of public benchmarks built for different purposes.",
+      "requested_fda_action": "FDA should not disfavor sponsor-developed benchmarks per se, and should instead manage independence and optimization-to-the-test concerns through documentation requirements, sequestered third-party-held test sets where available, and independent adjudication rather than exclusion.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts that independence and optimization-to-the-test are real concerns, but argues sponsor-developed benchmarks tied to a device's clinical content often have higher construct validity than public assets. Recommends documentation, sequestered third-party test sets where available, and independent adjudication instead of exclusion.",
+      "summary_cut": false,
+      "source_passage": "Complementing sponsor-developed assets with sequestered, third-party-held test sets where available, to address optimization-to-the-test concerns.\nSponsor-developed benchmarks should not be disfavored per se: for a specific intended use, a well-documented sponsor benchmark tied to the device's clinical content and validated against real-world adjudication will often have higher construct validity than a public asset built for a different purpose. Independence concerns are better addressed through documentation, sequestration, and independent adjudication than through exclusion."
+    },
+    {
+      "segment_id": "seg-024",
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter is concerned that comparators should reflect the care actually available to the intended user rather than an idealized standard, and that evaluating the device in isolation misrepresents performance when deployment is human-in-the-loop.",
+      "requested_fda_action": "Set the default comparator for open-ended outputs as the median clinician in practice, and where justified the counterfactual of no device, and evaluate human-AI team performance whenever the deployed workflow includes a human in the loop.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter asks that evaluation be based on combined human-AI team performance wherever the deployed workflow is human-in-the-loop, rather than on the device operating alone."
+      },
+      "public_summary": "Commenter accepts FDA's comparator discussion but urges specific defaults: for open-ended outputs, compare to the median clinician in practice and, where justified, to no device. Evaluation should rest on human-AI team performance whenever deployment keeps a human in the loop.",
+      "summary_cut": false,
+      "source_passage": "Comparators: For open-ended outputs, the default comparator should reflect the care actually available to the intended user: the median clinician in practice and, where justified, the counterfactual of no device. Human-AI team performance should serve as the evaluation basis wherever the deployed workflow is human-in-the-loop."
+    },
+    {
+      "segment_id": "seg-025",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter endorses regulating based on what a function does and the consequences of an incorrect output rather than on the mere presence of generative AI technology.",
+      "requested_fda_action": "Maintain the paper's risk-proportionate, least-burdensome, total product life cycle orientation, with evidentiary expectations scaled to device activity and consequence of reliance on incorrect output.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter supports the discussion paper's central orientation, endorsing a risk-proportionate, least-burdensome, total product life cycle approach in which evidence expectations scale with a function's activity and the consequences of relying on an incorrect output rather than with the presence of generative AI.",
+      "summary_cut": false,
+      "source_passage": "we support the paper's central orientation: a risk-proportionate, least-burdensome, total product life cycle approach in which evidentiary expectations scale with what a function does and the consequences of relying on an incorrect output, not with the mere presence of generative AI."
+    },
+    {
+      "segment_id": "seg-026",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Benchmark results may not predict real-world device behavior unless construct validity is documented and guarded against optimization to the test.",
+      "requested_fda_action": "Expect sponsors to build benchmarks from clinician-authored cases graded against validated clinical protocols with documented authorship, rubrics, and adjudicator qualifications; demonstrate correlation between benchmark results and real-world concordance from independent clinician review of deployed interactions; and supplement sponsor-developed assets with sequestered third-party-held test sets where available.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts benchmarking as an evidence gate but urges specific construct-validity requirements: clinician-authored cases graded against validated protocols with documented rubrics and adjudicators, demonstrated correlation with real-world concordance from independent review of deployed interactions, and sequestered third-party test sets where available.",
+      "summary_cut": false,
+      "source_passage": "cted, to establish construct validity by:\nBuilding benchmark assets from clinician-authored cases graded against validated clinical protocols, with authorship, grading rubrics, and adjudicator qualifications documented;\nDemonstrating correlation between benchmark results and real-world concordance measured through independent clinician review of deployed interactions; and\nComplementing sponsor-developed assets with sequestered, third-party-held test sets where available, to address optimization-to-the-test concerns."
+    },
+    {
+      "segment_id": "seg-027",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that treating sponsor-developed benchmarks as inherently suspect would push evaluation toward public benchmarks that were built for other purposes and may have weaker construct validity for a specific intended use.",
+      "requested_fda_action": "FDA should allow sponsor-developed benchmarks a substantive role when they are well-documented and tied to the device's clinical content and validated against real-world adjudication, managing independence concerns through documentation, data sequestration, and independent adjudication rather than exclusion.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Argues sponsor-developed benchmarks should not be disfavored by default, since well-documented benchmarks tied to a device's clinical content and validated against real-world adjudication may have higher construct validity than public assets. Recommends managing independence through documentation, sequestration, and independent adjudication instead of exclusion.",
+      "summary_cut": false,
+      "source_passage": "Sponsor-developed benchmarks should not be disfavored per se: for a specific intended use, a well-documented sponsor benchmark tied to the device’s clinical content and validated against real-world adjudication will often have higher construct validity than a public asset built for a different purpose. Independence concerns are better addressed through documentation, sequestration, and independent adjudication than through exclusion."
+    },
+    {
+      "segment_id": "seg-028",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Setting the comparator at an idealized consensus panel would require devices to exceed a standard that practicing clinicians do not consistently meet, which the commenter views as disconnected from the care patients actually receive.",
+      "requested_fda_action": "Default the performance comparator for open-ended outputs to the median qualified clinician in practice, reserving consensus panels as a reference ceiling and for adjudicating disagreement, and require measurement and reporting of documented inter-rater variability among qualified clinicians alongside device performance.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment argues that a consensus-panel comparator imposes a performance bar unrelated to real-world care, implying an evidentiary standard devices could not reasonably meet."
+      },
+      "public_summary": "Accepts comparator-based evaluation of open-ended outputs but recommends the median qualified clinician in practice as the default standard rather than an idealized consensus panel, with consensus panels used as a reference ceiling and clinician inter-rater variability measured and reported.",
+      "summary_cut": false,
+      "source_passage": "D. Comparators and performance standards (Questions 14 and 15)\nFor open-ended outputs where a single correct response does not exist, we recommend:\nDefault to the median qualified clinician in practice, not an idealized consensus panel. Consensus panels are valuable as a reference ceiling and for adjudicating disagreement, but requiring devices to exceed a consensus standard that practicing clinicians themselves do not consistently meet would hold devices to a bar unrelated to the care patients actually receive. Documented inter-rater variability among qualified clinicians on the same task should be measured and reported alongside device performance."
+    },
+    {
+      "segment_id": "seg-029",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter agrees independent third parties can strengthen evidence quality and reviewer confidence (citing its own voluntary third-party technical evaluation), but warns that program design could make certification a fixed-cost barrier favoring incumbents, and that adjudicators must be independent of both sponsor and any incorporated foundation model developer.",
+      "requested_fda_action": "Accredit multiple bodies per clinical domain with published criteria and transparent, capped fees; permit sponsors to self-assess against the same published methods subject to FDA review as an alternative to third-party certification; and apply independence criteria to the foundation model developer, including barring LLM adjudicators sharing a developer or lineage with the component under evaluation.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability",
+        "ai_supplier_quality",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment argues uncapped or single-body certification costs could function as a fixed-cost moat favoring incumbents and narrowing the market.",
+        "ai_supplier_quality": "It asks that independence criteria extend to third-party foundation model developers, including prohibiting LLM adjudicators that share a developer or lineage with the evaluated component.",
+        "delegated_authority": "It addresses how evaluation authority delegated to accredited third parties (and to machine adjudicators) should be structured, accredited, and checked by an FDA-reviewed self-assessment alternative."
+      },
+      "public_summary": "Clearstep supports third-party roles in sequestered datasets and expert adjudication, but conditions this on multiple accredited bodies per domain with published criteria and capped fees, a sponsor option to self-assess under FDA review, and independence from foundation model developers, including LLM adjudicators.",
+      "summary_cut": false,
+      "source_passage": "E. Independent third parties (Question 16)\nClearstep supports roles for qualified, independent third parties, particularly in maintaining sequestered evaluation datasets and providing independent expert adjudication, and we speak from experience, having voluntarily undergone independent third-party technical evaluation of our platform, including model architecture, confidence-threshold methodology, and clinical evaluation processes. Third-party involvement improves evidence quality and reviewer confidence. However, program design will determine whether it broadens or narrows the market. We recommend:\nMultiple accredited bodies per clinical domain, with published accreditation criteria and transparent, capped fee schedules, so certification does not become a fixed-cost moat favoring incumbents;\nA sponsor right to self-assess against the same published methods, subject to FDA review, as an alternative to third-party certification; and\nIndependence criteria covering both the device sponsor and, where a third-party foundation model is incorporated, that model’s developer, including when the adjudicator is itself an LLM; in that case, the adjudicating model should not share a developer or lineage with the component under evaluation."
+    },
+    {
+      "segment_id": "seg-030",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "For open-ended conversational devices, premarket testing cannot enumerate the possible input space, so real-world deployment is the only source of certain evidence; however, shifting evidence postmarket is only defensible if monitoring commitments are specified in advance and enforced.",
+      "requested_fda_action": "Permit greater premarket uncertainty in exchange for prespecified postmarket monitoring (defined sampling frames, cadences, analyses and thresholds; defined triggering events including underlying model or deployment architecture changes; independent clinician adjudication of sampled interactions; escalation and corrective-action procedures), while keeping premarket evidence primary for fully autonomous, high-consequence action-taking functions.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use",
+        "ai_supplier_quality",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment rests on the claim that open-ended conversational devices have an input space no premarket test can enumerate, so behavior must be bounded through ongoing real-world monitoring rather than fixed premarket characterization.",
+        "ai_supplier_quality": "It treats changes to any underlying model or deployment architecture as events that must automatically trigger re-benchmarking against the premarket baseline.",
+        "delegated_authority": "It draws a line at fully autonomous action-taking functions at high consequence, for which premarket evidence should remain primary rather than being substituted by postmarket monitoring."
+      },
+      "public_summary": "Clearstep strongly supports accepting greater premarket uncertainty for open-ended conversational devices, conditioned on advance commitments: prespecified sampling, cadences and thresholds, defined triggers including underlying model or architecture changes, independent clinician adjudication, and corrective actions. It would exclude high-consequence fully autonomous action-taking functions.",
+      "summary_cut": false,
+      "source_passage": "A. Rebalancing premarket and postmarket evidence (Question 18)\nClearstep strongly supports accepting greater premarket uncertainty in exchange for robust postmarket monitoring, for a reason the paper identifies: for open-ended conversational devices, no feasible premarket test can enumerate the input space, while real-world deployment generates exactly the evidence that premarket testing cannot. This approach is appropriate where the sponsor commits, in advance, to: a prespecified monitoring plan with defined sampling frames, cadences, analyses, and thresholds; defined triggering events (including changes to any underlying model or deployment architecture) that initiate re-benchmarking against the premarket baseline; independent clinician adjudication of sampled real-world interactions; and defined escalation and corrective-action procedures when thresholds are breached. It is less appropriate for fully autonomous action-taking functions at high consequence, where premarket evidence should remain primary."
+    },
+    {
+      "segment_id": "seg-031",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "Based on its own multi-year, high-volume postmarket review program, the commenter states FDA's proposed monitoring approaches are practical at production scale but that uniform sampling and fixed cadence would miss where safety signal concentrates. It also notes that shifts in who reaches and completes interactions can change effective performance without any change to the device.",
+      "requested_fda_action": "Adopt monitoring expectations that stratify sampling by acuity and interaction pattern rather than sampling uniformly, scale cadence to deployment volume and change frequency with defined off-cycle triggering events (model or content updates, new deployment contexts, detected drift), and recognize input-population drift as an explicitly monitored signal.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The commenter emphasizes that changes in the deployed user population can shift a device's effective performance without any modification to the device, and that monitoring cadence must scale with deployment volume and context changes."
+      },
+      "public_summary": "Citing its own continuous clinician review program across millions of interactions, the commenter says FDA's proposed postmarket approaches are feasible at scale, but recommends acuity- and pattern-stratified sampling rather than uniform, volume- and change-scaled cadence with defined triggers, and explicit monitoring of input-population drift.",
+      "summary_cut": false,
+      "source_passage": "B. Feasibility of the proposed monitoring approaches (Question 19)\nWe can confirm from operating experience that the paper’s proposed approaches are practical at production scale. Clearstep operates a continuous postmarket review program in which board-certified clinicians, with cross-specialty review to reduce adjudication bias, evaluate randomly sampled real-world interactions across triage acuity tiers on a recurring (weekly to bi-weekly) cadence, alongside automated regression evaluation of clinical content and monitoring for shifts in the input population and interaction patterns. This program has operated for years across a deployment footprint spanning millions of patient interactions. Our recommendations from that experience:\nSampling should be stratified by acuity and by interaction pattern, not uniform, because safety signal concentrates in high-acuity and atypical-trajectory interactions;\nCadence should scale with deployment volume and change frequency, with defined triggering events (model or content updates, new deployment contexts, detected input-population drift) initiating off-cycle review; and\nInput-population drift deserves explicit standing as a monitored signal: changes in who reaches and completes interactions with a device can shift its effective performance without any change to the device itself."
+    },
+    {
+      "segment_id": "seg-032",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "Without explicit clarification, health systems that perform local validation, configuration within the manufacturer's validated envelope, or postmarket monitoring may risk being classified as manufacturers or specification developers, discouraging the very institutional participation the discussion paper envisions.",
+      "requested_fda_action": "State in future policy that a deploying institution's participation in postmarket monitoring, local validation, or in-envelope configuration does not by itself make it a manufacturer or specification developer, while keeping monitoring plans, thresholds, and corrective-action duties with the sponsor.",
+      "confidence": "high",
+      "gap_tags": [
+        "distributed_accountability",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment focuses on how regulatory status attaches to deploying institutions that contribute monitoring evidence, an allocation-of-responsibility question beyond the question's framing of diffusing manufacturer accountability.",
+        "deployment_assurance_scalability": "It raises local validation and site-level configuration within a prespecified validated envelope as routine deployment activities that need a defined regulatory treatment."
+      },
+      "public_summary": "Supports encouraging health system, clinician, and society roles in local validation and monitoring, but asks FDA to clarify that such participation, including configuration within a manufacturer's validated envelope, does not itself make an institution a manufacturer, while sponsors retain monitoring and corrective-action obligations.",
+      "summary_cut": false,
+      "source_passage": "C. Ecosystem roles without diffusing accountability (Question 21)\nHealth systems, clinicians, and professional societies have essential roles in local validation, deployment governance, and monitoring, and CDRH should encourage that participation. We ask CDRH to address one clarification directly in any future policy: a deploying healthcare institution’s participation in postmarket monitoring, local validation, or configuration of a device within the manufacturer’s prespecified, validated envelope should not, by itself, expose that institution to classification as a manufacturer or specification developer. Absent that clarity, the institutions best positioned to contribute monitoring evidence face a regulatory disincentive to do so, and manufacturers face pressure to exclude them, which is the opposite of the shared-ecosystem model the paper envisions. Manufacturer accountability is preserved by keeping the monitoring plan, thresholds, and corrective-action obligations with the sponsor, with institutional contributions feeding that plan."
+    },
+    {
+      "segment_id": "seg-033",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Drawing on its own experience of an upstream AI vendor being acquired and discontinued, the commenter is concerned that third-party model changes—up to total loss of the dependency—create an unbounded change-control problem for device manufacturers.",
+      "requested_fda_action": "Recognize architectural containment—keeping safety-critical clinical logic outside the third-party model so upstream changes affect communication quality rather than clinical dispositions—as a primary mitigation in change-control review.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment highlights supplier discontinuity risk (vendor acquisition and service shutdown), which goes beyond FDA's framing of model updates to the broader reliability and continuity of upstream AI suppliers."
+      },
+      "public_summary": "Clearstep supports FDA's focus on third-party model changes and, citing a prior upstream vendor discontinuation, proposes architectural containment—keeping safety-critical clinical logic outside the third-party model—so upstream changes affect communication quality rather than clinical dispositions. Asks FDA to recognize this as a primary mitigation.",
+      "summary_cut": false,
+      "source_passage": "D. Changes initiated by third-party foundation model developers (Question 24)\nClearstep has direct experience with the most severe version of this risk: earlier in our history, an upstream AI vendor on which our product depended was acquired and its service discontinued, forcing a complete replacement of that dependency. That experience shaped an approach we believe generalizes into the mechanisms CDRH seeks:\nArchitectural containment. Keep safety-critical clinical logic outside the third-party model, so that upstream changes affect communication quality rather than clinical dispositions. This converts an unbounded change-control problem into a bounded one and should be recognized as a primary mitigation in change-control review."
+    },
+    {
+      "segment_id": "seg-034",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "supplier_controls",
+      "stakeholder_concern": "Device manufacturers currently lack leverage to obtain version pinning, minimum deprecation notice, and continued access to prior model versions from foundation model developers, leaving them exposed to upstream changes they cannot revalidate in time.",
+      "requested_fda_action": "FDA should articulate version pinning, contractual minimum-notice windows for deprecations, and continued access to prior versions during revalidation as expected practice for devices built on third-party foundation models.",
+      "confidence": "high",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment focuses on the terms device manufacturers must secure from upstream foundation model suppliers—version pinning, deprecation notice, and legacy version access—as a precondition for maintaining validated device performance."
+      },
+      "public_summary": "Supports FDA's attention to third-party model changes but asks that FDA go further by explicitly stating expected practices: pinning model versions, contractual minimum notice before deprecation, and continued access to prior versions during revalidation, since developers do not reliably offer such terms today.",
+      "summary_cut": false,
+      "source_passage": "Version pinning with contractual notice. Sponsors should pin model versions and secure contractual minimum-notice windows for deprecations, with continued access to prior versions during revalidation. Foundation model developers do not consistently offer these terms today; FDA’s articulation of them as expected practice would materially strengthen device manufacturers’ ability to obtain them."
+    },
+    {
+      "segment_id": "seg-035",
+      "question_ids": [
+        "q22",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter is concerned that model version changes should not reach production without demonstrated continuity of performance against the premarket baseline. It states it already operates a shadow-mode and regression-testing pattern in practice.",
+      "requested_fda_action": "Recognize shadow-mode evaluation of new model versions against live production traffic plus a prespecified regression battery derived from the premarket benchmarking baseline, with promotion to production gated on meeting prespecified acceptance criteria, as an approach to re-evaluating post-deployment modifications.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The proposal relies on running candidate model versions against real production traffic and automated regression batteries as the operational assurance mechanism for approving changes, which goes beyond FDA's framing of document-based re-benchmarking scaled to modification type."
+      },
+      "public_summary": "Commenter endorses using the premarket benchmarking baseline for evaluating model changes but proposes a specific mechanism FDA does not describe: running new model versions in shadow mode against production traffic plus a prespecified regression battery, with promotion gated on preset acceptance criteria.",
+      "summary_cut": false,
+      "source_passage": "Shadow-mode gating and regression benchmarking. New model versions should run in shadow mode against production traffic and a prespecified regression battery derived from the premarket benchmarking baseline, with promotion to production gated on passing prespecified acceptance criteria. Clearstep operates this pattern today."
+    },
+    {
+      "segment_id": "seg-036",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "cybersecurity",
+      "stakeholder_concern": "The commenter is concerned that acceptance criteria for agentic device functions may not adequately address bypassable human oversight, adversarial content ingested from clinical systems, and unsafe behavior when tools fail or are unavailable.",
+      "requested_fda_action": "Add three requirements to the A.1 element: non-bypassable human-oversight checkpoints verified in the deployed configuration before irreversible or high-consequence actions; prompt-injection resistance testing across all input surfaces including retrieved EHR content and tool outputs; and characterized failure envelopes showing safe degradation (deferral or human handoff) on tool error or unavailability.",
+      "confidence": "high",
+      "gap_tags": [
+        "cybersecurity_as_safety",
+        "delegated_authority",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "cybersecurity_as_safety": "The comment treats prompt-injection resistance across user, retrieved EHR, and tool-output surfaces as a safety acceptance criterion for agentic devices.",
+        "delegated_authority": "It asks that autonomous agentic action be bounded by mandatory human-oversight checkpoints before irreversible or high-consequence steps and safe handoff when dependencies fail.",
+        "deployment_assurance_scalability": "It insists oversight checkpoints be verified as non-bypassable in the actual deployed configuration rather than merely documented in a submission."
+      },
+      "public_summary": "Accepts FDA's focus on agentic devices but asks for three added acceptance criteria: human-oversight checkpoints verified non-bypassable as deployed before irreversible actions, prompt-injection testing across all input surfaces including EHR-retrieved content and tool outputs, and characterized safe degradation when tools fail.",
+      "summary_cut": false,
+      "source_passage": "For agentic functions that are devices, we recommend acceptance criteria and oversight reflect three additions to the A.1 element:\nMandatory human-oversight checkpoints before irreversible or high-consequence actions, verified as non-bypassable in the deployed configuration rather than merely documented;\nPrompt-injection resistance evaluated across all input surfaces (user input, retrieved content including EHR-derived content, and tool outputs), since agentic devices embedded in clinical systems ingest substantial third-party content; and\nCharacterized failure envelopes for tool errors and unavailability, demonstrating that the system degrades to a safe state (deferral or human handoff) rather than improvising around a failed dependency."
+    },
+    {
+      "segment_id": "seg-037",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter views the discussion paper as a sound foundation, endorsing risk proportionate to function and consequence, evaluation of the device as deployed and configured, acknowledgment that premarket testing cannot exhaust open-ended input spaces, and a meaningful role for postmarket evidence.",
+      "requested_fda_action": "Proceed with developing the competency-based approach and engage the commenter through discussion, workshops, or pilots, drawing on its described real-world monitoring and evaluation programs.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Closing remarks endorse the discussion paper as a well-constructed foundation, specifically its risk proportionality, evaluation of the device as deployed and configured, recognition that premarket testing cannot cover all open-ended inputs, and reliance on postmarket evidence; the commenter offers to join workshops or pilots.",
+      "summary_cut": false,
+      "source_passage": "The discussion paper is a substantive and well-constructed foundation for regulating this category. Its most important commitments align with what responsible manufacturers in this space already practice: risk proportionate to function and consequence, evaluation of the deployed device as configured, recognition that premarket testing cannot exhaust open-ended input spaces, and a meaningful role for postmarket evidence. Clearstep would welcome the opportunity to discuss any of these comments with CDRH, to participate in workshops or pilots developing the competency-based approach, and to share further detail on the real-world monitoring and evaluation programs described above."
+    }
+  ]
+}

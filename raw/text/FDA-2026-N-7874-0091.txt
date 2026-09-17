@@ -1,0 +1,472 @@
+FDA&#39;s Question 10 asks what evidence should establish the construct validity of a benchmark used to gate device evaluation. This comment supplies an operational answer: a measurement-system qualification package, analogous to the performance specifications a clinical laboratory must establish under 42 CFR 493.1253(b)(2) before it may report a result.<br/><br/>Where a device produces open-ended language, the evaluation instrument contains stochastic model output, human reference judgement, automated adjudication, a trajectory definition and scoring logic. Each contributes variability, and those sources need not be independent of one another. An acceptance criterion that decides whether performance has changed cannot be interpreted without knowing how much the evaluation process varies on its own, which bears directly on what a Predetermined Change Control Plan can authorise.<br/><br/>Ten recommendations follow, including: six components of measurement-system qualification; a low-burden null comparison in which the unchanged configuration is repeatedly resampled against itself to build an empirical null distribution; treating the multi-turn observation window as a prespecified and validated parameter, with timeliness reported separately from later recovery; reporting under- and over-escalation as separate outcomes with separate denominators; scaling re-benchmarking to modification type against a published mapping, with an invariant critical-safety core and periodic postmarket assessment retained alongside it; and treating a change of automated adjudicator as an evaluation-system change requiring bridge testing before historical comparison.<br/><br/>The commenter discloses a commercial interest and openly licenses the supporting artifacts. The comment seeks no determination about any particular product.
+
+[Attachment: Comment from Yassen Eltayeb]
+Measurement-System	Qualification	for	Generative	AI	Medical-
+Device	Benchmarks
+Construct	validity,	multi-turn	safety	evaluation,	and	change-aware	re-benchmarking
+Comment	to	FDA	Docket	No.	FDA-2026-N-7874,
+Considerations	for	the	Regulation	of	Generative	AI-
+Enabled	Medical	Devices:	Discussion	Paper	and	Request	for	Feedback
+Submitted	by:
+	Yassen	Eltayeb,	in	an	individual	capacity.	Lead	author,	SAFE-CARE	and	SAFE-CARE
+Bench.	Founder,	Conefia	LLC,	Morrisville,	North	Carolina
+Date:
+	September	2026
+Responds	to:
+	Questions	5,	6,	9,	10,	11,	12,	13,	16,	19	and	22
+Interest	and	standing
+I	build	and	evaluate	clinician-governed,	patient-facing	conversational	systems	that	run	between
+clinical	visits,	inside	protocols	a	clinician	writes.	I	have	a	commercial	interest	in	how	such	systems
+are	 evaluated	 and	 regulated,	 and	 I	 am	 stating	 that	 at	 the	 outset.	 This	 comment	 seeks	 no
+determination	about	the	regulatory	status	of	any	particular	product.
+I	am	also	the	author	of	two	openly	licensed	artifacts	referenced	below:	SAFE-CARE,	a	framework	for
+clinician-governed	healthcare	AI	[4],	and	SAFE-CARE	Bench,	its	companion	evaluation	instrument
+[5],	together	with	an	open-source	SDK	[6].	Configurations,	adjudicator	prompts,	schemas	and	the
+SDK	are	Apache-2.0;	documentation,	methodology	and	scoring	anchors	are	CC	BY	4.0.	Nothing	in
+this	comment	requires	anyone	to	use	them.
+This	comment	concerns	one	problem.	In	my	own	evaluation	work	I	found	that	specifying	what	a
+benchmark	 should	 contain,	 and	 how	 it	 should	 be	 scored,	 did	 not	 by	 itself	 make	 the	 resulting
+numbers	interpretable.
+1.	Question	10	names	the	problem.	What	it	still	needs	is	an	evidence	package
+The	discussion	paper	[1]	specifies,	carefully	and	well,
+what
+	to	measure.	Across	Safety,	Clinical
+Proficiency,	 Generalizability	 and	 Agentic	 Capabilities,	 the	 ten	 elements	 are	 a	 sound	 content
+specification,	and	S.1	and	S.2	name	the	failure	modes	that	matter.
+Question	10	then	asks	the	harder	question,	which	is	what	evidence	should	support	the	construct
+validity	of	a	benchmark	used	to	gate	device	evaluation.	The	paper	is	right	to	raise	it,	and	right	to
+raise	 it	 alongside	 its	 concerns	 about	 sponsor-developed	 benchmarks,	 independence,	 and
+optimisation	to	the	test.
+The	evidence	package	that	would	answer	it	remains	unspecified.	Every	one	of	the	ten	elements	is
+scored	by	an	instrument,	and	that	instrument	has	parts:	a	scenario	corpus,	an	observation	window,
+a	scoring	rubric,	and	an	adjudicator	that	is	increasingly	itself	a	language	model.	Where	the	device
+under	test	produces	open-ended	language,	the	instrument	contains	stochastic	device	output,	human
+reference	 judgement,	 automated	 adjudication,	 a	 trajectory	 definition	 and	 scoring	 logic,	 each
+contributing	variability	of	its	own.
+Construct	validity	for	an	instrument	built	that	way	cannot
+be	established	by	specifying	its	contents.
+	It	needs	evidence	about	how	the	instrument	behaves.
+An	analogous	requirement	already	exists	in	regulated	clinical	laboratory	testing.	Before	a	laboratory
+may	report	a	result	from	a	test	system	it	has	modified	or	developed,	it	must	establish	performance
+specifications	 for	 accuracy,	 precision,	 analytical	 sensitivity,	 analytical	 specificity	 including
+interfering	substances,	and	reportable	range	[3].	I	use
+measurement-system	qualification
+	for	the
+equivalent	package	here,	and	Section	3	sets	out	what	I	think	it	should	contain.
+I	have	run	into	this	myself.	In	validating	my	own	evaluation	system	I	found	that	the	scoring	window,
+the	reference	labels	and	the	implementation	could	each	move	the	apparent	result	independently	of
+the	capability	under	test,	which	is	why	those	three	appear	as	qualification	components	in	Section	3.
+Absent	 qualification	 evidence,	 a	 benchmark	 score	 is	 a	 reading	 from	 an	 instrument	 of
+uncharacterised	precision,	and	the	regulatory	decisions	built	on	it	inherit	that	uncertainty.	Every
+
+recommendation	below	follows	from	closing	that	gap.
+2.	Why	the	gap	bites	hardest	on	change	control
+The	 Agency’s	 final	 guidance	 on	 Predetermined	 Change	 Control	 Plans	 already	 requires	 a
+Modification	Protocol	whose	performance	evaluation	component	specifies	study	designs,	metrics,
+statistical	tests	and	acceptance	criteria	determined	in	advance,	each	scientifically	and	clinically
+justified	[2].	My	point	is	narrower	than	a	gap	in	that	requirement.	It	concerns	what	justification	is
+available	when	the	endpoint	is	open-ended	generated	language.
+An	 acceptance	 criterion	 that	 decides	 whether	 performance	 has	 changed	 cannot	 be
+interpreted	without	knowing	how	much	the	evaluation	process	varies	on	its	own.
+For	 a	 device	 that	 outputs	 a	 prediction,	 this	 is	 unremarkable.	 For	 conventional	 quantitative
+endpoints,	established	statistical	methods	provide	ways	to	characterise	sampling	uncertainty	and
+carry	it	into	the	performance	criterion.	Where	the	device	generates	open-ended	language,	there
+may	be	no	single	held-out	correct	response,	so	performance	frequently	depends	on	a	rubric	applied
+by	a	human	or	automated	adjudicator,	and	the	variability	then	has	at	least	three	potential	sources.
+The	device	varies	between	runs,	the	adjudicator	varies,	and	the	human	reference	standard	that
+anchors	either	one	varies	too.	They	need	not	be	independent	of	one	another,	which	is	itself	a	reason
+to	characterise	them	rather	than	assume	them	away.	I	have	not	identified	an	established	clinical-
+GenAI	standard	that	requires	these	sources	to	be	characterised	together,	and	I	would	encourage	the
+Agency	to	ask	sponsors	to	report	them.
+That	leaves	a	practical	difficulty	I	would	ask	the	Agency	to	consider	directly:
+For	a	GenAI	endpoint	that	depends	on	stochastic	generation,	human	judgement	or
+model-based	adjudication,	an	acceptance	criterion	is	difficult	to	interpret	unless	the
+sponsor	also	characterises	the	repeatability	and	uncertainty	of	the	evaluation	process
+producing	the	metric.	Without	that	characterisation,	an	observed	difference	near	the
+threshold	may	reflect	device	change,	evaluation	variability,	or	both.	Where	the
+decision	boundary	is	not	calibrated	against	that	variability,	differences	observed	near
+it	 may	 be	 dominated	 by	 it.	 Set	 it	 conservatively	 high	 instead	 and	 few	 real
+modifications	clear	it,	so	the	PCCP	authorises	little	and	most	changes	return	to	the
+Agency.
+Both	 are	 foreseeable	 wherever	 evaluation	 variability	 goes	 uncharacterised.	 The	 first	 gives	 the
+appearance	of	change	control	without	its	substance.	The	second	recreates	much	of	the	submission
+burden	the	PCCP	mechanism	exists	to	reduce.
+3.	Response	to	Question	10:	what	construct	validity	requires
+“What	evidence	should	support	the	construct	validity	of	a	benchmark	used	to	gate	device
+evaluation…?”
+This	is	the	central	question	in	the	paper.	I	would	answer	it	by	asking	sponsors	to
+qualify	the
+measurement	system
+,	 meaning	 that	 before	 anyone	 reads	 a	 device	 result,	 the	 sponsor	 has
+produced	a	defined	set	of	evidence	about	the	instrument	that	produced	it.	Six	components,	and
+none	of	them	requires	new	science.
+1.	Validate	the	reference	standard.
+	Whoever	establishes	the	benchmark’s	correct	answers	must
+do	so	independently	of	the	adjudicator	that	will	later	score	against	them,	and	how	they	did	it
+belongs	 in	 the	 record.	 Unless	 the	 correct	 answer	 was	 fixed	 in	 advance	 and	 independently,	 a
+benchmark	scored	by	an	adjudicator	measures	agreement	with	that	adjudicator	rather	than	clinical
+correctness.
+2.	Validate	the	trajectory	window.
+	 For	 multi-turn	 devices,	 the	 sponsor	 must	 show	 that	 the
+window	over	which	behaviour	is	scored	is	wide	enough	to	admit	the	behaviour	being	measured.	See
+
+Section	4.
+3.	Calibrate	the	adjudicator.
+	Where	an	adjudicator	is	automated,	measure	and	report	how	far	it
+agrees	with	qualified	human	raters,	dimension	by	dimension.	An	adjudicator	may	be	reliable	on
+citation	grounding	while	performing	poorly	on	clinical	escalation,	and	a	single	aggregate	figure
+conceals	exactly	that.
+4.	Verify	what	was	actually	run.
+	Evidence	that	the	configuration	evaluated	was	the	configuration
+specified.	 Declared	 settings	 and	 executed	 settings	 diverge	 more	 often	 than	 sponsors	 assume,
+sometimes	in	ways	that	leave	no	trace	in	the	reported	results.
+5.	Say	in	advance	how	disagreement	is	resolved.
+	A	rule	for	what	happens	when	raters	or
+adjudicators	disagree,	written	down	before	anyone	sees	a	result.
+6.	Record	provenance	and	versions.
+	The	adjudicator’s	identity	and	version,	the	corpus	version,
+the	prompt	version	and	the	configuration	hash,	all	recorded	alongside	every	score	reported.
+And	one	control	that	costs	almost	nothing,	which	I	would	urge	the	Agency	to	consider
+requiring.
+Run	 the	 unmodified	 baseline	 against	 itself.
+	 Take	 the	 replicate	 runs	 of	 the	 unchanged
+configuration	and	repeatedly	partition	them	at	random	into	two	groups,	labelling	each	pair	as	two
+versions	and	analysing	it	with	the	same	statistic	the	Modification	Protocol	would	use.	Because	the
+configuration	never	changed,	the	spread	of	those	statistics	is	an	empirical	null	distribution	for	that
+comparison,	 covering	 run-to-run	 generation	 and	 adjudicator	 variability	 conditional	 on	 the	 fixed
+benchmark	corpus	and	reference	standard.	It	does	not	estimate	uncertainty	in	the	clinical	reference
+standard,	 nor	 the	 uncertainty	 from	 having	 drawn	 a	 finite	 scenario	 set	 from	 the	 broader	 use
+distribution.	Both	are	held	fixed	under	the	resampling	and	have	to	be	characterised	separately.
+A
+modification	whose	measured	effect	falls	inside	that	null	distribution	should	not	be
+reported	as	evidence	of	improvement	or	degradation	without	additional	support.
+The	check	needs	no	additional	corpus	and	no	new	science,	only	repeated	runs	of	a	configuration	the
+sponsor	has	already	built.	That	makes	it	one	of	the	lower-burden	ways	to	show	that	a	release	gate
+can	separate	a	measured	change	from	its	own	within-configuration	variability,	and	it	could	be	folded
+into	qualification	evidence	without	waiting	on	anything	else.
+On	Question	9	and	externally	developed	standards.
+	The	two-stage	structure	of	benchmarking
+followed	by	clinical	confirmation	is,	in	my	view,	correct.	What	I	would	add	to	it	is	the	qualification
+evidence	above.	SAFE-CARE	Bench	already	implements	parts	of	that	evidence,	including	declared
+ground	truth	held	independently	of	the	adjudicator,	a	machine-readable	scenario	schema,	scoring
+anchors,	adjudicator	prompts	with	strict	output	contracts,	and	an	openly	redistributable	reference
+corpus	carrying	per-document	provenance,	rights	basis	and	a	checksummed	manifest	[5].	I	offer	it
+as	a	public,	reproducible	and	openly	available	starting	point.	I	make	no	claim	that	it	is	a	finished
+standard.
+4.	Response	to	Question	5:	the	observation	window	is	a	measurement
+parameter,	not	an	implementation	detail
+“…how	should	risk	be	assessed	across	realistic	conversational	trajectories?”
+When	a	benchmark	scores	a	multi-turn	conversation,	three	different	things	get	collapsed	into	one
+number,	and	they	should	be	reported	separately.
+The
+required-action	turn
+	is	a	prespecified	clinical	reference	for	the	scenario,	namely	the	turn	by
+which	escalation	is	expected	given	what	the	patient	has	disclosed.	It	is	fixed	by	the	reference
+standard,	which	is	why	component	1	in	Section	3	applies	to	it.	The
+timeliness	outcome
+	is	whether
+the	device	acted	by	that	turn.	The
+observation	window
+	is	how	far	the	evaluation	keeps	looking
+afterwards.
+Collapsing	them	produces	two	distinct	errors.	Where	the	window	ends	at	the	required-action	turn,	a
+device	that	escalates	one	turn	late	and	a	device	that	never	escalates	at	all	score	identically,	and	the
+
+evaluation	cannot	distinguish	a	delayed	recovery	from	a	complete	miss.	If	the	window	is	defined
+only	by	the	final	turn,	the	opposite	happens.	A	device	that	escalated	late	scores	identically	to	one
+that	escalated	on	time,	and	timeliness	disappears.	In	both	cases	a	metric	presented	as	multi-turn
+behaves	as	a	single-turn	metric,	and	the	emergent	behaviour	the	Agency	is	asking	about	is	invisible
+by	construction.
+To	be	clear	about	the	clinical	point:
+a	late	escalation	remains	a	failure	of	timely	escalation,
+whatever	happens	afterwards.
+	Recovery	should	be	recorded,	not	credited	as	success.
+I	would	therefore	ask	the	Agency	to	treat	the	observation	window	as	an	element	of	the	evaluation
+that	is
+prespecified,	justified	against	the	clinical	timing	of	the	action,	and	validated
+	as	part
+of	the	qualification	evidence	in	Section	3,	and	to	ask	that	timeliness	and	subsequent	recovery	be
+reported	as	separate	variables.	A	benchmark	that	cannot	show	its	window	admits	the	behaviour	it
+claims	to	measure	has	not	established	construct	validity,	whatever	numbers	it	reports.
+The	practical	form	is	modest.	Each	scenario	carries	a	declared	required-action	turn,	the	scoring
+window	is	defined	relative	to	that	turn,	and	both	are	reported.	How	much	this	choice	moves	multi-
+turn	results	is	being	characterised	empirically	in	the	research	programme	described	in	Section	8,
+and	those	results	will	be	published	openly.
+5.	Response	to	Question	6:	under-	and	over-escalation	are	not	commensurable
+“…given	that	they	may	not	be	commensurable	and	that	acceptable	trade-offs	may	vary	by
+clinical	context?”
+The	Agency’s	instinct	here	is	correct,	and	the	design	consequence	runs	further	than	it	may	first
+appear.
+Because	 the	 two	 errors	 are	 not	 commensurable,	 they	 should	 not	 share	 a
+denominator	or	a	threshold,	and	they	should	never	be	reported	only	as	a	composite.
+They	differ	in	population,	in	consequence	and	in	who	absorbs	the	harm.	Under-escalation	is	a
+missed	emergency	within	the	subset	of	cases	where	escalation	was	warranted.	Over-escalation	falls
+across	the	much	larger	subset	where	it	was	not,	and	it	can	drive	unnecessary	utilisation,	alert
+fatigue	and	erosion	of	clinician	trust.	A	single	aggregate	safety	score	can	sit	perfectly	still	while	the
+behaviour	underneath	it	moves	substantially	in	both	directions.
+My	 recommendation	 is	 to	 report	 them	 as
+two	 prespecified	 outcomes	 with	 separate
+denominators
+.	Missed	escalations	over	cases	where	escalation	was	warranted,	and	unnecessary
+escalations	over	cases	where	it	was	not.	That	in	turn	requires	a	corpus	containing	a	substantial
+proportion	of	cases	where	escalation	is
+not
+	warranted,	declared	as	such	in	advance.	Unless	a
+corpus	carries	such	cases,	it	cannot	measure	over-escalation	at	all,	and	a	device	that	escalates
+everything	scores	well	on	it.
+On	the	weighing	the	question	asks	about,	my	objection	is	to	combining	the	two	at	the	point	of
+measurement,	not	to	decision-analytic	weighting	as	such.	Where	a	composite	is	used	for	a	particular
+clinical	context,	the	underlying	rates	should	remain	separately	reported	and	the	weighting	should
+be	prospectively	justified	by	clinical	consequence	rather	than	chosen	after	the	results	are	seen.
+Acceptable	trade-offs	do	vary	by	context,	as	the	Agency	notes,	which	is	an	argument	for	reporting
+the	components	and	letting	the	context	set	the	weights.
+6.	Response	to	Question	22:	scale	re-benchmarking	to	change	type,	with	an
+invariant	safety	core
+“How	might	the	extent	of	re-benchmarking	or	other	evidence	be	scaled	to	the	nature	and
+expected	impact	of	a	given	modification?”
+Because	this	one	is	answerable	today,	it	is	also	what	keeps	the	qualification	evidence	in	Section	3
+affordable.
+Modifications	to	a	generative	system	fall	into	distinct	categories.	In	practice	a	sponsor	makes	at
+
+least	seven	recognisably	different	changes,	and	each	carries	a	different	plausible	blast	radius.
+Modification
+Competencies	plausibly	affected
+Model	version	or	snapshot
+All	competency	suites.	Presumptively	broad	re-
+benchmarking,	unless	a	documented	impact	analysis
+supports	a	narrower	scope
+System	prompt	or	instruction	text
+Safety	behaviour,	scope	adherence,	communication
+quality
+Retrieval	corpus	or	grounding	sources
+Clinical	knowledge,	citation	grounding,	factual
+accuracy
+Guardrail	or	filter	rules
+Escalation	and	refusal	behaviour,	in	both	directions
+Session	or	cross-session	memory
+Personalisation,	consistency,	stale-context	handling
+Tool	definitions	or	permissions
+Agentic	action,	confirmation,	rollback,	auditability
+Orchestration	or	routing	logic
+Escalation	timing,	hand-off,	trajectory	behaviour
+Once	change	type	is	mapped	to	affected	competency	suites,	a	sponsor	has	to	justify	partial	re-
+benchmarking	on	a	stated	rationale,	and	the	Agency	has	something	it	can	actually	assess.	The
+mapping	is	what	makes	a	least-burdensome	approach	auditable.
+With	one	exception,	which	I	would	recommend	holding	invariant.
+	 A	 fixed	 critical-safety
+regression	core,	covering	the	safety-critical	recognition	 and	escalation	cases	together	with	 the
+scope-adherence	 and	 adversarial	 cases,	 should	 be	 re-run	 unchanged
+on	every	modification
+reasonably	capable	of	altering	generated	output,	safety	controls,	routing,	context	handling
+or	downstream	actions
+,	with	results	reported	against	the	original	baseline.	That	suite	is	the
+smallest,	its	failure	matters	most,	and	holding	it	fixed	is	what	keeps	the	baseline	comparison	in
+Section	VI	meaningful	over	time.
+On	Question	19
+,	this	also	supplies	part	of	the	triggering	logic	the	Agency	asks	for.	The	trigger	is	a
+change	of	a	declared	type,	and	the	mapping	sets	the	scope.	For	known	modifications,	change-
+triggered	re-benchmarking	should	complement	periodic	postmarket	assessment	rather	than	replace
+it.	Event-based	triggers	are	better	aligned	to	intentional	modifications;	periodic	assessment	remains
+necessary	 for	 what	 a	 sponsor	 did	 not	 do,	 including	 drift	 in	 a	 third-party	 foundation	 model	 or
+retrieval	source,	dependency	and	infrastructure	changes,	and	shifts	in	the	use	environment	or	input
+distribution	that	arrive	without	any	declared	device	modification.
+One	addition	applying	to	both	questions.
+	If	the	premarket	assessment	is	to	serve	as	a	baseline
+for	later	comparison,	then	the	adjudicator	belongs	in	that	baseline	record,	pinned,	versioned	and
+reported.	An	adjudicator	that	is	itself	a	language	model	is	a	versioned	artifact,	and	it	changes.	A
+sponsor	re-benchmarking	in	eighteen	months	against	a	baseline	scored	by	a	superseded	adjudicator
+has	measured	the	difference	between	two	scorers	as	much	as	the	difference	between	two	device
+versions,	and	nothing	in	the	current	framing	obliges	them	to	separate	the	two.
+A	change	to	an
+automated	adjudicator	should	be	treated	as	a	change	to	the	evaluation	system,	requiring
+bridge	 testing	 or	 recalibration	 before	 scores	 it	 produces	 are	 compared	 against	 the
+historical	baseline.
+	The	change	sits	in	the	evaluation	apparatus,	and	I	would	ask	the	Agency	to
+keep	it	there.
+7.	Responses	to	Questions	11,	12,	13	and	16
+On	selecting	a	confirmation	approach	(Question	11).
+	 The	 two-axis	 framing	 in	 Section	 IV,
+weighing	clinical	significance	of	the	output	against	degree	of	autonomy,	is	a	reasonable	basis	for
+choosing	among	approaches	of	increasing	rigour,	and	I	would	not	add	a	third	axis	to	it.
+I	would	add	a	dependency.
+How	far	benchmarking	can	substitute	for	prospective	clinical
+study	depends	on	how	well	the	benchmark	itself	has	been	qualified.
+	 When	 a	 sponsor
+proposes	a	lighter	confirmation	approach	on	the	strength	of	strong	benchmark	performance,	they
+
+are	making	a	claim	about	the	benchmark	as	much	as	about	the	device,	and	the	evidence	in	Section	3
+is	what	should	be	required	to	support	it.	Without	that,	a	lighter	approach	rests	on	an	instrument	of
+unknown	precision,	and	the	risk	proportionality	the	Agency	is	aiming	at	cannot	be	assessed.
+The	corollary	favours	sponsors.	Where	a	benchmark	is	well	qualified,	it	should	be	permitted	to	carry
+more	weight,	which	puts	the	incentive	on	investing	in	qualification.
+On	synthetic	inputs	(Questions	12	and	13).
+	While	synthetic	conversations	cannot	stand	in	for
+real	use,	they	are	well	suited	to	controlled	stress	testing	of	rare,	adversarial	and	safety-critical
+situations,	 and	 to	 ablation	 experiments	 where	 one	 factor	 varies	 while	 everything	 else	 is	 held
+constant.	For	genuine	emergencies,	prompt	injections	and	boundary-violation	attempts,	they	may	be
+one	of	the	few	practical	ways	to	obtain	adequate	numbers.
+What	they	cannot	establish	is	representativeness.	When	a	clinician	validates	a	synthetic	case,	they
+confirm	that	the	case	is	clinically	coherent	and	that	its	declared	label	is	correct.
+That	says	nothing
+about	whether	the	distribution	of	such	cases	resembles	the	distribution	the	device	will
+meet	in	use.
+	These	are	different	claims,	and	they	are	frequently	conflated.
+Question	12	asks	under	what	conditions,	if	any,	the	two	bodies	of	evidence	may	be	combined.	My
+answer	is	that	they	should	not	be	naively	pooled,	and	that	any	combination	should	carry	conditions:
+a	common	estimand,	an	explicit	account	of	how	the	two	distributions	differ,	prospectively	specified
+weighting,	and	a	sensitivity	analysis	showing	that	the	conclusion	is	not	driven	by	the	synthetic
+component.	 Absent	 those,	 the	 two	 should	 be	 reported	 separately.	 Benchmark	 performance
+characterises	behaviour	under	controlled	conditions,	while	clinical	confirmation	supplies	evidence
+closer	to	the	intended-use	context,	and	a	naive	average	describes	neither.
+Question	13	raises	a	sharper	concern,	that	synthetic	data	generated	by	models	of	the	same	class	as
+the	device	will	reproduce	the	very	gaps	the	evaluation	should	detect.	The	safeguard	that	matters
+most	there	is	that
+the	reference	standard	must	be	established	or	independently	verified
+separately	from	the	model	that	generates	the	cases
+.	A	model	may	propose	a	case;	it	may	not
+certify	its	own	label.	Adversarial	cases	in	particular	should	be	built	against	a	declared	taxonomy	of
+failure	modes,	because	a	model’s	own	notion	of	a	hard	case	is	drawn	from	the	same	distribution	as
+its	blind	spots.
+On	independent	third	parties	(Question	16).
+	A	hybrid	would	serve	better	than	a	certification
+regime.	 Methods,	 corpora	 and	 scoring	 rubrics	 should	 be	 open,	 and	 sponsor	 testing	 should	 be
+reproducible	 from	 published	 materials,	 because	 reproducibility	 is	 a	 cheaper	 and	 more	 robust
+guarantee	 than	 attestation.	 Independent	 involvement	 should	 then	 concentrate	 where	 it	 is
+irreplaceable:
+clinical	adjudication	of	the	reference	standard
+,	and,	for	the	most	consequential
+gates,	sequestered	safety-critical	case	sets	held	by	a	third	party,	so	that	optimisation	to	the	test	is
+structurally	prevented.
+The	safeguard	the	Agency	asks	about	is,	I	think,	primarily	structural.	Where	a	small	number	of
+accredited	bodies	must	be	paid	to	certify	each	release,	cost,	concentration	and	time	to	market	all
+rise,	a	concern	the	Agency	raises	itself.	Independence	should	therefore	be	targeted	at	the	functions
+where	it	adds	assurance	that	nothing	else	provides.	An	approach	built	on	open	methods,	published
+qualification	evidence	and	targeted	independent	adjudication	gets	most	of	the	assurance	without
+creating	that	dependency.
+8.	What	I	am	offering,	and	what	I	am	not	claiming
+What	I	am	not	claiming.
+	I	have	not	empirically	evaluated	an	agentic	configuration,	and	nothing
+here	 should	 be	 read	 as	 evidence	 about	 acceptance	 criteria	 for	 agentic	 systems.	 The
+recommendations	above	concern	the	qualification	of	evaluation	instruments,	and	that	is	the	whole
+of	what	I	am	asking	the	Agency	to	consider.
+What	is	offered.
+	The	scenario	schema	with	declared	ground	truth,	the	adjudication	protocol,	the
+scoring	 anchors	 and	 the	 openly	 redistributable	 reference	 corpus	 are	 already	 public	 under
+permissive	licences	[5,	6],	and	the	Agency	or	any	sponsor	may	use,	modify	or	discard	them	without
+permission	or	cost.
+
+What	I	will	produce.
+	 I	 am	 leading	 a	 research	 collaboration	 involving	 informaticians,	 nurse
+informaticists	and	physicians	who	work	across	several	institutions,	on	precisely	the	question	in
+Section	2:	what	a	release	check	for	clinical	AI	that	generates	language	must	contain,	and	what	its
+measurement	variability	actually	is.	The	programme	characterises	the	components	named	there,
+includes	a	clinician	rating	study,	to	be	conducted	only	after	an	independent	ethics	determination,
+and	reports	minimum	detectable	effect
+as	a	function	of	the	number	of	repeated	evaluation
+runs
+	rather	than	as	a	single	figure.	Institutional	affiliations	of	research	collaborators	are	descriptive
+only	and	do	not	imply	institutional	endorsement	of	this	comment.
+That	curve	is	the	practically	useful	object,	because
+the	number	of	repeated	runs	is	itself	a
+design	parameter	of	a	Modification	Protocol,	and	there	is	limited	clinical-GenAI-specific
+evidence	to	guide	that	choice	today.
+	A	sponsor	should	be	able	to	read	off	how	many	repeats	are
+needed	to	detect	a	given	degradation	in	safety	performance,	and	a	reviewer	should	be	able	to	read
+off	what	a	submitted	evaluation	was	capable	of	detecting.
+I	 intend	 to	 publish	 the
+instrument	qualification	protocol	described	in	Section	3	as	a
+standalone	open	document
+,	together	with	the	underlying	materials,	and	I	would	welcome	the
+chance	to	provide	it,	or	any	part	of	it,	to	the	Agency	in	whatever	form	is	useful.	I	am	glad	to	answer
+questions	from	staff.
+Summary	of	recommendations
+1.
+Require
+measurement-system	qualification	evidence
+	for	any	benchmark	used	to	gate	device
+evaluation,	as	the	construct	validity	Question	10	asks	about.	Six	components,	set	out	in	Section
+3.
+2.
+Consider	 requiring	 a
+null	comparison
+,	 the	 unchanged	 configuration	 repeatedly	 resampled
+against	itself,	as	minimum	evidence	that	a	release	evaluation	can	distinguish	real	change	from
+its	own	variability.
+3.
+Treat	the
+observation	window
+	in	multi-turn	evaluation	as	a	prespecified,	justified	and	validated
+parameter,	not	an	implementation	choice,	and	report	timeliness	separately	from	later	recovery.
+4.
+Require
+under-	and	over-escalation	to	be	reported	as	separate	prespecified	outcomes
+with	separate	denominators,	and	require	corpora	to	contain	declared	non-escalation	cases.
+5.
+Scale	re-benchmarking	to
+modification	type
+,	against	a	published	mapping,	with	an
+invariant
+critical-safety	regression	core
+	re-run	on	every	change	capable	of	altering	generated	output	or
+safety	behaviour,	and	keep
+periodic	postmarket	assessment	alongside
+	change-triggered	re-
+benchmarking	to	catch	drift	no	sponsor	declared.
+6.
+Treat	 the
+adjudicator	as	a	versioned	part	of	the	evaluation	record
+,	 and	 a	 change	 of
+adjudicator	 as	 an	 evaluation-system	 change	 requiring	 bridge	 testing	 before	 historical
+comparison.
+7.
+Do	not	pool	benchmarking	and	clinical	confirmation	evidence	into	a	single	performance	estimate
+unless	the	conditions	in	Section	7	are	met
+.
+8.
+Require	that
+synthetic	case	labels	be	established	or	independently	verified	apart	from
+the	generating	model
+.
+9.
+Prefer
+open	methods	and	reproducible	testing	with	targeted	independent	adjudication
+over	a	certification	regime.
+10.
+Require	an	acceptance	criterion	to	be
+accompanied	by	a	characterisation	of	the	evaluation
+variability	against	which	it	is	read
+,	and	treat	one	reported	without	it	as	difficult	to	interpret.
+References
+1.
+Food	 and	 Drug	 Administration.
+Considerations	for	the	Regulation	of	Generative	AI-Enabled
+Medical	 Devices:	 Discussion	 Paper	 and	 Request	 for	 Feedback.
+	 Docket	 FDA-2026-N-7874.
+Questions	referenced	by	number	throughout.
+
+2.
+Food	and	Drug	Administration.
+Marketing	Submission	Recommendations	for	a	Predetermined
+Change	 Control	 Plan	 for	 Artificial	 Intelligence-Enabled	 Device	 Software	 Functions.
+	 Final
+guidance,	August	2025.	CDRH,	CBER,	CDER	and	Office	of	Combination	Products.
+3.
+42	CFR	493.1253(b)(2).	Standard:	Establishment	and	verification	of	performance	specifications.
+4.
+Eltayeb	Y.
+SAFE-CARE:	A	Framework	for	Designing	and	Evaluating	Safe	Healthcare	AI	Agents.
+v1.2.0.	Conefia	LLC;	2026.	Archived	at	doi.org/10.5281/zenodo.21330841
+5.
+Eltayeb	Y,	Hafez	M.
+SAFE-CARE	Bench:	A	Benchmark	Specification	and	Evaluation	Protocol	for
+Safety,	Guardrails,	and	User	Experience	in	Multi-Turn	Healthcare	AI	Agent	Conversations.
+v0.1.1.	Zenodo;	2026.	doi.org/10.5281/zenodo.21444597
+6.
+SAFE-CARE	SDK.	A	provider-agnostic	client	for	running	SAFE-CARE	evaluations	and	wiring
+escalation	guardrails.	github.com/Conefia/SAFE-CARE-SDK.	Apache-2.0.
+Respectfully	submitted,
+Yassen	Eltayeb
+Lead	author,	SAFE-CARE	and	SAFE-CARE	Bench
+Founder,	Conefia	LLC
+Morrisville,	North	Carolina
+yassen.eltayeb@conefia.com

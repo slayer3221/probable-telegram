@@ -1,0 +1,210 @@
+{
+  "comment_id": "FDA-2026-N-7874-0088",
+  "input_hash": "a711058e199049c2",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-17T13:20:17Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q7",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter agrees with device benchmarking followed by risk-proportionate clinical confirmation, but warns that the proposed benchmark categories under-weight multi-turn information gathering and run-to-run reliability, so a device could score well on clinical knowledge and single-turn safety items while failing in conversation (omitting decisive history questions, repeating questions already answered, giving different diagnoses on identical replayed transcripts, ignoring hard instructions, or fabricating facts that simple pattern-matching checks miss).",
+      "requested_fda_action": "Strengthen the benchmarking structure to explicitly test multi-turn information-gathering competency and run-to-run reliability (e.g., replay consistency, instruction adherence, and fabrication detection beyond fixed entity-list or regex checks) rather than relying on single-turn knowledge and safety items.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment argues that a device's clinically relevant behavior emerges across a multi-turn conversation and varies between identical runs, so evaluation must characterize the conversational behavioral envelope rather than single-turn performance."
+      },
+      "public_summary": "Endorses benchmarking plus risk-proportionate clinical confirmation, but argues the proposed benchmark set under-weights multi-turn history-taking and run-to-run reliability. Asks FDA to add tests for conversational information gathering, replay consistency, instruction adherence, and fabrication not detectable by fixed-list checks.",
+      "summary_cut": false,
+      "source_passage": "II. Position (Q7, Q9)\nDevice benchmarking plus risk-proportionate clinical confirmation is the right frame. The current sketch under-weights multi-turn information gathering (Appendix A, E.2) and run-to-run reliability (R.1).\nA sponsor can publish a high score on clinical knowledge (E.1) or on a single-turn safety item (S.1 / S.2) while the finished product, in conversation:\n  1. closes the history without asking the question that would change the differential,\n  2. asks the same question again after the answer is already in context,\n  3. gives a different diagnosis or plan when the identical transcript is replayed,\n  4. ignores a hard instruction (for example, \"do not print a normal range\"),\n  5. invents a fact that no regex over a fixed entity list will catch."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter characterizes the behaviors at issue as product-level behaviors rather than properties of an underlying model, and is concerned that evaluation could be conducted on something other than what is actually served to users.",
+      "requested_fda_action": "Require that these behaviors be measured on the finished, as-served configuration, including the prompt, tools, and the specific model snapshot the vendor is serving.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter states the behaviors in question are product behaviors and should be benchmarked on the finished, as-served configuration—prompt, tools, and the specific model snapshot in use—rather than evaluated at another level. The passage is brief and its antecedent is unspecified.",
+      "summary_cut": false,
+      "source_passage": "Those are product behaviors. They should be measured on the finished configuration (prompt + tools + whatever snapshot the vendor is serving)"
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q10",
+        "q5",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Based on their own testing, the commenter found the model often rated a history as \"complete\" while omitting the question most relevant to the case, so self-rated completeness is circular and unreliable as a benchmark measure.",
+      "requested_fda_action": "Score the history-taking/information-gathering benchmark element (E.2) against a pre-specified, case-locked list of required questions (including exposures, medications, and red-flag negatives) written before the run, and report recall of those required questions separately from question count or the model's self-rated completeness.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts the benchmarking element for history-taking but reports that models rated histories \"complete\" while omitting case-critical questions. Asks FDA to require pre-specified, case-locked required-question lists and separate reporting of question recall, rather than model self-assessed completeness or question counts.",
+      "summary_cut": false,
+      "source_passage": "I wrote a history-collection checklist and asked the model to judge whether the history was complete. The model often marked the list \"complete\" while omitting the question that actually matters for the case. ... - E.2 should be scored against a pre-specified, case-locked question family written before the run, not against the model's own \"is this complete?\" judgment. Self-evaluation is circular. ... Ask: For history-taking or intake functions, require a case-locked required-question list (including exposure, meds, red-flag negatives) and report recall of those questions separately from \"number of questions asked\" or self-rated completeness."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "The commenter identifies 'under-gathering' — failing to ask a clinically decisive question, such as a pathognomonic exposure item — as an error mode analogous to the under-escalation direction FDA describes in Q6, noting that a conversation can appear thorough while omitting the item that changes management.",
+      "requested_fda_action": "Extend the under-escalation/over-escalation error framing to explicitly encompass information-gathering omissions in conversational exchanges, so that failures to elicit management-changing information are characterized and weighed alongside escalation errors.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts FDA's framing of error directions in escalation functions but asks that it also cover 'under-gathering' — failure to elicit a clinically decisive question — noting a conversation can appear thorough while omitting the item that changes management.",
+      "summary_cut": false,
+      "source_passage": "- Missing a pathognomonic exposure question is an under-gathering error analogous to under-\nescalation in Q6: the conversation looks thorough and still drops the item that changes\nmanagement."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q5",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter reports that some backends re-ask questions already answered earlier in a transcript, indicating the conversational context is not actually being used; such repetition delays care and conditions users to disregard the agent. They argue multi-turn risk is not only drift from non-directive to action-directing output but also failure to use state the device already collected.",
+      "requested_fda_action": "Include multi-turn intake benchmarking with an explicit set of \"already answered\" items, and score repetition of a resolved question as a reliability failure rather than as added thoroughness.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The commenter identifies delay in care caused by redundant questioning as a harm distinct from incorrect clinical output.",
+        "human_ai_system_performance": "The concern that repeated questions \"train users to ignore the agent\" frames harm as arising from degraded user engagement with the device rather than model accuracy alone."
+      },
+      "public_summary": "Accepts FDA's multi-turn risk framing but says it is incomplete: failure to use context already collected causes repeated questions, delaying care and eroding user trust. Asks FDA to benchmark multi-turn intake with an \"already answered\" set and score repeats as reliability misses.",
+      "summary_cut": false,
+      "source_passage": "Some backends, given the entire prior transcript, still re-ask \"how long have you had this?\" Multi-turn risk in Q5 is not only drift from information to action. It is also a failure to read the state the device already collected. Repeated questions delay care, train users to ignore the agent, and are evidence that context is not actually being used.\nAsk: Benchmark multi-turn intake with an explicit \"already answered\" set. Score a repeat of a resolved question as a reliability miss, not as extra thoroughness."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter observes that replaying the same chat context can yield different diagnoses and suggestions, which they characterize as a reproducibility failure rather than a desirable creative feature when the intended use is clinical intake or advice.",
+      "requested_fda_action": "Add a repeated-run consistency metric to the benchmarking structure, measured on action-relevant output fields (working diagnosis family, next site of care, whether to test or treat) for a fixed transcript with pinned decoding settings, and not credit lexical diversity of prose as competence.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts the benchmarking framework but says it omits reproducibility: identical chat inputs can yield different diagnoses and recommendations. Asks FDA to require repeated-run consistency metrics on action-relevant output fields under pinned decoding settings, and not to treat wording variety as competence.",
+      "summary_cut": false,
+      "source_passage": "With the same chat context, replays sometimes produce different diagnoses and suggestions. That is a reproducibility failure (R.1), not a creativity feature, when the intended use is clinical intake or advice.\nAsk: For a fixed transcript and pinned decoding settings, require a repeated-run consistency metric on the action-relevant fields (working diagnosis family, next site of care, whether to test or treat). Do not treat lexical diversity of the prose as competence."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q23",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "pccp",
+      "stakeholder_concern": "The commenter notes that models can violate explicit deployment constraints (e.g., 'do not state the laboratory normal range') on some conversational turns, which is a failure to hold a constraint rather than a knowledge error, yet sponsors will rely on such constraints as PCCP guardrails.",
+      "requested_fda_action": "Add a small 'instruction-lock' component to nonclinical benchmarking, using pinned negative instructions ('do not print X') scored pass/fail on the visible output, so guardrail durability across multiple turns is tested rather than assumed.",
+      "confidence": "high",
+      "gap_tags": [
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "dynamic_intended_use": "The comment highlights that a device's behavior can drift outside its constrained operating envelope across conversational turns, so constraint adherence itself must be measured rather than presumed stable."
+      },
+      "public_summary": "Accepts benchmarking and PCCP guardrail concepts but asks FDA to add an 'instruction-lock' test set to nonclinical benchmarking, scoring pinned negative instructions pass/fail on visible output, because constraints that hold on early turns may fail on later ones.",
+      "summary_cut": false,
+      "source_passage": "An instruction such as \"do not state the laboratory normal range on this report\" is still violated on some turns. That is not a knowledge error. It is failure to keep a deployment constraint in force. Sponsors will rely on exactly these constraints as \"guardrails\" in a PCCP.\nAsk: Include a small instruction-lock set in nonclinical benchmarking: pinned negatives (\"do not print X\") scored as pass/fail on the visible output. A guardrail that holds on the first turn and fails on the fifth is not a guardrail."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q1",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "Hallucinated content can appear anywhere in generated text, so pattern- or keyword-based checks miss most fabrications and also falsely flag negations such as \"no penicillin allergy\"; a clean rule-based report should not be mistaken for evidence that hallucination is controlled, particularly for documentation and write-back of information into the patient history.",
+      "requested_fda_action": "Include source-traceability of outputs as a dimension in the risk framework, and for documentation and history write-back functions require source-conditioned verification with denial-aware matching where a source exists, plus clinician review of a sample of unconstrained sentences.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment focuses on fabricated statements entering clinical documentation and being written back into the patient history, a harm pathway arising from record contamination rather than from a single incorrect clinical recommendation."
+      },
+      "public_summary": "Argues source-traceability should be represented in the risk framework but cannot be verified by keyword or pattern checks, which miss most hallucinations and misread negations. Asks FDA to require source-conditioned, denial-aware verification plus clinician review of sampled unconstrained sentences for documentation and history write-back.",
+      "summary_cut": false,
+      "source_passage": "Hallucinated facts can appear in any clause. Post-hoc rules that look for a fixed list (allergy, code status, drug name) miss most of them and also false-flag denials (\"no penicillin allergy\"). Source-traceability belongs in the risk picture (Q1). It cannot be reduced to a regex.\nAsk: For documentation and for history write-back, require (a) a source-conditioned check where a source exists, with denial-aware matching, and (b) clinician review of a sample of unconstrained sentences. Do not treat a clean regex report as evidence that hallucination is controlled."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q22",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The passage is a fragment recommending that performance measurement be repeated whenever the underlying foundation-model snapshot/identifier or the prompt template changes, implying that such changes are material to device behavior and must trigger re-evaluation.",
+      "requested_fda_action": "Treat changes to the foundation-model version identifier or prompt template as defined triggers requiring re-measurement/re-running of the specified evaluations, within change-control and third-party model change mechanisms.",
+      "confidence": "low",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment ties re-evaluation to changes in the third-party foundation-model identifier, implying manufacturers must track supplier-initiated model version changes as a quality trigger."
+      },
+      "public_summary": "In a fragmentary comment, the commenter recommends that specified performance measurements be re-run whenever the underlying foundation-model snapshot or identifier, or the prompt template, changes—treating these as concrete triggers for re-evaluation under change control. Broader position on FDA's approach is not stated.",
+      "summary_cut": false,
+      "source_passage": "and re-measured when that snapshot or the prompt changes (Q22, Q24). ... 6. Re-run the above when the foundation-model identifier or prompt template changes (Q22, Q24)."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q10",
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned with how benchmark integrity and independent review should be structured, favoring commonly defined benchmark items combined with a hidden holdout set to limit contamination or optimization to the test, and reserving licensed (expert) review for decision-critical gold standards.",
+      "requested_fda_action": "Adopt an approach using shared/common item definitions paired with a hidden holdout evaluation set, and limit independent licensed reviewer involvement to establishing the decision-relevant gold standard rather than all aspects of benchmarking.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Recommends that benchmarking use shared item definitions together with a hidden holdout set, and that independent licensed expert review be limited to establishing decision-critical gold standards rather than applied across all benchmarking activities. Brief statement; rationale not elaborated.",
+      "summary_cut": false,
+      "source_passage": "7. Prefer shared item definitions plus a hidden holdout, with licensed review of decision gold only (Q10, Q16)."
+    }
+  ]
+}

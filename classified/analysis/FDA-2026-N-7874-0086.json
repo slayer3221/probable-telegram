@@ -1,0 +1,284 @@
+{
+  "comment_id": "FDA-2026-N-7874-0086",
+  "input_hash": "75ee8eba00e57856",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-17T13:20:17Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter is concerned that risk assessment based on device function and output alone omits the real conditions under which a device is used, including reversibility of actions, urgency, user vulnerability, error detectability, output traceability, scale of deployment, staffing levels, and workflow. They emphasize that risk depends on whether clinicians actually have the time, information, authority, and staffing to respond safely when a system produces an incorrect output.",
+      "requested_fda_action": "Expand the risk framework used across Questions 1-6 so that classification accounts for both device function and real-world conditions of use, explicitly including reversibility, urgency, vulnerability, error detection, traceability, scale, staffing, and workflow. Classification should turn on the consequences of an incorrect output and on the clinician's practical capacity and authority to intervene.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "operational_harm",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter frames risk as depending on whether clinicians can detect and act on errors given available time and information, i.e., on the combined human-device system rather than the device alone.",
+        "operational_harm": "The passage cites scale, staffing, and workflow as risk-relevant dimensions, pointing to harms arising from deployment conditions rather than from the output itself.",
+        "delegated_authority": "The commenter states that risk classification should reflect whether clinicians have the authority, not merely the opportunity, to respond safely to an incorrect output."
+      },
+      "public_summary": "Accepts risk-based classification but asks FDA to go beyond device function and output, incorporating real conditions of use—reversibility, urgency, user vulnerability, error detection, traceability, scale, staffing, and workflow—and whether clinicians have the time, information, authority, and staffing to respond safely to errors.",
+      "summary_cut": false,
+      "source_passage": "in response to questions 1 through 6, FDA should assess both function and real conditions of use: reversibility, urgency, vulnerability, error detection, traceability, scale, staffing, and workflow. ... classification should reflect what happens when a system is wrong and whether clinicians have the time, information, authority, and staffing to respond safely."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q10",
+        "q11"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "clinical_validation",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "Benchmark performance alone is viewed as insufficient evidence for systems that influence diagnosis, triage, treatment, escalation, or monitoring, because such benchmarks may not predict real-world safety across varied patients and care settings.",
+      "requested_fda_action": "Require prospective clinical validation across diverse patient populations and settings for high-risk GenAI-enabled devices, rather than allowing benchmarking or lower-rigor confirmation approaches to suffice.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts benchmarking as one component but states it is insufficient alone for systems influencing diagnosis, triage, treatment, escalation, or monitoring. Asks FDA to require prospective clinical validation across diverse patients and settings for such high-risk systems.",
+      "summary_cut": false,
+      "source_passage": "in response to questions 10 through 16, benchmarks alone are not enough for systems that influence diagnosis, triage, treatment, escalation, or monitoring. high-risk systems need prospective clinical validation across diverse patients and settings."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Evaluating the model in isolation misses how clinicians, including registered nurses, actually interact with GenAI outputs and the errors and burdens that arise in practice.",
+      "requested_fda_action": "Require evaluation of the human-AI team, including registered nurses, and measure hallucinations, omissions, automation bias, verification time, cognitive burden, workflow disruption, overrides, delays, and near misses.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment asks FDA to assess the combined clinician-device system, including automation bias and verification behavior, rather than standalone model output.",
+        "operational_harm": "It identifies workflow disruption, cognitive burden, verification time, delays, and near misses as harms that should be measured in testing."
+      },
+      "public_summary": "Commenter urges FDA to base evaluation on human-AI team performance, explicitly including registered nurses, rather than the model alone. Recommends testing measure hallucinations, omissions, automation bias, verification time, cognitive burden, workflow disruption, overrides, delays, and near misses.",
+      "summary_cut": false,
+      "source_passage": "FDA should evaluate the human-AI team, including registered nurses, not only the model. testing should measure hallucinations, omissions, automation bias, verification time, cognitive burden, workflow disruption, overrides, delays, and near misses."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q14",
+        "q15"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "Concern that using the care actually likely to occur in a resource-constrained or understaffed setting as the comparator could make a device appear beneficial relative to a degraded baseline rather than to safe care.",
+      "requested_fda_action": "Require that performance comparators be benchmarked against safe, adequately staffed care rather than against an understaffed or otherwise deficient practice environment.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment raises the risk that staffing shortfalls in the deployment environment shape the baseline against which benefit is measured, so apparent device benefit may reflect operational deficiencies rather than clinical improvement."
+      },
+      "public_summary": "Accepts comparing device performance to care likely to occur without the device, but argues the comparator should be safe, adequately staffed care rather than an understaffed environment, which could make a product appear beneficial against a degraded baseline.",
+      "summary_cut": false,
+      "source_passage": "comparisons should be against safe, adequately staffed care, not an understaffed environment that makes a product appear beneficial."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q3"
+      ],
+      "position": "unclear",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter is concerned that patient-facing GenAI could displace human clinical relationships and be used in place of adequate staffing, and that patients and clinicians may not know when AI shapes care or who bears responsibility. It also holds that disclosure by itself neither constitutes meaningful consent nor makes an unsafe system safe.",
+      "requested_fda_action": "Treat continued access to an accountable human clinician as a necessary safeguard for patient-facing GenAI, require clear identification of when AI shapes care and who remains accountable, and not treat disclosure alone as a sufficient mitigation or substitute for system safety.",
+      "confidence": "low",
+      "gap_tags": [
+        "distributed_accountability",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The passage insists that patients and clinicians be told who remains accountable when AI shapes care, an accountability-allocation issue beyond Q3's framing of output features and safeguards.",
+        "operational_harm": "It raises the concern that AI tools could be used as a substitute for safe staffing, a deployment-level harm not captured by device output risk assessment."
+      },
+      "public_summary": "Comment on patient-facing GenAI argues such tools should supplement, not replace, an accountable human clinician, and never substitute for safe staffing. Patients and clinicians must know when AI shapes care and who is accountable; disclosure alone is insufficient. No explicit stance on FDA's framework.",
+      "summary_cut": false,
+      "source_passage": "ai should support relationships, not displace them. patients need a real person who can listen, explain, notice what does not fit, and accept responsibility. ... an ai tool should never substitute for safe staffing. patients and clinicians should know when ai shapes care and who remains accountable. disclosure matters, but disclosure alone is not meaningful consent and does not make an unsafe system safe."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "Front-line clinicians may lack practical authority to challenge or halt AI outputs they believe are unsafe, particularly if doing so carries professional or employment consequences.",
+      "requested_fda_action": "Ensure that any framework involving clinicians in oversight of GenAI-enabled devices includes the ability for nurses and other clinicians to question, override, document concerns about, and stop unsafe AI recommendations without retaliation.",
+      "confidence": "low",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment frames safety as depending on whether the human user can effectively contest and override device output in practice, not on device output alone.",
+        "delegated_authority": "It raises the question of who retains final authority when an AI recommendation conflicts with clinician judgment, and whether clinicians can refuse or stop the AI-directed course of action."
+      },
+      "public_summary": "Comment addressing clinician roles in oversight states that nurses and other clinicians must be able to question, override, document concerns about, and stop unsafe AI recommendations without retaliation. It adds this protection as a condition rather than endorsing or rejecting FDA's specific monitoring proposals.",
+      "summary_cut": false,
+      "source_passage": "nurses and other clinicians must be able to question, override, document concerns about, and stop unsafe ai recommendations without retaliation."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q18",
+        "q19"
+      ],
+      "position": "mixed",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter views postmarket monitoring as essential because device performance can shift across populations, institutions, workflows, and over time, but objects to using it as a substitute for premarket evidence, stating that patients should not become involuntary test subjects.",
+      "requested_fda_action": "Retain strong premarket evidence requirements and treat postmarket monitoring as a supplement rather than a basis for accepting greater premarket uncertainty.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment emphasizes that performance varies across populations, institutions, workflows, and time, implying assurance must extend to each deployment context rather than a single premarket evaluation."
+      },
+      "public_summary": "Commenter considers postmarket monitoring essential because performance can change across populations, institutions, workflows, and time, but rejects FDA's suggestion that it justify reduced premarket evidence, stating monitoring must supplement premarket evidence and patients should not become involuntary test subjects.",
+      "summary_cut": false,
+      "source_passage": "in response to questions 18 through 21, postmarket monitoring is essential because performance can change across populations, institutions, workflows, and time. it must supplement strong premarket evidence, not replace it. patients should not become involuntary test subjects."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "The commenter indicates that postmarket monitoring as framed may be too narrow, and should explicitly capture subgroup-level performance, near misses and evolving error patterns in addition to reported adverse events, with frontline staff able to report without fear of reprisal.",
+      "requested_fda_action": "Expand expected postmarket monitoring content to include subgroup performance, adverse events, near misses, and changing error patterns, and to provide protected channels for frontline reporting.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment asks monitoring to capture near misses and shifting error patterns, which are operational signals that fall short of reportable adverse events.",
+        "deployment_assurance_scalability": "It ties ongoing assurance to subgroup-level performance tracking and protected reporting by frontline users in deployment settings, beyond manufacturer re-benchmarking."
+      },
+      "public_summary": "Commenter accepts postmarket performance evaluation but asks FDA to broaden its scope, specifying that monitoring cover subgroup performance, adverse events, near misses, and changing error patterns, and that frontline personnel have protected channels for reporting.",
+      "summary_cut": false,
+      "source_passage": "monitoring should cover subgroup performance, adverse events, near misses, changing errors, and protected frontline reporting."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter objects to relying on an automated agent as the only supervisor of another automated system, implying human involvement must remain part of postmarket oversight.",
+      "requested_fda_action": "Ensure that machine-based supervisory agents are not permitted to serve as the sole means of monitoring a GenAI-enabled device, retaining human oversight in the monitoring arrangement.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment goes to whether oversight authority can be delegated entirely to an automated supervisory agent without human involvement."
+      },
+      "public_summary": "Brief comment on machine-based supervisory agents: the commenter states a machine should not be the sole supervisor of another machine, indicating automated postmarket monitoring should not fully replace human oversight, without detailing alternative monitoring arrangements.",
+      "summary_cut": false,
+      "source_passage": "a machine should not be the sole supervisor of another machine."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter asserts that manufacturers must continue to bear responsibility for postmarket surveillance, corrective action, and transparent communication, consistent with FDA's concern about not diffusing manufacturer accountability when other stakeholders participate in monitoring.",
+      "requested_fda_action": "Retain manufacturers as the accountable party for surveillance, correction, and transparent communication in any postmarket monitoring arrangement involving other stakeholders.",
+      "confidence": "low",
+      "gap_tags": [
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The passage addresses how accountability should be allocated when postmarket monitoring involves multiple actors, insisting the manufacturer remains responsible for surveillance, correction, and communication."
+      },
+      "public_summary": "Brief statement that manufacturers must retain responsibility for postmarket surveillance, corrective action, and transparent communication. Consistent with FDA's aim of preserving manufacturer accountability, though the passage offers no detail on other stakeholders' roles or implementation.",
+      "summary_cut": false,
+      "source_passage": "manufacturers must remain responsible for surveillance, correction, and transparent communication."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q24",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Changes to underlying models—potentially initiated by third-party developers—could alter clinically relevant outputs before anyone detects them, and health systems may lack the ability to trace an output to a specific model version or to halt a degraded deployment.",
+      "requested_fda_action": "Require that every clinically relevant output be traceable to a specific model version, that material model changes be detected before they affect care and trigger appropriate revalidation and FDA review, and that health systems have prompt suspension and rollback controls.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment focuses on detecting and revalidating material changes to underlying models that originate outside the device manufacturer's direct control.",
+        "deployment_assurance_scalability": "It asks for deployment-side capabilities—version traceability, prompt suspension, and rollback—held by health systems rather than only premarket manufacturer evidence.",
+        "operational_harm": "The concern is that undetected model changes could affect care before revalidation occurs, implying harm arising in live operation rather than from a single incorrect output."
+      },
+      "public_summary": "Responding to Q24 and Q26, the commenter urges FDA to require that each clinically relevant output be traceable to a specific model version, that material model changes be detected before affecting care and trigger revalidation and FDA review, and that health systems retain suspension and",
+      "summary_cut": true,
+      "source_passage": "in response to questions 24 and 26, every clinically relevant output should be traceable to a specific model version. material changes should be detected before they affect care, followed by appropriate revalidation and fda review. health systems need prompt suspension and rollback controls."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Agentic systems that plan, initiate actions, or interact with other systems can propagate errors before a human has an opportunity to intervene, which the commenter views as warranting a higher standard than non-agentic functions.",
+      "requested_fda_action": "Apply a higher evaluation standard to GenAI-enabled devices that plan, initiate actions, or interact with other systems, reflecting the reduced opportunity for timely human intervention.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment focuses on systems acting autonomously such that errors propagate before a person can intervene, raising the question of how much authority may be delegated to the device."
+      },
+      "public_summary": "The commenter agrees that agentic GenAI functions warrant a higher evaluation standard than non-agentic ones, because systems that plan, initiate actions, or interact with other systems can propagate errors before a human can intervene.",
+      "summary_cut": false,
+      "source_passage": "agentic systems that plan, initiate actions, or interact with other systems require a higher standard because errors can propagate before a person can intervene."
+    }
+  ]
+}

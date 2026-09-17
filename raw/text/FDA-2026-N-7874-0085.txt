@@ -1,0 +1,214 @@
+Please see the attached comment from Princeton Medical Systems, steward of the Verified Imaging Dataset Standard (VIDS), addressing documentation of datasets used in benchmarking and evaluation of GenAI-enabled medical devices (responses to Questions 9, 10, 12, 13, 16, 19, and 22 and benchmarking element R.2).
+
+[Attachment: Comment from Princeton Medical Systems]
+Comment on: Considerations for the Regulation of Generative AI-Enabled Medical Devices:
+Discussion Paper and Request for Feedback
+Docket No. FDA-2026-N-7874
+Submitted by: Princeton Medical Systems, steward of the Verified Imaging Dataset Standard
+(VIDS)
+Date: September 10, 2026
+1. Interest of the commenter and scope of this comment
+Princeton Medical Systems (PMS) is the steward organization of the Verified Imaging Dataset
+Standard (VIDS), an open standard for the structure and documentation of medical imaging datasets
+used in AI development. The specification is published under CC BY 4.0, the reference tooling under
+Apache 2.0, and the standard is maintained through a public repository and governance process.
+This comment is deliberately narrow. It addresses one layer of the framework described in the
+discussion paper: the documentation of the datasets on which benchmarking and clinical confirmation
+evidence depend. It responds primarily to Question 10, with supporting responses to Questions 9, 16,
+19, and 22, and brief observations relevant to benchmarking element R.2 and Questions 12 and 13,
+together with a single observation on the voluntary Foundation Model Device Master File (MAF)
+concept discussed in Section VII.A. It takes no position on the two-axis risk framework, clinical
+confirmation study design, or any other question in the paper.
+One limitation should be stated at the outset, because it defines both what this comment argues and
+what it does not. VIDS verifies that documentation is present and structured; it does not certify a
+dataset. Nothing in this comment should be read as suggesting that dataset documentation, standardized
+or otherwise, establishes benchmark validity, rules out contamination, demonstrates representativeness,
+or supports any conclusion about the safety or effectiveness of a device. Documentation makes those
+questions inspectable. It does not answer them.
+2. Central observation: device-performance evaluation and dataset documentation
+are separate functions, and the framework benefits from treating them separately
+The competency-based approach described in Section V relies on evaluation assets at many stages:
+benchmarking assets in Section V.B, retrospective patient inputs and reference standards in Section
+V.C, re-benchmarking baselines in Section VI, and the sequestered third-party datasets contemplated in
+Section V.D.2. Many of the approaches described in Sections V and VI depend on defined datasets,
+recorded patient inputs, case collections, or benchmark assets.
+Wherever an evaluation relies on such an asset, two distinct questions arise:
+ 1. How well does the device perform? This is the question the benchmarking elements (S.1
+through A.1), the clinical confirmation approaches, and the comparator discussion address.
+2. What exactly was the asset on which that performance was measured, and is that answerable by
+a reviewer, an independent adjudicator, or the same sponsor at a later reassessment?
+
+The second question is not a performance question. It is a documentation question, and the
+documentation supporting it can be standardized and machine-checked for presence and structure
+regardless of how CDRH ultimately resolves the first. PMS respectfully suggests that the framework
+will be easier to operate, for sponsors, for review teams, and for any independent third parties, if the
+two questions are kept explicitly separate: performance evaluation methods can then evolve without
+destabilizing the documentation layer, and the documentation layer can be checked mechanically
+without anyone mistaking that check for a judgment about device safety or effectiveness.
+3. Response to Question 10: benchmark construct validity and the documentation of
+the underlying dataset
+Question 10 asks how a sponsor should establish that performance on a given benchmark predicts safe
+and effective real-world behavior, and what evidence should support the construct validity of a
+benchmark used to gate device evaluation, given concerns about contamination, saturation, and limited
+real-world representativeness.
+PMS does not propose an answer to the construct-validity question itself. Our observation is narrower:
+assessing and reproducing claims about contamination, representativeness, and construct validity
+becomes substantially more difficult when the provenance, composition, annotation methods,
+transformations, and version of the underlying dataset are absent or inconsistently documented.
+Whatever construct-validity evidence CDRH ultimately considers appropriate, a reviewer examining it
+will need to be able to determine, from the dataset's own documentation rather than from
+correspondence with the sponsor:
+  where the data came from and how it was acquired;
+ what population the dataset represents, at least at the level of a subject registry;
+ how reference annotations were produced: by whom, with what qualifications, using what tools
+and process, under what quality control;
+ what conversions or other processing steps were applied between acquisition and the tested form;
+ how any train/validation/test partitions were constructed, including whether partitioning was at the
+subject level and whether it is reproducible;
+ what quality documentation exists, including inter-annotator agreement and class distribution
+where applicable; and
+ which exact version of the dataset was used, so that "the benchmark" names one identifiable
+artifact rather than a family of similar ones.
+None of these items establishes that a benchmark is valid. Each provides important information for
+examining whether it is. A contamination analysis benefits from unambiguous dataset identity, version,
+provenance, and release history; those records do not by themselves establish whether a model was
+exposed to the benchmark. A representativeness argument benefits from knowing composition; an
+independence argument about sponsor-developed benchmarks (a concern Question 10 raises directly)
+benefits from knowing who produced the annotations and under what process.
+
+This documentation cannot be assumed to exist. In an analysis of four public imaging datasets reported
+in arXiv:2604.17525, the datasets satisfied only 20 to 39 percent of 22 evaluated dimensions, with
+provenance and quality documentation identified as the largest systematic gaps. In the interest of
+transparency: that analysis is a preprint authored by two founders of the submitting organization and
+has not undergone peer review. Because the datasets examined are public and the evaluated dimensions
+are published, the finding can be checked independently rather than taken on our characterization.
+The practical recommendation for Question 10 is therefore procedural rather than substantive: whatever
+construct-validity evidence CDRH considers appropriate, CDRH could consider having such evidence
+accompanied by structured, machine-checkable documentation of the benchmark dataset itself, so that
+the construct-validity argument is examinable against a described artifact rather than an implicit one.
+4. Response to Question 9: externally developed standards
+Question 9 asks whether there are externally developed standards that could be leveraged in
+benchmarking.
+PMS suggests that CDRH consider, as a concept, a standardized, machine-checkable minimum
+documentation layer for datasets used in benchmarking and clinical confirmation. Such a layer would
+specify how a dataset describes its provenance, composition, annotation process, processing steps,
+partitions, quality documentation, and version, in structured fields that a program can check for
+presence and well-formedness. It would remain entirely separate from any judgment about dataset
+quality, representativeness, or device performance; those judgments stay with the evaluation methods
+and reviewers the rest of the paper describes.
+VIDS provides one existing open implementation of this concept for medical imaging datasets. The
+specification requires a Provenance object on every annotation sidecar, including an annotator identifier
+or name and, within the annotation-process record, at least a date or tool; every dataset carries a
+required subject registry and a required dataset version; partition files document subject-level
+train/validation/test membership and can record the split strategy, ratio, and random seed;
+inter-annotator agreement files are required under the specification's Full profile; and a recommended
+file documents class distribution. An open-source validator mechanically checks a defined subset of
+these structural requirements, reporting pass, fail, warn, or skip per rule; other documentation elements
+are defined by the specification without all being validator-enforced. The validator checks presence and
+structure only; it makes no judgment about whether the documented quality is good. That separation is
+deliberate and preserves the distinction between machine checks and substantive evaluation: a machine
+can verify that a dataset says who annotated it; only qualified humans, or the evaluation methods this
+paper describes, can judge whether the annotation is any good.
+A publicly archived reference dataset prepared to the specification's Full profile is available under a
+persistent identifier (reference 5), so that the implementation can be examined directly rather than taken
+on description.
+We offer VIDS here as evidence that the concept is technically implementable, not as a candidate for
+adoption. Whether through VIDS, an evolution of it, an analogous approach for non-imaging data, or
+another consensus-based standard, the concept is what we recommend the Agency consider.
+
+5. Response to Question 16: independent third parties and evaluation-dataset
+infrastructure
+Section V.D.2 and Question 16 consider potential roles for independent third parties, including
+maintaining sequestered evaluation datasets and benchmarks, serving as independent expert
+adjudicators, and developing standards that might be recognized by FDA to promote consistency across
+testing and review.
+A standardized documentation layer would be particularly useful for the sequestered-dataset role.
+Where sponsor access to the underlying evaluation data is restricted, the parties relying on the asset
+(CDRH, the third party, and the sponsor accepting results generated on it) would benefit from a shared,
+structured way to describe what the dataset is, how its reference annotations were produced, and which
+version was used for which evaluation, without disclosing the content itself. Structured documentation
+with machine-checkable presence rules allows a third party to describe such an asset at a useful level of
+detail while keeping the data itself withheld, and allows consistency of description across multiple third
+parties. The same applies to the standards-development role: dataset documentation is a natural early
+candidate for consistency, because it is common infrastructure across many of the evaluation methods
+the paper discusses and is separable from the harder, still-open questions about how device
+performance itself should be measured.
+6. Response to Questions 22 and 19: dataset identity and versioning in
+re-benchmarking
+Question 22 envisions the premarket competency assessment serving as a baseline against which
+post-deployment modifications are re-evaluated, and Question 19 asks about periodic re-benchmarking
+generally.
+Both depend on a comparison of the form: device version A produced result X on the benchmark;
+device version B later produced result Y on "the same benchmark." The comparison depends on clearly
+identifying what "the same benchmark" means: same release, subjects, reference annotations,
+processing, partitions, and exclusions. Datasets change for legitimate reasons (corrected labels, added
+subjects, revised exclusions), and without explicit version identity those changes silently confound the
+device comparison; a shift from X to Y may reflect the modification under review, a change in the
+evaluation asset, or both.
+Structured versioning is the documentation layer's contribution here. A documentation layer can
+support this through a required dataset version identifier, explicit subject-level partition membership,
+and, where available, a change log and persistent identifier. With those in place, a re-benchmarking
+result can state precisely which evaluation artifact it used, and a reviewer can compare the recorded
+identifiers and determine whether the baseline and follow-up records identify the same asset or a
+documented successor. This seems particularly relevant to the change categories Question 22 asks
+about: the more a change-control framework relies on comparison against a premarket baseline, the
+more the identity of the baseline asset itself needs to be a checkable fact rather than an assumption.
+7. Brief observations: subgroup evaluation and data origin
+
+Element R.2 (subgroup performance). Subgroup-performance analysis depends in part on
+sufficiently documented dataset composition: a reviewer cannot examine whether an evaluation
+covered a clinically relevant population without documentation of what populations the evaluation data
+contained. A subject-level registry that can include structured fields such as age and sex supports part
+of this need. We note that R.2 as described is considerably broader (dialects, literacy levels, interaction
+patterns), and we do not suggest that dataset-level documentation addresses those dimensions; it
+addresses the composition portion.
+Questions 12 and 13 (synthetic data). Where synthetically generated inputs supplement real patient
+data, the analyses contemplated in Questions 12 and 13 benefit from explicit documentation of data
+origin. CDRH could consider an origin declaration at the dataset and, where appropriate, cohort or item
+level, distinguishing acquired, synthetic, simulated, phantom-derived, and mixed sources, with the
+generation method recorded for synthetic content. This is a concept-level recommendation; the current
+VIDS specification does not define such a field.
+Finally, we note that the training-data provenance content contemplated for voluntary Foundation
+Model MAFs in Section VII.A raises an analogous provenance-documentation question at the model
+level, and may benefit from similarly structured treatment.
+8. Conclusion
+The discussion paper's questions about benchmarking, third-party evaluation assets, and postmarket
+re-benchmarking point to a recurring need: the datasets underlying evaluation evidence must be
+identifiable and sufficiently documented for that evidence to be examined and repeated. Part of the
+answer sits below the evaluation methods themselves, in the documentation of the datasets those
+methods run on. That layer can be standardized and machine-checked for presence and structure today,
+independently of how the harder device-performance questions are resolved, and keeping it explicitly
+separate from performance evaluation protects both: documentation checks never masquerade as safety
+judgments, and evaluation methods can evolve on top of a stable documentation layer. For ease of
+reference, our recommendations reduce to three. First, whatever construct-validity evidence CDRH
+considers appropriate could be accompanied by structured, machine-checkable documentation of the
+benchmark dataset itself (Question 10). Second, CDRH could consider, as a concept, a standardized,
+machine-checkable minimum documentation layer for datasets used in benchmarking and clinical
+confirmation, with dataset identity and versioning supporting re-benchmarking comparisons (Questions
+9, 16, 19, and 22). Third, CDRH could consider an origin declaration for evaluation datasets, at the
+dataset and, where appropriate, cohort or item level, distinguishing acquired, synthetic, simulated,
+phantom-derived, and mixed sources (Questions 12 and 13).
+PMS appreciates the Agency's openness in seeking early input and would welcome the opportunity to
+provide further technical detail on any point above.
+
+Respectfully submitted,
+John Xavier
+U.S. Partnerships & Regulatory Liaison
+Princeton Medical Systems
+standards@vidsstandard.org
+References
+ 1. FDA CDRH, "Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper
+ and Request for Feedback," August 2026, Docket No. FDA-2026-N-7874. https://www.fda.gov/medical-devi
+ces/digital-health-center-excellence/considerations-regulation-generative-ai-enabled-medical-devices-discuss
+ion-paper-and-request
+2. VIDS Specification v1.0.1, Princeton Medical Systems, 2026-07-31. Canonical URL:
+ https://vidsstandard.org/specification/. Repository snapshot reviewed for this comment:
+https://github.com/vids-standard/vids-standard/tree/2b1cd54844d9cb7a9afaa357d046e49e0a7af05a.
+Specification licensed CC BY 4.0.
+3. vids-validator v1.2.1, Princeton Medical Systems. https://pypi.org/project/vids-validator/. Licensed Apache
+ 2.0.
+4. Muthu JS, Shalen J. "VIDS: A Verified Imaging Dataset Standard for Medical AI." arXiv:2604.17525
+ (preprint), 2026. https://arxiv.org/abs/2604.17525
+5. LIDC-Hybrid-100, a 100-subject CT reference dataset structured to the VIDS specification, Princeton Medical
+ Systems, 2026. Zenodo. https://doi.org/10.5281/zenodo.19582717
+Contact: standards@vidsstandard.org | vidsstandard.org

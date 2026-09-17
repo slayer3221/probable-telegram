@@ -1,0 +1,204 @@
+{
+  "comment_id": "FDA-2026-N-7874-0097",
+  "input_hash": "fd6f0b1e60318108",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-17T13:20:17Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter argues that aggregate accuracy metrics can mask uncommon but catastrophic failures, such as missing a time-sensitive diagnosis or telling a patient emergency evaluation is unnecessary, which could cause permanent disability or death.",
+      "requested_fda_action": "Ensure risk assessment weighs the severity of errors, not only their frequency, so that rare but high-consequence failure modes are accounted for rather than averaged away in overall performance measures.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Argues that overall accuracy is an insufficient basis for establishing safety, since a system may perform well on average yet produce rare catastrophic errors. Asks that risk assessment weigh error severity, including missed time-sensitive diagnoses, alongside error frequency.",
+      "summary_cut": false,
+      "source_passage": "Overall accuracy is not sufficient to establish safety. A medical AI system could perform correctly in most cases while still making uncommon but catastrophic errors. Missing a time-sensitive diagnosis or incorrectly advising a patient that emergency evaluation is unnecessary can result in permanent disability or death. Risk assessment must consider not only how often AI is wrong, but the severity of its errors."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q1",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "risk_classification",
+      "stakeholder_concern": "The commenter is concerned about GenAI systems that independently diagnose, select or manage treatment, prescribe medications, determine patient disposition, or perform other consequential clinical functions without meaningful physician oversight.",
+      "requested_fda_action": "Establish a clear regulatory distinction between AI that augments a licensed physician and AI that substitutes for physician judgment, and treat functions performed without meaningful physician oversight accordingly.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment centers on AI assuming consequential clinical decisions—diagnosis, prescribing, disposition—that would otherwise require licensed physician judgment, absent meaningful oversight."
+      },
+      "public_summary": "Commenter accepts the general framework but asks FDA to draw an explicit regulatory line between AI that augments a licensed physician and AI that replaces physician judgment, citing concern about systems that diagnose, prescribe, or determine disposition without meaningful physician oversight.",
+      "summary_cut": false,
+      "source_passage": "However, there must be a clear regulatory distinction between AI that augments a licensed physician and AI that replaces physician judgment.<br/><br/>I am particularly concerned about AI systems that independently diagnose patients, determine treatment, prescribe or manage medications, determine disposition, or perform other consequential clinical functions without meaningful physician oversight."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q10",
+        "q11"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "clinical_validation",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter contends that benchmark examinations and retrospective datasets cannot reproduce the complexity of actual clinical practice, because real patients do not present as complete, tidy clinical vignettes.",
+      "requested_fda_action": "Require that GenAI-enabled devices be tested under realistic clinical conditions, explicitly including atypical presentations, incomplete or contradictory histories, medically complex and multi-morbid patients, and vulnerable populations, rather than relying on benchmarks or retrospective data alone.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter argues benchmark exams and retrospective datasets cannot reproduce real clinical medicine, since patients do not present as complete vignettes, and urges FDA to require testing under realistic conditions including atypical presentations, incomplete or contradictory histories, medically complex patients, and vulnerable populations.",
+      "summary_cut": false,
+      "source_passage": "AI should be tested under realistic clinical conditions, including atypical presentations, incomplete or contradictory histories, medically complex patients, multiple illnesses, and vulnerable populations. Benchmark examinations and retrospective datasets cannot fully reproduce clinical medicine. Patients do not arrive as complete clinical vignettes."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q11",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "The commenter is concerned that agentic systems able to autonomously plan and execute clinical actions—initiating or modifying treatment, prescribing, or deciding whether emergency evaluation is needed—pose high-consequence risks as autonomy increases.",
+      "requested_fda_action": "Scale regulatory safeguards to the degree of autonomy, require rigorous prospective clinical validation for agentic systems making high-consequence decisions, and retain a requirement for meaningful review by an appropriately licensed clinician for high-risk decisions.",
+      "confidence": "high",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment focuses on how much decision-making authority may be delegated to autonomous agents and insists that licensed clinician review remain mandatory for high-risk actions."
+      },
+      "public_summary": "Commenter urges safeguards that scale with autonomy: agentic systems that initiate or modify treatment, prescribe, or triage emergencies should require rigorous prospective clinical validation—rather than FDA's more flexible confirmation options—and mandatory review by an appropriately licensed clinician for high-risk decisions.",
+      "summary_cut": false,
+      "source_passage": "I am especially concerned about agentic AI capable of autonomously planning and executing clinical actions. As autonomy increases, regulatory safeguards should increase accordingly. Systems capable of initiating or modifying treatment, prescribing medications, determining whether emergency evaluation is necessary, or making other high-consequence decisions should undergo rigorous prospective clinical validation. For high-risk decisions, meaningful review by an appropriately licensed clinician should remain required."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": null,
+      "stakeholder_concern": "The commenter views post-deployment surveillance as essential for high-risk GenAI systems, citing risks of performance deterioration, unexpected behavior, significant errors, and adverse patient outcomes. It also treats AI-associated adverse events as requiring reporting and investigation.",
+      "requested_fda_action": "Require ongoing postmarket monitoring of high-risk GenAI systems for performance degradation, unexpected behavior, and errors, and establish reportability and investigation of significant AI-associated adverse events.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter endorses postmarket surveillance for high-risk GenAI systems, urging monitoring for performance deterioration, unexpected behavior, significant errors, and adverse patient outcomes, and stating that significant AI-associated adverse events should be reportable and investigated. No specific monitoring cadence or method is proposed.",
+      "summary_cut": false,
+      "source_passage": "Post-deployment surveillance is essential. High-risk systems should be monitored for performance deterioration, unexpected behavior, significant errors, and adverse patient outcomes. Significant AI-associated adverse events should be reportable and investigated."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "The commenter is concerned that physicians may be held responsible for failures of AI systems they did not select or deploy, and that institutional or financial pressure could undermine clinicians' ability to override AI recommendations.",
+      "requested_fda_action": "Establish clear allocation of accountability so that AI developers and healthcare institutions bear responsibility for harms attributable to their products and implementation decisions, and ensure clinicians retain genuine authority to override AI outputs without institutional or financial pressure.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "human_ai_system_performance",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment argues responsibility for AI-related harms should be allocated among developers, institutions, and clinicians rather than defaulting to the physician.",
+        "human_ai_system_performance": "It raises the conditions under which a clinician can meaningfully act as a safeguard on AI output, which depends on override authority in practice.",
+        "delegated_authority": "It addresses whether authority to reject AI recommendations effectively shifts to institutions that mandate deployment, constraining clinician discretion."
+      },
+      "public_summary": "Comment addresses accountability in AI oversight, arguing physicians should not automatically bear responsibility for failures of systems chosen or mandated by healthcare organizations.",
+      "summary_cut": true,
+      "source_passage": "Accountability must also be clearly established. Physicians should not automatically bear responsibility for failures of AI systems selected, purchased, mandated, or deployed by healthcare organizations. AI developers and healthcare institutions should bear appropriate responsibility for harms attributable to their products and implementation. Physicians must retain genuine authority to override AI recommendations without institutional or financial pressure."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q18",
+        "q26"
+      ],
+      "position": "oppose",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter is concerned that financial incentives for healthcare organizations, insurers, and technology companies to reduce physician staffing may drive deployment of autonomous medical AI beyond what safety evidence supports. Cost savings or performing correctly most of the time should not be treated as evidence of clinical safety.",
+      "requested_fda_action": "The commenter asks FDA to recognize that economic incentives may push autonomous AI deployment beyond available safety evidence, and to keep patient safety rather than cost savings or workforce reduction as the governing priority when evaluating autonomous AI as a substitute for physician care.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment centers on autonomous AI taking over clinical work previously performed by physicians and warns that such delegation should not be justified by cost or typical-case accuracy.",
+        "operational_harm": "It identifies harm arising from staffing and deployment decisions driven by financial incentives rather than from model output error alone."
+      },
+      "public_summary": "Commenter warns that financial incentives to reduce physician staffing could drive autonomous AI deployment beyond supporting safety evidence, and objects to treating lower cost or mostly-correct performance as proof of safety. Asks FDA to prioritize patient safety over cost savings or workforce reduction.",
+      "summary_cut": false,
+      "source_passage": "I am also deeply concerned about economic incentives surrounding autonomous medical AI. Healthcare organizations, insurers, and technology companies may obtain substantial financial benefits if AI allows clinical work to be performed with fewer physicians. Efficiency is a legitimate goal, but reduced labor costs must never be mistaken for evidence that replacing appropriate physician staffing is clinically safe.<br/><br/>AI should not be considered an adequate substitute for physician care simply because it is less expensive or performs correctly most of the time. Regulators should recognize that financial incentives may encourage deployment of autonomous AI beyond what safety evidence supports. Patient safety&mdash;not cost savings or workforce reduction&mdash;must remain the priority."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q26",
+        "q3"
+      ],
+      "position": "unclear",
+      "primary_issue": "human_factors",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter is concerned that patients may not know when AI has substantially contributed to their diagnosis or treatment, and whether a licensed clinician actually reviewed consequential AI-generated recommendations or decisions.",
+      "requested_fda_action": "Ensure transparency to patients when AI substantially participates in their diagnosis or treatment, including disclosure of whether an appropriately licensed clinician reviewed consequential recommendations or decisions.",
+      "confidence": "low",
+      "gap_tags": [
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The passage centers on whether consequential AI-influenced recommendations or decisions received review by an appropriately licensed clinician, implicating how much decision authority is effectively delegated to the device."
+      },
+      "public_summary": "Commenter states patients should be told when AI substantially participates in their diagnosis or treatment, and whether an appropriately licensed clinician reviewed consequential recommendations or decisions. The passage does not indicate a position on FDA's specific proposals or risk framework.",
+      "summary_cut": false,
+      "source_passage": "Patients deserve transparency when AI substantially participates in their diagnosis or treatment and should know whether an appropriately licensed clinician reviewed consequential recommendations or decisions."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q11",
+        "q19",
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "accountability_liability",
+      "stakeholder_concern": "The commenter is concerned that GenAI-enabled devices could displace trained clinicians for consequential clinical decisions before adequate real-world evidence exists, and that responsibility for AI-associated harm is unclear. There is also concern about erosion of physicians' independent clinical judgment.",
+      "requested_fda_action": "Require meaningful physician oversight for consequential clinical decisions, rigorous real-world validation and postmarket surveillance, and clear accountability for AI-associated harm, while safeguarding independent clinical judgment and preventing premature substitution of autonomous AI for clinicians.",
+      "confidence": "medium",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "distributed_accountability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment centers on preserving meaningful clinician oversight and independent judgment as part of how the device functions in practice, rather than device-alone performance.",
+        "distributed_accountability": "It asks FDA to establish clear accountability for AI-associated harm, an allocation question not fully framed by the paper's questions.",
+        "delegated_authority": "It warns against premature substitution of autonomous AI for trained medical professionals in consequential decisions."
+      },
+      "public_summary": "Commenter accepts regulatory attention to GenAI devices but asks FDA to go further: mandate meaningful physician oversight for consequential decisions, rigorous real-world validation and postmarket surveillance, clear accountability for AI-related harm, and safeguards against premature substitution of autonomous AI for clinicians.",
+      "summary_cut": false,
+      "source_passage": "I respectfully urge the FDA to preserve meaningful physician oversight for consequential clinical decisions; require rigorous real-world validation and post-market surveillance; establish clear accountability for AI-associated harm; protect physicians&#39; independent clinical judgment; and protect patients from premature substitution of autonomous AI for trained medical professionals."
+    }
+  ]
+}

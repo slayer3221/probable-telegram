@@ -1,0 +1,163 @@
+{
+  "comment_id": "FDA-2026-N-7874-0096",
+  "input_hash": "1896cdd6d43004bd",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-17T13:20:17Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Changes to an underlying third-party foundation model could undermine a device's continued safety, effectiveness, and auditability unless the manufacturer controls and detects version changes.",
+      "requested_fda_action": "Expect manufacturers to combine mechanisms—localized model/version locking, strict quality management system version lifecycle management, and continuous automated drift detection—rather than relying on any single control for third-party model changes.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The position focuses on controlling a third-party foundation model supplier's version changes through locking and lifecycle management within the manufacturer's quality system.",
+        "deployment_assurance_scalability": "It calls for continuous automated drift detection as an ongoing assurance mechanism after deployment, not a one-time premarket evaluation."
+      },
+      "public_summary": "Commenter responds to FDA's question on third-party foundation model changes by recommending combined controls: localized model/version locking, strict quality-system version lifecycle management, and continuous automated drift detection, to preserve ongoing safety, effectiveness, and auditability.",
+      "summary_cut": false,
+      "source_passage": "To ensure continuous safety, effectiveness, and auditability, manufacturers must employ combination strategies involving localized model locking, strict QMS version lifecycle management, and continuous automated drift detection."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Devices relying on third-party hosted foundation models are exposed to unannounced API and model weight changes outside the manufacturer's control, which can alter device behavior without validation.",
+      "requested_fda_action": "Recognize and encourage an architectural mitigation: where clinical utility permits, deploying domain-specific small language models locally on-device or in private, locked environments so model updates occur only through controlled, validated manufacturer release cycles.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The comment addresses dependence on upstream third-party model providers by proposing local model hosting to remove the manufacturer's exposure to unannounced supplier-initiated changes."
+      },
+      "public_summary": "Addressing third-party model changes, this commenter recommends that, where clinical utility permits, manufacturers deploy domain-specific small language models locally or in private, locked environments, so model updates occur only through controlled, validated manufacturer release cycles rather than unannounced third-party API changes.",
+      "summary_cut": false,
+      "source_passage": "Local SLM Architecture: Where clinical utility permits, manufacturers should deploy domain-specific Small Language Models (SLMs) locally on-device or within private, locked environments.<br/><br/>Control of Update Cycles: Local hosting isolates the medical device from unannounced third-party API changes, ensuring that model weight updates occur exclusively through controlled, validated manufacturer release cycles."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q22",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "Because healthcare facilities and clinical sites upgrade software asynchronously, locking model versions locally creates an operational burden of managing multiple active field baselines simultaneously.",
+      "requested_fda_action": "FDA should encourage manufacturers to build strict backward-compatibility testing matrices, automated re-validation suites, and clear deprecation schedules into their Quality Management System so multiple active field versions can be supported transparently and be auditable.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment centers on assuring performance across many asynchronously updated deployment sites running different locked model versions, a lifecycle-management challenge beyond the single-baseline framing of the change-control questions."
+      },
+      "public_summary": "Accepts version-locking and QMS-managed change control but notes that asynchronous site-level software upgrades create multi-version lifecycle burdens. Asks FDA to encourage manufacturers to embed backward-compatibility test matrices, automated re-validation suites, and deprecation schedules into their quality systems for auditable support of multiple field baselines.",
+      "summary_cut": false,
+      "source_passage": "Version Support Matrix: Recognizing that healthcare facilities and clinical sites upgrade software asynchronously, local model locking shifts the operational burden to multi-version lifecycle management.<br/><br/>Quality System Expectations: The FDA should encourage manufacturers to incorporate strict backward-compatibility testing matrices, automated re-validation suites, and clear deprecation schedules directly into their Quality Management System (QMS) to support multiple active field baselines transparently during audits."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q19",
+        "q24"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "foundation_model_dependency",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "Where devices depend on hosted third-party foundation model APIs, upstream behavior changes initiated by the model developer could alter clinical outputs before the manufacturer becomes aware of them.",
+      "requested_fda_action": "Expect manufacturers relying on hosted third-party models to implement proactive, automated drift detection: fixed 'golden' synthetic clinical benchmark suites run on a regular cadence in CI/CD pipelines, embeddings-based semantic drift tracking of production inputs/outputs, and real-time telemetry on guardrail and validator trigger rates.",
+      "confidence": "medium",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The passage treats unannounced upstream changes by a hosted foundation model supplier as a risk the device manufacturer must actively detect rather than one controlled at the source.",
+        "deployment_assurance_scalability": "It proposes continuous automated pipelines, embedding-based drift metrics, and guardrail telemetry as ongoing production assurance mechanisms beyond periodic re-benchmarking."
+      },
+      "public_summary": "Commenter accepts continuous postmarket monitoring for devices built on hosted third-party foundation model APIs, but specifies detection mechanisms FDA does not detail: scheduled automated \"golden\" synthetic benchmark suites in CI/CD, embeddings-based semantic drift tracking, and real-time guardrail and validator telemetry flagging upstream behavior shifts.",
+      "summary_cut": false,
+      "source_passage": "When reliance on hosted third-party foundation model APIs is unavoidable, manufacturers must establish proactive detection mechanisms to catch upstream model behavior shifts before they impact clinical care:<br/><br/>Golden Synthetic Benchmark Suites: Automated CI/CD pipelines running fixed, representative clinical benchmark datasets (prompts/inputs paired with expected standard outputs) on a regular cadence (e.g., daily/weekly) to flag output drift beyond clinical tolerance thresholds.<br/><br/>Semantic Drift Analysis: Embeddings-based tracking of production inputs and outputs to measure statistical similarity over time, catching subtle reasoning shifts or vocabulary changes.<br/><br/>Guardrail &amp; Validator Telemetry: Real-time monitoring of post-processing guardrail trigger rates and rule-based validation failures to signal unexpected changes in model behavior."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q22",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter is concerned that current change-control expectations do not clearly address deployments in which a model version is fixed locally, and seeks regulatory clarity on how such configurations are treated.",
+      "requested_fda_action": "FDA should issue clear regulatory frameworks that expressly recognize localized version locking, such as on-edge small language models, as an acceptable risk-mitigation strategy for change control in PMA or 510(k) modification pathways.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter seeks clearer FDA change-control guidance and asks that localized version locking, such as on-edge small language models, be expressly recognized as an acceptable risk-mitigation strategy for modifications under PMA or 510(k) pathways.",
+      "summary_cut": false,
+      "source_passage": "The FDA should provide clear regulatory frameworks that:<br/><br/>Recognize localized version locking (e.g., on-edge SLMs) as an acceptable risk-mitigation strategy for change control under Premarket Approval (PMA) or 510(k) modifications."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q19",
+        "q24"
+      ],
+      "position": "unclear",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "foundation_model_dependency",
+      "stakeholder_concern": "The commenter is concerned that there are no defined validation standards for continuous, automated postmarket benchmarking when a device relies on hosted third-party model APIs whose behavior may change outside the manufacturer's control.",
+      "requested_fda_action": "Define what constitutes acceptable validation standards for continuous automated benchmarking in the context of hosted third-party API dependencies.",
+      "confidence": "low",
+      "gap_tags": [
+        "ai_supplier_quality",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "ai_supplier_quality": "The passage centers on devices depending on externally hosted third-party model APIs, raising the question of how supplier-side model behavior is validated.",
+        "deployment_assurance_scalability": "It asks for standards governing continuous, automated benchmarking as an ongoing assurance mechanism rather than a one-time premarket test."
+      },
+      "public_summary": "Brief comment requesting that FDA define acceptable validation standards for continuous automated benchmarking where devices rely on hosted third-party model APIs. The passage seeks clarification on this point and does not state support for or opposition to FDA's proposed postmarket approaches.",
+      "summary_cut": false,
+      "source_passage": "Define acceptable validation standards for continuous automated benchmarking when hosted third-party APIs are utilized."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q22"
+      ],
+      "position": "unclear",
+      "primary_issue": "change_control",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "The passage points to the practical situation in which multiple versions of a device are simultaneously active across clinical sites that are not uniformly updated, and implies current documentation expectations for such fragmented, multi-version deployments are not clearly defined.",
+      "requested_fda_action": "Establish clear documentation expectations for manufacturers supporting multiple concurrently deployed versions of a GenAI-enabled device across fragmented clinical sites.",
+      "confidence": "low",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment raises the problem of maintaining and documenting assurance when several versions of a device are simultaneously live across many non-uniform clinical sites, which FDA's change-control question does not directly address."
+      },
+      "public_summary": "Comment asks FDA to define clear documentation expectations for manufacturers supporting multiple concurrently deployed device versions across fragmented clinical sites. The passage states no explicit view on FDA's proposed approach to scaling re-benchmarking for post-deployment modifications.",
+      "summary_cut": false,
+      "source_passage": "Establish clear documentation expectations for supporting multi-version active deployments across fragmented clinical sites."
+    }
+  ]
+}

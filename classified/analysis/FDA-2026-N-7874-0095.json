@@ -1,0 +1,267 @@
+{
+  "comment_id": "FDA-2026-N-7874-0095",
+  "input_hash": "136713c62f74b0a1",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-17T13:20:17Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter endorses the general direction of the competency-based premarket approach (Section V) and the postmarket framework (Section VI), but considers both incomplete without an additional requirement, which is not specified in this passage.",
+      "requested_fda_action": "Add one unspecified requirement to both the competency-based premarket approach and the postmarket framework.",
+      "confidence": "low",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter supports the competency-based premarket approach and the postmarket framework as described, but asks CDRH to add one additional requirement to both. The specific requirement is not identified in this passage.",
+      "summary_cut": false,
+      "source_passage": "I support the competency-based approach in Section V and the postmarket framework in Section VI. This comment asks CDRH to add one requirement to both."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q12"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Generative devices can produce different outputs when run repeatedly on identical inputs, so reported performance differences may fall within the device's own run-to-run variation and be mistaken for real findings such as equivalence, stable performance, or absence of disparity.",
+      "requested_fda_action": "Require sponsors to measure and report a device's repeat-run variability (a \"reproducibility floor\") alongside any performance estimate, and to treat differences that do not exceed that floor as uninformative for the endpoint rather than as positive evidence.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter asks FDA to require that performance estimates for generative devices be reported with the device's own run-to-run variability on identical inputs, and that differences within that \"reproducibility floor\" be treated as uninformative rather than as evidence of equivalence, stability, or no disparity.",
+      "summary_cut": false,
+      "source_passage": "A sponsor should report, alongside any performance estimate for a generative device, the variation\nthat same device produces when run repeatedly on identical inputs. Call it the reproducibility floor.\nWhere a reported difference does not exceed that floor, the evaluation should be treated as uninformative\nfor that endpoint, rather than as evidence of equivalence, of stable performance, or of no disparity."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q10",
+        "q12",
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter argues that every evaluation described in the paper—benchmarking against a threshold, clinical confirmation with versus without the device, postmarket comparison to a baseline, and subgroup comparisons—reports a difference, but a difference cannot be interpreted without knowing how much the same system varies when nothing changes. Unlike deterministic software, where that intrinsic variability is zero, for generative models it is non-zero and, in the commenter's measurements, exceeded the differences the evaluations were designed to detect.",
+      "requested_fda_action": "Require that the intrinsic run-to-run variability of a generative model be quantified and reported as a reference point before any benchmarking, clinical confirmation, postmarket, or subgroup difference is interpreted, so measured differences can be distinguished from the system's own movement.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts the paper's comparison-based evaluation approach but argues each method reports a difference that cannot be interpreted without measuring how much the same generative model varies when nothing changes—variability the commenter reports exceeded the differences the evaluations were designed to detect.",
+      "summary_cut": false,
+      "source_passage": "The reason is simple. Every evaluation in the discussion paper reports a difference. Benchmarking\ncompares a device against a threshold. Clinical confirmation compares outcomes with and without the\ndevice. Postmarket monitoring compares today against a baseline. Subgroup analysis compares one\npopulation against another.\nA difference cannot be interpreted without knowing how much the same system moves when nothing\nchanges. For deterministic software that quantity is zero, which is why it has never needed stating. For\ngenerative models it is not zero, and in the measurements below it was larger than the differences the\nevaluation was built to detect."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q12"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "Performance comparisons for generative devices are made against a zero-difference null, which ignores the device's own run-to-run variability on identical inputs; pooling across endpoints can mask wide differences in stability (cited range 2.2 to 17.9 percent versus a pooled 8.7 percent), and the least stable endpoints are not predictable in advance.",
+      "requested_fda_action": "Require sponsors to measure and report a reproducibility floor for each graded endpoint on identical inputs under the marketed configuration, and to benchmark performance differences against that floor rather than against zero, treating confidence intervals that overlap the floor as insufficient resolution. Require per-endpoint rather than pooled reporting.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Argues statistical performance claims should be assessed against a device's own measured output variability, not a zero-difference null. Asks FDA to require a per-endpoint reproducibility floor measured on identical inputs under the marketed configuration, treat overlapping confidence intervals as inadequate resolution, and prohibit pooled reporting.",
+      "summary_cut": false,
+      "source_passage": "Statistical meaning requires a null. For a generative device the right null is not zero difference but the\ndifference the device produces against itself.\nSponsors should report a reproducibility floor for each graded endpoint, measured on identical inputs\nunder the configuration proposed for marketing, and compare performance differences against that floor\nrather than against zero. Where a confidence interval overlaps the floor, the study lacked the resolution to\nseparate the device from its own variability.\nReport it per endpoint, not pooled. In the measurements above, a pooled 8.7 percent would have hidden a\nrange from 2.2 to 17.9 percent, and the least stable endpoints were not the ones a reviewer would have\nguessed."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q12"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter addresses the cost of repeatedly running an evaluation set in order to measure a performance 'floor,' acknowledging the added expense is real but characterizing it as bounded and incurred within evaluation work that is already being conducted.",
+      "requested_fda_action": "The passage implies that repeated runs of the evaluation set to establish a measured floor should be expected as part of performance measurement, on the basis that the associated cost is limited and absorbed by existing evaluation activity; the fragment does not state a broader request.",
+      "confidence": "low",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment explicitly weighs the incremental cost of repeated evaluation runs against the value of the measurement, arguing the burden is bounded rather than prohibitive."
+      },
+      "public_summary": "In a brief passage on performance measurement, the commenter notes that repeatedly running an evaluation set to measure a performance floor adds real cost, but characterizes that cost as bounded and absorbed within evaluation work already underway.",
+      "summary_cut": false,
+      "source_passage": "This adds cost, and the cost is real: measuring a floor means running the evaluation set repeatedly. It is\nbounded, and it falls where the evaluation is already being built."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q10",
+        "q12"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "Because a generative system's benchmark score is a single draw from a stochastic process, score differences smaller than the benchmark's own reproducibility floor do not actually distinguish devices or demonstrate that a threshold has been exceeded.",
+      "requested_fda_action": "Require that any benchmark used to gate a regulatory decision carry a documented reproducibility floor, measured consistently each time, so reviewers can see the smallest difference the instrument can actually resolve.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts benchmarks as regulatory gating evidence but argues scores are stochastic draws; asks FDA to require a documented, consistently measured reproducibility floor for each benchmark so reviewers can judge whether observed differences or threshold exceedances are real.",
+      "summary_cut": false,
+      "source_passage": "A benchmark score for a generative system is one draw from a stochastic process. Two devices whose\nscores differ by less than the benchmark's own reproducibility floor have not been distinguished by it, and\na device exceeding a threshold by less than the floor has not been shown to exceed it.\nA benchmark used to gate a regulatory decision should therefore carry a documented floor, measured the\nsame way each time, so a reviewer can see what difference the instrument can actually resolve."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q10"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "The commenter argues FDA's saturation concern is framed too narrowly around ceiling effects; a benchmark also loses discriminative value when the difference in scores between competing devices falls below the benchmark's own measurement noise, a condition the commenter says occurs earlier and is quantifiable.",
+      "requested_fda_action": "Broaden the treatment of benchmark saturation so that a benchmark is judged unusable when inter-device score spread drops below its measurement noise, and treat that as a measurable criterion.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Agrees with FDA's concern about benchmark saturation but argues the concept should be defined more broadly: a benchmark loses usefulness once differences between competing devices fall below its own measurement noise, a condition the commenter says arrives earlier and is measurable.",
+      "summary_cut": false,
+      "source_passage": "This also sharpens the saturation concern in the same question. A benchmark stops being useful not only\nwhen scores crowd the ceiling, but when the spread between competing devices drops below its own noise.\nThe second condition arrives first and is measurable."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q12",
+        "q13"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "A null finding of no subgroup performance difference can be misread as evidence of fairness when it only shows any difference was below the detection limit of an underpowered analysis; the subgroups most likely to be harmed have the smallest samples and least statistical power.",
+      "requested_fda_action": "Require sponsors reporting no subgroup difference to state the minimum detectable difference (detectable effect size) for that analysis, so that null subgroup results are interpretable.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter endorses safeguards against missed subgroup performance gaps but says null results are uninformative without stated statistical power. Asks FDA to require sponsors reporting no demographic difference to disclose the minimum detectable difference, noting underpowered audits cannot demonstrate fairness.",
+      "summary_cut": false,
+      "source_passage": "CDRH asks how to keep an evaluation from missing performance gaps in underrepresented subgroups.\nOne safeguard is to require sponsors to state what size of gap their evaluation could have detected.\nIn the measurements above, no demographic contrast was distinguishable from the floor. That is easy to\nmisread as evidence the agent treated groups alike. It is not. It establishes only that any difference present\nwas smaller than the instrument could resolve. The audit was underpowered; the system was not shown to\nbe fair.\nA submission reporting no subgroup difference should state the minimum detectable difference for that\nanalysis. Without it a null result carries no information, and the subgroups most likely to be harmed are the\nones with the smallest samples and the least power."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "statistical_methods",
+      "stakeholder_concern": "Degradation monitoring triggers are unreliable unless the underlying measurement noise floor is quantified: thresholds set below the floor generate false alarms, while thresholds above it cannot detect drift smaller than the floor at the sampling rate in use.",
+      "requested_fda_action": "FDA should require that the noise floor define a minimum detectable effect for postmarket monitoring, which then drives sampling volume and trigger thresholds, and require sponsors proposing a monitoring cadence to show what magnitude of degradation that cadence can detect and over what time period.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts performance degradation monitoring but argues triggers and cadence must be anchored to a quantified measurement noise floor. Asks FDA to require sponsors to demonstrate the minimum size of degradation their proposed sampling volume and cadence could detect, and over what period.",
+      "summary_cut": false,
+      "source_passage": "A degradation trigger set below the floor fires on noise. One set above it cannot detect drift smaller than\nthe floor at the sampling in use. Both failures come from the same unmeasured quantity.\nThe floor should set the minimum detectable effect for monitoring, and that in turn should drive both\nsampling volume and trigger threshold. Where a sponsor proposes a cadence, the evidence should show\nwhat size of degradation that cadence could catch, and over what period."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q19",
+        "q22"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "change_control",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "A performance floor is not an intrinsic property of the model alone but emerges from the model, its configuration, and its deployment context jointly, so a floor established premarket may not hold after a model change.",
+      "requested_fda_action": "Require that performance floors be re-established after a model change, in the relevant configuration and deployment context, rather than allowing the premarket baseline to be carried forward.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment ties acceptable performance to configuration and deployment context, implying assurance must be re-established in context rather than inherited from a single premarket evaluation."
+      },
+      "public_summary": "Accepts using a premarket performance baseline but argues a performance floor depends jointly on the model, its configuration, and deployment context. Asks FDA to require floors to be re-established after a model change rather than carried forward from the original submission.",
+      "summary_cut": false,
+      "source_passage": "A floor is a property of a model, its configuration and its deployment context together, so it should be\nre-established after a model change rather than carried forward from the premarket submission."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q20"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "change_control",
+      "stakeholder_concern": "Citing a study of language models used as automated evaluation judges, the commenter notes that verdicts shifted under semantically equivalent prompt rephrasings, pairwise comparisons showed position bias, and model scale did not predict consistency. This instability limits what a supervisory agent can reliably detect, and a supervisor sharing the supervised device's foundation model may reproduce the same gaps it is meant to find.",
+      "requested_fda_action": "Accept supervisory agents only for detecting changes larger than the supervisor's own measured instability, place the supervisory prompt under change control, and refuse to assume error independence when supervisor and device derive from the same foundation model.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment addresses conditions under which oversight functions may be delegated to an automated supervisory agent whose own reliability is unestablished.",
+        "deployment_assurance_scalability": "It questions whether automated supervision can serve as a scalable postmarket assurance mechanism given measured instability and correlated-error risk."
+      },
+      "public_summary": "Accepts machine supervisory agents only conditionally: citing evidence that model judges change verdicts under prompt rephrasing and exhibit position bias, the commenter urges FDA to bound supervisors by measured instability, place supervisory prompts under change control, and reject assumed error independence when supervisor and device",
+      "summary_cut": true,
+      "source_passage": "In a study of language models used as automated evaluation judges (arXiv:2604.23478), verdicts moved\nunder semantically equivalent rephrasings of the evaluation prompt, pairwise comparisons showed\nposition bias, and model scale was not a reliable proxy for consistency: the largest and newest models were\nnot the most consistent.\nThree consequences. A supervisory agent should not be accepted as a monitoring mechanism for changes\nsmaller than its own measured instability. The supervisory prompt should sit under change control,\nbecause rephrasing it can move verdicts with no change whatever to the supervised device. And where\nsupervisor and device come from the same foundation model, their errors should not be assumed\nindependent, since CDRH's own concern in Question 13, that an instrument may reproduce the gaps it was\nbuilt to detect, applies equally to a supervisor sharing its subject's architecture."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Commenter contends that device-level aggregate performance measures for agentic devices would be dominated by the most frequent decisions rather than the most consequential, citing a cited six-stage trajectory study in which instability varied across actions by a factor of eight. Because multi-step operation compounds, an endpoint-only measure cannot identify which step caused instability.",
+      "requested_fda_action": "Set acceptance criteria for agentic devices against a performance floor for each action the device can take, with the highest-consequence actions measured most carefully, and measure stability at every decision point in the trajectory rather than only at the final output.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Agrees elevated agentic risk should shape acceptance criteria, but argues device-level aggregates mask variation, citing a study where instability differed eightfold across steps. Asks FDA to require per-action performance floors and measurement at each decision point, weighted toward highest-consequence actions.",
+      "summary_cut": false,
+      "source_passage": "Agentic operation strengthens the case for per-action measurement. The study above measured a six-stage\ntrajectory, and instability differed across actions by a factor of eight. A device-level aggregate would be\ndominated by the most frequent decisions rather than the most consequential.\nAcceptance criteria for an agentic device should be set against the floor for each action it can take, with the\nhighest-consequence actions measured most carefully. Multi-step operation also compounds: the stability\nof a final action depends on every step, and a floor measured only at the endpoint cannot say which step is\nresponsible. Measuring at each decision point costs nothing extra, since the trajectory runs either way."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter is concerned that output instability (variability) is not currently quantified, so risk determinations about acceptable instability cannot be made on an evidentiary basis. They accept that the acceptable level depends on the action, its consequence, and downstream review.",
+      "requested_fda_action": "Retain the two-axis risk framework, but require that output instability be measured and reported so that risk acceptability judgments rest on evidence; the commenter explicitly declines to propose a numerical threshold.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Calls the two-axis risk framework a sensible structure for judging acceptable output instability, which depends on the action, its consequence, and downstream review. Proposes no numerical threshold, but asks that instability be measured and reported so risk decisions rest on evidence.",
+      "summary_cut": false,
+      "source_passage": "I do not propose a numerical threshold for acceptable instability. That depends on the action, its\nconsequence, and what review stands downstream, and the two-axis framework in Section IV is a sensible\nstructure for making that call. My argument is only that the quantity should be measured and reported, so\nthe call can be made on evidence."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q12"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "statistical_methods",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter clarifies that their measurements of output instability come from a research harness and are not a claim that generative devices are unacceptably unstable; a device designed with instability in mind may perform better. The concern is that stability is currently assumed rather than measured.",
+      "requested_fda_action": "Require that the stability/variability figure be empirically reported for a device rather than assumed in either direction (favorable or unfavorable) when performance is measured.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Clarifies that cited output-instability measurements come from a research harness and do not imply generative devices are unacceptably unstable; devices designed for stability may perform better. Asks that stability be measured and reported for each device rather than assumed either way.",
+      "summary_cut": false,
+      "source_passage": "Nor am I claiming generative devices are unacceptably unstable. These measurements come from a\nresearch harness, and a device built with instability in mind may do far better. That is exactly why the\nnumber should be reported rather than assumed in either direction."
+    }
+  ]
+}

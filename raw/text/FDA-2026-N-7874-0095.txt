@@ -1,0 +1,123 @@
+Comment on Docket FDA-2026-N-7874, addressing Questions 10, 12, 13, 19, 20 and 26. The attached PDF gives the full version.<br/><br/>I support the competency-based approach in Section V and the postmarket framework in Section VI, and I ask CDRH to add one requirement to both.<br/><br/>A sponsor should report, alongside any performance estimate for a generative device, the variation that same device produces when run repeatedly on identical inputs. Call it the reproducibility floor. Where a reported difference does not exceed that floor, the evaluation should be treated as uninformative for that endpoint, rather than as evidence of equivalence, of stable performance, or of no disparity.<br/><br/>The reason is that every evaluation in the discussion paper reports a difference. Benchmarking compares a device against a threshold. Clinical confirmation compares outcomes with and without the device. Postmarket monitoring compares today against a baseline. Subgroup analysis compares one population against another. A difference cannot be interpreted without knowing how much the same system moves when nothing changes. For deterministic software that quantity is zero. For generative models it is not zero.<br/><br/>EVIDENCE. In a study of counterfactual fairness auditing in multi-step clinical LLM agents (arXiv:2609.03221), sixteen synthetic vignettes were run through a six-stage agent trajectory. An identical condition, same narrative and same patient descriptor with nothing varied, was re-run ten times. Across 4,320 outcome-vignette cells the agent&#39;s action changed in 8.7 percent of cells. Instability was not uniform: it ranged from 0.022 for intensive care escalation to 0.179 for controlled-substance caution, a factor of eight. A second model gave a pooled floor of 6.7 percent. No demographic contrast was distinguishable from the floor, so that study claims no disparity finding and none should be read into this comment. The vignettes were synthetic, two models were examined, and the system was a research harness rather than a regulated device; the harness and protocol are public.<br/><br/>Q12, statistically meaningful measurement. The right null is not zero difference but the difference the device produces against itself. Report a floor per graded endpoint, measured on identical inputs under the marketed configuration. Report it per endpoint, not pooled: a pooled 8.7 percent would have hidden a range from 2.2 to 17.9 percent.<br/><br/>Q10, benchmark construct validity. A benchmark score is one draw from a stochastic process. Two devices differing by less than the benchmark&#39;s own floor have not been distinguished by it. A benchmark gating a regulatory decision should carry a documented floor. This also sharpens saturation: a benchmark stops being useful when the spread between devices drops below its own noise, which arrives before scores crowd the ceiling.<br/><br/>Q13, synthetic data and underrepresented subgroups. Require sponsors to state the minimum detectable difference. In the measurements above no demographic contrast was distinguishable from the floor, which is easy to misread as evidence of fairness. It establishes only that any difference was smaller than the instrument could resolve. Without a stated minimum detectable difference a null subgroup result carries no information, and the subgroups most likely to be harmed have the smallest samples and least power.<br/><br/>Q19, monitoring cadence and triggers. A trigger below the floor fires on noise; one above it cannot detect drift smaller than the floor. The floor should set the minimum detectable effect, which should drive sampling volume and threshold. A floor is a property of model, configuration and context together, so re-establish it after a model change.<br/><br/>Q20, supervisory agents. In a study of language models used as evaluation judges (arXiv:2604.23478), verdicts moved under semantically equivalent rephrasings of the evaluation prompt, pairwise comparisons showed position bias, and model scale was not a reliable proxy for consistency. So a supervisory agent should not be accepted for changes smaller than its own measured instability; the supervisory prompt belongs under change control; and where supervisor and device share a foundation model their errors should not be assumed independent.<br/><br/>Q26, agentic devices. Instability differed across actions by a factor of eight, so acceptance criteria should be set per action, with the highest-consequence actions measured most carefully. Measuring at each decision point costs nothing extra since the trajectory runs either way.<br/><br/>I do not propose a numerical threshold for acceptable instability; that depends on the action and its consequences, and Section IV is a sensible structure for that call. Nor am I claiming generative devices are unacceptably unstable. My argument is that the quantity should be measured and reported, so the call can be made on evidence.<br/><br/>Rohith Reddy Bellibatlu, independent researcher, clinical AI evaluation methodology. ORCID 0009-0003-6083-0364.
+
+[Attachment: Comment from Rohith Reddy Bellibatlu]
+Docket FDA-2026-N-7874
+Page 1
+Comment on Docket FDA-2026-N-7874
+Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and
+Request for Feedback
+Rohith Reddy Bellibatlu, independent researcher, clinical AI evaluation methodology
+rohithreddybc@gmail.com · ORCID 0009-0003-6083-0364
+What I am recommending
+I support the competency-based approach in Section V and the postmarket framework in Section VI. This
+comment asks CDRH to add one requirement to both.
+A sponsor should report, alongside any performance estimate for a generative device, the variation
+that same device produces when run repeatedly on identical inputs. Call it the reproducibility floor.
+Where a reported difference does not exceed that floor, the evaluation should be treated as uninformative
+for that endpoint, rather than as evidence of equivalence, of stable performance, or of no disparity.
+The reason is simple. Every evaluation in the discussion paper reports a difference. Benchmarking
+compares a device against a threshold. Clinical confirmation compares outcomes with and without the
+device. Postmarket monitoring compares today against a baseline. Subgroup analysis compares one
+population against another.
+A difference cannot be interpreted without knowing how much the same system moves when nothing
+changes. For deterministic software that quantity is zero, which is why it has never needed stating. For
+generative models it is not zero, and in the measurements below it was larger than the differences the
+evaluation was built to detect.
+This comment addresses Questions 10, 12, 13, 19, 20 and 26.
+The evidence
+From a study of counterfactual fairness auditing in multi-step clinical LLM agents (arXiv:2609.03221).
+Sixteen synthetic clinical vignettes were run through a six-stage agent trajectory. An identical condition,
+meaning the same narrative and the same patient descriptor with nothing varied, was re-run ten times.
+Across 4,320 outcome-vignette cells, the agent's action changed in 8.7 percent of cells.
+Three things about that number matter here.
+It was not uniform across actions. Instability ranged from 0.022 for intensive care escalation to 0.179 for
+controlled-substance caution, a factor of eight. A single device-level figure would have badly misstated
+both ends.
+It was not one system's quirk. A second model gave a pooled floor of 6.7 percent and ranked the six
+actions in nearly the same order (Spearman 0.94, exact p = 0.017).
+Replication reduced it but did not remove it. Majority voting over five draws removed 39 percent of the
+floor and then flattened.
+
+Docket FDA-2026-N-7874
+Page 2
+No demographic contrast in that data was distinguishable from the floor, so the study claims no disparity
+finding and none should be read into this comment.
+What this evidence is not: the vignettes were synthetic, two models were examined, and the system was a
+research harness rather than a regulated device. The harness and the protocol are publicly released, so the
+same measurement can be made on a device, and the numbers will be that device's own.
+Question 12, on statistically meaningful performance measurement
+Statistical meaning requires a null. For a generative device the right null is not zero difference but the
+difference the device produces against itself.
+Sponsors should report a reproducibility floor for each graded endpoint, measured on identical inputs
+under the configuration proposed for marketing, and compare performance differences against that floor
+rather than against zero. Where a confidence interval overlaps the floor, the study lacked the resolution to
+separate the device from its own variability.
+Report it per endpoint, not pooled. In the measurements above, a pooled 8.7 percent would have hidden a
+range from 2.2 to 17.9 percent, and the least stable endpoints were not the ones a reviewer would have
+guessed.
+This adds cost, and the cost is real: measuring a floor means running the evaluation set repeatedly. It is
+bounded, and it falls where the evaluation is already being built.
+Question 10, on benchmark construct validity
+A benchmark score for a generative system is one draw from a stochastic process. Two devices whose
+scores differ by less than the benchmark's own reproducibility floor have not been distinguished by it, and
+a device exceeding a threshold by less than the floor has not been shown to exceed it.
+A benchmark used to gate a regulatory decision should therefore carry a documented floor, measured the
+same way each time, so a reviewer can see what difference the instrument can actually resolve.
+This also sharpens the saturation concern in the same question. A benchmark stops being useful not only
+when scores crowd the ceiling, but when the spread between competing devices drops below its own noise.
+The second condition arrives first and is measurable.
+Question 13, on synthetic data and underrepresented subgroups
+CDRH asks how to keep an evaluation from missing performance gaps in underrepresented subgroups.
+One safeguard is to require sponsors to state what size of gap their evaluation could have detected.
+In the measurements above, no demographic contrast was distinguishable from the floor. That is easy to
+misread as evidence the agent treated groups alike. It is not. It establishes only that any difference present
+was smaller than the instrument could resolve. The audit was underpowered; the system was not shown to
+be fair.
+A submission reporting no subgroup difference should state the minimum detectable difference for that
+analysis. Without it a null result carries no information, and the subgroups most likely to be harmed are the
+
+Docket FDA-2026-N-7874
+Page 3
+ones with the smallest samples and the least power.
+Question 19, on postmarket monitoring cadence and triggers
+A degradation trigger set below the floor fires on noise. One set above it cannot detect drift smaller than
+the floor at the sampling in use. Both failures come from the same unmeasured quantity.
+The floor should set the minimum detectable effect for monitoring, and that in turn should drive both
+sampling volume and trigger threshold. Where a sponsor proposes a cadence, the evidence should show
+what size of degradation that cadence could catch, and over what period.
+A floor is a property of a model, its configuration and its deployment context together, so it should be
+re-established after a model change rather than carried forward from the premarket submission.
+Question 20, on machine-based supervisory agents
+CDRH asks what considerations apply to the reliability of a supervisory agent itself. The argument above
+applies to the supervisor unchanged, and there is direct evidence.
+In a study of language models used as automated evaluation judges (arXiv:2604.23478), verdicts moved
+under semantically equivalent rephrasings of the evaluation prompt, pairwise comparisons showed
+position bias, and model scale was not a reliable proxy for consistency: the largest and newest models were
+not the most consistent.
+Three consequences. A supervisory agent should not be accepted as a monitoring mechanism for changes
+smaller than its own measured instability. The supervisory prompt should sit under change control,
+because rephrasing it can move verdicts with no change whatever to the supervised device. And where
+supervisor and device come from the same foundation model, their errors should not be assumed
+independent, since CDRH's own concern in Question 13, that an instrument may reproduce the gaps it was
+built to detect, applies equally to a supervisor sharing its subject's architecture.
+Question 26, on agentic devices
+Agentic operation strengthens the case for per-action measurement. The study above measured a six-stage
+trajectory, and instability differed across actions by a factor of eight. A device-level aggregate would be
+dominated by the most frequent decisions rather than the most consequential.
+Acceptance criteria for an agentic device should be set against the floor for each action it can take, with the
+highest-consequence actions measured most carefully. Multi-step operation also compounds: the stability
+of a final action depends on every step, and a floor measured only at the endpoint cannot say which step is
+responsible. Measuring at each decision point costs nothing extra, since the trajectory runs either way.
+What I am not claiming
+I do not propose a numerical threshold for acceptable instability. That depends on the action, its
+consequence, and what review stands downstream, and the two-axis framework in Section IV is a sensible
+structure for making that call. My argument is only that the quantity should be measured and reported, so
+the call can be made on evidence.
+
+Docket FDA-2026-N-7874
+Page 4
+Nor am I claiming generative devices are unacceptably unstable. These measurements come from a
+research harness, and a device built with instability in mind may do far better. That is exactly why the
+number should be reported rather than assumed in either direction.
+Respectfully submitted,
+Rohith Reddy Bellibatlu

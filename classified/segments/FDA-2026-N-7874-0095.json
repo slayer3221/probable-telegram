@@ -1,0 +1,128 @@
+{
+  "comment_id": "FDA-2026-N-7874-0095",
+  "input_hash": "77511d71ee024d0e",
+  "prompt_version": "1.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-17T13:05:17Z",
+  "model": "claude-opus-5",
+  "chunks": 1,
+  "positions": [
+    {
+      "question_ids": [
+        "q7"
+      ],
+      "source_passage": "I support the competency-based approach in Section V and the postmarket framework in Section VI. This comment asks CDRH to add one requirement to both.",
+      "position_gist": "The commenter endorses the competency-based premarket approach and the postmarket framework, subject to adding one additional requirement.",
+      "segment_id": "seg-001"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q12",
+        "q19"
+      ],
+      "source_passage": "A sponsor should report, alongside any performance estimate for a generative device, the variation\nthat same device produces when run repeatedly on identical inputs. Call it the reproducibility floor.\nWhere a reported difference does not exceed that floor, the evaluation should be treated as uninformative\nfor that endpoint, rather than as evidence of equivalence, of stable performance, or of no disparity.",
+      "position_gist": "Sponsors should report a \"reproducibility floor\" (run-to-run variation on identical inputs) alongside every performance estimate, and any reported difference not exceeding that floor should be treated as uninformative rather than as evidence of equivalence, stability, or absence of disparity.",
+      "segment_id": "seg-002"
+    },
+    {
+      "question_ids": [
+        "q10",
+        "q12",
+        "q19"
+      ],
+      "source_passage": "The reason is simple. Every evaluation in the discussion paper reports a difference. Benchmarking\ncompares a device against a threshold. Clinical confirmation compares outcomes with and without the\ndevice. Postmarket monitoring compares today against a baseline. Subgroup analysis compares one\npopulation against another.\nA difference cannot be interpreted without knowing how much the same system moves when nothing\nchanges. For deterministic software that quantity is zero, which is why it has never needed stating. For\ngenerative models it is not zero, and in the measurements below it was larger than the differences the\nevaluation was built to detect.",
+      "position_gist": "Rationale that because every evaluation modality in the paper (benchmarking, clinical confirmation, postmarket monitoring, subgroup analysis) reports a difference, and generative systems have nonzero self-variation, differences cannot be interpreted without a measured baseline of run-to-run variation.",
+      "segment_id": "seg-003"
+    },
+    {
+      "question_ids": [
+        "q12"
+      ],
+      "source_passage": "Statistical meaning requires a null. For a generative device the right null is not zero difference but the\ndifference the device produces against itself.\nSponsors should report a reproducibility floor for each graded endpoint, measured on identical inputs\nunder the configuration proposed for marketing, and compare performance differences against that floor\nrather than against zero. Where a confidence interval overlaps the floor, the study lacked the resolution to\nseparate the device from its own variability.\nReport it per endpoint, not pooled. In the measurements above, a pooled 8.7 percent would have hidden a\nrange from 2.2 to 17.9 percent, and the least stable endpoints were not the ones a reviewer would have\nguessed.",
+      "position_gist": "For statistically meaningful measurement, the null should be the device's own self-variation, with a reproducibility floor reported per graded endpoint (not pooled) under the marketed configuration, and results whose confidence intervals overlap the floor treated as lacking resolution.",
+      "segment_id": "seg-004"
+    },
+    {
+      "question_ids": [
+        "q12"
+      ],
+      "source_passage": "This adds cost, and the cost is real: measuring a floor means running the evaluation set repeatedly. It is\nbounded, and it falls where the evaluation is already being built.",
+      "position_gist": "Acknowledges that measuring a reproducibility floor adds real but bounded cost, incurred within evaluations sponsors already build.",
+      "segment_id": "seg-005"
+    },
+    {
+      "question_ids": [
+        "q10"
+      ],
+      "source_passage": "A benchmark score for a generative system is one draw from a stochastic process. Two devices whose\nscores differ by less than the benchmark's own reproducibility floor have not been distinguished by it, and\na device exceeding a threshold by less than the floor has not been shown to exceed it.\nA benchmark used to gate a regulatory decision should therefore carry a documented floor, measured the\nsame way each time, so a reviewer can see what difference the instrument can actually resolve.",
+      "position_gist": "Any benchmark used to gate a regulatory decision should carry a documented, consistently measured reproducibility floor so reviewers can see what differences it can actually resolve.",
+      "segment_id": "seg-006"
+    },
+    {
+      "question_ids": [
+        "q10"
+      ],
+      "source_passage": "This also sharpens the saturation concern in the same question. A benchmark stops being useful not only\nwhen scores crowd the ceiling, but when the spread between competing devices drops below its own noise.\nThe second condition arrives first and is measurable.",
+      "position_gist": "Benchmark saturation should be defined and measured as the point where inter-device score spread falls below the benchmark's own noise, which occurs before scores approach the ceiling.",
+      "segment_id": "seg-007"
+    },
+    {
+      "question_ids": [
+        "q13"
+      ],
+      "source_passage": "CDRH asks how to keep an evaluation from missing performance gaps in underrepresented subgroups.\nOne safeguard is to require sponsors to state what size of gap their evaluation could have detected.\nIn the measurements above, no demographic contrast was distinguishable from the floor. That is easy to\nmisread as evidence the agent treated groups alike. It is not. It establishes only that any difference present\nwas smaller than the instrument could resolve. The audit was underpowered; the system was not shown to\nbe fair.\nA submission reporting no subgroup difference should state the minimum detectable difference for that\nanalysis. Without it a null result carries no information, and the subgroups most likely to be harmed are the\nones with the smallest samples and the least power.",
+      "position_gist": "As a subgroup safeguard, any submission reporting no subgroup difference should state the minimum detectable difference for that analysis, since a null result without stated power conveys no evidence of fairness.",
+      "segment_id": "seg-008"
+    },
+    {
+      "question_ids": [
+        "q19"
+      ],
+      "source_passage": "A degradation trigger set below the floor fires on noise. One set above it cannot detect drift smaller than\nthe floor at the sampling in use. Both failures come from the same unmeasured quantity.\nThe floor should set the minimum detectable effect for monitoring, and that in turn should drive both\nsampling volume and trigger threshold. Where a sponsor proposes a cadence, the evidence should show\nwhat size of degradation that cadence could catch, and over what period.",
+      "position_gist": "Postmarket monitoring cadence, sampling volume, and degradation trigger thresholds should be derived from the reproducibility floor as the minimum detectable effect, and sponsors should show what magnitude of degradation a proposed cadence can catch and over what period.",
+      "segment_id": "seg-009"
+    },
+    {
+      "question_ids": [
+        "q19",
+        "q22"
+      ],
+      "source_passage": "A floor is a property of a model, its configuration and its deployment context together, so it should be\nre-established after a model change rather than carried forward from the premarket submission.",
+      "position_gist": "Because the reproducibility floor depends on model, configuration, and deployment context, it should be re-measured after any model change rather than carried forward from the premarket submission.",
+      "segment_id": "seg-010"
+    },
+    {
+      "question_ids": [
+        "q20"
+      ],
+      "source_passage": "In a study of language models used as automated evaluation judges (arXiv:2604.23478), verdicts moved\nunder semantically equivalent rephrasings of the evaluation prompt, pairwise comparisons showed\nposition bias, and model scale was not a reliable proxy for consistency: the largest and newest models were\nnot the most consistent.\nThree consequences. A supervisory agent should not be accepted as a monitoring mechanism for changes\nsmaller than its own measured instability. The supervisory prompt should sit under change control,\nbecause rephrasing it can move verdicts with no change whatever to the supervised device. And where\nsupervisor and device come from the same foundation model, their errors should not be assumed\nindependent, since CDRH's own concern in Question 13, that an instrument may reproduce the gaps it was\nbuilt to detect, applies equally to a supervisor sharing its subject's architecture.",
+      "position_gist": "Machine supervisory agents should not be accepted for detecting changes smaller than their own measured instability, their prompts should be placed under change control, and shared-foundation-model supervisors and devices should not be assumed to have independent errors.",
+      "segment_id": "seg-011"
+    },
+    {
+      "question_ids": [
+        "q26"
+      ],
+      "source_passage": "Agentic operation strengthens the case for per-action measurement. The study above measured a six-stage\ntrajectory, and instability differed across actions by a factor of eight. A device-level aggregate would be\ndominated by the most frequent decisions rather than the most consequential.\nAcceptance criteria for an agentic device should be set against the floor for each action it can take, with the\nhighest-consequence actions measured most carefully. Multi-step operation also compounds: the stability\nof a final action depends on every step, and a floor measured only at the endpoint cannot say which step is\nresponsible. Measuring at each decision point costs nothing extra, since the trajectory runs either way.",
+      "position_gist": "For agentic devices, acceptance criteria should be set per action against that action's reproducibility floor, with highest-consequence actions measured most carefully and instability measured at each decision point rather than only at the trajectory endpoint.",
+      "segment_id": "seg-012"
+    },
+    {
+      "question_ids": [
+        "q1"
+      ],
+      "source_passage": "I do not propose a numerical threshold for acceptable instability. That depends on the action, its\nconsequence, and what review stands downstream, and the two-axis framework in Section IV is a sensible\nstructure for making that call. My argument is only that the quantity should be measured and reported, so\nthe call can be made on evidence.",
+      "position_gist": "The commenter declines to propose an acceptable instability threshold, viewing the Section IV two-axis risk framework as a sensible structure for making that judgment once instability is measured and reported.",
+      "segment_id": "seg-013"
+    },
+    {
+      "question_ids": [
+        "q12"
+      ],
+      "source_passage": "Nor am I claiming generative devices are unacceptably unstable. These measurements come from a\nresearch harness, and a device built with instability in mind may do far better. That is exactly why the\nnumber should be reported rather than assumed in either direction.",
+      "position_gist": "The commenter clarifies he is not asserting generative devices are unacceptably unstable, arguing instead that instability should be measured and reported rather than assumed in either direction.",
+      "segment_id": "seg-014"
+    }
+  ]
+}

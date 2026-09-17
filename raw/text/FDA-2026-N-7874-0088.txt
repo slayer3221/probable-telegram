@@ -1,0 +1,185 @@
+I built a personal, non-deployed prototype that (1) takes a structured history, (2) proposes next diagnostic steps or laboratory tests, (3) drafts an impression from results, and (4) drafts a plan. It calls public model APIs and local open-weight models. It is not used in patient care, is not offered to users as a clinician, and is not submitted for authorization. My comment addresses the following questions:<br/><br/>History completeness (E.2).<br/><br/>Do not let the model grade its own work. I gave a checklist and asked &ldquo;is the history complete?&rdquo; Models marked it complete while skipping the question that changes the case. Example: a lung-fluke pattern where exposure to raw or undercooked freshwater crabs or crayfish was never asked.<br/>Score E.2 against a case-locked required-question list written before the run. Report recall of those questions &mdash; not self-rated completeness, and not how many questions were asked.<br/><br/>Repeated questions (Q5, R.1).<br/><br/>Some models re-ask &ldquo;how long have you had this?&rdquo; after the answer is already in the transcript. That is a reliability miss, not thoroughness.<br/><br/>Inconsistent plans (R.1).<br/><br/>The same transcript can yield different diagnoses and next steps on replay. Require consistency on action-relevant fields (diagnosis family, next step), not on wording.<br/><br/>Instruction lock (R.1).<br/><br/>Hard rules fail across turns (for example, &ldquo;do not print the lab normal range&rdquo;). Guardrail tests should be pass/fail on the visible output and must still hold after turn one.<br/><br/>Hallucination (Q1).<br/><br/>This is not a closed entity list. Regex misses new inventions and false-flags denials. Pair source-conditioned checks with sampled clinician review. A clean regex is not control.<br/><br/>After a model or prompt change (Q22, Q24).<br/><br/>Re-run the measures above when the foundation-model ID or the prompt template changes.<br/><br/>Who holds the items (Q10, Q16).<br/><br/>Use shared item definitions plus a hidden holdout. Licensed clinicians review decision gold only.<br/><br/>
+
+[Attachment: Comment from Qiong Liu]
+Comment on FDA Discussion Paper
+Considerations for the Regulation of Generative AI-Enabled Medical Devices
+Docket No. FDA-2026-N-7874
+
+Capacity: Individual. Medical-school graduate; software engineer working on healthcare-related systems; not licensed to practice medicine; not board-certified.
+
+Date: September 2026
+
+I. Why I am commenting
+
+I built a personal, non-deployed prototype that (1) takes a structured history, (2) proposes next diagnostic steps or laboratory tests, (3) drafts an impression from results, and (4) drafts a plan. It calls public model APIs and local open-weight models. It is not used in patient care, is not offered to users as a clinician, and is not submitted for authorization.
+
+Using several foundation-model backends on the same scripts exposed failure modes that knowledge-exam scores and single-turn safety quizzes do not show. This comment reports those observations and asks CDRH to treat them as first-class benchmarking elements. It addresses, in substance, questions 5, 6, 7, 9, 10, 16, 19, 22, and 24.
+
+II. Position (Q7, Q9)
+
+Device benchmarking plus risk-proportionate clinical confirmation is the right frame. The current sketch under-weights multi-turn information gathering (Appendix A, E.2) and run-to-run reliability (R.1).
+
+A sponsor can publish a high score on clinical knowledge (E.1) or on a single-turn safety item (S.1 / S.2) while the finished product, in conversation:
+
+  1. closes the history without asking the question that would change the differential,
+  2. asks the same question again after the answer is already in context,
+  3. gives a different diagnosis or plan when the identical transcript is replayed,
+  4. ignores a hard instruction (for example, "do not print a normal range"),
+  5. invents a fact that no regex over a fixed entity list will catch.
+
+Those are product behaviors. They should be measured on the finished configuration (prompt + tools + whatever snapshot the vendor is serving), and re-measured when that snapshot or the prompt changes (Q22, Q24).
+
+III. Observation 1 -- history completeness is not self-graded E.2 (Q5, Q9)
+
+I wrote a history-collection checklist and asked the model to judge whether the history was complete. The model often marked the list "complete" while omitting the question that actually matters for the case.
+
+Example: a presentation consistent with pulmonary paragonimiasis. Completeness is not "the model asked about cough and travel." Completeness includes exposure to raw or undercooked freshwater crabs or crayfish. The model can fill many checklist rows and still never ask that question.
+
+Two implications for Appendix A:
+
+  - E.2 should be scored against a pre-specified, case-locked question family written before the run, not against the model's own "is this complete?" judgment. Self-evaluation is circular.
+  - Missing a pathognomonic exposure question is an under-gathering error analogous to under-escalation in Q6: the conversation looks thorough and still drops the item that changes management.
+
+Ask: For history-taking or intake functions, require a case-locked required-question list (including exposure, meds, red-flag negatives) and report recall of those questions separately from "number of questions asked" or self-rated completeness.
+
+IV. Observation 2 -- repeated questions despite full context (Q5, R.1)
+
+Some backends, given the entire prior transcript, still re-ask "how long have you had this?" Multi-turn risk in Q5 is not only drift from information to action. It is also a failure to read the state the device already collected. Repeated questions delay care, train users to ignore the agent, and are evidence that context is not actually being used.
+
+Ask: Benchmark multi-turn intake with an explicit "already answered" set. Score a repeat of a resolved question as a reliability miss, not as extra thoroughness.
+
+V. Observation 3 -- same transcript, different plan (R.1)
+
+With the same chat context, replays sometimes produce different diagnoses and suggestions. That is a reproducibility failure (R.1), not a creativity feature, when the intended use is clinical intake or advice.
+
+Ask: For a fixed transcript and pinned decoding settings, require a repeated-run consistency metric on the action-relevant fields (working diagnosis family, next site of care, whether to test or treat). Do not treat lexical diversity of the prose as competence.
+
+VI. Observation 4 -- hard instructions do not stick (R.1, E.4)
+
+An instruction such as "do not state the laboratory normal range on this report" is still violated on some turns. That is not a knowledge error. It is failure to keep a deployment constraint in force. Sponsors will rely on exactly these constraints as "guardrails" in a PCCP.
+
+Ask: Include a small instruction-lock set in nonclinical benchmarking: pinned negatives ("do not print X") scored as pass/fail on the visible output. A guardrail that holds on the first turn and fails on the fifth is not a guardrail.
+
+VII. Observation 5 -- hallucination is not a closed entity list (Q1)
+
+Hallucinated facts can appear in any clause. Post-hoc rules that look for a fixed list (allergy, code status, drug name) miss most of them and also false-flag denials ("no penicillin allergy"). Source-traceability belongs in the risk picture (Q1). It cannot be reduced to a regex.
+
+Ask: For documentation and for history write-back, require (a) a source-conditioned check where a source exists, with denial-aware matching, and (b) clinician review of a sample of unconstrained sentences. Do not treat a clean regex report as evidence that hallucination is controlled.
+
+VIII. What I am not claiming
+
+These are prototype observations, not a clinical study and not licensed gold. I am not asking FDA to recognize a private harness. I am not reporting that any named commercial model is safe or unsafe. I am not arguing that Non-Device CDS should become a device by default. I am not describing an employer product or a system in clinical use.
+
+IX. Summary asks
+
+  1. Score E.2 against a pre-specified, case-locked question family; forbid self-graded completeness (Q9).
+  2. Score repeated questions on resolved items as multi-turn reliability failures (Q5, R.1).
+  3. Require a same-transcript consistency metric on action-relevant fields (R.1).
+  4. Include instruction-lock items as a guardrail test that must hold across turns (R.1).
+  5. Treat hallucination as open-ended; pair source-conditioned checks with sampled clinician review (Q1).
+  6. Re-run the above when the foundation-model identifier or prompt template changes (Q22, Q24).
+  7. Prefer shared item definitions plus a hidden holdout, with licensed review of decision gold only (Q10, Q16).
+
+Respectfully submitted,
+
+Qiong Liu
+Austin, TX
+
+[Attachment: Comment from Qiong Liu]
+Comment on FDA Discussion Paper
+Considerations for the Regulation of Generative AI-Enabled Medical Devices
+Docket No. FDA-2026-N-7874
+Capacity: Individual. Medical-school graduate; software engineer working on healthcare-related
+systems; not licensed to practice medicine; not board-certified.
+Date: September 2026
+I. Why I am commenting
+I built a personal, non-deployed prototype that (1) takes a structured history, (2) proposes next
+diagnostic steps or laboratory tests, (3) drafts an impression from results, and (4) drafts a plan.
+It calls public model APIs and local open-weight models. It is not used in patient care, is not
+offered to users as a clinician, and is not submitted for authorization.
+Using several foundation-model backends on the same scripts exposed failure modes that
+knowledge-exam scores and single-turn safety quizzes do not show. This comment reports
+those observations and asks CDRH to treat them as first-class benchmarking elements. It
+addresses, in substance, questions 5, 6, 7, 9, 10, 16, 19, 22, and 24.
+II. Position (Q7, Q9)
+Device benchmarking plus risk-proportionate clinical confirmation is the right frame. The current
+sketch under-weights multi-turn information gathering (Appendix A, E.2) and run-to-run reliability
+(R.1).
+A sponsor can publish a high score on clinical knowledge (E.1) or on a single-turn safety item
+(S.1 / S.2) while the finished product, in conversation:
+  1. closes the history without asking the question that would change the differential,
+  2. asks the same question again after the answer is already in context,
+  3. gives a different diagnosis or plan when the identical transcript is replayed,
+  4. ignores a hard instruction (for example, "do not print a normal range"),
+  5. invents a fact that no regex over a fixed entity list will catch.
+Those are product behaviors. They should be measured on the finished configuration (prompt +
+tools + whatever snapshot the vendor is serving), and re-measured when that snapshot or the
+prompt changes (Q22, Q24).
+III. Observation 1 -- history completeness is not self-graded E.2 (Q5, Q9)
+
+I wrote a history-collection checklist and asked the model to judge whether the history was
+complete. The model often marked the list "complete" while omitting the question that actually
+matters for the case.
+Example: a presentation consistent with pulmonary paragonimiasis. Completeness is not "the
+model asked about cough and travel." Completeness includes exposure to raw or undercooked
+freshwater crabs or crayfish. The model can fill many checklist rows and still never ask that
+question.
+Two implications for Appendix A:
+  - E.2 should be scored against a pre-specified, case-locked question family written before the
+run, not against the model's own "is this complete?" judgment. Self-evaluation is circular.
+  - Missing a pathognomonic exposure question is an under-gathering error analogous to under-
+escalation in Q6: the conversation looks thorough and still drops the item that changes
+management.
+Ask: For history-taking or intake functions, require a case-locked required-question list
+(including exposure, meds, red-flag negatives) and report recall of those questions separately
+from "number of questions asked" or self-rated completeness.
+IV. Observation 2 -- repeated questions despite full context (Q5, R.1)
+Some backends, given the entire prior transcript, still re-ask "how long have you had this?"
+Multi-turn risk in Q5 is not only drift from information to action. It is also a failure to read the state
+the device already collected. Repeated questions delay care, train users to ignore the agent,
+and are evidence that context is not actually being used.
+Ask: Benchmark multi-turn intake with an explicit "already answered" set. Score a repeat of a
+resolved question as a reliability miss, not as extra thoroughness.
+V. Observation 3 -- same transcript, different plan (R.1)
+With the same chat context, replays sometimes produce different diagnoses and suggestions.
+That is a reproducibility failure (R.1), not a creativity feature, when the intended use is clinical
+intake or advice.
+Ask: For a fixed transcript and pinned decoding settings, require a repeated-run consistency
+metric on the action-relevant fields (working diagnosis family, next site of care, whether to test
+or treat). Do not treat lexical diversity of the prose as competence.
+VI. Observation 4 -- hard instructions do not stick (R.1, E.4)
+
+An instruction such as "do not state the laboratory normal range on this report" is still violated on
+some turns. That is not a knowledge error. It is failure to keep a deployment constraint in force.
+Sponsors will rely on exactly these constraints as "guardrails" in a PCCP.
+Ask: Include a small instruction-lock set in nonclinical benchmarking: pinned negatives ("do not
+print X") scored as pass/fail on the visible output. A guardrail that holds on the first turn and fails
+on the fifth is not a guardrail.
+VII. Observation 5 -- hallucination is not a closed entity list (Q1)
+Hallucinated facts can appear in any clause. Post-hoc rules that look for a fixed list (allergy,
+code status, drug name) miss most of them and also false-flag denials ("no penicillin allergy").
+Source-traceability belongs in the risk picture (Q1). It cannot be reduced to a regex.
+Ask: For documentation and for history write-back, require (a) a source-conditioned check
+where a source exists, with denial-aware matching, and (b) clinician review of a sample of
+unconstrained sentences. Do not treat a clean regex report as evidence that hallucination is
+controlled.
+VIII. What I am not claiming
+These are prototype observations, not a clinical study and not licensed gold. I am not asking
+FDA to recognize a private harness. I am not reporting that any named commercial model is
+safe or unsafe. I am not arguing that Non-Device CDS should become a device by default. I am
+not describing an employer product or a system in clinical use.
+IX. Summary asks
+  1. Score E.2 against a pre-specified, case-locked question family; forbid self-graded
+completeness (Q9).
+  2. Score repeated questions on resolved items as multi-turn reliability failures (Q5, R.1).
+  3. Require a same-transcript consistency metric on action-relevant fields (R.1).
+  4. Include instruction-lock items as a guardrail test that must hold across turns (R.1).
+  5. Treat hallucination as open-ended; pair source-conditioned checks with sampled clinician
+review (Q1).
+  6. Re-run the above when the foundation-model identifier or prompt template changes (Q22,
+Q24).
+  7. Prefer shared item definitions plus a hidden holdout, with licensed review of decision gold
+only (Q10, Q16).
+Respectfully submitted,
+Qiong Liu
+Austin, TX

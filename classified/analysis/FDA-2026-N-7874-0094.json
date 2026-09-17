@@ -1,0 +1,723 @@
+{
+  "comment_id": "FDA-2026-N-7874-0094",
+  "input_hash": "7abe090f69ccceb3",
+  "prompt_version": "2.0.0",
+  "processing_version": "2026.09.1",
+  "created_at": "2026-09-17T13:20:17Z",
+  "model": "claude-opus-5",
+  "positions": [
+    {
+      "segment_id": "seg-001",
+      "question_ids": [
+        "q11",
+        "q7",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter is concerned that a single aggregate competency assessment could imply clinical utility that has not been demonstrated, since a device may be clinically valid for one function (e.g., knowledge recall) while lacking evidence that another function (e.g., escalation output) changes downstream care to improve outcomes.",
+      "requested_fda_action": "Import the ACCE-style distinction among analytic validity, clinical validity, and clinical utility into the competency-based approach, and require sponsors to benchmark and label each individual device function separately against both the clinical validity and clinical utility bars rather than at the device level only.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The commenter frames clinical utility as whether a device function's output actually changes downstream care in a way that improves outcomes, which goes beyond evaluating the model's standalone competency."
+      },
+      "public_summary": "Accepts the competency-based framework but asks CDRH to adopt an ACCE-style separation of analytic validity, clinical validity, and clinical utility, applied function-by-function, so that aggregate device-level competency assessments do not imply clinical utility that has not been demonstrated.",
+      "summary_cut": false,
+      "source_passage": "Before addressing specific questions, we urge CDRH to import a distinction long used in diagnostic test evaluation - most familiar from the ACCE framework (Analytic validity, Clinical validity, Clinical utility) applied to genetic and genomic tests - into its competency-based approach for GenAI-enabled devices. ... The same discipline should apply to GenAI-enabled devices at the individual-function level, not just the device level. A device may be clinically valid for one function (e.g., E.1 knowledge recall) while lacking clinical utility evidence for another (e.g., whether its escalation output changes downstream care in a way that improves outcomes). We recommend CDRH require sponsors to benchmark and label each device function against both bars separately, rather than allowing a single aggregate competency assessment to imply utility that has not been demonstrated."
+    },
+    {
+      "segment_id": "seg-002",
+      "question_ids": [
+        "q2"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "regulatory_scope",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter is concerned that treating GenAI as novel could narrow existing statutory clinical decision support carve-outs (section 520(o)(1)(E)) and pull previously excluded, lower-risk software into device regulation, raising entry costs for early-stage companies without a corresponding increase in patient risk.",
+      "requested_fda_action": "CDRH should default to enforcement discretion and apply the existing CDS exclusion to low-activity, non-directive, HCP-facing informational functions, and avoid scope creep; the commenter also points to the CLIA/LDT quality-system, non-premarket-gated model as directly applicable to GenAI functions embedded in laboratory workflows.",
+      "confidence": "medium",
+      "gap_tags": [
+        "evidence_burden_commercial_viability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment argues that expanding regulatory scope over lower-risk GenAI informational functions raises the cost of entry for early-stage developers irrespective of actual patient risk.",
+        "delegated_authority": "It proposes that a non-FDA, quality-system-based oversight model (CLIA, as reinforced in the LDT context) is sufficient for certain high-stakes GenAI-enabled laboratory functions."
+      },
+      "public_summary": "Urges CDRH to apply enforcement discretion and the existing clinical decision support exclusion to low-activity, non-directive, HCP-facing GenAI informational functions rather than narrowing statutory carve-outs, citing entry costs for early-stage developers and the CLIA quality-system model for laboratory workflows.",
+      "summary_cut": false,
+      "source_passage": "Default to enforcement discretion and the existing clinical decision support exclusion for low-activity, non-directive, HCP-facing informational functions. CDRH should resist the temptation to use the novelty of GenAI as a reason to narrow existing statutory carve-outs (e.g., section 520(o)(1)(E)) that already keep large categories of lower-risk clinical software outside device regulation. Scope creep into previously excluded functionality raises the cost of entry for every early-stage company building in this space, regardless of actual patient risk. The laboratory-developed test (LDT) experience is instructive here and is discussed further in response to Question 16 below: courts and Congress have recently and affirmatively reinforced CLIA's quality-system-based, non-FDA-premarket-gated model as sufficient oversight for complex, high-stakes diagnostic testing, and we believe that same model has direct application to GenAI-enabled functions embedded in laboratory workflows."
+    },
+    {
+      "segment_id": "seg-003",
+      "question_ids": [
+        "q11",
+        "q16",
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter is concerned that requiring prospective clinical studies, mandatory independent third-party adjudication, and extensive subgroup benchmarking as default expectations across the broad middle of the risk matrix would impose costs that early-stage companies frequently cannot absorb, while well-capitalized incumbents can. They argue such a framework would select for capital rather than for safety or quality.",
+      "requested_fda_action": "Reserve the most burdensome elements of the competency-based approach—prospective clinical studies, mandatory third-party adjudication, and extensive subgroup benchmarking—for the highest-risk tier of fully autonomous, severe-consequence functions, rather than treating them as the default for moderate-risk functions.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment argues that trial-level evidence expectations for moderate-risk functions would be affordable only to well-capitalized incumbents, effectively selecting entrants by capital rather than by safety or quality."
+      },
+      "public_summary": "Accepts the competency-based approach but asks FDA to scale it more steeply by risk: prospective clinical studies, mandatory independent third-party adjudication, and extensive subgroup benchmarking should be reserved for fully autonomous, severe-consequence functions, not defaults for moderate-risk functions, which the commenter says favors well-capitalized firms.",
+      "summary_cut": false,
+      "source_passage": "Make the most burdensome elements of the competency-based approach - prospective clinical studies, mandatory independent third-party adjudication, and extensive subgroup benchmarking - the exception reserved for the highest-risk tier (fully autonomous, severe-consequence functions), not the default expectation for the broad middle of the risk matrix. A well-capitalized incumbent can absorb a prospective trial as a cost of doing business; an early-stage company frequently cannot, and a framework that requires trial-level evidence for moderate-risk functions will simply select for capital rather than for safety or quality."
+    },
+    {
+      "segment_id": "seg-004",
+      "question_ids": [
+        "q16",
+        "q25"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "economics_burden",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "A mandatory third-party accreditation, adjudication, or Foundation Model MAF gate would operate economically like a licensing fee, falling hardest on smaller companies lacking existing compliance departments, which the commenter describes as the firms most likely to introduce novel approaches.",
+      "requested_fda_action": "Keep third-party accreditation, adjudication, and Foundation Model MAF participation strictly voluntary and non-gating, and make shared or subsidized infrastructure—such as sequestered benchmark datasets and pooled independent adjudicator panels—available to small entities on reasonable terms.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment frames mandatory third-party review as a cost barrier equivalent to a licensing fee that disproportionately burdens smaller firms without compliance departments.",
+        "delegated_authority": "It raises the concern that third-party accreditors or adjudicators could become de facto gatekeepers to market access if participation is not voluntary and non-gating."
+      },
+      "public_summary": "Accepts third-party accreditation, adjudication, and Foundation Model MAF concepts only if strictly voluntary and non-gating, with shared or subsidized sequestered benchmarks and pooled adjudicator panels for small entities. Warns mandatory third-party gates act economically like licensing fees burdening smaller developers.",
+      "summary_cut": false,
+      "source_passage": "Keep any third-party accreditation, adjudication, or Foundation Model MAF program strictly voluntary and non-gating, with shared or subsidized infrastructure (sequestered benchmark datasets, pooled independent adjudicator panels) available on reasonable terms to small entities. A mandatory third-party gate, even a well-intentioned one, functions economically like a licensing fee and will be felt most acutely by companies without an existing compliance department - precisely the companies most likely to bring genuinely novel approaches to market."
+    },
+    {
+      "segment_id": "seg-005",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter argues that because GenAI-enabled devices can evolve after deployment in ways bounded software has not, a point-in-time premarket study is a less accurate safety mechanism than continuous postmarket signal, and expanded premarket evidence imposes higher fixed costs on innovators.",
+      "requested_fda_action": "Make postmarket monitoring the primary mechanism for managing residual uncertainty in GenAI-enabled devices rather than expanding premarket evidentiary requirements.",
+      "confidence": "medium",
+      "gap_tags": [
+        "evidence_burden_commercial_viability",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment ties the choice of regulatory mechanism directly to fixed costs borne by innovators, framing premarket evidence expansion as a burden issue as well as a safety one.",
+        "dynamic_intended_use": "The comment rests on the premise that GenAI-enabled devices evolve post-deployment in ways bounded software does not, so a single premarket snapshot cannot capture ongoing behavior."
+      },
+      "public_summary": "Supports FDA's consideration of greater reliance on postmarket monitoring, urging that it be the primary mechanism for residual uncertainty rather than expanded premarket evidence, arguing continuous signal better tracks post-deployment evolution and costs innovators less. No specific monitoring program characteristics are proposed.",
+      "summary_cut": false,
+      "source_passage": "Rely on post-market monitoring, not expanded premarket evidentiary burden, as the primary mechanism for managing the residual uncertainty inherent to GenAI-enabled devices. This is not merely a competitiveness argument: because GenAI-enabled devices can evolve after deployment in ways bounded software historically has not, continuous post-market signal is often a more accurate safety mechanism than a point-in-time premarket study, and it achieves that safety outcome at materially lower fixed cost to the innovator."
+    },
+    {
+      "segment_id": "seg-006",
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "health_system_implementation",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "Rural hospitals, critical access facilities, and FQHCs may lawfully deploy well-benchmarked GenAI devices without the informatics staffing needed to perform the re-benchmarking, degradation monitoring, and human-oversight review the framework assumes, so monitoring expectations may not be met in practice at lower-resourced sites.",
+      "requested_fda_action": "CDRH should explicitly address minimum deploying-site capacity as a condition for higher-tier device functions in postmarket monitoring guidance, and coordinate with CMS Conditions of Participation and existing quality-reporting infrastructure rather than assuming sponsor-side infrastructure substitutes for site-level capacity.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment argues postmarket monitoring expectations presume informatics capacity that many rural, critical access, and federally qualified sites lack, limiting whether the framework can be executed across deployment settings.",
+        "distributed_accountability": "It questions the allocation of monitoring responsibility between sponsors and deploying sites, urging that sponsor-side infrastructure not be treated as a substitute for site-level capacity."
+      },
+      "public_summary": "Supports postmarket monitoring but warns that re-benchmarking, degradation monitoring, and oversight review assume informatics capacity many rural, critical access, and FQHC sites lack. Asks CDRH to set minimum deploying-site capacity conditions for higher-tier functions and coordinate with CMS quality-reporting infrastructure.",
+      "summary_cut": false,
+      "source_passage": "A rural hospital, critical access facility, or federally qualified health center can lawfully deploy a well-benchmarked device without the informatics staffing to meaningfully run the re-benchmarking, degradation monitoring, or human-oversight review this framework presumes.\nWe recommend CDRH's post market monitoring guidance explicitly address minimum deploying-site capacity as a condition of higher-tier device functions and look to CMS Conditions of Participation and existing quality-reporting infrastructure - which already reaches every Medicare-participating hospital - as a coordination point, rather than building monitoring expectations that assume sponsor-side infrastructure will substitute for site-level capacity."
+    },
+    {
+      "segment_id": "seg-007",
+      "question_ids": [
+        "q1",
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "The commenter views the two-axis framework as a useful organizing heuristic but considers it incomplete because it does not distinguish outputs grounded in validated biomarkers, guidelines, or clinical reference standards from those produced by general or emergent model reasoning without such an anchor.",
+      "requested_fda_action": "Add evidentiary traceability as an explicit third dimension or modifier of the consequence axis, and scale evidence expectations accordingly—reduced evidentiary burden for functions built on validated, traceable clinical anchors and heightened scrutiny for functions relying on unanchored model reasoning.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The commenter asks that the risk framework explicitly reduce evidentiary burden for outputs anchored to validated reference standards, linking risk tiering directly to the cost of evidence generation."
+      },
+      "public_summary": "Supports the two-axis risk framework as an organizing heuristic but recommends adding evidentiary traceability—whether an output is grounded in a validated biomarker, guideline, or reference standard—as a third dimension or consequence-axis modifier, with lower evidence burden for anchored functions and heightened scrutiny otherwise.",
+      "summary_cut": false,
+      "source_passage": "We support the two -axis framework as an organizing heuristic, but recommend CDRH add evidentiary traceability as an explicit third dimension or consequence -axis modifier: whether a given output is grounded in a validated biomarker, guideline, or clinical reference standard, versus general model reasoning without such an anchor. ... A GenAI -enabled device output that traces to a validated reference standar d is meaningfully lower-risk, for a given activity and consequence level, than one that does not. I recommend the risk framework explicitly reward - through reduced evidentiary burden - device functions built on validated, traceable clinical anchors, and correspondingly require heightened scrutiny for functions relying on emergent or unanchored model reasoning."
+    },
+    {
+      "segment_id": "seg-008",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "The commenter states that identical GenAI outputs carry different real-world consequences depending on the deploying facility's resources, such as whether on-call specialty coverage exists or the device partially closes an access gap. A framework calibrated only to output content would, in their view, systematically underweight risk in under-resourced settings.",
+      "requested_fda_action": "Add deployment-context modifiers to the consequences axis of the two-axis risk framework so that risk assessment reflects the deployment environment (e.g., availability of specialty coverage at small and rural hospitals), not just output content.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment argues risk depends on site-specific deployment conditions such as specialty coverage, which a content-only framework does not capture across varied care settings."
+      },
+      "public_summary": "Accepts the two-axis risk framework but asks CDRH to add deployment-context modifiers to the consequences axis, arguing that identical outputs carry different consequences depending on facility resources such as on-call specialty coverage, and that content-only calibration underweights risk in under-resourced settings.",
+      "summary_cut": false,
+      "source_passage": "We also recommend CDRH account for deployment -context modifiers on the consequences axis. Through Arockia AI's work in clinical decision support for small and rural hospitals, I have seen firsthand that the same informational output carries different real-world consequence depending on whether the deploying facility has on-call specialty coverage or relies on the device to partially close an access gap. A risk framework calibrated only to output content, without reference to deployment environment, will systematically underweight risk in exactly the settings - under-resourced facilities - where GenAI-enabled devices are likely to see the most consequential use."
+    },
+    {
+      "segment_id": "seg-009",
+      "question_ids": [
+        "q1"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "risk_classification",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "The commenter is concerned that CDRH's two-axis risk framework would create a second, non-aligned federal risk taxonomy that sponsors and deploying health systems must reconcile against HHS's 'high-impact AI' classification under OMB M-25-21, and that risk calibration should support HHS's stated access goals for rural and under-resourced facilities.",
+      "requested_fda_action": "Harmonize the two-axis risk framework with HHS's high-impact AI classification and associated risk controls rather than creating an independent taxonomy, and calibrate risk for rural and under-resourced facilities in a way that advances HHS's access goal.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment raises the burden on deploying health systems, including rural and under-resourced facilities, of reconciling multiple federal risk frameworks for the same device, an implementation-side issue not addressed by Q1's device-centric framing."
+      },
+      "public_summary": "Accepts a two-axis risk framework but asks CDRH to align it with HHS's 'high-impact AI' classification under OMB M-25-21 instead of creating a separate taxonomy, so sponsors and deploying health systems avoid reconciling conflicting federal frameworks, and to calibrate risk for rural, under-resourced facilities.",
+      "summary_cut": false,
+      "source_passage": "HHS's December 2025 AI Strategy names democratizing AI technologies and access as one of its four core goals, and OMB Memorandum M -25-21 requires HHS divisions to classify and manage 'high -impact AI' with defined risk contro ls. We recommend CDRH harmonize its two -axis risk framework with HHS's high-impact AI classification rather than developing an independent taxonomy, so that sponsors and deploying health systems are not made to reconcile two non -aligned federal risk frameworks for the same device and so that CDRH's rural and under-resourced-facility risk calibration serves HHS's own access goal directly."
+    },
+    {
+      "segment_id": "seg-010",
+      "question_ids": [
+        "q3"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "accountability_liability",
+      "secondary_issue": "regulatory_scope",
+      "stakeholder_concern": "The commenter is concerned that patient-facing GenAI risk could be addressed through blanket restrictions on delivering clinical information to patients, losing access and democratization benefits, and that accountability may be diffused when a tool is positioned as a freestanding source of clinical information.",
+      "requested_fda_action": "Explore \"worker extender\" or comparable scope-anchored certification models that tie a device's scope and accountability to a credentialed, licensed human role, and examine the CMS ecosystem-partner precedent as a template for structuring patient-facing risk mitigation rather than restricting patient-facing information.",
+      "confidence": "medium",
+      "gap_tags": [
+        "distributed_accountability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "distributed_accountability": "The comment argues that anchoring a patient-facing tool to an identifiable licensed human role prevents accountability from being diffused across the device and its users.",
+        "delegated_authority": "The proposed \"worker extender\" framing defines the device's permitted scope as an extension of a credentialed worker's authority rather than as an autonomous clinical information source."
+      },
+      "public_summary": "Commenter accepts FDA's interest in patient-facing benefits but proposes a different mitigation: certifying devices as \"worker extenders\" whose scope and accountability are anchored to a credentialed human role, citing a CMS ecosystem-partner precedent, instead of restricting patient-facing clinical information.",
+      "summary_cut": false,
+      "source_passage": "HumAInity, which I co-founded, is the first AI tool certified in the world as a healthcare worker extender, and is a CMS Ecosystem partner. That certification model - positioning the device explicitly as an extension of a credentialed human worker's scope, rather than as an autonomous, freestanding source of clinical information - is, in my experience, one of the more effective mitigations CDRH could consider for the patient -facing risk question. A “worker extender” framing does two things simultaneously: it preserves the democratization and access benefits the paper rightly wants to protect, while anchoring accountability and scope to an identifiable, licensed human role rather than diffusing it. We recommend CDRH explore “worker extender” or comparable scope-anchored certification models, and the CMS ecosystem -partner precedent for how a federal payer program has already evaluated and integrated this type of certified AI extension into a program of record, as a template for how FDA might structure patient-facing risk mitigation without resorting to blanket restriction of patient-facing information."
+    },
+    {
+      "segment_id": "seg-011",
+      "question_ids": [
+        "q7"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "The commenter views the competency-based approach (benchmarking followed by clinical confirmation) as closely mirroring the established layered evidentiary pathway for pharmacogenomic and other diagnostics: analytic/technical validation, clinical validity against guideline or reference standards, then real-world clinical utility evidence.",
+      "requested_fda_action": "State explicitly in any resulting guidance that the competency-based approach parallels existing diagnostic evidentiary practice, so sponsors can understand it more readily and CDRH can draw on decades of diagnostic evidence precedent rather than building the framework from first principles.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter endorses the competency-based framework, noting it closely parallels the established diagnostic evidence pathway of analytic validation, clinical validity, and real-world utility. Asks CDRH to state this parallel explicitly in guidance to aid sponsor understanding and leverage existing diagnostic evidentiary precedent.",
+      "summary_cut": false,
+      "source_passage": "Yes, and we would go further: this structure mirrors, almost exactly, the pathway pharmacogenomic diagnostics already travel - analytic/technical validation, followed by clinical validity established against guideline or reference standards, followed by real-world clinical utility evidence. CDRH is not inventing a new evaluation philosophy; it is correctly recognizing that GenAI -enabled devices should be held to the same layered evidentiary discipline that diagnostic testing has used for years, adapted for open-ended inputs and outputs. We recommend CDRH say so explicitly in any resulting guidance, both because it will aid sponsor understanding and because it will allow CDRH to draw on decades of diagnostic evidentiary practice rather than building the competency-based approach from first principles."
+    },
+    {
+      "segment_id": "seg-012",
+      "question_ids": [
+        "q11",
+        "q7",
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter is concerned that a competency-based framework could become uniformly burdensome if clinical confirmation is required across all risk levels, imposing trial-level evidentiary cost on functions that do not carry trial-level risk.",
+      "requested_fda_action": "FDA should ensure both benchmarking and clinical confirmation scale down as well as up with risk, presumptively allowing benchmarking alone to satisfy the competency-based approach for lower and middle bands of the two-axis matrix, and reserving the combined requirement for higher-risk bands.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment centers on avoiding trial-level evidentiary cost for lower-risk functions, framing proportionate evidence requirements as necessary to keep the framework least-burdensome."
+      },
+      "public_summary": "Commenter accepts the competency-based benchmarking-plus-clinical-confirmation framework but conditions support on evidence scaling down with risk: for lower and middle risk bands, benchmarking alone should presumptively suffice, with both stages reserved for higher-risk functions to avoid disproportionate evidentiary cost.",
+      "summary_cut": false,
+      "source_passage": "We would add one condition: the framework's value depends entirely on both stages scaling down, not just up, with risk. For the lower and middle bands of the two -axis matrix, benchmarking alone - without a mandatory clinical confirmation layer - should presumptively satisfy the competency -based approach. Reserving the full weight of both benchmarking and clinical confirmation for the higher -risk bands keeps the framework genuinely least-burdensome rather than uniformly burdensome and avoids imposing trial-level evidentiary cost on functions that do not carry trial-level risk."
+    },
+    {
+      "segment_id": "seg-013",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "The commenter finds the benchmarking categories (Safety, Clinical Proficiency, Generalizability, Agentic AI Capability) well-organized but warns that the current structure does not distinguish elements that establish clinical validity from those reserved for clinical utility evaluation, so a sponsor could benchmark strongly on E.1-E.4 and incorrectly treat that as evidence of utility.",
+      "requested_fda_action": "Make explicit within the Clinical Proficiency category which elements (E.1, E.2, E.3) are used to establish clinical validity—accuracy of underlying knowledge and reasoning against accepted clinical evidence—versus which are reserved for clinical utility evaluation under Section V.C.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter considers the proposed benchmarking categories well-organized but asks CDRH to state explicitly which Clinical Proficiency elements establish clinical validity versus which are reserved for clinical utility evaluation, to prevent sponsors from mistaking strong benchmark performance for evidence of utility.",
+      "summary_cut": false,
+      "source_passage": "The Safety, Clinical Proficiency, Generalizability, and Agentic AI Capability elements are well-organized, but we recommend CDRH make explicit within the Clinical Proficiency category which elements are being used to establish clinical validity  (E.1, E.2, E.3 - is the underlying knowledge and reasoning accurate against accepted clinical evidence) versus which are being reserved for clinical utility evaluation in Section V.C (does use of the output change a decision or outcome). As currently structured, a sponsor could benchmark strongly across E.1–E.4 and reasonably (but incorrectly) treat that as evidence of utility."
+    },
+    {
+      "segment_id": "seg-014",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "directiveness",
+      "stakeholder_concern": "The commenter states that mismatches between the strength of a device's output-facing language (e.g., \"recommend\" versus \"consider\" versus general information) and the actual strength of the clinical evidence behind that specific function are a common and consequential failure mode, and are not obviously captured by the proposed safety, evaluation, or reasoning benchmark elements (S.1-S.3, E.1-E.4, R.1-R.2).",
+      "requested_fda_action": "Add a benchmarking element to the competency framework that assesses claims-evidence alignment, i.e., whether the directive strength of a device's output language is calibrated to the underlying clinical evidence for that function.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Accepts the benchmarking structure but asks CDRH to add an element assessing claims-evidence alignment: whether the strength of output language (\"recommend\" vs. \"consider\") matches the underlying clinical evidence. States this failure mode is not captured by the currently listed benchmark categories.",
+      "summary_cut": false,
+      "source_passage": "We also recommend CDRH add a benchmarking element addressing claims-evidence alignment - whether the strength of a device's output-facing language (e.g., “recommend” vs. “consider” vs. general information) is calibrated to the actual strength of the clinical evidence behind that specific function. In my experience, mismatches between claim st rength and evidentiary support are one of the more common and consequential failure modes in diagnostic and now AI-enabled commercialization, and they are not obviously captured by S.1 –S.3, E.1 –E.4, or R.1 –R.2 as currently defined."
+    },
+    {
+      "segment_id": "seg-015",
+      "question_ids": [
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "human_factors",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter is concerned that accuracy-focused benchmarking omits usability and cognitive burden, and that alert fatigue and override behavior are documented clinical decision support failure modes; a device scoring well on clinical proficiency may still fail in deployment if it does not fit clinical workflow.",
+      "requested_fda_action": "Add a benchmarking element addressing clinician usability and cognitive burden, evaluated through human factors testing conducted with front-line users rather than accuracy benchmarking alone.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues evaluation must address how front-line clinicians interact with the device, including override behavior, rather than model accuracy in isolation.",
+        "operational_harm": "It identifies alert fatigue and workflow misfit as deployment failure modes distinct from incorrect device output."
+      },
+      "public_summary": "Accepts the benchmarking framework but says it is incomplete: recommends adding a benchmarking element for clinician usability and cognitive burden, tested with front-line users. Notes alert fatigue, override behavior, and workflow misfit can cause deployment failure despite strong clinical proficiency scores.",
+      "summary_cut": false,
+      "source_passage": "We also recommend CDRH add a benchmarking element for clinician usability and cognitive burden - human factors testing conducted with front -line users, not accuracy benchmarking alone. Alert fatigue and override behavior are well -documented failure modes f or clinical decision support generally, and a device that benchmarks well on Clinical Proficiency can still fail in deployment because it does not fit clinical workflow."
+    },
+    {
+      "segment_id": "seg-016",
+      "question_ids": [
+        "q11",
+        "q13"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "clinical_validation",
+      "secondary_issue": "synthetic_data",
+      "stakeholder_concern": "The commenter, citing experience building a large clinical-genetic databank in chronic pain, argues that FDA's described spectrum of clinical confirmation approaches omits large, longitudinally maintained real-world clinical-genetic/clinical-outcomes databanks, which they say avoid the circularity risk of synthetic data generated by models of the same class under evaluation and better support subgroup validation for hard-to-sample populations.",
+      "requested_fda_action": "Explicitly list \"large longitudinal real-world clinical-genetic/clinical-outcomes databanks, independently maintained and governed\" as a recognized clinical confirmation approach, positioned between retrospective evaluation and prospective clinical study in the rigor spectrum, conditioned on documented provenance, consent structure, and adjudication independence; and recognize such databanks as an ongoing confirmation and subgroup-validation resource.",
+      "confidence": "high",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts the graded clinical confirmation spectrum but asks CDRH to add independently maintained longitudinal real-world clinical-genetic/outcomes databanks as a distinct approach between retrospective and prospective study, arguing they avoid synthetic data's circularity risk for hard-to-sample subgroups when provenance, consent, and adjudication independence are documented.",
+      "summary_cut": false,
+      "source_passage": "Drawing on the Proove Biosciences experience building a large clinical -genetic databank in chronic pain, we would encourage CDRH to recognize large, longitudinally maintained clinical -genetic and clinical - outcomes databanks as a distinct, and in some cases superior, clinical confirmation approach - not only as a supplement to premarket testing, but as an ongoing confirmation and subgroup -validation resource that outperforms synthetic data for hard -to-sample populations, provided the databank's provenance, consent structure, and adjudication independ ence are documented. Real, longitudinally collected clinical -genetic data avoids the circularity risk the paper itself raises with synthetic data generated by models of the same class under evaluation (see Question 13 of the discussion paper). We recommend CDRH explicitly list \"large longitudinal real-world clinical-genetic/clinical-outcomes databanks, independently maintained and governed\" as a clinical confirmation approach, positioned between retrospective evaluation and prospective clinical study in the paper's rigor spectrum."
+    },
+    {
+      "segment_id": "seg-017",
+      "question_ids": [
+        "q11",
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "Defaulting to prospective clinical studies imposes the largest fixed cost in the clinical confirmation spectrum, which the commenter argues would exclude early-stage companies from the moderate-risk segment and leave it to incumbents able to spread trial costs across existing revenue.",
+      "requested_fda_action": "Establish a rebuttable presumption against requiring a prospective clinical study for any device outside the highest-risk band of the two-axis framework, with prospective studies treated as an exception justified by severe-consequence, high-autonomy use and available voluntarily to sponsors.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment centers on prospective study costs acting as a fixed barrier that could concentrate the moderate-risk market among larger incumbents."
+      },
+      "public_summary": "Supports CDRH's view that prospective clinical studies need not always be required, but asks FDA to formalize a rebuttable presumption against them for devices outside the highest-risk band, citing fixed trial costs that may disadvantage smaller developers in moderate-risk segments.",
+      "summary_cut": false,
+      "source_passage": "More broadly, we recommend CDRH establish a rebuttable presumption against requiring a prospective clinical study for any device outside the highest-risk band of the two-axis framework, with the sponsor free to offer one voluntarily but not required to default to it. Prospective studies are the single largest fixed cost in the clinical confirmation spectrum and requiring them as a default - rather than an exception justified by genuinely severe-consequence, high-autonomy use - would functionally price early-stage companies out of the moderate-risk middle of the market, leaving that space to incumbents best able to amortize trial costs across a larger existing revenue base."
+    },
+    {
+      "segment_id": "seg-018",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter argues that when a device functions as an extender of an identified worker's scope, device-alone benchmarking evaluates a configuration that will not exist in actual practice, making it an inappropriate basis for evaluation.",
+      "requested_fda_action": "CDRH should make human-AI team performance the default comparator and unit of evaluation for extender-type deployments, and reserve device-alone performance as the primary comparator for devices intended for fully autonomous, unsupervised use.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment asks that the combined clinician-device configuration, rather than the model alone, be the evaluation unit for supervised extender deployments.",
+        "deployment_assurance_scalability": "It argues device-alone testing measures a configuration that will not exist in the field, raising the mismatch between tested and deployed configurations."
+      },
+      "public_summary": "Supports the comparator discussion but urges CDRH to make human-AI team performance the default comparator and evaluation unit where the device extends an identified worker's scope, arguing device-alone testing reflects a configuration absent in practice; device-alone comparators should apply to fully autonomous use.",
+      "summary_cut": false,
+      "source_passage": "In deployments where the device is functioning as an extender of an identified worker's scope, we recommend CDRH treat human-AI team performance  as the default comparator and evaluation unit, not device -alone performance, because device -alone benchmarking in that deployment model measures a configuration that will not exist in the field. Device -alone performance should be reserved as the primary comparator for devices intended for fully autonomous, unsupervised use (the upper- right of the two-axis framework)."
+    },
+    {
+      "segment_id": "seg-019",
+      "question_ids": [
+        "q14"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "comparator_standard_of_care",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "Concern that a sponsor could generate evidence using the more favorable human-AI team configuration while labeling and marketing the device for a harder, more autonomous configuration, and that human-AI team performance measured once at certification does not capture later shifts in clinician reliance.",
+      "requested_fda_action": "Require that comparator selection be transparently tied to the configuration actually described in the sponsor's labeling and intended use, and that human-AI team evaluation include measurement of override behavior and clinician trust calibration over time rather than at a single certification point.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment argues evaluation of the human-AI team must include override behavior and clinician trust calibration, including drift toward over-reliance or disuse as clinicians gain experience.",
+        "dynamic_intended_use": "It highlights a mismatch risk between the configuration tested (team-assisted) and the configuration described in labeling and marketed use (autonomous), requiring comparators be anchored to the claimed use."
+      },
+      "public_summary": "Accepts human-AI team comparators but asks FDA to require comparator choice to match the configuration in labeling and intended use, preventing testing in an easier assisted configuration while marketing autonomous use, and to measure override behavior and clinician trust calibration over time.",
+      "summary_cut": false,
+      "source_passage": "We would also recommend the comparator selection be tied transparently to whichever configuration the sponsor's labeling and intended use actually describe, so that a sponsor cannot benchmark in the easier configuration (human -AI team) while marketing for the harder one (autonomous).  Human-AI team benchmarking should also measure override behavior and clinician trust calibration over time, not only at a single point of certification but a device also that is initially well-calibrated can still drift toward over-reliance or unwarranted disuse as clinicians gain experience with it."
+    },
+    {
+      "segment_id": "seg-020",
+      "question_ids": [
+        "q16",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "regulatory_scope",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "Concern that GenAI interpretive functions developed, validated, and deployed within CLIA-accredited laboratories (e.g., an AI interpretive layer integral to a laboratory-developed test) would face an additional FDA-specific device review layered on top of existing CLIA/CAP validation, accreditation, and proficiency-testing obligations.",
+      "requested_fda_action": "Explicitly recognize existing CLIA/CAP accreditation, validation, and proficiency-testing requirements as sufficient to satisfy some or all of the benchmarking and third-party evidentiary elements described in Section V for such laboratory-developed GenAI functions, instead of imposing a separate device review requirement.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment asks FDA to treat compliance with another accreditation regime's quality-system, validation, and proficiency-testing obligations as substituting for FDA's own benchmarking and third-party evidence elements.",
+        "evidence_burden_commercial_viability": "The concern is duplicative evidentiary requirements layered on top of an existing quality-system framework already applied to these laboratory functions."
+      },
+      "public_summary": "A commenter accepts the Section V competency approach in general but asks CDRH to recognize existing CLIA/CAP accreditation, validation, and proficiency-testing obligations as satisfying some or all benchmarking and third-party evidence elements for GenAI interpretive functions within accredited laboratories, avoiding duplicative FDA device review.",
+      "summary_cut": false,
+      "source_passage": "For GenAI -enabled device functions that are developed, validated, and deployed as part of a CLIA-accredited laboratory's own testing and interpretive services - for example, an AI-enabled interpretive layer integral to a laboratory-developed test - we recommend CDRH explicitly recognize existing CLIA/CAP accreditation, validation, and proficiency -testing obligations as sufficient to satisfy some or all of the benchmarking and third -party evidentiary elements described in Section V, rather than layering an additional, FDA-specific device review requirement on top of a quality-system framework Congress and the courts have already affirmed as fit for this purpose."
+    },
+    {
+      "segment_id": "seg-021",
+      "question_ids": [
+        "q16",
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "benchmarking",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter is concerned that CDRH may build an entirely new third-party accreditation apparatus for GenAI-enabled devices when existing CLIA/CAP-accredited laboratory infrastructure and other federal programs already perform comparable independent assessment functions.",
+      "requested_fda_action": "Leverage CLIA/CAP-accredited infrastructure as a template for hosting sequestered benchmarking datasets, conducting periodic re-benchmarking, and supplying independently adjudicated real-world data, and coordinate with CMS on lessons from its evaluation of an AI healthcare worker extender rather than developing an FDA-only evaluation model.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment argues that ongoing benchmarking and real-world data adjudication should be scaled through existing accredited laboratory infrastructure rather than a newly constructed apparatus.",
+        "delegated_authority": "It proposes that already-accredited third parties and another federal agency's review process carry part of the independent assessment function for GenAI-enabled devices."
+      },
+      "public_summary": "Supports independent third-party involvement in benchmarking and re-benchmarking, but urges CDRH to build on existing CLIA/CAP-accredited laboratory infrastructure for sequestered datasets and adjudicated real-world data instead of creating a new accreditation apparatus, and to coordinate with CMS's related evaluation experience.",
+      "summary_cut": false,
+      "source_passage": "For GenAI-enabled functions outside that laboratory -embedded context, we would still encourage CDRH to look to CLIA/CAP-accredited infrastructure - the kind Labarium operates - as a template for hosting sequestered benchmarking datasets, conducting periodic re -benchmarking, and supplying independently adjudicated real - world data, rather than constructing a wholly new third-party accreditation apparatus for GenAI-enabled devices from scratch. Separately, CMS's evaluation and integration of HumAInity  as an Ecosystem partner is itself an example of a federal program already performing independent, cross -agency assessment of a certified AI healthcare worker extender; we encourage CDRH to coordinate with CMS on lessons learned from that review rather than developing an FDA-only evaluation model in isolation."
+    },
+    {
+      "segment_id": "seg-022",
+      "question_ids": [
+        "q16"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "economics_burden",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "A mandatory third-party review gate would impose fixed costs that disadvantage smaller sponsors, and could become a de facto toll affordable only to well-capitalized sponsors even if framed as optional.",
+      "requested_fda_action": "Keep any third-party pathway voluntary and optional (similar in spirit to ASCA), allowing sponsors to submit well-documented in-house benchmarking directly to CDRH, and pair any encouragement of third-party involvement with shared or subsidized infrastructure such as pooled adjudicator panels and sequestered benchmark datasets on standardized, published terms.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment focuses on fixed third-party review costs falling disproportionately on small sponsors and asks for subsidized infrastructure to keep participation affordable.",
+        "delegated_authority": "It cautions against making private third-party review a mandatory gate to clearance, raising the question of how much gatekeeping authority should be delegated outside CDRH."
+      },
+      "public_summary": "Supports a role for third parties, but urges it stay voluntary rather than a mandatory clearance gate, with in-house benchmarking still submitted directly to CDRH; asks for pooled adjudicator panels and sequestered benchmark datasets on published terms to limit costs for small sponsors.",
+      "summary_cut": false,
+      "source_passage": "In all cases, we would caution CDRH against making any third -party pathway a mandatory gate to premarket clearance. A voluntary, optional third -party pathway - similar in spirit to the existing ASCA program, and consistent with the CLIA precedent above - lets sponsors with the resources to use it benefit from streamlined review, without imposing the same fixed cost on a sponsor that instead submits its own well -documented in-house benchmarking directly to CDRH. If CDRH does encourage third -party involvement, we recommend it accompany that encouragement with a shared or subsidized infrastructure model - pooled adjudicator panels and sequestered benchmark datasets accessible on standardized, published terms - so that third-party review is a genuinely lower-cost option for small entities rather than a de facto toll that only well-capitalized sponsors can afford."
+    },
+    {
+      "segment_id": "seg-023",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter argues that accepting greater premarket uncertainty in exchange for robust postmarket monitoring should be the standard approach for GenAI-enabled devices below the highest-risk band, citing least-burdensome principles, the post-deployment changeability of GenAI devices, and fixed costs and time-to-market for early-stage companies.",
+      "requested_fda_action": "Adopt greater reliance on continuous postmarket monitoring (periodic re-benchmarking, degradation monitoring, sample-based clinician review) as the default regulatory posture for all GenAI-enabled devices outside the highest-risk band, rather than treating it as an occasional accommodation.",
+      "confidence": "high",
+      "gap_tags": [
+        "evidence_burden_commercial_viability",
+        "dynamic_intended_use"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The comment expressly grounds its recommendation in lowering fixed costs and time-to-market for early-stage companies, a viability concern not addressed by the question as framed.",
+        "dynamic_intended_use": "The commenter reasons that GenAI devices can change after deployment in ways locked software cannot, making premarket evidence inherently less durable than ongoing behavioral monitoring."
+      },
+      "public_summary": "Supports FDA's openness to greater premarket uncertainty offset by postmarket monitoring, but asks that this be the default posture for all GenAI devices outside the highest-risk band, citing least-burdensome principles, post-deployment model change, and costs for early-stage companies.",
+      "summary_cut": false,
+      "source_passage": "We recommend CDRH accept this trade -off as the default posture for any GenAI -enabled device outside the highest-risk band of the two-axis framework, not merely as an occasional accommodation. Three considerations support this:\n• It is more consistent with the least-burdensome statutory principle CDRH itself cites ...\n• It is arguably more protective in practice for GenAI-enabled devices specifically, because these devices can change after deployment in ways traditional locked software does not; a robust, continuous post- market monitoring program (periodic re-benchmarking, degradation monitoring, sample-based clinician review) can detect and respond to a real-world problem faster than a premarket study ...\n• It materially lowers the fixed cost and time-to-market for early-stage companies ..."
+    },
+    {
+      "segment_id": "seg-024",
+      "question_ids": [
+        "q18",
+        "q23"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "pccp",
+      "secondary_issue": "postmarket_monitoring",
+      "stakeholder_concern": "The commenter is concerned that CDRH may build a new, parallel mechanism for prespecified postmarket monitoring when an existing authorized pathway for planned model changes with defined monitoring and verification protocols already exists.",
+      "requested_fda_action": "Extend the existing Predetermined Change Control Plan framework, rather than creating a separate parallel mechanism, to serve as the vehicle for the prespecified postmarket monitoring plan proposed for GenAI-enabled devices.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "The commenter accepts the paper's concept of a prespecified postmarket monitoring plan but recommends implementing it through the existing Predetermined Change Control Plan framework, which already provides pre-authorized pathways with monitoring and verification protocols, rather than establishing a new parallel mechanism.",
+      "summary_cut": false,
+      "source_passage": "CDRH does not need to design this mechanism from first principles. The Predetermined Change Control Plan framework already gives sponsors a pre -authorized pathway for planned model changes, subject to a defined monitoring and verification protocol. We reco mmend CDRH extend the PCCP framework, rather than a new parallel mechanism, to serve as the vehicle for the prespecified post -market monitoring plan this discussion paper proposes for GenAI-enabled devices."
+    },
+    {
+      "segment_id": "seg-025",
+      "question_ids": [
+        "q18"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "evidence_standards",
+      "stakeholder_concern": "Reduced premarket evidence should only be accepted where a prespecified, adequately resourced monitoring plan with defined cadence and triggers exists, along with a credible mechanism for rapid corrective action (including withdrawal or use restriction) and transparency allowing CDRH to audit the monitoring program itself. The highest-risk band—fully autonomous, severe-consequence functions—should remain premarket-weighted.",
+      "requested_fda_action": "Condition any premarket-to-postmarket shift on specified monitoring, rapid corrective-action, and CDRH auditability characteristics, and retain the traditional premarket-weighted approach for fully autonomous, severe-consequence functions.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment makes CDRH's ability to audit the monitoring program and force rapid corrective action, including withdrawal or use restriction, the precondition for accepting premarket uncertainty."
+      },
+      "public_summary": "Accepts greater reliance on postmarket monitoring only if conditions are met: prespecified, resourced monitoring with defined cadence and triggers, credible rapid corrective action including withdrawal or use restriction, and CDRH ability to audit the monitoring program. Would exempt fully autonomous, severe-consequence functions.",
+      "summary_cut": false,
+      "source_passage": "The characteristics that should justify reduced premarket evidence are, in our view, largely the ones already implicit in the paper's own post -market monitoring section: a prespecified, adequately resourced monitoring plan with defined cadence and triggering events, a credible mechanism for rapid corrective action (including market withdrawal or use restriction) if degradation is detected, and transparency to CDRH sufficient for the agency to audit the monitoring program itself. Devices in the highest-risk band - fully autonomous, severe-consequence functions - are the appropriate exception where CDRH's traditional premarket-weighted posture should continue to apply."
+    },
+    {
+      "segment_id": "seg-026",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "benchmarking",
+      "stakeholder_concern": "The commenter states that its multi-site laboratory infrastructure already performs the operational analog of what CDRH proposes—continuous proficiency testing, QC monitoring, and multi-site performance reconciliation under CLIA—and that these existing cadences are proven and auditable.",
+      "requested_fda_action": "Asks CDRH to treat accredited laboratory quality-system cadences (routine proficiency testing intervals and triggered re-verification after any material change to method, reagent, or platform) as the cadence model for periodic re-benchmarking of GenAI-enabled devices, particularly devices deployed within or alongside CLIA-accredited laboratory workflows.",
+      "confidence": "medium",
+      "gap_tags": [
+        "deployment_assurance_scalability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment points to continuous QC and multi-site performance reconciliation across an expanding set of sites as an existing, auditable mechanism for sustaining device performance assurance after deployment."
+      },
+      "public_summary": "Supports periodic re-benchmarking but recommends CDRH model its cadence on accredited laboratory quality systems—routine proficiency testing intervals plus triggered re-verification after material changes to method, reagent, or platform—especially for GenAI devices deployed within or alongside CLIA-accredited laboratory workflows.",
+      "summary_cut": false,
+      "source_passage": "Labarium's multi -site laboratory infrastructure already performs the operational analog of what CDRH is proposing here - continuous proficiency testing, QC monitoring, and multi -site performance reconciliation across an expanding footprint of acquired laboratories, under existing CLIA obligations. We recommend CDRH treat accredited laboratory quality -system cadences (routine proficiency testing intervals, triggered re - verification after any material change to method, reagent, or platform) as a proven, auditable cadence model for periodic device re -benchmarking of GenAI -enabled devices, particularly for devices that are themselves deployed within, or alongside, a CLIA-accredited laboratory workflow."
+    },
+    {
+      "segment_id": "seg-027",
+      "question_ids": [
+        "q19",
+        "q21"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "health_system_implementation",
+      "stakeholder_concern": "Technical re-benchmarking alone is viewed as insufficient for postmarket evaluation; the commenter holds that real-world safety signals require review of actual patient records by practicing clinicians who are independent of the sponsor.",
+      "requested_fda_action": "Require sponsor-independent, clinician-conducted sample-based chart review as a standing element of postmarket monitoring, and leverage existing quality-improvement infrastructure such as AHRQ-listed Patient Safety Organizations and health systems' peer-review and quality-measurement frameworks as the adjudication model rather than building a new one.",
+      "confidence": "high",
+      "gap_tags": [
+        "deployment_assurance_scalability",
+        "distributed_accountability"
+      ],
+      "gap_explanations": {
+        "deployment_assurance_scalability": "The comment proposes reusing existing health-system quality-improvement and Patient Safety Organization infrastructure so that ongoing clinical review of deployed devices can be conducted at scale without new FDA-built machinery.",
+        "distributed_accountability": "It places adjudication of postmarket performance with clinicians and institutional peer-review bodies independent of the sponsor, raising questions about how oversight roles are allocated across manufacturers, health systems, and PSOs."
+      },
+      "public_summary": "Supports postmarket performance evaluation but argues technical re-benchmarking alone is inadequate. Recommends FDA require ongoing sample-based chart review by practicing clinicians independent of the sponsor, using existing Patient Safety Organization and health-system peer-review and quality-measurement frameworks as the adjudication model.",
+      "summary_cut": false,
+      "source_passage": "We further recommend CDRH require sample -based chart review conducted by practicing clinicians independent of the sponsor, not technical re -benchmarking alone, as a standing element of post  market monitoring. Existing quality-improvement infrastructure including AHRQ -listed Patient Safety Organizations and the peer-review and quality-measurement frameworks that are already operated inside health systems  offers CDRH a ready adjudication model rather than one newly built for this purpose."
+    },
+    {
+      "segment_id": "seg-028",
+      "question_ids": [
+        "q19"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "postmarket_monitoring",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter is concerned that commercial and compensation arrangements tied to a GenAI-enabled device's outputs could influence how the device is used, and that this risk is distinct from technical performance degradation and may confound interpretation of postmarket performance signals.",
+      "requested_fda_action": "Treat incentive and compensation structures tied to device outputs as a separate postmarket monitoring risk category, and require sponsors to disclose in postmarket monitoring plans whether such compensation structures exist and to account for them when interpreting postmarket performance data.",
+      "confidence": "medium",
+      "gap_tags": [
+        "operational_harm"
+      ],
+      "gap_explanations": {
+        "operational_harm": "The comment identifies harm arising from utilization patterns driven by commercial and compensation incentives rather than from technical model performance, which FDA's postmarket monitoring question does not address."
+      },
+      "public_summary": "Commenter accepts postmarket performance evaluation but asks CDRH to add a distinct risk category for commercial and compensation structures tied to device outputs, requiring sponsors to disclose such arrangements in monitoring plans and account for them when interpreting postmarket performance signals.",
+      "summary_cut": false,
+      "source_passage": "We also recommend CDRH treat commercial and compensation structures tied to a GenAI-enabled device's outputs as a post -market monitoring risk category in their own right, distinct from technical performance degradation. ... We recommend CDRH require sponsors to disclose, as part of post-market monitoring plans, whether compensation structures exist that could influence device utilization, and to account for that possibility when interpreting post-market performance signals."
+    },
+    {
+      "segment_id": "seg-029",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "regulatory_scope",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "For agentic systems that plan and execute multi-step action sequences, nominal human 'in the loop' presence may not equate to a genuine, informed opportunity for a clinician or facility to independently review and reject a planned action sequence before execution.",
+      "requested_fda_action": "Explicitly anchor the agentic AI oversight approach to the existing clinical decision support exclusion criteria under section 520(o)(1)(E) of the FD&C Act, particularly the independent-review criterion referenced in the paper's footnote 13.",
+      "confidence": "medium",
+      "gap_tags": [
+        "delegated_authority",
+        "human_ai_system_performance"
+      ],
+      "gap_explanations": {
+        "delegated_authority": "The comment focuses on whether a human retains a genuine ability to review and reject a multi-step action sequence before an agentic system executes it, rather than on nominal human presence.",
+        "human_ai_system_performance": "It frames the relevant question as the practical, informed review capacity of the deploying clinician or facility, not the device's behavior alone."
+      },
+      "public_summary": "Commenter supports CDRH oversight of agentic AI but asks that it be tied explicitly to the section 520(o)(1)(E) clinical decision support exclusion criteria, especially independent review, arguing the test should be genuine, informed human ability to reject planned multi-step actions before execution.",
+      "summary_cut": false,
+      "source_passage": "Through Arockia AI's clinical decision support work, we would encourage CDRH to anchor its agentic AI oversight approach explicitly to the existing clinical decision support exclusion criteria under section 520(o)(1)(E) of the FD&C Act - in particular the independent -review criterion the paper itself references in footnote 13. As agentic systems increasingly plan and execute multi -step action sequences, the practical question for a deploying clinician or facility becomes whether a human retains a genuine, informed opportunity to independently review and reject a planned action sequence before it executes, not merely whether a human is nominally \"in the loop.\""
+    },
+    {
+      "segment_id": "seg-030",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "agentic_autonomy",
+      "secondary_issue": "human_factors",
+      "stakeholder_concern": "The commenter argues that 'human-oversight checkpoint' is treated as self-defining in the agentic context, and that review may not be meaningful in settings with thin staffing, such as the small and rural facilities identified as the commenter's primary go-to-market channel.",
+      "requested_fda_action": "Develop a bright-line operational test defining what constitutes meaningful independent review of an agentic action sequence, including the minimum information the system must surface to the reviewing human before an irreversible or high-consequence action, and have acceptance criteria account for thinly staffed deployment settings.",
+      "confidence": "high",
+      "gap_tags": [
+        "human_ai_system_performance",
+        "deployment_assurance_scalability",
+        "delegated_authority"
+      ],
+      "gap_explanations": {
+        "human_ai_system_performance": "The comment centers on whether the human reviewer can actually perform meaningful review, making system performance depend on what information is surfaced to the human rather than on the model alone.",
+        "deployment_assurance_scalability": "It argues acceptance criteria should reflect real deployment conditions in small and rural facilities where staffing for oversight is thinner.",
+        "delegated_authority": "It asks FDA to specify the conditions under which an agentic system may proceed to irreversible or high-consequence actions and what review must precede that delegation."
+      },
+      "public_summary": "Arockia AI accepts FDA's agentic oversight framing but asks CDRH to replace the self-defining 'human-oversight checkpoint' with a bright-line operational test, specifying minimum information surfaced before irreversible or high-consequence actions, and to set acceptance criteria reflecting thinly staffed small and rural deployment settings.",
+      "summary_cut": false,
+      "source_passage": "We recommend CDRH develop a bright -line operational test for what constitutes meaningful independent review of an agentic action sequence - including minimum information the system must surface to the reviewing human before an irreversible or high -consequence action - rather than treating \"human-oversight checkpoint\" as self -defining. Small and rural facilities, which are Arockia  AI's primary go -to-market channel, are the deployment settings most likely to have thinner staffing available to perform that review function meaningfully, and we recommend CDRH's acceptance criteria account for that reality."
+    },
+    {
+      "segment_id": "seg-031",
+      "question_ids": [
+        "q26"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "regulatory_scope",
+      "secondary_issue": "agentic_autonomy",
+      "stakeholder_concern": "As agentic systems bundle device and non-device functions (care coordination, documentation, scheduling, administrative orchestration), the commenter is concerned that agentic orchestration could be used to pull otherwise non-device functions into device regulation.",
+      "requested_fda_action": "Reaffirm rather than erode the existing multiple-function device product framework and hold the line on the device definition, so that the presence of agentic orchestration around a non-device function does not by itself make that function a device.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Commenter accepts the paper's treatment of agentic systems but asks CDRH to reaffirm the existing multiple-function device framework and the device definition, so that agentic orchestration around non-device functions such as scheduling or documentation does not alone trigger device regulation.",
+      "summary_cut": false,
+      "source_passage": "We would also urge CDRH to hold the line on the device definition itself as agentic systems proliferate. Many agentic healthcare AI functions - care coordination, documentation, scheduling, and administrative orchestration - are, by the paper's own description, not necessarily functions that are the focus of FDA's device regulatory oversight. As these systems increasingly bundle device and non -device functions together,  we recommend CDRH reaffirm, rather than erode, the existing multiple -function device product framework: the presence of agentic orchestration around a non-device function should not, on its own, pull that function into device regulation."
+    },
+    {
+      "segment_id": "seg-032",
+      "question_ids": [
+        "q7",
+        "q9"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "clinical_validation",
+      "stakeholder_concern": "The commenter agrees that GenAI-enabled devices need an evidentiary approach adapted from existing methods of evaluating clinical evidence and credentialing clinicians, but views clinician credentialing alone as too narrow a source of inspiration.",
+      "requested_fda_action": "Draw on the established layered framework of analytic validity, clinical validity, and clinical utility used in diagnostic and genomic testing regulation, in addition to clinician credentialing analogies, when structuring the competency-based evidentiary approach.",
+      "confidence": "medium",
+      "gap_tags": [],
+      "gap_explanations": {},
+      "public_summary": "Endorses the paper's adapted evidentiary approach for GenAI devices but asks CDRH to ground it additionally in the established analytic validity, clinical validity, and clinical utility framework from diagnostic and genomic testing regulation, rather than clinician credentialing analogies alone.",
+      "summary_cut": false,
+      "source_passage": "CDRH's discussion paper correctly recognizes that GenAI -enabled devices require an evidentiary approach inspired by, but adapted from, how the healthcare system already evaluates clinical evidence and credentials human clinicians. We would encourage CDRH to draw that inspiration not only from clinician credentialing, but from the layered analytic validity / clinical validity / clinical utility discipline that diagnostic and genomic testing has already developed and been regulated under for years."
+    },
+    {
+      "segment_id": "seg-033",
+      "question_ids": [
+        "q8"
+      ],
+      "position": "support_with_modification",
+      "primary_issue": "evidence_standards",
+      "secondary_issue": "economics_burden",
+      "stakeholder_concern": "The commenter is concerned that FDA could apply a uniform, maximal evidentiary burden regardless of a device's actual risk, which they argue would neither protect patients better nor sustain a competitive field of innovators.",
+      "requested_fda_action": "Calibrate the level of required evidence and oversight to the level of risk—rigorous where risk is genuinely high and light-touch where it is not—rather than applying uniform maximal evidentiary requirements.",
+      "confidence": "medium",
+      "gap_tags": [
+        "evidence_burden_commercial_viability"
+      ],
+      "gap_explanations": {
+        "evidence_burden_commercial_viability": "The commenter explicitly links uniform maximal evidentiary burden to the ability to sustain a competitive field of innovators bringing GenAI-enabled devices to market."
+      },
+      "public_summary": "The commenter asks CDRH to apply the same risk-proportionality discipline it expects of sponsors, calibrating evidence and oversight to actual risk—rigorous where risk is high, lighter where it is not—rather than imposing uniform maximal evidentiary burdens that could constrain competition among innovators.",
+      "summary_cut": false,
+      "source_passage": "At the same time, we would ask CDRH to hold itself to the same discipline it is asking of sponsors: match the level of evidence and oversight to the level of risk, no more and no less. A framework that is rigorous where risk is genuinely high and light -touch where it is not will do more to protect patients, and more to sustain a competitive field of innovators capable of bringing safe GenAI-enabled devices to market, than one that applies uniform, maximal evidentiary burden regardless of actual risk."
+    }
+  ]
+}
