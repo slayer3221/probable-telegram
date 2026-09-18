@@ -97,6 +97,21 @@ DISAGREEMENT_TOPICS = {
 
 CONFIDENCE = ("high", "medium", "low")
 
+# What an executive theme in editorial/executive-themes.json can affect.
+# Mirrored as THEME_AFFECTS in js/taxonomies.js.
+MATERIAL_THEME_AFFECTS = {
+    "regulatory_scope": "Regulatory scope",
+    "evidence": "Evidence & validation",
+    "architecture": "Product architecture",
+    "postmarket": "Postmarket monitoring",
+    "foundation_models": "Foundation model dependency",
+    "commercialization": "Commercialization & deployment",
+    "diligence": "Investor & acquirer diligence",
+}
+# The executive layer surfaces between five and eight themes.
+MIN_MATERIAL_THEMES = 5
+MAX_MATERIAL_THEMES = 8
+
 # Minimum distinct commenters before the tracker states a stakeholder-level
 # conclusion (broad support, strongest alignment, clear disagreement).
 MIN_COMMENTERS_FOR_CONCLUSION = 5

@@ -17,7 +17,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from pipeline.taxonomies import DISAGREEMENT_TOPICS, GAPS, ISSUES, POSITIONS, QUESTION_IDS, RESPONSE_TYPES, STAKEHOLDER_TYPES, THEMES  # noqa: E402
+from pipeline.taxonomies import (  # noqa: E402
+    DISAGREEMENT_TOPICS, GAPS, ISSUES, MATERIAL_THEME_AFFECTS, MAX_MATERIAL_THEMES, MIN_MATERIAL_THEMES, POSITIONS,
+    QUESTION_IDS, RESPONSE_TYPES, STAKEHOLDER_TYPES, THEMES,
+)
 from pipeline.io_utils import ROOT, read_json  # noqa: E402
 
 FORBIDDEN_FIELDS = {"verified", "review_status", "reviewer", "reviewer_notes", "human_verified", "ai_classified", "verification_count", "review_queue"}
@@ -37,8 +40,13 @@ def walk_keys(obj, path="", out=None):
     return out
 
 
-def validate(data_dir: Path, editorial_dir: Path):
+def validate(data_dir: Path, editorial_dir: Path, strict_citations: bool = True):
+    """strict_citations: a curated citation of a position id that is not in
+    the dataset is an error. Tests that validate the live editorial layer
+    against a tiny synthetic dataset pass False so it is reported as a
+    warning instead; the command line and the workflows stay strict."""
     errors, warnings = [], []
+    citation_problems = errors if strict_citations else warnings
     q = read_json(data_dir / "questions.json")
     c = read_json(data_dir / "commenters.json")
     s = read_json(data_dir / "submissions.json")
@@ -49,6 +57,7 @@ def validate(data_dir: Path, editorial_dir: Path):
     editorial = read_json(editorial_dir / "vahana-read.json")
     editorial_gaps = read_json(editorial_dir / "gaps.json")
     executive = read_json(editorial_dir / "executive-read.json")
+    themes = read_json(editorial_dir / "executive-themes.json")
     for name, payload in (("questions", q), ("commenters", c), ("submissions", s), ("positions", p), ("gaps", g), ("site-summary", summary), ("editorial", editorial)):
         if payload is None:
             errors.append(f"{name}.json missing")
@@ -221,13 +230,105 @@ def validate(data_dir: Path, editorial_dir: Path):
             if not lens.get("role") or not lens.get("question") or not 3 <= len(lens.get("themes", [])) <= 8:
                 errors.append(f"executive lens '{lens.get('id')}' needs a role, a question and three to eight themes")
 
+    # Curated evidence citations: every cited position must exist so each
+    # claim stays traceable to a docket comment, and a disagreement must show
+    # at least two distinct commenters in material conflict.
+    position_ids = {x["id"]: x for x in p["positions"]}
+
+    def distinct_commenters(pids):
+        return {position_ids[pid]["commenter_id"] for pid in pids if pid in position_ids}
+
+    def check_disagreement(owner, d):
+        if d is None:
+            return
+        if not isinstance(d, dict) or "exists" not in d:
+            errors.append(f"{owner}: disagreement must carry an 'exists' flag")
+            return
+        sides = d.get("sides") or []
+        if not d.get("exists"):
+            if sides:
+                errors.append(f"{owner}: sides listed without a disagreement")
+            return
+        if not d.get("text") or len(sides) < 2:
+            errors.append(f"{owner}: a disagreement needs text and at least two sides")
+        side_commenters = []
+        for i, side in enumerate(sides):
+            pids = side.get("position_ids") or []
+            if not side.get("label") or not pids:
+                errors.append(f"{owner}: side {i + 1} needs a label and position ids")
+            for pid in pids:
+                if pid not in position_ids:
+                    citation_problems.append(f"{owner}: side {i + 1} cites unknown position {pid}")
+            side_commenters.append(distinct_commenters(pids))
+        for i, a in enumerate(side_commenters):
+            for b in side_commenters[i + 1:]:
+                if a & b:
+                    errors.append(f"{owner}: the same commenter appears on both sides of the disagreement")
+        if len(set().union(*side_commenters) if side_commenters else set()) < 2:
+            citation_problems.append(f"{owner}: a disagreement needs at least two distinct commenters")
+
+    # Executive themes (curated, rendered at the top of the page)
+    if not themes:
+        errors.append("editorial/executive-themes.json missing")
+    else:
+        rows = themes.get("themes", [])
+        if not MIN_MATERIAL_THEMES <= len(rows) <= MAX_MATERIAL_THEMES:
+            errors.append(f"executive themes must hold {MIN_MATERIAL_THEMES} to {MAX_MATERIAL_THEMES} themes, got {len(rows)}")
+        if not themes.get("title"):
+            errors.append("executive themes need a title")
+        for tid, n in Counter(t.get("id") for t in rows).items():
+            if n > 1:
+                errors.append(f"executive theme id {tid} duplicated")
+        for t in rows:
+            owner = f"executive theme '{t.get('id')}'"
+            for key in ("id", "headline", "issue", "why_it_matters"):
+                if not (t.get(key) or "").strip():
+                    errors.append(f"{owner} needs {key}")
+            if len((t.get("issue") or "").split(". ")) > 5:
+                warnings.append(f"{owner}: issue runs longer than four sentences")
+            if not t.get("affects") or any(a not in MATERIAL_THEME_AFFECTS for a in t.get("affects", [])):
+                errors.append(f"{owner} must name what it affects, from the known vocabulary")
+            if not t.get("question_ids") or any(qid not in QUESTION_IDS for qid in t.get("question_ids", [])):
+                errors.append(f"{owner} must name valid question ids")
+            ev = t.get("evidence") or []
+            if not ev:
+                errors.append(f"{owner} cites no positions")
+            for pid in ev:
+                if pid not in position_ids:
+                    citation_problems.append(f"{owner} cites unknown position {pid}")
+            cited_questions = set()
+            for pid in ev:
+                if pid in position_ids:
+                    cited_questions.update(position_ids[pid]["question_ids"])
+            for qid in t.get("question_ids", []):
+                if cited_questions and qid not in cited_questions:
+                    warnings.append(f"{owner} names {qid}, which none of its cited positions address")
+            d = t.get("disagreement")
+            check_disagreement(owner, d)
+            if isinstance(d, dict):
+                for side in d.get("sides") or []:
+                    for pid in side.get("position_ids") or []:
+                        if pid in position_ids and pid not in ev:
+                            errors.append(f"{owner}: side position {pid} is not in the theme's evidence list")
+            for key in ("model_confidence", "confidence"):
+                if key in t:
+                    errors.append(f"{owner}: {key} must not be published")
+
     # Gaps
     gap_ids = [x["id"] for x in g["gaps"]]
     if sorted(gap_ids) != sorted(GAPS):
         errors.append("data/gaps.json must contain exactly the nine cross-cutting gaps")
     if sorted(x["id"] for x in editorial_gaps["gaps"]) != sorted(GAPS):
         errors.append("editorial/gaps.json must define exactly the nine cross-cutting gaps")
-    position_ids = {x["id"] for x in p["positions"]}
+    for x in editorial_gaps["gaps"]:
+        owner = f"editorial gap '{x['id']}'"
+        for key in x:
+            if key not in ("id", "title", "explanation", "synthesis", "disagreement"):
+                errors.append(f"{owner}: unknown field {key}")
+        if "synthesis" in x and not (x.get("synthesis") or "").strip():
+            errors.append(f"{owner}: synthesis present but empty")
+        if "disagreement" in x:
+            check_disagreement(owner, x.get("disagreement"))
     for x in g["gaps"]:
         if len(x["examples"]) > 3:
             errors.append(f"gap {x['id']}: at most three representative examples")
@@ -252,7 +353,7 @@ def validate(data_dir: Path, editorial_dir: Path):
     # Free text is not scanned: commenters legitimately write about FDA
     # "reviewers" and "premarket review", and the validator must not reject
     # real docket language.
-    for payload, name in ((q, "questions"), (c, "commenters"), (s, "submissions"), (p, "positions"), (g, "gaps"), (summary, "site-summary"), (analyses or {}, "analyses"), (editorial, "editorial")):
+    for payload, name in ((q, "questions"), (c, "commenters"), (s, "submissions"), (p, "positions"), (g, "gaps"), (summary, "site-summary"), (analyses or {}, "analyses"), (editorial, "editorial"), (editorial_gaps, "editorial-gaps"), (themes or {}, "executive-themes")):
         for path, key in walk_keys(payload):
             if key in FORBIDDEN_FIELDS:
                 errors.append(f"{name}{path}: review/verification field '{key}' is not allowed")

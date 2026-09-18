@@ -1,7 +1,7 @@
 // Rendering. Every function returns an HTML string; app.js owns the DOM.
 import {
   GAPS, POSITIONS, POSITION_BY_ID, STAKEHOLDERS, STAKEHOLDER_BY_ID, THEMES, THEME_BY_ID,
-  VAHANA_FIELDS, VIEWS, disagreementTopicLabel, gapLabel, issueLabel, positionLabel, responseTypeLabel, stakeholderLabel,
+  VAHANA_FIELDS, VIEWS, affectsLabel, disagreementTopicLabel, gapLabel, issueLabel, positionLabel, responseTypeLabel, stakeholderLabel,
 } from './taxonomies.js';
 
 export function esc(value) {
@@ -70,6 +70,99 @@ export function renderExecutive(index) {
       <p class="exec__text">${esc(t.text)}</p>
       <div class="exec__links"><span class="label">Drawn from</span> ${questionLinks(t.question_ids || [], index)}</div>
     </li>`).join('');
+}
+
+// Commenter chips for a list of position ids. One chip per commenter (the
+// first cited position for that commenter), each opening the evidence
+// drawer, which carries the excerpt and the link to the original submission.
+// Two submissions from the same organization or the same stated role are
+// folded into one chip so a repeated filing does not read as two voices.
+function commenterChips(index, positionIds) {
+  const seen = new Set();
+  const chips = [];
+  for (const pid of positionIds || []) {
+    const p = index.positionsById[pid];
+    if (!p) continue;
+    const c = p._commenter;
+    const key = c.display_name.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    chips.push(`<button class="cchip" type="button" data-action="evidence" data-position="${esc(pid)}" data-q="${esc(p.question_ids[0])}" aria-haspopup="dialog" title="${esc(stakeholderLabel(c.stakeholder_type))} · opens the source excerpt for ${qcode(p.question_ids[0])}">${esc(c.display_name)}</button>`);
+  }
+  return chips.join('');
+}
+
+function distinctCommenterCount(index, positionIds) {
+  const seen = new Set();
+  for (const pid of positionIds || []) {
+    const p = index.positionsById[pid];
+    if (p) seen.add(p._commenter.display_name.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim());
+  }
+  return seen.size;
+}
+
+function renderDisagreement(index, d, cls) {
+  if (!d) return '';
+  if (!d.exists) {
+    return d.text ? `<div class="${cls}"><span class="label">Where commenters differ</span><p class="${cls}-none">${esc(d.text)}</p></div>` : '';
+  }
+  const sides = (d.sides || []).filter((s) => (s.position_ids || []).some((pid) => index.positionsById[pid]));
+  if (sides.length < 2) return '';
+  return `
+    <div class="${cls}">
+      <span class="label">Where commenters differ</span>
+      ${d.text ? `<p class="${cls}-text">${esc(d.text)}</p>` : ''}
+      <div class="${cls}-grid">
+        ${sides.map((s, i) => `
+          <div class="${cls}-side">
+            <span class="${cls}-num" aria-hidden="true">${i === 0 ? 'One side' : sides.length === 2 ? 'The other' : `Side ${i + 1}`}</span>
+            <p>${esc(s.label)}</p>
+            <div class="cchips">${commenterChips(index, s.position_ids)}</div>
+          </div>`).join('')}
+      </div>
+    </div>`;
+}
+
+// Executive themes: what could materially change. Copy comes from
+// editorial/executive-themes.json; the commenters who raised each theme and
+// the links to their comments are derived from the cited position ids.
+export function renderMaterialThemes(index) {
+  const themes = (index.themes && index.themes.themes) || [];
+  return themes.map((t, i) => {
+    const affects = (t.affects || []).map(affectsLabel).filter(Boolean);
+    const n = distinctCommenterCount(index, t.evidence);
+    return `
+    <li class="mt" id="theme-${esc(t.id)}">
+      <div class="mt__head">
+        <span class="mt__num" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+        <div class="mt__headwrap">
+          <h3 class="mt__headline">${esc(t.headline)}</h3>
+          <div class="mt__affects" aria-label="What this could affect">${affects.map((a) => `<span class="mt__affect">${esc(a)}</span>`).join('')}</div>
+        </div>
+      </div>
+      <div class="mt__body">
+        <div class="mt__col">
+          <span class="label">The issue</span>
+          <p class="mt__issue">${esc(t.issue)}</p>
+        </div>
+        <div class="mt__col mt__col--why">
+          <span class="label">Why it matters for companies</span>
+          <p class="mt__why">${esc(t.why_it_matters)}</p>
+        </div>
+      </div>
+      ${renderDisagreement(index, t.disagreement, 'mt__diff')}
+      <div class="mt__foot">
+        <div class="mt__raised">
+          <span class="label">Raised by ${n ? `${plural(n, 'commenter')}` : ''}</span>
+          <div class="cchips">${commenterChips(index, t.evidence)}</div>
+        </div>
+        <div class="mt__questions">
+          <span class="label">FDA questions</span>
+          <div class="mt__qlinks">${questionLinks(t.question_ids || [], index)}</div>
+        </div>
+      </div>
+    </li>`;
+  }).join('');
 }
 
 export function renderLenses(index) {
@@ -335,17 +428,27 @@ export function renderSections(index, view, state, openSet) {
   return sections.join('');
 }
 
+// Cross-cutting issues. Counts and example quotes come from the build
+// (data/gaps.json); the synthesis across questions and the disagreement, when
+// one exists, come from the curated editorial/gaps.json, matched by id.
 export function renderGaps(index) {
   const threshold = (index.summary.thresholds || {}).min_commenters_for_conclusion || 5;
+  const curated = Object.fromEntries((index.gapsEditorial || []).map((g) => [g.id, g]));
   return index.gaps.map((g) => {
     const groups = g.stakeholder_types.map(stakeholderLabel);
     const stats = g.distinct_commenters >= threshold
       ? `${plural(g.question_ids.length, 'FDA question')} · ${g.distinct_commenters} commenters raising related concerns`
       : `${plural(g.question_ids.length, 'FDA question')} · Limited data: ${plural(g.distinct_commenters, 'commenter')} so far`;
+    const e = curated[g.id] || {};
+    const synthesis = e.synthesis && e.synthesis.trim()
+      ? `<div class="gap__synth"><span class="label">Across the questions</span><p>${esc(e.synthesis)}</p></div>`
+      : '';
     return `
       <article class="gap" id="gap-${esc(g.id)}">
         <h3 class="gap__title">${esc(g.title)}</h3>
         <p class="gap__body">${esc(g.explanation)}</p>
+        ${synthesis}
+        ${renderDisagreement(index, e.disagreement, 'gap__diff')}
         <div class="gap__stats">${esc(stats)}</div>
         <div class="gap__groups">Raised by: ${groups.length ? esc(groups.join(' · ')) : 'no commenters yet'}</div>
         ${g.examples.length ? `<div class="gap__quotes">${g.examples.map((e) => `

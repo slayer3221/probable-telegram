@@ -41,6 +41,21 @@ await page.waitForSelector('.q');
 check('page renders 26 question cards', (await page.locator('.q').count()) === 26);
 check('three signal cards', (await page.locator('.signal').count()) === 3);
 check('no stance-majority signal', !(await page.locator('.signal__label').allInnerTexts()).some((t) => /alignment|divide/i.test(t)));
+// Executive themes ("What could materially change?") sit at the top, before the executive read
+const themeCount = await page.locator('#material .mt').count();
+check('executive themes render five to eight themes', themeCount >= 5 && themeCount <= 8, `count=${themeCount}`);
+check('executive themes precede executive read', await page.evaluate(() => document.getElementById('material').compareDocumentPosition(document.getElementById('exec')) & Node.DOCUMENT_POSITION_FOLLOWING));
+check('executive themes are labeled editorial', /editorial|interpretation/i.test(await page.locator('#material .material__meta').innerText()));
+check('every theme names commenters', (await page.locator('#material .mt').count()) === (await page.locator('#material .mt').filter({ has: page.locator('.mt__raised .cchip') }).count()));
+check('every theme links FDA questions', (await page.locator('#material .mt').count()) === (await page.locator('#material .mt').filter({ has: page.locator('.mt__qlinks [data-action="jump"]') }).count()));
+check('at least one theme shows a disagreement with two sides', (await page.locator('#material .mt__diff-side').count()) >= 2);
+if (HAS_DATA) {
+  await page.locator('#material .mt__raised .cchip').first().click();
+  check('theme commenter chip opens evidence drawer', !(await page.locator('#evidence-drawer').isHidden()));
+  check('evidence drawer links the original submission', (await page.locator('#evidence-panel .evidence__link').count()) === 1);
+  await page.locator('#evidence-close').click();
+  check('evidence drawer closes', await page.locator('#evidence-drawer').isHidden());
+}
 // Executive read sits between the hero and the signals
 check('executive read renders five takeaways', (await page.locator('#exec .exec__item').count()) === 5);
 check('executive read renders three lenses', (await page.locator('#exec .lens').count()) === 3);
@@ -55,6 +70,8 @@ if (HAS_DATA) {
 }
 check('six hero metrics', (await page.locator('.metric').count()) === 6);
 check('nine gap cards', (await page.locator('.gap').count()) === 9);
+check('gap cards synthesize across questions', (await page.locator('.gap .gap__synth').count()) === 9);
+check('gap cards show disagreements with commenter chips', (await page.locator('.gap .gap__diff-side .cchip').count()) >= 9);
 check('four sections', (await page.locator('#tracker .section').count()) === 4);
 check('no horizontal scroll desktop', await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
 await page.screenshot({ path: `${SHOTS}/desktop.png`, fullPage: false });

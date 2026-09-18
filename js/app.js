@@ -1,8 +1,8 @@
 // Bootstrap: load static JSON, own state and DOM, wire interactions.
 import { DEFAULT_STATE, buildIndex, buildUrl, computeView, parseLocation } from './filters.js';
 import {
-  renderEvidence, renderExecutive, renderFilterGroups, renderFraming, renderGaps, renderLenses, renderMetrics,
-  renderSections, renderSignals, renderVahanaLinks, renderViews, resultLine,
+  renderEvidence, renderExecutive, renderFilterGroups, renderFraming, renderGaps, renderLenses, renderMaterialThemes,
+  renderMetrics, renderSections, renderSignals, renderVahanaLinks, renderViews, resultLine,
 } from './tracker.js';
 
 const DATA_FILES = {
@@ -15,11 +15,14 @@ const DATA_FILES = {
   analyses: 'data/analyses.json',
   editorial: 'editorial/vahana-read.json',
   executive: 'editorial/executive-read.json',
+  themes: 'editorial/executive-themes.json',
+  gapsEditorial: 'editorial/gaps.json',
 };
 
 const $ = (id) => document.getElementById(id);
 const el = {
   metrics: $('metrics'), heroNote: $('hero-note'), heroLinks: $('hero-links'), heroKicker: $('hero-kicker'),
+  materialIntro: $('material-intro'), materialList: $('material-list'),
   execFraming: $('exec-framing'), execList: $('exec-list'), lenses: $('lenses'), vahanaLinks: $('vahana-links'),
   signals: $('signals'), views: $('views'), search: $('search'), filterRows: $('filter-rows'),
   resultLine: $('result-line'), tracker: $('tracker'), gaps: $('gaps'), gapsGrid: $('gaps-grid'),
@@ -53,6 +56,8 @@ async function loadData() {
     analyses: raw.analyses.analyses,
     editorial: raw.editorial,
     executive: raw.executive,
+    themes: raw.themes,
+    gapsEditorial: (raw.gapsEditorial && raw.gapsEditorial.gaps) || [],
   });
 }
 
@@ -76,6 +81,8 @@ function renderStatic() {
   const s = index.summary;
   el.metrics.innerHTML = renderMetrics(s);
   el.signals.innerHTML = renderSignals(s.signals || []);
+  el.materialIntro.textContent = (index.themes && index.themes.intro) || '';
+  el.materialList.innerHTML = renderMaterialThemes(index);
   el.execFraming.innerHTML = renderFraming(s);
   el.execList.innerHTML = renderExecutive(index);
   el.lenses.innerHTML = renderLenses(index);

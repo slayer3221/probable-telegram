@@ -379,3 +379,51 @@ body.drawer-open { overflow: hidden; }
   .drawer { width: 100%; }
   .section__head { flex-direction: column; gap: 6px; }
 }
+
+/* What could materially change: executive themes */
+.material { padding: 0 var(--gutter) 34px; }
+.material__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; padding-bottom: 12px; border-bottom: 2px solid var(--neutral-black); }
+.material__title { font-family: var(--font-display); font-size: 32px; letter-spacing: -0.015em; margin: 8px 0 0; font-weight: 400; }
+.material__meta { font: 600 9px/1 var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--neutral-slate); padding-bottom: 4px; }
+.material__intro { font-family: var(--font-editorial); font-size: 18px; line-height: 1.45; margin: 16px 0 0; max-width: 78ch; }
+.material__list { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.material__foot { font-size: 12.5px; line-height: 1.55; color: var(--neutral-slate); margin: 14px 0 0; max-width: 90ch; }
+.mt { background: var(--pure-white); border: 1px solid var(--border-subtle); border-radius: 6px; box-shadow: var(--shadow-sm); padding: 20px 22px 18px; }
+.mt__head { display: flex; gap: 16px; align-items: flex-start; }
+.mt__num { font-family: var(--font-display); font-size: 15px; color: var(--brand-primary); min-width: 30px; padding-top: 4px; }
+.mt__headwrap { flex: 1; min-width: 0; }
+.mt__headline { font-family: var(--font-display); font-size: 22px; line-height: 1.25; letter-spacing: -0.015em; font-weight: 400; margin: 0; max-width: 40ch; }
+.mt__affects { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 8px; }
+.mt__affect { font: 600 9.5px/1 var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--brand-secondary); border: 1px solid var(--brand-secondary); border-radius: 2px; padding: 4px 6px; }
+.mt__body { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; margin: 16px 0 0 46px; }
+.mt__col { min-width: 0; }
+.mt__col .label { display: block; margin-bottom: 6px; }
+.mt__issue { font-size: 14.5px; line-height: 1.6; margin: 0; }
+.mt__col--why { background: var(--surface-highlight); border: 1px solid var(--brand-tertiary); border-radius: 6px; padding: 12px 14px; }
+.mt__why { font-size: 14px; line-height: 1.6; margin: 0; }
+.mt__diff, .gap__diff { margin-top: 16px; }
+.mt__diff { margin-left: 46px; }
+.mt__diff .label, .gap__diff .label { display: block; margin-bottom: 6px; }
+.mt__diff-text, .gap__diff-text { font-size: 13.5px; line-height: 1.5; color: var(--neutral-slate); margin: 0 0 10px; max-width: 90ch; }
+.mt__diff-none, .gap__diff-none { font-size: 13.5px; line-height: 1.5; color: var(--neutral-slate); margin: 0; max-width: 90ch; }
+.mt__diff-grid, .gap__diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border-subtle); border: 1px solid var(--border-subtle); }
+.mt__diff-side, .gap__diff-side { background: var(--surface-page); padding: 12px 14px; min-width: 0; }
+.mt__diff-num, .gap__diff-num { font: 600 9px/1 var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--brand-primary); }
+.mt__diff-side p, .gap__diff-side p { font-size: 13.5px; line-height: 1.55; margin: 6px 0 10px; }
+.mt__foot { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin: 16px 0 0 46px; padding-top: 12px; border-top: 1px solid var(--border-subtle); }
+.mt__raised { flex: 1; min-width: 260px; }
+.mt__raised .label, .mt__questions .label { display: block; margin-bottom: 6px; }
+.mt__qlinks { display: flex; gap: 4px; flex-wrap: wrap; }
+.cchips { display: flex; gap: 4px; flex-wrap: wrap; }
+.cchip { border: 1px solid var(--border-subtle); background: var(--pure-white); color: var(--brand-primary); border-radius: 999px; padding: 3px 9px; font-size: 12px; line-height: 1.3; font-weight: 600; text-align: left; }
+.cchip:hover { border-color: var(--brand-primary); background: var(--neutral-light); }
+.gap__synth { margin: 2px 0 0; }
+.gap__synth .label { display: block; margin-bottom: 6px; }
+.gap__synth p { font-family: var(--font-editorial); font-size: 15.5px; line-height: 1.5; margin: 0; }
+@media (max-width: 900px) {
+  .material__title { font-size: 26px; }
+  .mt { padding: 16px 16px 14px; }
+  .mt__headline { font-size: 19px; }
+  .mt__body, .mt__diff, .mt__foot { margin-left: 0; }
+  .mt__body, .mt__diff-grid, .gap__diff-grid { grid-template-columns: 1fr; }
+}

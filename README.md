@@ -4,7 +4,7 @@ A public intelligence resource from Vahana Labs for FDA's August 18, 2026 discus
 
 The tracker reads every public submission to the docket, maps each substantive position to the FDA question it answers, classifies the position, and keeps the source excerpt attached to the claim. Vahana Labs' editorial analysis (stakeholder tensions, commercialization and real-world deployment implications, and what FDA may be missing) is stored and rendered separately from what commenters said.
 
-Everything happens on one scrolling page: accordion question cards, sticky filters, in-page views, hash anchors and query parameters, an evidence drawer and a mobile filter drawer.
+Everything happens on one scrolling page: an executive summary of what could materially change, accordion question cards, sticky filters, in-page views, hash anchors and query parameters, an evidence drawer and a mobile filter drawer.
 
 ## Repository layout
 
@@ -16,7 +16,7 @@ js/filters.js              Filter state, URL parsing, matching and per-question 
 js/tracker.js              Rendering (hero, signals, question cards, gaps, evidence drawer)
 js/taxonomies.js           Public labels; mirrors scripts/pipeline/taxonomies.py
 data/                      Public JSON the page loads (questions, commenters, submissions, positions, gaps, site-summary); live docket data only
-editorial/                 Curated Vahana Labs layer: executive-read.json, vahana-read.json, gaps.json, signals.json (never touched by ingestion)
+editorial/                 Curated Vahana Labs layer: executive-themes.json, executive-read.json, vahana-read.json, gaps.json, signals.json (never touched by ingestion)
 scripts/                   Python ingestion and build pipeline (see below)
 scripts/pipeline/          Shared modules: taxonomies, aggregation rules, Regulations.gov client, LLM client, storage
 prompts/                   Versioned classification prompts and prompts/config.json
@@ -133,7 +133,9 @@ Every build snapshots each question (distinct commenters, stakeholder groups, is
 
 ## Editorial layer
 
-`editorial/executive-read.json` holds the executive layer shown above the signals: five takeaways drafted from the approved Vahana reads, each naming the questions it draws on, and three role lenses. `editorial/vahana-read.json` holds the curated Vahana read fields per question (alignment, tension, commercialization implication, real-world deployment implication, what FDA may be missing) and the stakeholder tension blocks. It ships empty: entries are written only after reading the real submissions for a question, and ingestion never modifies the file. `editorial/gaps.json` holds the nine cross-cutting issue definitions. `editorial/signals.json` holds optional implication signal cards and also ships empty; computed cards fill the strip until it has content. Counts, stakeholder groups and representative examples under each gap are computed from commenter data at build time.
+`editorial/executive-themes.json` holds the executive summary rendered at the top of the page under **What could materially change?**: five to eight themes chosen for consequence rather than frequency, each with a headline, the issue in one or two sentences, why it matters for companies, what it could affect (regulatory scope, evidence and validation, product architecture, postmarket monitoring, foundation model dependency, commercialization and deployment, investor and acquirer diligence), the FDA questions it draws on, the position ids it cites, and, where commenters materially disagree, the sides of that disagreement with the positions on each side. The commenters who raised a theme and the links to their comments are derived from the cited position ids at render time, so nothing on the card is asserted without a source excerpt behind it. `scripts/validate_data.py` fails the build if a cited id no longer exists, if a disagreement does not span at least two distinct commenters, or if the same commenter sits on both sides.
+
+`editorial/executive-read.json` holds the executive read shown above the signals: five takeaways drafted from the approved Vahana reads, each naming the questions it draws on, and three role lenses. `editorial/vahana-read.json` holds the curated Vahana read fields per question (alignment, tension, commercialization implication, real-world deployment implication, what FDA may be missing) and the stakeholder tension blocks. It ships empty: entries are written only after reading the real submissions for a question, and ingestion never modifies the file. `editorial/gaps.json` holds the nine cross-cutting issue definitions, and for each a curated `synthesis` that draws related comments together across several FDA questions and a `disagreement` (sides with position ids) where commenters materially differ; the page reads those two fields from the editorial file directly and validation checks every cited id. `editorial/signals.json` holds optional implication signal cards and also ships empty; computed cards fill the strip until it has content. Counts, stakeholder groups and representative examples under each gap are computed from commenter data at build time.
 
 ## FDA question text
 

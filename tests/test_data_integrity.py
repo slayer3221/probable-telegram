@@ -126,7 +126,10 @@ def test_tiny_dataset_yields_three_signals(tmp_path):
     for name, payload in files.items():
         (out / name).write_text(json.dumps(payload), encoding="utf-8")
     (out / "analyses.json").write_text(json.dumps({"analyses": [{"question_id": q["id"], "status": "pending"} for q in questions]}), encoding="utf-8")
-    errors, _ = validate(out, ROOT / "editorial")
+    # The curated executive themes and gap syntheses cite live docket position
+    # ids, which a synthetic dataset cannot carry; those citations are checked
+    # strictly by test_public_dataset_validates against the real data.
+    errors, _ = validate(out, ROOT / "editorial", strict_citations=False)
     assert errors == [], "\n".join(errors)
 
 

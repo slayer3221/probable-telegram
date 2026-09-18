@@ -135,9 +135,25 @@ All `vahana_read` fields are optional; only fields with content render. A `tensi
 
 Curated executive layer rendered above the signals: `title`, `intro`, `takeaways[]` (`id`, `title`, `text`, `question_ids` naming the questions each draws on) and `lenses[]` (`id`, `role`, `question`, `themes[]`). Drafted from the approved Vahana read entries; the framing line's counts come from `site-summary.json` at render time.
 
+### executive-themes.json
+
+Curated executive summary rendered at the top of the page under "What could materially change?". Themes are chosen for consequence, not frequency.
+
+```json
+{"title": "What could materially change?", "intro": "", "themes": [{
+  "id": "foundation-model-supplier", "headline": "", "issue": "one or two sentences on what commenters said",
+  "why_it_matters": "editorial interpretation for companies",
+  "affects": ["foundation_models", "architecture", "diligence"], "question_ids": ["q24", "q25"],
+  "evidence": ["position id", "..."],
+  "disagreement": {"exists": true, "text": "", "sides": [{"label": "", "position_ids": ["..."]}, {"label": "", "position_ids": ["..."]}]}
+}]}
+```
+
+`affects` values: `regulatory_scope`, `evidence`, `architecture`, `postmarket`, `foundation_models`, `commercialization`, `diligence` (labels in `js/taxonomies.js`, mirrored in `scripts/pipeline/taxonomies.py`). Commenter names and links to the underlying comments are derived from `evidence` at render time; every id must exist in `data/positions.json`. A disagreement with `exists: false` may carry `text` and no sides. Validation: five to eight themes, valid `affects` and `question_ids`, every cited id resolvable, side positions included in `evidence`, and each disagreement spanning at least two distinct commenters with no commenter on both sides.
+
 ### gaps.json and signals.json
 
-Titles and explanations for the nine gaps, and the two editorial signal cards (`category`, `label`, `headline`, `detail`, `question_ids`, `gap_id`, `target_question_id`).
+Titles and explanations for the nine gaps, and the two editorial signal cards (`category`, `label`, `headline`, `detail`, `question_ids`, `gap_id`, `target_question_id`). Each gap may also carry a curated `synthesis` (how related comments connect across several FDA questions) and a `disagreement` in the same shape as an executive theme's; the page reads both from the editorial file, matched to the built `data/gaps.json` by id, and validation applies the same rules.
 
 ## Raw layer (`raw/`)
 
@@ -167,7 +183,8 @@ Every file carries `comment_id`, `input_hash`, `prompt_version` (of that stage's
 - Vocabulary values only; at most three gap tags; supporting excerpt and summary required; summaries at most 45 words.
 - `model_confidence` and any review or verification field are absent from public data.
 - Per question: distinct commenters <= distinct submissions <= positions; distributions sum correctly.
-- Exactly nine gaps, at most three examples each, all references resolvable.
+- Exactly nine gaps, at most three examples each, all references resolvable; editorial gap `synthesis` and `disagreement` fields cite only existing positions.
 - Exactly three signal cards targeting valid questions, none with category `alignment` or `divide`.
 - `editorial/executive-read.json` holds exactly five takeaways with valid `question_ids` and three role lenses with three to eight themes each.
+- `editorial/executive-themes.json` holds five to eight themes; every cited position id exists, `affects` values come from the vocabulary, a disagreement has at least two sides spanning at least two distinct commenters with no commenter on both sides, and side positions are part of the theme's evidence list. The same disagreement rules apply to `editorial/gaps.json`.
 - Editorial entries keyed by valid question ids with only the allowed fields.
